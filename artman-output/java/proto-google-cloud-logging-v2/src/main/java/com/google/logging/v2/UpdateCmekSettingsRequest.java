@@ -135,7 +135,7 @@ private static final long serialVersionUID = 0L;
    * the GCP organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   public java.lang.String getName() {
@@ -163,7 +163,7 @@ private static final long serialVersionUID = 0L;
    * the GCP organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
@@ -189,7 +189,7 @@ private static final long serialVersionUID = 0L;
    * Router](/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+   * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the cmekSettings field is set.
    */
   public boolean hasCmekSettings() {
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
    * Router](/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+   * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The cmekSettings.
    */
   public com.google.logging.v2.CmekSettings getCmekSettings() {
@@ -215,7 +215,7 @@ private static final long serialVersionUID = 0L;
    * Router](/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+   * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.logging.v2.CmekSettingsOrBuilder getCmekSettingsOrBuilder() {
     return getCmekSettings();
@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
    * Example: `"updateMask=kmsKeyName"`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
    * Example: `"updateMask=kmsKeyName"`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
@@ -262,7 +262,7 @@ private static final long serialVersionUID = 0L;
    * Example: `"updateMask=kmsKeyName"`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -651,7 +651,7 @@ private static final long serialVersionUID = 0L;
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -679,7 +679,7 @@ private static final long serialVersionUID = 0L;
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -735,7 +735,7 @@ private static final long serialVersionUID = 0L;
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
      * the GCP organization.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
      * Router](/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      *
-     * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+     * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the cmekSettings field is set.
      */
     public boolean hasCmekSettings() {
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
      * Router](/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      *
-     * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+     * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The cmekSettings.
      */
     public com.google.logging.v2.CmekSettings getCmekSettings() {
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
      * Router](/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      *
-     * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+     * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCmekSettings(com.google.logging.v2.CmekSettings value) {
       if (cmekSettingsBuilder_ == null) {
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
      * Router](/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      *
-     * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+     * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setCmekSettings(
         com.google.logging.v2.CmekSettings.Builder builderForValue) {
@@ -855,7 +855,7 @@ private static final long serialVersionUID = 0L;
      * Router](/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      *
-     * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+     * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeCmekSettings(com.google.logging.v2.CmekSettings value) {
       if (cmekSettingsBuilder_ == null) {
@@ -879,7 +879,7 @@ private static final long serialVersionUID = 0L;
      * Router](/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      *
-     * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+     * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearCmekSettings() {
       if (cmekSettingsBuilder_ == null) {
@@ -899,7 +899,7 @@ private static final long serialVersionUID = 0L;
      * Router](/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      *
-     * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+     * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.CmekSettings.Builder getCmekSettingsBuilder() {
       
@@ -913,7 +913,7 @@ private static final long serialVersionUID = 0L;
      * Router](/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      *
-     * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+     * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.CmekSettingsOrBuilder getCmekSettingsOrBuilder() {
       if (cmekSettingsBuilder_ != null) {
@@ -930,7 +930,7 @@ private static final long serialVersionUID = 0L;
      * Router](/logging/docs/routing/managed-encryption) for more information.
      * </pre>
      *
-     * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+     * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.logging.v2.CmekSettings, com.google.logging.v2.CmekSettings.Builder, com.google.logging.v2.CmekSettingsOrBuilder> 
@@ -958,7 +958,7 @@ private static final long serialVersionUID = 0L;
      * Example: `"updateMask=kmsKeyName"`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
@@ -973,7 +973,7 @@ private static final long serialVersionUID = 0L;
      * Example: `"updateMask=kmsKeyName"`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
@@ -992,7 +992,7 @@ private static final long serialVersionUID = 0L;
      * Example: `"updateMask=kmsKeyName"`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1016,7 +1016,7 @@ private static final long serialVersionUID = 0L;
      * Example: `"updateMask=kmsKeyName"`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -1038,7 +1038,7 @@ private static final long serialVersionUID = 0L;
      * Example: `"updateMask=kmsKeyName"`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1064,7 +1064,7 @@ private static final long serialVersionUID = 0L;
      * Example: `"updateMask=kmsKeyName"`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1086,7 +1086,7 @@ private static final long serialVersionUID = 0L;
      * Example: `"updateMask=kmsKeyName"`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       
@@ -1102,7 +1102,7 @@ private static final long serialVersionUID = 0L;
      * Example: `"updateMask=kmsKeyName"`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1121,7 +1121,7 @@ private static final long serialVersionUID = 0L;
      * Example: `"updateMask=kmsKeyName"`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 

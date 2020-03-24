@@ -761,11 +761,17 @@
                         },
                         "autoDeleteTime": {
                           "type": "google.protobuf.Timestamp",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "autoDeleteTtl": {
                           "type": "google.protobuf.Duration",
-                          "id": 3
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "idleStartTime": {
                           "type": "google.protobuf.Timestamp",
@@ -1279,75 +1285,6 @@
                         }
                       }
                     },
-                    "ClusterOperationStatus": {
-                      "fields": {
-                        "state": {
-                          "type": "State",
-                          "id": 1
-                        },
-                        "innerState": {
-                          "type": "string",
-                          "id": 2
-                        },
-                        "details": {
-                          "type": "string",
-                          "id": 3
-                        },
-                        "stateStartTime": {
-                          "type": "google.protobuf.Timestamp",
-                          "id": 4
-                        }
-                      },
-                      "nested": {
-                        "State": {
-                          "values": {
-                            "UNKNOWN": 0,
-                            "PENDING": 1,
-                            "RUNNING": 2,
-                            "DONE": 3
-                          }
-                        }
-                      }
-                    },
-                    "ClusterOperationMetadata": {
-                      "fields": {
-                        "clusterName": {
-                          "type": "string",
-                          "id": 7
-                        },
-                        "clusterUuid": {
-                          "type": "string",
-                          "id": 8
-                        },
-                        "status": {
-                          "type": "ClusterOperationStatus",
-                          "id": 9
-                        },
-                        "statusHistory": {
-                          "rule": "repeated",
-                          "type": "ClusterOperationStatus",
-                          "id": 10
-                        },
-                        "operationType": {
-                          "type": "string",
-                          "id": 11
-                        },
-                        "description": {
-                          "type": "string",
-                          "id": 12
-                        },
-                        "labels": {
-                          "keyType": "string",
-                          "type": "string",
-                          "id": 13
-                        },
-                        "warnings": {
-                          "rule": "repeated",
-                          "type": "string",
-                          "id": 14
-                        }
-                      }
-                    },
                     "Component": {
                       "values": {
                         "COMPONENT_UNSPECIFIED": 0,
@@ -1464,31 +1401,49 @@
                         "args": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 3
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "jarFileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 4
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "fileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 5
+                          "id": 5,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "archiveUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 6
+                          "id": 6,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "properties": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 7
+                          "id": 7,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "loggingConfig": {
                           "type": "LoggingConfig",
-                          "id": 8
+                          "id": 8,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -1513,31 +1468,49 @@
                         "args": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 3
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "jarFileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 4
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "fileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 5
+                          "id": 5,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "archiveUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 6
+                          "id": 6,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "properties": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 7
+                          "id": 7,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "loggingConfig": {
                           "type": "LoggingConfig",
-                          "id": 8
+                          "id": 8,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -1553,36 +1526,57 @@
                         "args": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "pythonFileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 3
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "jarFileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 4
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "fileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 5
+                          "id": 5,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "archiveUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 6
+                          "id": 6,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "properties": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 7
+                          "id": 7,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "loggingConfig": {
                           "type": "LoggingConfig",
-                          "id": 8
+                          "id": 8,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -1618,22 +1612,34 @@
                         },
                         "continueOnFailure": {
                           "type": "bool",
-                          "id": 3
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "scriptVariables": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 4
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "properties": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 5
+                          "id": 5,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "jarFileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 6
+                          "id": 6,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -1658,21 +1664,33 @@
                         "scriptVariables": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 3
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "properties": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 4
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "jarFileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 56
+                          "id": 56,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "loggingConfig": {
                           "type": "LoggingConfig",
-                          "id": 6
+                          "id": 6,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -1696,26 +1714,41 @@
                         },
                         "continueOnFailure": {
                           "type": "bool",
-                          "id": 3
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "scriptVariables": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 4
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "properties": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 5
+                          "id": 5,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "jarFileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 6
+                          "id": 6,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "loggingConfig": {
                           "type": "LoggingConfig",
-                          "id": 7
+                          "id": 7,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -1731,26 +1764,41 @@
                         "args": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "fileUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 3
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "archiveUris": {
                           "rule": "repeated",
                           "type": "string",
-                          "id": 4
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "properties": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 5
+                          "id": 5,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "loggingConfig": {
                           "type": "LoggingConfig",
-                          "id": 6
+                          "id": 6,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -1765,7 +1813,10 @@
                         },
                         "clusterUuid": {
                           "type": "string",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         }
                       }
                     },
@@ -1773,19 +1824,31 @@
                       "fields": {
                         "state": {
                           "type": "State",
-                          "id": 1
+                          "id": 1,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "details": {
                           "type": "string",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "stateStartTime": {
                           "type": "google.protobuf.Timestamp",
-                          "id": 6
+                          "id": 6,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "substate": {
                           "type": "Substate",
-                          "id": 7
+                          "id": 7,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         }
                       },
                       "nested": {
@@ -1824,7 +1887,10 @@
                         },
                         "jobId": {
                           "type": "string",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -1892,7 +1958,10 @@
                       "fields": {
                         "reference": {
                           "type": "JobReference",
-                          "id": 1
+                          "id": 1,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "placement": {
                           "type": "JobPlacement",
@@ -1931,42 +2000,69 @@
                         },
                         "status": {
                           "type": "JobStatus",
-                          "id": 8
+                          "id": 8,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "statusHistory": {
                           "rule": "repeated",
                           "type": "JobStatus",
-                          "id": 13
+                          "id": 13,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "yarnApplications": {
                           "rule": "repeated",
                           "type": "YarnApplication",
-                          "id": 9
+                          "id": 9,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "submittedBy": {
                           "type": "string",
-                          "id": 10
+                          "id": 10,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "driverOutputResourceUri": {
                           "type": "string",
-                          "id": 17
+                          "id": 17,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "driverControlFilesUri": {
                           "type": "string",
-                          "id": 15
+                          "id": 15,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "labels": {
                           "keyType": "string",
                           "type": "string",
-                          "id": 18
+                          "id": 18,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "scheduling": {
                           "type": "JobScheduling",
-                          "id": 20
+                          "id": 20,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "jobUuid": {
                           "type": "string",
-                          "id": 22
+                          "id": 22,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         }
                       }
                     },
@@ -1974,7 +2070,10 @@
                       "fields": {
                         "maxFailuresPerHour": {
                           "type": "int32",
-                          "id": 1
+                          "id": 1,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -2003,7 +2102,10 @@
                         },
                         "requestId": {
                           "type": "string",
-                          "id": 4
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -2050,23 +2152,38 @@
                         },
                         "pageSize": {
                           "type": "int32",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "pageToken": {
                           "type": "string",
-                          "id": 3
+                          "id": 3,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "clusterName": {
                           "type": "string",
-                          "id": 4
+                          "id": 4,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "jobStateMatcher": {
                           "type": "JobStateMatcher",
-                          "id": 5
+                          "id": 5,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         },
                         "filter": {
                           "type": "string",
-                          "id": 7
+                          "id": 7,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       },
                       "nested": {
@@ -2123,11 +2240,17 @@
                         "jobs": {
                           "rule": "repeated",
                           "type": "Job",
-                          "id": 1
+                          "id": 1,
+                          "options": {
+                            "(google.api.field_behavior)": "OUTPUT_ONLY"
+                          }
                         },
                         "nextPageToken": {
                           "type": "string",
-                          "id": 2
+                          "id": 2,
+                          "options": {
+                            "(google.api.field_behavior)": "OPTIONAL"
+                          }
                         }
                       }
                     },
@@ -3946,18 +4069,6 @@
             "Empty": {
               "fields": {}
             },
-            "Timestamp": {
-              "fields": {
-                "seconds": {
-                  "type": "int64",
-                  "id": 1
-                },
-                "nanos": {
-                  "type": "int32",
-                  "id": 2
-                }
-              }
-            },
             "Any": {
               "fields": {
                 "type_url": {
@@ -3976,6 +4087,18 @@
                   "rule": "repeated",
                   "type": "string",
                   "id": 1
+                }
+              }
+            },
+            "Timestamp": {
+              "fields": {
+                "seconds": {
+                  "type": "int64",
+                  "id": 1
+                },
+                "nanos": {
+                  "type": "int32",
+                  "id": 2
                 }
               }
             }

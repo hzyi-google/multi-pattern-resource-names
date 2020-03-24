@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private Subscription() {
     name_ = "";
     topic_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -134,6 +135,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            filter_ = s;
+            break;
+          }
           case 106: {
             com.google.pubsub.v1.DeadLetterPolicy.Builder subBuilder = null;
             if (deadLetterPolicy_ != null) {
@@ -143,6 +150,19 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(deadLetterPolicy_);
               deadLetterPolicy_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 114: {
+            com.google.pubsub.v1.RetryPolicy.Builder subBuilder = null;
+            if (retryPolicy_ != null) {
+              subBuilder = retryPolicy_.toBuilder();
+            }
+            retryPolicy_ = input.readMessage(com.google.pubsub.v1.RetryPolicy.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(retryPolicy_);
+              retryPolicy_ = subBuilder.buildPartial();
             }
 
             break;
@@ -249,10 +269,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object topic_;
   /**
    * <pre>
-   * Required. The name of the topic from which this subscription is receiving messages.
-   * Format is `projects/{project}/topics/{topic}`.
-   * The value of this field will be `_deleted-topic_` if the topic has been
-   * deleted.
+   * Required. The name of the topic from which this subscription is receiving
+   * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+   * field will be `_deleted-topic_` if the topic has been deleted.
    * </pre>
    *
    * <code>string topic = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -272,10 +291,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the topic from which this subscription is receiving messages.
-   * Format is `projects/{project}/topics/{topic}`.
-   * The value of this field will be `_deleted-topic_` if the topic has been
-   * deleted.
+   * Required. The name of the topic from which this subscription is receiving
+   * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+   * field will be `_deleted-topic_` if the topic has been deleted.
    * </pre>
    *
    * <code>string topic = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -602,6 +620,62 @@ private static final long serialVersionUID = 0L;
     return getExpirationPolicy();
   }
 
+  public static final int FILTER_FIELD_NUMBER = 12;
+  private volatile java.lang.Object filter_;
+  /**
+   * <pre>
+   * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+   * then only `PubsubMessage`s whose `attributes` field matches the filter are
+   * delivered on this subscription. If empty, then no messages are filtered
+   * out.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string filter = 12;</code>
+   * @return The filter.
+   */
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+   * then only `PubsubMessage`s whose `attributes` field matches the filter are
+   * delivered on this subscription. If empty, then no messages are filtered
+   * out.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+   * API might be changed in backward-incompatible ways and is not recommended
+   * for production use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>string filter = 12;</code>
+   * @return The bytes for filter.
+   */
+  public com.google.protobuf.ByteString
+      getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DEAD_LETTER_POLICY_FIELD_NUMBER = 13;
   private com.google.pubsub.v1.DeadLetterPolicy deadLetterPolicy_;
   /**
@@ -664,6 +738,65 @@ private static final long serialVersionUID = 0L;
     return getDeadLetterPolicy();
   }
 
+  public static final int RETRY_POLICY_FIELD_NUMBER = 14;
+  private com.google.pubsub.v1.RetryPolicy retryPolicy_;
+  /**
+   * <pre>
+   * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   * subscription.
+   * If not set, the default retry policy is applied. This generally implies
+   * that messages will be retried as soon as possible for healthy subscribers.
+   * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+   * exceeded events for a given message.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+   * ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+   * @return Whether the retryPolicy field is set.
+   */
+  public boolean hasRetryPolicy() {
+    return retryPolicy_ != null;
+  }
+  /**
+   * <pre>
+   * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   * subscription.
+   * If not set, the default retry policy is applied. This generally implies
+   * that messages will be retried as soon as possible for healthy subscribers.
+   * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+   * exceeded events for a given message.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+   * ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+   * @return The retryPolicy.
+   */
+  public com.google.pubsub.v1.RetryPolicy getRetryPolicy() {
+    return retryPolicy_ == null ? com.google.pubsub.v1.RetryPolicy.getDefaultInstance() : retryPolicy_;
+  }
+  /**
+   * <pre>
+   * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   * subscription.
+   * If not set, the default retry policy is applied. This generally implies
+   * that messages will be retried as soon as possible for healthy subscribers.
+   * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+   * exceeded events for a given message.
+   * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+   * ways and is not recommended for production use. It is not subject to any
+   * SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+   */
+  public com.google.pubsub.v1.RetryPolicyOrBuilder getRetryPolicyOrBuilder() {
+    return getRetryPolicy();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -708,8 +841,14 @@ private static final long serialVersionUID = 0L;
     if (expirationPolicy_ != null) {
       output.writeMessage(11, getExpirationPolicy());
     }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, filter_);
+    }
     if (deadLetterPolicy_ != null) {
       output.writeMessage(13, getDeadLetterPolicy());
+    }
+    if (retryPolicy_ != null) {
+      output.writeMessage(14, getRetryPolicy());
     }
     unknownFields.writeTo(output);
   }
@@ -760,9 +899,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getExpirationPolicy());
     }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, filter_);
+    }
     if (deadLetterPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getDeadLetterPolicy());
+    }
+    if (retryPolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getRetryPolicy());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -806,10 +952,17 @@ private static final long serialVersionUID = 0L;
       if (!getExpirationPolicy()
           .equals(other.getExpirationPolicy())) return false;
     }
+    if (!getFilter()
+        .equals(other.getFilter())) return false;
     if (hasDeadLetterPolicy() != other.hasDeadLetterPolicy()) return false;
     if (hasDeadLetterPolicy()) {
       if (!getDeadLetterPolicy()
           .equals(other.getDeadLetterPolicy())) return false;
+    }
+    if (hasRetryPolicy() != other.hasRetryPolicy()) return false;
+    if (hasRetryPolicy()) {
+      if (!getRetryPolicy()
+          .equals(other.getRetryPolicy())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -850,9 +1003,15 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EXPIRATION_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getExpirationPolicy().hashCode();
     }
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     if (hasDeadLetterPolicy()) {
       hash = (37 * hash) + DEAD_LETTER_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getDeadLetterPolicy().hashCode();
+    }
+    if (hasRetryPolicy()) {
+      hash = (37 * hash) + RETRY_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getRetryPolicy().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1042,11 +1201,19 @@ private static final long serialVersionUID = 0L;
         expirationPolicy_ = null;
         expirationPolicyBuilder_ = null;
       }
+      filter_ = "";
+
       if (deadLetterPolicyBuilder_ == null) {
         deadLetterPolicy_ = null;
       } else {
         deadLetterPolicy_ = null;
         deadLetterPolicyBuilder_ = null;
+      }
+      if (retryPolicyBuilder_ == null) {
+        retryPolicy_ = null;
+      } else {
+        retryPolicy_ = null;
+        retryPolicyBuilder_ = null;
       }
       return this;
     }
@@ -1097,10 +1264,16 @@ private static final long serialVersionUID = 0L;
       } else {
         result.expirationPolicy_ = expirationPolicyBuilder_.build();
       }
+      result.filter_ = filter_;
       if (deadLetterPolicyBuilder_ == null) {
         result.deadLetterPolicy_ = deadLetterPolicy_;
       } else {
         result.deadLetterPolicy_ = deadLetterPolicyBuilder_.build();
+      }
+      if (retryPolicyBuilder_ == null) {
+        result.retryPolicy_ = retryPolicy_;
+      } else {
+        result.retryPolicy_ = retryPolicyBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1178,8 +1351,15 @@ private static final long serialVersionUID = 0L;
       if (other.hasExpirationPolicy()) {
         mergeExpirationPolicy(other.getExpirationPolicy());
       }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        onChanged();
+      }
       if (other.hasDeadLetterPolicy()) {
         mergeDeadLetterPolicy(other.getDeadLetterPolicy());
+      }
+      if (other.hasRetryPolicy()) {
+        mergeRetryPolicy(other.getRetryPolicy());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1335,10 +1515,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object topic_ = "";
     /**
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>string topic = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1358,10 +1537,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>string topic = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1382,10 +1560,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>string topic = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1404,10 +1581,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>string topic = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1421,10 +1597,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the topic from which this subscription is receiving messages.
-     * Format is `projects/{project}/topics/{topic}`.
-     * The value of this field will be `_deleted-topic_` if the topic has been
-     * deleted.
+     * Required. The name of the topic from which this subscription is receiving
+     * messages. Format is `projects/{project}/topics/{topic}`. The value of this
+     * field will be `_deleted-topic_` if the topic has been deleted.
      * </pre>
      *
      * <code>string topic = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -2384,6 +2559,132 @@ private static final long serialVersionUID = 0L;
       return expirationPolicyBuilder_;
     }
 
+    private java.lang.Object filter_ = "";
+    /**
+     * <pre>
+     * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+     * then only `PubsubMessage`s whose `attributes` field matches the filter are
+     * delivered on this subscription. If empty, then no messages are filtered
+     * out.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string filter = 12;</code>
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+     * then only `PubsubMessage`s whose `attributes` field matches the filter are
+     * delivered on this subscription. If empty, then no messages are filtered
+     * out.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string filter = 12;</code>
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+     * then only `PubsubMessage`s whose `attributes` field matches the filter are
+     * delivered on this subscription. If empty, then no messages are filtered
+     * out.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string filter = 12;</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+     * then only `PubsubMessage`s whose `attributes` field matches the filter are
+     * delivered on this subscription. If empty, then no messages are filtered
+     * out.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string filter = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * An expression written in the Cloud Pub/Sub filter language. If non-empty,
+     * then only `PubsubMessage`s whose `attributes` field matches the filter are
+     * delivered on this subscription. If empty, then no messages are filtered
+     * out.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This feature is part of a closed alpha release. This
+     * API might be changed in backward-incompatible ways and is not recommended
+     * for production use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>string filter = 12;</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.pubsub.v1.DeadLetterPolicy deadLetterPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.pubsub.v1.DeadLetterPolicy, com.google.pubsub.v1.DeadLetterPolicy.Builder, com.google.pubsub.v1.DeadLetterPolicyOrBuilder> deadLetterPolicyBuilder_;
@@ -2618,6 +2919,233 @@ private static final long serialVersionUID = 0L;
         deadLetterPolicy_ = null;
       }
       return deadLetterPolicyBuilder_;
+    }
+
+    private com.google.pubsub.v1.RetryPolicy retryPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.pubsub.v1.RetryPolicy, com.google.pubsub.v1.RetryPolicy.Builder, com.google.pubsub.v1.RetryPolicyOrBuilder> retryPolicyBuilder_;
+    /**
+     * <pre>
+     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * subscription.
+     * If not set, the default retry policy is applied. This generally implies
+     * that messages will be retried as soon as possible for healthy subscribers.
+     * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+     * exceeded events for a given message.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+     * ways and is not recommended for production use. It is not subject to any
+     * SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+     * @return Whether the retryPolicy field is set.
+     */
+    public boolean hasRetryPolicy() {
+      return retryPolicyBuilder_ != null || retryPolicy_ != null;
+    }
+    /**
+     * <pre>
+     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * subscription.
+     * If not set, the default retry policy is applied. This generally implies
+     * that messages will be retried as soon as possible for healthy subscribers.
+     * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+     * exceeded events for a given message.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+     * ways and is not recommended for production use. It is not subject to any
+     * SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+     * @return The retryPolicy.
+     */
+    public com.google.pubsub.v1.RetryPolicy getRetryPolicy() {
+      if (retryPolicyBuilder_ == null) {
+        return retryPolicy_ == null ? com.google.pubsub.v1.RetryPolicy.getDefaultInstance() : retryPolicy_;
+      } else {
+        return retryPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * subscription.
+     * If not set, the default retry policy is applied. This generally implies
+     * that messages will be retried as soon as possible for healthy subscribers.
+     * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+     * exceeded events for a given message.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+     * ways and is not recommended for production use. It is not subject to any
+     * SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+     */
+    public Builder setRetryPolicy(com.google.pubsub.v1.RetryPolicy value) {
+      if (retryPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        retryPolicy_ = value;
+        onChanged();
+      } else {
+        retryPolicyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * subscription.
+     * If not set, the default retry policy is applied. This generally implies
+     * that messages will be retried as soon as possible for healthy subscribers.
+     * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+     * exceeded events for a given message.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+     * ways and is not recommended for production use. It is not subject to any
+     * SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+     */
+    public Builder setRetryPolicy(
+        com.google.pubsub.v1.RetryPolicy.Builder builderForValue) {
+      if (retryPolicyBuilder_ == null) {
+        retryPolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        retryPolicyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * subscription.
+     * If not set, the default retry policy is applied. This generally implies
+     * that messages will be retried as soon as possible for healthy subscribers.
+     * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+     * exceeded events for a given message.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+     * ways and is not recommended for production use. It is not subject to any
+     * SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+     */
+    public Builder mergeRetryPolicy(com.google.pubsub.v1.RetryPolicy value) {
+      if (retryPolicyBuilder_ == null) {
+        if (retryPolicy_ != null) {
+          retryPolicy_ =
+            com.google.pubsub.v1.RetryPolicy.newBuilder(retryPolicy_).mergeFrom(value).buildPartial();
+        } else {
+          retryPolicy_ = value;
+        }
+        onChanged();
+      } else {
+        retryPolicyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * subscription.
+     * If not set, the default retry policy is applied. This generally implies
+     * that messages will be retried as soon as possible for healthy subscribers.
+     * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+     * exceeded events for a given message.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+     * ways and is not recommended for production use. It is not subject to any
+     * SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+     */
+    public Builder clearRetryPolicy() {
+      if (retryPolicyBuilder_ == null) {
+        retryPolicy_ = null;
+        onChanged();
+      } else {
+        retryPolicy_ = null;
+        retryPolicyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * subscription.
+     * If not set, the default retry policy is applied. This generally implies
+     * that messages will be retried as soon as possible for healthy subscribers.
+     * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+     * exceeded events for a given message.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+     * ways and is not recommended for production use. It is not subject to any
+     * SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+     */
+    public com.google.pubsub.v1.RetryPolicy.Builder getRetryPolicyBuilder() {
+      
+      onChanged();
+      return getRetryPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * subscription.
+     * If not set, the default retry policy is applied. This generally implies
+     * that messages will be retried as soon as possible for healthy subscribers.
+     * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+     * exceeded events for a given message.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+     * ways and is not recommended for production use. It is not subject to any
+     * SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+     */
+    public com.google.pubsub.v1.RetryPolicyOrBuilder getRetryPolicyOrBuilder() {
+      if (retryPolicyBuilder_ != null) {
+        return retryPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return retryPolicy_ == null ?
+            com.google.pubsub.v1.RetryPolicy.getDefaultInstance() : retryPolicy_;
+      }
+    }
+    /**
+     * <pre>
+     * A policy that specifies how Cloud Pub/Sub retries message delivery for this
+     * subscription.
+     * If not set, the default retry policy is applied. This generally implies
+     * that messages will be retried as soon as possible for healthy subscribers.
+     * RetryPolicy will be triggered on NACKs or acknowledgement deadline
+     * exceeded events for a given message.
+     * &lt;b&gt;EXPERIMENTAL:&lt;/b&gt; This API might be changed in backward-incompatible
+     * ways and is not recommended for production use. It is not subject to any
+     * SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.RetryPolicy retry_policy = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.pubsub.v1.RetryPolicy, com.google.pubsub.v1.RetryPolicy.Builder, com.google.pubsub.v1.RetryPolicyOrBuilder> 
+        getRetryPolicyFieldBuilder() {
+      if (retryPolicyBuilder_ == null) {
+        retryPolicyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.RetryPolicy, com.google.pubsub.v1.RetryPolicy.Builder, com.google.pubsub.v1.RetryPolicyOrBuilder>(
+                getRetryPolicy(),
+                getParentForChildren(),
+                isClean());
+        retryPolicy_ = null;
+      }
+      return retryPolicyBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -161,8 +161,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object subscription_;
   /**
    * <pre>
-   * Required. The subscription for which to initialize the new stream. This must be
-   * provided in the first request on the stream, and must not be set in
+   * Required. The subscription for which to initialize the new stream. This
+   * must be provided in the first request on the stream, and must not be set in
    * subsequent requests from client to server.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
@@ -184,8 +184,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The subscription for which to initialize the new stream. This must be
-   * provided in the first request on the stream, and must not be set in
+   * Required. The subscription for which to initialize the new stream. This
+   * must be provided in the first request on the stream, and must not be set in
    * subsequent requests from client to server.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
@@ -414,8 +414,8 @@ private static final long serialVersionUID = 0L;
   private int streamAckDeadlineSeconds_;
   /**
    * <pre>
-   * Required. The ack deadline to use for the stream. This must be provided in the
-   * first request on the stream, but it can also be updated on subsequent
+   * Required. The ack deadline to use for the stream. This must be provided in
+   * the first request on the stream, but it can also be updated on subsequent
    * requests from client to server. The minimum deadline you can specify is 10
    * seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
    * </pre>
@@ -941,8 +941,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object subscription_ = "";
     /**
      * <pre>
-     * Required. The subscription for which to initialize the new stream. This must be
-     * provided in the first request on the stream, and must not be set in
+     * Required. The subscription for which to initialize the new stream. This
+     * must be provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
@@ -964,8 +964,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The subscription for which to initialize the new stream. This must be
-     * provided in the first request on the stream, and must not be set in
+     * Required. The subscription for which to initialize the new stream. This
+     * must be provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
@@ -988,8 +988,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The subscription for which to initialize the new stream. This must be
-     * provided in the first request on the stream, and must not be set in
+     * Required. The subscription for which to initialize the new stream. This
+     * must be provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
@@ -1010,8 +1010,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The subscription for which to initialize the new stream. This must be
-     * provided in the first request on the stream, and must not be set in
+     * Required. The subscription for which to initialize the new stream. This
+     * must be provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
@@ -1027,8 +1027,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The subscription for which to initialize the new stream. This must be
-     * provided in the first request on the stream, and must not be set in
+     * Required. The subscription for which to initialize the new stream. This
+     * must be provided in the first request on the stream, and must not be set in
      * subsequent requests from client to server.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
@@ -1593,8 +1593,8 @@ private static final long serialVersionUID = 0L;
     private int streamAckDeadlineSeconds_ ;
     /**
      * <pre>
-     * Required. The ack deadline to use for the stream. This must be provided in the
-     * first request on the stream, but it can also be updated on subsequent
+     * Required. The ack deadline to use for the stream. This must be provided in
+     * the first request on the stream, but it can also be updated on subsequent
      * requests from client to server. The minimum deadline you can specify is 10
      * seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
      * </pre>
@@ -1607,8 +1607,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The ack deadline to use for the stream. This must be provided in the
-     * first request on the stream, but it can also be updated on subsequent
+     * Required. The ack deadline to use for the stream. This must be provided in
+     * the first request on the stream, but it can also be updated on subsequent
      * requests from client to server. The minimum deadline you can specify is 10
      * seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
      * </pre>
@@ -1625,8 +1625,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The ack deadline to use for the stream. This must be provided in the
-     * first request on the stream, but it can also be updated on subsequent
+     * Required. The ack deadline to use for the stream. This must be provided in
+     * the first request on the stream, but it can also be updated on subsequent
      * requests from client to server. The minimum deadline you can specify is 10
      * seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
      * </pre>

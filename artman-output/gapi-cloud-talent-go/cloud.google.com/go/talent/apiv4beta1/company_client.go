@@ -36,10 +36,10 @@ import (
 
 // CompanyCallOptions contains the retry settings for each method of CompanyClient.
 type CompanyCallOptions struct {
+	DeleteCompany []gax.CallOption
 	CreateCompany []gax.CallOption
 	GetCompany    []gax.CallOption
 	UpdateCompany []gax.CallOption
-	DeleteCompany []gax.CallOption
 	ListCompanies []gax.CallOption
 }
 
@@ -68,10 +68,10 @@ func defaultCompanyCallOptions() *CompanyCallOptions {
 		},
 	}
 	return &CompanyCallOptions{
+		DeleteCompany: retry[[2]string{"default", "idempotent"}],
 		CreateCompany: retry[[2]string{"default", "non_idempotent"}],
 		GetCompany:    retry[[2]string{"default", "idempotent"}],
 		UpdateCompany: retry[[2]string{"default", "non_idempotent"}],
-		DeleteCompany: retry[[2]string{"default", "idempotent"}],
 		ListCompanies: retry[[2]string{"default", "idempotent"}],
 	}
 }
@@ -131,6 +131,20 @@ func (c *CompanyClient) setGoogleClientInfo(keyval ...string) {
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
+// DeleteCompany deletes specified company.
+// Prerequisite: The company has no jobs associated with it.
+func (c *CompanyClient) DeleteCompany(ctx context.Context, req *talentpb.DeleteCompanyRequest, opts ...gax.CallOption) error {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.DeleteCompany[0:len(c.CallOptions.DeleteCompany):len(c.CallOptions.DeleteCompany)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.companyClient.DeleteCompany(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	return err
+}
+
 // CreateCompany creates a new company entity.
 func (c *CompanyClient) CreateCompany(ctx context.Context, req *talentpb.CreateCompanyRequest, opts ...gax.CallOption) (*talentpb.Company, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
@@ -180,20 +194,6 @@ func (c *CompanyClient) UpdateCompany(ctx context.Context, req *talentpb.UpdateC
 		return nil, err
 	}
 	return resp, nil
-}
-
-// DeleteCompany deletes specified company.
-// Prerequisite: The company has no jobs associated with it.
-func (c *CompanyClient) DeleteCompany(ctx context.Context, req *talentpb.DeleteCompanyRequest, opts ...gax.CallOption) error {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteCompany[0:len(c.CallOptions.DeleteCompany):len(c.CallOptions.DeleteCompany)], opts...)
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		_, err = c.companyClient.DeleteCompany(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	return err
 }
 
 // ListCompanies lists all companies associated with the project.

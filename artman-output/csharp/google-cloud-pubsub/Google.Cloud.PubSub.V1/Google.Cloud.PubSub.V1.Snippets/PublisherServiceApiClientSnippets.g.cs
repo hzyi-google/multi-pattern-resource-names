@@ -18,7 +18,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.Grpc;
-    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.Iam.V1;
     using apis = Google.Cloud.PubSub.V1;
     using Google.Protobuf;
@@ -38,12 +37,12 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for CreateTopicAsync</summary>
         public async Task CreateTopicAsync()
         {
-            // Snippet: CreateTopicAsync(TopicName,CallSettings)
-            // Additional: CreateTopicAsync(TopicName,CancellationToken)
+            // Snippet: CreateTopicAsync(TopicNameOneof,CallSettings)
+            // Additional: CreateTopicAsync(TopicNameOneof,CancellationToken)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = await PublisherServiceApiClient.CreateAsync();
             // Initialize request argument(s)
-            TopicName name = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof name = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             // Make the request
             Topic response = await publisherServiceApiClient.CreateTopicAsync(name);
             // End snippet
@@ -52,11 +51,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for CreateTopic</summary>
         public void CreateTopic()
         {
-            // Snippet: CreateTopic(TopicName,CallSettings)
+            // Snippet: CreateTopic(TopicNameOneof,CallSettings)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = PublisherServiceApiClient.Create();
             // Initialize request argument(s)
-            TopicName name = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof name = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             // Make the request
             Topic response = publisherServiceApiClient.CreateTopic(name);
             // End snippet
@@ -72,7 +71,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             Topic request = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             // Make the request
             Topic response = await publisherServiceApiClient.CreateTopicAsync(request);
@@ -88,7 +87,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             Topic request = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             // Make the request
             Topic response = publisherServiceApiClient.CreateTopic(request);
@@ -133,12 +132,12 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for PublishAsync</summary>
         public async Task PublishAsync()
         {
-            // Snippet: PublishAsync(TopicName,IEnumerable<PubsubMessage>,CallSettings)
-            // Additional: PublishAsync(TopicName,IEnumerable<PubsubMessage>,CancellationToken)
+            // Snippet: PublishAsync(TopicNameOneof,IEnumerable<PubsubMessage>,CallSettings)
+            // Additional: PublishAsync(TopicNameOneof,IEnumerable<PubsubMessage>,CancellationToken)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = await PublisherServiceApiClient.CreateAsync();
             // Initialize request argument(s)
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             IEnumerable<PubsubMessage> messages = new[]
             {
                 new PubsubMessage
@@ -154,11 +153,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for Publish</summary>
         public void Publish()
         {
-            // Snippet: Publish(TopicName,IEnumerable<PubsubMessage>,CallSettings)
+            // Snippet: Publish(TopicNameOneof,IEnumerable<PubsubMessage>,CallSettings)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = PublisherServiceApiClient.Create();
             // Initialize request argument(s)
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             IEnumerable<PubsubMessage> messages = new[]
             {
                 new PubsubMessage
@@ -181,7 +180,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             PublishRequest request = new PublishRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 Messages =
                 {
                     new PubsubMessage
@@ -204,7 +203,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             PublishRequest request = new PublishRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 Messages =
                 {
                     new PubsubMessage
@@ -221,12 +220,12 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for GetTopicAsync</summary>
         public async Task GetTopicAsync()
         {
-            // Snippet: GetTopicAsync(TopicName,CallSettings)
-            // Additional: GetTopicAsync(TopicName,CancellationToken)
+            // Snippet: GetTopicAsync(TopicNameOneof,CallSettings)
+            // Additional: GetTopicAsync(TopicNameOneof,CancellationToken)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = await PublisherServiceApiClient.CreateAsync();
             // Initialize request argument(s)
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             // Make the request
             Topic response = await publisherServiceApiClient.GetTopicAsync(topic);
             // End snippet
@@ -235,11 +234,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for GetTopic</summary>
         public void GetTopic()
         {
-            // Snippet: GetTopic(TopicName,CallSettings)
+            // Snippet: GetTopic(TopicNameOneof,CallSettings)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = PublisherServiceApiClient.Create();
             // Initialize request argument(s)
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             // Make the request
             Topic response = publisherServiceApiClient.GetTopic(topic);
             // End snippet
@@ -255,7 +254,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             GetTopicRequest request = new GetTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             // Make the request
             Topic response = await publisherServiceApiClient.GetTopicAsync(request);
@@ -271,7 +270,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             GetTopicRequest request = new GetTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             // Make the request
             Topic response = publisherServiceApiClient.GetTopic(request);
@@ -463,11 +462,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for ListTopicSubscriptionsAsync</summary>
         public async Task ListTopicSubscriptionsAsync()
         {
-            // Snippet: ListTopicSubscriptionsAsync(TopicName,string,int?,CallSettings)
+            // Snippet: ListTopicSubscriptionsAsync(TopicNameOneof,string,int?,CallSettings)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = await PublisherServiceApiClient.CreateAsync();
             // Initialize request argument(s)
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             // Make the request
             PagedAsyncEnumerable<ListTopicSubscriptionsResponse, SubscriptionName> response =
                 publisherServiceApiClient.ListTopicSubscriptionsAsync(topic);
@@ -507,11 +506,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for ListTopicSubscriptions</summary>
         public void ListTopicSubscriptions()
         {
-            // Snippet: ListTopicSubscriptions(TopicName,string,int?,CallSettings)
+            // Snippet: ListTopicSubscriptions(TopicNameOneof,string,int?,CallSettings)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = PublisherServiceApiClient.Create();
             // Initialize request argument(s)
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             // Make the request
             PagedEnumerable<ListTopicSubscriptionsResponse, SubscriptionName> response =
                 publisherServiceApiClient.ListTopicSubscriptions(topic);
@@ -557,7 +556,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             ListTopicSubscriptionsRequest request = new ListTopicSubscriptionsRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             // Make the request
             PagedAsyncEnumerable<ListTopicSubscriptionsResponse, SubscriptionName> response =
@@ -604,7 +603,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             ListTopicSubscriptionsRequest request = new ListTopicSubscriptionsRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             // Make the request
             PagedEnumerable<ListTopicSubscriptionsResponse, SubscriptionName> response =
@@ -645,12 +644,12 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for DeleteTopicAsync</summary>
         public async Task DeleteTopicAsync()
         {
-            // Snippet: DeleteTopicAsync(TopicName,CallSettings)
-            // Additional: DeleteTopicAsync(TopicName,CancellationToken)
+            // Snippet: DeleteTopicAsync(TopicNameOneof,CallSettings)
+            // Additional: DeleteTopicAsync(TopicNameOneof,CancellationToken)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = await PublisherServiceApiClient.CreateAsync();
             // Initialize request argument(s)
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             // Make the request
             await publisherServiceApiClient.DeleteTopicAsync(topic);
             // End snippet
@@ -659,11 +658,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for DeleteTopic</summary>
         public void DeleteTopic()
         {
-            // Snippet: DeleteTopic(TopicName,CallSettings)
+            // Snippet: DeleteTopic(TopicNameOneof,CallSettings)
             // Create client
             PublisherServiceApiClient publisherServiceApiClient = PublisherServiceApiClient.Create();
             // Initialize request argument(s)
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             // Make the request
             publisherServiceApiClient.DeleteTopic(topic);
             // End snippet
@@ -679,7 +678,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             DeleteTopicRequest request = new DeleteTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             // Make the request
             await publisherServiceApiClient.DeleteTopicAsync(request);
@@ -695,39 +694,10 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             DeleteTopicRequest request = new DeleteTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             // Make the request
             publisherServiceApiClient.DeleteTopic(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for SetIamPolicyAsync</summary>
-        public async Task SetIamPolicyAsync()
-        {
-            // Snippet: SetIamPolicyAsync(string,Policy,CallSettings)
-            // Additional: SetIamPolicyAsync(string,Policy,CancellationToken)
-            // Create client
-            PublisherServiceApiClient publisherServiceApiClient = await PublisherServiceApiClient.CreateAsync();
-            // Initialize request argument(s)
-            string formattedResource = new TopicName("[PROJECT]", "[TOPIC]").ToString();
-            Policy policy = new Policy();
-            // Make the request
-            Policy response = await publisherServiceApiClient.SetIamPolicyAsync(formattedResource, policy);
-            // End snippet
-        }
-
-        /// <summary>Snippet for SetIamPolicy</summary>
-        public void SetIamPolicy()
-        {
-            // Snippet: SetIamPolicy(string,Policy,CallSettings)
-            // Create client
-            PublisherServiceApiClient publisherServiceApiClient = PublisherServiceApiClient.Create();
-            // Initialize request argument(s)
-            string formattedResource = new TopicName("[PROJECT]", "[TOPIC]").ToString();
-            Policy policy = new Policy();
-            // Make the request
-            Policy response = publisherServiceApiClient.SetIamPolicy(formattedResource, policy);
             // End snippet
         }
 
@@ -741,7 +711,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             SetIamPolicyRequest request = new SetIamPolicyRequest
             {
-                Resource = new TopicName("[PROJECT]", "[TOPIC]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
                 Policy = new Policy(),
             };
             // Make the request
@@ -758,38 +728,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             SetIamPolicyRequest request = new SetIamPolicyRequest
             {
-                Resource = new TopicName("[PROJECT]", "[TOPIC]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
                 Policy = new Policy(),
             };
             // Make the request
             Policy response = publisherServiceApiClient.SetIamPolicy(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for GetIamPolicyAsync</summary>
-        public async Task GetIamPolicyAsync()
-        {
-            // Snippet: GetIamPolicyAsync(string,CallSettings)
-            // Additional: GetIamPolicyAsync(string,CancellationToken)
-            // Create client
-            PublisherServiceApiClient publisherServiceApiClient = await PublisherServiceApiClient.CreateAsync();
-            // Initialize request argument(s)
-            string formattedResource = new TopicName("[PROJECT]", "[TOPIC]").ToString();
-            // Make the request
-            Policy response = await publisherServiceApiClient.GetIamPolicyAsync(formattedResource);
-            // End snippet
-        }
-
-        /// <summary>Snippet for GetIamPolicy</summary>
-        public void GetIamPolicy()
-        {
-            // Snippet: GetIamPolicy(string,CallSettings)
-            // Create client
-            PublisherServiceApiClient publisherServiceApiClient = PublisherServiceApiClient.Create();
-            // Initialize request argument(s)
-            string formattedResource = new TopicName("[PROJECT]", "[TOPIC]").ToString();
-            // Make the request
-            Policy response = publisherServiceApiClient.GetIamPolicy(formattedResource);
             // End snippet
         }
 
@@ -803,7 +746,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             GetIamPolicyRequest request = new GetIamPolicyRequest
             {
-                Resource = new TopicName("[PROJECT]", "[TOPIC]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             Policy response = await publisherServiceApiClient.GetIamPolicyAsync(request);
@@ -819,39 +762,10 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             GetIamPolicyRequest request = new GetIamPolicyRequest
             {
-                Resource = new TopicName("[PROJECT]", "[TOPIC]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             Policy response = publisherServiceApiClient.GetIamPolicy(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for TestIamPermissionsAsync</summary>
-        public async Task TestIamPermissionsAsync()
-        {
-            // Snippet: TestIamPermissionsAsync(string,IEnumerable<string>,CallSettings)
-            // Additional: TestIamPermissionsAsync(string,IEnumerable<string>,CancellationToken)
-            // Create client
-            PublisherServiceApiClient publisherServiceApiClient = await PublisherServiceApiClient.CreateAsync();
-            // Initialize request argument(s)
-            string formattedResource = new TopicName("[PROJECT]", "[TOPIC]").ToString();
-            IEnumerable<string> permissions = new List<string>();
-            // Make the request
-            TestIamPermissionsResponse response = await publisherServiceApiClient.TestIamPermissionsAsync(formattedResource, permissions);
-            // End snippet
-        }
-
-        /// <summary>Snippet for TestIamPermissions</summary>
-        public void TestIamPermissions()
-        {
-            // Snippet: TestIamPermissions(string,IEnumerable<string>,CallSettings)
-            // Create client
-            PublisherServiceApiClient publisherServiceApiClient = PublisherServiceApiClient.Create();
-            // Initialize request argument(s)
-            string formattedResource = new TopicName("[PROJECT]", "[TOPIC]").ToString();
-            IEnumerable<string> permissions = new List<string>();
-            // Make the request
-            TestIamPermissionsResponse response = publisherServiceApiClient.TestIamPermissions(formattedResource, permissions);
             // End snippet
         }
 
@@ -865,7 +779,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             TestIamPermissionsRequest request = new TestIamPermissionsRequest
             {
-                Resource = new TopicName("[PROJECT]", "[TOPIC]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
                 Permissions = { },
             };
             // Make the request
@@ -882,7 +796,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             TestIamPermissionsRequest request = new TestIamPermissionsRequest
             {
-                Resource = new TopicName("[PROJECT]", "[TOPIC]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
                 Permissions = { },
             };
             // Make the request

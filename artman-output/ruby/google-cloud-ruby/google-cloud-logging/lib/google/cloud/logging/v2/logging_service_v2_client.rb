@@ -89,17 +89,11 @@ module Google
           ].freeze
 
 
-          BILLING_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
+          BILLING_ACCOUNT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "billingAccounts/{billing_account}"
           )
 
-          private_constant :BILLING_PATH_TEMPLATE
-
-          BILLING_LOG_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "billingAccounts/{billing_account}/logs/{log}"
-          )
-
-          private_constant :BILLING_LOG_PATH_TEMPLATE
+          private_constant :BILLING_ACCOUNT_PATH_TEMPLATE
 
           FOLDER_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "folders/{folder}"
@@ -107,29 +101,11 @@ module Google
 
           private_constant :FOLDER_PATH_TEMPLATE
 
-          FOLDER_LOG_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "folders/{folder}/logs/{log}"
-          )
-
-          private_constant :FOLDER_LOG_PATH_TEMPLATE
-
-          LOG_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "projects/{project}/logs/{log}"
-          )
-
-          private_constant :LOG_PATH_TEMPLATE
-
           ORGANIZATION_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "organizations/{organization}"
           )
 
           private_constant :ORGANIZATION_PATH_TEMPLATE
-
-          ORGANIZATION_LOG_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
-            "organizations/{organization}/logs/{log}"
-          )
-
-          private_constant :ORGANIZATION_LOG_PATH_TEMPLATE
 
           PROJECT_PATH_TEMPLATE = Google::Gax::PathTemplate.new(
             "projects/{project}"
@@ -137,23 +113,12 @@ module Google
 
           private_constant :PROJECT_PATH_TEMPLATE
 
-          # Returns a fully-qualified billing resource name string.
+          # Returns a fully-qualified billing_account resource name string.
           # @param billing_account [String]
           # @return [String]
-          def self.billing_path billing_account
-            BILLING_PATH_TEMPLATE.render(
+          def self.billing_account_path billing_account
+            BILLING_ACCOUNT_PATH_TEMPLATE.render(
               :"billing_account" => billing_account
-            )
-          end
-
-          # Returns a fully-qualified billing_log resource name string.
-          # @param billing_account [String]
-          # @param log [String]
-          # @return [String]
-          def self.billing_log_path billing_account, log
-            BILLING_LOG_PATH_TEMPLATE.render(
-              :"billing_account" => billing_account,
-              :"log" => log
             )
           end
 
@@ -166,45 +131,12 @@ module Google
             )
           end
 
-          # Returns a fully-qualified folder_log resource name string.
-          # @param folder [String]
-          # @param log [String]
-          # @return [String]
-          def self.folder_log_path folder, log
-            FOLDER_LOG_PATH_TEMPLATE.render(
-              :"folder" => folder,
-              :"log" => log
-            )
-          end
-
-          # Returns a fully-qualified log resource name string.
-          # @param project [String]
-          # @param log [String]
-          # @return [String]
-          def self.log_path project, log
-            LOG_PATH_TEMPLATE.render(
-              :"project" => project,
-              :"log" => log
-            )
-          end
-
           # Returns a fully-qualified organization resource name string.
           # @param organization [String]
           # @return [String]
           def self.organization_path organization
             ORGANIZATION_PATH_TEMPLATE.render(
               :"organization" => organization
-            )
-          end
-
-          # Returns a fully-qualified organization_log resource name string.
-          # @param organization [String]
-          # @param log [String]
-          # @return [String]
-          def self.organization_log_path organization, log
-            ORGANIZATION_LOG_PATH_TEMPLATE.render(
-              :"organization" => organization,
-              :"log" => log
             )
           end
 
@@ -288,6 +220,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "logging_service_v2_client_config.json"
@@ -321,6 +256,11 @@ module Google
               &Google::Logging::V2::LoggingServiceV2::Stub.method(:new)
             )
 
+            @write_log_entries = Google::Gax.create_api_call(
+              @logging_service_v2_stub.method(:write_log_entries),
+              defaults["write_log_entries"],
+              exception_transformer: exception_transformer
+            )
             @delete_log = Google::Gax.create_api_call(
               @logging_service_v2_stub.method(:delete_log),
               defaults["delete_log"],
@@ -328,11 +268,6 @@ module Google
               params_extractor: proc do |request|
                 {'log_name' => request.log_name}
               end
-            )
-            @write_log_entries = Google::Gax.create_api_call(
-              @logging_service_v2_stub.method(:write_log_entries),
-              defaults["write_log_entries"],
-              exception_transformer: exception_transformer
             )
             @list_log_entries = Google::Gax.create_api_call(
               @logging_service_v2_stub.method(:list_log_entries),
@@ -355,50 +290,6 @@ module Google
           end
 
           # Service calls
-
-          # Deletes all the log entries in a log. The log reappears if it receives new
-          # entries. Log entries written shortly before the delete operation might not
-          # be deleted. Entries received after the delete operation with a timestamp
-          # before the operation will be deleted.
-          #
-          # @param log_name [String]
-          #   Required. The resource name of the log to delete:
-          #
-          #       "projects/[PROJECT_ID]/logs/[LOG_ID]"
-          #       "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-          #       "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-          #       "folders/[FOLDER_ID]/logs/[LOG_ID]"
-          #
-          #   `[LOG_ID]` must be URL-encoded. For example,
-          #   `"projects/my-project-id/logs/syslog"`,
-          #   `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-          #   For more information about log names, see
-          #   {Google::Logging::V2::LogEntry LogEntry}.
-          # @param options [Google::Gax::CallOptions]
-          #   Overrides the default settings for this call, e.g, timeout,
-          #   retries, etc.
-          # @yield [result, operation] Access the result along with the RPC operation
-          # @yieldparam result []
-          # @yieldparam operation [GRPC::ActiveCall::Operation]
-          # @raise [Google::Gax::GaxError] if the RPC is aborted.
-          # @example
-          #   require "google/cloud/logging"
-          #
-          #   logging_client = Google::Cloud::Logging::Logging.new(version: :v2)
-          #   formatted_log_name = Google::Cloud::Logging::V2::LoggingServiceV2Client.log_path("[PROJECT]", "[LOG]")
-          #   logging_client.delete_log(formatted_log_name)
-
-          def delete_log \
-              log_name,
-              options: nil,
-              &block
-            req = {
-              log_name: log_name
-            }.delete_if { |_, v| v.nil? }
-            req = Google::Gax::to_proto(req, Google::Logging::V2::DeleteLogRequest)
-            @delete_log.call(req, options, &block)
-            nil
-          end
 
           # Writes log entries to Logging. This API method is the
           # only way to send log entries to Logging. This method
@@ -448,10 +339,10 @@ module Google
           #       "projects/my-project-id/logs/syslog"
           #       "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
           #
-          #   The permission <code>logging.logEntries.create</code> is needed on each
-          #   project, organization, billing account, or folder that is receiving
-          #   new log entries, whether the resource is specified in
-          #   <code>logName</code> or in an individual log entry.
+          #   The permission `logging.logEntries.create` is needed on each project,
+          #   organization, billing account, or folder that is receiving new log
+          #   entries, whether the resource is specified in `logName` or in an
+          #   individual log entry.
           # @param resource [Google::Api::MonitoredResource | Hash]
           #   Optional. A default monitored resource object that is assigned to all log
           #   entries in `entries` that do not specify a value for `resource`. Example:
@@ -516,6 +407,52 @@ module Google
             @write_log_entries.call(req, options, &block)
           end
 
+          # Deletes all the log entries in a log. The log reappears if it receives new
+          # entries. Log entries written shortly before the delete operation might not
+          # be deleted. Entries received after the delete operation with a timestamp
+          # before the operation will be deleted.
+          #
+          # @param log_name [String]
+          #   Required. The resource name of the log to delete:
+          #
+          #       "projects/[PROJECT_ID]/logs/[LOG_ID]"
+          #       "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+          #       "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+          #       "folders/[FOLDER_ID]/logs/[LOG_ID]"
+          #
+          #   `[LOG_ID]` must be URL-encoded. For example,
+          #   `"projects/my-project-id/logs/syslog"`,
+          #   `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
+          #   For more information about log names, see
+          #   {Google::Logging::V2::LogEntry LogEntry}.
+          # @param options [Google::Gax::CallOptions]
+          #   Overrides the default settings for this call, e.g, timeout,
+          #   retries, etc.
+          # @yield [result, operation] Access the result along with the RPC operation
+          # @yieldparam result []
+          # @yieldparam operation [GRPC::ActiveCall::Operation]
+          # @raise [Google::Gax::GaxError] if the RPC is aborted.
+          # @example
+          #   require "google/cloud/logging"
+          #
+          #   logging_client = Google::Cloud::Logging::Logging.new(version: :v2)
+          #
+          #   # TODO: Initialize `log_name`:
+          #   log_name = ''
+          #   logging_client.delete_log(log_name)
+
+          def delete_log \
+              log_name,
+              options: nil,
+              &block
+            req = {
+              log_name: log_name
+            }.delete_if { |_, v| v.nil? }
+            req = Google::Gax::to_proto(req, Google::Logging::V2::DeleteLogRequest)
+            @delete_log.call(req, options, &block)
+            nil
+          end
+
           # Lists log entries.  Use this method to retrieve log entries that originated
           # from a project/folder/organization/billing account.  For ways to export log
           # entries, see [Exporting Logs](https://cloud.google.com/logging/docs/export).
@@ -531,10 +468,6 @@ module Google
           #
           #
           #   Projects listed in the `project_ids` field are added to this list.
-          # @param project_ids [Array<String>]
-          #   Deprecated. Use `resource_names` instead.  One or more project identifiers
-          #   or project numbers from which to retrieve log entries.  Example:
-          #   `"my-project-1A"`.
           # @param filter [String]
           #   Optional. A filter that chooses which log entries to return.  See [Advanced
           #   Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
@@ -591,7 +524,6 @@ module Google
 
           def list_log_entries \
               resource_names,
-              project_ids: nil,
               filter: nil,
               order_by: nil,
               page_size: nil,
@@ -599,7 +531,6 @@ module Google
               &block
             req = {
               resource_names: resource_names,
-              project_ids: project_ids,
               filter: filter,
               order_by: order_by,
               page_size: page_size

@@ -18,7 +18,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.Grpc;
-    using Google.Api.Gax.ResourceNames;
     using apis = Google.Cloud.Talent.V4Beta1;
     using Google.Protobuf;
     using Google.Protobuf.WellKnownTypes;
@@ -34,6 +33,66 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
     /// <summary>Generated snippets</summary>
     public class GeneratedTenantServiceClientSnippets
     {
+        /// <summary>Snippet for DeleteTenantAsync</summary>
+        public async Task DeleteTenantAsync()
+        {
+            // Snippet: DeleteTenantAsync(TenantName,CallSettings)
+            // Additional: DeleteTenantAsync(TenantName,CancellationToken)
+            // Create client
+            TenantServiceClient tenantServiceClient = await TenantServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            TenantName name = new TenantName("[PROJECT]", "[TENANT]");
+            // Make the request
+            await tenantServiceClient.DeleteTenantAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteTenant</summary>
+        public void DeleteTenant()
+        {
+            // Snippet: DeleteTenant(TenantName,CallSettings)
+            // Create client
+            TenantServiceClient tenantServiceClient = TenantServiceClient.Create();
+            // Initialize request argument(s)
+            TenantName name = new TenantName("[PROJECT]", "[TENANT]");
+            // Make the request
+            tenantServiceClient.DeleteTenant(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteTenantAsync</summary>
+        public async Task DeleteTenantAsync_RequestObject()
+        {
+            // Snippet: DeleteTenantAsync(DeleteTenantRequest,CallSettings)
+            // Additional: DeleteTenantAsync(DeleteTenantRequest,CancellationToken)
+            // Create client
+            TenantServiceClient tenantServiceClient = await TenantServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            DeleteTenantRequest request = new DeleteTenantRequest
+            {
+                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
+            };
+            // Make the request
+            await tenantServiceClient.DeleteTenantAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteTenant</summary>
+        public void DeleteTenant_RequestObject()
+        {
+            // Snippet: DeleteTenant(DeleteTenantRequest,CallSettings)
+            // Create client
+            TenantServiceClient tenantServiceClient = TenantServiceClient.Create();
+            // Initialize request argument(s)
+            DeleteTenantRequest request = new DeleteTenantRequest
+            {
+                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
+            };
+            // Make the request
+            tenantServiceClient.DeleteTenant(request);
+            // End snippet
+        }
+
         /// <summary>Snippet for CreateTenantAsync</summary>
         public async Task CreateTenantAsync()
         {
@@ -215,66 +274,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             };
             // Make the request
             Tenant response = tenantServiceClient.UpdateTenant(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteTenantAsync</summary>
-        public async Task DeleteTenantAsync()
-        {
-            // Snippet: DeleteTenantAsync(TenantName,CallSettings)
-            // Additional: DeleteTenantAsync(TenantName,CancellationToken)
-            // Create client
-            TenantServiceClient tenantServiceClient = await TenantServiceClient.CreateAsync();
-            // Initialize request argument(s)
-            TenantName name = new TenantName("[PROJECT]", "[TENANT]");
-            // Make the request
-            await tenantServiceClient.DeleteTenantAsync(name);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteTenant</summary>
-        public void DeleteTenant()
-        {
-            // Snippet: DeleteTenant(TenantName,CallSettings)
-            // Create client
-            TenantServiceClient tenantServiceClient = TenantServiceClient.Create();
-            // Initialize request argument(s)
-            TenantName name = new TenantName("[PROJECT]", "[TENANT]");
-            // Make the request
-            tenantServiceClient.DeleteTenant(name);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteTenantAsync</summary>
-        public async Task DeleteTenantAsync_RequestObject()
-        {
-            // Snippet: DeleteTenantAsync(DeleteTenantRequest,CallSettings)
-            // Additional: DeleteTenantAsync(DeleteTenantRequest,CancellationToken)
-            // Create client
-            TenantServiceClient tenantServiceClient = await TenantServiceClient.CreateAsync();
-            // Initialize request argument(s)
-            DeleteTenantRequest request = new DeleteTenantRequest
-            {
-                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
-            };
-            // Make the request
-            await tenantServiceClient.DeleteTenantAsync(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteTenant</summary>
-        public void DeleteTenant_RequestObject()
-        {
-            // Snippet: DeleteTenant(DeleteTenantRequest,CallSettings)
-            // Create client
-            TenantServiceClient tenantServiceClient = TenantServiceClient.Create();
-            // Initialize request argument(s)
-            DeleteTenantRequest request = new DeleteTenantRequest
-            {
-                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
-            };
-            // Make the request
-            tenantServiceClient.DeleteTenant(request);
             // End snippet
         }
 

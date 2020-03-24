@@ -107,6 +107,8 @@ module Google
           end
 
           # Returns a fully-qualified topic resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param topic [String]
           # @return [String]
@@ -189,6 +191,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "publisher_client_config.json"
@@ -381,8 +386,8 @@ module Google
           #   A hash of the same form as `Google::Pubsub::V1::Topic`
           #   can also be provided.
           # @param update_mask [Google::Protobuf::FieldMask | Hash]
-          #   Required. Indicates which fields in the provided topic to update. Must be specified
-          #   and non-empty. Note that if `update_mask` contains
+          #   Required. Indicates which fields in the provided topic to update. Must be
+          #   specified and non-empty. Note that if `update_mask` contains
           #   "message_storage_policy" then the new value will be determined based on the
           #   policy configured at the project or organization level. The
           #   `message_storage_policy` must not be set in the `topic` provided above.
@@ -666,11 +671,13 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   publisher_client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-          #   formatted_resource = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+          #
+          #   # TODO: Initialize `resource`:
+          #   resource = ''
           #
           #   # TODO: Initialize `policy`:
           #   policy = {}
-          #   response = publisher_client.set_iam_policy(formatted_resource, policy)
+          #   response = publisher_client.set_iam_policy(resource, policy)
 
           def set_iam_policy \
               resource,
@@ -708,8 +715,10 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   publisher_client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-          #   formatted_resource = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
-          #   response = publisher_client.get_iam_policy(formatted_resource)
+          #
+          #   # TODO: Initialize `resource`:
+          #   resource = ''
+          #   response = publisher_client.get_iam_policy(resource)
 
           def get_iam_policy \
               resource,
@@ -752,11 +761,13 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   publisher_client = Google::Cloud::PubSub::Publisher.new(version: :v1)
-          #   formatted_resource = Google::Cloud::PubSub::V1::PublisherClient.topic_path("[PROJECT]", "[TOPIC]")
+          #
+          #   # TODO: Initialize `resource`:
+          #   resource = ''
           #
           #   # TODO: Initialize `permissions`:
           #   permissions = []
-          #   response = publisher_client.test_iam_permissions(formatted_resource, permissions)
+          #   response = publisher_client.test_iam_permissions(resource, permissions)
 
           def test_iam_permissions \
               resource,

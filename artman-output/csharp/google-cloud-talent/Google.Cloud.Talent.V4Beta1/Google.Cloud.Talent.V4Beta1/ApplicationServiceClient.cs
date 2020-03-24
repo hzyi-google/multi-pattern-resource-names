@@ -49,10 +49,10 @@ namespace Google.Cloud.Talent.V4Beta1
         private ApplicationServiceSettings(ApplicationServiceSettings existing) : base(existing)
         {
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
+            DeleteApplicationSettings = existing.DeleteApplicationSettings;
             CreateApplicationSettings = existing.CreateApplicationSettings;
             GetApplicationSettings = existing.GetApplicationSettings;
             UpdateApplicationSettings = existing.UpdateApplicationSettings;
-            DeleteApplicationSettings = existing.DeleteApplicationSettings;
             ListApplicationsSettings = existing.ListApplicationsSettings;
             OnCopy(existing);
         }
@@ -122,6 +122,36 @@ namespace Google.Cloud.Talent.V4Beta1
             maxDelay: sys::TimeSpan.FromMilliseconds(20000),
             delayMultiplier: 1.0
         );
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>ApplicationServiceClient.DeleteApplication</c> and <c>ApplicationServiceClient.DeleteApplicationAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>ApplicationServiceClient.DeleteApplication</c> and
+        /// <c>ApplicationServiceClient.DeleteApplicationAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
+        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings DeleteApplicationSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: IdempotentRetryFilter
+            )));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -209,36 +239,6 @@ namespace Google.Cloud.Talent.V4Beta1
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
                 retryFilter: NonIdempotentRetryFilter
-            )));
-
-        /// <summary>
-        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
-        /// <c>ApplicationServiceClient.DeleteApplication</c> and <c>ApplicationServiceClient.DeleteApplicationAsync</c>.
-        /// </summary>
-        /// <remarks>
-        /// The default <c>ApplicationServiceClient.DeleteApplication</c> and
-        /// <c>ApplicationServiceClient.DeleteApplicationAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
-        /// <list type="bullet">
-        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
-        /// <item><description>Retry delay multiplier: 1.3</description></item>
-        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
-        /// </list>
-        /// Retry will be attempted on the following response status codes:
-        /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
-        /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
-        /// </remarks>
-        public gaxgrpc::CallSettings DeleteApplicationSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
-            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
-                retryBackoff: GetDefaultRetryBackoff(),
-                timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
             )));
 
         /// <summary>
@@ -470,6 +470,197 @@ namespace Google.Cloud.Talent.V4Beta1
         public virtual ApplicationService.ApplicationServiceClient GrpcClient
         {
             get { throw new sys::NotImplementedException(); }
+        }
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the application to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteApplicationAsync(
+            ApplicationName name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteApplicationAsync(
+                new DeleteApplicationRequest
+                {
+                    ApplicationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the application to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteApplicationAsync(
+            ApplicationName name,
+            st::CancellationToken cancellationToken) => DeleteApplicationAsync(
+                name,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the application to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteApplication(
+            ApplicationName name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteApplication(
+                new DeleteApplicationRequest
+                {
+                    ApplicationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the application to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteApplicationAsync(
+            string name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteApplicationAsync(
+                new DeleteApplicationRequest
+                {
+                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the application to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteApplicationAsync(
+            string name,
+            st::CancellationToken cancellationToken) => DeleteApplicationAsync(
+                name,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the application to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteApplication(
+            string name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteApplication(
+                new DeleteApplicationRequest
+                {
+                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteApplicationAsync(
+            DeleteApplicationRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteApplicationAsync(
+            DeleteApplicationRequest request,
+            st::CancellationToken cancellationToken) => DeleteApplicationAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteApplication(
+            DeleteApplicationRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
         }
 
         /// <summary>
@@ -1019,197 +1210,6 @@ namespace Google.Cloud.Talent.V4Beta1
         }
 
         /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the application to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
-        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteApplicationAsync(
-            ApplicationName name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteApplicationAsync(
-                new DeleteApplicationRequest
-                {
-                    ApplicationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the application to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
-        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteApplicationAsync(
-            ApplicationName name,
-            st::CancellationToken cancellationToken) => DeleteApplicationAsync(
-                name,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the application to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
-        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteApplication(
-            ApplicationName name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteApplication(
-                new DeleteApplicationRequest
-                {
-                    ApplicationName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the application to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
-        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteApplicationAsync(
-            string name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteApplicationAsync(
-                new DeleteApplicationRequest
-                {
-                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the application to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
-        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteApplicationAsync(
-            string name,
-            st::CancellationToken cancellationToken) => DeleteApplicationAsync(
-                name,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the application to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
-        /// For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteApplication(
-            string name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteApplication(
-                new DeleteApplicationRequest
-                {
-                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteApplicationAsync(
-            DeleteApplicationRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteApplicationAsync(
-            DeleteApplicationRequest request,
-            st::CancellationToken cancellationToken) => DeleteApplicationAsync(
-                request,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteApplication(
-            DeleteApplicationRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
         /// Lists all applications associated with the profile.
         /// </summary>
         /// <param name="parent">
@@ -1402,10 +1402,10 @@ namespace Google.Cloud.Talent.V4Beta1
     /// </summary>
     public sealed partial class ApplicationServiceClientImpl : ApplicationServiceClient
     {
+        private readonly gaxgrpc::ApiCall<DeleteApplicationRequest, pbwkt::Empty> _callDeleteApplication;
         private readonly gaxgrpc::ApiCall<CreateApplicationRequest, Application> _callCreateApplication;
         private readonly gaxgrpc::ApiCall<GetApplicationRequest, Application> _callGetApplication;
         private readonly gaxgrpc::ApiCall<UpdateApplicationRequest, Application> _callUpdateApplication;
-        private readonly gaxgrpc::ApiCall<DeleteApplicationRequest, pbwkt::Empty> _callDeleteApplication;
         private readonly gaxgrpc::ApiCall<ListApplicationsRequest, ListApplicationsResponse> _callListApplications;
 
         /// <summary>
@@ -1418,6 +1418,9 @@ namespace Google.Cloud.Talent.V4Beta1
             GrpcClient = grpcClient;
             ApplicationServiceSettings effectiveSettings = settings ?? ApplicationServiceSettings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
+            _callDeleteApplication = clientHelper.BuildApiCall<DeleteApplicationRequest, pbwkt::Empty>(
+                GrpcClient.DeleteApplicationAsync, GrpcClient.DeleteApplication, effectiveSettings.DeleteApplicationSettings)
+                .WithGoogleRequestParam("name", request => request.Name);
             _callCreateApplication = clientHelper.BuildApiCall<CreateApplicationRequest, Application>(
                 GrpcClient.CreateApplicationAsync, GrpcClient.CreateApplication, effectiveSettings.CreateApplicationSettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
@@ -1427,20 +1430,17 @@ namespace Google.Cloud.Talent.V4Beta1
             _callUpdateApplication = clientHelper.BuildApiCall<UpdateApplicationRequest, Application>(
                 GrpcClient.UpdateApplicationAsync, GrpcClient.UpdateApplication, effectiveSettings.UpdateApplicationSettings)
                 .WithGoogleRequestParam("application.name", request => request.Application?.Name);
-            _callDeleteApplication = clientHelper.BuildApiCall<DeleteApplicationRequest, pbwkt::Empty>(
-                GrpcClient.DeleteApplicationAsync, GrpcClient.DeleteApplication, effectiveSettings.DeleteApplicationSettings)
-                .WithGoogleRequestParam("name", request => request.Name);
             _callListApplications = clientHelper.BuildApiCall<ListApplicationsRequest, ListApplicationsResponse>(
                 GrpcClient.ListApplicationsAsync, GrpcClient.ListApplications, effectiveSettings.ListApplicationsSettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callDeleteApplication);
+            Modify_DeleteApplicationApiCall(ref _callDeleteApplication);
             Modify_ApiCall(ref _callCreateApplication);
             Modify_CreateApplicationApiCall(ref _callCreateApplication);
             Modify_ApiCall(ref _callGetApplication);
             Modify_GetApplicationApiCall(ref _callGetApplication);
             Modify_ApiCall(ref _callUpdateApplication);
             Modify_UpdateApplicationApiCall(ref _callUpdateApplication);
-            Modify_ApiCall(ref _callDeleteApplication);
-            Modify_DeleteApplicationApiCall(ref _callDeleteApplication);
             Modify_ApiCall(ref _callListApplications);
             Modify_ListApplicationsApiCall(ref _callListApplications);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
@@ -1456,10 +1456,10 @@ namespace Google.Cloud.Talent.V4Beta1
 
         // Partial methods called for each ApiCall on construction.
         // Allows per-RPC-method modification of the underlying ApiCall object.
+        partial void Modify_DeleteApplicationApiCall(ref gaxgrpc::ApiCall<DeleteApplicationRequest, pbwkt::Empty> call);
         partial void Modify_CreateApplicationApiCall(ref gaxgrpc::ApiCall<CreateApplicationRequest, Application> call);
         partial void Modify_GetApplicationApiCall(ref gaxgrpc::ApiCall<GetApplicationRequest, Application> call);
         partial void Modify_UpdateApplicationApiCall(ref gaxgrpc::ApiCall<UpdateApplicationRequest, Application> call);
-        partial void Modify_DeleteApplicationApiCall(ref gaxgrpc::ApiCall<DeleteApplicationRequest, pbwkt::Empty> call);
         partial void Modify_ListApplicationsApiCall(ref gaxgrpc::ApiCall<ListApplicationsRequest, ListApplicationsResponse> call);
         partial void OnConstruction(ApplicationService.ApplicationServiceClient grpcClient, ApplicationServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
@@ -1471,11 +1471,48 @@ namespace Google.Cloud.Talent.V4Beta1
         // Partial methods called on each request.
         // Allows per-RPC-call modification to the request and CallSettings objects,
         // before the underlying RPC is performed.
+        partial void Modify_DeleteApplicationRequest(ref DeleteApplicationRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_CreateApplicationRequest(ref CreateApplicationRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_GetApplicationRequest(ref GetApplicationRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_UpdateApplicationRequest(ref UpdateApplicationRequest request, ref gaxgrpc::CallSettings settings);
-        partial void Modify_DeleteApplicationRequest(ref DeleteApplicationRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListApplicationsRequest(ref ListApplicationsRequest request, ref gaxgrpc::CallSettings settings);
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public override stt::Task DeleteApplicationAsync(
+            DeleteApplicationRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteApplicationRequest(ref request, ref callSettings);
+            return _callDeleteApplication.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Deletes specified application.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public override void DeleteApplication(
+            DeleteApplicationRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteApplicationRequest(ref request, ref callSettings);
+            _callDeleteApplication.Sync(request, callSettings);
+        }
 
         /// <summary>
         /// Creates a new application entity.
@@ -1595,43 +1632,6 @@ namespace Google.Cloud.Talent.V4Beta1
         {
             Modify_UpdateApplicationRequest(ref request, ref callSettings);
             return _callUpdateApplication.Sync(request, callSettings);
-        }
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public override stt::Task DeleteApplicationAsync(
-            DeleteApplicationRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteApplicationRequest(ref request, ref callSettings);
-            return _callDeleteApplication.Async(request, callSettings);
-        }
-
-        /// <summary>
-        /// Deletes specified application.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public override void DeleteApplication(
-            DeleteApplicationRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteApplicationRequest(ref request, ref callSettings);
-            _callDeleteApplication.Sync(request, callSettings);
         }
 
         /// <summary>

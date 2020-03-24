@@ -112,7 +112,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.util.List<com.google.cloud.dataproc.v1beta2.Job> getJobsList() {
     return jobs_;
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobOrBuilder> 
       getJobsOrBuilderList() {
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public int getJobsCount() {
     return jobs_.size();
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.cloud.dataproc.v1beta2.Job getJobs(int index) {
     return jobs_.get(index);
@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
    * Output only. Jobs list.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobsOrBuilder(
       int index) {
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
    * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The nextPageToken.
    */
   public java.lang.String getNextPageToken() {
@@ -191,7 +191,7 @@ private static final long serialVersionUID = 0L;
    * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for nextPageToken.
    */
   public com.google.protobuf.ByteString
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<com.google.cloud.dataproc.v1beta2.Job> getJobsList() {
       if (jobsBuilder_ == null) {
@@ -602,7 +602,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public int getJobsCount() {
       if (jobsBuilder_ == null) {
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dataproc.v1beta2.Job getJobs(int index) {
       if (jobsBuilder_ == null) {
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setJobs(
         int index, com.google.cloud.dataproc.v1beta2.Job value) {
@@ -651,7 +651,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setJobs(
         int index, com.google.cloud.dataproc.v1beta2.Job.Builder builderForValue) {
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addJobs(com.google.cloud.dataproc.v1beta2.Job value) {
       if (jobsBuilder_ == null) {
@@ -689,7 +689,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addJobs(
         int index, com.google.cloud.dataproc.v1beta2.Job value) {
@@ -710,7 +710,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addJobs(
         com.google.cloud.dataproc.v1beta2.Job.Builder builderForValue) {
@@ -728,7 +728,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addJobs(
         int index, com.google.cloud.dataproc.v1beta2.Job.Builder builderForValue) {
@@ -746,7 +746,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAllJobs(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.Job> values) {
@@ -765,7 +765,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearJobs() {
       if (jobsBuilder_ == null) {
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder removeJobs(int index) {
       if (jobsBuilder_ == null) {
@@ -799,7 +799,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dataproc.v1beta2.Job.Builder getJobsBuilder(
         int index) {
@@ -810,7 +810,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobsOrBuilder(
         int index) {
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobOrBuilder> 
          getJobsOrBuilderList() {
@@ -839,7 +839,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dataproc.v1beta2.Job.Builder addJobsBuilder() {
       return getJobsFieldBuilder().addBuilder(
@@ -850,7 +850,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dataproc.v1beta2.Job.Builder addJobsBuilder(
         int index) {
@@ -862,7 +862,7 @@ private static final long serialVersionUID = 0L;
      * Output only. Jobs list.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
+     * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<com.google.cloud.dataproc.v1beta2.Job.Builder> 
          getJobsBuilderList() {
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
@@ -913,7 +913,7 @@ private static final long serialVersionUID = 0L;
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for nextPageToken.
      */
     public com.google.protobuf.ByteString
@@ -936,7 +936,7 @@ private static final long serialVersionUID = 0L;
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
      */
@@ -957,7 +957,7 @@ private static final long serialVersionUID = 0L;
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
@@ -973,7 +973,7 @@ private static final long serialVersionUID = 0L;
      * `page_token` in a subsequent &lt;code&gt;ListJobsRequest&lt;/code&gt;.
      * </pre>
      *
-     * <code>string next_page_token = 2;</code>
+     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
      */

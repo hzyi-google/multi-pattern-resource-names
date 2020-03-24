@@ -47,81 +47,6 @@ var _ = io.EOF
 var _ = ptypes.MarshalAny
 var _ status.Status
 
-type mockApplicationServer struct {
-	// Embed for forward compatibility.
-	// Tests will keep working if more methods are added
-	// in the future.
-	talentpb.ApplicationServiceServer
-
-	reqs []proto.Message
-
-	// If set, all calls return this error.
-	err error
-
-	// responses to return if err == nil
-	resps []proto.Message
-}
-
-func (s *mockApplicationServer) CreateApplication(ctx context.Context, req *talentpb.CreateApplicationRequest) (*talentpb.Application, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*talentpb.Application), nil
-}
-
-func (s *mockApplicationServer) GetApplication(ctx context.Context, req *talentpb.GetApplicationRequest) (*talentpb.Application, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*talentpb.Application), nil
-}
-
-func (s *mockApplicationServer) UpdateApplication(ctx context.Context, req *talentpb.UpdateApplicationRequest) (*talentpb.Application, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*talentpb.Application), nil
-}
-
-func (s *mockApplicationServer) DeleteApplication(ctx context.Context, req *talentpb.DeleteApplicationRequest) (*emptypb.Empty, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*emptypb.Empty), nil
-}
-
-func (s *mockApplicationServer) ListApplications(ctx context.Context, req *talentpb.ListApplicationsRequest) (*talentpb.ListApplicationsResponse, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*talentpb.ListApplicationsResponse), nil
-}
-
 type mockCompanyServer struct {
 	// Embed for forward compatibility.
 	// Tests will keep working if more methods are added
@@ -195,60 +120,6 @@ func (s *mockCompanyServer) ListCompanies(ctx context.Context, req *talentpb.Lis
 		return nil, s.err
 	}
 	return s.resps[0].(*talentpb.ListCompaniesResponse), nil
-}
-
-type mockCompletionServer struct {
-	// Embed for forward compatibility.
-	// Tests will keep working if more methods are added
-	// in the future.
-	talentpb.CompletionServer
-
-	reqs []proto.Message
-
-	// If set, all calls return this error.
-	err error
-
-	// responses to return if err == nil
-	resps []proto.Message
-}
-
-func (s *mockCompletionServer) CompleteQuery(ctx context.Context, req *talentpb.CompleteQueryRequest) (*talentpb.CompleteQueryResponse, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*talentpb.CompleteQueryResponse), nil
-}
-
-type mockEventServer struct {
-	// Embed for forward compatibility.
-	// Tests will keep working if more methods are added
-	// in the future.
-	talentpb.EventServiceServer
-
-	reqs []proto.Message
-
-	// If set, all calls return this error.
-	err error
-
-	// responses to return if err == nil
-	resps []proto.Message
-}
-
-func (s *mockEventServer) CreateClientEvent(ctx context.Context, req *talentpb.CreateClientEventRequest) (*talentpb.ClientEvent, error) {
-	md, _ := metadata.FromIncomingContext(ctx)
-	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
-		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
-	}
-	s.reqs = append(s.reqs, req)
-	if s.err != nil {
-		return nil, s.err
-	}
-	return s.resps[0].(*talentpb.ClientEvent), nil
 }
 
 type mockJobServer struct {
@@ -473,6 +344,135 @@ func (s *mockProfileServer) SearchProfiles(ctx context.Context, req *talentpb.Se
 	return s.resps[0].(*talentpb.SearchProfilesResponse), nil
 }
 
+type mockEventServer struct {
+	// Embed for forward compatibility.
+	// Tests will keep working if more methods are added
+	// in the future.
+	talentpb.EventServiceServer
+
+	reqs []proto.Message
+
+	// If set, all calls return this error.
+	err error
+
+	// responses to return if err == nil
+	resps []proto.Message
+}
+
+func (s *mockEventServer) CreateClientEvent(ctx context.Context, req *talentpb.CreateClientEventRequest) (*talentpb.ClientEvent, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*talentpb.ClientEvent), nil
+}
+
+type mockApplicationServer struct {
+	// Embed for forward compatibility.
+	// Tests will keep working if more methods are added
+	// in the future.
+	talentpb.ApplicationServiceServer
+
+	reqs []proto.Message
+
+	// If set, all calls return this error.
+	err error
+
+	// responses to return if err == nil
+	resps []proto.Message
+}
+
+func (s *mockApplicationServer) CreateApplication(ctx context.Context, req *talentpb.CreateApplicationRequest) (*talentpb.Application, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*talentpb.Application), nil
+}
+
+func (s *mockApplicationServer) GetApplication(ctx context.Context, req *talentpb.GetApplicationRequest) (*talentpb.Application, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*talentpb.Application), nil
+}
+
+func (s *mockApplicationServer) UpdateApplication(ctx context.Context, req *talentpb.UpdateApplicationRequest) (*talentpb.Application, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*talentpb.Application), nil
+}
+
+func (s *mockApplicationServer) DeleteApplication(ctx context.Context, req *talentpb.DeleteApplicationRequest) (*emptypb.Empty, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*emptypb.Empty), nil
+}
+
+func (s *mockApplicationServer) ListApplications(ctx context.Context, req *talentpb.ListApplicationsRequest) (*talentpb.ListApplicationsResponse, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*talentpb.ListApplicationsResponse), nil
+}
+
+type mockCompletionServer struct {
+	// Embed for forward compatibility.
+	// Tests will keep working if more methods are added
+	// in the future.
+	talentpb.CompletionServer
+
+	reqs []proto.Message
+
+	// If set, all calls return this error.
+	err error
+
+	// responses to return if err == nil
+	resps []proto.Message
+}
+
+func (s *mockCompletionServer) CompleteQuery(ctx context.Context, req *talentpb.CompleteQueryRequest) (*talentpb.CompleteQueryResponse, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*talentpb.CompleteQueryResponse), nil
+}
+
 type mockTenantServer struct {
 	// Embed for forward compatibility.
 	// Tests will keep working if more methods are added
@@ -553,12 +553,12 @@ func (s *mockTenantServer) ListTenants(ctx context.Context, req *talentpb.ListTe
 var clientOpt option.ClientOption
 
 var (
-	mockApplication mockApplicationServer
 	mockCompany     mockCompanyServer
-	mockCompletion  mockCompletionServer
-	mockEvent       mockEventServer
 	mockJob         mockJobServer
 	mockProfile     mockProfileServer
+	mockEvent       mockEventServer
+	mockApplication mockApplicationServer
+	mockCompletion  mockCompletionServer
 	mockTenant      mockTenantServer
 )
 
@@ -566,12 +566,12 @@ func TestMain(m *testing.M) {
 	flag.Parse()
 
 	serv := grpc.NewServer()
-	talentpb.RegisterApplicationServiceServer(serv, &mockApplication)
 	talentpb.RegisterCompanyServiceServer(serv, &mockCompany)
-	talentpb.RegisterCompletionServer(serv, &mockCompletion)
-	talentpb.RegisterEventServiceServer(serv, &mockEvent)
 	talentpb.RegisterJobServiceServer(serv, &mockJob)
 	talentpb.RegisterProfileServiceServer(serv, &mockProfile)
+	talentpb.RegisterEventServiceServer(serv, &mockEvent)
+	talentpb.RegisterApplicationServiceServer(serv, &mockApplication)
+	talentpb.RegisterCompletionServer(serv, &mockCompletion)
 	talentpb.RegisterTenantServiceServer(serv, &mockTenant)
 
 	lis, err := net.Listen("tcp", "localhost:0")
@@ -589,346 +589,57 @@ func TestMain(m *testing.M) {
 	os.Exit(m.Run())
 }
 
-func TestApplicationServiceCreateApplication(t *testing.T) {
-	var name string = "name3373707"
-	var externalId string = "externalId-1153075697"
-	var profile string = "profile-309425751"
-	var job string = "job105405"
-	var company string = "company950484093"
-	var outcomeNotes string = "outcomeNotes-355961964"
-	var jobTitleSnippet string = "jobTitleSnippet-1100512972"
-	var expectedResponse = &talentpb.Application{
-		Name:            name,
-		ExternalId:      externalId,
-		Profile:         profile,
-		Job:             job,
-		Company:         company,
-		OutcomeNotes:    outcomeNotes,
-		JobTitleSnippet: jobTitleSnippet,
-	}
-
-	mockApplication.err = nil
-	mockApplication.reqs = nil
-
-	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
-	var application *talentpb.Application = &talentpb.Application{}
-	var request = &talentpb.CreateApplicationRequest{
-		Parent:      formattedParent,
-		Application: application,
-	}
-
-	c, err := NewApplicationClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.CreateApplication(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestApplicationServiceCreateApplicationError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockApplication.err = gstatus.Error(errCode, "test error")
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
-	var application *talentpb.Application = &talentpb.Application{}
-	var request = &talentpb.CreateApplicationRequest{
-		Parent:      formattedParent,
-		Application: application,
-	}
-
-	c, err := NewApplicationClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.CreateApplication(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestApplicationServiceGetApplication(t *testing.T) {
-	var name2 string = "name2-1052831874"
-	var externalId string = "externalId-1153075697"
-	var profile string = "profile-309425751"
-	var job string = "job105405"
-	var company string = "company950484093"
-	var outcomeNotes string = "outcomeNotes-355961964"
-	var jobTitleSnippet string = "jobTitleSnippet-1100512972"
-	var expectedResponse = &talentpb.Application{
-		Name:            name2,
-		ExternalId:      externalId,
-		Profile:         profile,
-		Job:             job,
-		Company:         company,
-		OutcomeNotes:    outcomeNotes,
-		JobTitleSnippet: jobTitleSnippet,
-	}
-
-	mockApplication.err = nil
-	mockApplication.reqs = nil
-
-	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
-
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s/applications/%s", "[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]")
-	var request = &talentpb.GetApplicationRequest{
-		Name: formattedName,
-	}
-
-	c, err := NewApplicationClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.GetApplication(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestApplicationServiceGetApplicationError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockApplication.err = gstatus.Error(errCode, "test error")
-
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s/applications/%s", "[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]")
-	var request = &talentpb.GetApplicationRequest{
-		Name: formattedName,
-	}
-
-	c, err := NewApplicationClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.GetApplication(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestApplicationServiceUpdateApplication(t *testing.T) {
-	var name string = "name3373707"
-	var externalId string = "externalId-1153075697"
-	var profile string = "profile-309425751"
-	var job string = "job105405"
-	var company string = "company950484093"
-	var outcomeNotes string = "outcomeNotes-355961964"
-	var jobTitleSnippet string = "jobTitleSnippet-1100512972"
-	var expectedResponse = &talentpb.Application{
-		Name:            name,
-		ExternalId:      externalId,
-		Profile:         profile,
-		Job:             job,
-		Company:         company,
-		OutcomeNotes:    outcomeNotes,
-		JobTitleSnippet: jobTitleSnippet,
-	}
-
-	mockApplication.err = nil
-	mockApplication.reqs = nil
-
-	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
-
-	var application *talentpb.Application = &talentpb.Application{}
-	var request = &talentpb.UpdateApplicationRequest{
-		Application: application,
-	}
-
-	c, err := NewApplicationClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.UpdateApplication(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestApplicationServiceUpdateApplicationError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockApplication.err = gstatus.Error(errCode, "test error")
-
-	var application *talentpb.Application = &talentpb.Application{}
-	var request = &talentpb.UpdateApplicationRequest{
-		Application: application,
-	}
-
-	c, err := NewApplicationClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.UpdateApplication(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestApplicationServiceDeleteApplication(t *testing.T) {
+func TestCompanyServiceDeleteCompany(t *testing.T) {
 	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
 
-	mockApplication.err = nil
-	mockApplication.reqs = nil
+	mockCompany.err = nil
+	mockCompany.reqs = nil
 
-	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
+	mockCompany.resps = append(mockCompany.resps[:0], expectedResponse)
 
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s/applications/%s", "[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]")
-	var request = &talentpb.DeleteApplicationRequest{
+	var formattedName string = fmt.Sprintf("projects/%s/companies/%s", "[PROJECT]", "[COMPANY]")
+	var request = &talentpb.DeleteCompanyRequest{
 		Name: formattedName,
 	}
 
-	c, err := NewApplicationClient(context.Background(), clientOpt)
+	c, err := NewCompanyClient(context.Background(), clientOpt)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	err = c.DeleteApplication(context.Background(), request)
+	err = c.DeleteCompany(context.Background(), request)
 
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
+	if want, got := request, mockCompany.reqs[0]; !proto.Equal(want, got) {
 		t.Errorf("wrong request %q, want %q", got, want)
 	}
 
 }
 
-func TestApplicationServiceDeleteApplicationError(t *testing.T) {
+func TestCompanyServiceDeleteCompanyError(t *testing.T) {
 	errCode := codes.PermissionDenied
-	mockApplication.err = gstatus.Error(errCode, "test error")
+	mockCompany.err = gstatus.Error(errCode, "test error")
 
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s/applications/%s", "[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]")
-	var request = &talentpb.DeleteApplicationRequest{
+	var formattedName string = fmt.Sprintf("projects/%s/companies/%s", "[PROJECT]", "[COMPANY]")
+	var request = &talentpb.DeleteCompanyRequest{
 		Name: formattedName,
 	}
 
-	c, err := NewApplicationClient(context.Background(), clientOpt)
+	c, err := NewCompanyClient(context.Background(), clientOpt)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	err = c.DeleteApplication(context.Background(), request)
+	err = c.DeleteCompany(context.Background(), request)
 
 	if st, ok := gstatus.FromError(err); !ok {
 		t.Errorf("got error %v, expected grpc error", err)
 	} else if c := st.Code(); c != errCode {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
-}
-func TestApplicationServiceListApplications(t *testing.T) {
-	var nextPageToken string = ""
-	var applicationsElement *talentpb.Application = &talentpb.Application{}
-	var applications = []*talentpb.Application{applicationsElement}
-	var expectedResponse = &talentpb.ListApplicationsResponse{
-		NextPageToken: nextPageToken,
-		Applications:  applications,
-	}
-
-	mockApplication.err = nil
-	mockApplication.reqs = nil
-
-	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
-	var request = &talentpb.ListApplicationsRequest{
-		Parent: formattedParent,
-	}
-
-	c, err := NewApplicationClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.ListApplications(context.Background(), request).Next()
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	want := (interface{})(expectedResponse.Applications[0])
-	got := (interface{})(resp)
-	var ok bool
-
-	switch want := (want).(type) {
-	case proto.Message:
-		ok = proto.Equal(want, got.(proto.Message))
-	default:
-		ok = want == got
-	}
-	if !ok {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestApplicationServiceListApplicationsError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockApplication.err = gstatus.Error(errCode, "test error")
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
-	var request = &talentpb.ListApplicationsRequest{
-		Parent: formattedParent,
-	}
-
-	c, err := NewApplicationClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.ListApplications(context.Background(), request).Next()
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
 }
 func TestCompanyServiceCreateCompany(t *testing.T) {
 	var name string = "name3373707"
@@ -959,7 +670,7 @@ func TestCompanyServiceCreateCompany(t *testing.T) {
 
 	mockCompany.resps = append(mockCompany.resps[:0], expectedResponse)
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var company *talentpb.Company = &talentpb.Company{}
 	var request = &talentpb.CreateCompanyRequest{
 		Parent:  formattedParent,
@@ -990,7 +701,7 @@ func TestCompanyServiceCreateCompanyError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockCompany.err = gstatus.Error(errCode, "test error")
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var company *talentpb.Company = &talentpb.Company{}
 	var request = &talentpb.CreateCompanyRequest{
 		Parent:  formattedParent,
@@ -1040,7 +751,7 @@ func TestCompanyServiceGetCompany(t *testing.T) {
 
 	mockCompany.resps = append(mockCompany.resps[:0], expectedResponse)
 
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/companies/%s", "[PROJECT]", "[TENANT]", "[COMPANY]")
+	var formattedName string = fmt.Sprintf("projects/%s/companies/%s", "[PROJECT]", "[COMPANY]")
 	var request = &talentpb.GetCompanyRequest{
 		Name: formattedName,
 	}
@@ -1069,7 +780,7 @@ func TestCompanyServiceGetCompanyError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockCompany.err = gstatus.Error(errCode, "test error")
 
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/companies/%s", "[PROJECT]", "[TENANT]", "[COMPANY]")
+	var formattedName string = fmt.Sprintf("projects/%s/companies/%s", "[PROJECT]", "[COMPANY]")
 	var request = &talentpb.GetCompanyRequest{
 		Name: formattedName,
 	}
@@ -1165,58 +876,6 @@ func TestCompanyServiceUpdateCompanyError(t *testing.T) {
 	}
 	_ = resp
 }
-func TestCompanyServiceDeleteCompany(t *testing.T) {
-	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
-
-	mockCompany.err = nil
-	mockCompany.reqs = nil
-
-	mockCompany.resps = append(mockCompany.resps[:0], expectedResponse)
-
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/companies/%s", "[PROJECT]", "[TENANT]", "[COMPANY]")
-	var request = &talentpb.DeleteCompanyRequest{
-		Name: formattedName,
-	}
-
-	c, err := NewCompanyClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteCompany(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockCompany.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-}
-
-func TestCompanyServiceDeleteCompanyError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockCompany.err = gstatus.Error(errCode, "test error")
-
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/companies/%s", "[PROJECT]", "[TENANT]", "[COMPANY]")
-	var request = &talentpb.DeleteCompanyRequest{
-		Name: formattedName,
-	}
-
-	c, err := NewCompanyClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteCompany(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-}
 func TestCompanyServiceListCompanies(t *testing.T) {
 	var nextPageToken string = ""
 	var companiesElement *talentpb.Company = &talentpb.Company{}
@@ -1231,7 +890,7 @@ func TestCompanyServiceListCompanies(t *testing.T) {
 
 	mockCompany.resps = append(mockCompany.resps[:0], expectedResponse)
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var request = &talentpb.ListCompaniesRequest{
 		Parent: formattedParent,
 	}
@@ -1270,7 +929,7 @@ func TestCompanyServiceListCompaniesError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockCompany.err = gstatus.Error(errCode, "test error")
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var request = &talentpb.ListCompaniesRequest{
 		Parent: formattedParent,
 	}
@@ -1289,136 +948,57 @@ func TestCompanyServiceListCompaniesError(t *testing.T) {
 	}
 	_ = resp
 }
-func TestCompletionCompleteQuery(t *testing.T) {
-	var expectedResponse *talentpb.CompleteQueryResponse = &talentpb.CompleteQueryResponse{}
+func TestJobServiceDeleteJob(t *testing.T) {
+	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
 
-	mockCompletion.err = nil
-	mockCompletion.reqs = nil
+	mockJob.err = nil
+	mockJob.reqs = nil
 
-	mockCompletion.resps = append(mockCompletion.resps[:0], expectedResponse)
+	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var query string = "query107944136"
-	var pageSize int32 = 883849137
-	var request = &talentpb.CompleteQueryRequest{
-		Parent:   formattedParent,
-		Query:    query,
-		PageSize: pageSize,
+	var name string = "name3373707"
+	var request = &talentpb.DeleteJobRequest{
+		Name: name,
 	}
 
-	c, err := NewCompletionClient(context.Background(), clientOpt)
+	c, err := NewJobClient(context.Background(), clientOpt)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	resp, err := c.CompleteQuery(context.Background(), request)
+	err = c.DeleteJob(context.Background(), request)
 
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	if want, got := request, mockCompletion.reqs[0]; !proto.Equal(want, got) {
+	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
 		t.Errorf("wrong request %q, want %q", got, want)
 	}
 
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
 }
 
-func TestCompletionCompleteQueryError(t *testing.T) {
+func TestJobServiceDeleteJobError(t *testing.T) {
 	errCode := codes.PermissionDenied
-	mockCompletion.err = gstatus.Error(errCode, "test error")
+	mockJob.err = gstatus.Error(errCode, "test error")
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var query string = "query107944136"
-	var pageSize int32 = 883849137
-	var request = &talentpb.CompleteQueryRequest{
-		Parent:   formattedParent,
-		Query:    query,
-		PageSize: pageSize,
+	var name string = "name3373707"
+	var request = &talentpb.DeleteJobRequest{
+		Name: name,
 	}
 
-	c, err := NewCompletionClient(context.Background(), clientOpt)
+	c, err := NewJobClient(context.Background(), clientOpt)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	resp, err := c.CompleteQuery(context.Background(), request)
+	err = c.DeleteJob(context.Background(), request)
 
 	if st, ok := gstatus.FromError(err); !ok {
 		t.Errorf("got error %v, expected grpc error", err)
 	} else if c := st.Code(); c != errCode {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
-	_ = resp
-}
-func TestEventServiceCreateClientEvent(t *testing.T) {
-	var requestId string = "requestId37109963"
-	var eventId string = "eventId278118624"
-	var eventNotes string = "eventNotes445073628"
-	var expectedResponse = &talentpb.ClientEvent{
-		RequestId:  requestId,
-		EventId:    eventId,
-		EventNotes: eventNotes,
-	}
-
-	mockEvent.err = nil
-	mockEvent.reqs = nil
-
-	mockEvent.resps = append(mockEvent.resps[:0], expectedResponse)
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var clientEvent *talentpb.ClientEvent = &talentpb.ClientEvent{}
-	var request = &talentpb.CreateClientEventRequest{
-		Parent:      formattedParent,
-		ClientEvent: clientEvent,
-	}
-
-	c, err := NewEventClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.CreateClientEvent(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockEvent.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestEventServiceCreateClientEventError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockEvent.err = gstatus.Error(errCode, "test error")
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var clientEvent *talentpb.ClientEvent = &talentpb.ClientEvent{}
-	var request = &talentpb.CreateClientEventRequest{
-		Parent:      formattedParent,
-		ClientEvent: clientEvent,
-	}
-
-	c, err := NewEventClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.CreateClientEvent(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
 }
 func TestJobServiceCreateJob(t *testing.T) {
 	var name string = "name3373707"
@@ -1453,7 +1033,7 @@ func TestJobServiceCreateJob(t *testing.T) {
 
 	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var job *talentpb.Job = &talentpb.Job{}
 	var request = &talentpb.CreateJobRequest{
 		Parent: formattedParent,
@@ -1484,7 +1064,7 @@ func TestJobServiceCreateJobError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockJob.err = gstatus.Error(errCode, "test error")
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var job *talentpb.Job = &talentpb.Job{}
 	var request = &talentpb.CreateJobRequest{
 		Parent: formattedParent,
@@ -1497,6 +1077,92 @@ func TestJobServiceCreateJobError(t *testing.T) {
 	}
 
 	resp, err := c.CreateJob(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestJobServiceBatchCreateJobs(t *testing.T) {
+	var expectedResponse *talentpb.JobOperationResult = &talentpb.JobOperationResult{}
+
+	mockJob.err = nil
+	mockJob.reqs = nil
+
+	any, err := ptypes.MarshalAny(expectedResponse)
+	if err != nil {
+		t.Fatal(err)
+	}
+	mockJob.resps = append(mockJob.resps[:0], &longrunningpb.Operation{
+		Name:   "longrunning-test",
+		Done:   true,
+		Result: &longrunningpb.Operation_Response{Response: any},
+	})
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var jobs []*talentpb.Job = nil
+	var request = &talentpb.BatchCreateJobsRequest{
+		Parent: formattedParent,
+		Jobs:   jobs,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	respLRO, err := c.BatchCreateJobs(context.Background(), request)
+	if err != nil {
+		t.Fatal(err)
+	}
+	resp, err := respLRO.Wait(context.Background())
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestJobServiceBatchCreateJobsError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockJob.err = nil
+	mockJob.resps = append(mockJob.resps[:0], &longrunningpb.Operation{
+		Name: "longrunning-test",
+		Done: true,
+		Result: &longrunningpb.Operation_Error{
+			Error: &status.Status{
+				Code:    int32(errCode),
+				Message: "test error",
+			},
+		},
+	})
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var jobs []*talentpb.Job = nil
+	var request = &talentpb.BatchCreateJobsRequest{
+		Parent: formattedParent,
+		Jobs:   jobs,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	respLRO, err := c.BatchCreateJobs(context.Background(), request)
+	if err != nil {
+		t.Fatal(err)
+	}
+	resp, err := respLRO.Wait(context.Background())
 
 	if st, ok := gstatus.FromError(err); !ok {
 		t.Errorf("got error %v, expected grpc error", err)
@@ -1538,9 +1204,9 @@ func TestJobServiceGetJob(t *testing.T) {
 
 	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
 
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/jobs/%s", "[PROJECT]", "[TENANT]", "[JOBS]")
+	var name string = "name3373707"
 	var request = &talentpb.GetJobRequest{
-		Name: formattedName,
+		Name: name,
 	}
 
 	c, err := NewJobClient(context.Background(), clientOpt)
@@ -1567,9 +1233,9 @@ func TestJobServiceGetJobError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockJob.err = gstatus.Error(errCode, "test error")
 
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/jobs/%s", "[PROJECT]", "[TENANT]", "[JOBS]")
+	var name string = "name3373707"
 	var request = &talentpb.GetJobRequest{
-		Name: formattedName,
+		Name: name,
 	}
 
 	c, err := NewJobClient(context.Background(), clientOpt)
@@ -1667,440 +1333,6 @@ func TestJobServiceUpdateJobError(t *testing.T) {
 	}
 	_ = resp
 }
-func TestJobServiceDeleteJob(t *testing.T) {
-	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
-
-	mockJob.err = nil
-	mockJob.reqs = nil
-
-	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
-
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/jobs/%s", "[PROJECT]", "[TENANT]", "[JOBS]")
-	var request = &talentpb.DeleteJobRequest{
-		Name: formattedName,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteJob(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-}
-
-func TestJobServiceDeleteJobError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockJob.err = gstatus.Error(errCode, "test error")
-
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/jobs/%s", "[PROJECT]", "[TENANT]", "[JOBS]")
-	var request = &talentpb.DeleteJobRequest{
-		Name: formattedName,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteJob(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-}
-func TestJobServiceListJobs(t *testing.T) {
-	var nextPageToken string = ""
-	var jobsElement *talentpb.Job = &talentpb.Job{}
-	var jobs = []*talentpb.Job{jobsElement}
-	var expectedResponse = &talentpb.ListJobsResponse{
-		NextPageToken: nextPageToken,
-		Jobs:          jobs,
-	}
-
-	mockJob.err = nil
-	mockJob.reqs = nil
-
-	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var filter string = "filter-1274492040"
-	var request = &talentpb.ListJobsRequest{
-		Parent: formattedParent,
-		Filter: filter,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.ListJobs(context.Background(), request).Next()
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	want := (interface{})(expectedResponse.Jobs[0])
-	got := (interface{})(resp)
-	var ok bool
-
-	switch want := (want).(type) {
-	case proto.Message:
-		ok = proto.Equal(want, got.(proto.Message))
-	default:
-		ok = want == got
-	}
-	if !ok {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestJobServiceListJobsError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockJob.err = gstatus.Error(errCode, "test error")
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var filter string = "filter-1274492040"
-	var request = &talentpb.ListJobsRequest{
-		Parent: formattedParent,
-		Filter: filter,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.ListJobs(context.Background(), request).Next()
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestJobServiceBatchDeleteJobs(t *testing.T) {
-	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
-
-	mockJob.err = nil
-	mockJob.reqs = nil
-
-	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var filter string = "filter-1274492040"
-	var request = &talentpb.BatchDeleteJobsRequest{
-		Parent: formattedParent,
-		Filter: filter,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.BatchDeleteJobs(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-}
-
-func TestJobServiceBatchDeleteJobsError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockJob.err = gstatus.Error(errCode, "test error")
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var filter string = "filter-1274492040"
-	var request = &talentpb.BatchDeleteJobsRequest{
-		Parent: formattedParent,
-		Filter: filter,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.BatchDeleteJobs(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-}
-func TestJobServiceSearchJobs(t *testing.T) {
-	var nextPageToken string = ""
-	var estimatedTotalSize int32 = 1882144769
-	var totalSize int32 = 705419236
-	var broadenedQueryJobsCount int32 = 1432104658
-	var matchingJobsElement *talentpb.SearchJobsResponse_MatchingJob = &talentpb.SearchJobsResponse_MatchingJob{}
-	var matchingJobs = []*talentpb.SearchJobsResponse_MatchingJob{matchingJobsElement}
-	var expectedResponse = &talentpb.SearchJobsResponse{
-		NextPageToken:           nextPageToken,
-		EstimatedTotalSize:      estimatedTotalSize,
-		TotalSize:               totalSize,
-		BroadenedQueryJobsCount: broadenedQueryJobsCount,
-		MatchingJobs:            matchingJobs,
-	}
-
-	mockJob.err = nil
-	mockJob.reqs = nil
-
-	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
-	var request = &talentpb.SearchJobsRequest{
-		Parent:          formattedParent,
-		RequestMetadata: requestMetadata,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.SearchJobs(context.Background(), request).Next()
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	want := (interface{})(expectedResponse.MatchingJobs[0])
-	got := (interface{})(resp)
-	var ok bool
-
-	switch want := (want).(type) {
-	case proto.Message:
-		ok = proto.Equal(want, got.(proto.Message))
-	default:
-		ok = want == got
-	}
-	if !ok {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestJobServiceSearchJobsError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockJob.err = gstatus.Error(errCode, "test error")
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
-	var request = &talentpb.SearchJobsRequest{
-		Parent:          formattedParent,
-		RequestMetadata: requestMetadata,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.SearchJobs(context.Background(), request).Next()
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestJobServiceSearchJobsForAlert(t *testing.T) {
-	var nextPageToken string = ""
-	var estimatedTotalSize int32 = 1882144769
-	var totalSize int32 = 705419236
-	var broadenedQueryJobsCount int32 = 1432104658
-	var matchingJobsElement *talentpb.SearchJobsResponse_MatchingJob = &talentpb.SearchJobsResponse_MatchingJob{}
-	var matchingJobs = []*talentpb.SearchJobsResponse_MatchingJob{matchingJobsElement}
-	var expectedResponse = &talentpb.SearchJobsResponse{
-		NextPageToken:           nextPageToken,
-		EstimatedTotalSize:      estimatedTotalSize,
-		TotalSize:               totalSize,
-		BroadenedQueryJobsCount: broadenedQueryJobsCount,
-		MatchingJobs:            matchingJobs,
-	}
-
-	mockJob.err = nil
-	mockJob.reqs = nil
-
-	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
-	var request = &talentpb.SearchJobsRequest{
-		Parent:          formattedParent,
-		RequestMetadata: requestMetadata,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.SearchJobsForAlert(context.Background(), request).Next()
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	want := (interface{})(expectedResponse.MatchingJobs[0])
-	got := (interface{})(resp)
-	var ok bool
-
-	switch want := (want).(type) {
-	case proto.Message:
-		ok = proto.Equal(want, got.(proto.Message))
-	default:
-		ok = want == got
-	}
-	if !ok {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestJobServiceSearchJobsForAlertError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockJob.err = gstatus.Error(errCode, "test error")
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
-	var request = &talentpb.SearchJobsRequest{
-		Parent:          formattedParent,
-		RequestMetadata: requestMetadata,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	resp, err := c.SearchJobsForAlert(context.Background(), request).Next()
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
-func TestJobServiceBatchCreateJobs(t *testing.T) {
-	var expectedResponse *talentpb.JobOperationResult = &talentpb.JobOperationResult{}
-
-	mockJob.err = nil
-	mockJob.reqs = nil
-
-	any, err := ptypes.MarshalAny(expectedResponse)
-	if err != nil {
-		t.Fatal(err)
-	}
-	mockJob.resps = append(mockJob.resps[:0], &longrunningpb.Operation{
-		Name:   "longrunning-test",
-		Done:   true,
-		Result: &longrunningpb.Operation_Response{Response: any},
-	})
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var jobs []*talentpb.Job = nil
-	var request = &talentpb.BatchCreateJobsRequest{
-		Parent: formattedParent,
-		Jobs:   jobs,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	respLRO, err := c.BatchCreateJobs(context.Background(), request)
-	if err != nil {
-		t.Fatal(err)
-	}
-	resp, err := respLRO.Wait(context.Background())
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
-		t.Errorf("wrong response %q, want %q)", got, want)
-	}
-}
-
-func TestJobServiceBatchCreateJobsError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockJob.err = nil
-	mockJob.resps = append(mockJob.resps[:0], &longrunningpb.Operation{
-		Name: "longrunning-test",
-		Done: true,
-		Result: &longrunningpb.Operation_Error{
-			Error: &status.Status{
-				Code:    int32(errCode),
-				Message: "test error",
-			},
-		},
-	})
-
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var jobs []*talentpb.Job = nil
-	var request = &talentpb.BatchCreateJobsRequest{
-		Parent: formattedParent,
-		Jobs:   jobs,
-	}
-
-	c, err := NewJobClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	respLRO, err := c.BatchCreateJobs(context.Background(), request)
-	if err != nil {
-		t.Fatal(err)
-	}
-	resp, err := respLRO.Wait(context.Background())
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
-	_ = resp
-}
 func TestJobServiceBatchUpdateJobs(t *testing.T) {
 	var expectedResponse *talentpb.JobOperationResult = &talentpb.JobOperationResult{}
 
@@ -2117,7 +1349,7 @@ func TestJobServiceBatchUpdateJobs(t *testing.T) {
 		Result: &longrunningpb.Operation_Response{Response: any},
 	})
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var jobs []*talentpb.Job = nil
 	var request = &talentpb.BatchUpdateJobsRequest{
 		Parent: formattedParent,
@@ -2162,7 +1394,7 @@ func TestJobServiceBatchUpdateJobsError(t *testing.T) {
 		},
 	})
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
 	var jobs []*talentpb.Job = nil
 	var request = &talentpb.BatchUpdateJobsRequest{
 		Parent: formattedParent,
@@ -2179,6 +1411,434 @@ func TestJobServiceBatchUpdateJobsError(t *testing.T) {
 		t.Fatal(err)
 	}
 	resp, err := respLRO.Wait(context.Background())
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestJobServiceBatchDeleteJobs(t *testing.T) {
+	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
+
+	mockJob.err = nil
+	mockJob.reqs = nil
+
+	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var filter string = "filter-1274492040"
+	var request = &talentpb.BatchDeleteJobsRequest{
+		Parent: formattedParent,
+		Filter: filter,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.BatchDeleteJobs(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+}
+
+func TestJobServiceBatchDeleteJobsError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockJob.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var filter string = "filter-1274492040"
+	var request = &talentpb.BatchDeleteJobsRequest{
+		Parent: formattedParent,
+		Filter: filter,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.BatchDeleteJobs(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+}
+func TestJobServiceListJobs(t *testing.T) {
+	var nextPageToken string = ""
+	var jobsElement *talentpb.Job = &talentpb.Job{}
+	var jobs = []*talentpb.Job{jobsElement}
+	var expectedResponse = &talentpb.ListJobsResponse{
+		NextPageToken: nextPageToken,
+		Jobs:          jobs,
+	}
+
+	mockJob.err = nil
+	mockJob.reqs = nil
+
+	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var filter string = "filter-1274492040"
+	var request = &talentpb.ListJobsRequest{
+		Parent: formattedParent,
+		Filter: filter,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.ListJobs(context.Background(), request).Next()
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	want := (interface{})(expectedResponse.Jobs[0])
+	got := (interface{})(resp)
+	var ok bool
+
+	switch want := (want).(type) {
+	case proto.Message:
+		ok = proto.Equal(want, got.(proto.Message))
+	default:
+		ok = want == got
+	}
+	if !ok {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestJobServiceListJobsError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockJob.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var filter string = "filter-1274492040"
+	var request = &talentpb.ListJobsRequest{
+		Parent: formattedParent,
+		Filter: filter,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.ListJobs(context.Background(), request).Next()
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestJobServiceSearchJobs(t *testing.T) {
+	var nextPageToken string = ""
+	var estimatedTotalSize int32 = 1882144769
+	var totalSize int32 = 705419236
+	var broadenedQueryJobsCount int32 = 1432104658
+	var matchingJobsElement *talentpb.SearchJobsResponse_MatchingJob = &talentpb.SearchJobsResponse_MatchingJob{}
+	var matchingJobs = []*talentpb.SearchJobsResponse_MatchingJob{matchingJobsElement}
+	var expectedResponse = &talentpb.SearchJobsResponse{
+		NextPageToken:           nextPageToken,
+		EstimatedTotalSize:      estimatedTotalSize,
+		TotalSize:               totalSize,
+		BroadenedQueryJobsCount: broadenedQueryJobsCount,
+		MatchingJobs:            matchingJobs,
+	}
+
+	mockJob.err = nil
+	mockJob.reqs = nil
+
+	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
+	var request = &talentpb.SearchJobsRequest{
+		Parent:          formattedParent,
+		RequestMetadata: requestMetadata,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.SearchJobs(context.Background(), request).Next()
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	want := (interface{})(expectedResponse.MatchingJobs[0])
+	got := (interface{})(resp)
+	var ok bool
+
+	switch want := (want).(type) {
+	case proto.Message:
+		ok = proto.Equal(want, got.(proto.Message))
+	default:
+		ok = want == got
+	}
+	if !ok {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestJobServiceSearchJobsError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockJob.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
+	var request = &talentpb.SearchJobsRequest{
+		Parent:          formattedParent,
+		RequestMetadata: requestMetadata,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.SearchJobs(context.Background(), request).Next()
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestJobServiceSearchJobsForAlert(t *testing.T) {
+	var nextPageToken string = ""
+	var estimatedTotalSize int32 = 1882144769
+	var totalSize int32 = 705419236
+	var broadenedQueryJobsCount int32 = 1432104658
+	var matchingJobsElement *talentpb.SearchJobsResponse_MatchingJob = &talentpb.SearchJobsResponse_MatchingJob{}
+	var matchingJobs = []*talentpb.SearchJobsResponse_MatchingJob{matchingJobsElement}
+	var expectedResponse = &talentpb.SearchJobsResponse{
+		NextPageToken:           nextPageToken,
+		EstimatedTotalSize:      estimatedTotalSize,
+		TotalSize:               totalSize,
+		BroadenedQueryJobsCount: broadenedQueryJobsCount,
+		MatchingJobs:            matchingJobs,
+	}
+
+	mockJob.err = nil
+	mockJob.reqs = nil
+
+	mockJob.resps = append(mockJob.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
+	var request = &talentpb.SearchJobsRequest{
+		Parent:          formattedParent,
+		RequestMetadata: requestMetadata,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.SearchJobsForAlert(context.Background(), request).Next()
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockJob.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	want := (interface{})(expectedResponse.MatchingJobs[0])
+	got := (interface{})(resp)
+	var ok bool
+
+	switch want := (want).(type) {
+	case proto.Message:
+		ok = proto.Equal(want, got.(proto.Message))
+	default:
+		ok = want == got
+	}
+	if !ok {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestJobServiceSearchJobsForAlertError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockJob.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
+	var request = &talentpb.SearchJobsRequest{
+		Parent:          formattedParent,
+		RequestMetadata: requestMetadata,
+	}
+
+	c, err := NewJobClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.SearchJobsForAlert(context.Background(), request).Next()
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestProfileServiceDeleteProfile(t *testing.T) {
+	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
+
+	mockProfile.err = nil
+	mockProfile.reqs = nil
+
+	mockProfile.resps = append(mockProfile.resps[:0], expectedResponse)
+
+	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
+	var request = &talentpb.DeleteProfileRequest{
+		Name: formattedName,
+	}
+
+	c, err := NewProfileClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteProfile(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockProfile.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+}
+
+func TestProfileServiceDeleteProfileError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockProfile.err = gstatus.Error(errCode, "test error")
+
+	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
+	var request = &talentpb.DeleteProfileRequest{
+		Name: formattedName,
+	}
+
+	c, err := NewProfileClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteProfile(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+}
+func TestProfileServiceSearchProfiles(t *testing.T) {
+	var estimatedTotalSize int64 = 1882144769
+	var nextPageToken string = ""
+	var resultSetId string = "resultSetId-770306950"
+	var summarizedProfilesElement *talentpb.SummarizedProfile = &talentpb.SummarizedProfile{}
+	var summarizedProfiles = []*talentpb.SummarizedProfile{summarizedProfilesElement}
+	var expectedResponse = &talentpb.SearchProfilesResponse{
+		EstimatedTotalSize: estimatedTotalSize,
+		NextPageToken:      nextPageToken,
+		ResultSetId:        resultSetId,
+		SummarizedProfiles: summarizedProfiles,
+	}
+
+	mockProfile.err = nil
+	mockProfile.reqs = nil
+
+	mockProfile.resps = append(mockProfile.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
+	var request = &talentpb.SearchProfilesRequest{
+		Parent:          formattedParent,
+		RequestMetadata: requestMetadata,
+	}
+
+	c, err := NewProfileClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.SearchProfiles(context.Background(), request).Next()
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockProfile.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	want := (interface{})(expectedResponse.SummarizedProfiles[0])
+	got := (interface{})(resp)
+	var ok bool
+
+	switch want := (want).(type) {
+	case proto.Message:
+		ok = proto.Equal(want, got.(proto.Message))
+	default:
+		ok = want == got
+	}
+	if !ok {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestProfileServiceSearchProfilesError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockProfile.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
+	var request = &talentpb.SearchProfilesRequest{
+		Parent:          formattedParent,
+		RequestMetadata: requestMetadata,
+	}
+
+	c, err := NewProfileClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.SearchProfiles(context.Background(), request).Next()
 
 	if st, ok := gstatus.FromError(err); !ok {
 		t.Errorf("got error %v, expected grpc error", err)
@@ -2476,51 +2136,118 @@ func TestProfileServiceUpdateProfileError(t *testing.T) {
 	}
 	_ = resp
 }
-func TestProfileServiceDeleteProfile(t *testing.T) {
+func TestEventServiceCreateClientEvent(t *testing.T) {
+	var requestId string = "requestId37109963"
+	var eventId string = "eventId278118624"
+	var eventNotes string = "eventNotes445073628"
+	var expectedResponse = &talentpb.ClientEvent{
+		RequestId:  requestId,
+		EventId:    eventId,
+		EventNotes: eventNotes,
+	}
+
+	mockEvent.err = nil
+	mockEvent.reqs = nil
+
+	mockEvent.resps = append(mockEvent.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var clientEvent *talentpb.ClientEvent = &talentpb.ClientEvent{}
+	var request = &talentpb.CreateClientEventRequest{
+		Parent:      formattedParent,
+		ClientEvent: clientEvent,
+	}
+
+	c, err := NewEventClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.CreateClientEvent(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockEvent.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestEventServiceCreateClientEventError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockEvent.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var clientEvent *talentpb.ClientEvent = &talentpb.ClientEvent{}
+	var request = &talentpb.CreateClientEventRequest{
+		Parent:      formattedParent,
+		ClientEvent: clientEvent,
+	}
+
+	c, err := NewEventClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.CreateClientEvent(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestApplicationServiceDeleteApplication(t *testing.T) {
 	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
 
-	mockProfile.err = nil
-	mockProfile.reqs = nil
+	mockApplication.err = nil
+	mockApplication.reqs = nil
 
-	mockProfile.resps = append(mockProfile.resps[:0], expectedResponse)
+	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
 
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
-	var request = &talentpb.DeleteProfileRequest{
+	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s/applications/%s", "[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]")
+	var request = &talentpb.DeleteApplicationRequest{
 		Name: formattedName,
 	}
 
-	c, err := NewProfileClient(context.Background(), clientOpt)
+	c, err := NewApplicationClient(context.Background(), clientOpt)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	err = c.DeleteProfile(context.Background(), request)
+	err = c.DeleteApplication(context.Background(), request)
 
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	if want, got := request, mockProfile.reqs[0]; !proto.Equal(want, got) {
+	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
 		t.Errorf("wrong request %q, want %q", got, want)
 	}
 
 }
 
-func TestProfileServiceDeleteProfileError(t *testing.T) {
+func TestApplicationServiceDeleteApplicationError(t *testing.T) {
 	errCode := codes.PermissionDenied
-	mockProfile.err = gstatus.Error(errCode, "test error")
+	mockApplication.err = gstatus.Error(errCode, "test error")
 
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
-	var request = &talentpb.DeleteProfileRequest{
+	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s/applications/%s", "[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]")
+	var request = &talentpb.DeleteApplicationRequest{
 		Name: formattedName,
 	}
 
-	c, err := NewProfileClient(context.Background(), clientOpt)
+	c, err := NewApplicationClient(context.Background(), clientOpt)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	err = c.DeleteProfile(context.Background(), request)
+	err = c.DeleteApplication(context.Background(), request)
 
 	if st, ok := gstatus.FromError(err); !ok {
 		t.Errorf("got error %v, expected grpc error", err)
@@ -2528,47 +2255,258 @@ func TestProfileServiceDeleteProfileError(t *testing.T) {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
 }
-func TestProfileServiceSearchProfiles(t *testing.T) {
-	var estimatedTotalSize int64 = 1882144769
-	var nextPageToken string = ""
-	var resultSetId string = "resultSetId-770306950"
-	var summarizedProfilesElement *talentpb.SummarizedProfile = &talentpb.SummarizedProfile{}
-	var summarizedProfiles = []*talentpb.SummarizedProfile{summarizedProfilesElement}
-	var expectedResponse = &talentpb.SearchProfilesResponse{
-		EstimatedTotalSize: estimatedTotalSize,
-		NextPageToken:      nextPageToken,
-		ResultSetId:        resultSetId,
-		SummarizedProfiles: summarizedProfiles,
+func TestApplicationServiceCreateApplication(t *testing.T) {
+	var name string = "name3373707"
+	var externalId string = "externalId-1153075697"
+	var profile string = "profile-309425751"
+	var job string = "job105405"
+	var company string = "company950484093"
+	var outcomeNotes string = "outcomeNotes-355961964"
+	var jobTitleSnippet string = "jobTitleSnippet-1100512972"
+	var expectedResponse = &talentpb.Application{
+		Name:            name,
+		ExternalId:      externalId,
+		Profile:         profile,
+		Job:             job,
+		Company:         company,
+		OutcomeNotes:    outcomeNotes,
+		JobTitleSnippet: jobTitleSnippet,
 	}
 
-	mockProfile.err = nil
-	mockProfile.reqs = nil
+	mockApplication.err = nil
+	mockApplication.reqs = nil
 
-	mockProfile.resps = append(mockProfile.resps[:0], expectedResponse)
+	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
-	var request = &talentpb.SearchProfilesRequest{
-		Parent:          formattedParent,
-		RequestMetadata: requestMetadata,
+	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
+	var application *talentpb.Application = &talentpb.Application{}
+	var request = &talentpb.CreateApplicationRequest{
+		Parent:      formattedParent,
+		Application: application,
 	}
 
-	c, err := NewProfileClient(context.Background(), clientOpt)
+	c, err := NewApplicationClient(context.Background(), clientOpt)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	resp, err := c.SearchProfiles(context.Background(), request).Next()
+	resp, err := c.CreateApplication(context.Background(), request)
 
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	if want, got := request, mockProfile.reqs[0]; !proto.Equal(want, got) {
+	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
 		t.Errorf("wrong request %q, want %q", got, want)
 	}
 
-	want := (interface{})(expectedResponse.SummarizedProfiles[0])
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestApplicationServiceCreateApplicationError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockApplication.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
+	var application *talentpb.Application = &talentpb.Application{}
+	var request = &talentpb.CreateApplicationRequest{
+		Parent:      formattedParent,
+		Application: application,
+	}
+
+	c, err := NewApplicationClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.CreateApplication(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestApplicationServiceGetApplication(t *testing.T) {
+	var name2 string = "name2-1052831874"
+	var externalId string = "externalId-1153075697"
+	var profile string = "profile-309425751"
+	var job string = "job105405"
+	var company string = "company950484093"
+	var outcomeNotes string = "outcomeNotes-355961964"
+	var jobTitleSnippet string = "jobTitleSnippet-1100512972"
+	var expectedResponse = &talentpb.Application{
+		Name:            name2,
+		ExternalId:      externalId,
+		Profile:         profile,
+		Job:             job,
+		Company:         company,
+		OutcomeNotes:    outcomeNotes,
+		JobTitleSnippet: jobTitleSnippet,
+	}
+
+	mockApplication.err = nil
+	mockApplication.reqs = nil
+
+	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
+
+	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s/applications/%s", "[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]")
+	var request = &talentpb.GetApplicationRequest{
+		Name: formattedName,
+	}
+
+	c, err := NewApplicationClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.GetApplication(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestApplicationServiceGetApplicationError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockApplication.err = gstatus.Error(errCode, "test error")
+
+	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s/applications/%s", "[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]")
+	var request = &talentpb.GetApplicationRequest{
+		Name: formattedName,
+	}
+
+	c, err := NewApplicationClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.GetApplication(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestApplicationServiceUpdateApplication(t *testing.T) {
+	var name string = "name3373707"
+	var externalId string = "externalId-1153075697"
+	var profile string = "profile-309425751"
+	var job string = "job105405"
+	var company string = "company950484093"
+	var outcomeNotes string = "outcomeNotes-355961964"
+	var jobTitleSnippet string = "jobTitleSnippet-1100512972"
+	var expectedResponse = &talentpb.Application{
+		Name:            name,
+		ExternalId:      externalId,
+		Profile:         profile,
+		Job:             job,
+		Company:         company,
+		OutcomeNotes:    outcomeNotes,
+		JobTitleSnippet: jobTitleSnippet,
+	}
+
+	mockApplication.err = nil
+	mockApplication.reqs = nil
+
+	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
+
+	var application *talentpb.Application = &talentpb.Application{}
+	var request = &talentpb.UpdateApplicationRequest{
+		Application: application,
+	}
+
+	c, err := NewApplicationClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.UpdateApplication(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestApplicationServiceUpdateApplicationError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockApplication.err = gstatus.Error(errCode, "test error")
+
+	var application *talentpb.Application = &talentpb.Application{}
+	var request = &talentpb.UpdateApplicationRequest{
+		Application: application,
+	}
+
+	c, err := NewApplicationClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.UpdateApplication(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestApplicationServiceListApplications(t *testing.T) {
+	var nextPageToken string = ""
+	var applicationsElement *talentpb.Application = &talentpb.Application{}
+	var applications = []*talentpb.Application{applicationsElement}
+	var expectedResponse = &talentpb.ListApplicationsResponse{
+		NextPageToken: nextPageToken,
+		Applications:  applications,
+	}
+
+	mockApplication.err = nil
+	mockApplication.reqs = nil
+
+	mockApplication.resps = append(mockApplication.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
+	var request = &talentpb.ListApplicationsRequest{
+		Parent: formattedParent,
+	}
+
+	c, err := NewApplicationClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.ListApplications(context.Background(), request).Next()
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockApplication.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	want := (interface{})(expectedResponse.Applications[0])
 	got := (interface{})(resp)
 	var ok bool
 
@@ -2583,23 +2521,21 @@ func TestProfileServiceSearchProfiles(t *testing.T) {
 	}
 }
 
-func TestProfileServiceSearchProfilesError(t *testing.T) {
+func TestApplicationServiceListApplicationsError(t *testing.T) {
 	errCode := codes.PermissionDenied
-	mockProfile.err = gstatus.Error(errCode, "test error")
+	mockApplication.err = gstatus.Error(errCode, "test error")
 
-	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var requestMetadata *talentpb.RequestMetadata = &talentpb.RequestMetadata{}
-	var request = &talentpb.SearchProfilesRequest{
-		Parent:          formattedParent,
-		RequestMetadata: requestMetadata,
+	var formattedParent string = fmt.Sprintf("projects/%s/tenants/%s/profiles/%s", "[PROJECT]", "[TENANT]", "[PROFILE]")
+	var request = &talentpb.ListApplicationsRequest{
+		Parent: formattedParent,
 	}
 
-	c, err := NewProfileClient(context.Background(), clientOpt)
+	c, err := NewApplicationClient(context.Background(), clientOpt)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	resp, err := c.SearchProfiles(context.Background(), request).Next()
+	resp, err := c.ListApplications(context.Background(), request).Next()
 
 	if st, ok := gstatus.FromError(err); !ok {
 		t.Errorf("got error %v, expected grpc error", err)
@@ -2607,6 +2543,122 @@ func TestProfileServiceSearchProfilesError(t *testing.T) {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
 	_ = resp
+}
+func TestCompletionCompleteQuery(t *testing.T) {
+	var expectedResponse *talentpb.CompleteQueryResponse = &talentpb.CompleteQueryResponse{}
+
+	mockCompletion.err = nil
+	mockCompletion.reqs = nil
+
+	mockCompletion.resps = append(mockCompletion.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var query string = "query107944136"
+	var pageSize int32 = 883849137
+	var request = &talentpb.CompleteQueryRequest{
+		Parent:   formattedParent,
+		Query:    query,
+		PageSize: pageSize,
+	}
+
+	c, err := NewCompletionClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.CompleteQuery(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockCompletion.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestCompletionCompleteQueryError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockCompletion.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s", "[PROJECT]")
+	var query string = "query107944136"
+	var pageSize int32 = 883849137
+	var request = &talentpb.CompleteQueryRequest{
+		Parent:   formattedParent,
+		Query:    query,
+		PageSize: pageSize,
+	}
+
+	c, err := NewCompletionClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.CompleteQuery(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestTenantServiceDeleteTenant(t *testing.T) {
+	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
+
+	mockTenant.err = nil
+	mockTenant.reqs = nil
+
+	mockTenant.resps = append(mockTenant.resps[:0], expectedResponse)
+
+	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var request = &talentpb.DeleteTenantRequest{
+		Name: formattedName,
+	}
+
+	c, err := NewTenantClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteTenant(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockTenant.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+}
+
+func TestTenantServiceDeleteTenantError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockTenant.err = gstatus.Error(errCode, "test error")
+
+	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
+	var request = &talentpb.DeleteTenantRequest{
+		Name: formattedName,
+	}
+
+	c, err := NewTenantClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteTenant(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
 }
 func TestTenantServiceCreateTenant(t *testing.T) {
 	var name string = "name3373707"
@@ -2794,58 +2846,6 @@ func TestTenantServiceUpdateTenantError(t *testing.T) {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
 	_ = resp
-}
-func TestTenantServiceDeleteTenant(t *testing.T) {
-	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
-
-	mockTenant.err = nil
-	mockTenant.reqs = nil
-
-	mockTenant.resps = append(mockTenant.resps[:0], expectedResponse)
-
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var request = &talentpb.DeleteTenantRequest{
-		Name: formattedName,
-	}
-
-	c, err := NewTenantClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteTenant(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockTenant.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-}
-
-func TestTenantServiceDeleteTenantError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockTenant.err = gstatus.Error(errCode, "test error")
-
-	var formattedName string = fmt.Sprintf("projects/%s/tenants/%s", "[PROJECT]", "[TENANT]")
-	var request = &talentpb.DeleteTenantRequest{
-		Name: formattedName,
-	}
-
-	c, err := NewTenantClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteTenant(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
 }
 func TestTenantServiceListTenants(t *testing.T) {
 	var nextPageToken string = ""

@@ -43,7 +43,7 @@ public interface CreateExclusionRequestOrBuilder extends
    * that is not already used in the parent resource.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the exclusion field is set.
    */
   boolean hasExclusion();
@@ -53,7 +53,7 @@ public interface CreateExclusionRequestOrBuilder extends
    * that is not already used in the parent resource.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The exclusion.
    */
   com.google.logging.v2.LogExclusion getExclusion();
@@ -63,7 +63,7 @@ public interface CreateExclusionRequestOrBuilder extends
    * that is not already used in the parent resource.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder();
 }

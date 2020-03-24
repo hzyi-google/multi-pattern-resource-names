@@ -292,7 +292,7 @@ class CompletionClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const query = '';
    * const pageSize = 0;
    * const request = {
@@ -331,6 +331,7 @@ class CompletionClient {
   // --------------------
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified company resource name string.
    *
    * @param {String} project
@@ -347,6 +348,7 @@ class CompletionClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified company_without_tenant resource name string.
    *
    * @param {String} project
@@ -387,6 +389,7 @@ class CompletionClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyName from a company resource.
    *
    * @param {String} companyName
@@ -400,6 +403,7 @@ class CompletionClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyName from a company resource.
    *
    * @param {String} companyName
@@ -413,6 +417,7 @@ class CompletionClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyName from a company resource.
    *
    * @param {String} companyName
@@ -426,6 +431,7 @@ class CompletionClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyWithoutTenantName from a company_without_tenant resource.
    *
    * @param {String} companyWithoutTenantName
@@ -439,6 +445,7 @@ class CompletionClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyWithoutTenantName from a company_without_tenant resource.
    *
    * @param {String} companyWithoutTenantName

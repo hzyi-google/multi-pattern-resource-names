@@ -141,8 +141,11 @@ private static final long serialVersionUID = 0L;
   private long rowNumber_;
   /**
    * <pre>
-   * Absolute number of the row from the beginning of the table at the time
-   * of scanning.
+   * Row number inferred at the time the table was scanned. This value is
+   * nondeterministic, cannot be queried, and may be null for inspection
+   * jobs. To locate findings within a table, specify
+   * `inspect_job.storage_config.big_query_options.identifying_fields` in
+   * `CreateDlpJobRequest`.
    * </pre>
    *
    * <code>int64 row_number = 2;</code>
@@ -647,8 +650,11 @@ private static final long serialVersionUID = 0L;
     private long rowNumber_ ;
     /**
      * <pre>
-     * Absolute number of the row from the beginning of the table at the time
-     * of scanning.
+     * Row number inferred at the time the table was scanned. This value is
+     * nondeterministic, cannot be queried, and may be null for inspection
+     * jobs. To locate findings within a table, specify
+     * `inspect_job.storage_config.big_query_options.identifying_fields` in
+     * `CreateDlpJobRequest`.
      * </pre>
      *
      * <code>int64 row_number = 2;</code>
@@ -659,8 +665,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Absolute number of the row from the beginning of the table at the time
-     * of scanning.
+     * Row number inferred at the time the table was scanned. This value is
+     * nondeterministic, cannot be queried, and may be null for inspection
+     * jobs. To locate findings within a table, specify
+     * `inspect_job.storage_config.big_query_options.identifying_fields` in
+     * `CreateDlpJobRequest`.
      * </pre>
      *
      * <code>int64 row_number = 2;</code>
@@ -675,8 +684,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Absolute number of the row from the beginning of the table at the time
-     * of scanning.
+     * Row number inferred at the time the table was scanned. This value is
+     * nondeterministic, cannot be queried, and may be null for inspection
+     * jobs. To locate findings within a table, specify
+     * `inspect_job.storage_config.big_query_options.identifying_fields` in
+     * `CreateDlpJobRequest`.
      * </pre>
      *
      * <code>int64 row_number = 2;</code>

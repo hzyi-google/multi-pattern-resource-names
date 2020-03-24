@@ -95,8 +95,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object sinkName_;
   /**
    * <pre>
-   * Required. The full resource name of the sink to delete, including the
-   * parent resource and the sink identifier:
+   * Required. The full resource name of the sink to delete, including the parent
+   * resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -121,8 +121,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The full resource name of the sink to delete, including the
-   * parent resource and the sink identifier:
+   * Required. The full resource name of the sink to delete, including the parent
+   * resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -456,8 +456,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object sinkName_ = "";
     /**
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -482,8 +482,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -509,8 +509,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -534,8 +534,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -554,8 +554,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full resource name of the sink to delete, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to delete, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"

@@ -36,10 +36,10 @@ import (
 
 // ApplicationCallOptions contains the retry settings for each method of ApplicationClient.
 type ApplicationCallOptions struct {
+	DeleteApplication []gax.CallOption
 	CreateApplication []gax.CallOption
 	GetApplication    []gax.CallOption
 	UpdateApplication []gax.CallOption
-	DeleteApplication []gax.CallOption
 	ListApplications  []gax.CallOption
 }
 
@@ -68,10 +68,10 @@ func defaultApplicationCallOptions() *ApplicationCallOptions {
 		},
 	}
 	return &ApplicationCallOptions{
+		DeleteApplication: retry[[2]string{"default", "idempotent"}],
 		CreateApplication: retry[[2]string{"default", "non_idempotent"}],
 		GetApplication:    retry[[2]string{"default", "idempotent"}],
 		UpdateApplication: retry[[2]string{"default", "non_idempotent"}],
-		DeleteApplication: retry[[2]string{"default", "idempotent"}],
 		ListApplications:  retry[[2]string{"default", "idempotent"}],
 	}
 }
@@ -132,6 +132,19 @@ func (c *ApplicationClient) setGoogleClientInfo(keyval ...string) {
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
+// DeleteApplication deletes specified application.
+func (c *ApplicationClient) DeleteApplication(ctx context.Context, req *talentpb.DeleteApplicationRequest, opts ...gax.CallOption) error {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.DeleteApplication[0:len(c.CallOptions.DeleteApplication):len(c.CallOptions.DeleteApplication)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.applicationClient.DeleteApplication(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	return err
+}
+
 // CreateApplication creates a new application entity.
 func (c *ApplicationClient) CreateApplication(ctx context.Context, req *talentpb.CreateApplicationRequest, opts ...gax.CallOption) (*talentpb.Application, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
@@ -181,19 +194,6 @@ func (c *ApplicationClient) UpdateApplication(ctx context.Context, req *talentpb
 		return nil, err
 	}
 	return resp, nil
-}
-
-// DeleteApplication deletes specified application.
-func (c *ApplicationClient) DeleteApplication(ctx context.Context, req *talentpb.DeleteApplicationRequest, opts ...gax.CallOption) error {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteApplication[0:len(c.CallOptions.DeleteApplication):len(c.CallOptions.DeleteApplication)], opts...)
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		_, err = c.applicationClient.DeleteApplication(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	return err
 }
 
 // ListApplications lists all applications associated with the profile.

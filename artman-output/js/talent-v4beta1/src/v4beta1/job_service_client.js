@@ -227,16 +227,16 @@ class JobServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const jobServiceStubMethods = [
+      'deleteJob',
       'createJob',
+      'batchCreateJobs',
       'getJob',
       'updateJob',
-      'deleteJob',
-      'listJobs',
+      'batchUpdateJobs',
       'batchDeleteJobs',
+      'listJobs',
       'searchJobs',
       'searchJobsForAlert',
-      'batchCreateJobs',
-      'batchUpdateJobs',
     ];
     for (const methodName of jobServiceStubMethods) {
       const innerCallPromise = jobServiceStub.then(
@@ -302,6 +302,61 @@ class JobServiceClient {
   // -------------------
 
   /**
+   * Deletes the specified job.
+   *
+   * Typically, the job becomes unsearchable within 10 seconds, but it may take
+   * up to 5 minutes.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. The resource name of the job to be deleted.
+   *
+   *   The format is
+   *   "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
+   *   example, "projects/foo/tenants/bar/jobs/baz".
+   *
+   *   If tenant id is unspecified, the default tenant is used. For
+   *   example, "projects/foo/jobs/bar".
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error)} [callback]
+   *   The function which will be called with the result of the API call.
+   * @returns {Promise} - The promise which resolves when API call finishes.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.JobServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const name = '';
+   * client.deleteJob({name: name}).catch(err => {
+   *   console.error(err);
+   * });
+   */
+  deleteJob(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.deleteJob(request, options, callback);
+  }
+
+  /**
    * Creates a new job.
    *
    * Typically, the job becomes searchable within 10 seconds, but it may take
@@ -338,7 +393,7 @@ class JobServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const job = {};
    * const request = {
    *   parent: formattedParent,
@@ -368,6 +423,126 @@ class JobServiceClient {
       });
 
     return this._innerApiCalls.createJob(request, options, callback);
+  }
+
+  /**
+   * Begins executing a batch create jobs operation.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. The resource name of the tenant under which the job is created.
+   *
+   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   *   is created. For example, "projects/foo".
+   * @param {Object[]} request.jobs
+   *   Required. The jobs to be created.
+   *
+   *   This object should have the same structure as [Job]{@link google.cloud.talent.v4beta1.Job}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is a [gax.Operation]{@link https://googleapis.github.io/gax-nodejs/classes/Operation.html} object.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is a [gax.Operation]{@link https://googleapis.github.io/gax-nodejs/classes/Operation.html} object.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.JobServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedParent = client.projectPath('[PROJECT]');
+   * const jobs = [];
+   * const request = {
+   *   parent: formattedParent,
+   *   jobs: jobs,
+   * };
+   *
+   * // Handle the operation using the promise pattern.
+   * client.batchCreateJobs(request)
+   *   .then(responses => {
+   *     const [operation, initialApiResponse] = responses;
+   *
+   *     // Operation#promise starts polling for the completion of the LRO.
+   *     return operation.promise();
+   *   })
+   *   .then(responses => {
+   *     const result = responses[0];
+   *     const metadata = responses[1];
+   *     const finalApiResponse = responses[2];
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   *
+   * const formattedParent = client.projectPath('[PROJECT]');
+   * const jobs = [];
+   * const request = {
+   *   parent: formattedParent,
+   *   jobs: jobs,
+   * };
+   *
+   * // Handle the operation using the event emitter pattern.
+   * client.batchCreateJobs(request)
+   *   .then(responses => {
+   *     const [operation, initialApiResponse] = responses;
+   *
+   *     // Adding a listener for the "complete" event starts polling for the
+   *     // completion of the operation.
+   *     operation.on('complete', (result, metadata, finalApiResponse) => {
+   *       // doSomethingWith(result);
+   *     });
+   *
+   *     // Adding a listener for the "progress" event causes the callback to be
+   *     // called on any change in metadata when the operation is polled.
+   *     operation.on('progress', (metadata, apiResponse) => {
+   *       // doSomethingWith(metadata)
+   *     });
+   *
+   *     // Adding a listener for the "error" event handles any errors found during polling.
+   *     operation.on('error', err => {
+   *       // throw(err);
+   *     });
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   *
+   * const formattedParent = client.projectPath('[PROJECT]');
+   * const jobs = [];
+   * const request = {
+   *   parent: formattedParent,
+   *   jobs: jobs,
+   * };
+   *
+   * // Handle the operation using the await pattern.
+   * const [operation] = await client.batchCreateJobs(request);
+   *
+   * const [response] = await operation.promise();
+   */
+  batchCreateJobs(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
+
+    return this._innerApiCalls.batchCreateJobs(request, options, callback);
   }
 
   /**
@@ -404,8 +579,8 @@ class JobServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedName = client.jobPath('[PROJECT]', '[TENANT]', '[JOBS]');
-   * client.getJob({name: formattedName})
+   * const name = '';
+   * client.getJob({name: name})
    *   .then(responses => {
    *     const response = responses[0];
    *     // doThingsWith(response)
@@ -500,22 +675,165 @@ class JobServiceClient {
   }
 
   /**
-   * Deletes the specified job.
-   *
-   * Typically, the job becomes unsearchable within 10 seconds, but it may take
-   * up to 5 minutes.
+   * Begins executing a batch update jobs operation.
    *
    * @param {Object} request
    *   The request object that will be sent.
-   * @param {string} request.name
-   *   Required. The resource name of the job to be deleted.
+   * @param {string} request.parent
+   *   Required. The resource name of the tenant under which the job is created.
    *
-   *   The format is
-   *   "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For
-   *   example, "projects/foo/tenants/bar/jobs/baz".
+   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   *   is created. For example, "projects/foo".
+   * @param {Object[]} request.jobs
+   *   Required. The jobs to be updated.
    *
-   *   If tenant id is unspecified, the default tenant is used. For
-   *   example, "projects/foo/jobs/bar".
+   *   This object should have the same structure as [Job]{@link google.cloud.talent.v4beta1.Job}
+   * @param {Object} [request.updateMask]
+   *   Strongly recommended for the best service experience. Be aware that it will
+   *   also increase latency when checking the status of a batch operation.
+   *
+   *   If update_mask is provided, only the specified fields in
+   *   Job are updated. Otherwise all the fields are updated.
+   *
+   *   A field mask to restrict the fields that are updated. Only
+   *   top level fields of Job are supported.
+   *
+   *   If update_mask is provided, The Job inside
+   *   JobResult
+   *   will only contains fields that is updated, plus the Id of the Job.
+   *   Otherwise,  Job will include all fields, which can yield a very
+   *   large response.
+   *
+   *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is a [gax.Operation]{@link https://googleapis.github.io/gax-nodejs/classes/Operation.html} object.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is a [gax.Operation]{@link https://googleapis.github.io/gax-nodejs/classes/Operation.html} object.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.JobServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedParent = client.projectPath('[PROJECT]');
+   * const jobs = [];
+   * const request = {
+   *   parent: formattedParent,
+   *   jobs: jobs,
+   * };
+   *
+   * // Handle the operation using the promise pattern.
+   * client.batchUpdateJobs(request)
+   *   .then(responses => {
+   *     const [operation, initialApiResponse] = responses;
+   *
+   *     // Operation#promise starts polling for the completion of the LRO.
+   *     return operation.promise();
+   *   })
+   *   .then(responses => {
+   *     const result = responses[0];
+   *     const metadata = responses[1];
+   *     const finalApiResponse = responses[2];
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   *
+   * const formattedParent = client.projectPath('[PROJECT]');
+   * const jobs = [];
+   * const request = {
+   *   parent: formattedParent,
+   *   jobs: jobs,
+   * };
+   *
+   * // Handle the operation using the event emitter pattern.
+   * client.batchUpdateJobs(request)
+   *   .then(responses => {
+   *     const [operation, initialApiResponse] = responses;
+   *
+   *     // Adding a listener for the "complete" event starts polling for the
+   *     // completion of the operation.
+   *     operation.on('complete', (result, metadata, finalApiResponse) => {
+   *       // doSomethingWith(result);
+   *     });
+   *
+   *     // Adding a listener for the "progress" event causes the callback to be
+   *     // called on any change in metadata when the operation is polled.
+   *     operation.on('progress', (metadata, apiResponse) => {
+   *       // doSomethingWith(metadata)
+   *     });
+   *
+   *     // Adding a listener for the "error" event handles any errors found during polling.
+   *     operation.on('error', err => {
+   *       // throw(err);
+   *     });
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   *
+   * const formattedParent = client.projectPath('[PROJECT]');
+   * const jobs = [];
+   * const request = {
+   *   parent: formattedParent,
+   *   jobs: jobs,
+   * };
+   *
+   * // Handle the operation using the await pattern.
+   * const [operation] = await client.batchUpdateJobs(request);
+   *
+   * const [response] = await operation.promise();
+   */
+  batchUpdateJobs(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
+
+    return this._innerApiCalls.batchUpdateJobs(request, options, callback);
+  }
+
+  /**
+   * Deletes a list of Jobs by filter.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. The resource name of the tenant under which the job is created.
+   *
+   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+   *   is created. For example, "projects/foo".
+   * @param {string} request.filter
+   *   Required. The filter string specifies the jobs to be deleted.
+   *
+   *   Supported operator: =, AND
+   *
+   *   The fields eligible for filtering are:
+   *
+   *   * `companyName` (Required)
+   *   * `requisitionId` (Required)
+   *
+   *   Sample Query: companyName = "projects/foo/companies/bar" AND
+   *   requisitionId = "req-1"
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
    *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
@@ -532,12 +850,17 @@ class JobServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedName = client.jobPath('[PROJECT]', '[TENANT]', '[JOBS]');
-   * client.deleteJob({name: formattedName}).catch(err => {
+   * const formattedParent = client.projectPath('[PROJECT]');
+   * const filter = '';
+   * const request = {
+   *   parent: formattedParent,
+   *   filter: filter,
+   * };
+   * client.batchDeleteJobs(request).catch(err => {
    *   console.error(err);
    * });
    */
-  deleteJob(request, options, callback) {
+  batchDeleteJobs(request, options, callback) {
     if (options instanceof Function && callback === undefined) {
       callback = options;
       options = {};
@@ -548,10 +871,10 @@ class JobServiceClient {
     options.otherArgs.headers = options.otherArgs.headers || {};
     options.otherArgs.headers['x-goog-request-params'] =
       gax.routingHeader.fromParams({
-        'name': request.name
+        'parent': request.parent
       });
 
-    return this._innerApiCalls.deleteJob(request, options, callback);
+    return this._innerApiCalls.batchDeleteJobs(request, options, callback);
   }
 
   /**
@@ -628,7 +951,7 @@ class JobServiceClient {
    * });
    *
    * // Iterate over all elements.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const filter = '';
    * const request = {
    *   parent: formattedParent,
@@ -647,7 +970,7 @@ class JobServiceClient {
    *   });
    *
    * // Or obtain the paged response.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const filter = '';
    * const request = {
    *   parent: formattedParent,
@@ -760,7 +1083,7 @@ class JobServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const filter = '';
    * const request = {
    *   parent: formattedParent,
@@ -782,72 +1105,6 @@ class JobServiceClient {
       options
     );
   };
-
-  /**
-   * Deletes a list of Jobs by filter.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   Required. The resource name of the tenant under which the job is created.
-   *
-   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
-   *   is created. For example, "projects/foo".
-   * @param {string} request.filter
-   *   Required. The filter string specifies the jobs to be deleted.
-   *
-   *   Supported operator: =, AND
-   *
-   *   The fields eligible for filtering are:
-   *
-   *   * `companyName` (Required)
-   *   * `requisitionId` (Required)
-   *
-   *   Sample Query: companyName = "projects/foo/companies/bar" AND
-   *   requisitionId = "req-1"
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error)} [callback]
-   *   The function which will be called with the result of the API call.
-   * @returns {Promise} - The promise which resolves when API call finishes.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.JobServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   * const filter = '';
-   * const request = {
-   *   parent: formattedParent,
-   *   filter: filter,
-   * };
-   * client.batchDeleteJobs(request).catch(err => {
-   *   console.error(err);
-   * });
-   */
-  batchDeleteJobs(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'parent': request.parent
-      });
-
-    return this._innerApiCalls.batchDeleteJobs(request, options, callback);
-  }
 
   /**
    * Searches for jobs using the provided SearchJobsRequest.
@@ -1002,8 +1259,6 @@ class JobServiceClient {
    *
    *   The maximum allowed value is 5000. Otherwise an error is thrown.
    *
-   *   The maximum allowed value is 5000. Otherwise an error is thrown.
-   *
    *   For example, 0 means to  return results starting from the first matching
    *   job, and 10 means to return from the 11th job. This can be used for
    *   pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -1134,7 +1389,7 @@ class JobServiceClient {
    * });
    *
    * // Iterate over all elements.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const requestMetadata = {};
    * const request = {
    *   parent: formattedParent,
@@ -1153,7 +1408,7 @@ class JobServiceClient {
    *   });
    *
    * // Or obtain the paged response.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const requestMetadata = {};
    * const request = {
    *   parent: formattedParent,
@@ -1359,8 +1614,6 @@ class JobServiceClient {
    *
    *   The maximum allowed value is 5000. Otherwise an error is thrown.
    *
-   *   The maximum allowed value is 5000. Otherwise an error is thrown.
-   *
    *   For example, 0 means to  return results starting from the first matching
    *   job, and 10 means to return from the 11th job. This can be used for
    *   pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -1473,7 +1726,7 @@ class JobServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const requestMetadata = {};
    * const request = {
    *   parent: formattedParent,
@@ -1654,8 +1907,6 @@ class JobServiceClient {
    *
    *   The maximum allowed value is 5000. Otherwise an error is thrown.
    *
-   *   The maximum allowed value is 5000. Otherwise an error is thrown.
-   *
    *   For example, 0 means to  return results starting from the first matching
    *   job, and 10 means to return from the 11th job. This can be used for
    *   pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -1786,7 +2037,7 @@ class JobServiceClient {
    * });
    *
    * // Iterate over all elements.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const requestMetadata = {};
    * const request = {
    *   parent: formattedParent,
@@ -1805,7 +2056,7 @@ class JobServiceClient {
    *   });
    *
    * // Or obtain the paged response.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const requestMetadata = {};
    * const request = {
    *   parent: formattedParent,
@@ -2011,8 +2262,6 @@ class JobServiceClient {
    *
    *   The maximum allowed value is 5000. Otherwise an error is thrown.
    *
-   *   The maximum allowed value is 5000. Otherwise an error is thrown.
-   *
    *   For example, 0 means to  return results starting from the first matching
    *   job, and 10 means to return from the 11th job. This can be used for
    *   pagination, (for example, pageSize = 10 and offset = 10 means to return
@@ -2125,7 +2374,7 @@ class JobServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const requestMetadata = {};
    * const request = {
    *   parent: formattedParent,
@@ -2148,268 +2397,12 @@ class JobServiceClient {
     );
   };
 
-  /**
-   * Begins executing a batch create jobs operation.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   Required. The resource name of the tenant under which the job is created.
-   *
-   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
-   *   is created. For example, "projects/foo".
-   * @param {Object[]} request.jobs
-   *   Required. The jobs to be created.
-   *
-   *   This object should have the same structure as [Job]{@link google.cloud.talent.v4beta1.Job}
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is a [gax.Operation]{@link https://googleapis.github.io/gax-nodejs/classes/Operation.html} object.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is a [gax.Operation]{@link https://googleapis.github.io/gax-nodejs/classes/Operation.html} object.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.JobServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   * const jobs = [];
-   * const request = {
-   *   parent: formattedParent,
-   *   jobs: jobs,
-   * };
-   *
-   * // Handle the operation using the promise pattern.
-   * client.batchCreateJobs(request)
-   *   .then(responses => {
-   *     const [operation, initialApiResponse] = responses;
-   *
-   *     // Operation#promise starts polling for the completion of the LRO.
-   *     return operation.promise();
-   *   })
-   *   .then(responses => {
-   *     const result = responses[0];
-   *     const metadata = responses[1];
-   *     const finalApiResponse = responses[2];
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   * const jobs = [];
-   * const request = {
-   *   parent: formattedParent,
-   *   jobs: jobs,
-   * };
-   *
-   * // Handle the operation using the event emitter pattern.
-   * client.batchCreateJobs(request)
-   *   .then(responses => {
-   *     const [operation, initialApiResponse] = responses;
-   *
-   *     // Adding a listener for the "complete" event starts polling for the
-   *     // completion of the operation.
-   *     operation.on('complete', (result, metadata, finalApiResponse) => {
-   *       // doSomethingWith(result);
-   *     });
-   *
-   *     // Adding a listener for the "progress" event causes the callback to be
-   *     // called on any change in metadata when the operation is polled.
-   *     operation.on('progress', (metadata, apiResponse) => {
-   *       // doSomethingWith(metadata)
-   *     });
-   *
-   *     // Adding a listener for the "error" event handles any errors found during polling.
-   *     operation.on('error', err => {
-   *       // throw(err);
-   *     });
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   * const jobs = [];
-   * const request = {
-   *   parent: formattedParent,
-   *   jobs: jobs,
-   * };
-   *
-   * // Handle the operation using the await pattern.
-   * const [operation] = await client.batchCreateJobs(request);
-   *
-   * const [response] = await operation.promise();
-   */
-  batchCreateJobs(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'parent': request.parent
-      });
-
-    return this._innerApiCalls.batchCreateJobs(request, options, callback);
-  }
-
-  /**
-   * Begins executing a batch update jobs operation.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   Required. The resource name of the tenant under which the job is created.
-   *
-   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *   "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
-   *   is created. For example, "projects/foo".
-   * @param {Object[]} request.jobs
-   *   Required. The jobs to be updated.
-   *
-   *   This object should have the same structure as [Job]{@link google.cloud.talent.v4beta1.Job}
-   * @param {Object} [request.updateMask]
-   *   Strongly recommended for the best service experience. Be aware that it will
-   *   also increase latency when checking the status of a batch operation.
-   *
-   *   If update_mask is provided, only the specified fields in
-   *   Job are updated. Otherwise all the fields are updated.
-   *
-   *   A field mask to restrict the fields that are updated. Only
-   *   top level fields of Job are supported.
-   *
-   *   If update_mask is provided, The Job inside
-   *   JobResult
-   *   will only contains fields that is updated, plus the Id of the Job.
-   *   Otherwise,  Job will include all fields, which can yield a very
-   *   large response.
-   *
-   *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is a [gax.Operation]{@link https://googleapis.github.io/gax-nodejs/classes/Operation.html} object.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is a [gax.Operation]{@link https://googleapis.github.io/gax-nodejs/classes/Operation.html} object.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.JobServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   * const jobs = [];
-   * const request = {
-   *   parent: formattedParent,
-   *   jobs: jobs,
-   * };
-   *
-   * // Handle the operation using the promise pattern.
-   * client.batchUpdateJobs(request)
-   *   .then(responses => {
-   *     const [operation, initialApiResponse] = responses;
-   *
-   *     // Operation#promise starts polling for the completion of the LRO.
-   *     return operation.promise();
-   *   })
-   *   .then(responses => {
-   *     const result = responses[0];
-   *     const metadata = responses[1];
-   *     const finalApiResponse = responses[2];
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   * const jobs = [];
-   * const request = {
-   *   parent: formattedParent,
-   *   jobs: jobs,
-   * };
-   *
-   * // Handle the operation using the event emitter pattern.
-   * client.batchUpdateJobs(request)
-   *   .then(responses => {
-   *     const [operation, initialApiResponse] = responses;
-   *
-   *     // Adding a listener for the "complete" event starts polling for the
-   *     // completion of the operation.
-   *     operation.on('complete', (result, metadata, finalApiResponse) => {
-   *       // doSomethingWith(result);
-   *     });
-   *
-   *     // Adding a listener for the "progress" event causes the callback to be
-   *     // called on any change in metadata when the operation is polled.
-   *     operation.on('progress', (metadata, apiResponse) => {
-   *       // doSomethingWith(metadata)
-   *     });
-   *
-   *     // Adding a listener for the "error" event handles any errors found during polling.
-   *     operation.on('error', err => {
-   *       // throw(err);
-   *     });
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   * const jobs = [];
-   * const request = {
-   *   parent: formattedParent,
-   *   jobs: jobs,
-   * };
-   *
-   * // Handle the operation using the await pattern.
-   * const [operation] = await client.batchUpdateJobs(request);
-   *
-   * const [response] = await operation.promise();
-   */
-  batchUpdateJobs(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'parent': request.parent
-      });
-
-    return this._innerApiCalls.batchUpdateJobs(request, options, callback);
-  }
-
   // --------------------
   // -- Path templates --
   // --------------------
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified company resource name string.
    *
    * @param {String} project
@@ -2426,6 +2419,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified company_without_tenant resource name string.
    *
    * @param {String} project
@@ -2440,6 +2434,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified job resource name string.
    *
    * @param {String} project
@@ -2456,6 +2451,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified job_without_tenant resource name string.
    *
    * @param {String} project
@@ -2496,6 +2492,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyName from a company resource.
    *
    * @param {String} companyName
@@ -2509,6 +2506,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyName from a company resource.
    *
    * @param {String} companyName
@@ -2522,6 +2520,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyName from a company resource.
    *
    * @param {String} companyName
@@ -2535,6 +2534,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyWithoutTenantName from a company_without_tenant resource.
    *
    * @param {String} companyWithoutTenantName
@@ -2548,6 +2548,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyWithoutTenantName from a company_without_tenant resource.
    *
    * @param {String} companyWithoutTenantName
@@ -2561,6 +2562,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the jobName from a job resource.
    *
    * @param {String} jobName
@@ -2574,6 +2576,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the jobName from a job resource.
    *
    * @param {String} jobName
@@ -2587,6 +2590,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the jobName from a job resource.
    *
    * @param {String} jobName
@@ -2600,6 +2604,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the jobWithoutTenantName from a job_without_tenant resource.
    *
    * @param {String} jobWithoutTenantName
@@ -2613,6 +2618,7 @@ class JobServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the jobWithoutTenantName from a job_without_tenant resource.
    *
    * @param {String} jobWithoutTenantName

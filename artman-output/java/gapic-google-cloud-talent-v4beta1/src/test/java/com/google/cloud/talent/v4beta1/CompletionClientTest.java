@@ -38,12 +38,12 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class CompletionClientTest {
-  private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
-  private static MockCompletion mockCompletion;
-  private static MockEventService mockEventService;
   private static MockJobService mockJobService;
   private static MockProfileService mockProfileService;
+  private static MockEventService mockEventService;
+  private static MockApplicationService mockApplicationService;
+  private static MockCompletion mockCompletion;
   private static MockTenantService mockTenantService;
   private static MockServiceHelper serviceHelper;
   private CompletionClient client;
@@ -51,23 +51,23 @@ public class CompletionClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
-    mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
-    mockCompletion = new MockCompletion();
-    mockEventService = new MockEventService();
     mockJobService = new MockJobService();
     mockProfileService = new MockProfileService();
+    mockEventService = new MockEventService();
+    mockApplicationService = new MockApplicationService();
+    mockCompletion = new MockCompletion();
     mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockApplicationService,
                 mockCompanyService,
-                mockCompletion,
-                mockEventService,
                 mockJobService,
                 mockProfileService,
+                mockEventService,
+                mockApplicationService,
+                mockCompletion,
                 mockTenantService));
     serviceHelper.start();
   }
@@ -100,7 +100,7 @@ public class CompletionClientTest {
     CompleteQueryResponse expectedResponse = CompleteQueryResponse.newBuilder().build();
     mockCompletion.addResponse(expectedResponse);
 
-    TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+    ProjectName parent = ProjectName.of("[PROJECT]");
     String query = "query107944136";
     int pageSize = 883849137;
     CompleteQueryRequest request =
@@ -117,7 +117,7 @@ public class CompletionClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CompleteQueryRequest actualRequest = (CompleteQueryRequest) actualRequests.get(0);
 
-    Assert.assertEquals(parent, TenantOrProjectNames.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, ProjectName.parse(actualRequest.getParent()));
     Assert.assertEquals(query, actualRequest.getQuery());
     Assert.assertEquals(pageSize, actualRequest.getPageSize());
     Assert.assertTrue(
@@ -133,7 +133,7 @@ public class CompletionClientTest {
     mockCompletion.addException(exception);
 
     try {
-      TenantOrProjectName parent = TenantName.of("[PROJECT]", "[TENANT]");
+      ProjectName parent = ProjectName.of("[PROJECT]");
       String query = "query107944136";
       int pageSize = 883849137;
       CompleteQueryRequest request =

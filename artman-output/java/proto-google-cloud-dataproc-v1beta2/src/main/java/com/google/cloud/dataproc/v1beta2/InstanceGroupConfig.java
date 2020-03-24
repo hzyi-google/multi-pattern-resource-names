@@ -188,7 +188,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList instanceNames_;
   /**
    * <pre>
-   * Output only. The list of instance names. Cloud Dataproc derives the names
+   * Output only. The list of instance names. Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The list of instance names. Cloud Dataproc derives the names
+   * Output only. The list of instance names. Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
@@ -213,7 +213,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The list of instance names. Cloud Dataproc derives the names
+   * Output only. The list of instance names. Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
@@ -226,7 +226,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The list of instance names. Cloud Dataproc derives the names
+   * Output only. The list of instance names. Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `n1-standard-2`
-   * **Auto Zone Exception**: If you are using the Cloud Dataproc
+   * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the machine type
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `n1-standard-2`
-   * **Auto Zone Exception**: If you are using the Cloud Dataproc
+   * **Auto Zone Exception**: If you are using the Dataproc
    * [Auto Zone
    * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
    * feature, you must use the short name of the machine type
@@ -505,7 +505,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Specifies the minimum cpu platform for the Instance Group.
-   * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
+   * See [Dataproc&amp;rarr;Minimum CPU Platform]
    * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
    * </pre>
    *
@@ -527,7 +527,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Specifies the minimum cpu platform for the Instance Group.
-   * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
+   * See [Dataproc&amp;rarr;Minimum CPU Platform]
    * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
    * </pre>
    *
@@ -1129,7 +1129,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of instance names. Cloud Dataproc derives the names
+     * Output only. The list of instance names. Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
@@ -1142,7 +1142,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of instance names. Cloud Dataproc derives the names
+     * Output only. The list of instance names. Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
@@ -1154,7 +1154,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of instance names. Cloud Dataproc derives the names
+     * Output only. The list of instance names. Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
@@ -1167,7 +1167,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of instance names. Cloud Dataproc derives the names
+     * Output only. The list of instance names. Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
@@ -1181,7 +1181,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of instance names. Cloud Dataproc derives the names
+     * Output only. The list of instance names. Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
@@ -1202,7 +1202,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of instance names. Cloud Dataproc derives the names
+     * Output only. The list of instance names. Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
@@ -1222,7 +1222,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of instance names. Cloud Dataproc derives the names
+     * Output only. The list of instance names. Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
@@ -1240,7 +1240,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of instance names. Cloud Dataproc derives the names
+     * Output only. The list of instance names. Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
@@ -1255,7 +1255,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The list of instance names. Cloud Dataproc derives the names
+     * Output only. The list of instance names. Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
      * </pre>
      *
@@ -1389,7 +1389,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `n1-standard-2`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the machine type
@@ -1418,7 +1418,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `n1-standard-2`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the machine type
@@ -1448,7 +1448,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `n1-standard-2`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the machine type
@@ -1476,7 +1476,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `n1-standard-2`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the machine type
@@ -1499,7 +1499,7 @@ private static final long serialVersionUID = 0L;
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
      * * `n1-standard-2`
-     * **Auto Zone Exception**: If you are using the Cloud Dataproc
+     * **Auto Zone Exception**: If you are using the Dataproc
      * [Auto Zone
      * Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
      * feature, you must use the short name of the machine type
@@ -2229,7 +2229,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the minimum cpu platform for the Instance Group.
-     * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
+     * See [Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>
      *
@@ -2251,7 +2251,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the minimum cpu platform for the Instance Group.
-     * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
+     * See [Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>
      *
@@ -2274,7 +2274,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the minimum cpu platform for the Instance Group.
-     * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
+     * See [Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>
      *
@@ -2295,7 +2295,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the minimum cpu platform for the Instance Group.
-     * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
+     * See [Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>
      *
@@ -2311,7 +2311,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the minimum cpu platform for the Instance Group.
-     * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
+     * See [Dataproc&amp;rarr;Minimum CPU Platform]
      * (/dataproc/docs/concepts/compute/dataproc-min-cpu).
      * </pre>
      *

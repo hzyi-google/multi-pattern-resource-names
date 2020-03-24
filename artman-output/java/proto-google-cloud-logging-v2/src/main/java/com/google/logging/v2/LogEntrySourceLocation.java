@@ -112,7 +112,7 @@ private static final long serialVersionUID = 0L;
    * might be a simple name or a fully-qualified name.
    * </pre>
    *
-   * <code>string file = 1;</code>
+   * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The file.
    */
   public java.lang.String getFile() {
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
    * might be a simple name or a fully-qualified name.
    * </pre>
    *
-   * <code>string file = 1;</code>
+   * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for file.
    */
   public com.google.protobuf.ByteString
@@ -158,7 +158,7 @@ private static final long serialVersionUID = 0L;
    * available.
    * </pre>
    *
-   * <code>int64 line = 2;</code>
+   * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The line.
    */
   public long getLine() {
@@ -177,7 +177,7 @@ private static final long serialVersionUID = 0L;
    * (Python).
    * </pre>
    *
-   * <code>string function = 3;</code>
+   * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The function.
    */
   public java.lang.String getFunction() {
@@ -202,7 +202,7 @@ private static final long serialVersionUID = 0L;
    * (Python).
    * </pre>
    *
-   * <code>string function = 3;</code>
+   * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for function.
    */
   public com.google.protobuf.ByteString
@@ -568,7 +568,7 @@ private static final long serialVersionUID = 0L;
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The file.
      */
     public java.lang.String getFile() {
@@ -589,7 +589,7 @@ private static final long serialVersionUID = 0L;
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for file.
      */
     public com.google.protobuf.ByteString
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The file to set.
      * @return This builder for chaining.
      */
@@ -631,7 +631,7 @@ private static final long serialVersionUID = 0L;
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearFile() {
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
      * might be a simple name or a fully-qualified name.
      * </pre>
      *
-     * <code>string file = 1;</code>
+     * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for file to set.
      * @return This builder for chaining.
      */
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
      * available.
      * </pre>
      *
-     * <code>int64 line = 2;</code>
+     * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The line.
      */
     public long getLine() {
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
      * available.
      * </pre>
      *
-     * <code>int64 line = 2;</code>
+     * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The line to set.
      * @return This builder for chaining.
      */
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
      * available.
      * </pre>
      *
-     * <code>int64 line = 2;</code>
+     * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearLine() {
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The function.
      */
     public java.lang.String getFunction() {
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for function.
      */
     public com.google.protobuf.ByteString
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The function to set.
      * @return This builder for chaining.
      */
@@ -793,7 +793,7 @@ private static final long serialVersionUID = 0L;
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearFunction() {
@@ -812,7 +812,7 @@ private static final long serialVersionUID = 0L;
      * (Python).
      * </pre>
      *
-     * <code>string function = 3;</code>
+     * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for function to set.
      * @return This builder for chaining.
      */

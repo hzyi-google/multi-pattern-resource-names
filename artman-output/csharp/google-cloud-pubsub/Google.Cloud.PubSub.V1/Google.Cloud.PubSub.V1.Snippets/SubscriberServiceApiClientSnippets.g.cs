@@ -18,7 +18,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.Grpc;
-    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.Iam.V1;
     using apis = Google.Cloud.PubSub.V1;
     using Google.Protobuf;
@@ -38,13 +37,13 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for CreateSubscriptionAsync</summary>
         public async Task CreateSubscriptionAsync()
         {
-            // Snippet: CreateSubscriptionAsync(SubscriptionName,TopicName,PushConfig,int?,CallSettings)
-            // Additional: CreateSubscriptionAsync(SubscriptionName,TopicName,PushConfig,int?,CancellationToken)
+            // Snippet: CreateSubscriptionAsync(SubscriptionName,TopicNameOneof,PushConfig,int?,CallSettings)
+            // Additional: CreateSubscriptionAsync(SubscriptionName,TopicNameOneof,PushConfig,int?,CancellationToken)
             // Create client
             SubscriberServiceApiClient subscriberServiceApiClient = await SubscriberServiceApiClient.CreateAsync();
             // Initialize request argument(s)
             SubscriptionName name = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             PushConfig pushConfig = new PushConfig();
             int ackDeadlineSeconds = 0;
             // Make the request
@@ -55,12 +54,12 @@ namespace Google.Cloud.PubSub.V1.Snippets
         /// <summary>Snippet for CreateSubscription</summary>
         public void CreateSubscription()
         {
-            // Snippet: CreateSubscription(SubscriptionName,TopicName,PushConfig,int?,CallSettings)
+            // Snippet: CreateSubscription(SubscriptionName,TopicNameOneof,PushConfig,int?,CallSettings)
             // Create client
             SubscriberServiceApiClient subscriberServiceApiClient = SubscriberServiceApiClient.Create();
             // Initialize request argument(s)
             SubscriptionName name = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             PushConfig pushConfig = new PushConfig();
             int ackDeadlineSeconds = 0;
             // Make the request
@@ -1162,35 +1161,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
         }
 
         /// <summary>Snippet for SetIamPolicyAsync</summary>
-        public async Task SetIamPolicyAsync()
-        {
-            // Snippet: SetIamPolicyAsync(string,Policy,CallSettings)
-            // Additional: SetIamPolicyAsync(string,Policy,CancellationToken)
-            // Create client
-            SubscriberServiceApiClient subscriberServiceApiClient = await SubscriberServiceApiClient.CreateAsync();
-            // Initialize request argument(s)
-            string formattedResource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString();
-            Policy policy = new Policy();
-            // Make the request
-            Policy response = await subscriberServiceApiClient.SetIamPolicyAsync(formattedResource, policy);
-            // End snippet
-        }
-
-        /// <summary>Snippet for SetIamPolicy</summary>
-        public void SetIamPolicy()
-        {
-            // Snippet: SetIamPolicy(string,Policy,CallSettings)
-            // Create client
-            SubscriberServiceApiClient subscriberServiceApiClient = SubscriberServiceApiClient.Create();
-            // Initialize request argument(s)
-            string formattedResource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString();
-            Policy policy = new Policy();
-            // Make the request
-            Policy response = subscriberServiceApiClient.SetIamPolicy(formattedResource, policy);
-            // End snippet
-        }
-
-        /// <summary>Snippet for SetIamPolicyAsync</summary>
         public async Task SetIamPolicyAsync_RequestObject()
         {
             // Snippet: SetIamPolicyAsync(SetIamPolicyRequest,CallSettings)
@@ -1200,7 +1170,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             SetIamPolicyRequest request = new SetIamPolicyRequest
             {
-                Resource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
                 Policy = new Policy(),
             };
             // Make the request
@@ -1217,38 +1187,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             SetIamPolicyRequest request = new SetIamPolicyRequest
             {
-                Resource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
                 Policy = new Policy(),
             };
             // Make the request
             Policy response = subscriberServiceApiClient.SetIamPolicy(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for GetIamPolicyAsync</summary>
-        public async Task GetIamPolicyAsync()
-        {
-            // Snippet: GetIamPolicyAsync(string,CallSettings)
-            // Additional: GetIamPolicyAsync(string,CancellationToken)
-            // Create client
-            SubscriberServiceApiClient subscriberServiceApiClient = await SubscriberServiceApiClient.CreateAsync();
-            // Initialize request argument(s)
-            string formattedResource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString();
-            // Make the request
-            Policy response = await subscriberServiceApiClient.GetIamPolicyAsync(formattedResource);
-            // End snippet
-        }
-
-        /// <summary>Snippet for GetIamPolicy</summary>
-        public void GetIamPolicy()
-        {
-            // Snippet: GetIamPolicy(string,CallSettings)
-            // Create client
-            SubscriberServiceApiClient subscriberServiceApiClient = SubscriberServiceApiClient.Create();
-            // Initialize request argument(s)
-            string formattedResource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString();
-            // Make the request
-            Policy response = subscriberServiceApiClient.GetIamPolicy(formattedResource);
             // End snippet
         }
 
@@ -1262,7 +1205,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             GetIamPolicyRequest request = new GetIamPolicyRequest
             {
-                Resource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             Policy response = await subscriberServiceApiClient.GetIamPolicyAsync(request);
@@ -1278,39 +1221,10 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             GetIamPolicyRequest request = new GetIamPolicyRequest
             {
-                Resource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
             };
             // Make the request
             Policy response = subscriberServiceApiClient.GetIamPolicy(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for TestIamPermissionsAsync</summary>
-        public async Task TestIamPermissionsAsync()
-        {
-            // Snippet: TestIamPermissionsAsync(string,IEnumerable<string>,CallSettings)
-            // Additional: TestIamPermissionsAsync(string,IEnumerable<string>,CancellationToken)
-            // Create client
-            SubscriberServiceApiClient subscriberServiceApiClient = await SubscriberServiceApiClient.CreateAsync();
-            // Initialize request argument(s)
-            string formattedResource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString();
-            IEnumerable<string> permissions = new List<string>();
-            // Make the request
-            TestIamPermissionsResponse response = await subscriberServiceApiClient.TestIamPermissionsAsync(formattedResource, permissions);
-            // End snippet
-        }
-
-        /// <summary>Snippet for TestIamPermissions</summary>
-        public void TestIamPermissions()
-        {
-            // Snippet: TestIamPermissions(string,IEnumerable<string>,CallSettings)
-            // Create client
-            SubscriberServiceApiClient subscriberServiceApiClient = SubscriberServiceApiClient.Create();
-            // Initialize request argument(s)
-            string formattedResource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString();
-            IEnumerable<string> permissions = new List<string>();
-            // Make the request
-            TestIamPermissionsResponse response = subscriberServiceApiClient.TestIamPermissions(formattedResource, permissions);
             // End snippet
         }
 
@@ -1324,7 +1238,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             TestIamPermissionsRequest request = new TestIamPermissionsRequest
             {
-                Resource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
                 Permissions = { },
             };
             // Make the request
@@ -1341,7 +1255,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Initialize request argument(s)
             TestIamPermissionsRequest request = new TestIamPermissionsRequest
             {
-                Resource = new SubscriptionName("[PROJECT]", "[SUBSCRIPTION]").ToString(),
+                ResourceAsResourceName = new ProjectName("[PROJECT]"),
                 Permissions = { },
             };
             // Make the request

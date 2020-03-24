@@ -80,8 +80,8 @@ public interface StatisticalTableOrBuilder extends
 
   /**
    * <pre>
-   * Required. The relative frequency column must contain a floating-point number
-   * between 0 and 1 (inclusive). Null values are assumed to be zero.
+   * Required. The relative frequency column must contain a floating-point
+   * number between 0 and 1 (inclusive). Null values are assumed to be zero.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -90,8 +90,8 @@ public interface StatisticalTableOrBuilder extends
   boolean hasRelativeFrequency();
   /**
    * <pre>
-   * Required. The relative frequency column must contain a floating-point number
-   * between 0 and 1 (inclusive). Null values are assumed to be zero.
+   * Required. The relative frequency column must contain a floating-point
+   * number between 0 and 1 (inclusive). Null values are assumed to be zero.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -100,8 +100,8 @@ public interface StatisticalTableOrBuilder extends
   com.google.privacy.dlp.v2.FieldId getRelativeFrequency();
   /**
    * <pre>
-   * Required. The relative frequency column must contain a floating-point number
-   * between 0 and 1 (inclusive). Null values are assumed to be zero.
+   * Required. The relative frequency column must contain a floating-point
+   * number between 0 and 1 (inclusive). Null values are assumed to be zero.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.FieldId relative_frequency = 2 [(.google.api.field_behavior) = REQUIRED];</code>

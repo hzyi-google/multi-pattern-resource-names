@@ -173,10 +173,10 @@ class CompanyServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const companyServiceStubMethods = [
+      'deleteCompany',
       'createCompany',
       'getCompany',
       'updateCompany',
-      'deleteCompany',
       'listCompanies',
     ];
     for (const methodName of companyServiceStubMethods) {
@@ -243,6 +243,59 @@ class CompanyServiceClient {
   // -------------------
 
   /**
+   * Deletes specified company.
+   * Prerequisite: The company has no jobs associated with it.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. The resource name of the company to be deleted.
+   *
+   *   The format is
+   *   "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+   *   example, "projects/foo/tenants/bar/companies/baz".
+   *
+   *   If tenant id is unspecified, the default tenant is used, for
+   *   example, "projects/foo/companies/bar".
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error)} [callback]
+   *   The function which will be called with the result of the API call.
+   * @returns {Promise} - The promise which resolves when API call finishes.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.CompanyServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedName = client.companyWithoutTenantPath('[PROJECT]', '[COMPANY]');
+   * client.deleteCompany({name: formattedName}).catch(err => {
+   *   console.error(err);
+   * });
+   */
+  deleteCompany(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.deleteCompany(request, options, callback);
+  }
+
+  /**
    * Creates a new company entity.
    *
    * @param {Object} request
@@ -276,7 +329,7 @@ class CompanyServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const company = {};
    * const request = {
    *   parent: formattedParent,
@@ -341,7 +394,7 @@ class CompanyServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedName = client.companyPath('[PROJECT]', '[TENANT]', '[COMPANY]');
+   * const formattedName = client.companyWithoutTenantPath('[PROJECT]', '[COMPANY]');
    * client.getCompany({name: formattedName})
    *   .then(responses => {
    *     const response = responses[0];
@@ -434,59 +487,6 @@ class CompanyServiceClient {
   }
 
   /**
-   * Deletes specified company.
-   * Prerequisite: The company has no jobs associated with it.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.name
-   *   Required. The resource name of the company to be deleted.
-   *
-   *   The format is
-   *   "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-   *   example, "projects/foo/tenants/bar/companies/baz".
-   *
-   *   If tenant id is unspecified, the default tenant is used, for
-   *   example, "projects/foo/companies/bar".
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error)} [callback]
-   *   The function which will be called with the result of the API call.
-   * @returns {Promise} - The promise which resolves when API call finishes.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.CompanyServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedName = client.companyPath('[PROJECT]', '[TENANT]', '[COMPANY]');
-   * client.deleteCompany({name: formattedName}).catch(err => {
-   *   console.error(err);
-   * });
-   */
-  deleteCompany(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'name': request.name
-      });
-
-    return this._innerApiCalls.deleteCompany(request, options, callback);
-  }
-
-  /**
    * Lists all companies associated with the project.
    *
    * @param {Object} request
@@ -544,7 +544,7 @@ class CompanyServiceClient {
    * });
    *
    * // Iterate over all elements.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    *
    * client.listCompanies({parent: formattedParent})
    *   .then(responses => {
@@ -558,7 +558,7 @@ class CompanyServiceClient {
    *   });
    *
    * // Or obtain the paged response.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    *
    *
    * const options = {autoPaginate: false};
@@ -650,7 +650,7 @@ class CompanyServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * client.listCompaniesStream({parent: formattedParent})
    *   .on('data', element => {
    *     // doThingsWith(element)
@@ -673,6 +673,7 @@ class CompanyServiceClient {
   // --------------------
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified company resource name string.
    *
    * @param {String} project
@@ -689,6 +690,7 @@ class CompanyServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified company_without_tenant resource name string.
    *
    * @param {String} project
@@ -729,6 +731,7 @@ class CompanyServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyName from a company resource.
    *
    * @param {String} companyName
@@ -742,6 +745,7 @@ class CompanyServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyName from a company resource.
    *
    * @param {String} companyName
@@ -755,6 +759,7 @@ class CompanyServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyName from a company resource.
    *
    * @param {String} companyName
@@ -768,6 +773,7 @@ class CompanyServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyWithoutTenantName from a company_without_tenant resource.
    *
    * @param {String} companyWithoutTenantName
@@ -781,6 +787,7 @@ class CompanyServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the companyWithoutTenantName from a company_without_tenant resource.
    *
    * @param {String} companyWithoutTenantName

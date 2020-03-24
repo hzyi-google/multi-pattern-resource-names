@@ -1582,6 +1582,19 @@ namespace Google.Cloud.Dlp.V2
 
     }
 
+    public partial class FinishDlpJobRequest
+    {
+        /// <summary>
+        /// <see cref="Google.Cloud.Dlp.V2.DlpJobName"/>-typed view over the <see cref="Name"/> resource name property.
+        /// </summary>
+        public Google.Cloud.Dlp.V2.DlpJobName DlpJobName
+        {
+            get { return string.IsNullOrEmpty(Name) ? null : Google.Cloud.Dlp.V2.DlpJobName.Parse(Name); }
+            set { Name = value != null ? value.ToString() : ""; }
+        }
+
+    }
+
     public partial class GetDeidentifyTemplateRequest
     {
         /// <summary>

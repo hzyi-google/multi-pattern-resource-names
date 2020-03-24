@@ -169,6 +169,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "tenant_service_client_config.json"
@@ -201,6 +204,14 @@ module Google
               &Google::Cloud::Talent::V4beta1::TenantService::Stub.method(:new)
             )
 
+            @delete_tenant = Google::Gax.create_api_call(
+              @tenant_service_stub.method(:delete_tenant),
+              defaults["delete_tenant"],
+              exception_transformer: exception_transformer,
+              params_extractor: proc do |request|
+                {'name' => request.name}
+              end
+            )
             @create_tenant = Google::Gax.create_api_call(
               @tenant_service_stub.method(:create_tenant),
               defaults["create_tenant"],
@@ -225,14 +236,6 @@ module Google
                 {'tenant.name' => request.tenant.name}
               end
             )
-            @delete_tenant = Google::Gax.create_api_call(
-              @tenant_service_stub.method(:delete_tenant),
-              defaults["delete_tenant"],
-              exception_transformer: exception_transformer,
-              params_extractor: proc do |request|
-                {'name' => request.name}
-              end
-            )
             @list_tenants = Google::Gax.create_api_call(
               @tenant_service_stub.method(:list_tenants),
               defaults["list_tenants"],
@@ -244,6 +247,39 @@ module Google
           end
 
           # Service calls
+
+          # Deletes specified tenant.
+          #
+          # @param name [String]
+          #   Required. The resource name of the tenant to be deleted.
+          #
+          #   The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+          #   "projects/foo/tenants/bar".
+          # @param options [Google::Gax::CallOptions]
+          #   Overrides the default settings for this call, e.g, timeout,
+          #   retries, etc.
+          # @yield [result, operation] Access the result along with the RPC operation
+          # @yieldparam result []
+          # @yieldparam operation [GRPC::ActiveCall::Operation]
+          # @raise [Google::Gax::GaxError] if the RPC is aborted.
+          # @example
+          #   require "google/cloud/talent"
+          #
+          #   tenant_client = Google::Cloud::Talent::Tenant.new(version: :v4beta1)
+          #   formatted_name = Google::Cloud::Talent::V4beta1::TenantServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   tenant_client.delete_tenant(formatted_name)
+
+          def delete_tenant \
+              name,
+              options: nil,
+              &block
+            req = {
+              name: name
+            }.delete_if { |_, v| v.nil? }
+            req = Google::Gax::to_proto(req, Google::Cloud::Talent::V4beta1::DeleteTenantRequest)
+            @delete_tenant.call(req, options, &block)
+            nil
+          end
 
           # Creates a new tenant entity.
           #
@@ -364,39 +400,6 @@ module Google
             }.delete_if { |_, v| v.nil? }
             req = Google::Gax::to_proto(req, Google::Cloud::Talent::V4beta1::UpdateTenantRequest)
             @update_tenant.call(req, options, &block)
-          end
-
-          # Deletes specified tenant.
-          #
-          # @param name [String]
-          #   Required. The resource name of the tenant to be deleted.
-          #
-          #   The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-          #   "projects/foo/tenants/bar".
-          # @param options [Google::Gax::CallOptions]
-          #   Overrides the default settings for this call, e.g, timeout,
-          #   retries, etc.
-          # @yield [result, operation] Access the result along with the RPC operation
-          # @yieldparam result []
-          # @yieldparam operation [GRPC::ActiveCall::Operation]
-          # @raise [Google::Gax::GaxError] if the RPC is aborted.
-          # @example
-          #   require "google/cloud/talent"
-          #
-          #   tenant_client = Google::Cloud::Talent::Tenant.new(version: :v4beta1)
-          #   formatted_name = Google::Cloud::Talent::V4beta1::TenantServiceClient.tenant_path("[PROJECT]", "[TENANT]")
-          #   tenant_client.delete_tenant(formatted_name)
-
-          def delete_tenant \
-              name,
-              options: nil,
-              &block
-            req = {
-              name: name
-            }.delete_if { |_, v| v.nil? }
-            req = Google::Gax::to_proto(req, Google::Cloud::Talent::V4beta1::DeleteTenantRequest)
-            @delete_tenant.call(req, options, &block)
-            nil
           end
 
           # Lists all tenants associated with the project.

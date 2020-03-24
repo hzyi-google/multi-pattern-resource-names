@@ -184,7 +184,7 @@ const InspectConfig = {
    *
    * @property {number} maxFindingsPerItem
    *   Max number of findings that will be returned for each item scanned.
-   *   When set within `InspectDataSourceRequest`,
+   *   When set within `InspectJobConfig`,
    *   the maximum returned is 2000 regardless if this is set higher.
    *   When set within `InspectContentRequest`, this field is ignored.
    *
@@ -390,6 +390,11 @@ const InspectResult = {
 /**
  * Represents a piece of potentially sensitive content.
  *
+ * @property {string} name
+ *   Resource name in format
+ *   projects/{project}/locations/{location}/findings/{finding}
+ *   Populated only when viewing persisted findings.
+ *
  * @property {string} quote
  *   The content that was found. Even if the content is not textual, it
  *   may be converted to a textual representation here.
@@ -425,6 +430,34 @@ const InspectResult = {
  *
  *   This object should have the same structure as [QuoteInfo]{@link google.privacy.dlp.v2.QuoteInfo}
  *
+ * @property {string} resourceName
+ *   The job that stored the finding.
+ *
+ * @property {string} triggerName
+ *   Job trigger name, if applicable, for this finding.
+ *
+ * @property {Object.<string, string>} labels
+ *   The labels associated with this `InspectFinding`.
+ *
+ *   Label keys must be between 1 and 63 characters long and must conform
+ *   to the following regular expression: \[a-z\](https://cloud.google.com\[-a-z0-9\]*\[a-z0-9\])?.
+ *
+ *   Label values must be between 0 and 63 characters long and must conform
+ *   to the regular expression (\[a-z\](https://cloud.google.com\[-a-z0-9\]*\[a-z0-9\])?)?.
+ *
+ *   No more than 10 labels can be associated with a given finding.
+ *
+ *   Example: <code>"environment" : "production"</code>
+ *   Example: <code>"pipeline" : "etl"</code>
+ *
+ * @property {Object} jobCreateTime
+ *   Time the job started that produced this finding.
+ *
+ *   This object should have the same structure as [Timestamp]{@link google.protobuf.Timestamp}
+ *
+ * @property {string} jobName
+ *   The job that stored the finding.
+ *
  * @typedef Finding
  * @memberof google.privacy.dlp.v2
  * @see [google.privacy.dlp.v2.Finding definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
@@ -458,6 +491,11 @@ const Finding = {
  *
  *   This object should have the same structure as [ContentLocation]{@link google.privacy.dlp.v2.ContentLocation}
  *
+ * @property {Object} container
+ *   Information about the container where this finding occurred, if available.
+ *
+ *   This object should have the same structure as [Container]{@link google.privacy.dlp.v2.Container}
+ *
  * @typedef Location
  * @memberof google.privacy.dlp.v2
  * @see [google.privacy.dlp.v2.Location definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
@@ -467,7 +505,8 @@ const Location = {
 };
 
 /**
- * Findings container location data.
+ * Precise location of the finding within a document, record, image, or metadata
+ * container.
  *
  * @property {string} containerName
  *   Name of the container where the finding is located.
@@ -568,6 +607,59 @@ const RecordLocation = {
  * @see [google.privacy.dlp.v2.TableLocation definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
  */
 const TableLocation = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * Represents a container that may contain DLP findings.
+ * Examples of a container include a file, table, or database record.
+ *
+ * @property {string} type
+ *   Container type, for example BigQuery or Google Cloud Storage.
+ *
+ * @property {string} projectId
+ *   Project where the finding was found.
+ *   Can be different from the project that owns the finding.
+ *
+ * @property {string} fullPath
+ *   A string representation of the full container name.
+ *   Examples:
+ *   - BigQuery: 'Project:DataSetId.TableId'
+ *   - Google Cloud Storage: 'gs://Bucket/folders/filename.txt'
+ *
+ * @property {string} rootPath
+ *   The root of the container.
+ *   Examples:
+ *   - For BigQuery table `project_id:dataset_id.table_id`, the root is
+ *    `dataset_id`
+ *   - For Google Cloud Storage file `gs://bucket/folder/filename.txt`, the root
+ *    is `gs://bucket`
+ *
+ * @property {string} relativePath
+ *   The rest of the path after the root.
+ *   Examples:
+ *   - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
+ *    `table_id`
+ *   - Google Cloud Storage file `gs://bucket/folder/filename.txt`, the relative
+ *    path is `folder/filename.txt`
+ *
+ * @property {Object} updateTime
+ *   Findings container modification timestamp, if applicable.
+ *   For Google Cloud Storage contains last file modification timestamp.
+ *   For BigQuery table contains last_modified_time property.
+ *   For Datastore - not populated.
+ *
+ *   This object should have the same structure as [Timestamp]{@link google.protobuf.Timestamp}
+ *
+ * @property {string} version
+ *   Findings container version, if available
+ *   ("generation" for Google Cloud Storage).
+ *
+ * @typedef Container
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.Container definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const Container = {
   // This is for documentation. Actual contents will be loaded by gRPC.
 };
 
@@ -971,6 +1063,7 @@ const InspectContentResponse = {
  *   If unspecified, then all available columns will be used for a new table or
  *   an (existing) table with no schema, and no changes will be made to an
  *   existing table that has a schema.
+ *   Only for use with external storage.
  *
  *   The number should be among the values of [OutputSchema]{@link google.privacy.dlp.v2.OutputSchema}
  *
@@ -983,6 +1076,7 @@ const OutputStorageConfig = {
 
   /**
    * Predefined schemas for storing findings.
+   * Only for use with external storage.
    *
    * @enum {number}
    * @memberof google.privacy.dlp.v2
@@ -1098,6 +1192,14 @@ const InspectDataSourceDetails = {
    *
    *   This object should have the same structure as [InfoTypeStats]{@link google.privacy.dlp.v2.InfoTypeStats}
    *
+   * @property {Object} hybridStats
+   *   Statistics related to the processing of hybrid inspect.
+   *   Early access feature is in a pre-release state and might change or have
+   *   limited support. For more information, see
+   *   https://cloud.google.com/products#product-launch-stages.
+   *
+   *   This object should have the same structure as [HybridInspectStatistics]{@link google.privacy.dlp.v2.HybridInspectStatistics}
+   *
    * @typedef Result
    * @memberof google.privacy.dlp.v2
    * @see [google.privacy.dlp.v2.InspectDataSourceDetails.Result definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
@@ -1105,6 +1207,31 @@ const InspectDataSourceDetails = {
   Result: {
     // This is for documentation. Actual contents will be loaded by gRPC.
   }
+};
+
+/**
+ * Statistics related to processing hybrid inspect requests.s
+ *
+ * @property {number} processedCount
+ *   The number of hybrid inspection requests processed within this job.
+ *
+ * @property {number} abortedCount
+ *   The number of hybrid inspection requests aborted because the job ran
+ *   out of quota or was ended before they could be processed.
+ *
+ * @property {number} pendingCount
+ *   The number of hybrid requests currently being processed. Only populated
+ *   when called via method `getDlpJob`.
+ *   A burst of traffic may cause hybrid inspect requests to be enqueued.
+ *   Processing will take place as quickly as possible, but resource limitations
+ *   may impact how long a request is enqueued for.
+ *
+ * @typedef HybridInspectStatistics
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.HybridInspectStatistics definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const HybridInspectStatistics = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
 };
 
 /**
@@ -1257,8 +1384,8 @@ const QuasiId = {
  *   This object should have the same structure as [QuasiIdentifierField]{@link google.privacy.dlp.v2.QuasiIdentifierField}
  *
  * @property {Object} relativeFrequency
- *   Required. The relative frequency column must contain a floating-point number
- *   between 0 and 1 (inclusive). Null values are assumed to be zero.
+ *   Required. The relative frequency column must contain a floating-point
+ *   number between 0 and 1 (inclusive). Null values are assumed to be zero.
  *
  *   This object should have the same structure as [FieldId]{@link google.privacy.dlp.v2.FieldId}
  *
@@ -1436,8 +1563,8 @@ const PrivacyMetric = {
    * extrapolating from the distribution of values in the input dataset.
    *
    * @property {Object[]} quasiIds
-   *   Required. Fields considered to be quasi-identifiers. No two columns can have the
-   *   same tag.
+   *   Required. Fields considered to be quasi-identifiers. No two columns can
+   *   have the same tag.
    *
    *   This object should have the same structure as [TaggedField]{@link google.privacy.dlp.v2.TaggedField}
    *
@@ -1516,8 +1643,8 @@ const PrivacyMetric = {
      *   This object should have the same structure as [QuasiIdField]{@link google.privacy.dlp.v2.QuasiIdField}
      *
      * @property {Object} relativeFrequency
-     *   Required. The relative frequency column must contain a floating-point number
-     *   between 0 and 1 (inclusive). Null values are assumed to be zero.
+     *   Required. The relative frequency column must contain a floating-point
+     *   number between 0 and 1 (inclusive). Null values are assumed to be zero.
      *
      *   This object should have the same structure as [FieldId]{@link google.privacy.dlp.v2.FieldId}
      *
@@ -1557,8 +1684,8 @@ const PrivacyMetric = {
    * knowing the attack dataset, so we use a statistical model instead.
    *
    * @property {Object[]} quasiIds
-   *   Required. Fields considered to be quasi-identifiers. No two fields can have the
-   *   same tag.
+   *   Required. Fields considered to be quasi-identifiers. No two fields can
+   *   have the same tag.
    *
    *   This object should have the same structure as [QuasiId]{@link google.privacy.dlp.v2.QuasiId}
    *
@@ -2161,12 +2288,69 @@ const DateTime = {
  *
  *   This object should have the same structure as [RecordTransformations]{@link google.privacy.dlp.v2.RecordTransformations}
  *
+ * @property {Object} transformationErrorHandling
+ *   Mode for handling transformation errors. If left unspecified, the default
+ *   mode is `TransformationErrorHandling.ThrowError`.
+ *
+ *   This object should have the same structure as [TransformationErrorHandling]{@link google.privacy.dlp.v2.TransformationErrorHandling}
+ *
  * @typedef DeidentifyConfig
  * @memberof google.privacy.dlp.v2
  * @see [google.privacy.dlp.v2.DeidentifyConfig definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
  */
 const DeidentifyConfig = {
   // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * How to handle transformation errors during de-identification. A
+ * transformation error occurs when the requested transformation is incompatible
+ * with the data. For example, trying to de-identify an IP address using a
+ * `DateShift` transformation would result in a transformation error, since date
+ * info cannot be extracted from an IP address.
+ * Information about any incompatible transformations, and how they were
+ * handled, is returned in the response as part of the
+ * `TransformationOverviews`.
+ *
+ * @property {Object} throwError
+ *   Throw an error
+ *
+ *   This object should have the same structure as [ThrowError]{@link google.privacy.dlp.v2.ThrowError}
+ *
+ * @property {Object} leaveUntransformed
+ *   Ignore errors
+ *
+ *   This object should have the same structure as [LeaveUntransformed]{@link google.privacy.dlp.v2.LeaveUntransformed}
+ *
+ * @typedef TransformationErrorHandling
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.TransformationErrorHandling definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const TransformationErrorHandling = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+
+  /**
+   * Throw an error and fail the request when a transformation error occurs.
+   * @typedef ThrowError
+   * @memberof google.privacy.dlp.v2
+   * @see [google.privacy.dlp.v2.TransformationErrorHandling.ThrowError definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+   */
+  ThrowError: {
+    // This is for documentation. Actual contents will be loaded by gRPC.
+  },
+
+  /**
+   * Skips the data without modifying it if the requested transformation would
+   * cause an error. For example, if a `DateShift` transformation were applied
+   * an an IP address, this mode would leave the IP address unchanged in the
+   * response.
+   * @typedef LeaveUntransformed
+   * @memberof google.privacy.dlp.v2
+   * @see [google.privacy.dlp.v2.TransformationErrorHandling.LeaveUntransformed definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+   */
+  LeaveUntransformed: {
+    // This is for documentation. Actual contents will be loaded by gRPC.
+  }
 };
 
 /**
@@ -2552,22 +2736,22 @@ const CharacterMaskConfig = {
  * See https://cloud.google.com/dlp/docs/concepts-bucketing to learn more.
  *
  * @property {Object} lowerBound
- *   Required. Lower bound value of buckets. All values less than `lower_bound` are
- *   grouped together into a single bucket; for example if `lower_bound` = 10,
- *   then all values less than 10 are replaced with the value “-10”.
+ *   Required. Lower bound value of buckets. All values less than `lower_bound`
+ *   are grouped together into a single bucket; for example if `lower_bound` =
+ *   10, then all values less than 10 are replaced with the value “-10”.
  *
  *   This object should have the same structure as [Value]{@link google.privacy.dlp.v2.Value}
  *
  * @property {Object} upperBound
- *   Required. Upper bound value of buckets. All values greater than upper_bound are
- *   grouped together into a single bucket; for example if `upper_bound` = 89,
- *   then all values greater than 89 are replaced with the value “89+”.
+ *   Required. Upper bound value of buckets. All values greater than upper_bound
+ *   are grouped together into a single bucket; for example if `upper_bound` =
+ *   89, then all values greater than 89 are replaced with the value “89+”.
  *
  *   This object should have the same structure as [Value]{@link google.privacy.dlp.v2.Value}
  *
  * @property {number} bucketSize
- *   Required. Size of each bucket (except for minimum and maximum buckets). So if
- *   `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the
+ *   Required. Size of each bucket (except for minimum and maximum buckets). So
+ *   if `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the
  *   following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60,
  *   60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
  *
@@ -2857,14 +3041,15 @@ const KmsWrappedCryptoKey = {
  * to learn more.
  *
  * @property {number} upperBoundDays
- *   Required. Range of shift in days. Actual shift will be selected at random within this
- *   range (inclusive ends). Negative means shift to earlier in time. Must not
- *   be more than 365250 days (1000 years) each direction.
+ *   Required. Range of shift in days. Actual shift will be selected at random
+ *   within this range (inclusive ends). Negative means shift to earlier in
+ *   time. Must not be more than 365250 days (1000 years) each direction.
  *
  *   For example, 3 means shift date to at most 3 days into the future.
  *
  * @property {number} lowerBoundDays
- *   Required. For example, -5 means shift date to at most 5 days back in the past.
+ *   Required. For example, -5 means shift date to at most 5 days back in the
+ *   past.
  *
  * @property {Object} context
  *   Points to the field that contains the context, for example, an entity id.
@@ -3270,6 +3455,17 @@ const Schedule = {
 };
 
 /**
+ * Job trigger option for hybrid jobs. Jobs must be manually created
+ * and finished.
+ * @typedef Manual
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.Manual definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const Manual = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
  * The inspectTemplate contains a configuration (set of types of sensitive data
  * to be detected) to be used anywhere you otherwise would normally specify
  * InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates
@@ -3401,8 +3597,8 @@ const Error = {
  *   This object should have the same structure as [Trigger]{@link google.privacy.dlp.v2.Trigger}
  *
  * @property {Object[]} errors
- *   Output only. A stream of errors encountered when the trigger was activated. Repeated
- *   errors may result in the JobTrigger automatically being paused.
+ *   Output only. A stream of errors encountered when the trigger was activated.
+ *   Repeated errors may result in the JobTrigger automatically being paused.
  *   Will return the last 100 errors. Whenever the JobTrigger is modified
  *   this list will be cleared.
  *
@@ -3442,6 +3638,14 @@ const JobTrigger = {
    *   Create a job on a repeating basis based on the elapse of time.
    *
    *   This object should have the same structure as [Schedule]{@link google.privacy.dlp.v2.Schedule}
+   *
+   * @property {Object} manual
+   *   For use with hybrid jobs. Jobs must be manually created and finished.
+   *   Early access feature is in a pre-release state and might change or have
+   *   limited support. For more information, see
+   *   https://cloud.google.com/products#product-launch-stages.
+   *
+   *   This object should have the same structure as [Manual]{@link google.privacy.dlp.v2.Manual}
    *
    * @typedef Trigger
    * @memberof google.privacy.dlp.v2
@@ -3663,8 +3867,8 @@ const CreateInspectTemplateRequest = {
  * Request message for UpdateInspectTemplate.
  *
  * @property {string} name
- *   Required. Resource name of organization and inspectTemplate to be updated, for
- *   example `organizations/433245324/inspectTemplates/432452342` or
+ *   Required. Resource name of organization and inspectTemplate to be updated,
+ *   for example `organizations/433245324/inspectTemplates/432452342` or
  *   projects/project-id/inspectTemplates/432452342.
  *
  * @property {Object} inspectTemplate
@@ -3689,8 +3893,8 @@ const UpdateInspectTemplateRequest = {
  * Request message for GetInspectTemplate.
  *
  * @property {string} name
- *   Required. Resource name of the organization and inspectTemplate to be read, for
- *   example `organizations/433245324/inspectTemplates/432452342` or
+ *   Required. Resource name of the organization and inspectTemplate to be read,
+ *   for example `organizations/433245324/inspectTemplates/432452342` or
  *   projects/project-id/inspectTemplates/432452342.
  *
  * @typedef GetInspectTemplateRequest
@@ -3767,9 +3971,9 @@ const ListInspectTemplatesResponse = {
  * Request message for DeleteInspectTemplate.
  *
  * @property {string} name
- *   Required. Resource name of the organization and inspectTemplate to be deleted, for
- *   example `organizations/433245324/inspectTemplates/432452342` or
- *   projects/project-id/inspectTemplates/432452342.
+ *   Required. Resource name of the organization and inspectTemplate to be
+ *   deleted, for example `organizations/433245324/inspectTemplates/432452342`
+ *   or projects/project-id/inspectTemplates/432452342.
  *
  * @typedef DeleteInspectTemplateRequest
  * @memberof google.privacy.dlp.v2
@@ -4092,7 +4296,7 @@ const DlpJob = {
   // This is for documentation. Actual contents will be loaded by gRPC.
 
   /**
-   * Possible states of a job.
+   * Possible states of a job. New items may be added.
    *
    * @enum {number}
    * @memberof google.privacy.dlp.v2
@@ -4110,7 +4314,8 @@ const DlpJob = {
     PENDING: 1,
 
     /**
-     * The job is currently running.
+     * The job is currently running. Once a job has finished it will transition
+     * to FAILED or DONE.
      */
     RUNNING: 2,
 
@@ -4127,7 +4332,15 @@ const DlpJob = {
     /**
      * The job had an error and did not complete.
      */
-    FAILED: 5
+    FAILED: 5,
+
+    /**
+     * The job is currently accepting findings via hybridInspect.
+     * A hybrid job in ACTIVE state may continue to have findings added to it
+     * through calling of hybridInspect. After the job has finished no more
+     * calls to hybridInspect may be made. ACTIVE jobs can transition to DONE.
+     */
+    ACTIVE: 6
   }
 };
 
@@ -4253,6 +4466,20 @@ const CancelDlpJobRequest = {
 };
 
 /**
+ * The request message for finishing a DLP hybrid job.
+ *
+ * @property {string} name
+ *   Required. The name of the DlpJob resource to be cancelled.
+ *
+ * @typedef FinishDlpJobRequest
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.FinishDlpJobRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const FinishDlpJobRequest = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
  * The request message for deleting a DLP job.
  *
  * @property {string} name
@@ -4300,8 +4527,9 @@ const CreateDeidentifyTemplateRequest = {
  * Request message for UpdateDeidentifyTemplate.
  *
  * @property {string} name
- *   Required. Resource name of organization and deidentify template to be updated, for
- *   example `organizations/433245324/deidentifyTemplates/432452342` or
+ *   Required. Resource name of organization and deidentify template to be
+ *   updated, for example
+ *   `organizations/433245324/deidentifyTemplates/432452342` or
  *   projects/project-id/deidentifyTemplates/432452342.
  *
  * @property {Object} deidentifyTemplate
@@ -4326,9 +4554,9 @@ const UpdateDeidentifyTemplateRequest = {
  * Request message for GetDeidentifyTemplate.
  *
  * @property {string} name
- *   Required. Resource name of the organization and deidentify template to be read, for
- *   example `organizations/433245324/deidentifyTemplates/432452342` or
- *   projects/project-id/deidentifyTemplates/432452342.
+ *   Required. Resource name of the organization and deidentify template to be
+ *   read, for example `organizations/433245324/deidentifyTemplates/432452342`
+ *   or projects/project-id/deidentifyTemplates/432452342.
  *
  * @typedef GetDeidentifyTemplateRequest
  * @memberof google.privacy.dlp.v2
@@ -4405,8 +4633,9 @@ const ListDeidentifyTemplatesResponse = {
  * Request message for DeleteDeidentifyTemplate.
  *
  * @property {string} name
- *   Required. Resource name of the organization and deidentify template to be deleted,
- *   for example `organizations/433245324/deidentifyTemplates/432452342` or
+ *   Required. Resource name of the organization and deidentify template to be
+ *   deleted, for example
+ *   `organizations/433245324/deidentifyTemplates/432452342` or
  *   projects/project-id/deidentifyTemplates/432452342.
  *
  * @typedef DeleteDeidentifyTemplateRequest
@@ -4480,6 +4709,16 @@ const LargeCustomDictionaryStats = {
  *   StoredInfoType where findings are defined by a dictionary of phrases.
  *
  *   This object should have the same structure as [LargeCustomDictionaryConfig]{@link google.privacy.dlp.v2.LargeCustomDictionaryConfig}
+ *
+ * @property {Object} dictionary
+ *   Store dictionary-based CustomInfoType.
+ *
+ *   This object should have the same structure as [Dictionary]{@link google.privacy.dlp.v2.Dictionary}
+ *
+ * @property {Object} regex
+ *   Store regular expression-based StoredInfoType.
+ *
+ *   This object should have the same structure as [Regex]{@link google.privacy.dlp.v2.Regex}
  *
  * @typedef StoredInfoTypeConfig
  * @memberof google.privacy.dlp.v2
@@ -4616,8 +4855,8 @@ const CreateStoredInfoTypeRequest = {
  * Request message for UpdateStoredInfoType.
  *
  * @property {string} name
- *   Required. Resource name of organization and storedInfoType to be updated, for
- *   example `organizations/433245324/storedInfoTypes/432452342` or
+ *   Required. Resource name of organization and storedInfoType to be updated,
+ *   for example `organizations/433245324/storedInfoTypes/432452342` or
  *   projects/project-id/storedInfoTypes/432452342.
  *
  * @property {Object} config
@@ -4644,8 +4883,8 @@ const UpdateStoredInfoTypeRequest = {
  * Request message for GetStoredInfoType.
  *
  * @property {string} name
- *   Required. Resource name of the organization and storedInfoType to be read, for
- *   example `organizations/433245324/storedInfoTypes/432452342` or
+ *   Required. Resource name of the organization and storedInfoType to be read,
+ *   for example `organizations/433245324/storedInfoTypes/432452342` or
  *   projects/project-id/storedInfoTypes/432452342.
  *
  * @typedef GetStoredInfoTypeRequest
@@ -4723,8 +4962,8 @@ const ListStoredInfoTypesResponse = {
  * Request message for DeleteStoredInfoType.
  *
  * @property {string} name
- *   Required. Resource name of the organization and storedInfoType to be deleted, for
- *   example `organizations/433245324/storedInfoTypes/432452342` or
+ *   Required. Resource name of the organization and storedInfoType to be
+ *   deleted, for example `organizations/433245324/storedInfoTypes/432452342` or
  *   projects/project-id/storedInfoTypes/432452342.
  *
  * @typedef DeleteStoredInfoTypeRequest
@@ -4732,6 +4971,131 @@ const ListStoredInfoTypesResponse = {
  * @see [google.privacy.dlp.v2.DeleteStoredInfoTypeRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
  */
 const DeleteStoredInfoTypeRequest = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * Request to search for potentially sensitive info in a custom location.
+ *
+ * @property {string} name
+ *   Required. Resource name of the trigger to execute a hybrid inspect on, for
+ *   example `projects/dlp-test-project/jobTriggers/53234423`.
+ *
+ * @property {Object} hybridItem
+ *   The item to inspect.
+ *
+ *   This object should have the same structure as [HybridContentItem]{@link google.privacy.dlp.v2.HybridContentItem}
+ *
+ * @typedef HybridInspectJobTriggerRequest
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.HybridInspectJobTriggerRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const HybridInspectJobTriggerRequest = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * Request to search for potentially sensitive info in a custom location.
+ *
+ * @property {string} name
+ *   Required. Resource name of the job to execute a hybrid inspect on, for
+ *   example `projects/dlp-test-project/dlpJob/53234423`.
+ *
+ * @property {Object} hybridItem
+ *   The item to inspect.
+ *
+ *   This object should have the same structure as [HybridContentItem]{@link google.privacy.dlp.v2.HybridContentItem}
+ *
+ * @typedef HybridInspectDlpJobRequest
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.HybridInspectDlpJobRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const HybridInspectDlpJobRequest = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * An individual hybrid item to inspect. Will be stored temporarily during
+ * processing.
+ *
+ * @property {Object} item
+ *   The item to inspect.
+ *
+ *   This object should have the same structure as [ContentItem]{@link google.privacy.dlp.v2.ContentItem}
+ *
+ * @property {Object} findingDetails
+ *   Supplementary information that will be added to each finding.
+ *
+ *   This object should have the same structure as [HybridFindingDetails]{@link google.privacy.dlp.v2.HybridFindingDetails}
+ *
+ * @typedef HybridContentItem
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.HybridContentItem definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const HybridContentItem = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * Populate to associate additional data with each finding.
+ *
+ * @property {Object} containerDetails
+ *   Details about the container where the content being inspected is from.
+ *
+ *   This object should have the same structure as [Container]{@link google.privacy.dlp.v2.Container}
+ *
+ * @property {number} fileOffset
+ *   Offset in bytes of the line, from the beginning of the file, where the
+ *   finding  is located. Populate if the item being scanned is only part of a
+ *   bigger item, such as a shard of a file and you want to track the absolute
+ *   position of the finding.
+ *
+ * @property {number} rowOffset
+ *   Offset of the row for tables. Populate if the row(s) being scanned are
+ *   part of a bigger dataset and you want to keep track of their absolute
+ *   position.
+ *
+ * @property {Object} tableOptions
+ *   If the container is a table, additional information to make findings
+ *   meaningful such as the columns that are primary keys. If not known ahead
+ *   of time, can also be set within each inspect hybrid call and the two
+ *   will be merged. Note that identifying_fields will only be stored to
+ *   BigQuery, and only if the BigQuery action has been included.
+ *
+ *   This object should have the same structure as [TableOptions]{@link google.privacy.dlp.v2.TableOptions}
+ *
+ * @property {Object.<string, string>} labels
+ *   Labels to represent user provided metadata about the data being inspected.
+ *   If configured by the job, some key values may be required.
+ *   The labels associated with `Finding`'s produced by hybrid
+ *   inspection.
+ *
+ *   Label keys must be between 1 and 63 characters long and must conform
+ *   to the following regular expression: \[a-z\](https://cloud.google.com\[-a-z0-9\]*\[a-z0-9\])?.
+ *
+ *   Label values must be between 0 and 63 characters long and must conform
+ *   to the regular expression (\[a-z\](https://cloud.google.com\[-a-z0-9\]*\[a-z0-9\])?)?.
+ *
+ *   No more than 10 labels can be associated with a given finding.
+ *
+ *   Example: <code>"environment" : "production"</code>
+ *   Example: <code>"pipeline" : "etl"</code>
+ *
+ * @typedef HybridFindingDetails
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.HybridFindingDetails definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const HybridFindingDetails = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * Quota exceeded errors will be thrown once quota has been met.
+ * @typedef HybridInspectResponse
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.HybridInspectResponse definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/dlp.proto}
+ */
+const HybridInspectResponse = {
   // This is for documentation. Actual contents will be loaded by gRPC.
 };
 

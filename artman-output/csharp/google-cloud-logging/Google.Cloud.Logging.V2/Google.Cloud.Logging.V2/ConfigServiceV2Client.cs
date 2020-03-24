@@ -49,6 +49,9 @@ namespace Google.Cloud.Logging.V2
         private ConfigServiceV2Settings(ConfigServiceV2Settings existing) : base(existing)
         {
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
+            ListBucketsSettings = existing.ListBucketsSettings;
+            GetBucketSettings = existing.GetBucketSettings;
+            UpdateBucketSettings = existing.UpdateBucketSettings;
             ListSinksSettings = existing.ListSinksSettings;
             GetSinkSettings = existing.GetSinkSettings;
             CreateSinkSettings = existing.CreateSinkSettings;
@@ -74,12 +77,11 @@ namespace Google.Cloud.Logging.V2
         /// The eligible RPC <see cref="grpccore::StatusCode"/>s for retry for "Idempotent" RPC methods are:
         /// <list type="bullet">
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// </remarks>
         public static sys::Predicate<grpccore::RpcException> IdempotentRetryFilter { get; } =
-            gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Internal, grpccore::StatusCode.Unavailable);
+            gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable);
 
         /// <summary>
         /// The filter specifying which RPC <see cref="grpccore::StatusCode"/>s are eligible for retry
@@ -90,20 +92,6 @@ namespace Google.Cloud.Logging.V2
         /// </remarks>
         public static sys::Predicate<grpccore::RpcException> NonIdempotentRetryFilter { get; } =
             gaxgrpc::RetrySettings.FilterForStatusCodes();
-
-        /// <summary>
-        /// The filter specifying which RPC <see cref="grpccore::StatusCode"/>s are eligible for retry
-        /// for "Idempotent2" <see cref="ConfigServiceV2Client"/> RPC methods.
-        /// </summary>
-        /// <remarks>
-        /// The eligible RPC <see cref="grpccore::StatusCode"/>s for retry for "Idempotent2" RPC methods are:
-        /// <list type="bullet">
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
-        /// </list>
-        /// </remarks>
-        public static sys::Predicate<grpccore::RpcException> Idempotent2RetryFilter { get; } =
-            gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable);
 
         /// <summary>
         /// "Default" retry backoff for <see cref="ConfigServiceV2Client"/> RPC methods.
@@ -146,44 +134,93 @@ namespace Google.Cloud.Logging.V2
         );
 
         /// <summary>
-        /// "WriteSink" retry backoff for <see cref="ConfigServiceV2Client"/> RPC methods.
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>ConfigServiceV2Client.ListBuckets</c> and <c>ConfigServiceV2Client.ListBucketsAsync</c>.
         /// </summary>
-        /// <returns>
-        /// The "WriteSink" retry backoff for <see cref="ConfigServiceV2Client"/> RPC methods.
-        /// </returns>
         /// <remarks>
-        /// The "WriteSink" retry backoff for <see cref="ConfigServiceV2Client"/> RPC methods is defined as:
+        /// The default <c>ConfigServiceV2Client.ListBuckets</c> and
+        /// <c>ConfigServiceV2Client.ListBucketsAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
         /// <list type="bullet">
-        /// <item><description>Initial delay: 100 milliseconds</description></item>
-        /// <item><description>Maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Delay multiplier: 1.3</description></item>
-        /// </list>
-        /// </remarks>
-        public static gaxgrpc::BackoffSettings GetWriteSinkRetryBackoff() => new gaxgrpc::BackoffSettings(
-            delay: sys::TimeSpan.FromMilliseconds(100),
-            maxDelay: sys::TimeSpan.FromMilliseconds(60000),
-            delayMultiplier: 1.3
-        );
-
-        /// <summary>
-        /// "WriteSink" timeout backoff for <see cref="ConfigServiceV2Client"/> RPC methods.
-        /// </summary>
-        /// <returns>
-        /// The "WriteSink" timeout backoff for <see cref="ConfigServiceV2Client"/> RPC methods.
-        /// </returns>
-        /// <remarks>
-        /// The "WriteSink" timeout backoff for <see cref="ConfigServiceV2Client"/> RPC methods is defined as:
-        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
         /// <item><description>Initial timeout: 20000 milliseconds</description></item>
         /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Maximum timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
         /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
+        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
-        public static gaxgrpc::BackoffSettings GetWriteSinkTimeoutBackoff() => new gaxgrpc::BackoffSettings(
-            delay: sys::TimeSpan.FromMilliseconds(20000),
-            maxDelay: sys::TimeSpan.FromMilliseconds(20000),
-            delayMultiplier: 1.0
-        );
+        public gaxgrpc::CallSettings ListBucketsSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: IdempotentRetryFilter
+            )));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>ConfigServiceV2Client.GetBucket</c> and <c>ConfigServiceV2Client.GetBucketAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>ConfigServiceV2Client.GetBucket</c> and
+        /// <c>ConfigServiceV2Client.GetBucketAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
+        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings GetBucketSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: IdempotentRetryFilter
+            )));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>ConfigServiceV2Client.UpdateBucket</c> and <c>ConfigServiceV2Client.UpdateBucketAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>ConfigServiceV2Client.UpdateBucket</c> and
+        /// <c>ConfigServiceV2Client.UpdateBucketAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description>No status codes</description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings UpdateBucketSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: NonIdempotentRetryFilter
+            )));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -203,7 +240,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -234,7 +270,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -293,9 +328,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -304,7 +337,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -324,9 +357,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -335,7 +366,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -356,7 +387,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -387,7 +417,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -475,9 +504,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -486,7 +513,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -516,7 +543,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: Idempotent2RetryFilter
+                retryFilter: IdempotentRetryFilter
             )));
 
         /// <summary>
@@ -756,6 +783,606 @@ namespace Google.Cloud.Logging.V2
         }
 
         /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListBucketsResponse, LogBucket> ListBucketsAsync(
+            LocationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBucketsAsync(
+                new ListBucketsRequest
+                {
+                    ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListBucketsResponse, LogBucket> ListBuckets(
+            LocationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBuckets(
+                new ListBucketsRequest
+                {
+                    ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListBucketsResponse, LogBucket> ListBucketsAsync(
+            OrganizationLocationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBucketsAsync(
+                new ListBucketsRequest
+                {
+                    ParentAsOrganizationLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListBucketsResponse, LogBucket> ListBuckets(
+            OrganizationLocationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBuckets(
+                new ListBucketsRequest
+                {
+                    ParentAsOrganizationLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListBucketsResponse, LogBucket> ListBucketsAsync(
+            FolderLocationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBucketsAsync(
+                new ListBucketsRequest
+                {
+                    ParentAsFolderLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListBucketsResponse, LogBucket> ListBuckets(
+            FolderLocationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBuckets(
+                new ListBucketsRequest
+                {
+                    ParentAsFolderLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListBucketsResponse, LogBucket> ListBucketsAsync(
+            BillingAccountLocationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBucketsAsync(
+                new ListBucketsRequest
+                {
+                    ParentAsBillingAccountLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListBucketsResponse, LogBucket> ListBuckets(
+            BillingAccountLocationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBuckets(
+                new ListBucketsRequest
+                {
+                    ParentAsBillingAccountLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListBucketsResponse, LogBucket> ListBucketsAsync(
+            string parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBucketsAsync(
+                new ListBucketsRequest
+                {
+                    Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose buckets are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]/locations/[LOCATION_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
+        ///     "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
+        ///
+        /// Note: The locations portion of the resource must be specified, but
+        /// supplying the character `-` in place of [LOCATION_ID] will return all
+        /// buckets.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListBucketsResponse, LogBucket> ListBuckets(
+            string parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListBuckets(
+                new ListBucketsRequest
+                {
+                    Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListBucketsResponse, LogBucket> ListBucketsAsync(
+            ListBucketsRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListBucketsResponse, LogBucket> ListBuckets(
+            ListBucketsRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Gets a bucket (Beta).
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogBucket> GetBucketAsync(
+            GetBucketRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Gets a bucket (Beta).
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogBucket> GetBucketAsync(
+            GetBucketRequest request,
+            st::CancellationToken cancellationToken) => GetBucketAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Gets a bucket (Beta).
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual LogBucket GetBucket(
+            GetBucketRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Updates a bucket. This method replaces the following fields in the
+        /// existing bucket with values from the new bucket: `retention_period`
+        ///
+        /// If the retention period is decreased and the bucket is locked,
+        /// FAILED_PRECONDITION will be returned.
+        ///
+        /// If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
+        /// will be returned.
+        ///
+        /// A buckets region may not be modified after it is created.
+        /// This method is in Beta.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogBucket> UpdateBucketAsync(
+            UpdateBucketRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Updates a bucket. This method replaces the following fields in the
+        /// existing bucket with values from the new bucket: `retention_period`
+        ///
+        /// If the retention period is decreased and the bucket is locked,
+        /// FAILED_PRECONDITION will be returned.
+        ///
+        /// If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
+        /// will be returned.
+        ///
+        /// A buckets region may not be modified after it is created.
+        /// This method is in Beta.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogBucket> UpdateBucketAsync(
+            UpdateBucketRequest request,
+            st::CancellationToken cancellationToken) => UpdateBucketAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Updates a bucket. This method replaces the following fields in the
+        /// existing bucket with values from the new bucket: `retention_period`
+        ///
+        /// If the retention period is decreased and the bucket is locked,
+        /// FAILED_PRECONDITION will be returned.
+        ///
+        /// If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
+        /// will be returned.
+        ///
+        /// A buckets region may not be modified after it is created.
+        /// This method is in Beta.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual LogBucket UpdateBucket(
+            UpdateBucketRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
         /// Lists sinks.
         /// </summary>
         /// <param name="parent">
@@ -781,13 +1408,13 @@ namespace Google.Cloud.Logging.V2
         /// A pageable asynchronous sequence of <see cref="LogSink"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListSinksResponse, LogSink> ListSinksAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListSinksAsync(
                 new ListSinksRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -819,13 +1446,241 @@ namespace Google.Cloud.Logging.V2
         /// A pageable sequence of <see cref="LogSink"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListSinksResponse, LogSink> ListSinks(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListSinks(
                 new ListSinksRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists sinks.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose sinks are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogSink"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListSinksResponse, LogSink> ListSinksAsync(
+            OrganizationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListSinksAsync(
+                new ListSinksRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists sinks.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose sinks are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogSink"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListSinksResponse, LogSink> ListSinks(
+            OrganizationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListSinks(
+                new ListSinksRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists sinks.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose sinks are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogSink"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListSinksResponse, LogSink> ListSinksAsync(
+            FolderName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListSinksAsync(
+                new ListSinksRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists sinks.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose sinks are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogSink"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListSinksResponse, LogSink> ListSinks(
+            FolderName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListSinks(
+                new ListSinksRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists sinks.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose sinks are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogSink"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListSinksResponse, LogSink> ListSinksAsync(
+            BillingAccountName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListSinksAsync(
+                new ListSinksRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists sinks.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose sinks are to be listed:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogSink"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListSinksResponse, LogSink> ListSinks(
+            BillingAccountName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListSinks(
+                new ListSinksRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -965,11 +1820,11 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogSink> GetSinkAsync(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             gaxgrpc::CallSettings callSettings = null) => GetSinkAsync(
                 new GetSinkRequest
                 {
-                    SinkNameAsSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
+                    SinkNameAsLogSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
                 },
                 callSettings);
 
@@ -993,7 +1848,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogSink> GetSinkAsync(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             st::CancellationToken cancellationToken) => GetSinkAsync(
                 sinkName,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -1018,11 +1873,11 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogSink GetSink(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             gaxgrpc::CallSettings callSettings = null) => GetSink(
                 new GetSinkRequest
                 {
-                    SinkNameAsSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
+                    SinkNameAsLogSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
                 },
                 callSettings);
 
@@ -1190,12 +2045,12 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogSink> CreateSinkAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             LogSink sink,
             gaxgrpc::CallSettings callSettings = null) => CreateSinkAsync(
                 new CreateSinkRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
                 },
                 callSettings);
@@ -1227,7 +2082,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogSink> CreateSinkAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             LogSink sink,
             st::CancellationToken cancellationToken) => CreateSinkAsync(
                 parent,
@@ -1261,12 +2116,336 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogSink CreateSink(
-            ParentNameOneof parent,
+            ProjectName parent,
             LogSink sink,
             gaxgrpc::CallSettings callSettings = null) => CreateSink(
                 new CreateSinkRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a sink that exports specified log entries to a destination. The
+        /// export of newly-ingested log entries begins immediately, unless the sink's
+        /// `writer_identity` is not permitted to write to the destination. A sink can
+        /// export log entries only from the resource owning the sink.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource in which to create the sink:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="sink">
+        /// Required. The new sink, whose `name` parameter is a sink identifier that
+        /// is not already in use.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogSink> CreateSinkAsync(
+            OrganizationName parent,
+            LogSink sink,
+            gaxgrpc::CallSettings callSettings = null) => CreateSinkAsync(
+                new CreateSinkRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a sink that exports specified log entries to a destination. The
+        /// export of newly-ingested log entries begins immediately, unless the sink's
+        /// `writer_identity` is not permitted to write to the destination. A sink can
+        /// export log entries only from the resource owning the sink.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource in which to create the sink:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="sink">
+        /// Required. The new sink, whose `name` parameter is a sink identifier that
+        /// is not already in use.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogSink> CreateSinkAsync(
+            OrganizationName parent,
+            LogSink sink,
+            st::CancellationToken cancellationToken) => CreateSinkAsync(
+                parent,
+                sink,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a sink that exports specified log entries to a destination. The
+        /// export of newly-ingested log entries begins immediately, unless the sink's
+        /// `writer_identity` is not permitted to write to the destination. A sink can
+        /// export log entries only from the resource owning the sink.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource in which to create the sink:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="sink">
+        /// Required. The new sink, whose `name` parameter is a sink identifier that
+        /// is not already in use.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual LogSink CreateSink(
+            OrganizationName parent,
+            LogSink sink,
+            gaxgrpc::CallSettings callSettings = null) => CreateSink(
+                new CreateSinkRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a sink that exports specified log entries to a destination. The
+        /// export of newly-ingested log entries begins immediately, unless the sink's
+        /// `writer_identity` is not permitted to write to the destination. A sink can
+        /// export log entries only from the resource owning the sink.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource in which to create the sink:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="sink">
+        /// Required. The new sink, whose `name` parameter is a sink identifier that
+        /// is not already in use.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogSink> CreateSinkAsync(
+            FolderName parent,
+            LogSink sink,
+            gaxgrpc::CallSettings callSettings = null) => CreateSinkAsync(
+                new CreateSinkRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a sink that exports specified log entries to a destination. The
+        /// export of newly-ingested log entries begins immediately, unless the sink's
+        /// `writer_identity` is not permitted to write to the destination. A sink can
+        /// export log entries only from the resource owning the sink.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource in which to create the sink:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="sink">
+        /// Required. The new sink, whose `name` parameter is a sink identifier that
+        /// is not already in use.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogSink> CreateSinkAsync(
+            FolderName parent,
+            LogSink sink,
+            st::CancellationToken cancellationToken) => CreateSinkAsync(
+                parent,
+                sink,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a sink that exports specified log entries to a destination. The
+        /// export of newly-ingested log entries begins immediately, unless the sink's
+        /// `writer_identity` is not permitted to write to the destination. A sink can
+        /// export log entries only from the resource owning the sink.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource in which to create the sink:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="sink">
+        /// Required. The new sink, whose `name` parameter is a sink identifier that
+        /// is not already in use.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual LogSink CreateSink(
+            FolderName parent,
+            LogSink sink,
+            gaxgrpc::CallSettings callSettings = null) => CreateSink(
+                new CreateSinkRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a sink that exports specified log entries to a destination. The
+        /// export of newly-ingested log entries begins immediately, unless the sink's
+        /// `writer_identity` is not permitted to write to the destination. A sink can
+        /// export log entries only from the resource owning the sink.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource in which to create the sink:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="sink">
+        /// Required. The new sink, whose `name` parameter is a sink identifier that
+        /// is not already in use.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogSink> CreateSinkAsync(
+            BillingAccountName parent,
+            LogSink sink,
+            gaxgrpc::CallSettings callSettings = null) => CreateSinkAsync(
+                new CreateSinkRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a sink that exports specified log entries to a destination. The
+        /// export of newly-ingested log entries begins immediately, unless the sink's
+        /// `writer_identity` is not permitted to write to the destination. A sink can
+        /// export log entries only from the resource owning the sink.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource in which to create the sink:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="sink">
+        /// Required. The new sink, whose `name` parameter is a sink identifier that
+        /// is not already in use.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogSink> CreateSinkAsync(
+            BillingAccountName parent,
+            LogSink sink,
+            st::CancellationToken cancellationToken) => CreateSinkAsync(
+                parent,
+                sink,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a sink that exports specified log entries to a destination. The
+        /// export of newly-ingested log entries begins immediately, unless the sink's
+        /// `writer_identity` is not permitted to write to the destination. A sink can
+        /// export log entries only from the resource owning the sink.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource in which to create the sink:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="sink">
+        /// Required. The new sink, whose `name` parameter is a sink identifier that
+        /// is not already in use.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual LogSink CreateSink(
+            BillingAccountName parent,
+            LogSink sink,
+            gaxgrpc::CallSettings callSettings = null) => CreateSink(
+                new CreateSinkRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
                 },
                 callSettings);
@@ -1452,8 +2631,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1463,8 +2642,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="updateMask">
         /// Optional. Field mask that specifies the fields in `sink` that need
@@ -1489,13 +2668,13 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogSink> UpdateSinkAsync(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             LogSink sink,
             pbwkt::FieldMask updateMask,
             gaxgrpc::CallSettings callSettings = null) => UpdateSinkAsync(
                 new UpdateSinkRequest
                 {
-                    SinkNameAsSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
+                    SinkNameAsLogSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
                     Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
                     UpdateMask = updateMask, // Optional
                 },
@@ -1509,8 +2688,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1520,8 +2699,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="updateMask">
         /// Optional. Field mask that specifies the fields in `sink` that need
@@ -1546,7 +2725,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogSink> UpdateSinkAsync(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             LogSink sink,
             pbwkt::FieldMask updateMask,
             st::CancellationToken cancellationToken) => UpdateSinkAsync(
@@ -1563,8 +2742,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1574,8 +2753,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="updateMask">
         /// Optional. Field mask that specifies the fields in `sink` that need
@@ -1600,13 +2779,13 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogSink UpdateSink(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             LogSink sink,
             pbwkt::FieldMask updateMask,
             gaxgrpc::CallSettings callSettings = null) => UpdateSink(
                 new UpdateSinkRequest
                 {
-                    SinkNameAsSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
+                    SinkNameAsLogSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
                     Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
                     UpdateMask = updateMask, // Optional
                 },
@@ -1620,8 +2799,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1631,8 +2810,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="updateMask">
         /// Optional. Field mask that specifies the fields in `sink` that need
@@ -1677,8 +2856,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1688,8 +2867,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="updateMask">
         /// Optional. Field mask that specifies the fields in `sink` that need
@@ -1731,8 +2910,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1742,8 +2921,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="updateMask">
         /// Optional. Field mask that specifies the fields in `sink` that need
@@ -1788,8 +2967,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1799,8 +2978,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -1809,12 +2988,12 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogSink> UpdateSinkAsync(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             LogSink sink,
             gaxgrpc::CallSettings callSettings = null) => UpdateSinkAsync(
                 new UpdateSinkRequest
                 {
-                    SinkNameAsSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
+                    SinkNameAsLogSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
                     Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
                 },
                 callSettings);
@@ -1827,8 +3006,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1838,8 +3017,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -1848,7 +3027,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogSink> UpdateSinkAsync(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             LogSink sink,
             st::CancellationToken cancellationToken) => UpdateSinkAsync(
                 sinkName,
@@ -1863,8 +3042,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1874,8 +3053,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -1884,12 +3063,12 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogSink UpdateSink(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             LogSink sink,
             gaxgrpc::CallSettings callSettings = null) => UpdateSink(
                 new UpdateSinkRequest
                 {
-                    SinkNameAsSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
+                    SinkNameAsLogSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
                     Sink = gax::GaxPreconditions.CheckNotNull(sink, nameof(sink)),
                 },
                 callSettings);
@@ -1902,8 +3081,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1913,8 +3092,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -1941,8 +3120,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1952,8 +3131,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -1977,8 +3156,8 @@ namespace Google.Cloud.Logging.V2
         /// `unique_writer_identity` field.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to update, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to update, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -1988,8 +3167,8 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/sinks/my-sink-id"`.
         /// </param>
         /// <param name="sink">
-        /// Required. The updated sink, whose name is the same identifier that appears
-        /// as part of `sink_name`.
+        /// Required. The updated sink, whose name is the same identifier that appears as part
+        /// of `sink_name`.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2081,8 +3260,8 @@ namespace Google.Cloud.Logging.V2
         /// service account is also deleted.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to delete, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to delete, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -2098,11 +3277,11 @@ namespace Google.Cloud.Logging.V2
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteSinkAsync(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             gaxgrpc::CallSettings callSettings = null) => DeleteSinkAsync(
                 new DeleteSinkRequest
                 {
-                    SinkNameAsSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
+                    SinkNameAsLogSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
                 },
                 callSettings);
 
@@ -2111,8 +3290,8 @@ namespace Google.Cloud.Logging.V2
         /// service account is also deleted.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to delete, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to delete, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -2128,7 +3307,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteSinkAsync(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             st::CancellationToken cancellationToken) => DeleteSinkAsync(
                 sinkName,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -2138,8 +3317,8 @@ namespace Google.Cloud.Logging.V2
         /// service account is also deleted.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to delete, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to delete, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -2152,11 +3331,11 @@ namespace Google.Cloud.Logging.V2
         /// If not null, applies overrides to this RPC call.
         /// </param>
         public virtual void DeleteSink(
-            SinkNameOneof sinkName,
+            LogSinkNameOneof sinkName,
             gaxgrpc::CallSettings callSettings = null) => DeleteSink(
                 new DeleteSinkRequest
                 {
-                    SinkNameAsSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
+                    SinkNameAsLogSinkNameOneof = gax::GaxPreconditions.CheckNotNull(sinkName, nameof(sinkName)),
                 },
                 callSettings);
 
@@ -2165,8 +3344,8 @@ namespace Google.Cloud.Logging.V2
         /// service account is also deleted.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to delete, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to delete, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -2195,8 +3374,8 @@ namespace Google.Cloud.Logging.V2
         /// service account is also deleted.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to delete, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to delete, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -2222,8 +3401,8 @@ namespace Google.Cloud.Logging.V2
         /// service account is also deleted.
         /// </summary>
         /// <param name="sinkName">
-        /// Required. The full resource name of the sink to delete, including the
-        /// parent resource and the sink identifier:
+        /// Required. The full resource name of the sink to delete, including the parent
+        /// resource and the sink identifier:
         ///
         ///     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
         ///     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
@@ -2326,13 +3505,13 @@ namespace Google.Cloud.Logging.V2
         /// A pageable asynchronous sequence of <see cref="LogExclusion"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListExclusionsResponse, LogExclusion> ListExclusionsAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListExclusionsAsync(
                 new ListExclusionsRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2364,13 +3543,241 @@ namespace Google.Cloud.Logging.V2
         /// A pageable sequence of <see cref="LogExclusion"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListExclusionsResponse, LogExclusion> ListExclusions(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListExclusions(
                 new ListExclusionsRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists all the exclusions in a parent resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose exclusions are to be listed.
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogExclusion"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListExclusionsResponse, LogExclusion> ListExclusionsAsync(
+            OrganizationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListExclusionsAsync(
+                new ListExclusionsRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists all the exclusions in a parent resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose exclusions are to be listed.
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogExclusion"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListExclusionsResponse, LogExclusion> ListExclusions(
+            OrganizationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListExclusions(
+                new ListExclusionsRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists all the exclusions in a parent resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose exclusions are to be listed.
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogExclusion"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListExclusionsResponse, LogExclusion> ListExclusionsAsync(
+            FolderName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListExclusionsAsync(
+                new ListExclusionsRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists all the exclusions in a parent resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose exclusions are to be listed.
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogExclusion"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListExclusionsResponse, LogExclusion> ListExclusions(
+            FolderName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListExclusions(
+                new ListExclusionsRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists all the exclusions in a parent resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose exclusions are to be listed.
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogExclusion"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListExclusionsResponse, LogExclusion> ListExclusionsAsync(
+            BillingAccountName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListExclusionsAsync(
+                new ListExclusionsRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists all the exclusions in a parent resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource whose exclusions are to be listed.
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogExclusion"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListExclusionsResponse, LogExclusion> ListExclusions(
+            BillingAccountName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListExclusions(
+                new ListExclusionsRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -2510,11 +3917,11 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogExclusion> GetExclusionAsync(
-            ExclusionNameOneof name,
+            LogExclusionNameOneof name,
             gaxgrpc::CallSettings callSettings = null) => GetExclusionAsync(
                 new GetExclusionRequest
                 {
-                    ExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                    LogExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 },
                 callSettings);
 
@@ -2538,7 +3945,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogExclusion> GetExclusionAsync(
-            ExclusionNameOneof name,
+            LogExclusionNameOneof name,
             st::CancellationToken cancellationToken) => GetExclusionAsync(
                 name,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -2563,11 +3970,11 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogExclusion GetExclusion(
-            ExclusionNameOneof name,
+            LogExclusionNameOneof name,
             gaxgrpc::CallSettings callSettings = null) => GetExclusion(
                 new GetExclusionRequest
                 {
-                    ExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                    LogExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 },
                 callSettings);
 
@@ -2734,12 +4141,12 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogExclusion> CreateExclusionAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             LogExclusion exclusion,
             gaxgrpc::CallSettings callSettings = null) => CreateExclusionAsync(
                 new CreateExclusionRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
                 },
                 callSettings);
@@ -2770,7 +4177,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogExclusion> CreateExclusionAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             LogExclusion exclusion,
             st::CancellationToken cancellationToken) => CreateExclusionAsync(
                 parent,
@@ -2803,12 +4210,327 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogExclusion CreateExclusion(
-            ParentNameOneof parent,
+            ProjectName parent,
             LogExclusion exclusion,
             gaxgrpc::CallSettings callSettings = null) => CreateExclusion(
                 new CreateExclusionRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a new exclusion in a specified parent resource.
+        /// Only log entries belonging to that resource can be excluded.
+        /// You can have up to 10 exclusions in a resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource in which to create the exclusion:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="exclusion">
+        /// Required. The new exclusion, whose `name` parameter is an exclusion name
+        /// that is not already used in the parent resource.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogExclusion> CreateExclusionAsync(
+            OrganizationName parent,
+            LogExclusion exclusion,
+            gaxgrpc::CallSettings callSettings = null) => CreateExclusionAsync(
+                new CreateExclusionRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a new exclusion in a specified parent resource.
+        /// Only log entries belonging to that resource can be excluded.
+        /// You can have up to 10 exclusions in a resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource in which to create the exclusion:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="exclusion">
+        /// Required. The new exclusion, whose `name` parameter is an exclusion name
+        /// that is not already used in the parent resource.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogExclusion> CreateExclusionAsync(
+            OrganizationName parent,
+            LogExclusion exclusion,
+            st::CancellationToken cancellationToken) => CreateExclusionAsync(
+                parent,
+                exclusion,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a new exclusion in a specified parent resource.
+        /// Only log entries belonging to that resource can be excluded.
+        /// You can have up to 10 exclusions in a resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource in which to create the exclusion:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="exclusion">
+        /// Required. The new exclusion, whose `name` parameter is an exclusion name
+        /// that is not already used in the parent resource.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual LogExclusion CreateExclusion(
+            OrganizationName parent,
+            LogExclusion exclusion,
+            gaxgrpc::CallSettings callSettings = null) => CreateExclusion(
+                new CreateExclusionRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a new exclusion in a specified parent resource.
+        /// Only log entries belonging to that resource can be excluded.
+        /// You can have up to 10 exclusions in a resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource in which to create the exclusion:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="exclusion">
+        /// Required. The new exclusion, whose `name` parameter is an exclusion name
+        /// that is not already used in the parent resource.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogExclusion> CreateExclusionAsync(
+            FolderName parent,
+            LogExclusion exclusion,
+            gaxgrpc::CallSettings callSettings = null) => CreateExclusionAsync(
+                new CreateExclusionRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a new exclusion in a specified parent resource.
+        /// Only log entries belonging to that resource can be excluded.
+        /// You can have up to 10 exclusions in a resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource in which to create the exclusion:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="exclusion">
+        /// Required. The new exclusion, whose `name` parameter is an exclusion name
+        /// that is not already used in the parent resource.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogExclusion> CreateExclusionAsync(
+            FolderName parent,
+            LogExclusion exclusion,
+            st::CancellationToken cancellationToken) => CreateExclusionAsync(
+                parent,
+                exclusion,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a new exclusion in a specified parent resource.
+        /// Only log entries belonging to that resource can be excluded.
+        /// You can have up to 10 exclusions in a resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource in which to create the exclusion:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="exclusion">
+        /// Required. The new exclusion, whose `name` parameter is an exclusion name
+        /// that is not already used in the parent resource.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual LogExclusion CreateExclusion(
+            FolderName parent,
+            LogExclusion exclusion,
+            gaxgrpc::CallSettings callSettings = null) => CreateExclusion(
+                new CreateExclusionRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a new exclusion in a specified parent resource.
+        /// Only log entries belonging to that resource can be excluded.
+        /// You can have up to 10 exclusions in a resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource in which to create the exclusion:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="exclusion">
+        /// Required. The new exclusion, whose `name` parameter is an exclusion name
+        /// that is not already used in the parent resource.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogExclusion> CreateExclusionAsync(
+            BillingAccountName parent,
+            LogExclusion exclusion,
+            gaxgrpc::CallSettings callSettings = null) => CreateExclusionAsync(
+                new CreateExclusionRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a new exclusion in a specified parent resource.
+        /// Only log entries belonging to that resource can be excluded.
+        /// You can have up to 10 exclusions in a resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource in which to create the exclusion:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="exclusion">
+        /// Required. The new exclusion, whose `name` parameter is an exclusion name
+        /// that is not already used in the parent resource.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<LogExclusion> CreateExclusionAsync(
+            BillingAccountName parent,
+            LogExclusion exclusion,
+            st::CancellationToken cancellationToken) => CreateExclusionAsync(
+                parent,
+                exclusion,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a new exclusion in a specified parent resource.
+        /// Only log entries belonging to that resource can be excluded.
+        /// You can have up to 10 exclusions in a resource.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The parent resource in which to create the exclusion:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        /// Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
+        /// </param>
+        /// <param name="exclusion">
+        /// Required. The new exclusion, whose `name` parameter is an exclusion name
+        /// that is not already used in the parent resource.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual LogExclusion CreateExclusion(
+            BillingAccountName parent,
+            LogExclusion exclusion,
+            gaxgrpc::CallSettings callSettings = null) => CreateExclusion(
+                new CreateExclusionRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
                 },
                 callSettings);
@@ -2994,12 +4716,12 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
         /// </param>
         /// <param name="exclusion">
-        /// Required. New values for the existing exclusion. Only the fields specified
-        /// in `update_mask` are relevant.
+        /// Required. New values for the existing exclusion. Only the fields specified in
+        /// `update_mask` are relevant.
         /// </param>
         /// <param name="updateMask">
-        /// Required. A non-empty list of fields to change in the existing exclusion.
-        /// New values for the fields are taken from the corresponding fields in the
+        /// Required. A non-empty list of fields to change in the existing exclusion. New values
+        /// for the fields are taken from the corresponding fields in the
         /// [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
         /// `update_mask` are not changed and are ignored in the request.
         ///
@@ -3013,13 +4735,13 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogExclusion> UpdateExclusionAsync(
-            ExclusionNameOneof name,
+            LogExclusionNameOneof name,
             LogExclusion exclusion,
             pbwkt::FieldMask updateMask,
             gaxgrpc::CallSettings callSettings = null) => UpdateExclusionAsync(
                 new UpdateExclusionRequest
                 {
-                    ExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                    LogExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                     Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
                     UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
                 },
@@ -3039,12 +4761,12 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
         /// </param>
         /// <param name="exclusion">
-        /// Required. New values for the existing exclusion. Only the fields specified
-        /// in `update_mask` are relevant.
+        /// Required. New values for the existing exclusion. Only the fields specified in
+        /// `update_mask` are relevant.
         /// </param>
         /// <param name="updateMask">
-        /// Required. A non-empty list of fields to change in the existing exclusion.
-        /// New values for the fields are taken from the corresponding fields in the
+        /// Required. A non-empty list of fields to change in the existing exclusion. New values
+        /// for the fields are taken from the corresponding fields in the
         /// [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
         /// `update_mask` are not changed and are ignored in the request.
         ///
@@ -3058,7 +4780,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<LogExclusion> UpdateExclusionAsync(
-            ExclusionNameOneof name,
+            LogExclusionNameOneof name,
             LogExclusion exclusion,
             pbwkt::FieldMask updateMask,
             st::CancellationToken cancellationToken) => UpdateExclusionAsync(
@@ -3081,12 +4803,12 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
         /// </param>
         /// <param name="exclusion">
-        /// Required. New values for the existing exclusion. Only the fields specified
-        /// in `update_mask` are relevant.
+        /// Required. New values for the existing exclusion. Only the fields specified in
+        /// `update_mask` are relevant.
         /// </param>
         /// <param name="updateMask">
-        /// Required. A non-empty list of fields to change in the existing exclusion.
-        /// New values for the fields are taken from the corresponding fields in the
+        /// Required. A non-empty list of fields to change in the existing exclusion. New values
+        /// for the fields are taken from the corresponding fields in the
         /// [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
         /// `update_mask` are not changed and are ignored in the request.
         ///
@@ -3100,13 +4822,13 @@ namespace Google.Cloud.Logging.V2
         /// The RPC response.
         /// </returns>
         public virtual LogExclusion UpdateExclusion(
-            ExclusionNameOneof name,
+            LogExclusionNameOneof name,
             LogExclusion exclusion,
             pbwkt::FieldMask updateMask,
             gaxgrpc::CallSettings callSettings = null) => UpdateExclusion(
                 new UpdateExclusionRequest
                 {
-                    ExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                    LogExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                     Exclusion = gax::GaxPreconditions.CheckNotNull(exclusion, nameof(exclusion)),
                     UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
                 },
@@ -3126,12 +4848,12 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
         /// </param>
         /// <param name="exclusion">
-        /// Required. New values for the existing exclusion. Only the fields specified
-        /// in `update_mask` are relevant.
+        /// Required. New values for the existing exclusion. Only the fields specified in
+        /// `update_mask` are relevant.
         /// </param>
         /// <param name="updateMask">
-        /// Required. A non-empty list of fields to change in the existing exclusion.
-        /// New values for the fields are taken from the corresponding fields in the
+        /// Required. A non-empty list of fields to change in the existing exclusion. New values
+        /// for the fields are taken from the corresponding fields in the
         /// [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
         /// `update_mask` are not changed and are ignored in the request.
         ///
@@ -3171,12 +4893,12 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
         /// </param>
         /// <param name="exclusion">
-        /// Required. New values for the existing exclusion. Only the fields specified
-        /// in `update_mask` are relevant.
+        /// Required. New values for the existing exclusion. Only the fields specified in
+        /// `update_mask` are relevant.
         /// </param>
         /// <param name="updateMask">
-        /// Required. A non-empty list of fields to change in the existing exclusion.
-        /// New values for the fields are taken from the corresponding fields in the
+        /// Required. A non-empty list of fields to change in the existing exclusion. New values
+        /// for the fields are taken from the corresponding fields in the
         /// [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
         /// `update_mask` are not changed and are ignored in the request.
         ///
@@ -3213,12 +4935,12 @@ namespace Google.Cloud.Logging.V2
         /// Example: `"projects/my-project-id/exclusions/my-exclusion-id"`.
         /// </param>
         /// <param name="exclusion">
-        /// Required. New values for the existing exclusion. Only the fields specified
-        /// in `update_mask` are relevant.
+        /// Required. New values for the existing exclusion. Only the fields specified in
+        /// `update_mask` are relevant.
         /// </param>
         /// <param name="updateMask">
-        /// Required. A non-empty list of fields to change in the existing exclusion.
-        /// New values for the fields are taken from the corresponding fields in the
+        /// Required. A non-empty list of fields to change in the existing exclusion. New values
+        /// for the fields are taken from the corresponding fields in the
         /// [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
         /// `update_mask` are not changed and are ignored in the request.
         ///
@@ -3320,11 +5042,11 @@ namespace Google.Cloud.Logging.V2
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteExclusionAsync(
-            ExclusionNameOneof name,
+            LogExclusionNameOneof name,
             gaxgrpc::CallSettings callSettings = null) => DeleteExclusionAsync(
                 new DeleteExclusionRequest
                 {
-                    ExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                    LogExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 },
                 callSettings);
 
@@ -3348,7 +5070,7 @@ namespace Google.Cloud.Logging.V2
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteExclusionAsync(
-            ExclusionNameOneof name,
+            LogExclusionNameOneof name,
             st::CancellationToken cancellationToken) => DeleteExclusionAsync(
                 name,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -3370,11 +5092,11 @@ namespace Google.Cloud.Logging.V2
         /// If not null, applies overrides to this RPC call.
         /// </param>
         public virtual void DeleteExclusion(
-            ExclusionNameOneof name,
+            LogExclusionNameOneof name,
             gaxgrpc::CallSettings callSettings = null) => DeleteExclusion(
                 new DeleteExclusionRequest
                 {
-                    ExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                    LogExclusionNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 },
                 callSettings);
 
@@ -3688,6 +5410,9 @@ namespace Google.Cloud.Logging.V2
     /// </summary>
     public sealed partial class ConfigServiceV2ClientImpl : ConfigServiceV2Client
     {
+        private readonly gaxgrpc::ApiCall<ListBucketsRequest, ListBucketsResponse> _callListBuckets;
+        private readonly gaxgrpc::ApiCall<GetBucketRequest, LogBucket> _callGetBucket;
+        private readonly gaxgrpc::ApiCall<UpdateBucketRequest, LogBucket> _callUpdateBucket;
         private readonly gaxgrpc::ApiCall<ListSinksRequest, ListSinksResponse> _callListSinks;
         private readonly gaxgrpc::ApiCall<GetSinkRequest, LogSink> _callGetSink;
         private readonly gaxgrpc::ApiCall<CreateSinkRequest, LogSink> _callCreateSink;
@@ -3711,6 +5436,15 @@ namespace Google.Cloud.Logging.V2
             GrpcClient = grpcClient;
             ConfigServiceV2Settings effectiveSettings = settings ?? ConfigServiceV2Settings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
+            _callListBuckets = clientHelper.BuildApiCall<ListBucketsRequest, ListBucketsResponse>(
+                GrpcClient.ListBucketsAsync, GrpcClient.ListBuckets, effectiveSettings.ListBucketsSettings)
+                .WithGoogleRequestParam("parent", request => request.Parent);
+            _callGetBucket = clientHelper.BuildApiCall<GetBucketRequest, LogBucket>(
+                GrpcClient.GetBucketAsync, GrpcClient.GetBucket, effectiveSettings.GetBucketSettings)
+                .WithGoogleRequestParam("name", request => request.Name);
+            _callUpdateBucket = clientHelper.BuildApiCall<UpdateBucketRequest, LogBucket>(
+                GrpcClient.UpdateBucketAsync, GrpcClient.UpdateBucket, effectiveSettings.UpdateBucketSettings)
+                .WithGoogleRequestParam("name", request => request.Name);
             _callListSinks = clientHelper.BuildApiCall<ListSinksRequest, ListSinksResponse>(
                 GrpcClient.ListSinksAsync, GrpcClient.ListSinks, effectiveSettings.ListSinksSettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
@@ -3747,6 +5481,12 @@ namespace Google.Cloud.Logging.V2
             _callUpdateCmekSettings = clientHelper.BuildApiCall<UpdateCmekSettingsRequest, CmekSettings>(
                 GrpcClient.UpdateCmekSettingsAsync, GrpcClient.UpdateCmekSettings, effectiveSettings.UpdateCmekSettingsSettings)
                 .WithGoogleRequestParam("name", request => request.Name);
+            Modify_ApiCall(ref _callListBuckets);
+            Modify_ListBucketsApiCall(ref _callListBuckets);
+            Modify_ApiCall(ref _callGetBucket);
+            Modify_GetBucketApiCall(ref _callGetBucket);
+            Modify_ApiCall(ref _callUpdateBucket);
+            Modify_UpdateBucketApiCall(ref _callUpdateBucket);
             Modify_ApiCall(ref _callListSinks);
             Modify_ListSinksApiCall(ref _callListSinks);
             Modify_ApiCall(ref _callGetSink);
@@ -3784,6 +5524,9 @@ namespace Google.Cloud.Logging.V2
 
         // Partial methods called for each ApiCall on construction.
         // Allows per-RPC-method modification of the underlying ApiCall object.
+        partial void Modify_ListBucketsApiCall(ref gaxgrpc::ApiCall<ListBucketsRequest, ListBucketsResponse> call);
+        partial void Modify_GetBucketApiCall(ref gaxgrpc::ApiCall<GetBucketRequest, LogBucket> call);
+        partial void Modify_UpdateBucketApiCall(ref gaxgrpc::ApiCall<UpdateBucketRequest, LogBucket> call);
         partial void Modify_ListSinksApiCall(ref gaxgrpc::ApiCall<ListSinksRequest, ListSinksResponse> call);
         partial void Modify_GetSinkApiCall(ref gaxgrpc::ApiCall<GetSinkRequest, LogSink> call);
         partial void Modify_CreateSinkApiCall(ref gaxgrpc::ApiCall<CreateSinkRequest, LogSink> call);
@@ -3806,6 +5549,9 @@ namespace Google.Cloud.Logging.V2
         // Partial methods called on each request.
         // Allows per-RPC-call modification to the request and CallSettings objects,
         // before the underlying RPC is performed.
+        partial void Modify_ListBucketsRequest(ref ListBucketsRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_GetBucketRequest(ref GetBucketRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_UpdateBucketRequest(ref UpdateBucketRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListSinksRequest(ref ListSinksRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_GetSinkRequest(ref GetSinkRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_CreateSinkRequest(ref CreateSinkRequest request, ref gaxgrpc::CallSettings settings);
@@ -3818,6 +5564,146 @@ namespace Google.Cloud.Logging.V2
         partial void Modify_DeleteExclusionRequest(ref DeleteExclusionRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_GetCmekSettingsRequest(ref GetCmekSettingsRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_UpdateCmekSettingsRequest(ref UpdateCmekSettingsRequest request, ref gaxgrpc::CallSettings settings);
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public override gax::PagedAsyncEnumerable<ListBucketsResponse, LogBucket> ListBucketsAsync(
+            ListBucketsRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListBucketsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedAsyncEnumerable<ListBucketsRequest, ListBucketsResponse, LogBucket>(_callListBuckets, request, callSettings);
+        }
+
+        /// <summary>
+        /// Lists buckets (Beta).
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogBucket"/> resources.
+        /// </returns>
+        public override gax::PagedEnumerable<ListBucketsResponse, LogBucket> ListBuckets(
+            ListBucketsRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_ListBucketsRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedEnumerable<ListBucketsRequest, ListBucketsResponse, LogBucket>(_callListBuckets, request, callSettings);
+        }
+
+        /// <summary>
+        /// Gets a bucket (Beta).
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public override stt::Task<LogBucket> GetBucketAsync(
+            GetBucketRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_GetBucketRequest(ref request, ref callSettings);
+            return _callGetBucket.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Gets a bucket (Beta).
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public override LogBucket GetBucket(
+            GetBucketRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_GetBucketRequest(ref request, ref callSettings);
+            return _callGetBucket.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Updates a bucket. This method replaces the following fields in the
+        /// existing bucket with values from the new bucket: `retention_period`
+        ///
+        /// If the retention period is decreased and the bucket is locked,
+        /// FAILED_PRECONDITION will be returned.
+        ///
+        /// If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
+        /// will be returned.
+        ///
+        /// A buckets region may not be modified after it is created.
+        /// This method is in Beta.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public override stt::Task<LogBucket> UpdateBucketAsync(
+            UpdateBucketRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_UpdateBucketRequest(ref request, ref callSettings);
+            return _callUpdateBucket.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Updates a bucket. This method replaces the following fields in the
+        /// existing bucket with values from the new bucket: `retention_period`
+        ///
+        /// If the retention period is decreased and the bucket is locked,
+        /// FAILED_PRECONDITION will be returned.
+        ///
+        /// If the bucket has a LifecycleState of DELETE_REQUESTED, FAILED_PRECONDITION
+        /// will be returned.
+        ///
+        /// A buckets region may not be modified after it is created.
+        /// This method is in Beta.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public override LogBucket UpdateBucket(
+            UpdateBucketRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_UpdateBucketRequest(ref request, ref callSettings);
+            return _callUpdateBucket.Sync(request, callSettings);
+        }
 
         /// <summary>
         /// Lists sinks.
@@ -4356,6 +6242,18 @@ namespace Google.Cloud.Logging.V2
     }
 
     // Partial classes to enable page-streaming
+
+    public partial class ListBucketsRequest : gaxgrpc::IPageRequest { }
+    public partial class ListBucketsResponse : gaxgrpc::IPageResponse<LogBucket>
+    {
+        /// <summary>
+        /// Returns an enumerator that iterates through the resources in this response.
+        /// </summary>
+        public scg::IEnumerator<LogBucket> GetEnumerator() => Buckets.GetEnumerator();
+
+        /// <inheritdoc/>
+        sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
+    }
 
     public partial class ListSinksRequest : gaxgrpc::IPageRequest { }
     public partial class ListSinksResponse : gaxgrpc::IPageResponse<LogSink>

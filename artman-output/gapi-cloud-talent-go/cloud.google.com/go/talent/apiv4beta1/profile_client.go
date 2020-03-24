@@ -36,12 +36,12 @@ import (
 
 // ProfileCallOptions contains the retry settings for each method of ProfileClient.
 type ProfileCallOptions struct {
+	DeleteProfile  []gax.CallOption
+	SearchProfiles []gax.CallOption
 	ListProfiles   []gax.CallOption
 	CreateProfile  []gax.CallOption
 	GetProfile     []gax.CallOption
 	UpdateProfile  []gax.CallOption
-	DeleteProfile  []gax.CallOption
-	SearchProfiles []gax.CallOption
 }
 
 func defaultProfileClientOptions() []option.ClientOption {
@@ -69,12 +69,12 @@ func defaultProfileCallOptions() *ProfileCallOptions {
 		},
 	}
 	return &ProfileCallOptions{
+		DeleteProfile:  retry[[2]string{"default", "idempotent"}],
+		SearchProfiles: retry[[2]string{"default", "non_idempotent"}],
 		ListProfiles:   retry[[2]string{"default", "idempotent"}],
 		CreateProfile:  retry[[2]string{"default", "non_idempotent"}],
 		GetProfile:     retry[[2]string{"default", "idempotent"}],
 		UpdateProfile:  retry[[2]string{"default", "non_idempotent"}],
-		DeleteProfile:  retry[[2]string{"default", "idempotent"}],
-		SearchProfiles: retry[[2]string{"default", "non_idempotent"}],
 	}
 }
 
@@ -132,6 +132,65 @@ func (c *ProfileClient) setGoogleClientInfo(keyval ...string) {
 	kv := append([]string{"gl-go", versionGo()}, keyval...)
 	kv = append(kv, "gapic", versionClient, "gax", gax.Version, "grpc", grpc.Version)
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
+}
+
+// DeleteProfile deletes the specified profile.
+// Prerequisite: The profile has no associated applications or assignments
+// associated.
+func (c *ProfileClient) DeleteProfile(ctx context.Context, req *talentpb.DeleteProfileRequest, opts ...gax.CallOption) error {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.DeleteProfile[0:len(c.CallOptions.DeleteProfile):len(c.CallOptions.DeleteProfile)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.profileClient.DeleteProfile(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	return err
+}
+
+// SearchProfiles searches for profiles within a tenant.
+//
+// For example, search by raw queries "software engineer in Mountain View" or
+// search by structured filters (location filter, education filter, etc.).
+//
+// See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
+func (c *ProfileClient) SearchProfiles(ctx context.Context, req *talentpb.SearchProfilesRequest, opts ...gax.CallOption) *SummarizedProfileIterator {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.SearchProfiles[0:len(c.CallOptions.SearchProfiles):len(c.CallOptions.SearchProfiles)], opts...)
+	it := &SummarizedProfileIterator{}
+	req = proto.Clone(req).(*talentpb.SearchProfilesRequest)
+	it.InternalFetch = func(pageSize int, pageToken string) ([]*talentpb.SummarizedProfile, string, error) {
+		var resp *talentpb.SearchProfilesResponse
+		req.PageToken = pageToken
+		if pageSize > math.MaxInt32 {
+			req.PageSize = math.MaxInt32
+		} else {
+			req.PageSize = int32(pageSize)
+		}
+		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+			var err error
+			resp, err = c.profileClient.SearchProfiles(ctx, req, settings.GRPC...)
+			return err
+		}, opts...)
+		if err != nil {
+			return nil, "", err
+		}
+		return resp.SummarizedProfiles, resp.NextPageToken, nil
+	}
+	fetch := func(pageSize int, pageToken string) (string, error) {
+		items, nextPageToken, err := it.InternalFetch(pageSize, pageToken)
+		if err != nil {
+			return "", err
+		}
+		it.items = append(it.items, items...)
+		return nextPageToken, nil
+	}
+	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
+	it.pageInfo.MaxSize = int(req.PageSize)
+	it.pageInfo.Token = req.PageToken
+	return it
 }
 
 // ListProfiles lists profiles by filter. The order is unspecified.
@@ -222,65 +281,6 @@ func (c *ProfileClient) UpdateProfile(ctx context.Context, req *talentpb.UpdateP
 		return nil, err
 	}
 	return resp, nil
-}
-
-// DeleteProfile deletes the specified profile.
-// Prerequisite: The profile has no associated applications or assignments
-// associated.
-func (c *ProfileClient) DeleteProfile(ctx context.Context, req *talentpb.DeleteProfileRequest, opts ...gax.CallOption) error {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteProfile[0:len(c.CallOptions.DeleteProfile):len(c.CallOptions.DeleteProfile)], opts...)
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		_, err = c.profileClient.DeleteProfile(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	return err
-}
-
-// SearchProfiles searches for profiles within a tenant.
-//
-// For example, search by raw queries "software engineer in Mountain View" or
-// search by structured filters (location filter, education filter, etc.).
-//
-// See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
-func (c *ProfileClient) SearchProfiles(ctx context.Context, req *talentpb.SearchProfilesRequest, opts ...gax.CallOption) *SummarizedProfileIterator {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.SearchProfiles[0:len(c.CallOptions.SearchProfiles):len(c.CallOptions.SearchProfiles)], opts...)
-	it := &SummarizedProfileIterator{}
-	req = proto.Clone(req).(*talentpb.SearchProfilesRequest)
-	it.InternalFetch = func(pageSize int, pageToken string) ([]*talentpb.SummarizedProfile, string, error) {
-		var resp *talentpb.SearchProfilesResponse
-		req.PageToken = pageToken
-		if pageSize > math.MaxInt32 {
-			req.PageSize = math.MaxInt32
-		} else {
-			req.PageSize = int32(pageSize)
-		}
-		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-			var err error
-			resp, err = c.profileClient.SearchProfiles(ctx, req, settings.GRPC...)
-			return err
-		}, opts...)
-		if err != nil {
-			return nil, "", err
-		}
-		return resp.SummarizedProfiles, resp.NextPageToken, nil
-	}
-	fetch := func(pageSize int, pageToken string) (string, error) {
-		items, nextPageToken, err := it.InternalFetch(pageSize, pageToken)
-		if err != nil {
-			return "", err
-		}
-		it.items = append(it.items, items...)
-		return nextPageToken, nil
-	}
-	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
-	it.pageInfo.MaxSize = int(req.PageSize)
-	it.pageInfo.Token = req.PageToken
-	return it
 }
 
 // ProfileIterator manages a stream of *talentpb.Profile.

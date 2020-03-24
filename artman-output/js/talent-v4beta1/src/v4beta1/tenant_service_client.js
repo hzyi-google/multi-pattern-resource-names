@@ -167,10 +167,10 @@ class TenantServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const tenantServiceStubMethods = [
+      'deleteTenant',
       'createTenant',
       'getTenant',
       'updateTenant',
-      'deleteTenant',
       'listTenants',
     ];
     for (const methodName of tenantServiceStubMethods) {
@@ -235,6 +235,54 @@ class TenantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+
+  /**
+   * Deletes specified tenant.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. The resource name of the tenant to be deleted.
+   *
+   *   The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+   *   "projects/foo/tenants/bar".
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error)} [callback]
+   *   The function which will be called with the result of the API call.
+   * @returns {Promise} - The promise which resolves when API call finishes.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.TenantServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedName = client.tenantPath('[PROJECT]', '[TENANT]');
+   * client.deleteTenant({name: formattedName}).catch(err => {
+   *   console.error(err);
+   * });
+   */
+  deleteTenant(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.deleteTenant(request, options, callback);
+  }
 
   /**
    * Creates a new tenant entity.
@@ -420,54 +468,6 @@ class TenantServiceClient {
       });
 
     return this._innerApiCalls.updateTenant(request, options, callback);
-  }
-
-  /**
-   * Deletes specified tenant.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.name
-   *   Required. The resource name of the tenant to be deleted.
-   *
-   *   The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-   *   "projects/foo/tenants/bar".
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error)} [callback]
-   *   The function which will be called with the result of the API call.
-   * @returns {Promise} - The promise which resolves when API call finishes.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.TenantServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedName = client.tenantPath('[PROJECT]', '[TENANT]');
-   * client.deleteTenant({name: formattedName}).catch(err => {
-   *   console.error(err);
-   * });
-   */
-  deleteTenant(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'name': request.name
-      });
-
-    return this._innerApiCalls.deleteTenant(request, options, callback);
   }
 
   /**

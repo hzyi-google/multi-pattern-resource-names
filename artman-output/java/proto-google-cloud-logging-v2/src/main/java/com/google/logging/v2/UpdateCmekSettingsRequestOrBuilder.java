@@ -20,7 +20,7 @@ public interface UpdateCmekSettingsRequestOrBuilder extends
    * the GCP organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -37,7 +37,7 @@ public interface UpdateCmekSettingsRequestOrBuilder extends
    * the GCP organization.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -50,7 +50,7 @@ public interface UpdateCmekSettingsRequestOrBuilder extends
    * Router](/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+   * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the cmekSettings field is set.
    */
   boolean hasCmekSettings();
@@ -61,7 +61,7 @@ public interface UpdateCmekSettingsRequestOrBuilder extends
    * Router](/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+   * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The cmekSettings.
    */
   com.google.logging.v2.CmekSettings getCmekSettings();
@@ -72,7 +72,7 @@ public interface UpdateCmekSettingsRequestOrBuilder extends
    * Router](/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>.google.logging.v2.CmekSettings cmek_settings = 2;</code>
+   * <code>.google.logging.v2.CmekSettings cmek_settings = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.logging.v2.CmekSettingsOrBuilder getCmekSettingsOrBuilder();
 
@@ -85,7 +85,7 @@ public interface UpdateCmekSettingsRequestOrBuilder extends
    * Example: `"updateMask=kmsKeyName"`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
@@ -98,7 +98,7 @@ public interface UpdateCmekSettingsRequestOrBuilder extends
    * Example: `"updateMask=kmsKeyName"`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
@@ -111,7 +111,7 @@ public interface UpdateCmekSettingsRequestOrBuilder extends
    * Example: `"updateMask=kmsKeyName"`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

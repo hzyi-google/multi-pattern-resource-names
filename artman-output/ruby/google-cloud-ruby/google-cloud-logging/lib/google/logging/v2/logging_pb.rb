@@ -3,7 +3,6 @@
 
 require 'google/protobuf'
 
-require 'google/api/annotations_pb'
 require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/monitored_resource_pb'
@@ -14,6 +13,7 @@ require 'google/protobuf/duration_pb'
 require 'google/protobuf/empty_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/rpc/status_pb'
+require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "google.logging.v2.DeleteLogRequest" do
     optional :log_name, :string, 1
@@ -32,7 +32,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     map :log_entry_errors, :int32, :message, 1, "google.rpc.Status"
   end
   add_message "google.logging.v2.ListLogEntriesRequest" do
-    repeated :project_ids, :string, 1
     repeated :resource_names, :string, 8
     optional :filter, :string, 2
     optional :order_by, :string, 3

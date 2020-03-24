@@ -97,32 +97,6 @@ private static final long serialVersionUID = 0L;
             includeChildren_ = input.readBool();
             break;
           }
-          case 82: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
-            }
-            startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 90: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (endTime_ != null) {
-              subBuilder = endTime_.toBuilder();
-            }
-            endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endTime_);
-              endTime_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 98: {
             com.google.logging.v2.BigQueryOptions.Builder subBuilder = null;
             if (optionsCase_ == 12) {
@@ -392,14 +366,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The client-assigned sink identifier, unique within the
-   * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
-   * limited to 100 characters and can include only the following characters:
-   * upper and lower-case alphanumeric characters, underscores, hyphens, and
-   * periods. First character has to be alphanumeric.
+   * Required. The client-assigned sink identifier, unique within the project. Example:
+   * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
+   * characters and can include only the following characters: upper and
+   * lower-case alphanumeric characters, underscores, hyphens, and periods.
+   * First character has to be alphanumeric.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   public java.lang.String getName() {
@@ -416,14 +390,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The client-assigned sink identifier, unique within the
-   * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
-   * limited to 100 characters and can include only the following characters:
-   * upper and lower-case alphanumeric characters, underscores, hyphens, and
-   * periods. First character has to be alphanumeric.
+   * Required. The client-assigned sink identifier, unique within the project. Example:
+   * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
+   * characters and can include only the following characters: upper and
+   * lower-case alphanumeric characters, underscores, hyphens, and periods.
+   * First character has to be alphanumeric.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
@@ -454,7 +428,7 @@ private static final long serialVersionUID = 0L;
    * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
-   * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string destination = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The destination.
    */
   public java.lang.String getDestination() {
@@ -481,7 +455,7 @@ private static final long serialVersionUID = 0L;
    * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
    * </pre>
    *
-   * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string destination = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for destination.
    */
   public com.google.protobuf.ByteString
@@ -508,7 +482,7 @@ private static final long serialVersionUID = 0L;
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The filter.
    */
   public java.lang.String getFilter() {
@@ -531,7 +505,7 @@ private static final long serialVersionUID = 0L;
    *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString
@@ -556,7 +530,7 @@ private static final long serialVersionUID = 0L;
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
-   * <code>string description = 18;</code>
+   * <code>string description = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The description.
    */
   public java.lang.String getDescription() {
@@ -577,7 +551,7 @@ private static final long serialVersionUID = 0L;
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
-   * <code>string description = 18;</code>
+   * <code>string description = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
@@ -602,7 +576,7 @@ private static final long serialVersionUID = 0L;
    * export any log entries.
    * </pre>
    *
-   * <code>bool disabled = 19;</code>
+   * <code>bool disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The disabled.
    */
   public boolean getDisabled() {
@@ -642,13 +616,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object writerIdentity_;
   /**
    * <pre>
-   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Logging writes the exported log entries to the sink's destination.
-   * This field is set by
-   * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
-   * and
-   * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
-   * based on the value of `unique_writer_identity` in those methods.
+   * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+   * writes the exported log entries to the sink's destination. This field is
+   * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+   * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
+   * value of `unique_writer_identity` in those methods.
    * Until you grant this identity write-access to the destination, log entry
    * exports from this sink will fail. For more information,
    * see [Granting Access for a
@@ -674,13 +646,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-   * which Logging writes the exported log entries to the sink's destination.
-   * This field is set by
-   * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
-   * and
-   * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
-   * based on the value of `unique_writer_identity` in those methods.
+   * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+   * writes the exported log entries to the sink's destination. This field is
+   * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+   * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
+   * value of `unique_writer_identity` in those methods.
    * Until you grant this identity write-access to the destination, log entry
    * exports from this sink will fail. For more information,
    * see [Granting Access for a
@@ -724,7 +694,7 @@ private static final long serialVersionUID = 0L;
    *     resource.type=gce_instance
    * </pre>
    *
-   * <code>bool include_children = 9;</code>
+   * <code>bool include_children = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The includeChildren.
    */
   public boolean getIncludeChildren() {
@@ -737,7 +707,7 @@ private static final long serialVersionUID = 0L;
    * Optional. Options that affect sinks exporting data to BigQuery.
    * </pre>
    *
-   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the bigqueryOptions field is set.
    */
   public boolean hasBigqueryOptions() {
@@ -748,7 +718,7 @@ private static final long serialVersionUID = 0L;
    * Optional. Options that affect sinks exporting data to BigQuery.
    * </pre>
    *
-   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bigqueryOptions.
    */
   public com.google.logging.v2.BigQueryOptions getBigqueryOptions() {
@@ -762,7 +732,7 @@ private static final long serialVersionUID = 0L;
    * Optional. Options that affect sinks exporting data to BigQuery.
    * </pre>
    *
-   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+   * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.logging.v2.BigQueryOptionsOrBuilder getBigqueryOptionsOrBuilder() {
     if (optionsCase_ == 12) {
@@ -847,76 +817,6 @@ private static final long serialVersionUID = 0L;
     return getUpdateTime();
   }
 
-  public static final int START_TIME_FIELD_NUMBER = 10;
-  private com.google.protobuf.Timestamp startTime_;
-  /**
-   * <pre>
-   * Do not use. This field is ignored.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-   * @return Whether the startTime field is set.
-   */
-  @java.lang.Deprecated public boolean hasStartTime() {
-    return startTime_ != null;
-  }
-  /**
-   * <pre>
-   * Do not use. This field is ignored.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-   * @return The startTime.
-   */
-  @java.lang.Deprecated public com.google.protobuf.Timestamp getStartTime() {
-    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
-  }
-  /**
-   * <pre>
-   * Do not use. This field is ignored.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
-  }
-
-  public static final int END_TIME_FIELD_NUMBER = 11;
-  private com.google.protobuf.Timestamp endTime_;
-  /**
-   * <pre>
-   * Do not use. This field is ignored.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-   * @return Whether the endTime field is set.
-   */
-  @java.lang.Deprecated public boolean hasEndTime() {
-    return endTime_ != null;
-  }
-  /**
-   * <pre>
-   * Do not use. This field is ignored.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-   * @return The endTime.
-   */
-  @java.lang.Deprecated public com.google.protobuf.Timestamp getEndTime() {
-    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
-  }
-  /**
-   * <pre>
-   * Do not use. This field is ignored.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-   */
-  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -948,12 +848,6 @@ private static final long serialVersionUID = 0L;
     }
     if (includeChildren_ != false) {
       output.writeBool(9, includeChildren_);
-    }
-    if (startTime_ != null) {
-      output.writeMessage(10, getStartTime());
-    }
-    if (endTime_ != null) {
-      output.writeMessage(11, getEndTime());
     }
     if (optionsCase_ == 12) {
       output.writeMessage(12, (com.google.logging.v2.BigQueryOptions) options_);
@@ -998,14 +892,6 @@ private static final long serialVersionUID = 0L;
     if (includeChildren_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(9, includeChildren_);
-    }
-    if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getStartTime());
-    }
-    if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getEndTime());
     }
     if (optionsCase_ == 12) {
       size += com.google.protobuf.CodedOutputStream
@@ -1066,16 +952,6 @@ private static final long serialVersionUID = 0L;
       if (!getUpdateTime()
           .equals(other.getUpdateTime())) return false;
     }
-    if (hasStartTime() != other.hasStartTime()) return false;
-    if (hasStartTime()) {
-      if (!getStartTime()
-          .equals(other.getStartTime())) return false;
-    }
-    if (hasEndTime() != other.hasEndTime()) return false;
-    if (hasEndTime()) {
-      if (!getEndTime()
-          .equals(other.getEndTime())) return false;
-    }
     if (!getOptionsCase().equals(other.getOptionsCase())) return false;
     switch (optionsCase_) {
       case 12:
@@ -1121,14 +997,6 @@ private static final long serialVersionUID = 0L;
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
-    }
-    if (hasStartTime()) {
-      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getStartTime().hashCode();
-    }
-    if (hasEndTime()) {
-      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime().hashCode();
     }
     switch (optionsCase_) {
       case 12:
@@ -1307,18 +1175,6 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
-        startTimeBuilder_ = null;
-      }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
-        endTimeBuilder_ = null;
-      }
       optionsCase_ = 0;
       options_ = null;
       return this;
@@ -1371,16 +1227,6 @@ private static final long serialVersionUID = 0L;
         result.updateTime_ = updateTime_;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
       }
       result.optionsCase_ = optionsCase_;
       onBuilt();
@@ -1466,12 +1312,6 @@ private static final long serialVersionUID = 0L;
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
-      if (other.hasStartTime()) {
-        mergeStartTime(other.getStartTime());
-      }
-      if (other.hasEndTime()) {
-        mergeEndTime(other.getEndTime());
-      }
       switch (other.getOptionsCase()) {
         case BIGQUERY_OPTIONS: {
           mergeBigqueryOptions(other.getBigqueryOptions());
@@ -1528,14 +1368,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
-     * limited to 100 characters and can include only the following characters:
-     * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods. First character has to be alphanumeric.
+     * Required. The client-assigned sink identifier, unique within the project. Example:
+     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
+     * characters and can include only the following characters: upper and
+     * lower-case alphanumeric characters, underscores, hyphens, and periods.
+     * First character has to be alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1552,14 +1392,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
-     * limited to 100 characters and can include only the following characters:
-     * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods. First character has to be alphanumeric.
+     * Required. The client-assigned sink identifier, unique within the project. Example:
+     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
+     * characters and can include only the following characters: upper and
+     * lower-case alphanumeric characters, underscores, hyphens, and periods.
+     * First character has to be alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1577,14 +1417,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
-     * limited to 100 characters and can include only the following characters:
-     * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods. First character has to be alphanumeric.
+     * Required. The client-assigned sink identifier, unique within the project. Example:
+     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
+     * characters and can include only the following characters: upper and
+     * lower-case alphanumeric characters, underscores, hyphens, and periods.
+     * First character has to be alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1600,14 +1440,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
-     * limited to 100 characters and can include only the following characters:
-     * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods. First character has to be alphanumeric.
+     * Required. The client-assigned sink identifier, unique within the project. Example:
+     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
+     * characters and can include only the following characters: upper and
+     * lower-case alphanumeric characters, underscores, hyphens, and periods.
+     * First character has to be alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1618,14 +1458,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The client-assigned sink identifier, unique within the
-     * project. Example: `"my-syslog-errors-to-pubsub"`. Sink identifiers are
-     * limited to 100 characters and can include only the following characters:
-     * upper and lower-case alphanumeric characters, underscores, hyphens, and
-     * periods. First character has to be alphanumeric.
+     * Required. The client-assigned sink identifier, unique within the project. Example:
+     * `"my-syslog-errors-to-pubsub"`. Sink identifiers are limited to 100
+     * characters and can include only the following characters: upper and
+     * lower-case alphanumeric characters, underscores, hyphens, and periods.
+     * First character has to be alphanumeric.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1654,7 +1494,7 @@ private static final long serialVersionUID = 0L;
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string destination = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The destination.
      */
     public java.lang.String getDestination() {
@@ -1681,7 +1521,7 @@ private static final long serialVersionUID = 0L;
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string destination = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for destination.
      */
     public com.google.protobuf.ByteString
@@ -1709,7 +1549,7 @@ private static final long serialVersionUID = 0L;
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string destination = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The destination to set.
      * @return This builder for chaining.
      */
@@ -1735,7 +1575,7 @@ private static final long serialVersionUID = 0L;
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string destination = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDestination() {
@@ -1756,7 +1596,7 @@ private static final long serialVersionUID = 0L;
      * [Exporting Logs with Sinks](/logging/docs/api/tasks/exporting-logs).
      * </pre>
      *
-     * <code>string destination = 3 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string destination = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for destination to set.
      * @return This builder for chaining.
      */
@@ -1781,7 +1621,7 @@ private static final long serialVersionUID = 0L;
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The filter.
      */
     public java.lang.String getFilter() {
@@ -1804,7 +1644,7 @@ private static final long serialVersionUID = 0L;
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString
@@ -1828,7 +1668,7 @@ private static final long serialVersionUID = 0L;
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The filter to set.
      * @return This builder for chaining.
      */
@@ -1850,7 +1690,7 @@ private static final long serialVersionUID = 0L;
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
@@ -1867,7 +1707,7 @@ private static final long serialVersionUID = 0L;
      *     logName="projects/[PROJECT_ID]/logs/[LOG_ID]" AND severity&gt;=ERROR
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
      */
@@ -1890,7 +1730,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 18;</code>
+     * <code>string description = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -1911,7 +1751,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 18;</code>
+     * <code>string description = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -1933,7 +1773,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 18;</code>
+     * <code>string description = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -1953,7 +1793,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 18;</code>
+     * <code>string description = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -1968,7 +1808,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 18;</code>
+     * <code>string description = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -1991,7 +1831,7 @@ private static final long serialVersionUID = 0L;
      * export any log entries.
      * </pre>
      *
-     * <code>bool disabled = 19;</code>
+     * <code>bool disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The disabled.
      */
     public boolean getDisabled() {
@@ -2003,7 +1843,7 @@ private static final long serialVersionUID = 0L;
      * export any log entries.
      * </pre>
      *
-     * <code>bool disabled = 19;</code>
+     * <code>bool disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The disabled to set.
      * @return This builder for chaining.
      */
@@ -2019,7 +1859,7 @@ private static final long serialVersionUID = 0L;
      * export any log entries.
      * </pre>
      *
-     * <code>bool disabled = 19;</code>
+     * <code>bool disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
@@ -2109,13 +1949,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object writerIdentity_ = "";
     /**
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's destination.
-     * This field is set by
-     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
-     * and
-     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
-     * based on the value of `unique_writer_identity` in those methods.
+     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * writes the exported log entries to the sink's destination. This field is
+     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
+     * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
      * see [Granting Access for a
@@ -2141,13 +1979,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's destination.
-     * This field is set by
-     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
-     * and
-     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
-     * based on the value of `unique_writer_identity` in those methods.
+     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * writes the exported log entries to the sink's destination. This field is
+     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
+     * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
      * see [Granting Access for a
@@ -2174,13 +2010,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's destination.
-     * This field is set by
-     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
-     * and
-     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
-     * based on the value of `unique_writer_identity` in those methods.
+     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * writes the exported log entries to the sink's destination. This field is
+     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
+     * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
      * see [Granting Access for a
@@ -2205,13 +2039,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's destination.
-     * This field is set by
-     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
-     * and
-     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
-     * based on the value of `unique_writer_identity` in those methods.
+     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * writes the exported log entries to the sink's destination. This field is
+     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
+     * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
      * see [Granting Access for a
@@ -2231,13 +2063,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
-     * which Logging writes the exported log entries to the sink's destination.
-     * This field is set by
-     * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
-     * and
-     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink]
-     * based on the value of `unique_writer_identity` in those methods.
+     * Output only. An IAM identity–a service account or group&amp;mdash;under which Logging
+     * writes the exported log entries to the sink's destination. This field is
+     * set by [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
+     * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
+     * value of `unique_writer_identity` in those methods.
      * Until you grant this identity write-access to the destination, log entry
      * exports from this sink will fail. For more information,
      * see [Granting Access for a
@@ -2279,7 +2109,7 @@ private static final long serialVersionUID = 0L;
      *     resource.type=gce_instance
      * </pre>
      *
-     * <code>bool include_children = 9;</code>
+     * <code>bool include_children = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The includeChildren.
      */
     public boolean getIncludeChildren() {
@@ -2301,7 +2131,7 @@ private static final long serialVersionUID = 0L;
      *     resource.type=gce_instance
      * </pre>
      *
-     * <code>bool include_children = 9;</code>
+     * <code>bool include_children = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The includeChildren to set.
      * @return This builder for chaining.
      */
@@ -2327,7 +2157,7 @@ private static final long serialVersionUID = 0L;
      *     resource.type=gce_instance
      * </pre>
      *
-     * <code>bool include_children = 9;</code>
+     * <code>bool include_children = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearIncludeChildren() {
@@ -2344,7 +2174,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Options that affect sinks exporting data to BigQuery.
      * </pre>
      *
-     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the bigqueryOptions field is set.
      */
     public boolean hasBigqueryOptions() {
@@ -2355,7 +2185,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Options that affect sinks exporting data to BigQuery.
      * </pre>
      *
-     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bigqueryOptions.
      */
     public com.google.logging.v2.BigQueryOptions getBigqueryOptions() {
@@ -2376,7 +2206,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Options that affect sinks exporting data to BigQuery.
      * </pre>
      *
-     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBigqueryOptions(com.google.logging.v2.BigQueryOptions value) {
       if (bigqueryOptionsBuilder_ == null) {
@@ -2396,7 +2226,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Options that affect sinks exporting data to BigQuery.
      * </pre>
      *
-     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBigqueryOptions(
         com.google.logging.v2.BigQueryOptions.Builder builderForValue) {
@@ -2414,7 +2244,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Options that affect sinks exporting data to BigQuery.
      * </pre>
      *
-     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeBigqueryOptions(com.google.logging.v2.BigQueryOptions value) {
       if (bigqueryOptionsBuilder_ == null) {
@@ -2440,7 +2270,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Options that affect sinks exporting data to BigQuery.
      * </pre>
      *
-     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearBigqueryOptions() {
       if (bigqueryOptionsBuilder_ == null) {
@@ -2463,7 +2293,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Options that affect sinks exporting data to BigQuery.
      * </pre>
      *
-     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.logging.v2.BigQueryOptions.Builder getBigqueryOptionsBuilder() {
       return getBigqueryOptionsFieldBuilder().getBuilder();
@@ -2473,7 +2303,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Options that affect sinks exporting data to BigQuery.
      * </pre>
      *
-     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.logging.v2.BigQueryOptionsOrBuilder getBigqueryOptionsOrBuilder() {
       if ((optionsCase_ == 12) && (bigqueryOptionsBuilder_ != null)) {
@@ -2490,7 +2320,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Options that affect sinks exporting data to BigQuery.
      * </pre>
      *
-     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12;</code>
+     * <code>.google.logging.v2.BigQueryOptions bigquery_options = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.logging.v2.BigQueryOptions, com.google.logging.v2.BigQueryOptions.Builder, com.google.logging.v2.BigQueryOptionsOrBuilder> 
@@ -2837,316 +2667,6 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
       }
       return updateTimeBuilder_;
-    }
-
-    private com.google.protobuf.Timestamp startTime_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-     * @return Whether the startTime field is set.
-     */
-    @java.lang.Deprecated public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-     * @return The startTime.
-     */
-    @java.lang.Deprecated public com.google.protobuf.Timestamp getStartTime() {
-      if (startTimeBuilder_ == null) {
-        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
-      } else {
-        return startTimeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setStartTime(com.google.protobuf.Timestamp value) {
-      if (startTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        startTime_ = value;
-        onChanged();
-      } else {
-        startTimeBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (startTimeBuilder_ == null) {
-        startTime_ = builderForValue.build();
-        onChanged();
-      } else {
-        startTimeBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
-      if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
-        } else {
-          startTime_ = value;
-        }
-        onChanged();
-      } else {
-        startTimeBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
-        startTimeBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
-      onChanged();
-      return getStartTimeFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-      if (startTimeBuilder_ != null) {
-        return startTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
-      }
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        getStartTimeFieldBuilder() {
-      if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
-        startTime_ = null;
-      }
-      return startTimeBuilder_;
-    }
-
-    private com.google.protobuf.Timestamp endTime_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-     * @return Whether the endTime field is set.
-     */
-    @java.lang.Deprecated public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-     * @return The endTime.
-     */
-    @java.lang.Deprecated public com.google.protobuf.Timestamp getEndTime() {
-      if (endTimeBuilder_ == null) {
-        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
-      } else {
-        return endTimeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setEndTime(com.google.protobuf.Timestamp value) {
-      if (endTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        endTime_ = value;
-        onChanged();
-      } else {
-        endTimeBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setEndTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (endTimeBuilder_ == null) {
-        endTime_ = builderForValue.build();
-        onChanged();
-      } else {
-        endTimeBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
-      if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
-        } else {
-          endTime_ = value;
-        }
-        onChanged();
-      } else {
-        endTimeBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
-        endTimeBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      
-      onChanged();
-      return getEndTimeFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-      if (endTimeBuilder_ != null) {
-        return endTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return endTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
-      }
-    }
-    /**
-     * <pre>
-     * Do not use. This field is ignored.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        getEndTimeFieldBuilder() {
-      if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
-        endTime_ = null;
-      }
-      return endTimeBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

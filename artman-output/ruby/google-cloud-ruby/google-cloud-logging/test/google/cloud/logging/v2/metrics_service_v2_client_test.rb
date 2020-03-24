@@ -144,7 +144,7 @@ describe Google::Cloud::Logging::V2::MetricsServiceV2Client do
 
     it 'invokes get_log_metric without error' do
       # Create request parameters
-      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.metric_path("[PROJECT]", "[METRIC]")
+      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.log_metric_path("[PROJECT]", "[METRIC]")
 
       # Create expected grpc response
       name = "name3373707"
@@ -192,7 +192,7 @@ describe Google::Cloud::Logging::V2::MetricsServiceV2Client do
 
     it 'invokes get_log_metric with error' do
       # Create request parameters
-      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.metric_path("[PROJECT]", "[METRIC]")
+      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.log_metric_path("[PROJECT]", "[METRIC]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -312,7 +312,7 @@ describe Google::Cloud::Logging::V2::MetricsServiceV2Client do
 
     it 'invokes update_log_metric without error' do
       # Create request parameters
-      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.metric_path("[PROJECT]", "[METRIC]")
+      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.log_metric_path("[PROJECT]", "[METRIC]")
       metric = {}
 
       # Create expected grpc response
@@ -362,7 +362,7 @@ describe Google::Cloud::Logging::V2::MetricsServiceV2Client do
 
     it 'invokes update_log_metric with error' do
       # Create request parameters
-      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.metric_path("[PROJECT]", "[METRIC]")
+      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.log_metric_path("[PROJECT]", "[METRIC]")
       metric = {}
 
       # Mock Grpc layer
@@ -398,7 +398,7 @@ describe Google::Cloud::Logging::V2::MetricsServiceV2Client do
 
     it 'invokes delete_log_metric without error' do
       # Create request parameters
-      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.metric_path("[PROJECT]", "[METRIC]")
+      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.log_metric_path("[PROJECT]", "[METRIC]")
 
       # Mock Grpc layer
       mock_method = proc do |request|
@@ -433,7 +433,7 @@ describe Google::Cloud::Logging::V2::MetricsServiceV2Client do
 
     it 'invokes delete_log_metric with error' do
       # Create request parameters
-      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.metric_path("[PROJECT]", "[METRIC]")
+      formatted_metric_name = Google::Cloud::Logging::V2::MetricsServiceV2Client.log_metric_path("[PROJECT]", "[METRIC]")
 
       # Mock Grpc layer
       mock_method = proc do |request|

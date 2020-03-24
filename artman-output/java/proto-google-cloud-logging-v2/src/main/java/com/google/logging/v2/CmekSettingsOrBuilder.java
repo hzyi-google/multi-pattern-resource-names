@@ -9,19 +9,19 @@ public interface CmekSettingsOrBuilder extends
 
   /**
    * <pre>
-   * Output Only. The resource name of the CMEK settings.
+   * Output only. The resource name of the CMEK settings.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * Output Only. The resource name of the CMEK settings.
+   * Output only. The resource name of the CMEK settings.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -79,8 +79,8 @@ public interface CmekSettingsOrBuilder extends
 
   /**
    * <pre>
-   * Output Only. The service account that will be used by the Logs Router to
-   * access your Cloud KMS key.
+   * Output only. The service account that will be used by the Logs Router to access your
+   * Cloud KMS key.
    * Before enabling CMEK for Logs Router, you must first assign the role
    * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
    * the Logs Router will use to access your Cloud KMS key. Use
@@ -90,14 +90,14 @@ public interface CmekSettingsOrBuilder extends
    * Router](/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>string service_account_id = 3;</code>
+   * <code>string service_account_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The serviceAccountId.
    */
   java.lang.String getServiceAccountId();
   /**
    * <pre>
-   * Output Only. The service account that will be used by the Logs Router to
-   * access your Cloud KMS key.
+   * Output only. The service account that will be used by the Logs Router to access your
+   * Cloud KMS key.
    * Before enabling CMEK for Logs Router, you must first assign the role
    * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
    * the Logs Router will use to access your Cloud KMS key. Use
@@ -107,7 +107,7 @@ public interface CmekSettingsOrBuilder extends
    * Router](/logging/docs/routing/managed-encryption) for more information.
    * </pre>
    *
-   * <code>string service_account_id = 3;</code>
+   * <code>string service_account_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for serviceAccountId.
    */
   com.google.protobuf.ByteString

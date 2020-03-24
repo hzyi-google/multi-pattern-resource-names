@@ -166,13 +166,13 @@ private static final long serialVersionUID = 0L;
    * `[LOG_ID]` must be URL-encoded. For example:
    *     "projects/my-project-id/logs/syslog"
    *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-   * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-   * project, organization, billing account, or folder that is receiving
-   * new log entries, whether the resource is specified in
-   * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
+   * The permission `logging.logEntries.create` is needed on each project,
+   * organization, billing account, or folder that is receiving new log
+   * entries, whether the resource is specified in `logName` or in an
+   * individual log entry.
    * </pre>
    *
-   * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string log_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @return The logName.
    */
   public java.lang.String getLogName() {
@@ -198,13 +198,13 @@ private static final long serialVersionUID = 0L;
    * `[LOG_ID]` must be URL-encoded. For example:
    *     "projects/my-project-id/logs/syslog"
    *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-   * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-   * project, organization, billing account, or folder that is receiving
-   * new log entries, whether the resource is specified in
-   * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
+   * The permission `logging.logEntries.create` is needed on each project,
+   * organization, billing account, or folder that is receiving new log
+   * entries, whether the resource is specified in `logName` or in an
+   * individual log entry.
    * </pre>
    *
-   * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string log_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for logName.
    */
   public com.google.protobuf.ByteString
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
-   * <code>.google.api.MonitoredResource resource = 2;</code>
+   * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the resource field is set.
    */
   public boolean hasResource() {
@@ -249,7 +249,7 @@ private static final long serialVersionUID = 0L;
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
-   * <code>.google.api.MonitoredResource resource = 2;</code>
+   * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The resource.
    */
   public com.google.api.MonitoredResource getResource() {
@@ -265,7 +265,7 @@ private static final long serialVersionUID = 0L;
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
-   * <code>.google.api.MonitoredResource resource = 2;</code>
+   * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder() {
     return getResource();
@@ -305,7 +305,7 @@ private static final long serialVersionUID = 0L;
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public boolean containsLabels(
@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getLabelsOrDefault(
@@ -361,7 +361,7 @@ private static final long serialVersionUID = 0L;
    * See [LogEntry][google.logging.v2.LogEntry].
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getLabelsOrThrow(
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
    * keyed by the entries' zero-based index in the `entries.write` method.
    * </pre>
    *
-   * <code>bool partial_success = 5;</code>
+   * <code>bool partial_success = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The partialSuccess.
    */
   public boolean getPartialSuccess() {
@@ -552,7 +552,7 @@ private static final long serialVersionUID = 0L;
    * logging API endpoints are working properly before sending valuable data.
    * </pre>
    *
-   * <code>bool dry_run = 6;</code>
+   * <code>bool dry_run = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The dryRun.
    */
   public boolean getDryRun() {
@@ -1049,13 +1049,13 @@ private static final long serialVersionUID = 0L;
      * `[LOG_ID]` must be URL-encoded. For example:
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-     * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-     * project, organization, billing account, or folder that is receiving
-     * new log entries, whether the resource is specified in
-     * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
+     * The permission `logging.logEntries.create` is needed on each project,
+     * organization, billing account, or folder that is receiving new log
+     * entries, whether the resource is specified in `logName` or in an
+     * individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string log_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @return The logName.
      */
     public java.lang.String getLogName() {
@@ -1081,13 +1081,13 @@ private static final long serialVersionUID = 0L;
      * `[LOG_ID]` must be URL-encoded. For example:
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-     * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-     * project, organization, billing account, or folder that is receiving
-     * new log entries, whether the resource is specified in
-     * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
+     * The permission `logging.logEntries.create` is needed on each project,
+     * organization, billing account, or folder that is receiving new log
+     * entries, whether the resource is specified in `logName` or in an
+     * individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string log_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for logName.
      */
     public com.google.protobuf.ByteString
@@ -1114,13 +1114,13 @@ private static final long serialVersionUID = 0L;
      * `[LOG_ID]` must be URL-encoded. For example:
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-     * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-     * project, organization, billing account, or folder that is receiving
-     * new log entries, whether the resource is specified in
-     * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
+     * The permission `logging.logEntries.create` is needed on each project,
+     * organization, billing account, or folder that is receiving new log
+     * entries, whether the resource is specified in `logName` or in an
+     * individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string log_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @param value The logName to set.
      * @return This builder for chaining.
      */
@@ -1145,13 +1145,13 @@ private static final long serialVersionUID = 0L;
      * `[LOG_ID]` must be URL-encoded. For example:
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-     * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-     * project, organization, billing account, or folder that is receiving
-     * new log entries, whether the resource is specified in
-     * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
+     * The permission `logging.logEntries.create` is needed on each project,
+     * organization, billing account, or folder that is receiving new log
+     * entries, whether the resource is specified in `logName` or in an
+     * individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string log_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearLogName() {
@@ -1171,13 +1171,13 @@ private static final long serialVersionUID = 0L;
      * `[LOG_ID]` must be URL-encoded. For example:
      *     "projects/my-project-id/logs/syslog"
      *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-     * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-     * project, organization, billing account, or folder that is receiving
-     * new log entries, whether the resource is specified in
-     * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
+     * The permission `logging.logEntries.create` is needed on each project,
+     * organization, billing account, or folder that is receiving new log
+     * entries, whether the resource is specified in `logName` or in an
+     * individual log entry.
      * </pre>
      *
-     * <code>string log_name = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string log_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for logName to set.
      * @return This builder for chaining.
      */
@@ -1206,7 +1206,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 2;</code>
+     * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
@@ -1222,7 +1222,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 2;</code>
+     * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The resource.
      */
     public com.google.api.MonitoredResource getResource() {
@@ -1242,7 +1242,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 2;</code>
+     * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setResource(com.google.api.MonitoredResource value) {
       if (resourceBuilder_ == null) {
@@ -1267,7 +1267,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 2;</code>
+     * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setResource(
         com.google.api.MonitoredResource.Builder builderForValue) {
@@ -1290,7 +1290,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 2;</code>
+     * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeResource(com.google.api.MonitoredResource value) {
       if (resourceBuilder_ == null) {
@@ -1317,7 +1317,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 2;</code>
+     * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearResource() {
       if (resourceBuilder_ == null) {
@@ -1340,7 +1340,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 2;</code>
+     * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.api.MonitoredResource.Builder getResourceBuilder() {
       
@@ -1357,7 +1357,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 2;</code>
+     * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder() {
       if (resourceBuilder_ != null) {
@@ -1377,7 +1377,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>.google.api.MonitoredResource resource = 2;</code>
+     * <code>.google.api.MonitoredResource resource = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> 
@@ -1427,7 +1427,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public boolean containsLabels(
@@ -1450,7 +1450,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1464,7 +1464,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getLabelsOrDefault(
@@ -1483,7 +1483,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getLabelsOrThrow(
@@ -1510,7 +1510,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder removeLabels(
@@ -1536,7 +1536,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(
         java.lang.String key,
@@ -1555,7 +1555,7 @@ private static final long serialVersionUID = 0L;
      * See [LogEntry][google.logging.v2.LogEntry].
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 3;</code>
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder putAllLabels(
@@ -2229,7 +2229,7 @@ private static final long serialVersionUID = 0L;
      * keyed by the entries' zero-based index in the `entries.write` method.
      * </pre>
      *
-     * <code>bool partial_success = 5;</code>
+     * <code>bool partial_success = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The partialSuccess.
      */
     public boolean getPartialSuccess() {
@@ -2244,7 +2244,7 @@ private static final long serialVersionUID = 0L;
      * keyed by the entries' zero-based index in the `entries.write` method.
      * </pre>
      *
-     * <code>bool partial_success = 5;</code>
+     * <code>bool partial_success = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The partialSuccess to set.
      * @return This builder for chaining.
      */
@@ -2263,7 +2263,7 @@ private static final long serialVersionUID = 0L;
      * keyed by the entries' zero-based index in the `entries.write` method.
      * </pre>
      *
-     * <code>bool partial_success = 5;</code>
+     * <code>bool partial_success = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPartialSuccess() {
@@ -2281,7 +2281,7 @@ private static final long serialVersionUID = 0L;
      * logging API endpoints are working properly before sending valuable data.
      * </pre>
      *
-     * <code>bool dry_run = 6;</code>
+     * <code>bool dry_run = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The dryRun.
      */
     public boolean getDryRun() {
@@ -2294,7 +2294,7 @@ private static final long serialVersionUID = 0L;
      * logging API endpoints are working properly before sending valuable data.
      * </pre>
      *
-     * <code>bool dry_run = 6;</code>
+     * <code>bool dry_run = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The dryRun to set.
      * @return This builder for chaining.
      */
@@ -2311,7 +2311,7 @@ private static final long serialVersionUID = 0L;
      * logging API endpoints are working properly before sending valuable data.
      * </pre>
      *
-     * <code>bool dry_run = 6;</code>
+     * <code>bool dry_run = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearDryRun() {

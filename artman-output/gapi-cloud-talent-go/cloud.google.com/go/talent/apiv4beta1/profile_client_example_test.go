@@ -34,6 +34,46 @@ func ExampleNewProfileClient() {
 	_ = c
 }
 
+func ExampleProfileClient_DeleteProfile() {
+	ctx := context.Background()
+	c, err := talent.NewProfileClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &talentpb.DeleteProfileRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.DeleteProfile(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
+func ExampleProfileClient_SearchProfiles() {
+	ctx := context.Background()
+	c, err := talent.NewProfileClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &talentpb.SearchProfilesRequest{
+		// TODO: Fill request struct fields.
+	}
+	it := c.SearchProfiles(ctx, req)
+	for {
+		resp, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		// TODO: Use resp.
+		_ = resp
+	}
+}
+
 func ExampleProfileClient_ListProfiles() {
 	ctx := context.Background()
 	c, err := talent.NewProfileClient(ctx)
@@ -110,44 +150,4 @@ func ExampleProfileClient_UpdateProfile() {
 	}
 	// TODO: Use resp.
 	_ = resp
-}
-
-func ExampleProfileClient_DeleteProfile() {
-	ctx := context.Background()
-	c, err := talent.NewProfileClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &talentpb.DeleteProfileRequest{
-		// TODO: Fill request struct fields.
-	}
-	err = c.DeleteProfile(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
-}
-
-func ExampleProfileClient_SearchProfiles() {
-	ctx := context.Background()
-	c, err := talent.NewProfileClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &talentpb.SearchProfilesRequest{
-		// TODO: Fill request struct fields.
-	}
-	it := c.SearchProfiles(ctx, req)
-	for {
-		resp, err := it.Next()
-		if err == iterator.Done {
-			break
-		}
-		if err != nil {
-			// TODO: Handle error.
-		}
-		// TODO: Use resp.
-		_ = resp
-	}
 }

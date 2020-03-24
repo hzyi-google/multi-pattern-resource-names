@@ -67,6 +67,258 @@ end
 
 describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
+  describe 'list_buckets' do
+    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::ConfigServiceV2Client#list_buckets."
+
+    it 'invokes list_buckets without error' do
+      # Create request parameters
+      formatted_parent = Google::Cloud::Logging::V2::ConfigServiceV2Client.location_path("[PROJECT]", "[LOCATION]")
+
+      # Create expected grpc response
+      next_page_token = ""
+      buckets_element = {}
+      buckets = [buckets_element]
+      expected_response = { next_page_token: next_page_token, buckets: buckets }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Logging::V2::ListBucketsResponse)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::ListBucketsRequest, request)
+        assert_equal(formatted_parent, request.parent)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:list_buckets, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("list_buckets")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          response = client.list_buckets(formatted_parent)
+
+          # Verify the response
+          assert(response.instance_of?(Google::Gax::PagedEnumerable))
+          assert_equal(expected_response, response.page.response)
+          assert_nil(response.next_page)
+          assert_equal(expected_response.buckets.to_a, response.to_a)
+        end
+      end
+    end
+
+    it 'invokes list_buckets with error' do
+      # Create request parameters
+      formatted_parent = Google::Cloud::Logging::V2::ConfigServiceV2Client.location_path("[PROJECT]", "[LOCATION]")
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::ListBucketsRequest, request)
+        assert_equal(formatted_parent, request.parent)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:list_buckets, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("list_buckets")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
+            client.list_buckets(formatted_parent)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'get_bucket' do
+    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::ConfigServiceV2Client#get_bucket."
+
+    it 'invokes get_bucket without error' do
+      # Create request parameters
+      name = ''
+
+      # Create expected grpc response
+      name_2 = "name2-1052831874"
+      description = "description-1724546052"
+      retention_days = 1544391896
+      expected_response = {
+        name: name_2,
+        description: description,
+        retention_days: retention_days
+      }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Logging::V2::LogBucket)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::GetBucketRequest, request)
+        assert_equal(name, request.name)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:get_bucket, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("get_bucket")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          response = client.get_bucket(name)
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.get_bucket(name) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes get_bucket with error' do
+      # Create request parameters
+      name = ''
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::GetBucketRequest, request)
+        assert_equal(name, request.name)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:get_bucket, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("get_bucket")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
+            client.get_bucket(name)
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
+  describe 'update_bucket' do
+    custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::ConfigServiceV2Client#update_bucket."
+
+    it 'invokes update_bucket without error' do
+      # Create request parameters
+      name = ''
+      bucket = {}
+      update_mask = {}
+
+      # Create expected grpc response
+      name_2 = "name2-1052831874"
+      description = "description-1724546052"
+      retention_days = 1544391896
+      expected_response = {
+        name: name_2,
+        description: description,
+        retention_days: retention_days
+      }
+      expected_response = Google::Gax::to_proto(expected_response, Google::Logging::V2::LogBucket)
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::UpdateBucketRequest, request)
+        assert_equal(name, request.name)
+        assert_equal(Google::Gax::to_proto(bucket, Google::Logging::V2::LogBucket), request.bucket)
+        assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
+        OpenStruct.new(execute: expected_response)
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:update_bucket, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("update_bucket")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          response = client.update_bucket(
+            name,
+            bucket,
+            update_mask
+          )
+
+          # Verify the response
+          assert_equal(expected_response, response)
+
+          # Call method with block
+          client.update_bucket(
+            name,
+            bucket,
+            update_mask
+          ) do |response, operation|
+            # Verify the response
+            assert_equal(expected_response, response)
+            refute_nil(operation)
+          end
+        end
+      end
+    end
+
+    it 'invokes update_bucket with error' do
+      # Create request parameters
+      name = ''
+      bucket = {}
+      update_mask = {}
+
+      # Mock Grpc layer
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::UpdateBucketRequest, request)
+        assert_equal(name, request.name)
+        assert_equal(Google::Gax::to_proto(bucket, Google::Logging::V2::LogBucket), request.bucket)
+        assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
+        raise custom_error
+      end
+      mock_stub = MockGrpcClientStub_v2.new(:update_bucket, mock_method)
+
+      # Mock auth layer
+      mock_credentials = MockConfigServiceV2Credentials_v2.new("update_bucket")
+
+      Google::Logging::V2::ConfigServiceV2::Stub.stub(:new, mock_stub) do
+        Google::Cloud::Logging::V2::Credentials.stub(:default, mock_credentials) do
+          client = Google::Cloud::Logging::Config.new(version: :v2)
+
+          # Call method
+          err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
+            client.update_bucket(
+              name,
+              bucket,
+              update_mask
+            )
+          end
+
+          # Verify the GaxError wrapped the custom error that was raised.
+          assert_match(custom_error.message, err.message)
+        end
+      end
+    end
+  end
+
   describe 'list_sinks' do
     custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::ConfigServiceV2Client#list_sinks."
 
@@ -144,7 +396,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes get_sink without error' do
       # Create request parameters
-      formatted_sink_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.sink_path("[PROJECT]", "[SINK]")
+      sink_name = ''
 
       # Create expected grpc response
       name = "name3373707"
@@ -168,7 +420,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::GetSinkRequest, request)
-        assert_equal(formatted_sink_name, request.sink_name)
+        assert_equal(sink_name, request.sink_name)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v2.new(:get_sink, mock_method)
@@ -181,13 +433,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           client = Google::Cloud::Logging::Config.new(version: :v2)
 
           # Call method
-          response = client.get_sink(formatted_sink_name)
+          response = client.get_sink(sink_name)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.get_sink(formatted_sink_name) do |response, operation|
+          client.get_sink(sink_name) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -198,12 +450,12 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes get_sink with error' do
       # Create request parameters
-      formatted_sink_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.sink_path("[PROJECT]", "[SINK]")
+      sink_name = ''
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::GetSinkRequest, request)
-        assert_equal(formatted_sink_name, request.sink_name)
+        assert_equal(sink_name, request.sink_name)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v2.new(:get_sink, mock_method)
@@ -217,7 +469,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.get_sink(formatted_sink_name)
+            client.get_sink(sink_name)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -324,7 +576,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes update_sink without error' do
       # Create request parameters
-      formatted_sink_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.sink_path("[PROJECT]", "[SINK]")
+      sink_name = ''
       sink = {}
 
       # Create expected grpc response
@@ -349,7 +601,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::UpdateSinkRequest, request)
-        assert_equal(formatted_sink_name, request.sink_name)
+        assert_equal(sink_name, request.sink_name)
         assert_equal(Google::Gax::to_proto(sink, Google::Logging::V2::LogSink), request.sink)
         OpenStruct.new(execute: expected_response)
       end
@@ -363,13 +615,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           client = Google::Cloud::Logging::Config.new(version: :v2)
 
           # Call method
-          response = client.update_sink(formatted_sink_name, sink)
+          response = client.update_sink(sink_name, sink)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.update_sink(formatted_sink_name, sink) do |response, operation|
+          client.update_sink(sink_name, sink) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -380,13 +632,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes update_sink with error' do
       # Create request parameters
-      formatted_sink_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.sink_path("[PROJECT]", "[SINK]")
+      sink_name = ''
       sink = {}
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::UpdateSinkRequest, request)
-        assert_equal(formatted_sink_name, request.sink_name)
+        assert_equal(sink_name, request.sink_name)
         assert_equal(Google::Gax::to_proto(sink, Google::Logging::V2::LogSink), request.sink)
         raise custom_error
       end
@@ -401,7 +653,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.update_sink(formatted_sink_name, sink)
+            client.update_sink(sink_name, sink)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -416,12 +668,12 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes delete_sink without error' do
       # Create request parameters
-      formatted_sink_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.sink_path("[PROJECT]", "[SINK]")
+      sink_name = ''
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::DeleteSinkRequest, request)
-        assert_equal(formatted_sink_name, request.sink_name)
+        assert_equal(sink_name, request.sink_name)
         OpenStruct.new(execute: nil)
       end
       mock_stub = MockGrpcClientStub_v2.new(:delete_sink, mock_method)
@@ -434,13 +686,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           client = Google::Cloud::Logging::Config.new(version: :v2)
 
           # Call method
-          response = client.delete_sink(formatted_sink_name)
+          response = client.delete_sink(sink_name)
 
           # Verify the response
           assert_nil(response)
 
           # Call method with block
-          client.delete_sink(formatted_sink_name) do |response, operation|
+          client.delete_sink(sink_name) do |response, operation|
             # Verify the response
             assert_nil(response)
             refute_nil(operation)
@@ -451,12 +703,12 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes delete_sink with error' do
       # Create request parameters
-      formatted_sink_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.sink_path("[PROJECT]", "[SINK]")
+      sink_name = ''
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::DeleteSinkRequest, request)
-        assert_equal(formatted_sink_name, request.sink_name)
+        assert_equal(sink_name, request.sink_name)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v2.new(:delete_sink, mock_method)
@@ -470,7 +722,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.delete_sink(formatted_sink_name)
+            client.delete_sink(sink_name)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -557,7 +809,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes get_exclusion without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.exclusion_path("[PROJECT]", "[EXCLUSION]")
+      name = ''
 
       # Create expected grpc response
       name_2 = "name2-1052831874"
@@ -575,7 +827,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::GetExclusionRequest, request)
-        assert_equal(formatted_name, request.name)
+        assert_equal(name, request.name)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v2.new(:get_exclusion, mock_method)
@@ -588,13 +840,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           client = Google::Cloud::Logging::Config.new(version: :v2)
 
           # Call method
-          response = client.get_exclusion(formatted_name)
+          response = client.get_exclusion(name)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.get_exclusion(formatted_name) do |response, operation|
+          client.get_exclusion(name) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -605,12 +857,12 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes get_exclusion with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.exclusion_path("[PROJECT]", "[EXCLUSION]")
+      name = ''
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::GetExclusionRequest, request)
-        assert_equal(formatted_name, request.name)
+        assert_equal(name, request.name)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v2.new(:get_exclusion, mock_method)
@@ -624,7 +876,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.get_exclusion(formatted_name)
+            client.get_exclusion(name)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -725,7 +977,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes update_exclusion without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.exclusion_path("[PROJECT]", "[EXCLUSION]")
+      name = ''
       exclusion = {}
       update_mask = {}
 
@@ -745,7 +997,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::UpdateExclusionRequest, request)
-        assert_equal(formatted_name, request.name)
+        assert_equal(name, request.name)
         assert_equal(Google::Gax::to_proto(exclusion, Google::Logging::V2::LogExclusion), request.exclusion)
         assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
         OpenStruct.new(execute: expected_response)
@@ -761,7 +1013,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method
           response = client.update_exclusion(
-            formatted_name,
+            name,
             exclusion,
             update_mask
           )
@@ -771,7 +1023,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method with block
           client.update_exclusion(
-            formatted_name,
+            name,
             exclusion,
             update_mask
           ) do |response, operation|
@@ -785,14 +1037,14 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes update_exclusion with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.exclusion_path("[PROJECT]", "[EXCLUSION]")
+      name = ''
       exclusion = {}
       update_mask = {}
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::UpdateExclusionRequest, request)
-        assert_equal(formatted_name, request.name)
+        assert_equal(name, request.name)
         assert_equal(Google::Gax::to_proto(exclusion, Google::Logging::V2::LogExclusion), request.exclusion)
         assert_equal(Google::Gax::to_proto(update_mask, Google::Protobuf::FieldMask), request.update_mask)
         raise custom_error
@@ -809,7 +1061,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
             client.update_exclusion(
-              formatted_name,
+              name,
               exclusion,
               update_mask
             )
@@ -827,12 +1079,12 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes delete_exclusion without error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.exclusion_path("[PROJECT]", "[EXCLUSION]")
+      name = ''
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::DeleteExclusionRequest, request)
-        assert_equal(formatted_name, request.name)
+        assert_equal(name, request.name)
         OpenStruct.new(execute: nil)
       end
       mock_stub = MockGrpcClientStub_v2.new(:delete_exclusion, mock_method)
@@ -845,13 +1097,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           client = Google::Cloud::Logging::Config.new(version: :v2)
 
           # Call method
-          response = client.delete_exclusion(formatted_name)
+          response = client.delete_exclusion(name)
 
           # Verify the response
           assert_nil(response)
 
           # Call method with block
-          client.delete_exclusion(formatted_name) do |response, operation|
+          client.delete_exclusion(name) do |response, operation|
             # Verify the response
             assert_nil(response)
             refute_nil(operation)
@@ -862,12 +1114,12 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
     it 'invokes delete_exclusion with error' do
       # Create request parameters
-      formatted_name = Google::Cloud::Logging::V2::ConfigServiceV2Client.exclusion_path("[PROJECT]", "[EXCLUSION]")
+      name = ''
 
       # Mock Grpc layer
       mock_method = proc do |request|
         assert_instance_of(Google::Logging::V2::DeleteExclusionRequest, request)
-        assert_equal(formatted_name, request.name)
+        assert_equal(name, request.name)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v2.new(:delete_exclusion, mock_method)
@@ -881,7 +1133,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.delete_exclusion(formatted_name)
+            client.delete_exclusion(name)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -895,19 +1147,24 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
     custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::ConfigServiceV2Client#get_cmek_settings."
 
     it 'invokes get_cmek_settings without error' do
+      # Create request parameters
+      name = ''
+
       # Create expected grpc response
-      name = "name3373707"
+      name_2 = "name2-1052831874"
       kms_key_name = "kmsKeyName2094986649"
       service_account_id = "serviceAccountId-111486921"
       expected_response = {
-        name: name,
+        name: name_2,
         kms_key_name: kms_key_name,
         service_account_id: service_account_id
       }
       expected_response = Google::Gax::to_proto(expected_response, Google::Logging::V2::CmekSettings)
 
       # Mock Grpc layer
-      mock_method = proc do
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::GetCmekSettingsRequest, request)
+        assert_equal(name, request.name)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v2.new(:get_cmek_settings, mock_method)
@@ -920,13 +1177,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           client = Google::Cloud::Logging::Config.new(version: :v2)
 
           # Call method
-          response = client.get_cmek_settings
+          response = client.get_cmek_settings(name)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.get_cmek_settings do |response, operation|
+          client.get_cmek_settings(name) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -936,8 +1193,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
     end
 
     it 'invokes get_cmek_settings with error' do
+      # Create request parameters
+      name = ''
+
       # Mock Grpc layer
-      mock_method = proc do
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::GetCmekSettingsRequest, request)
+        assert_equal(name, request.name)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v2.new(:get_cmek_settings, mock_method)
@@ -951,7 +1213,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.get_cmek_settings
+            client.get_cmek_settings(name)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.
@@ -965,19 +1227,26 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
     custom_error = CustomTestError_v2.new "Custom test error for Google::Cloud::Logging::V2::ConfigServiceV2Client#update_cmek_settings."
 
     it 'invokes update_cmek_settings without error' do
+      # Create request parameters
+      name = ''
+      cmek_settings = {}
+
       # Create expected grpc response
-      name = "name3373707"
+      name_2 = "name2-1052831874"
       kms_key_name = "kmsKeyName2094986649"
       service_account_id = "serviceAccountId-111486921"
       expected_response = {
-        name: name,
+        name: name_2,
         kms_key_name: kms_key_name,
         service_account_id: service_account_id
       }
       expected_response = Google::Gax::to_proto(expected_response, Google::Logging::V2::CmekSettings)
 
       # Mock Grpc layer
-      mock_method = proc do
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::UpdateCmekSettingsRequest, request)
+        assert_equal(name, request.name)
+        assert_equal(Google::Gax::to_proto(cmek_settings, Google::Logging::V2::CmekSettings), request.cmek_settings)
         OpenStruct.new(execute: expected_response)
       end
       mock_stub = MockGrpcClientStub_v2.new(:update_cmek_settings, mock_method)
@@ -990,13 +1259,13 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
           client = Google::Cloud::Logging::Config.new(version: :v2)
 
           # Call method
-          response = client.update_cmek_settings
+          response = client.update_cmek_settings(name, cmek_settings)
 
           # Verify the response
           assert_equal(expected_response, response)
 
           # Call method with block
-          client.update_cmek_settings do |response, operation|
+          client.update_cmek_settings(name, cmek_settings) do |response, operation|
             # Verify the response
             assert_equal(expected_response, response)
             refute_nil(operation)
@@ -1006,8 +1275,15 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
     end
 
     it 'invokes update_cmek_settings with error' do
+      # Create request parameters
+      name = ''
+      cmek_settings = {}
+
       # Mock Grpc layer
-      mock_method = proc do
+      mock_method = proc do |request|
+        assert_instance_of(Google::Logging::V2::UpdateCmekSettingsRequest, request)
+        assert_equal(name, request.name)
+        assert_equal(Google::Gax::to_proto(cmek_settings, Google::Logging::V2::CmekSettings), request.cmek_settings)
         raise custom_error
       end
       mock_stub = MockGrpcClientStub_v2.new(:update_cmek_settings, mock_method)
@@ -1021,7 +1297,7 @@ describe Google::Cloud::Logging::V2::ConfigServiceV2Client do
 
           # Call method
           err = assert_raises Google::Gax::GaxError, CustomTestError_v2 do
-            client.update_cmek_settings
+            client.update_cmek_settings(name, cmek_settings)
           end
 
           # Verify the GaxError wrapped the custom error that was raised.

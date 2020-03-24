@@ -9,25 +9,25 @@ public interface LogExclusionOrBuilder extends
 
   /**
    * <pre>
-   * Required. A client-assigned identifier, such as
-   * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
-   * can include only letters, digits, underscores, hyphens, and periods.
-   * First character has to be alphanumeric.
+   * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
+   * Identifiers are limited to 100 characters and can include only letters,
+   * digits, underscores, hyphens, and periods. First character has to be
+   * alphanumeric.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * Required. A client-assigned identifier, such as
-   * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
-   * can include only letters, digits, underscores, hyphens, and periods.
-   * First character has to be alphanumeric.
+   * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
+   * Identifiers are limited to 100 characters and can include only letters,
+   * digits, underscores, hyphens, and periods. First character has to be
+   * alphanumeric.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -38,7 +38,7 @@ public interface LogExclusionOrBuilder extends
    * Optional. A description of this exclusion.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The description.
    */
   java.lang.String getDescription();
@@ -47,7 +47,7 @@ public interface LogExclusionOrBuilder extends
    * Optional. A description of this exclusion.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
@@ -64,7 +64,7 @@ public interface LogExclusionOrBuilder extends
    * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The filter.
    */
   java.lang.String getFilter();
@@ -79,7 +79,7 @@ public interface LogExclusionOrBuilder extends
    * `"resource.type=gcs_bucket severity&lt;ERROR sample(insertId, 0.99)"`
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
@@ -93,7 +93,7 @@ public interface LogExclusionOrBuilder extends
    * value of this field.
    * </pre>
    *
-   * <code>bool disabled = 4;</code>
+   * <code>bool disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The disabled.
    */
   boolean getDisabled();
@@ -104,7 +104,7 @@ public interface LogExclusionOrBuilder extends
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
@@ -114,7 +114,7 @@ public interface LogExclusionOrBuilder extends
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
@@ -124,7 +124,7 @@ public interface LogExclusionOrBuilder extends
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -134,7 +134,7 @@ public interface LogExclusionOrBuilder extends
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
@@ -144,7 +144,7 @@ public interface LogExclusionOrBuilder extends
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
@@ -154,7 +154,7 @@ public interface LogExclusionOrBuilder extends
    * This field may not be present for older exclusions.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

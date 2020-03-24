@@ -43,17 +43,17 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             Topic expectedRequest = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.CreateTopic(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             PublisherServiceApiClient client = new PublisherServiceApiClientImpl(mockGrpcClient.Object, null);
-            TopicName name = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof name = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             Topic response = client.CreateTopic(name);
             Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
@@ -67,17 +67,17 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             Topic expectedRequest = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.CreateTopicAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<Topic>(Task.FromResult(expectedResponse), null, null, null, null));
             PublisherServiceApiClient client = new PublisherServiceApiClientImpl(mockGrpcClient.Object, null);
-            TopicName name = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof name = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             Topic response = await client.CreateTopicAsync(name);
             Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
@@ -91,11 +91,11 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             Topic request = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.CreateTopic(request, It.IsAny<CallOptions>()))
@@ -114,11 +114,11 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             Topic request = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.CreateTopicAsync(request, It.IsAny<CallOptions>()))
@@ -142,7 +142,7 @@ namespace Google.Cloud.PubSub.V1.Tests
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.UpdateTopic(request, It.IsAny<CallOptions>()))
@@ -166,7 +166,7 @@ namespace Google.Cloud.PubSub.V1.Tests
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.UpdateTopicAsync(request, It.IsAny<CallOptions>()))
@@ -185,7 +185,7 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             PublishRequest expectedRequest = new PublishRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 Messages =
                 {
                     new PubsubMessage
@@ -204,7 +204,7 @@ namespace Google.Cloud.PubSub.V1.Tests
             mockGrpcClient.Setup(x => x.Publish(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             PublisherServiceApiClient client = new PublisherServiceApiClientImpl(mockGrpcClient.Object, null);
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             IEnumerable<PubsubMessage> messages = new[]
             {
                 new PubsubMessage
@@ -225,7 +225,7 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             PublishRequest expectedRequest = new PublishRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 Messages =
                 {
                     new PubsubMessage
@@ -244,7 +244,7 @@ namespace Google.Cloud.PubSub.V1.Tests
             mockGrpcClient.Setup(x => x.PublishAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<PublishResponse>(Task.FromResult(expectedResponse), null, null, null, null));
             PublisherServiceApiClient client = new PublisherServiceApiClientImpl(mockGrpcClient.Object, null);
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             IEnumerable<PubsubMessage> messages = new[]
             {
                 new PubsubMessage
@@ -265,7 +265,7 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             PublishRequest request = new PublishRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 Messages =
                 {
                     new PubsubMessage
@@ -297,7 +297,7 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             PublishRequest request = new PublishRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 Messages =
                 {
                     new PubsubMessage
@@ -329,17 +329,17 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             GetTopicRequest expectedRequest = new GetTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.GetTopic(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             PublisherServiceApiClient client = new PublisherServiceApiClientImpl(mockGrpcClient.Object, null);
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             Topic response = client.GetTopic(topic);
             Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
@@ -353,17 +353,17 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             GetTopicRequest expectedRequest = new GetTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.GetTopicAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<Topic>(Task.FromResult(expectedResponse), null, null, null, null));
             PublisherServiceApiClient client = new PublisherServiceApiClientImpl(mockGrpcClient.Object, null);
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             Topic response = await client.GetTopicAsync(topic);
             Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
@@ -377,11 +377,11 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             GetTopicRequest request = new GetTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.GetTopic(request, It.IsAny<CallOptions>()))
@@ -400,11 +400,11 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             GetTopicRequest request = new GetTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Topic expectedResponse = new Topic
             {
-                TopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
                 KmsKeyName = "kmsKeyName2094986649",
             };
             mockGrpcClient.Setup(x => x.GetTopicAsync(request, It.IsAny<CallOptions>()))
@@ -423,13 +423,13 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             DeleteTopicRequest expectedRequest = new DeleteTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Empty expectedResponse = new Empty();
             mockGrpcClient.Setup(x => x.DeleteTopic(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             PublisherServiceApiClient client = new PublisherServiceApiClientImpl(mockGrpcClient.Object, null);
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             client.DeleteTopic(topic);
             mockGrpcClient.VerifyAll();
         }
@@ -442,13 +442,13 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             DeleteTopicRequest expectedRequest = new DeleteTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Empty expectedResponse = new Empty();
             mockGrpcClient.Setup(x => x.DeleteTopicAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
             PublisherServiceApiClient client = new PublisherServiceApiClientImpl(mockGrpcClient.Object, null);
-            TopicName topic = new TopicName("[PROJECT]", "[TOPIC]");
+            TopicNameOneof topic = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]"));
             await client.DeleteTopicAsync(topic);
             mockGrpcClient.VerifyAll();
         }
@@ -461,7 +461,7 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             DeleteTopicRequest request = new DeleteTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Empty expectedResponse = new Empty();
             mockGrpcClient.Setup(x => x.DeleteTopic(request, It.IsAny<CallOptions>()))
@@ -479,7 +479,7 @@ namespace Google.Cloud.PubSub.V1.Tests
                 .Returns(new Mock<IAMPolicy.IAMPolicyClient>().Object);
             DeleteTopicRequest request = new DeleteTopicRequest
             {
-                TopicAsTopicName = new TopicName("[PROJECT]", "[TOPIC]"),
+                TopicAsTopicNameOneof = TopicNameOneof.From(new TopicName("[PROJECT]", "[TOPIC]")),
             };
             Empty expectedResponse = new Empty();
             mockGrpcClient.Setup(x => x.DeleteTopicAsync(request, It.IsAny<CallOptions>()))

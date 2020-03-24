@@ -33,6 +33,66 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
     /// <summary>Generated snippets</summary>
     public class GeneratedApplicationServiceClientSnippets
     {
+        /// <summary>Snippet for DeleteApplicationAsync</summary>
+        public async Task DeleteApplicationAsync()
+        {
+            // Snippet: DeleteApplicationAsync(ApplicationName,CallSettings)
+            // Additional: DeleteApplicationAsync(ApplicationName,CancellationToken)
+            // Create client
+            ApplicationServiceClient applicationServiceClient = await ApplicationServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ApplicationName name = new ApplicationName("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+            // Make the request
+            await applicationServiceClient.DeleteApplicationAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteApplication</summary>
+        public void DeleteApplication()
+        {
+            // Snippet: DeleteApplication(ApplicationName,CallSettings)
+            // Create client
+            ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.Create();
+            // Initialize request argument(s)
+            ApplicationName name = new ApplicationName("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
+            // Make the request
+            applicationServiceClient.DeleteApplication(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteApplicationAsync</summary>
+        public async Task DeleteApplicationAsync_RequestObject()
+        {
+            // Snippet: DeleteApplicationAsync(DeleteApplicationRequest,CallSettings)
+            // Additional: DeleteApplicationAsync(DeleteApplicationRequest,CancellationToken)
+            // Create client
+            ApplicationServiceClient applicationServiceClient = await ApplicationServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            DeleteApplicationRequest request = new DeleteApplicationRequest
+            {
+                ApplicationName = new ApplicationName("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]"),
+            };
+            // Make the request
+            await applicationServiceClient.DeleteApplicationAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteApplication</summary>
+        public void DeleteApplication_RequestObject()
+        {
+            // Snippet: DeleteApplication(DeleteApplicationRequest,CallSettings)
+            // Create client
+            ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.Create();
+            // Initialize request argument(s)
+            DeleteApplicationRequest request = new DeleteApplicationRequest
+            {
+                ApplicationName = new ApplicationName("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]"),
+            };
+            // Make the request
+            applicationServiceClient.DeleteApplication(request);
+            // End snippet
+        }
+
         /// <summary>Snippet for CreateApplicationAsync</summary>
         public async Task CreateApplicationAsync()
         {
@@ -214,66 +274,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             };
             // Make the request
             Application response = applicationServiceClient.UpdateApplication(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteApplicationAsync</summary>
-        public async Task DeleteApplicationAsync()
-        {
-            // Snippet: DeleteApplicationAsync(ApplicationName,CallSettings)
-            // Additional: DeleteApplicationAsync(ApplicationName,CancellationToken)
-            // Create client
-            ApplicationServiceClient applicationServiceClient = await ApplicationServiceClient.CreateAsync();
-            // Initialize request argument(s)
-            ApplicationName name = new ApplicationName("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-            // Make the request
-            await applicationServiceClient.DeleteApplicationAsync(name);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteApplication</summary>
-        public void DeleteApplication()
-        {
-            // Snippet: DeleteApplication(ApplicationName,CallSettings)
-            // Create client
-            ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.Create();
-            // Initialize request argument(s)
-            ApplicationName name = new ApplicationName("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
-            // Make the request
-            applicationServiceClient.DeleteApplication(name);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteApplicationAsync</summary>
-        public async Task DeleteApplicationAsync_RequestObject()
-        {
-            // Snippet: DeleteApplicationAsync(DeleteApplicationRequest,CallSettings)
-            // Additional: DeleteApplicationAsync(DeleteApplicationRequest,CancellationToken)
-            // Create client
-            ApplicationServiceClient applicationServiceClient = await ApplicationServiceClient.CreateAsync();
-            // Initialize request argument(s)
-            DeleteApplicationRequest request = new DeleteApplicationRequest
-            {
-                ApplicationName = new ApplicationName("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]"),
-            };
-            // Make the request
-            await applicationServiceClient.DeleteApplicationAsync(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteApplication</summary>
-        public void DeleteApplication_RequestObject()
-        {
-            // Snippet: DeleteApplication(DeleteApplicationRequest,CallSettings)
-            // Create client
-            ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.Create();
-            // Initialize request argument(s)
-            DeleteApplicationRequest request = new DeleteApplicationRequest
-            {
-                ApplicationName = new ApplicationName("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]"),
-            };
-            // Make the request
-            applicationServiceClient.DeleteApplication(request);
             // End snippet
         }
 

@@ -35,78 +35,12 @@ namespace Google.Cloud.Logging.V2.Tests
     public class GeneratedLoggingServiceV2ClientTest
     {
         [Fact]
-        public void DeleteLog()
-        {
-            Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
-            DeleteLogRequest expectedRequest = new DeleteLogRequest
-            {
-                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteLog(expectedRequest, It.IsAny<CallOptions>()))
-                .Returns(expectedResponse);
-            LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
-            LogNameOneof logName = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]"));
-            client.DeleteLog(logName);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public async Task DeleteLogAsync()
-        {
-            Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
-            DeleteLogRequest expectedRequest = new DeleteLogRequest
-            {
-                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteLogAsync(expectedRequest, It.IsAny<CallOptions>()))
-                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
-            LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
-            LogNameOneof logName = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]"));
-            await client.DeleteLogAsync(logName);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public void DeleteLog2()
-        {
-            Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
-            DeleteLogRequest request = new DeleteLogRequest
-            {
-                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteLog(request, It.IsAny<CallOptions>()))
-                .Returns(expectedResponse);
-            LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
-            client.DeleteLog(request);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public async Task DeleteLogAsync2()
-        {
-            Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
-            DeleteLogRequest request = new DeleteLogRequest
-            {
-                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteLogAsync(request, It.IsAny<CallOptions>()))
-                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
-            LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
-            await client.DeleteLogAsync(request);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
         public void WriteLogEntries()
         {
             Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
             WriteLogEntriesRequest expectedRequest = new WriteLogEntriesRequest
             {
-                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
+                LogNameAsLogNameOneof = "logName2013526694",
                 Resource = new MonitoredResource(),
                 Labels = { },
                 Entries = { },
@@ -115,7 +49,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.WriteLogEntries(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(expectedResponse);
             LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
-            LogNameOneof logName = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]"));
+            string logName = "logName2013526694";
             MonitoredResource resource = new MonitoredResource();
             IDictionary<string, string> labels = new Dictionary<string, string>();
             IEnumerable<LogEntry> entries = new List<LogEntry>();
@@ -130,7 +64,7 @@ namespace Google.Cloud.Logging.V2.Tests
             Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
             WriteLogEntriesRequest expectedRequest = new WriteLogEntriesRequest
             {
-                LogNameAsLogNameOneof = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]")),
+                LogNameAsLogNameOneof = "logName2013526694",
                 Resource = new MonitoredResource(),
                 Labels = { },
                 Entries = { },
@@ -139,7 +73,7 @@ namespace Google.Cloud.Logging.V2.Tests
             mockGrpcClient.Setup(x => x.WriteLogEntriesAsync(expectedRequest, It.IsAny<CallOptions>()))
                 .Returns(new Grpc.Core.AsyncUnaryCall<WriteLogEntriesResponse>(Task.FromResult(expectedResponse), null, null, null, null));
             LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
-            LogNameOneof logName = LogNameOneof.From(new LogName("[PROJECT]", "[LOG]"));
+            string logName = "logName2013526694";
             MonitoredResource resource = new MonitoredResource();
             IDictionary<string, string> labels = new Dictionary<string, string>();
             IEnumerable<LogEntry> entries = new List<LogEntry>();
@@ -179,6 +113,72 @@ namespace Google.Cloud.Logging.V2.Tests
             LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
             WriteLogEntriesResponse response = await client.WriteLogEntriesAsync(request);
             Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public void DeleteLog()
+        {
+            Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
+            DeleteLogRequest expectedRequest = new DeleteLogRequest
+            {
+                LogNameAsLogNameOneof = "logName2013526694",
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteLog(expectedRequest, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
+            string logName = "logName2013526694";
+            client.DeleteLog(logName);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task DeleteLogAsync()
+        {
+            Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
+            DeleteLogRequest expectedRequest = new DeleteLogRequest
+            {
+                LogNameAsLogNameOneof = "logName2013526694",
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteLogAsync(expectedRequest, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
+            LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
+            string logName = "logName2013526694";
+            await client.DeleteLogAsync(logName);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public void DeleteLog2()
+        {
+            Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
+            DeleteLogRequest request = new DeleteLogRequest
+            {
+                LogNameAsLogNameOneof = "logName2013526694",
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteLog(request, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
+            client.DeleteLog(request);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task DeleteLogAsync2()
+        {
+            Mock<LoggingServiceV2.LoggingServiceV2Client> mockGrpcClient = new Mock<LoggingServiceV2.LoggingServiceV2Client>(MockBehavior.Strict);
+            DeleteLogRequest request = new DeleteLogRequest
+            {
+                LogNameAsLogNameOneof = "logName2013526694",
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteLogAsync(request, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
+            LoggingServiceV2Client client = new LoggingServiceV2ClientImpl(mockGrpcClient.Object, null);
+            await client.DeleteLogAsync(request);
             mockGrpcClient.VerifyAll();
         }
 

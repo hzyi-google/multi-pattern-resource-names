@@ -239,9 +239,12 @@ class DlpServiceClient {
       'getDlpJob',
       'deleteDlpJob',
       'cancelDlpJob',
+      'finishDlpJob',
+      'hybridInspectDlpJob',
       'listJobTriggers',
       'getJobTrigger',
       'deleteJobTrigger',
+      'hybridInspectJobTrigger',
       'updateJobTrigger',
       'createJobTrigger',
       'createStoredInfoType',
@@ -791,8 +794,8 @@ class DlpServiceClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Required. Resource name of organization and inspectTemplate to be updated, for
-   *   example `organizations/433245324/inspectTemplates/432452342` or
+   *   Required. Resource name of organization and inspectTemplate to be updated,
+   *   for example `organizations/433245324/inspectTemplates/432452342` or
    *   projects/project-id/inspectTemplates/432452342.
    * @param {Object} [request.inspectTemplate]
    *   New InspectTemplate value.
@@ -855,8 +858,8 @@ class DlpServiceClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} [request.name]
-   *   Required. Resource name of the organization and inspectTemplate to be read, for
-   *   example `organizations/433245324/inspectTemplates/432452342` or
+   *   Required. Resource name of the organization and inspectTemplate to be read,
+   *   for example `organizations/433245324/inspectTemplates/432452342` or
    *   projects/project-id/inspectTemplates/432452342.
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
@@ -1104,9 +1107,9 @@ class DlpServiceClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Required. Resource name of the organization and inspectTemplate to be deleted, for
-   *   example `organizations/433245324/inspectTemplates/432452342` or
-   *   projects/project-id/inspectTemplates/432452342.
+   *   Required. Resource name of the organization and inspectTemplate to be
+   *   deleted, for example `organizations/433245324/inspectTemplates/432452342`
+   *   or projects/project-id/inspectTemplates/432452342.
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
    *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
@@ -1222,8 +1225,9 @@ class DlpServiceClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Required. Resource name of organization and deidentify template to be updated, for
-   *   example `organizations/433245324/deidentifyTemplates/432452342` or
+   *   Required. Resource name of organization and deidentify template to be
+   *   updated, for example
+   *   `organizations/433245324/deidentifyTemplates/432452342` or
    *   projects/project-id/deidentifyTemplates/432452342.
    * @param {Object} [request.deidentifyTemplate]
    *   New DeidentifyTemplate value.
@@ -1287,9 +1291,9 @@ class DlpServiceClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Required. Resource name of the organization and deidentify template to be read, for
-   *   example `organizations/433245324/deidentifyTemplates/432452342` or
-   *   projects/project-id/deidentifyTemplates/432452342.
+   *   Required. Resource name of the organization and deidentify template to be
+   *   read, for example `organizations/433245324/deidentifyTemplates/432452342`
+   *   or projects/project-id/deidentifyTemplates/432452342.
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
    *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
@@ -1538,8 +1542,9 @@ class DlpServiceClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Required. Resource name of the organization and deidentify template to be deleted,
-   *   for example `organizations/433245324/deidentifyTemplates/432452342` or
+   *   Required. Resource name of the organization and deidentify template to be
+   *   deleted, for example
+   *   `organizations/433245324/deidentifyTemplates/432452342` or
    *   projects/project-id/deidentifyTemplates/432452342.
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
@@ -2066,6 +2071,118 @@ class DlpServiceClient {
   }
 
   /**
+   * Finish a running hybrid DlpJob. Triggers the finalization steps and running
+   * of any enabled actions that have not yet run.
+   * Early access feature is in a pre-release state and might change or have
+   * limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. The name of the DlpJob resource to be cancelled.
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error)} [callback]
+   *   The function which will be called with the result of the API call.
+   * @returns {Promise} - The promise which resolves when API call finishes.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const dlp = require('@google-cloud/dlp');
+   *
+   * const client = new dlp.v2.DlpServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedName = client.dlpJobPath('[PROJECT]', '[DLP_JOB]');
+   * client.finishDlpJob({name: formattedName}).catch(err => {
+   *   console.error(err);
+   * });
+   */
+  finishDlpJob(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.finishDlpJob(request, options, callback);
+  }
+
+  /**
+   * Inspect hybrid content and store findings to a job.
+   * To review the findings inspect the job. Inspection will occur
+   * asynchronously.
+   * Early access feature is in a pre-release state and might change or have
+   * limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. Resource name of the job to execute a hybrid inspect on, for
+   *   example `projects/dlp-test-project/dlpJob/53234423`.
+   * @param {Object} [request.hybridItem]
+   *   The item to inspect.
+   *
+   *   This object should have the same structure as [HybridContentItem]{@link google.privacy.dlp.v2.HybridContentItem}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [HybridInspectResponse]{@link google.privacy.dlp.v2.HybridInspectResponse}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [HybridInspectResponse]{@link google.privacy.dlp.v2.HybridInspectResponse}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const dlp = require('@google-cloud/dlp');
+   *
+   * const client = new dlp.v2.DlpServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const name = '';
+   * client.hybridInspectDlpJob({name: name})
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  hybridInspectDlpJob(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.hybridInspectDlpJob(request, options, callback);
+  }
+
+  /**
    * Lists job triggers.
    * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
@@ -2413,6 +2530,69 @@ class DlpServiceClient {
   }
 
   /**
+   * Inspect hybrid content and store findings to a trigger. The inspection
+   * will be processed asynchronously. To review the findings monitor the
+   * jobs within the trigger.
+   * Early access feature is in a pre-release state and might change or have
+   * limited support. For more information, see
+   * https://cloud.google.com/products#product-launch-stages.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. Resource name of the trigger to execute a hybrid inspect on, for
+   *   example `projects/dlp-test-project/jobTriggers/53234423`.
+   * @param {Object} [request.hybridItem]
+   *   The item to inspect.
+   *
+   *   This object should have the same structure as [HybridContentItem]{@link google.privacy.dlp.v2.HybridContentItem}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [HybridInspectResponse]{@link google.privacy.dlp.v2.HybridInspectResponse}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [HybridInspectResponse]{@link google.privacy.dlp.v2.HybridInspectResponse}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const dlp = require('@google-cloud/dlp');
+   *
+   * const client = new dlp.v2.DlpServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const name = '';
+   * client.hybridInspectJobTrigger({name: name})
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  hybridInspectJobTrigger(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.hybridInspectJobTrigger(request, options, callback);
+  }
+
+  /**
    * Updates a job trigger.
    * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
    *
@@ -2619,8 +2799,8 @@ class DlpServiceClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Required. Resource name of organization and storedInfoType to be updated, for
-   *   example `organizations/433245324/storedInfoTypes/432452342` or
+   *   Required. Resource name of organization and storedInfoType to be updated,
+   *   for example `organizations/433245324/storedInfoTypes/432452342` or
    *   projects/project-id/storedInfoTypes/432452342.
    * @param {Object} [request.config]
    *   Updated configuration for the storedInfoType. If not provided, a new
@@ -2686,8 +2866,8 @@ class DlpServiceClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Required. Resource name of the organization and storedInfoType to be read, for
-   *   example `organizations/433245324/storedInfoTypes/432452342` or
+   *   Required. Resource name of the organization and storedInfoType to be read,
+   *   for example `organizations/433245324/storedInfoTypes/432452342` or
    *   projects/project-id/storedInfoTypes/432452342.
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
@@ -2939,8 +3119,8 @@ class DlpServiceClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Required. Resource name of the organization and storedInfoType to be deleted, for
-   *   example `organizations/433245324/storedInfoTypes/432452342` or
+   *   Required. Resource name of the organization and storedInfoType to be
+   *   deleted, for example `organizations/433245324/storedInfoTypes/432452342` or
    *   projects/project-id/storedInfoTypes/432452342.
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,

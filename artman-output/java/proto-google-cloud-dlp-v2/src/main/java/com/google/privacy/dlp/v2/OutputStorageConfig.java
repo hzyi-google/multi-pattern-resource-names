@@ -108,6 +108,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Predefined schemas for storing findings.
+   * Only for use with external storage.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.OutputStorageConfig.OutputSchema}
@@ -423,6 +424,7 @@ private static final long serialVersionUID = 0L;
    * If unspecified, then all available columns will be used for a new table or
    * an (existing) table with no schema, and no changes will be made to an
    * existing table that has a schema.
+   * Only for use with external storage.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -441,6 +443,7 @@ private static final long serialVersionUID = 0L;
    * If unspecified, then all available columns will be used for a new table or
    * an (existing) table with no schema, and no changes will be made to an
    * existing table that has a schema.
+   * Only for use with external storage.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1099,6 +1102,7 @@ private static final long serialVersionUID = 0L;
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1117,6 +1121,7 @@ private static final long serialVersionUID = 0L;
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1138,6 +1143,7 @@ private static final long serialVersionUID = 0L;
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1158,6 +1164,7 @@ private static final long serialVersionUID = 0L;
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
@@ -1183,6 +1190,7 @@ private static final long serialVersionUID = 0L;
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
+     * Only for use with external storage.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>

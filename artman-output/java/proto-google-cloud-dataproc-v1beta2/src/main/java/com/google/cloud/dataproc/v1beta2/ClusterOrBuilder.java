@@ -51,7 +51,7 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
@@ -61,7 +61,7 @@ public interface ClusterOrBuilder extends
   boolean hasConfig();
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
@@ -71,7 +71,7 @@ public interface ClusterOrBuilder extends
   com.google.cloud.dataproc.v1beta2.ClusterConfig getConfig();
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
@@ -236,7 +236,7 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -246,7 +246,7 @@ public interface ClusterOrBuilder extends
   java.lang.String getClusterUuid();
   /**
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *

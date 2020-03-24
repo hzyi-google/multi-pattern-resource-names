@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
    * that is not already used in the parent resource.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the exclusion field is set.
    */
   public boolean hasExclusion() {
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
    * that is not already used in the parent resource.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The exclusion.
    */
   public com.google.logging.v2.LogExclusion getExclusion() {
@@ -190,7 +190,7 @@ private static final long serialVersionUID = 0L;
    * that is not already used in the parent resource.
    * </pre>
    *
-   * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+   * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   public com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder() {
     return getExclusion();
@@ -662,7 +662,7 @@ private static final long serialVersionUID = 0L;
      * that is not already used in the parent resource.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the exclusion field is set.
      */
     public boolean hasExclusion() {
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
      * that is not already used in the parent resource.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The exclusion.
      */
     public com.google.logging.v2.LogExclusion getExclusion() {
@@ -690,7 +690,7 @@ private static final long serialVersionUID = 0L;
      * that is not already used in the parent resource.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExclusion(com.google.logging.v2.LogExclusion value) {
       if (exclusionBuilder_ == null) {
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
      * that is not already used in the parent resource.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setExclusion(
         com.google.logging.v2.LogExclusion.Builder builderForValue) {
@@ -730,7 +730,7 @@ private static final long serialVersionUID = 0L;
      * that is not already used in the parent resource.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeExclusion(com.google.logging.v2.LogExclusion value) {
       if (exclusionBuilder_ == null) {
@@ -753,7 +753,7 @@ private static final long serialVersionUID = 0L;
      * that is not already used in the parent resource.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearExclusion() {
       if (exclusionBuilder_ == null) {
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * that is not already used in the parent resource.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogExclusion.Builder getExclusionBuilder() {
       
@@ -785,7 +785,7 @@ private static final long serialVersionUID = 0L;
      * that is not already used in the parent resource.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder() {
       if (exclusionBuilder_ != null) {
@@ -801,7 +801,7 @@ private static final long serialVersionUID = 0L;
      * that is not already used in the parent resource.
      * </pre>
      *
-     * <code>.google.logging.v2.LogExclusion exclusion = 2;</code>
+     * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.logging.v2.LogExclusion, com.google.logging.v2.LogExclusion.Builder, com.google.logging.v2.LogExclusionOrBuilder> 

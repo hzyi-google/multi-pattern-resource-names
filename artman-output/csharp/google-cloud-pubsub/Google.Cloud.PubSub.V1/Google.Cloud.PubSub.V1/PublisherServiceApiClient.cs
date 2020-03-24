@@ -16,7 +16,6 @@
 
 using gax = Google.Api.Gax;
 using gaxgrpc = Google.Api.Gax.Grpc;
-using gaxres = Google.Api.Gax.ResourceNames;
 using iam = Google.Cloud.Iam.V1;
 using pb = Google.Protobuf;
 using pbwkt = Google.Protobuf.WellKnownTypes;
@@ -728,11 +727,11 @@ namespace Google.Cloud.PubSub.V1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<Topic> CreateTopicAsync(
-            TopicName name,
+            TopicNameOneof name,
             gaxgrpc::CallSettings callSettings = null) => CreateTopicAsync(
                 new Topic
                 {
-                    TopicName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                    TopicNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 },
                 callSettings);
 
@@ -756,7 +755,7 @@ namespace Google.Cloud.PubSub.V1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<Topic> CreateTopicAsync(
-            TopicName name,
+            TopicNameOneof name,
             st::CancellationToken cancellationToken) => CreateTopicAsync(
                 name,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -781,11 +780,11 @@ namespace Google.Cloud.PubSub.V1
         /// The RPC response.
         /// </returns>
         public virtual Topic CreateTopic(
-            TopicName name,
+            TopicNameOneof name,
             gaxgrpc::CallSettings callSettings = null) => CreateTopic(
                 new Topic
                 {
-                    TopicName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                    TopicNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
                 },
                 callSettings);
 
@@ -1009,12 +1008,12 @@ namespace Google.Cloud.PubSub.V1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<PublishResponse> PublishAsync(
-            TopicName topic,
+            TopicNameOneof topic,
             scg::IEnumerable<PubsubMessage> messages,
             gaxgrpc::CallSettings callSettings = null) => PublishAsync(
                 new PublishRequest
                 {
-                    TopicAsTopicName = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                     Messages = { gax::GaxPreconditions.CheckNotNull(messages, nameof(messages)) },
                 },
                 callSettings);
@@ -1037,7 +1036,7 @@ namespace Google.Cloud.PubSub.V1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<PublishResponse> PublishAsync(
-            TopicName topic,
+            TopicNameOneof topic,
             scg::IEnumerable<PubsubMessage> messages,
             st::CancellationToken cancellationToken) => PublishAsync(
                 topic,
@@ -1062,12 +1061,12 @@ namespace Google.Cloud.PubSub.V1
         /// The RPC response.
         /// </returns>
         public virtual PublishResponse Publish(
-            TopicName topic,
+            TopicNameOneof topic,
             scg::IEnumerable<PubsubMessage> messages,
             gaxgrpc::CallSettings callSettings = null) => Publish(
                 new PublishRequest
                 {
-                    TopicAsTopicName = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                     Messages = { gax::GaxPreconditions.CheckNotNull(messages, nameof(messages)) },
                 },
                 callSettings);
@@ -1226,11 +1225,11 @@ namespace Google.Cloud.PubSub.V1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<Topic> GetTopicAsync(
-            TopicName topic,
+            TopicNameOneof topic,
             gaxgrpc::CallSettings callSettings = null) => GetTopicAsync(
                 new GetTopicRequest
                 {
-                    TopicAsTopicName = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                 },
                 callSettings);
 
@@ -1248,7 +1247,7 @@ namespace Google.Cloud.PubSub.V1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<Topic> GetTopicAsync(
-            TopicName topic,
+            TopicNameOneof topic,
             st::CancellationToken cancellationToken) => GetTopicAsync(
                 topic,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -1267,11 +1266,11 @@ namespace Google.Cloud.PubSub.V1
         /// The RPC response.
         /// </returns>
         public virtual Topic GetTopic(
-            TopicName topic,
+            TopicNameOneof topic,
             gaxgrpc::CallSettings callSettings = null) => GetTopic(
                 new GetTopicRequest
                 {
-                    TopicAsTopicName = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                 },
                 callSettings);
 
@@ -1416,7 +1415,7 @@ namespace Google.Cloud.PubSub.V1
         /// A pageable asynchronous sequence of <see cref="Topic"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListTopicsResponse, Topic> ListTopicsAsync(
-            gaxres::ProjectName project,
+            ProjectName project,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListTopicsAsync(
@@ -1450,7 +1449,7 @@ namespace Google.Cloud.PubSub.V1
         /// A pageable sequence of <see cref="Topic"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListTopicsResponse, Topic> ListTopics(
-            gaxres::ProjectName project,
+            ProjectName project,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListTopics(
@@ -1590,13 +1589,13 @@ namespace Google.Cloud.PubSub.V1
         /// A pageable asynchronous sequence of <see cref="string"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListTopicSubscriptionsResponse, SubscriptionName> ListTopicSubscriptionsAsync(
-            TopicName topic,
+            TopicNameOneof topic,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListTopicSubscriptionsAsync(
                 new ListTopicSubscriptionsRequest
                 {
-                    TopicAsTopicName = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -1624,13 +1623,13 @@ namespace Google.Cloud.PubSub.V1
         /// A pageable sequence of <see cref="string"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListTopicSubscriptionsResponse, SubscriptionName> ListTopicSubscriptions(
-            TopicName topic,
+            TopicNameOneof topic,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListTopicSubscriptions(
                 new ListTopicSubscriptionsRequest
                 {
-                    TopicAsTopicName = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -1760,11 +1759,11 @@ namespace Google.Cloud.PubSub.V1
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteTopicAsync(
-            TopicName topic,
+            TopicNameOneof topic,
             gaxgrpc::CallSettings callSettings = null) => DeleteTopicAsync(
                 new DeleteTopicRequest
                 {
-                    TopicAsTopicName = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                 },
                 callSettings);
 
@@ -1786,7 +1785,7 @@ namespace Google.Cloud.PubSub.V1
         /// A Task that completes when the RPC has completed.
         /// </returns>
         public virtual stt::Task DeleteTopicAsync(
-            TopicName topic,
+            TopicNameOneof topic,
             st::CancellationToken cancellationToken) => DeleteTopicAsync(
                 topic,
                 gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
@@ -1806,11 +1805,11 @@ namespace Google.Cloud.PubSub.V1
         /// If not null, applies overrides to this RPC call.
         /// </param>
         public virtual void DeleteTopic(
-            TopicName topic,
+            TopicNameOneof topic,
             gaxgrpc::CallSettings callSettings = null) => DeleteTopic(
                 new DeleteTopicRequest
                 {
-                    TopicAsTopicName = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                 },
                 callSettings);
 
@@ -1958,105 +1957,6 @@ namespace Google.Cloud.PubSub.V1
         /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
         /// PERMISSION_DENIED
         /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being specified.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="policy">
-        /// REQUIRED: The complete policy to be applied to the `resource`. The size of
-        /// the policy is limited to a few 10s of KB. An empty policy is a
-        /// valid policy but certain Cloud Platform services (such as Projects)
-        /// might reject them.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::Policy> SetIamPolicyAsync(
-            string resource,
-            iam::Policy policy,
-            gaxgrpc::CallSettings callSettings = null) => SetIamPolicyAsync(
-                new iam::SetIamPolicyRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                    Policy = gax::GaxPreconditions.CheckNotNull(policy, nameof(policy)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Sets the access control policy on the specified resource. Replaces
-        /// any existing policy.
-        ///
-        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
-        /// PERMISSION_DENIED
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being specified.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="policy">
-        /// REQUIRED: The complete policy to be applied to the `resource`. The size of
-        /// the policy is limited to a few 10s of KB. An empty policy is a
-        /// valid policy but certain Cloud Platform services (such as Projects)
-        /// might reject them.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::Policy> SetIamPolicyAsync(
-            string resource,
-            iam::Policy policy,
-            st::CancellationToken cancellationToken) => SetIamPolicyAsync(
-                resource,
-                policy,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Sets the access control policy on the specified resource. Replaces
-        /// any existing policy.
-        ///
-        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
-        /// PERMISSION_DENIED
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being specified.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="policy">
-        /// REQUIRED: The complete policy to be applied to the `resource`. The size of
-        /// the policy is limited to a few 10s of KB. An empty policy is a
-        /// valid policy but certain Cloud Platform services (such as Projects)
-        /// might reject them.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual iam::Policy SetIamPolicy(
-            string resource,
-            iam::Policy policy,
-            gaxgrpc::CallSettings callSettings = null) => SetIamPolicy(
-                new iam::SetIamPolicyRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                    Policy = gax::GaxPreconditions.CheckNotNull(policy, nameof(policy)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Sets the access control policy on the specified resource. Replaces
-        /// any existing policy.
-        ///
-        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
-        /// PERMISSION_DENIED
-        /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
         /// </param>
@@ -2122,72 +2022,6 @@ namespace Google.Cloud.PubSub.V1
         /// Gets the access control policy for a resource. Returns an empty policy
         /// if the resource exists and does not have a policy set.
         /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::Policy> GetIamPolicyAsync(
-            string resource,
-            gaxgrpc::CallSettings callSettings = null) => GetIamPolicyAsync(
-                new iam::GetIamPolicyRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Gets the access control policy for a resource. Returns an empty policy
-        /// if the resource exists and does not have a policy set.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::Policy> GetIamPolicyAsync(
-            string resource,
-            st::CancellationToken cancellationToken) => GetIamPolicyAsync(
-                resource,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Gets the access control policy for a resource. Returns an empty policy
-        /// if the resource exists and does not have a policy set.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual iam::Policy GetIamPolicy(
-            string resource,
-            gaxgrpc::CallSettings callSettings = null) => GetIamPolicy(
-                new iam::GetIamPolicyRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Gets the access control policy for a resource. Returns an empty policy
-        /// if the resource exists and does not have a policy set.
-        /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
         /// </param>
@@ -2242,111 +2076,6 @@ namespace Google.Cloud.PubSub.V1
         {
             throw new sys::NotImplementedException();
         }
-
-        /// <summary>
-        /// Returns permissions that a caller has on the specified resource. If the
-        /// resource does not exist, this will return an empty set of
-        /// permissions, not a NOT_FOUND error.
-        ///
-        /// Note: This operation is designed to be used for building
-        /// permission-aware UIs and command-line tools, not for authorization
-        /// checking. This operation may "fail open" without warning.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy detail is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="permissions">
-        /// The set of permissions to check for the `resource`. Permissions with
-        /// wildcards (such as '*' or 'storage.*') are not allowed. For more
-        /// information see
-        /// [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::TestIamPermissionsResponse> TestIamPermissionsAsync(
-            string resource,
-            scg::IEnumerable<string> permissions,
-            gaxgrpc::CallSettings callSettings = null) => TestIamPermissionsAsync(
-                new iam::TestIamPermissionsRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                    Permissions = { gax::GaxPreconditions.CheckNotNull(permissions, nameof(permissions)) },
-                },
-                callSettings);
-
-        /// <summary>
-        /// Returns permissions that a caller has on the specified resource. If the
-        /// resource does not exist, this will return an empty set of
-        /// permissions, not a NOT_FOUND error.
-        ///
-        /// Note: This operation is designed to be used for building
-        /// permission-aware UIs and command-line tools, not for authorization
-        /// checking. This operation may "fail open" without warning.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy detail is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="permissions">
-        /// The set of permissions to check for the `resource`. Permissions with
-        /// wildcards (such as '*' or 'storage.*') are not allowed. For more
-        /// information see
-        /// [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::TestIamPermissionsResponse> TestIamPermissionsAsync(
-            string resource,
-            scg::IEnumerable<string> permissions,
-            st::CancellationToken cancellationToken) => TestIamPermissionsAsync(
-                resource,
-                permissions,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Returns permissions that a caller has on the specified resource. If the
-        /// resource does not exist, this will return an empty set of
-        /// permissions, not a NOT_FOUND error.
-        ///
-        /// Note: This operation is designed to be used for building
-        /// permission-aware UIs and command-line tools, not for authorization
-        /// checking. This operation may "fail open" without warning.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy detail is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="permissions">
-        /// The set of permissions to check for the `resource`. Permissions with
-        /// wildcards (such as '*' or 'storage.*') are not allowed. For more
-        /// information see
-        /// [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual iam::TestIamPermissionsResponse TestIamPermissions(
-            string resource,
-            scg::IEnumerable<string> permissions,
-            gaxgrpc::CallSettings callSettings = null) => TestIamPermissions(
-                new iam::TestIamPermissionsRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                    Permissions = { gax::GaxPreconditions.CheckNotNull(permissions, nameof(permissions)) },
-                },
-                callSettings);
 
         /// <summary>
         /// Returns permissions that a caller has on the specified resource. If the

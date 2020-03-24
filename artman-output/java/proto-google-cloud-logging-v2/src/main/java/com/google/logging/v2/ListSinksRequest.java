@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 2;</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   public java.lang.String getPageToken() {
@@ -188,7 +188,7 @@ private static final long serialVersionUID = 0L;
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 2;</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString
@@ -214,7 +214,7 @@ private static final long serialVersionUID = 0L;
    * response indicates that more results might be available.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   public int getPageSize() {
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 2;</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
@@ -709,7 +709,7 @@ private static final long serialVersionUID = 0L;
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 2;</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
@@ -733,7 +733,7 @@ private static final long serialVersionUID = 0L;
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 2;</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
@@ -755,7 +755,7 @@ private static final long serialVersionUID = 0L;
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 2;</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * parameters should be identical to those in the previous call.
      * </pre>
      *
-     * <code>string page_token = 2;</code>
+     * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
      * response indicates that more results might be available.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageSize.
      */
     public int getPageSize() {
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * response indicates that more results might be available.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
@@ -826,7 +826,7 @@ private static final long serialVersionUID = 0L;
      * response indicates that more results might be available.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {

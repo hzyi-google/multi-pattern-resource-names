@@ -72,7 +72,7 @@ describe Google::Cloud::Talent::V4beta1::CompletionClient do
 
     it 'invokes complete_query without error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Talent::V4beta1::CompletionClient.tenant_path("[PROJECT]", "[TENANT]")
+      formatted_parent = Google::Cloud::Talent::V4beta1::CompletionClient.project_path("[PROJECT]")
       query = ''
       page_size = 0
 
@@ -123,7 +123,7 @@ describe Google::Cloud::Talent::V4beta1::CompletionClient do
 
     it 'invokes complete_query with error' do
       # Create request parameters
-      formatted_parent = Google::Cloud::Talent::V4beta1::CompletionClient.tenant_path("[PROJECT]", "[TENANT]")
+      formatted_parent = Google::Cloud::Talent::V4beta1::CompletionClient.project_path("[PROJECT]")
       query = ''
       page_size = 0
 

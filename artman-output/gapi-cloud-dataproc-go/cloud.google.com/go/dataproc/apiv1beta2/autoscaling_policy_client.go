@@ -96,7 +96,7 @@ type AutoscalingPolicyClient struct {
 // NewAutoscalingPolicyClient creates a new autoscaling policy service client.
 //
 // The API interface for managing autoscaling policies in the
-// Google Cloud Dataproc API.
+// Cloud Dataproc API.
 func NewAutoscalingPolicyClient(ctx context.Context, opts ...option.ClientOption) (*AutoscalingPolicyClient, error) {
 	conn, err := transport.DialGRPC(ctx, append(defaultAutoscalingPolicyClientOptions(), opts...)...)
 	if err != nil {

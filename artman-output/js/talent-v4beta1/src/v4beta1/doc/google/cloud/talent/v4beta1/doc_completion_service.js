@@ -113,35 +113,26 @@ const CompleteQueryRequest = {
     /**
      * Suggest job titles for jobs autocomplete.
      *
-     * For
-     * CompletionType.JOB_TITLE
-     * type, only open jobs with the same
-     * language_codes
-     * are returned.
+     * For CompletionType.JOB_TITLE type, only open jobs with the same
+     * language_codes are returned.
      */
     JOB_TITLE: 1,
 
     /**
      * Suggest company names for jobs autocomplete.
      *
-     * For
-     * CompletionType.COMPANY_NAME
-     * type, only companies having open jobs with the same
-     * language_codes
-     * are returned.
+     * For CompletionType.COMPANY_NAME type,
+     * only companies having open jobs with the same language_codes are
+     * returned.
      */
     COMPANY_NAME: 2,
 
     /**
      * Suggest both job titles and company names for jobs autocomplete.
      *
-     * For
-     * CompletionType.COMBINED
-     * type, only open jobs with the same
-     * language_codes
-     * or companies having open jobs with the same
-     * language_codes
-     * are returned.
+     * For CompletionType.COMBINED type, only open jobs with the same
+     * language_codes or companies having open jobs with the same
+     * language_codes are returned.
      */
     COMBINED: 3
   }

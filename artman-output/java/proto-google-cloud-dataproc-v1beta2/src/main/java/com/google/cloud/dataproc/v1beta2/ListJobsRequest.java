@@ -324,7 +324,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object region_;
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -344,7 +344,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -371,7 +371,7 @@ private static final long serialVersionUID = 0L;
    * Optional. The number of results to return in each response.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   public int getPageSize() {
@@ -386,7 +386,7 @@ private static final long serialVersionUID = 0L;
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   public java.lang.String getPageToken() {
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
    * next page of results.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
   public com.google.protobuf.ByteString
@@ -432,7 +432,7 @@ private static final long serialVersionUID = 0L;
    * submitted to the named cluster.
    * </pre>
    *
-   * <code>string cluster_name = 4;</code>
+   * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The clusterName.
    */
   public java.lang.String getClusterName() {
@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
    * submitted to the named cluster.
    * </pre>
    *
-   * <code>string cluster_name = 4;</code>
+   * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for clusterName.
    */
   public com.google.protobuf.ByteString
@@ -479,7 +479,7 @@ private static final long serialVersionUID = 0L;
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The enum numeric value on the wire for jobStateMatcher.
    */
   public int getJobStateMatcherValue() {
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The jobStateMatcher.
    */
   public com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher getJobStateMatcher() {
@@ -517,7 +517,7 @@ private static final long serialVersionUID = 0L;
    * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The filter.
    */
   public java.lang.String getFilter() {
@@ -546,7 +546,7 @@ private static final long serialVersionUID = 0L;
    * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
    * </pre>
    *
-   * <code>string filter = 7;</code>
+   * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString
@@ -1074,7 +1074,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object region_ = "";
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1094,7 +1094,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1115,7 +1115,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1134,7 +1134,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1148,7 +1148,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1173,7 +1173,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The number of results to return in each response.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageSize.
      */
     public int getPageSize() {
@@ -1184,7 +1184,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The number of results to return in each response.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
@@ -1199,7 +1199,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The number of results to return in each response.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
@@ -1216,7 +1216,7 @@ private static final long serialVersionUID = 0L;
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
@@ -1237,7 +1237,7 @@ private static final long serialVersionUID = 0L;
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
@@ -1259,7 +1259,7 @@ private static final long serialVersionUID = 0L;
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
@@ -1279,7 +1279,7 @@ private static final long serialVersionUID = 0L;
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
@@ -1294,7 +1294,7 @@ private static final long serialVersionUID = 0L;
      * next page of results.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */
@@ -1317,7 +1317,7 @@ private static final long serialVersionUID = 0L;
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The clusterName.
      */
     public java.lang.String getClusterName() {
@@ -1338,7 +1338,7 @@ private static final long serialVersionUID = 0L;
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for clusterName.
      */
     public com.google.protobuf.ByteString
@@ -1360,7 +1360,7 @@ private static final long serialVersionUID = 0L;
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The clusterName to set.
      * @return This builder for chaining.
      */
@@ -1380,7 +1380,7 @@ private static final long serialVersionUID = 0L;
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearClusterName() {
@@ -1395,7 +1395,7 @@ private static final long serialVersionUID = 0L;
      * submitted to the named cluster.
      * </pre>
      *
-     * <code>string cluster_name = 4;</code>
+     * <code>string cluster_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for clusterName to set.
      * @return This builder for chaining.
      */
@@ -1419,7 +1419,7 @@ private static final long serialVersionUID = 0L;
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The enum numeric value on the wire for jobStateMatcher.
      */
     public int getJobStateMatcherValue() {
@@ -1432,7 +1432,7 @@ private static final long serialVersionUID = 0L;
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The enum numeric value on the wire for jobStateMatcher to set.
      * @return This builder for chaining.
      */
@@ -1448,7 +1448,7 @@ private static final long serialVersionUID = 0L;
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The jobStateMatcher.
      */
     public com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher getJobStateMatcher() {
@@ -1463,7 +1463,7 @@ private static final long serialVersionUID = 0L;
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The jobStateMatcher to set.
      * @return This builder for chaining.
      */
@@ -1483,7 +1483,7 @@ private static final long serialVersionUID = 0L;
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearJobStateMatcher() {
@@ -1508,7 +1508,7 @@ private static final long serialVersionUID = 0L;
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The filter.
      */
     public java.lang.String getFilter() {
@@ -1537,7 +1537,7 @@ private static final long serialVersionUID = 0L;
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString
@@ -1567,7 +1567,7 @@ private static final long serialVersionUID = 0L;
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The filter to set.
      * @return This builder for chaining.
      */
@@ -1595,7 +1595,7 @@ private static final long serialVersionUID = 0L;
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
@@ -1618,7 +1618,7 @@ private static final long serialVersionUID = 0L;
      * status.state = ACTIVE AND labels.env = staging AND labels.starred = *
      * </pre>
      *
-     * <code>string filter = 7;</code>
+     * <code>string filter = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
      */

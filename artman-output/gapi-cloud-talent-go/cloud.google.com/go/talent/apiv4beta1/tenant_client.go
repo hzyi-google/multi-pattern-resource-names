@@ -36,10 +36,10 @@ import (
 
 // TenantCallOptions contains the retry settings for each method of TenantClient.
 type TenantCallOptions struct {
+	DeleteTenant []gax.CallOption
 	CreateTenant []gax.CallOption
 	GetTenant    []gax.CallOption
 	UpdateTenant []gax.CallOption
-	DeleteTenant []gax.CallOption
 	ListTenants  []gax.CallOption
 }
 
@@ -68,10 +68,10 @@ func defaultTenantCallOptions() *TenantCallOptions {
 		},
 	}
 	return &TenantCallOptions{
+		DeleteTenant: retry[[2]string{"default", "idempotent"}],
 		CreateTenant: retry[[2]string{"default", "non_idempotent"}],
 		GetTenant:    retry[[2]string{"default", "idempotent"}],
 		UpdateTenant: retry[[2]string{"default", "non_idempotent"}],
-		DeleteTenant: retry[[2]string{"default", "idempotent"}],
 		ListTenants:  retry[[2]string{"default", "idempotent"}],
 	}
 }
@@ -131,6 +131,19 @@ func (c *TenantClient) setGoogleClientInfo(keyval ...string) {
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
+// DeleteTenant deletes specified tenant.
+func (c *TenantClient) DeleteTenant(ctx context.Context, req *talentpb.DeleteTenantRequest, opts ...gax.CallOption) error {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.DeleteTenant[0:len(c.CallOptions.DeleteTenant):len(c.CallOptions.DeleteTenant)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.tenantClient.DeleteTenant(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	return err
+}
+
 // CreateTenant creates a new tenant entity.
 func (c *TenantClient) CreateTenant(ctx context.Context, req *talentpb.CreateTenantRequest, opts ...gax.CallOption) (*talentpb.Tenant, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
@@ -180,19 +193,6 @@ func (c *TenantClient) UpdateTenant(ctx context.Context, req *talentpb.UpdateTen
 		return nil, err
 	}
 	return resp, nil
-}
-
-// DeleteTenant deletes specified tenant.
-func (c *TenantClient) DeleteTenant(ctx context.Context, req *talentpb.DeleteTenantRequest, opts ...gax.CallOption) error {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteTenant[0:len(c.CallOptions.DeleteTenant):len(c.CallOptions.DeleteTenant)], opts...)
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		_, err = c.tenantClient.DeleteTenant(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	return err
 }
 
 // ListTenants lists all tenants associated with the project.

@@ -131,6 +131,8 @@ module Google
           end
 
           # Returns a fully-qualified topic resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param topic [String]
           # @return [String]
@@ -213,6 +215,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "subscriber_client_config.json"
@@ -422,10 +427,9 @@ module Google
           #   plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters
           #   in length, and it must not start with `"goog"`.
           # @param topic [String]
-          #   Required. The name of the topic from which this subscription is receiving messages.
-          #   Format is `projects/{project}/topics/{topic}`.
-          #   The value of this field will be `_deleted-topic_` if the topic has been
-          #   deleted.
+          #   Required. The name of the topic from which this subscription is receiving
+          #   messages. Format is `projects/{project}/topics/{topic}`. The value of this
+          #   field will be `_deleted-topic_` if the topic has been deleted.
           # @param push_config [Google::Pubsub::V1::PushConfig | Hash]
           #   If push delivery is used with this subscription, this field is
           #   used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -490,6 +494,14 @@ module Google
           #   value for `expiration_policy.ttl` is 1 day.
           #   A hash of the same form as `Google::Pubsub::V1::ExpirationPolicy`
           #   can also be provided.
+          # @param filter [String]
+          #   An expression written in the Cloud Pub/Sub filter language. If non-empty,
+          #   then only `PubsubMessage`s whose `attributes` field matches the filter are
+          #   delivered on this subscription. If empty, then no messages are filtered
+          #   out.
+          #   <b>EXPERIMENTAL:</b> This feature is part of a closed alpha release. This
+          #   API might be changed in backward-incompatible ways and is not recommended
+          #   for production use. It is not subject to any SLA or deprecation policy.
           # @param dead_letter_policy [Google::Pubsub::V1::DeadLetterPolicy | Hash]
           #   A policy that specifies the conditions for dead lettering messages in
           #   this subscription. If dead_letter_policy is not set, dead lettering
@@ -503,6 +515,19 @@ module Google
           #   API might be changed in backward-incompatible ways and is not recommended
           #   for production use. It is not subject to any SLA or deprecation policy.
           #   A hash of the same form as `Google::Pubsub::V1::DeadLetterPolicy`
+          #   can also be provided.
+          # @param retry_policy [Google::Pubsub::V1::RetryPolicy | Hash]
+          #   A policy that specifies how Cloud Pub/Sub retries message delivery for this
+          #   subscription.
+          #
+          #   If not set, the default retry policy is applied. This generally implies
+          #   that messages will be retried as soon as possible for healthy subscribers.
+          #   RetryPolicy will be triggered on NACKs or acknowledgement deadline
+          #   exceeded events for a given message.
+          #   <b>EXPERIMENTAL:</b> This API might be changed in backward-incompatible
+          #   ways and is not recommended for production use. It is not subject to any
+          #   SLA or deprecation policy.
+          #   A hash of the same form as `Google::Pubsub::V1::RetryPolicy`
           #   can also be provided.
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
@@ -530,7 +555,9 @@ module Google
               labels: nil,
               enable_message_ordering: nil,
               expiration_policy: nil,
+              filter: nil,
               dead_letter_policy: nil,
+              retry_policy: nil,
               options: nil,
               &block
             req = {
@@ -543,7 +570,9 @@ module Google
               labels: labels,
               enable_message_ordering: enable_message_ordering,
               expiration_policy: expiration_policy,
-              dead_letter_policy: dead_letter_policy
+              filter: filter,
+              dead_letter_policy: dead_letter_policy,
+              retry_policy: retry_policy
             }.delete_if { |_, v| v.nil? }
             req = Google::Gax::to_proto(req, Google::Pubsub::V1::Subscription)
             @create_subscription.call(req, options, &block)
@@ -726,10 +755,10 @@ module Google
           # @param ack_ids [Array<String>]
           #   Required. List of acknowledgment IDs.
           # @param ack_deadline_seconds [Integer]
-          #   Required. The new ack deadline with respect to the time this request was sent to
-          #   the Pub/Sub system. For example, if the value is 10, the new
-          #   ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
-          #   was made. Specifying zero might immediately make the message available for
+          #   Required. The new ack deadline with respect to the time this request was
+          #   sent to the Pub/Sub system. For example, if the value is 10, the new ack
+          #   deadline will expire 10 seconds after the `ModifyAckDeadline` call was
+          #   made. Specifying zero might immediately make the message available for
           #   delivery to another subscriber client. This typically results in an
           #   increase in the rate of message redeliveries (that is, duplicates).
           #   The minimum deadline you can specify is 0 seconds.
@@ -782,8 +811,9 @@ module Google
           #   Required. The subscription whose message is being acknowledged.
           #   Format is `projects/{project}/subscriptions/{sub}`.
           # @param ack_ids [Array<String>]
-          #   Required. The acknowledgment ID for the messages being acknowledged that was returned
-          #   by the Pub/Sub system in the `Pull` response. Must not be empty.
+          #   Required. The acknowledgment ID for the messages being acknowledged that
+          #   was returned by the Pub/Sub system in the `Pull` response. Must not be
+          #   empty.
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
           #   retries, etc.
@@ -823,14 +853,17 @@ module Google
           #   Required. The subscription from which messages should be pulled.
           #   Format is `projects/{project}/subscriptions/{sub}`.
           # @param max_messages [Integer]
-          #   Required. The maximum number of messages to return for this request. Must be a
-          #   positive integer. The Pub/Sub system may return fewer than the number
+          #   Required. The maximum number of messages to return for this request. Must
+          #   be a positive integer. The Pub/Sub system may return fewer than the number
           #   specified.
           # @param return_immediately [true, false]
-          #   If this field set to true, the system will respond immediately even if
-          #   it there are no messages available to return in the `Pull` response.
-          #   Otherwise, the system may wait (for a bounded amount of time) until at
-          #   least one message is available, rather than returning no messages.
+          #   Optional. If this field set to true, the system will respond immediately
+          #   even if it there are no messages available to return in the `Pull`
+          #   response. Otherwise, the system may wait (for a bounded amount of time)
+          #   until at least one message is available, rather than returning no messages.
+          #   Warning: setting this field to `true` is discouraged because it adversely
+          #   impacts the performance of `Pull` operations. We recommend that users do
+          #   not set this field.
           # @param options [Google::Gax::CallOptions]
           #   Overrides the default settings for this call, e.g, timeout,
           #   retries, etc.
@@ -1038,10 +1071,10 @@ module Google
           # REST API requests, you must specify a name in the request.
           #
           # @param name [String]
-          #   Required. User-provided name for this snapshot. If the name is not provided in the
-          #   request, the server will assign a random name for this snapshot on the same
-          #   project as the subscription. Note that for REST API requests, you must
-          #   specify a name.  See the <a
+          #   Required. User-provided name for this snapshot. If the name is not provided
+          #   in the request, the server will assign a random name for this snapshot on
+          #   the same project as the subscription. Note that for REST API requests, you
+          #   must specify a name.  See the <a
           #   href="https://cloud.google.com/pubsub/docs/admin#resource_names"> resource
           #   name rules</a>. Format is `projects/{project}/snapshots/{snap}`.
           # @param subscription [String]
@@ -1264,11 +1297,13 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   subscriber_client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-          #   formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+          #
+          #   # TODO: Initialize `resource`:
+          #   resource = ''
           #
           #   # TODO: Initialize `policy`:
           #   policy = {}
-          #   response = subscriber_client.set_iam_policy(formatted_resource, policy)
+          #   response = subscriber_client.set_iam_policy(resource, policy)
 
           def set_iam_policy \
               resource,
@@ -1306,8 +1341,10 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   subscriber_client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-          #   formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
-          #   response = subscriber_client.get_iam_policy(formatted_resource)
+          #
+          #   # TODO: Initialize `resource`:
+          #   resource = ''
+          #   response = subscriber_client.get_iam_policy(resource)
 
           def get_iam_policy \
               resource,
@@ -1350,11 +1387,13 @@ module Google
           #   require "google/cloud/pub_sub"
           #
           #   subscriber_client = Google::Cloud::PubSub::Subscriber.new(version: :v1)
-          #   formatted_resource = Google::Cloud::PubSub::V1::SubscriberClient.subscription_path("[PROJECT]", "[SUBSCRIPTION]")
+          #
+          #   # TODO: Initialize `resource`:
+          #   resource = ''
           #
           #   # TODO: Initialize `permissions`:
           #   permissions = []
-          #   response = subscriber_client.test_iam_permissions(formatted_resource, permissions)
+          #   response = subscriber_client.test_iam_permissions(resource, permissions)
 
           def test_iam_permissions \
               resource,

@@ -39,16 +39,16 @@ import (
 
 // JobCallOptions contains the retry settings for each method of JobClient.
 type JobCallOptions struct {
+	DeleteJob          []gax.CallOption
 	CreateJob          []gax.CallOption
+	BatchCreateJobs    []gax.CallOption
 	GetJob             []gax.CallOption
 	UpdateJob          []gax.CallOption
-	DeleteJob          []gax.CallOption
-	ListJobs           []gax.CallOption
+	BatchUpdateJobs    []gax.CallOption
 	BatchDeleteJobs    []gax.CallOption
+	ListJobs           []gax.CallOption
 	SearchJobs         []gax.CallOption
 	SearchJobsForAlert []gax.CallOption
-	BatchCreateJobs    []gax.CallOption
-	BatchUpdateJobs    []gax.CallOption
 }
 
 func defaultJobClientOptions() []option.ClientOption {
@@ -76,16 +76,16 @@ func defaultJobCallOptions() *JobCallOptions {
 		},
 	}
 	return &JobCallOptions{
+		DeleteJob:          retry[[2]string{"default", "idempotent"}],
 		CreateJob:          retry[[2]string{"default", "non_idempotent"}],
+		BatchCreateJobs:    retry[[2]string{"default", "non_idempotent"}],
 		GetJob:             retry[[2]string{"default", "idempotent"}],
 		UpdateJob:          retry[[2]string{"default", "non_idempotent"}],
-		DeleteJob:          retry[[2]string{"default", "idempotent"}],
-		ListJobs:           retry[[2]string{"default", "idempotent"}],
+		BatchUpdateJobs:    retry[[2]string{"default", "non_idempotent"}],
 		BatchDeleteJobs:    retry[[2]string{"default", "non_idempotent"}],
+		ListJobs:           retry[[2]string{"default", "idempotent"}],
 		SearchJobs:         retry[[2]string{"default", "non_idempotent"}],
 		SearchJobsForAlert: retry[[2]string{"default", "non_idempotent"}],
-		BatchCreateJobs:    retry[[2]string{"default", "non_idempotent"}],
-		BatchUpdateJobs:    retry[[2]string{"default", "non_idempotent"}],
 	}
 }
 
@@ -160,6 +160,22 @@ func (c *JobClient) setGoogleClientInfo(keyval ...string) {
 	c.xGoogMetadata = metadata.Pairs("x-goog-api-client", gax.XGoogHeader(kv...))
 }
 
+// DeleteJob deletes the specified job.
+//
+// Typically, the job becomes unsearchable within 10 seconds, but it may take
+// up to 5 minutes.
+func (c *JobClient) DeleteJob(ctx context.Context, req *talentpb.DeleteJobRequest, opts ...gax.CallOption) error {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.DeleteJob[0:len(c.CallOptions.DeleteJob):len(c.CallOptions.DeleteJob)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.jobClient.DeleteJob(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	return err
+}
+
 // CreateJob creates a new job.
 //
 // Typically, the job becomes searchable within 10 seconds, but it may take
@@ -178,6 +194,25 @@ func (c *JobClient) CreateJob(ctx context.Context, req *talentpb.CreateJobReques
 		return nil, err
 	}
 	return resp, nil
+}
+
+// BatchCreateJobs begins executing a batch create jobs operation.
+func (c *JobClient) BatchCreateJobs(ctx context.Context, req *talentpb.BatchCreateJobsRequest, opts ...gax.CallOption) (*BatchCreateJobsOperation, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.BatchCreateJobs[0:len(c.CallOptions.BatchCreateJobs):len(c.CallOptions.BatchCreateJobs)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.jobClient.BatchCreateJobs(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &BatchCreateJobsOperation{
+		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+	}, nil
 }
 
 // GetJob retrieves the specified job, whose status is OPEN or recently EXPIRED
@@ -218,17 +253,33 @@ func (c *JobClient) UpdateJob(ctx context.Context, req *talentpb.UpdateJobReques
 	return resp, nil
 }
 
-// DeleteJob deletes the specified job.
-//
-// Typically, the job becomes unsearchable within 10 seconds, but it may take
-// up to 5 minutes.
-func (c *JobClient) DeleteJob(ctx context.Context, req *talentpb.DeleteJobRequest, opts ...gax.CallOption) error {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+// BatchUpdateJobs begins executing a batch update jobs operation.
+func (c *JobClient) BatchUpdateJobs(ctx context.Context, req *talentpb.BatchUpdateJobsRequest, opts ...gax.CallOption) (*BatchUpdateJobsOperation, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.DeleteJob[0:len(c.CallOptions.DeleteJob):len(c.CallOptions.DeleteJob)], opts...)
+	opts = append(c.CallOptions.BatchUpdateJobs[0:len(c.CallOptions.BatchUpdateJobs):len(c.CallOptions.BatchUpdateJobs)], opts...)
+	var resp *longrunningpb.Operation
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
-		_, err = c.jobClient.DeleteJob(ctx, req, settings.GRPC...)
+		resp, err = c.jobClient.BatchUpdateJobs(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &BatchUpdateJobsOperation{
+		lro: longrunning.InternalNewOperation(c.LROClient, resp),
+	}, nil
+}
+
+// BatchDeleteJobs deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+func (c *JobClient) BatchDeleteJobs(ctx context.Context, req *talentpb.BatchDeleteJobsRequest, opts ...gax.CallOption) error {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.BatchDeleteJobs[0:len(c.CallOptions.BatchDeleteJobs):len(c.CallOptions.BatchDeleteJobs)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.jobClient.BatchDeleteJobs(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	return err
@@ -271,19 +322,6 @@ func (c *JobClient) ListJobs(ctx context.Context, req *talentpb.ListJobsRequest,
 	it.pageInfo.MaxSize = int(req.PageSize)
 	it.pageInfo.Token = req.PageToken
 	return it
-}
-
-// BatchDeleteJobs deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
-func (c *JobClient) BatchDeleteJobs(ctx context.Context, req *talentpb.BatchDeleteJobsRequest, opts ...gax.CallOption) error {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchDeleteJobs[0:len(c.CallOptions.BatchDeleteJobs):len(c.CallOptions.BatchDeleteJobs)], opts...)
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		_, err = c.jobClient.BatchDeleteJobs(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	return err
 }
 
 // SearchJobs searches for jobs using the provided [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
@@ -375,44 +413,6 @@ func (c *JobClient) SearchJobsForAlert(ctx context.Context, req *talentpb.Search
 	it.pageInfo.MaxSize = int(req.PageSize)
 	it.pageInfo.Token = req.PageToken
 	return it
-}
-
-// BatchCreateJobs begins executing a batch create jobs operation.
-func (c *JobClient) BatchCreateJobs(ctx context.Context, req *talentpb.BatchCreateJobsRequest, opts ...gax.CallOption) (*BatchCreateJobsOperation, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchCreateJobs[0:len(c.CallOptions.BatchCreateJobs):len(c.CallOptions.BatchCreateJobs)], opts...)
-	var resp *longrunningpb.Operation
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.jobClient.BatchCreateJobs(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return &BatchCreateJobsOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
-	}, nil
-}
-
-// BatchUpdateJobs begins executing a batch update jobs operation.
-func (c *JobClient) BatchUpdateJobs(ctx context.Context, req *talentpb.BatchUpdateJobsRequest, opts ...gax.CallOption) (*BatchUpdateJobsOperation, error) {
-	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
-	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
-	opts = append(c.CallOptions.BatchUpdateJobs[0:len(c.CallOptions.BatchUpdateJobs):len(c.CallOptions.BatchUpdateJobs)], opts...)
-	var resp *longrunningpb.Operation
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.jobClient.BatchUpdateJobs(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return &BatchUpdateJobsOperation{
-		lro: longrunning.InternalNewOperation(c.LROClient, resp),
-	}, nil
 }
 
 // JobIterator manages a stream of *talentpb.Job.

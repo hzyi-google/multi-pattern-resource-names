@@ -341,7 +341,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The agent-reported status is out of date (may occur if
-     * Cloud Dataproc loses communication with Agent).
+     * Dataproc loses communication with Agent).
      * Applies to RUNNING state.
      * </pre>
      *
@@ -373,7 +373,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The agent-reported status is out of date (may occur if
-     * Cloud Dataproc loses communication with Agent).
+     * Dataproc loses communication with Agent).
      * Applies to RUNNING state.
      * </pre>
      *
@@ -536,7 +536,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp stateStartTime_;
   /**
    * <pre>
-   * Output only. Time when this state was entered.
+   * Output only. Time when this state was entered (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -547,7 +548,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Time when this state was entered.
+   * Output only. Time when this state was entered (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -558,7 +560,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Time when this state was entered.
+   * Output only. Time when this state was entered (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1137,7 +1140,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> stateStartTimeBuilder_;
     /**
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1148,7 +1152,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1163,7 +1168,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1183,7 +1189,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1201,7 +1208,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1223,7 +1231,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1241,7 +1250,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1253,7 +1263,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1268,7 +1279,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Time when this state was entered.
+     * Output only. Time when this state was entered (see JSON representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

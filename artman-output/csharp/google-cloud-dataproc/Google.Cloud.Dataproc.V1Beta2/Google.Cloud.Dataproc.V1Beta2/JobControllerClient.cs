@@ -515,7 +515,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="job">
         /// Required. The job resource.
@@ -547,7 +547,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="job">
         /// Required. The job resource.
@@ -576,7 +576,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="job">
         /// Required. The job resource.
@@ -664,7 +664,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="jobId">
         /// Required. The job ID.
@@ -696,7 +696,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="jobId">
         /// Required. The job ID.
@@ -725,7 +725,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="jobId">
         /// Required. The job ID.
@@ -813,7 +813,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request.
@@ -852,7 +852,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request.
@@ -891,7 +891,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="filter">
         /// Optional. A filter constraining the jobs to list. Filters are
@@ -948,7 +948,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="filter">
         /// Optional. A filter constraining the jobs to list. Filters are
@@ -1094,16 +1094,16 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// <summary>
         /// Starts a job cancellation request. To access the job resource
         /// after cancellation, call
-        /// [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+        /// [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
         /// or
-        /// [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+        /// [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
         /// </summary>
         /// <param name="projectId">
         /// Required. The ID of the Google Cloud Platform project that the job
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="jobId">
         /// Required. The job ID.
@@ -1130,16 +1130,16 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// <summary>
         /// Starts a job cancellation request. To access the job resource
         /// after cancellation, call
-        /// [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+        /// [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
         /// or
-        /// [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+        /// [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
         /// </summary>
         /// <param name="projectId">
         /// Required. The ID of the Google Cloud Platform project that the job
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="jobId">
         /// Required. The job ID.
@@ -1163,16 +1163,16 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// <summary>
         /// Starts a job cancellation request. To access the job resource
         /// after cancellation, call
-        /// [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+        /// [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
         /// or
-        /// [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+        /// [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
         /// </summary>
         /// <param name="projectId">
         /// Required. The ID of the Google Cloud Platform project that the job
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="jobId">
         /// Required. The job ID.
@@ -1199,9 +1199,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// <summary>
         /// Starts a job cancellation request. To access the job resource
         /// after cancellation, call
-        /// [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+        /// [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
         /// or
-        /// [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+        /// [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
@@ -1222,9 +1222,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// <summary>
         /// Starts a job cancellation request. To access the job resource
         /// after cancellation, call
-        /// [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+        /// [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
         /// or
-        /// [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+        /// [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
@@ -1244,9 +1244,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// <summary>
         /// Starts a job cancellation request. To access the job resource
         /// after cancellation, call
-        /// [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+        /// [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
         /// or
-        /// [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+        /// [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
@@ -1273,7 +1273,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="jobId">
         /// Required. The job ID.
@@ -1306,7 +1306,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="jobId">
         /// Required. The job ID.
@@ -1336,7 +1336,7 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// belongs to.
         /// </param>
         /// <param name="region">
-        /// Required. The Cloud Dataproc region in which to handle the request.
+        /// Required. The Dataproc region in which to handle the request.
         /// </param>
         /// <param name="jobId">
         /// Required. The job ID.
@@ -1660,9 +1660,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// <summary>
         /// Starts a job cancellation request. To access the job resource
         /// after cancellation, call
-        /// [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+        /// [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
         /// or
-        /// [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+        /// [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
@@ -1684,9 +1684,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// <summary>
         /// Starts a job cancellation request. To access the job resource
         /// after cancellation, call
-        /// [regions/{region}/jobs.list](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
+        /// [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
         /// or
-        /// [regions/{region}/jobs.get](/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+        /// [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
         /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.

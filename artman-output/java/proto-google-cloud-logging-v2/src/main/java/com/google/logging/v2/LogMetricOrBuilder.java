@@ -22,7 +22,7 @@ public interface LogMetricOrBuilder extends
    * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -41,7 +41,7 @@ public interface LogMetricOrBuilder extends
    * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -53,7 +53,7 @@ public interface LogMetricOrBuilder extends
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The description.
    */
   java.lang.String getDescription();
@@ -63,7 +63,7 @@ public interface LogMetricOrBuilder extends
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
@@ -71,27 +71,27 @@ public interface LogMetricOrBuilder extends
 
   /**
    * <pre>
-   * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
-   * which is used to match log entries.
+   * Required. An [advanced logs filter](/logging/docs/view/advanced_filters) which is
+   * used to match log entries.
    * Example:
    *     "resource.type=gae_app AND severity&gt;=ERROR"
    * The maximum length of the filter is 20000 characters.
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The filter.
    */
   java.lang.String getFilter();
   /**
    * <pre>
-   * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
-   * which is used to match log entries.
+   * Required. An [advanced logs filter](/logging/docs/view/advanced_filters) which is
+   * used to match log entries.
    * Example:
    *     "resource.type=gae_app AND severity&gt;=ERROR"
    * The maximum length of the filter is 20000 characters.
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
@@ -118,7 +118,7 @@ public interface LogMetricOrBuilder extends
    * their description.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the metricDescriptor field is set.
    */
   boolean hasMetricDescriptor();
@@ -143,7 +143,7 @@ public interface LogMetricOrBuilder extends
    * their description.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The metricDescriptor.
    */
   com.google.api.MetricDescriptor getMetricDescriptor();
@@ -168,7 +168,7 @@ public interface LogMetricOrBuilder extends
    * their description.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.api.MetricDescriptorOrBuilder getMetricDescriptorOrBuilder();
 
@@ -193,7 +193,7 @@ public interface LogMetricOrBuilder extends
    * Example: `REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(&#92;d+).*")`
    * </pre>
    *
-   * <code>string value_extractor = 6;</code>
+   * <code>string value_extractor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The valueExtractor.
    */
   java.lang.String getValueExtractor();
@@ -218,7 +218,7 @@ public interface LogMetricOrBuilder extends
    * Example: `REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(&#92;d+).*")`
    * </pre>
    *
-   * <code>string value_extractor = 6;</code>
+   * <code>string value_extractor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for valueExtractor.
    */
   com.google.protobuf.ByteString
@@ -240,7 +240,7 @@ public interface LogMetricOrBuilder extends
    * number of active time series that are allowed in a project.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+   * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelExtractorsCount();
   /**
@@ -259,7 +259,7 @@ public interface LogMetricOrBuilder extends
    * number of active time series that are allowed in a project.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+   * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabelExtractors(
       java.lang.String key);
@@ -285,7 +285,7 @@ public interface LogMetricOrBuilder extends
    * number of active time series that are allowed in a project.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+   * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getLabelExtractorsMap();
@@ -305,7 +305,7 @@ public interface LogMetricOrBuilder extends
    * number of active time series that are allowed in a project.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+   * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getLabelExtractorsOrDefault(
@@ -327,7 +327,7 @@ public interface LogMetricOrBuilder extends
    * number of active time series that are allowed in a project.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+   * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getLabelExtractorsOrThrow(
@@ -340,7 +340,7 @@ public interface LogMetricOrBuilder extends
    * used to create a histogram of the extracted values.
    * </pre>
    *
-   * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the bucketOptions field is set.
    */
   boolean hasBucketOptions();
@@ -351,7 +351,7 @@ public interface LogMetricOrBuilder extends
    * used to create a histogram of the extracted values.
    * </pre>
    *
-   * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bucketOptions.
    */
   com.google.api.Distribution.BucketOptions getBucketOptions();
@@ -362,7 +362,7 @@ public interface LogMetricOrBuilder extends
    * used to create a histogram of the extracted values.
    * </pre>
    *
-   * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.api.Distribution.BucketOptionsOrBuilder getBucketOptionsOrBuilder();
 
@@ -372,7 +372,7 @@ public interface LogMetricOrBuilder extends
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
@@ -382,7 +382,7 @@ public interface LogMetricOrBuilder extends
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
@@ -392,7 +392,7 @@ public interface LogMetricOrBuilder extends
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -402,7 +402,7 @@ public interface LogMetricOrBuilder extends
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
@@ -412,7 +412,7 @@ public interface LogMetricOrBuilder extends
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
@@ -422,7 +422,7 @@ public interface LogMetricOrBuilder extends
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 

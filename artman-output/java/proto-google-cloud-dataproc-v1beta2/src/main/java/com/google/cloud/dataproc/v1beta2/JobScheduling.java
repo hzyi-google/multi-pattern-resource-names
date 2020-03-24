@@ -101,7 +101,7 @@ private static final long serialVersionUID = 0L;
    * Maximum value is 10.
    * </pre>
    *
-   * <code>int32 max_failures_per_hour = 1;</code>
+   * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The maxFailuresPerHour.
    */
   public int getMaxFailuresPerHour() {
@@ -425,7 +425,7 @@ private static final long serialVersionUID = 0L;
      * Maximum value is 10.
      * </pre>
      *
-     * <code>int32 max_failures_per_hour = 1;</code>
+     * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The maxFailuresPerHour.
      */
     public int getMaxFailuresPerHour() {
@@ -441,7 +441,7 @@ private static final long serialVersionUID = 0L;
      * Maximum value is 10.
      * </pre>
      *
-     * <code>int32 max_failures_per_hour = 1;</code>
+     * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The maxFailuresPerHour to set.
      * @return This builder for chaining.
      */
@@ -461,7 +461,7 @@ private static final long serialVersionUID = 0L;
      * Maximum value is 10.
      * </pre>
      *
-     * <code>int32 max_failures_per_hour = 1;</code>
+     * <code>int32 max_failures_per_hour = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearMaxFailuresPerHour() {

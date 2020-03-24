@@ -821,14 +821,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object job_;
   /**
    * <pre>
-   * One of either a job or a company is required.
-   * Resource name of the job which the candidate applied for.
+   * Required. Resource name of the job which the candidate applied for.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string job = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The job.
    */
   public java.lang.String getJob() {
@@ -845,14 +844,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * One of either a job or a company is required.
-   * Resource name of the job which the candidate applied for.
+   * Required. Resource name of the job which the candidate applied for.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
    * "projects/foo/tenants/bar/jobs/baz".
    * </pre>
    *
-   * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string job = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for job.
    */
   public com.google.protobuf.ByteString
@@ -873,7 +871,6 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object company_;
   /**
    * <pre>
-   * One of either a job or a company is required.
    * Resource name of the company which the candidate applied for.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
@@ -897,7 +894,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * One of either a job or a company is required.
    * Resource name of the company which the candidate applied for.
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
@@ -960,8 +956,8 @@ private static final long serialVersionUID = 0L;
   private int stage_;
   /**
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new, screen,
-   * send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new,
+   * screen, send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
@@ -974,8 +970,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. What is the most recent stage of the application (that is, new, screen,
-   * send cv, hired, finished work)?  This field is intentionally not
+   * Required. What is the most recent stage of the application (that is, new,
+   * screen, send cv, hired, finished work)?  This field is intentionally not
    * comprehensive of every possible status, but instead, represents statuses
    * that would be used to indicate to the ML models good / bad matches.
    * </pre>
@@ -2349,14 +2345,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object job_ = "";
     /**
      * <pre>
-     * One of either a job or a company is required.
-     * Resource name of the job which the candidate applied for.
+     * Required. Resource name of the job which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string job = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The job.
      */
     public java.lang.String getJob() {
@@ -2373,14 +2368,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One of either a job or a company is required.
-     * Resource name of the job which the candidate applied for.
+     * Required. Resource name of the job which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string job = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for job.
      */
     public com.google.protobuf.ByteString
@@ -2398,14 +2392,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One of either a job or a company is required.
-     * Resource name of the job which the candidate applied for.
+     * Required. Resource name of the job which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string job = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The job to set.
      * @return This builder for chaining.
      */
@@ -2421,14 +2414,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One of either a job or a company is required.
-     * Resource name of the job which the candidate applied for.
+     * Required. Resource name of the job which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string job = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearJob() {
@@ -2439,14 +2431,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One of either a job or a company is required.
-     * Resource name of the job which the candidate applied for.
+     * Required. Resource name of the job which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
      * "projects/foo/tenants/bar/jobs/baz".
      * </pre>
      *
-     * <code>string job = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>string job = 4 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for job to set.
      * @return This builder for chaining.
      */
@@ -2465,7 +2456,6 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object company_ = "";
     /**
      * <pre>
-     * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
@@ -2489,7 +2479,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
@@ -2514,7 +2503,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
@@ -2537,7 +2525,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
@@ -2555,7 +2542,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * One of either a job or a company is required.
      * Resource name of the company which the candidate applied for.
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}".
@@ -2736,8 +2722,8 @@ private static final long serialVersionUID = 0L;
     private int stage_ = 0;
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new, screen,
-     * send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new,
+     * screen, send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
@@ -2750,8 +2736,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new, screen,
-     * send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new,
+     * screen, send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
@@ -2767,8 +2753,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new, screen,
-     * send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new,
+     * screen, send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
@@ -2783,8 +2769,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new, screen,
-     * send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new,
+     * screen, send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>
@@ -2804,8 +2790,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. What is the most recent stage of the application (that is, new, screen,
-     * send cv, hired, finished work)?  This field is intentionally not
+     * Required. What is the most recent stage of the application (that is, new,
+     * screen, send cv, hired, finished work)?  This field is intentionally not
      * comprehensive of every possible status, but instead, represents statuses
      * that would be used to indicate to the ML models good / bad matches.
      * </pre>

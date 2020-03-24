@@ -42,12 +42,12 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class TenantServiceClientTest {
-  private static MockApplicationService mockApplicationService;
   private static MockCompanyService mockCompanyService;
-  private static MockCompletion mockCompletion;
-  private static MockEventService mockEventService;
   private static MockJobService mockJobService;
   private static MockProfileService mockProfileService;
+  private static MockEventService mockEventService;
+  private static MockApplicationService mockApplicationService;
+  private static MockCompletion mockCompletion;
   private static MockTenantService mockTenantService;
   private static MockServiceHelper serviceHelper;
   private TenantServiceClient client;
@@ -55,23 +55,23 @@ public class TenantServiceClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
-    mockApplicationService = new MockApplicationService();
     mockCompanyService = new MockCompanyService();
-    mockCompletion = new MockCompletion();
-    mockEventService = new MockEventService();
     mockJobService = new MockJobService();
     mockProfileService = new MockProfileService();
+    mockEventService = new MockEventService();
+    mockApplicationService = new MockApplicationService();
+    mockCompletion = new MockCompletion();
     mockTenantService = new MockTenantService();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
             Arrays.<MockGrpcService>asList(
-                mockApplicationService,
                 mockCompanyService,
-                mockCompletion,
-                mockEventService,
                 mockJobService,
                 mockProfileService,
+                mockEventService,
+                mockApplicationService,
+                mockCompletion,
                 mockTenantService));
     serviceHelper.start();
   }
@@ -96,6 +96,43 @@ public class TenantServiceClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTenantTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockTenantService.addResponse(expectedResponse);
+
+    TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
+
+    client.deleteTenant(name);
+
+    List<AbstractMessage> actualRequests = mockTenantService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteTenantRequest actualRequest = (DeleteTenantRequest) actualRequests.get(0);
+
+    Assert.assertEquals(name, TenantName.parse(actualRequest.getName()));
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteTenantExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockTenantService.addException(exception);
+
+    try {
+      TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
+
+      client.deleteTenant(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
   }
 
   @Test
@@ -218,43 +255,6 @@ public class TenantServiceClientTest {
       Tenant tenant = Tenant.newBuilder().build();
 
       client.updateTenant(tenant);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTenantTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockTenantService.addResponse(expectedResponse);
-
-    TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-
-    client.deleteTenant(name);
-
-    List<AbstractMessage> actualRequests = mockTenantService.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteTenantRequest actualRequest = (DeleteTenantRequest) actualRequests.get(0);
-
-    Assert.assertEquals(name, TenantName.parse(actualRequest.getName()));
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTenantExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockTenantService.addException(exception);
-
-    try {
-      TenantName name = TenantName.of("[PROJECT]", "[TENANT]");
-
-      client.deleteTenant(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

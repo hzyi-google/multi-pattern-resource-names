@@ -678,6 +678,72 @@ namespace Google.Cloud.Dlp.V2.Tests
         }
 
         [Fact]
+        public void FinishDlpJob()
+        {
+            Mock<DlpService.DlpServiceClient> mockGrpcClient = new Mock<DlpService.DlpServiceClient>(MockBehavior.Strict);
+            FinishDlpJobRequest request = new FinishDlpJobRequest
+            {
+                DlpJobName = new DlpJobName("[PROJECT]", "[DLP_JOB]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.FinishDlpJob(request, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            DlpServiceClient client = new DlpServiceClientImpl(mockGrpcClient.Object, null);
+            client.FinishDlpJob(request);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task FinishDlpJobAsync()
+        {
+            Mock<DlpService.DlpServiceClient> mockGrpcClient = new Mock<DlpService.DlpServiceClient>(MockBehavior.Strict);
+            FinishDlpJobRequest request = new FinishDlpJobRequest
+            {
+                DlpJobName = new DlpJobName("[PROJECT]", "[DLP_JOB]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.FinishDlpJobAsync(request, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
+            DlpServiceClient client = new DlpServiceClientImpl(mockGrpcClient.Object, null);
+            await client.FinishDlpJobAsync(request);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public void HybridInspectDlpJob()
+        {
+            Mock<DlpService.DlpServiceClient> mockGrpcClient = new Mock<DlpService.DlpServiceClient>(MockBehavior.Strict);
+            HybridInspectDlpJobRequest request = new HybridInspectDlpJobRequest
+            {
+                Name = "name3373707",
+            };
+            HybridInspectResponse expectedResponse = new HybridInspectResponse();
+            mockGrpcClient.Setup(x => x.HybridInspectDlpJob(request, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            DlpServiceClient client = new DlpServiceClientImpl(mockGrpcClient.Object, null);
+            HybridInspectResponse response = client.HybridInspectDlpJob(request);
+            Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task HybridInspectDlpJobAsync()
+        {
+            Mock<DlpService.DlpServiceClient> mockGrpcClient = new Mock<DlpService.DlpServiceClient>(MockBehavior.Strict);
+            HybridInspectDlpJobRequest request = new HybridInspectDlpJobRequest
+            {
+                Name = "name3373707",
+            };
+            HybridInspectResponse expectedResponse = new HybridInspectResponse();
+            mockGrpcClient.Setup(x => x.HybridInspectDlpJobAsync(request, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<HybridInspectResponse>(Task.FromResult(expectedResponse), null, null, null, null));
+            DlpServiceClient client = new DlpServiceClientImpl(mockGrpcClient.Object, null);
+            HybridInspectResponse response = await client.HybridInspectDlpJobAsync(request);
+            Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
         public void GetJobTrigger()
         {
             Mock<DlpService.DlpServiceClient> mockGrpcClient = new Mock<DlpService.DlpServiceClient>(MockBehavior.Strict);
@@ -750,6 +816,40 @@ namespace Google.Cloud.Dlp.V2.Tests
                 .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
             DlpServiceClient client = new DlpServiceClientImpl(mockGrpcClient.Object, null);
             await client.DeleteJobTriggerAsync(request);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public void HybridInspectJobTrigger()
+        {
+            Mock<DlpService.DlpServiceClient> mockGrpcClient = new Mock<DlpService.DlpServiceClient>(MockBehavior.Strict);
+            HybridInspectJobTriggerRequest request = new HybridInspectJobTriggerRequest
+            {
+                Name = "name3373707",
+            };
+            HybridInspectResponse expectedResponse = new HybridInspectResponse();
+            mockGrpcClient.Setup(x => x.HybridInspectJobTrigger(request, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            DlpServiceClient client = new DlpServiceClientImpl(mockGrpcClient.Object, null);
+            HybridInspectResponse response = client.HybridInspectJobTrigger(request);
+            Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task HybridInspectJobTriggerAsync()
+        {
+            Mock<DlpService.DlpServiceClient> mockGrpcClient = new Mock<DlpService.DlpServiceClient>(MockBehavior.Strict);
+            HybridInspectJobTriggerRequest request = new HybridInspectJobTriggerRequest
+            {
+                Name = "name3373707",
+            };
+            HybridInspectResponse expectedResponse = new HybridInspectResponse();
+            mockGrpcClient.Setup(x => x.HybridInspectJobTriggerAsync(request, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<HybridInspectResponse>(Task.FromResult(expectedResponse), null, null, null, null));
+            DlpServiceClient client = new DlpServiceClientImpl(mockGrpcClient.Object, null);
+            HybridInspectResponse response = await client.HybridInspectJobTriggerAsync(request);
+            Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
 

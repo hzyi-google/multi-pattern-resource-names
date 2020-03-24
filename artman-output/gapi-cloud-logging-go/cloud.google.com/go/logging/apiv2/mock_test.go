@@ -63,6 +63,42 @@ type mockConfigServer struct {
 	resps []proto.Message
 }
 
+func (s *mockConfigServer) ListBuckets(ctx context.Context, req *loggingpb.ListBucketsRequest) (*loggingpb.ListBucketsResponse, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*loggingpb.ListBucketsResponse), nil
+}
+
+func (s *mockConfigServer) GetBucket(ctx context.Context, req *loggingpb.GetBucketRequest) (*loggingpb.LogBucket, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*loggingpb.LogBucket), nil
+}
+
+func (s *mockConfigServer) UpdateBucket(ctx context.Context, req *loggingpb.UpdateBucketRequest) (*loggingpb.LogBucket, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*loggingpb.LogBucket), nil
+}
+
 func (s *mockConfigServer) ListSinks(ctx context.Context, req *loggingpb.ListSinksRequest) (*loggingpb.ListSinksResponse, error) {
 	md, _ := metadata.FromIncomingContext(ctx)
 	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
@@ -390,6 +426,212 @@ func TestMain(m *testing.M) {
 	os.Exit(m.Run())
 }
 
+func TestConfigServiceV2ListBuckets(t *testing.T) {
+	var nextPageToken string = ""
+	var bucketsElement *loggingpb.LogBucket = &loggingpb.LogBucket{}
+	var buckets = []*loggingpb.LogBucket{bucketsElement}
+	var expectedResponse = &loggingpb.ListBucketsResponse{
+		NextPageToken: nextPageToken,
+		Buckets:       buckets,
+	}
+
+	mockConfig.err = nil
+	mockConfig.reqs = nil
+
+	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
+
+	var formattedParent string = fmt.Sprintf("projects/%s/locations/%s", "[PROJECT]", "[LOCATION]")
+	var request = &loggingpb.ListBucketsRequest{
+		Parent: formattedParent,
+	}
+
+	c, err := NewConfigClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.ListBuckets(context.Background(), request).Next()
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockConfig.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	want := (interface{})(expectedResponse.Buckets[0])
+	got := (interface{})(resp)
+	var ok bool
+
+	switch want := (want).(type) {
+	case proto.Message:
+		ok = proto.Equal(want, got.(proto.Message))
+	default:
+		ok = want == got
+	}
+	if !ok {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestConfigServiceV2ListBucketsError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockConfig.err = gstatus.Error(errCode, "test error")
+
+	var formattedParent string = fmt.Sprintf("projects/%s/locations/%s", "[PROJECT]", "[LOCATION]")
+	var request = &loggingpb.ListBucketsRequest{
+		Parent: formattedParent,
+	}
+
+	c, err := NewConfigClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.ListBuckets(context.Background(), request).Next()
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestConfigServiceV2GetBucket(t *testing.T) {
+	var name2 string = "name2-1052831874"
+	var description string = "description-1724546052"
+	var retentionDays int32 = 1544391896
+	var expectedResponse = &loggingpb.LogBucket{
+		Name:          name2,
+		Description:   description,
+		RetentionDays: retentionDays,
+	}
+
+	mockConfig.err = nil
+	mockConfig.reqs = nil
+
+	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
+
+	var name string = "name3373707"
+	var request = &loggingpb.GetBucketRequest{
+		Name: name,
+	}
+
+	c, err := NewConfigClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.GetBucket(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockConfig.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestConfigServiceV2GetBucketError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockConfig.err = gstatus.Error(errCode, "test error")
+
+	var name string = "name3373707"
+	var request = &loggingpb.GetBucketRequest{
+		Name: name,
+	}
+
+	c, err := NewConfigClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.GetBucket(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
+func TestConfigServiceV2UpdateBucket(t *testing.T) {
+	var name2 string = "name2-1052831874"
+	var description string = "description-1724546052"
+	var retentionDays int32 = 1544391896
+	var expectedResponse = &loggingpb.LogBucket{
+		Name:          name2,
+		Description:   description,
+		RetentionDays: retentionDays,
+	}
+
+	mockConfig.err = nil
+	mockConfig.reqs = nil
+
+	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
+
+	var name string = "name3373707"
+	var bucket *loggingpb.LogBucket = &loggingpb.LogBucket{}
+	var updateMask *field_maskpb.FieldMask = &field_maskpb.FieldMask{}
+	var request = &loggingpb.UpdateBucketRequest{
+		Name:       name,
+		Bucket:     bucket,
+		UpdateMask: updateMask,
+	}
+
+	c, err := NewConfigClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.UpdateBucket(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockConfig.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestConfigServiceV2UpdateBucketError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockConfig.err = gstatus.Error(errCode, "test error")
+
+	var name string = "name3373707"
+	var bucket *loggingpb.LogBucket = &loggingpb.LogBucket{}
+	var updateMask *field_maskpb.FieldMask = &field_maskpb.FieldMask{}
+	var request = &loggingpb.UpdateBucketRequest{
+		Name:       name,
+		Bucket:     bucket,
+		UpdateMask: updateMask,
+	}
+
+	c, err := NewConfigClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.UpdateBucket(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
 func TestConfigServiceV2ListSinks(t *testing.T) {
 	var nextPageToken string = ""
 	var sinksElement *loggingpb.LogSink = &loggingpb.LogSink{}
@@ -485,9 +727,9 @@ func TestConfigServiceV2GetSink(t *testing.T) {
 
 	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
 
-	var formattedSinkName string = fmt.Sprintf("projects/%s/sinks/%s", "[PROJECT]", "[SINK]")
+	var sinkName string = "sinkName-1391757129"
 	var request = &loggingpb.GetSinkRequest{
-		SinkName: formattedSinkName,
+		SinkName: sinkName,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -514,9 +756,9 @@ func TestConfigServiceV2GetSinkError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockConfig.err = gstatus.Error(errCode, "test error")
 
-	var formattedSinkName string = fmt.Sprintf("projects/%s/sinks/%s", "[PROJECT]", "[SINK]")
+	var sinkName string = "sinkName-1391757129"
 	var request = &loggingpb.GetSinkRequest{
-		SinkName: formattedSinkName,
+		SinkName: sinkName,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -631,10 +873,10 @@ func TestConfigServiceV2UpdateSink(t *testing.T) {
 
 	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
 
-	var formattedSinkName string = fmt.Sprintf("projects/%s/sinks/%s", "[PROJECT]", "[SINK]")
+	var sinkName string = "sinkName-1391757129"
 	var sink *loggingpb.LogSink = &loggingpb.LogSink{}
 	var request = &loggingpb.UpdateSinkRequest{
-		SinkName: formattedSinkName,
+		SinkName: sinkName,
 		Sink:     sink,
 	}
 
@@ -662,10 +904,10 @@ func TestConfigServiceV2UpdateSinkError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockConfig.err = gstatus.Error(errCode, "test error")
 
-	var formattedSinkName string = fmt.Sprintf("projects/%s/sinks/%s", "[PROJECT]", "[SINK]")
+	var sinkName string = "sinkName-1391757129"
 	var sink *loggingpb.LogSink = &loggingpb.LogSink{}
 	var request = &loggingpb.UpdateSinkRequest{
-		SinkName: formattedSinkName,
+		SinkName: sinkName,
 		Sink:     sink,
 	}
 
@@ -691,9 +933,9 @@ func TestConfigServiceV2DeleteSink(t *testing.T) {
 
 	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
 
-	var formattedSinkName string = fmt.Sprintf("projects/%s/sinks/%s", "[PROJECT]", "[SINK]")
+	var sinkName string = "sinkName-1391757129"
 	var request = &loggingpb.DeleteSinkRequest{
-		SinkName: formattedSinkName,
+		SinkName: sinkName,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -717,9 +959,9 @@ func TestConfigServiceV2DeleteSinkError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockConfig.err = gstatus.Error(errCode, "test error")
 
-	var formattedSinkName string = fmt.Sprintf("projects/%s/sinks/%s", "[PROJECT]", "[SINK]")
+	var sinkName string = "sinkName-1391757129"
 	var request = &loggingpb.DeleteSinkRequest{
-		SinkName: formattedSinkName,
+		SinkName: sinkName,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -824,9 +1066,9 @@ func TestConfigServiceV2GetExclusion(t *testing.T) {
 
 	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
 
-	var formattedName string = fmt.Sprintf("projects/%s/exclusions/%s", "[PROJECT]", "[EXCLUSION]")
+	var name string = "name3373707"
 	var request = &loggingpb.GetExclusionRequest{
-		Name: formattedName,
+		Name: name,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -853,9 +1095,9 @@ func TestConfigServiceV2GetExclusionError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockConfig.err = gstatus.Error(errCode, "test error")
 
-	var formattedName string = fmt.Sprintf("projects/%s/exclusions/%s", "[PROJECT]", "[EXCLUSION]")
+	var name string = "name3373707"
 	var request = &loggingpb.GetExclusionRequest{
-		Name: formattedName,
+		Name: name,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -958,11 +1200,11 @@ func TestConfigServiceV2UpdateExclusion(t *testing.T) {
 
 	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
 
-	var formattedName string = fmt.Sprintf("projects/%s/exclusions/%s", "[PROJECT]", "[EXCLUSION]")
+	var name string = "name3373707"
 	var exclusion *loggingpb.LogExclusion = &loggingpb.LogExclusion{}
 	var updateMask *field_maskpb.FieldMask = &field_maskpb.FieldMask{}
 	var request = &loggingpb.UpdateExclusionRequest{
-		Name:       formattedName,
+		Name:       name,
 		Exclusion:  exclusion,
 		UpdateMask: updateMask,
 	}
@@ -991,11 +1233,11 @@ func TestConfigServiceV2UpdateExclusionError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockConfig.err = gstatus.Error(errCode, "test error")
 
-	var formattedName string = fmt.Sprintf("projects/%s/exclusions/%s", "[PROJECT]", "[EXCLUSION]")
+	var name string = "name3373707"
 	var exclusion *loggingpb.LogExclusion = &loggingpb.LogExclusion{}
 	var updateMask *field_maskpb.FieldMask = &field_maskpb.FieldMask{}
 	var request = &loggingpb.UpdateExclusionRequest{
-		Name:       formattedName,
+		Name:       name,
 		Exclusion:  exclusion,
 		UpdateMask: updateMask,
 	}
@@ -1022,9 +1264,9 @@ func TestConfigServiceV2DeleteExclusion(t *testing.T) {
 
 	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
 
-	var formattedName string = fmt.Sprintf("projects/%s/exclusions/%s", "[PROJECT]", "[EXCLUSION]")
+	var name string = "name3373707"
 	var request = &loggingpb.DeleteExclusionRequest{
-		Name: formattedName,
+		Name: name,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -1048,9 +1290,9 @@ func TestConfigServiceV2DeleteExclusionError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockConfig.err = gstatus.Error(errCode, "test error")
 
-	var formattedName string = fmt.Sprintf("projects/%s/exclusions/%s", "[PROJECT]", "[EXCLUSION]")
+	var name string = "name3373707"
 	var request = &loggingpb.DeleteExclusionRequest{
-		Name: formattedName,
+		Name: name,
 	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
@@ -1067,11 +1309,11 @@ func TestConfigServiceV2DeleteExclusionError(t *testing.T) {
 	}
 }
 func TestConfigServiceV2GetCmekSettings(t *testing.T) {
-	var name string = "name3373707"
+	var name2 string = "name2-1052831874"
 	var kmsKeyName string = "kmsKeyName2094986649"
 	var serviceAccountId string = "serviceAccountId-111486921"
 	var expectedResponse = &loggingpb.CmekSettings{
-		Name:             name,
+		Name:             name2,
 		KmsKeyName:       kmsKeyName,
 		ServiceAccountId: serviceAccountId,
 	}
@@ -1081,7 +1323,10 @@ func TestConfigServiceV2GetCmekSettings(t *testing.T) {
 
 	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
 
-	var request *loggingpb.GetCmekSettingsRequest = &loggingpb.GetCmekSettingsRequest{}
+	var name string = "name3373707"
+	var request = &loggingpb.GetCmekSettingsRequest{
+		Name: name,
+	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
 	if err != nil {
@@ -1107,7 +1352,10 @@ func TestConfigServiceV2GetCmekSettingsError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockConfig.err = gstatus.Error(errCode, "test error")
 
-	var request *loggingpb.GetCmekSettingsRequest = &loggingpb.GetCmekSettingsRequest{}
+	var name string = "name3373707"
+	var request = &loggingpb.GetCmekSettingsRequest{
+		Name: name,
+	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
 	if err != nil {
@@ -1124,11 +1372,11 @@ func TestConfigServiceV2GetCmekSettingsError(t *testing.T) {
 	_ = resp
 }
 func TestConfigServiceV2UpdateCmekSettings(t *testing.T) {
-	var name string = "name3373707"
+	var name2 string = "name2-1052831874"
 	var kmsKeyName string = "kmsKeyName2094986649"
 	var serviceAccountId string = "serviceAccountId-111486921"
 	var expectedResponse = &loggingpb.CmekSettings{
-		Name:             name,
+		Name:             name2,
 		KmsKeyName:       kmsKeyName,
 		ServiceAccountId: serviceAccountId,
 	}
@@ -1138,7 +1386,12 @@ func TestConfigServiceV2UpdateCmekSettings(t *testing.T) {
 
 	mockConfig.resps = append(mockConfig.resps[:0], expectedResponse)
 
-	var request *loggingpb.UpdateCmekSettingsRequest = &loggingpb.UpdateCmekSettingsRequest{}
+	var name string = "name3373707"
+	var cmekSettings *loggingpb.CmekSettings = &loggingpb.CmekSettings{}
+	var request = &loggingpb.UpdateCmekSettingsRequest{
+		Name:         name,
+		CmekSettings: cmekSettings,
+	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
 	if err != nil {
@@ -1164,7 +1417,12 @@ func TestConfigServiceV2UpdateCmekSettingsError(t *testing.T) {
 	errCode := codes.PermissionDenied
 	mockConfig.err = gstatus.Error(errCode, "test error")
 
-	var request *loggingpb.UpdateCmekSettingsRequest = &loggingpb.UpdateCmekSettingsRequest{}
+	var name string = "name3373707"
+	var cmekSettings *loggingpb.CmekSettings = &loggingpb.CmekSettings{}
+	var request = &loggingpb.UpdateCmekSettingsRequest{
+		Name:         name,
+		CmekSettings: cmekSettings,
+	}
 
 	c, err := NewConfigClient(context.Background(), clientOpt)
 	if err != nil {
@@ -1179,58 +1437,6 @@ func TestConfigServiceV2UpdateCmekSettingsError(t *testing.T) {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
 	_ = resp
-}
-func TestLoggingServiceV2DeleteLog(t *testing.T) {
-	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
-
-	mockLogging.err = nil
-	mockLogging.reqs = nil
-
-	mockLogging.resps = append(mockLogging.resps[:0], expectedResponse)
-
-	var formattedLogName string = fmt.Sprintf("projects/%s/logs/%s", "[PROJECT]", "[LOG]")
-	var request = &loggingpb.DeleteLogRequest{
-		LogName: formattedLogName,
-	}
-
-	c, err := NewClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteLog(context.Background(), request)
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	if want, got := request, mockLogging.reqs[0]; !proto.Equal(want, got) {
-		t.Errorf("wrong request %q, want %q", got, want)
-	}
-
-}
-
-func TestLoggingServiceV2DeleteLogError(t *testing.T) {
-	errCode := codes.PermissionDenied
-	mockLogging.err = gstatus.Error(errCode, "test error")
-
-	var formattedLogName string = fmt.Sprintf("projects/%s/logs/%s", "[PROJECT]", "[LOG]")
-	var request = &loggingpb.DeleteLogRequest{
-		LogName: formattedLogName,
-	}
-
-	c, err := NewClient(context.Background(), clientOpt)
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	err = c.DeleteLog(context.Background(), request)
-
-	if st, ok := gstatus.FromError(err); !ok {
-		t.Errorf("got error %v, expected grpc error", err)
-	} else if c := st.Code(); c != errCode {
-		t.Errorf("got error code %q, want %q", c, errCode)
-	}
 }
 func TestLoggingServiceV2WriteLogEntries(t *testing.T) {
 	var expectedResponse *loggingpb.WriteLogEntriesResponse = &loggingpb.WriteLogEntriesResponse{}
@@ -1287,6 +1493,58 @@ func TestLoggingServiceV2WriteLogEntriesError(t *testing.T) {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
 	_ = resp
+}
+func TestLoggingServiceV2DeleteLog(t *testing.T) {
+	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
+
+	mockLogging.err = nil
+	mockLogging.reqs = nil
+
+	mockLogging.resps = append(mockLogging.resps[:0], expectedResponse)
+
+	var logName string = "logName2013526694"
+	var request = &loggingpb.DeleteLogRequest{
+		LogName: logName,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteLog(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockLogging.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+}
+
+func TestLoggingServiceV2DeleteLogError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockLogging.err = gstatus.Error(errCode, "test error")
+
+	var logName string = "logName2013526694"
+	var request = &loggingpb.DeleteLogRequest{
+		LogName: logName,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.DeleteLog(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
 }
 func TestLoggingServiceV2ListLogEntries(t *testing.T) {
 	var nextPageToken string = ""

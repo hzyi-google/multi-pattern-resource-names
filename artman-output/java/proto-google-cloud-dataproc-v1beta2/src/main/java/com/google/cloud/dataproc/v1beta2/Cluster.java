@@ -278,7 +278,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dataproc.v1beta2.ClusterConfig config_;
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
@@ -290,7 +290,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The cluster config. Note that Cloud Dataproc may set
+   * Required. The cluster config. Note that Dataproc may set
    * default values, and values may change when clusters are updated.
    * </pre>
    *
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object clusterUuid_;
   /**
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -543,7 +543,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -1344,7 +1344,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dataproc.v1beta2.ClusterConfig, com.google.cloud.dataproc.v1beta2.ClusterConfig.Builder, com.google.cloud.dataproc.v1beta2.ClusterConfigOrBuilder> configBuilder_;
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
@@ -1356,7 +1356,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
@@ -1372,7 +1372,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
@@ -1393,7 +1393,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
@@ -1412,7 +1412,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
@@ -1435,7 +1435,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
@@ -1454,7 +1454,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
@@ -1467,7 +1467,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
@@ -1483,7 +1483,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The cluster config. Note that Cloud Dataproc may set
+     * Required. The cluster config. Note that Dataproc may set
      * default values, and values may change when clusters are updated.
      * </pre>
      *
@@ -2166,7 +2166,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object clusterUuid_ = "";
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2187,7 +2187,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2209,7 +2209,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2229,7 +2229,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2244,7 +2244,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *

@@ -136,15 +136,15 @@ class ProfileServiceClient {
     // (e.g. 50 results at a time, with tokens to get subsequent
     // pages). Denote the keys used for pagination and results.
     this._descriptors.page = {
-      listProfiles: new gaxModule.PageDescriptor(
-        'pageToken',
-        'nextPageToken',
-        'profiles'
-      ),
       searchProfiles: new gaxModule.PageDescriptor(
         'pageToken',
         'nextPageToken',
         'summarizedProfiles'
+      ),
+      listProfiles: new gaxModule.PageDescriptor(
+        'pageToken',
+        'nextPageToken',
+        'profiles'
       ),
     };
 
@@ -173,12 +173,12 @@ class ProfileServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const profileServiceStubMethods = [
+      'deleteProfile',
+      'searchProfiles',
       'listProfiles',
       'createProfile',
       'getProfile',
       'updateProfile',
-      'deleteProfile',
-      'searchProfiles',
     ];
     for (const methodName of profileServiceStubMethods) {
       const innerCallPromise = profileServiceStub.then(
@@ -242,454 +242,6 @@ class ProfileServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-
-  /**
-   * Lists profiles by filter. The order is unspecified.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   Required. The resource name of the tenant under which the profile is created.
-   *
-   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *   "projects/foo/tenants/bar".
-   * @param {string} [request.filter]
-   *   The filter string specifies the profiles to be enumerated.
-   *
-   *   Supported operator: =, AND
-   *
-   *   The field(s) eligible for filtering are:
-   *
-   *   * `externalId`
-   *   * `groupId`
-   *
-   *   externalId and groupId cannot be specified at the same time. If both
-   *   externalId and groupId are provided, the API will return a bad request
-   *   error.
-   *
-   *   Sample Query:
-   *
-   *   * externalId = "externalId-1"
-   *   * groupId = "groupId-1"
-   * @param {number} [request.pageSize]
-   *   The maximum number of resources contained in the underlying API
-   *   response. If page streaming is performed per-resource, this
-   *   parameter does not affect the return value. If page streaming is
-   *   performed per-page, this determines the maximum number of
-   *   resources in a page.
-   * @param {Object} [request.readMask]
-   *   A field mask to specify the profile fields to be listed in response.
-   *   All fields are listed if it is unset.
-   *
-   *   Valid values are:
-   *
-   *   * name
-   *
-   *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Array, ?Object, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is Array of [Profile]{@link google.cloud.talent.v4beta1.Profile}.
-   *
-   *   When autoPaginate: false is specified through options, it contains the result
-   *   in a single response. If the response indicates the next page exists, the third
-   *   parameter is set to be used for the next request object. The fourth parameter keeps
-   *   the raw response object of an object representing [ListProfilesResponse]{@link google.cloud.talent.v4beta1.ListProfilesResponse}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is Array of [Profile]{@link google.cloud.talent.v4beta1.Profile}.
-   *
-   *   When autoPaginate: false is specified through options, the array has three elements.
-   *   The first element is Array of [Profile]{@link google.cloud.talent.v4beta1.Profile} in a single response.
-   *   The second element is the next request object if the response
-   *   indicates the next page exists, or null. The third element is
-   *   an object representing [ListProfilesResponse]{@link google.cloud.talent.v4beta1.ListProfilesResponse}.
-   *
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.ProfileServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * // Iterate over all elements.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   *
-   * client.listProfiles({parent: formattedParent})
-   *   .then(responses => {
-   *     const resources = responses[0];
-   *     for (const resource of resources) {
-   *       // doThingsWith(resource)
-   *     }
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   *
-   * // Or obtain the paged response.
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   *
-   *
-   * const options = {autoPaginate: false};
-   * const callback = responses => {
-   *   // The actual resources in a response.
-   *   const resources = responses[0];
-   *   // The next request if the response shows that there are more responses.
-   *   const nextRequest = responses[1];
-   *   // The actual response object, if necessary.
-   *   // const rawResponse = responses[2];
-   *   for (const resource of resources) {
-   *     // doThingsWith(resource);
-   *   }
-   *   if (nextRequest) {
-   *     // Fetch the next page.
-   *     return client.listProfiles(nextRequest, options).then(callback);
-   *   }
-   * }
-   * client.listProfiles({parent: formattedParent}, options)
-   *   .then(callback)
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  listProfiles(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'parent': request.parent
-      });
-
-    return this._innerApiCalls.listProfiles(request, options, callback);
-  }
-
-  /**
-   * Equivalent to {@link listProfiles}, but returns a NodeJS Stream object.
-   *
-   * This fetches the paged responses for {@link listProfiles} continuously
-   * and invokes the callback registered for 'data' event for each element in the
-   * responses.
-   *
-   * The returned object has 'end' method when no more elements are required.
-   *
-   * autoPaginate option will be ignored.
-   *
-   * @see {@link https://nodejs.org/api/stream.html}
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   Required. The resource name of the tenant under which the profile is created.
-   *
-   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *   "projects/foo/tenants/bar".
-   * @param {string} [request.filter]
-   *   The filter string specifies the profiles to be enumerated.
-   *
-   *   Supported operator: =, AND
-   *
-   *   The field(s) eligible for filtering are:
-   *
-   *   * `externalId`
-   *   * `groupId`
-   *
-   *   externalId and groupId cannot be specified at the same time. If both
-   *   externalId and groupId are provided, the API will return a bad request
-   *   error.
-   *
-   *   Sample Query:
-   *
-   *   * externalId = "externalId-1"
-   *   * groupId = "groupId-1"
-   * @param {number} [request.pageSize]
-   *   The maximum number of resources contained in the underlying API
-   *   response. If page streaming is performed per-resource, this
-   *   parameter does not affect the return value. If page streaming is
-   *   performed per-page, this determines the maximum number of
-   *   resources in a page.
-   * @param {Object} [request.readMask]
-   *   A field mask to specify the profile fields to be listed in response.
-   *   All fields are listed if it is unset.
-   *
-   *   Valid values are:
-   *
-   *   * name
-   *
-   *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @returns {Stream}
-   *   An object stream which emits an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile} on 'data' event.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.ProfileServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   * client.listProfilesStream({parent: formattedParent})
-   *   .on('data', element => {
-   *     // doThingsWith(element)
-   *   }).on('error', err => {
-   *     console.log(err);
-   *   });
-   */
-  listProfilesStream(request, options) {
-    options = options || {};
-
-    return this._descriptors.page.listProfiles.createStream(
-      this._innerApiCalls.listProfiles,
-      request,
-      options
-    );
-  };
-
-  /**
-   * Creates and returns a new profile.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   Required. The name of the tenant this profile belongs to.
-   *
-   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
-   *   "projects/foo/tenants/bar".
-   * @param {Object} request.profile
-   *   Required. The profile to be created.
-   *
-   *   This object should have the same structure as [Profile]{@link google.cloud.talent.v4beta1.Profile}
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.ProfileServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-   * const profile = {};
-   * const request = {
-   *   parent: formattedParent,
-   *   profile: profile,
-   * };
-   * client.createProfile(request)
-   *   .then(responses => {
-   *     const response = responses[0];
-   *     // doThingsWith(response)
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  createProfile(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'parent': request.parent
-      });
-
-    return this._innerApiCalls.createProfile(request, options, callback);
-  }
-
-  /**
-   * Gets the specified profile.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.name
-   *   Required. Resource name of the profile to get.
-   *
-   *   The format is
-   *   "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-   *   example, "projects/foo/tenants/bar/profiles/baz".
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.ProfileServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedName = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
-   * client.getProfile({name: formattedName})
-   *   .then(responses => {
-   *     const response = responses[0];
-   *     // doThingsWith(response)
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  getProfile(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'name': request.name
-      });
-
-    return this._innerApiCalls.getProfile(request, options, callback);
-  }
-
-  /**
-   * Updates the specified profile and returns the updated result.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {Object} request.profile
-   *   Required. Profile to be updated.
-   *
-   *   This object should have the same structure as [Profile]{@link google.cloud.talent.v4beta1.Profile}
-   * @param {Object} [request.updateMask]
-   *   A field mask to specify the profile fields to update.
-   *
-   *   A full update is performed if it is unset.
-   *
-   *   Valid values are:
-   *
-   *   * external_id
-   *   * source
-   *   * source_types
-   *   * uri
-   *   * is_hirable
-   *   * create_time
-   *   * update_time
-   *   * candidate_update_time
-   *   * resume_update_time
-   *   * resume
-   *   * person_names
-   *   * addresses
-   *   * email_addresses
-   *   * phone_numbers
-   *   * personal_uris
-   *   * additional_contact_info
-   *   * employment_records
-   *   * education_records
-   *   * skills
-   *   * activities
-   *   * publications
-   *   * patents
-   *   * certifications
-   *   * recruiting_notes
-   *   * custom_attributes
-   *   * group_id
-   *   * external_system
-   *   * source_note
-   *   * primary_responsibilities
-   *   * citizenships
-   *   * work_authorizations
-   *   * employee_types
-   *   * language_code
-   *   * qualification_summary
-   *   * allowed_contact_types
-   *   * preferred_contact_types
-   *   * contact_availability
-   *   * language_fluencies
-   *   * work_preference
-   *   * industry_experiences
-   *   * work_environment_experiences
-   *   * work_availability
-   *   * security_clearances
-   *   * references
-   *   * assessments
-   *   * interviews
-   *
-   *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.ProfileServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const profile = {};
-   * client.updateProfile({profile: profile})
-   *   .then(responses => {
-   *     const response = responses[0];
-   *     // doThingsWith(response)
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  updateProfile(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'profile.name': request.profile.name
-      });
-
-    return this._innerApiCalls.updateProfile(request, options, callback);
-  }
 
   /**
    * Deletes the specified profile.
@@ -1243,6 +795,405 @@ class ProfileServiceClient {
       options
     );
   };
+
+  /**
+   * Lists profiles by filter. The order is unspecified.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. The resource name of the tenant under which the profile is created.
+   *
+   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *   "projects/foo/tenants/bar".
+   * @param {string} [request.filter]
+   *   The filter string specifies the profiles to be enumerated.
+   *
+   *   Supported operator: =, AND
+   *
+   *   The field(s) eligible for filtering are:
+   *
+   *   * `externalId`
+   *   * `groupId`
+   *
+   *   externalId and groupId cannot be specified at the same time. If both
+   *   externalId and groupId are provided, the API will return a bad request
+   *   error.
+   *
+   *   Sample Query:
+   *
+   *   * externalId = "externalId-1"
+   *   * groupId = "groupId-1"
+   * @param {number} [request.pageSize]
+   *   The maximum number of resources contained in the underlying API
+   *   response. If page streaming is performed per-resource, this
+   *   parameter does not affect the return value. If page streaming is
+   *   performed per-page, this determines the maximum number of
+   *   resources in a page.
+   * @param {Object} [request.readMask]
+   *   A field mask to specify the profile fields to be listed in response.
+   *   All fields are listed if it is unset.
+   *
+   *   Valid values are:
+   *
+   *   * name
+   *
+   *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Array, ?Object, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is Array of [Profile]{@link google.cloud.talent.v4beta1.Profile}.
+   *
+   *   When autoPaginate: false is specified through options, it contains the result
+   *   in a single response. If the response indicates the next page exists, the third
+   *   parameter is set to be used for the next request object. The fourth parameter keeps
+   *   the raw response object of an object representing [ListProfilesResponse]{@link google.cloud.talent.v4beta1.ListProfilesResponse}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is Array of [Profile]{@link google.cloud.talent.v4beta1.Profile}.
+   *
+   *   When autoPaginate: false is specified through options, the array has three elements.
+   *   The first element is Array of [Profile]{@link google.cloud.talent.v4beta1.Profile} in a single response.
+   *   The second element is the next request object if the response
+   *   indicates the next page exists, or null. The third element is
+   *   an object representing [ListProfilesResponse]{@link google.cloud.talent.v4beta1.ListProfilesResponse}.
+   *
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.ProfileServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * // Iterate over all elements.
+   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   *
+   * client.listProfiles({parent: formattedParent})
+   *   .then(responses => {
+   *     const resources = responses[0];
+   *     for (const resource of resources) {
+   *       // doThingsWith(resource)
+   *     }
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   *
+   * // Or obtain the paged response.
+   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   *
+   *
+   * const options = {autoPaginate: false};
+   * const callback = responses => {
+   *   // The actual resources in a response.
+   *   const resources = responses[0];
+   *   // The next request if the response shows that there are more responses.
+   *   const nextRequest = responses[1];
+   *   // The actual response object, if necessary.
+   *   // const rawResponse = responses[2];
+   *   for (const resource of resources) {
+   *     // doThingsWith(resource);
+   *   }
+   *   if (nextRequest) {
+   *     // Fetch the next page.
+   *     return client.listProfiles(nextRequest, options).then(callback);
+   *   }
+   * }
+   * client.listProfiles({parent: formattedParent}, options)
+   *   .then(callback)
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  listProfiles(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
+
+    return this._innerApiCalls.listProfiles(request, options, callback);
+  }
+
+  /**
+   * Equivalent to {@link listProfiles}, but returns a NodeJS Stream object.
+   *
+   * This fetches the paged responses for {@link listProfiles} continuously
+   * and invokes the callback registered for 'data' event for each element in the
+   * responses.
+   *
+   * The returned object has 'end' method when no more elements are required.
+   *
+   * autoPaginate option will be ignored.
+   *
+   * @see {@link https://nodejs.org/api/stream.html}
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. The resource name of the tenant under which the profile is created.
+   *
+   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *   "projects/foo/tenants/bar".
+   * @param {string} [request.filter]
+   *   The filter string specifies the profiles to be enumerated.
+   *
+   *   Supported operator: =, AND
+   *
+   *   The field(s) eligible for filtering are:
+   *
+   *   * `externalId`
+   *   * `groupId`
+   *
+   *   externalId and groupId cannot be specified at the same time. If both
+   *   externalId and groupId are provided, the API will return a bad request
+   *   error.
+   *
+   *   Sample Query:
+   *
+   *   * externalId = "externalId-1"
+   *   * groupId = "groupId-1"
+   * @param {number} [request.pageSize]
+   *   The maximum number of resources contained in the underlying API
+   *   response. If page streaming is performed per-resource, this
+   *   parameter does not affect the return value. If page streaming is
+   *   performed per-page, this determines the maximum number of
+   *   resources in a page.
+   * @param {Object} [request.readMask]
+   *   A field mask to specify the profile fields to be listed in response.
+   *   All fields are listed if it is unset.
+   *
+   *   Valid values are:
+   *
+   *   * name
+   *
+   *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @returns {Stream}
+   *   An object stream which emits an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile} on 'data' event.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.ProfileServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * client.listProfilesStream({parent: formattedParent})
+   *   .on('data', element => {
+   *     // doThingsWith(element)
+   *   }).on('error', err => {
+   *     console.log(err);
+   *   });
+   */
+  listProfilesStream(request, options) {
+    options = options || {};
+
+    return this._descriptors.page.listProfiles.createStream(
+      this._innerApiCalls.listProfiles,
+      request,
+      options
+    );
+  };
+
+  /**
+   * Creates and returns a new profile.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. The name of the tenant this profile belongs to.
+   *
+   *   The format is "projects/{project_id}/tenants/{tenant_id}". For example,
+   *   "projects/foo/tenants/bar".
+   * @param {Object} request.profile
+   *   Required. The profile to be created.
+   *
+   *   This object should have the same structure as [Profile]{@link google.cloud.talent.v4beta1.Profile}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.ProfileServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const profile = {};
+   * const request = {
+   *   parent: formattedParent,
+   *   profile: profile,
+   * };
+   * client.createProfile(request)
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  createProfile(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
+
+    return this._innerApiCalls.createProfile(request, options, callback);
+  }
+
+  /**
+   * Gets the specified profile.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. Resource name of the profile to get.
+   *
+   *   The format is
+   *   "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+   *   example, "projects/foo/tenants/bar/profiles/baz".
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.ProfileServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedName = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
+   * client.getProfile({name: formattedName})
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  getProfile(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.getProfile(request, options, callback);
+  }
+
+  /**
+   * Updates the specified profile and returns the updated result.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {Object} request.profile
+   *   Required. Profile to be updated.
+   *
+   *   This object should have the same structure as [Profile]{@link google.cloud.talent.v4beta1.Profile}
+   * @param {Object} [request.updateMask]
+   *   A field mask to specify the profile fields to update.
+   *
+   *   A full update is performed if it is unset.
+   *
+   *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [Profile]{@link google.cloud.talent.v4beta1.Profile}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.ProfileServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const profile = {};
+   * client.updateProfile({profile: profile})
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  updateProfile(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'profile.name': request.profile.name
+      });
+
+    return this._innerApiCalls.updateProfile(request, options, callback);
+  }
 
   // --------------------
   // -- Path templates --

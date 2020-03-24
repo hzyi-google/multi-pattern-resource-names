@@ -43,7 +43,7 @@ public interface ListExclusionsRequestOrBuilder extends
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 2;</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
@@ -55,7 +55,7 @@ public interface ListExclusionsRequestOrBuilder extends
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 2;</code>
+   * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
@@ -68,7 +68,7 @@ public interface ListExclusionsRequestOrBuilder extends
    * response indicates that more results might be available.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   int getPageSize();

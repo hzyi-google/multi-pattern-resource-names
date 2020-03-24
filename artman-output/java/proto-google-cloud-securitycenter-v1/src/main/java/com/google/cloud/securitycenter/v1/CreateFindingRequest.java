@@ -209,8 +209,8 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.securitycenter.v1.Finding finding_;
   /**
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be ignored as
-   * they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be
+   * ignored as they are both output only fields on this resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -221,8 +221,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be ignored as
-   * they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be
+   * ignored as they are both output only fields on this resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -233,8 +233,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The Finding being created. The name and security_marks will be ignored as
-   * they are both output only fields on this resource.
+   * Required. The Finding being created. The name and security_marks will be
+   * ignored as they are both output only fields on this resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -808,8 +808,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.securitycenter.v1.Finding, com.google.cloud.securitycenter.v1.Finding.Builder, com.google.cloud.securitycenter.v1.FindingOrBuilder> findingBuilder_;
     /**
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be ignored as
-     * they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be
+     * ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -820,8 +820,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be ignored as
-     * they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be
+     * ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -836,8 +836,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be ignored as
-     * they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be
+     * ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -857,8 +857,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be ignored as
-     * they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be
+     * ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -876,8 +876,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be ignored as
-     * they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be
+     * ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -899,8 +899,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be ignored as
-     * they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be
+     * ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -918,8 +918,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be ignored as
-     * they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be
+     * ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -931,8 +931,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be ignored as
-     * they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be
+     * ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -947,8 +947,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Finding being created. The name and security_marks will be ignored as
-     * they are both output only fields on this resource.
+     * Required. The Finding being created. The name and security_marks will be
+     * ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Finding finding = 3 [(.google.api.field_behavior) = REQUIRED];</code>

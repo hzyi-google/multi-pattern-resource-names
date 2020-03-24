@@ -189,7 +189,9 @@ class PublisherGapicClient
      * @param string $topic
      *
      * @return string The formatted topic resource.
-     * @experimental
+     *
+     * @deprecated Multi-pattern resource names will have unified formatting functions.
+     *             This helper function will be deleted in the next major version.
      */
     public static function topicName($project, $topic)
     {
@@ -394,8 +396,8 @@ class PublisherGapicClient
      * ```
      *
      * @param Topic     $topic        Required. The updated topic object.
-     * @param FieldMask $updateMask   Required. Indicates which fields in the provided topic to update. Must be specified
-     *                                and non-empty. Note that if `update_mask` contains
+     * @param FieldMask $updateMask   Required. Indicates which fields in the provided topic to update. Must be
+     *                                specified and non-empty. Note that if `update_mask` contains
      *                                "message_storage_policy" then the new value will be determined based on the
      *                                policy configured at the project or organization level. The
      *                                `message_storage_policy` must not be set in the `topic` provided above.
@@ -770,9 +772,9 @@ class PublisherGapicClient
      * ```
      * $publisherClient = new PublisherClient();
      * try {
-     *     $formattedResource = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
+     *     $resource = '';
      *     $policy = new Policy();
-     *     $response = $publisherClient->setIamPolicy($formattedResource, $policy);
+     *     $response = $publisherClient->setIamPolicy($resource, $policy);
      * } finally {
      *     $publisherClient->close();
      * }
@@ -830,8 +832,8 @@ class PublisherGapicClient
      * ```
      * $publisherClient = new PublisherClient();
      * try {
-     *     $formattedResource = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
-     *     $response = $publisherClient->getIamPolicy($formattedResource);
+     *     $resource = '';
+     *     $response = $publisherClient->getIamPolicy($resource);
      * } finally {
      *     $publisherClient->close();
      * }
@@ -895,9 +897,9 @@ class PublisherGapicClient
      * ```
      * $publisherClient = new PublisherClient();
      * try {
-     *     $formattedResource = $publisherClient->topicName('[PROJECT]', '[TOPIC]');
+     *     $resource = '';
      *     $permissions = [];
-     *     $response = $publisherClient->testIamPermissions($formattedResource, $permissions);
+     *     $response = $publisherClient->testIamPermissions($resource, $permissions);
      * } finally {
      *     $publisherClient->close();
      * }

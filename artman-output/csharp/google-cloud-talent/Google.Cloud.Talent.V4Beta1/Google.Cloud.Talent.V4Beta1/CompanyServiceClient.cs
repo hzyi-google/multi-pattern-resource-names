@@ -49,10 +49,10 @@ namespace Google.Cloud.Talent.V4Beta1
         private CompanyServiceSettings(CompanyServiceSettings existing) : base(existing)
         {
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
+            DeleteCompanySettings = existing.DeleteCompanySettings;
             CreateCompanySettings = existing.CreateCompanySettings;
             GetCompanySettings = existing.GetCompanySettings;
             UpdateCompanySettings = existing.UpdateCompanySettings;
-            DeleteCompanySettings = existing.DeleteCompanySettings;
             ListCompaniesSettings = existing.ListCompaniesSettings;
             OnCopy(existing);
         }
@@ -122,6 +122,36 @@ namespace Google.Cloud.Talent.V4Beta1
             maxDelay: sys::TimeSpan.FromMilliseconds(20000),
             delayMultiplier: 1.0
         );
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>CompanyServiceClient.DeleteCompany</c> and <c>CompanyServiceClient.DeleteCompanyAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>CompanyServiceClient.DeleteCompany</c> and
+        /// <c>CompanyServiceClient.DeleteCompanyAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
+        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings DeleteCompanySettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: IdempotentRetryFilter
+            )));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -209,36 +239,6 @@ namespace Google.Cloud.Talent.V4Beta1
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
                 retryFilter: NonIdempotentRetryFilter
-            )));
-
-        /// <summary>
-        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
-        /// <c>CompanyServiceClient.DeleteCompany</c> and <c>CompanyServiceClient.DeleteCompanyAsync</c>.
-        /// </summary>
-        /// <remarks>
-        /// The default <c>CompanyServiceClient.DeleteCompany</c> and
-        /// <c>CompanyServiceClient.DeleteCompanyAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
-        /// <list type="bullet">
-        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
-        /// <item><description>Retry delay multiplier: 1.3</description></item>
-        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
-        /// </list>
-        /// Retry will be attempted on the following response status codes:
-        /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
-        /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
-        /// </remarks>
-        public gaxgrpc::CallSettings DeleteCompanySettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
-            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
-                retryBackoff: GetDefaultRetryBackoff(),
-                timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
             )));
 
         /// <summary>
@@ -473,6 +473,224 @@ namespace Google.Cloud.Talent.V4Beta1
         }
 
         /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the company to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+        /// example, "projects/foo/tenants/bar/companies/baz".
+        ///
+        /// If tenant id is unspecified, the default tenant is used, for
+        /// example, "projects/foo/companies/bar".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteCompanyAsync(
+            CompanyNameOneof name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteCompanyAsync(
+                new DeleteCompanyRequest
+                {
+                    CompanyNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the company to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+        /// example, "projects/foo/tenants/bar/companies/baz".
+        ///
+        /// If tenant id is unspecified, the default tenant is used, for
+        /// example, "projects/foo/companies/bar".
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteCompanyAsync(
+            CompanyNameOneof name,
+            st::CancellationToken cancellationToken) => DeleteCompanyAsync(
+                name,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the company to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+        /// example, "projects/foo/tenants/bar/companies/baz".
+        ///
+        /// If tenant id is unspecified, the default tenant is used, for
+        /// example, "projects/foo/companies/bar".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteCompany(
+            CompanyNameOneof name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteCompany(
+                new DeleteCompanyRequest
+                {
+                    CompanyNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the company to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+        /// example, "projects/foo/tenants/bar/companies/baz".
+        ///
+        /// If tenant id is unspecified, the default tenant is used, for
+        /// example, "projects/foo/companies/bar".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteCompanyAsync(
+            string name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteCompanyAsync(
+                new DeleteCompanyRequest
+                {
+                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the company to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+        /// example, "projects/foo/tenants/bar/companies/baz".
+        ///
+        /// If tenant id is unspecified, the default tenant is used, for
+        /// example, "projects/foo/companies/bar".
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteCompanyAsync(
+            string name,
+            st::CancellationToken cancellationToken) => DeleteCompanyAsync(
+                name,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the company to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+        /// example, "projects/foo/tenants/bar/companies/baz".
+        ///
+        /// If tenant id is unspecified, the default tenant is used, for
+        /// example, "projects/foo/companies/bar".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteCompany(
+            string name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteCompany(
+                new DeleteCompanyRequest
+                {
+                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteCompanyAsync(
+            DeleteCompanyRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteCompanyAsync(
+            DeleteCompanyRequest request,
+            st::CancellationToken cancellationToken) => DeleteCompanyAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteCompany(
+            DeleteCompanyRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
         /// Creates a new company entity.
         /// </summary>
         /// <param name="parent">
@@ -492,12 +710,12 @@ namespace Google.Cloud.Talent.V4Beta1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<Company> CreateCompanyAsync(
-            TenantOrProjectNameOneof parent,
+            ProjectName parent,
             Company company,
             gaxgrpc::CallSettings callSettings = null) => CreateCompanyAsync(
                 new CreateCompanyRequest
                 {
-                    ParentAsTenantOrProjectNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Company = gax::GaxPreconditions.CheckNotNull(company, nameof(company)),
                 },
                 callSettings);
@@ -522,7 +740,7 @@ namespace Google.Cloud.Talent.V4Beta1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<Company> CreateCompanyAsync(
-            TenantOrProjectNameOneof parent,
+            ProjectName parent,
             Company company,
             st::CancellationToken cancellationToken) => CreateCompanyAsync(
                 parent,
@@ -549,12 +767,99 @@ namespace Google.Cloud.Talent.V4Beta1
         /// The RPC response.
         /// </returns>
         public virtual Company CreateCompany(
-            TenantOrProjectNameOneof parent,
+            ProjectName parent,
             Company company,
             gaxgrpc::CallSettings callSettings = null) => CreateCompany(
                 new CreateCompanyRequest
                 {
-                    ParentAsTenantOrProjectNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Company = gax::GaxPreconditions.CheckNotNull(company, nameof(company)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a new company entity.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. Resource name of the tenant under which the company is created.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+        /// is created, for example, "projects/foo".
+        /// </param>
+        /// <param name="company">
+        /// Required. The company to be created.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<Company> CreateCompanyAsync(
+            TenantName parent,
+            Company company,
+            gaxgrpc::CallSettings callSettings = null) => CreateCompanyAsync(
+                new CreateCompanyRequest
+                {
+                    ParentAsTenantName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    Company = gax::GaxPreconditions.CheckNotNull(company, nameof(company)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Creates a new company entity.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. Resource name of the tenant under which the company is created.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+        /// is created, for example, "projects/foo".
+        /// </param>
+        /// <param name="company">
+        /// Required. The company to be created.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<Company> CreateCompanyAsync(
+            TenantName parent,
+            Company company,
+            st::CancellationToken cancellationToken) => CreateCompanyAsync(
+                parent,
+                company,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a new company entity.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. Resource name of the tenant under which the company is created.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant
+        /// is created, for example, "projects/foo".
+        /// </param>
+        /// <param name="company">
+        /// Required. The company to be created.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual Company CreateCompany(
+            TenantName parent,
+            Company company,
+            gaxgrpc::CallSettings callSettings = null) => CreateCompany(
+                new CreateCompanyRequest
+                {
+                    ParentAsTenantName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     Company = gax::GaxPreconditions.CheckNotNull(company, nameof(company)),
                 },
                 callSettings);
@@ -1037,224 +1342,6 @@ namespace Google.Cloud.Talent.V4Beta1
         }
 
         /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the company to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-        /// example, "projects/foo/tenants/bar/companies/baz".
-        ///
-        /// If tenant id is unspecified, the default tenant is used, for
-        /// example, "projects/foo/companies/bar".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteCompanyAsync(
-            CompanyNameOneof name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteCompanyAsync(
-                new DeleteCompanyRequest
-                {
-                    CompanyNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the company to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-        /// example, "projects/foo/tenants/bar/companies/baz".
-        ///
-        /// If tenant id is unspecified, the default tenant is used, for
-        /// example, "projects/foo/companies/bar".
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteCompanyAsync(
-            CompanyNameOneof name,
-            st::CancellationToken cancellationToken) => DeleteCompanyAsync(
-                name,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the company to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-        /// example, "projects/foo/tenants/bar/companies/baz".
-        ///
-        /// If tenant id is unspecified, the default tenant is used, for
-        /// example, "projects/foo/companies/bar".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteCompany(
-            CompanyNameOneof name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteCompany(
-                new DeleteCompanyRequest
-                {
-                    CompanyNameOneof = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the company to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-        /// example, "projects/foo/tenants/bar/companies/baz".
-        ///
-        /// If tenant id is unspecified, the default tenant is used, for
-        /// example, "projects/foo/companies/bar".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteCompanyAsync(
-            string name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteCompanyAsync(
-                new DeleteCompanyRequest
-                {
-                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the company to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-        /// example, "projects/foo/tenants/bar/companies/baz".
-        ///
-        /// If tenant id is unspecified, the default tenant is used, for
-        /// example, "projects/foo/companies/bar".
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteCompanyAsync(
-            string name,
-            st::CancellationToken cancellationToken) => DeleteCompanyAsync(
-                name,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the company to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-        /// example, "projects/foo/tenants/bar/companies/baz".
-        ///
-        /// If tenant id is unspecified, the default tenant is used, for
-        /// example, "projects/foo/companies/bar".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteCompany(
-            string name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteCompany(
-                new DeleteCompanyRequest
-                {
-                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteCompanyAsync(
-            DeleteCompanyRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteCompanyAsync(
-            DeleteCompanyRequest request,
-            st::CancellationToken cancellationToken) => DeleteCompanyAsync(
-                request,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteCompany(
-            DeleteCompanyRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
         /// Lists all companies associated with the project.
         /// </summary>
         /// <param name="parent">
@@ -1281,13 +1368,13 @@ namespace Google.Cloud.Talent.V4Beta1
         /// A pageable asynchronous sequence of <see cref="Company"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListCompaniesResponse, Company> ListCompaniesAsync(
-            TenantOrProjectNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListCompaniesAsync(
                 new ListCompaniesRequest
                 {
-                    ParentAsTenantOrProjectNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -1320,13 +1407,91 @@ namespace Google.Cloud.Talent.V4Beta1
         /// A pageable sequence of <see cref="Company"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListCompaniesResponse, Company> ListCompanies(
-            TenantOrProjectNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListCompanies(
                 new ListCompaniesRequest
                 {
-                    ParentAsTenantOrProjectNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists all companies associated with the project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. Resource name of the tenant under which the company is created.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenant/bar".
+        ///
+        /// If tenant id is unspecified, the default tenant will be used, for
+        /// example, "projects/foo".
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="Company"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListCompaniesResponse, Company> ListCompaniesAsync(
+            TenantName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListCompaniesAsync(
+                new ListCompaniesRequest
+                {
+                    ParentAsTenantName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists all companies associated with the project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. Resource name of the tenant under which the company is created.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenant/bar".
+        ///
+        /// If tenant id is unspecified, the default tenant will be used, for
+        /// example, "projects/foo".
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="Company"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListCompaniesResponse, Company> ListCompanies(
+            TenantName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListCompanies(
+                new ListCompaniesRequest
+                {
+                    ParentAsTenantName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -1455,10 +1620,10 @@ namespace Google.Cloud.Talent.V4Beta1
     /// </summary>
     public sealed partial class CompanyServiceClientImpl : CompanyServiceClient
     {
+        private readonly gaxgrpc::ApiCall<DeleteCompanyRequest, pbwkt::Empty> _callDeleteCompany;
         private readonly gaxgrpc::ApiCall<CreateCompanyRequest, Company> _callCreateCompany;
         private readonly gaxgrpc::ApiCall<GetCompanyRequest, Company> _callGetCompany;
         private readonly gaxgrpc::ApiCall<UpdateCompanyRequest, Company> _callUpdateCompany;
-        private readonly gaxgrpc::ApiCall<DeleteCompanyRequest, pbwkt::Empty> _callDeleteCompany;
         private readonly gaxgrpc::ApiCall<ListCompaniesRequest, ListCompaniesResponse> _callListCompanies;
 
         /// <summary>
@@ -1471,6 +1636,9 @@ namespace Google.Cloud.Talent.V4Beta1
             GrpcClient = grpcClient;
             CompanyServiceSettings effectiveSettings = settings ?? CompanyServiceSettings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
+            _callDeleteCompany = clientHelper.BuildApiCall<DeleteCompanyRequest, pbwkt::Empty>(
+                GrpcClient.DeleteCompanyAsync, GrpcClient.DeleteCompany, effectiveSettings.DeleteCompanySettings)
+                .WithGoogleRequestParam("name", request => request.Name);
             _callCreateCompany = clientHelper.BuildApiCall<CreateCompanyRequest, Company>(
                 GrpcClient.CreateCompanyAsync, GrpcClient.CreateCompany, effectiveSettings.CreateCompanySettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
@@ -1480,20 +1648,17 @@ namespace Google.Cloud.Talent.V4Beta1
             _callUpdateCompany = clientHelper.BuildApiCall<UpdateCompanyRequest, Company>(
                 GrpcClient.UpdateCompanyAsync, GrpcClient.UpdateCompany, effectiveSettings.UpdateCompanySettings)
                 .WithGoogleRequestParam("company.name", request => request.Company?.Name);
-            _callDeleteCompany = clientHelper.BuildApiCall<DeleteCompanyRequest, pbwkt::Empty>(
-                GrpcClient.DeleteCompanyAsync, GrpcClient.DeleteCompany, effectiveSettings.DeleteCompanySettings)
-                .WithGoogleRequestParam("name", request => request.Name);
             _callListCompanies = clientHelper.BuildApiCall<ListCompaniesRequest, ListCompaniesResponse>(
                 GrpcClient.ListCompaniesAsync, GrpcClient.ListCompanies, effectiveSettings.ListCompaniesSettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callDeleteCompany);
+            Modify_DeleteCompanyApiCall(ref _callDeleteCompany);
             Modify_ApiCall(ref _callCreateCompany);
             Modify_CreateCompanyApiCall(ref _callCreateCompany);
             Modify_ApiCall(ref _callGetCompany);
             Modify_GetCompanyApiCall(ref _callGetCompany);
             Modify_ApiCall(ref _callUpdateCompany);
             Modify_UpdateCompanyApiCall(ref _callUpdateCompany);
-            Modify_ApiCall(ref _callDeleteCompany);
-            Modify_DeleteCompanyApiCall(ref _callDeleteCompany);
             Modify_ApiCall(ref _callListCompanies);
             Modify_ListCompaniesApiCall(ref _callListCompanies);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
@@ -1509,10 +1674,10 @@ namespace Google.Cloud.Talent.V4Beta1
 
         // Partial methods called for each ApiCall on construction.
         // Allows per-RPC-method modification of the underlying ApiCall object.
+        partial void Modify_DeleteCompanyApiCall(ref gaxgrpc::ApiCall<DeleteCompanyRequest, pbwkt::Empty> call);
         partial void Modify_CreateCompanyApiCall(ref gaxgrpc::ApiCall<CreateCompanyRequest, Company> call);
         partial void Modify_GetCompanyApiCall(ref gaxgrpc::ApiCall<GetCompanyRequest, Company> call);
         partial void Modify_UpdateCompanyApiCall(ref gaxgrpc::ApiCall<UpdateCompanyRequest, Company> call);
-        partial void Modify_DeleteCompanyApiCall(ref gaxgrpc::ApiCall<DeleteCompanyRequest, pbwkt::Empty> call);
         partial void Modify_ListCompaniesApiCall(ref gaxgrpc::ApiCall<ListCompaniesRequest, ListCompaniesResponse> call);
         partial void OnConstruction(CompanyService.CompanyServiceClient grpcClient, CompanyServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
@@ -1524,11 +1689,50 @@ namespace Google.Cloud.Talent.V4Beta1
         // Partial methods called on each request.
         // Allows per-RPC-call modification to the request and CallSettings objects,
         // before the underlying RPC is performed.
+        partial void Modify_DeleteCompanyRequest(ref DeleteCompanyRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_CreateCompanyRequest(ref CreateCompanyRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_GetCompanyRequest(ref GetCompanyRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_UpdateCompanyRequest(ref UpdateCompanyRequest request, ref gaxgrpc::CallSettings settings);
-        partial void Modify_DeleteCompanyRequest(ref DeleteCompanyRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListCompaniesRequest(ref ListCompaniesRequest request, ref gaxgrpc::CallSettings settings);
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public override stt::Task DeleteCompanyAsync(
+            DeleteCompanyRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteCompanyRequest(ref request, ref callSettings);
+            return _callDeleteCompany.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Deletes specified company.
+        /// Prerequisite: The company has no jobs associated with it.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public override void DeleteCompany(
+            DeleteCompanyRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteCompanyRequest(ref request, ref callSettings);
+            _callDeleteCompany.Sync(request, callSettings);
+        }
 
         /// <summary>
         /// Creates a new company entity.
@@ -1648,45 +1852,6 @@ namespace Google.Cloud.Talent.V4Beta1
         {
             Modify_UpdateCompanyRequest(ref request, ref callSettings);
             return _callUpdateCompany.Sync(request, callSettings);
-        }
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public override stt::Task DeleteCompanyAsync(
-            DeleteCompanyRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteCompanyRequest(ref request, ref callSettings);
-            return _callDeleteCompany.Async(request, callSettings);
-        }
-
-        /// <summary>
-        /// Deletes specified company.
-        /// Prerequisite: The company has no jobs associated with it.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public override void DeleteCompany(
-            DeleteCompanyRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteCompanyRequest(ref request, ref callSettings);
-            _callDeleteCompany.Sync(request, callSettings);
         }
 
         /// <summary>

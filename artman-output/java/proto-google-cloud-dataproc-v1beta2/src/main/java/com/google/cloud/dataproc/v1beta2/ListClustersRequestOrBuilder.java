@@ -31,7 +31,7 @@ public interface ListClustersRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,7 +40,7 @@ public interface ListClustersRequestOrBuilder extends
   java.lang.String getRegion();
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 4 [(.google.api.field_behavior) = REQUIRED];</code>

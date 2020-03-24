@@ -121,8 +121,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. Resource name of organization and inspectTemplate to be updated, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of organization and inspectTemplate to be updated,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
@@ -143,8 +143,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource name of organization and inspectTemplate to be updated, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of organization and inspectTemplate to be updated,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
@@ -604,8 +604,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -626,8 +626,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -649,8 +649,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -670,8 +670,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *
@@ -686,8 +686,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of organization and inspectTemplate to be updated, for
-     * example `organizations/433245324/inspectTemplates/432452342` or
+     * Required. Resource name of organization and inspectTemplate to be updated,
+     * for example `organizations/433245324/inspectTemplates/432452342` or
      * projects/project-id/inspectTemplates/432452342.
      * </pre>
      *

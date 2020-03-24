@@ -321,9 +321,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object groupBy_;
   /**
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping. The string
-   * value should follow SQL syntax: comma separated list of fields. For
-   * example:
+   * Required. Expression that defines what assets fields to use for grouping.
+   * The string value should follow SQL syntax: comma separated list of fields.
+   * For example:
    * "security_center_properties.resource_project,security_center_properties.project".
    * The following fields are supported when compare_duration is not set:
    * * security_center_properties.resource_project
@@ -354,9 +354,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Expression that defines what assets fields to use for grouping. The string
-   * value should follow SQL syntax: comma separated list of fields. For
-   * example:
+   * Required. Expression that defines what assets fields to use for grouping.
+   * The string value should follow SQL syntax: comma separated list of fields.
+   * For example:
    * "security_center_properties.resource_project,security_center_properties.project".
    * The following fields are supported when compare_duration is not set:
    * * security_center_properties.resource_project
@@ -1436,9 +1436,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object groupBy_ = "";
     /**
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping. The string
-     * value should follow SQL syntax: comma separated list of fields. For
-     * example:
+     * Required. Expression that defines what assets fields to use for grouping.
+     * The string value should follow SQL syntax: comma separated list of fields.
+     * For example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
@@ -1469,9 +1469,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping. The string
-     * value should follow SQL syntax: comma separated list of fields. For
-     * example:
+     * Required. Expression that defines what assets fields to use for grouping.
+     * The string value should follow SQL syntax: comma separated list of fields.
+     * For example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
@@ -1503,9 +1503,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping. The string
-     * value should follow SQL syntax: comma separated list of fields. For
-     * example:
+     * Required. Expression that defines what assets fields to use for grouping.
+     * The string value should follow SQL syntax: comma separated list of fields.
+     * For example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
@@ -1535,9 +1535,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping. The string
-     * value should follow SQL syntax: comma separated list of fields. For
-     * example:
+     * Required. Expression that defines what assets fields to use for grouping.
+     * The string value should follow SQL syntax: comma separated list of fields.
+     * For example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project
@@ -1562,9 +1562,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Expression that defines what assets fields to use for grouping. The string
-     * value should follow SQL syntax: comma separated list of fields. For
-     * example:
+     * Required. Expression that defines what assets fields to use for grouping.
+     * The string value should follow SQL syntax: comma separated list of fields.
+     * For example:
      * "security_center_properties.resource_project,security_center_properties.project".
      * The following fields are supported when compare_duration is not set:
      * * security_center_properties.resource_project

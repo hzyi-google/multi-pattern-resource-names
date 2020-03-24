@@ -322,10 +322,9 @@ class SubscriberClient {
    *   plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters
    *   in length, and it must not start with `"goog"`.
    * @param {string} request.topic
-   *   Required. The name of the topic from which this subscription is receiving messages.
-   *   Format is `projects/{project}/topics/{topic}`.
-   *   The value of this field will be `_deleted-topic_` if the topic has been
-   *   deleted.
+   *   Required. The name of the topic from which this subscription is receiving
+   *   messages. Format is `projects/{project}/topics/{topic}`. The value of this
+   *   field will be `_deleted-topic_` if the topic has been deleted.
    * @param {Object} [request.pushConfig]
    *   If push delivery is used with this subscription, this field is
    *   used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -390,6 +389,14 @@ class SubscriberClient {
    *   value for `expiration_policy.ttl` is 1 day.
    *
    *   This object should have the same structure as [ExpirationPolicy]{@link google.pubsub.v1.ExpirationPolicy}
+   * @param {string} [request.filter]
+   *   An expression written in the Cloud Pub/Sub filter language. If non-empty,
+   *   then only `PubsubMessage`s whose `attributes` field matches the filter are
+   *   delivered on this subscription. If empty, then no messages are filtered
+   *   out.
+   *   <b>EXPERIMENTAL:</b> This feature is part of a closed alpha release. This
+   *   API might be changed in backward-incompatible ways and is not recommended
+   *   for production use. It is not subject to any SLA or deprecation policy.
    * @param {Object} [request.deadLetterPolicy]
    *   A policy that specifies the conditions for dead lettering messages in
    *   this subscription. If dead_letter_policy is not set, dead lettering
@@ -404,6 +411,19 @@ class SubscriberClient {
    *   for production use. It is not subject to any SLA or deprecation policy.
    *
    *   This object should have the same structure as [DeadLetterPolicy]{@link google.pubsub.v1.DeadLetterPolicy}
+   * @param {Object} [request.retryPolicy]
+   *   A policy that specifies how Cloud Pub/Sub retries message delivery for this
+   *   subscription.
+   *
+   *   If not set, the default retry policy is applied. This generally implies
+   *   that messages will be retried as soon as possible for healthy subscribers.
+   *   RetryPolicy will be triggered on NACKs or acknowledgement deadline
+   *   exceeded events for a given message.
+   *   <b>EXPERIMENTAL:</b> This API might be changed in backward-incompatible
+   *   ways and is not recommended for production use. It is not subject to any
+   *   SLA or deprecation policy.
+   *
+   *   This object should have the same structure as [RetryPolicy]{@link google.pubsub.v1.RetryPolicy}
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
    *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
@@ -805,10 +825,10 @@ class SubscriberClient {
    * @param {string[]} request.ackIds
    *   Required. List of acknowledgment IDs.
    * @param {number} request.ackDeadlineSeconds
-   *   Required. The new ack deadline with respect to the time this request was sent to
-   *   the Pub/Sub system. For example, if the value is 10, the new
-   *   ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
-   *   was made. Specifying zero might immediately make the message available for
+   *   Required. The new ack deadline with respect to the time this request was
+   *   sent to the Pub/Sub system. For example, if the value is 10, the new ack
+   *   deadline will expire 10 seconds after the `ModifyAckDeadline` call was
+   *   made. Specifying zero might immediately make the message available for
    *   delivery to another subscriber client. This typically results in an
    *   increase in the rate of message redeliveries (that is, duplicates).
    *   The minimum deadline you can specify is 0 seconds.
@@ -873,8 +893,9 @@ class SubscriberClient {
    *   Required. The subscription whose message is being acknowledged.
    *   Format is `projects/{project}/subscriptions/{sub}`.
    * @param {string[]} request.ackIds
-   *   Required. The acknowledgment ID for the messages being acknowledged that was returned
-   *   by the Pub/Sub system in the `Pull` response. Must not be empty.
+   *   Required. The acknowledgment ID for the messages being acknowledged that
+   *   was returned by the Pub/Sub system in the `Pull` response. Must not be
+   *   empty.
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
    *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
@@ -929,14 +950,17 @@ class SubscriberClient {
    *   Required. The subscription from which messages should be pulled.
    *   Format is `projects/{project}/subscriptions/{sub}`.
    * @param {number} request.maxMessages
-   *   Required. The maximum number of messages to return for this request. Must be a
-   *   positive integer. The Pub/Sub system may return fewer than the number
+   *   Required. The maximum number of messages to return for this request. Must
+   *   be a positive integer. The Pub/Sub system may return fewer than the number
    *   specified.
    * @param {boolean} [request.returnImmediately]
-   *   If this field set to true, the system will respond immediately even if
-   *   it there are no messages available to return in the `Pull` response.
-   *   Otherwise, the system may wait (for a bounded amount of time) until at
-   *   least one message is available, rather than returning no messages.
+   *   Optional. If this field set to true, the system will respond immediately
+   *   even if it there are no messages available to return in the `Pull`
+   *   response. Otherwise, the system may wait (for a bounded amount of time)
+   *   until at least one message is available, rather than returning no messages.
+   *   Warning: setting this field to `true` is discouraged because it adversely
+   *   impacts the performance of `Pull` operations. We recommend that users do
+   *   not set this field.
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
    *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
@@ -1282,10 +1306,10 @@ class SubscriberClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.name
-   *   Required. User-provided name for this snapshot. If the name is not provided in the
-   *   request, the server will assign a random name for this snapshot on the same
-   *   project as the subscription. Note that for REST API requests, you must
-   *   specify a name.  See the <a
+   *   Required. User-provided name for this snapshot. If the name is not provided
+   *   in the request, the server will assign a random name for this snapshot on
+   *   the same project as the subscription. Note that for REST API requests, you
+   *   must specify a name.  See the <a
    *   href="https://cloud.google.com/pubsub/docs/admin#resource_names"> resource
    *   name rules</a>. Format is `projects/{project}/snapshots/{snap}`.
    * @param {string} request.subscription
@@ -1603,10 +1627,10 @@ class SubscriberClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.subscriptionPath('[PROJECT]', '[SUBSCRIPTION]');
+   * const resource = '';
    * const policy = {};
    * const request = {
-   *   resource: formattedResource,
+   *   resource: resource,
    *   policy: policy,
    * };
    * client.setIamPolicy(request)
@@ -1668,8 +1692,8 @@ class SubscriberClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.subscriptionPath('[PROJECT]', '[SUBSCRIPTION]');
-   * client.getIamPolicy({resource: formattedResource})
+   * const resource = '';
+   * client.getIamPolicy({resource: resource})
    *   .then(responses => {
    *     const response = responses[0];
    *     // doThingsWith(response)
@@ -1733,10 +1757,10 @@ class SubscriberClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.subscriptionPath('[PROJECT]', '[SUBSCRIPTION]');
+   * const resource = '';
    * const permissions = [];
    * const request = {
-   *   resource: formattedResource,
+   *   resource: resource,
    *   permissions: permissions,
    * };
    * client.testIamPermissions(request)
@@ -1810,6 +1834,7 @@ class SubscriberClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified topic resource name string.
    *
    * @param {String} project
@@ -1889,6 +1914,7 @@ class SubscriberClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the topicName from a topic resource.
    *
    * @param {String} topicName
@@ -1902,6 +1928,7 @@ class SubscriberClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the topicName from a topic resource.
    *
    * @param {String} topicName

@@ -18,7 +18,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 /**
  * <pre>
  * The API interface for managing autoscaling policies in the
- * Google Cloud Dataproc API.
+ * Cloud Dataproc API.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -243,7 +243,7 @@ public final class AutoscalingPolicyServiceGrpc {
   /**
    * <pre>
    * The API interface for managing autoscaling policies in the
-   * Google Cloud Dataproc API.
+   * Cloud Dataproc API.
    * </pre>
    */
   public static abstract class AutoscalingPolicyServiceImplBase implements io.grpc.BindableService {
@@ -345,7 +345,7 @@ public final class AutoscalingPolicyServiceGrpc {
   /**
    * <pre>
    * The API interface for managing autoscaling policies in the
-   * Google Cloud Dataproc API.
+   * Cloud Dataproc API.
    * </pre>
    */
   public static final class AutoscalingPolicyServiceStub extends io.grpc.stub.AbstractStub<AutoscalingPolicyServiceStub> {
@@ -426,7 +426,7 @@ public final class AutoscalingPolicyServiceGrpc {
   /**
    * <pre>
    * The API interface for managing autoscaling policies in the
-   * Google Cloud Dataproc API.
+   * Cloud Dataproc API.
    * </pre>
    */
   public static final class AutoscalingPolicyServiceBlockingStub extends io.grpc.stub.AbstractStub<AutoscalingPolicyServiceBlockingStub> {
@@ -502,7 +502,7 @@ public final class AutoscalingPolicyServiceGrpc {
   /**
    * <pre>
    * The API interface for managing autoscaling policies in the
-   * Google Cloud Dataproc API.
+   * Cloud Dataproc API.
    * </pre>
    */
   public static final class AutoscalingPolicyServiceFutureStub extends io.grpc.stub.AbstractStub<AutoscalingPolicyServiceFutureStub> {

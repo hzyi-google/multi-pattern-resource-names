@@ -1221,6 +1221,112 @@ describe('DlpServiceClient', () => {
     });
   });
 
+  describe('finishDlpJob', () => {
+    it('invokes finishDlpJob without error', done => {
+      const client = new dlpModule.v2.DlpServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.dlpJobPath('[PROJECT]', '[DLP_JOB]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.finishDlpJob = mockSimpleGrpcMethod(request);
+
+      client.finishDlpJob(request, err => {
+        assert.ifError(err);
+        done();
+      });
+    });
+
+    it('invokes finishDlpJob with error', done => {
+      const client = new dlpModule.v2.DlpServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.dlpJobPath('[PROJECT]', '[DLP_JOB]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.finishDlpJob = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.finishDlpJob(request, err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+  });
+
+  describe('hybridInspectDlpJob', () => {
+    it('invokes hybridInspectDlpJob without error', done => {
+      const client = new dlpModule.v2.DlpServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const name = 'name3373707';
+      const request = {
+        name: name,
+      };
+
+      // Mock response
+      const expectedResponse = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.hybridInspectDlpJob = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.hybridInspectDlpJob(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes hybridInspectDlpJob with error', done => {
+      const client = new dlpModule.v2.DlpServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const name = 'name3373707';
+      const request = {
+        name: name,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.hybridInspectDlpJob = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.hybridInspectDlpJob(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
   describe('listJobTriggers', () => {
     it('invokes listJobTriggers without error', done => {
       const client = new dlpModule.v2.DlpServiceClient({
@@ -1392,6 +1498,63 @@ describe('DlpServiceClient', () => {
       client.deleteJobTrigger(request, err => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+  });
+
+  describe('hybridInspectJobTrigger', () => {
+    it('invokes hybridInspectJobTrigger without error', done => {
+      const client = new dlpModule.v2.DlpServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const name = 'name3373707';
+      const request = {
+        name: name,
+      };
+
+      // Mock response
+      const expectedResponse = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.hybridInspectJobTrigger = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.hybridInspectJobTrigger(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes hybridInspectJobTrigger with error', done => {
+      const client = new dlpModule.v2.DlpServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const name = 'name3373707';
+      const request = {
+        name: name,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.hybridInspectJobTrigger = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.hybridInspectJobTrigger(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
         done();
       });
     });

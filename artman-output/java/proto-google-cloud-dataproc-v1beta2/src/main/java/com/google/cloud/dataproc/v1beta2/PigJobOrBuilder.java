@@ -61,7 +61,7 @@ public interface PigJobOrBuilder extends
    * executing independent parallel queries.
    * </pre>
    *
-   * <code>bool continue_on_failure = 3;</code>
+   * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The continueOnFailure.
    */
   boolean getContinueOnFailure();
@@ -72,7 +72,7 @@ public interface PigJobOrBuilder extends
    * command: `name=[value]`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getScriptVariablesCount();
   /**
@@ -81,7 +81,7 @@ public interface PigJobOrBuilder extends
    * command: `name=[value]`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsScriptVariables(
       java.lang.String key);
@@ -97,7 +97,7 @@ public interface PigJobOrBuilder extends
    * command: `name=[value]`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getScriptVariablesMap();
@@ -107,7 +107,7 @@ public interface PigJobOrBuilder extends
    * command: `name=[value]`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getScriptVariablesOrDefault(
@@ -119,7 +119,7 @@ public interface PigJobOrBuilder extends
    * command: `name=[value]`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getScriptVariablesOrThrow(
@@ -128,23 +128,23 @@ public interface PigJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPropertiesCount();
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsProperties(
       java.lang.String key);
@@ -157,24 +157,24 @@ public interface PigJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getPropertiesMap();
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getPropertiesOrDefault(
@@ -183,12 +183,12 @@ public interface PigJobOrBuilder extends
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/pig/conf/pig.properties, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getPropertiesOrThrow(
@@ -200,7 +200,7 @@ public interface PigJobOrBuilder extends
    * the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String>
@@ -211,7 +211,7 @@ public interface PigJobOrBuilder extends
    * the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
@@ -221,7 +221,7 @@ public interface PigJobOrBuilder extends
    * the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The jarFileUris at the given index.
    */
@@ -232,7 +232,7 @@ public interface PigJobOrBuilder extends
    * the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the jarFileUris at the given index.
    */
@@ -244,7 +244,7 @@ public interface PigJobOrBuilder extends
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 7;</code>
+   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
@@ -253,7 +253,7 @@ public interface PigJobOrBuilder extends
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 7;</code>
+   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig();
@@ -262,7 +262,7 @@ public interface PigJobOrBuilder extends
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 7;</code>
+   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.cloud.dataproc.v1beta2.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 

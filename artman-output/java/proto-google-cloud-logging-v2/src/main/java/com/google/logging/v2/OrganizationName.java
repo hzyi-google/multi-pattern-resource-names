@@ -26,7 +26,7 @@ import java.util.List;
  * AUTO-GENERATED DOCUMENTATION AND CLASS
  */
 @javax.annotation.Generated("by GAPIC protoc plugin")
-public class OrganizationName extends ParentName {
+public class OrganizationName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}");

@@ -69,9 +69,12 @@ namespace Google.Cloud.Dlp.V2
             GetDlpJobSettings = existing.GetDlpJobSettings;
             DeleteDlpJobSettings = existing.DeleteDlpJobSettings;
             CancelDlpJobSettings = existing.CancelDlpJobSettings;
+            FinishDlpJobSettings = existing.FinishDlpJobSettings;
+            HybridInspectDlpJobSettings = existing.HybridInspectDlpJobSettings;
             ListJobTriggersSettings = existing.ListJobTriggersSettings;
             GetJobTriggerSettings = existing.GetJobTriggerSettings;
             DeleteJobTriggerSettings = existing.DeleteJobTriggerSettings;
+            HybridInspectJobTriggerSettings = existing.HybridInspectJobTriggerSettings;
             UpdateJobTriggerSettings = existing.UpdateJobTriggerSettings;
             CreateJobTriggerSettings = existing.CreateJobTriggerSettings;
             CreateStoredInfoTypeSettings = existing.CreateStoredInfoTypeSettings;
@@ -744,6 +747,64 @@ namespace Google.Cloud.Dlp.V2
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>DlpServiceClient.FinishDlpJob</c> and <c>DlpServiceClient.FinishDlpJobAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>DlpServiceClient.FinishDlpJob</c> and
+        /// <c>DlpServiceClient.FinishDlpJobAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description>No status codes</description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings FinishDlpJobSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: NonIdempotentRetryFilter
+            )));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>DlpServiceClient.HybridInspectDlpJob</c> and <c>DlpServiceClient.HybridInspectDlpJobAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>DlpServiceClient.HybridInspectDlpJob</c> and
+        /// <c>DlpServiceClient.HybridInspectDlpJobAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description>No status codes</description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings HybridInspectDlpJobSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: NonIdempotentRetryFilter
+            )));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
         /// <c>DlpServiceClient.ListJobTriggers</c> and <c>DlpServiceClient.ListJobTriggersAsync</c>.
         /// </summary>
         /// <remarks>
@@ -830,6 +891,35 @@ namespace Google.Cloud.Dlp.V2
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
                 retryFilter: IdempotentRetryFilter
+            )));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>DlpServiceClient.HybridInspectJobTrigger</c> and <c>DlpServiceClient.HybridInspectJobTriggerAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>DlpServiceClient.HybridInspectJobTrigger</c> and
+        /// <c>DlpServiceClient.HybridInspectJobTriggerAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description>No status codes</description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings HybridInspectJobTriggerSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -2473,6 +2563,142 @@ namespace Google.Cloud.Dlp.V2
         }
 
         /// <summary>
+        /// Finish a running hybrid DlpJob. Triggers the finalization steps and running
+        /// of any enabled actions that have not yet run.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task FinishDlpJobAsync(
+            FinishDlpJobRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Finish a running hybrid DlpJob. Triggers the finalization steps and running
+        /// of any enabled actions that have not yet run.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task FinishDlpJobAsync(
+            FinishDlpJobRequest request,
+            st::CancellationToken cancellationToken) => FinishDlpJobAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Finish a running hybrid DlpJob. Triggers the finalization steps and running
+        /// of any enabled actions that have not yet run.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void FinishDlpJob(
+            FinishDlpJobRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a job.
+        /// To review the findings inspect the job. Inspection will occur
+        /// asynchronously.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<HybridInspectResponse> HybridInspectDlpJobAsync(
+            HybridInspectDlpJobRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a job.
+        /// To review the findings inspect the job. Inspection will occur
+        /// asynchronously.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<HybridInspectResponse> HybridInspectDlpJobAsync(
+            HybridInspectDlpJobRequest request,
+            st::CancellationToken cancellationToken) => HybridInspectDlpJobAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a job.
+        /// To review the findings inspect the job. Inspection will occur
+        /// asynchronously.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual HybridInspectResponse HybridInspectDlpJob(
+            HybridInspectDlpJobRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
         /// Lists job triggers.
         /// See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
         /// </summary>
@@ -2622,6 +2848,77 @@ namespace Google.Cloud.Dlp.V2
         /// </param>
         public virtual void DeleteJobTrigger(
             DeleteJobTriggerRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a trigger. The inspection
+        /// will be processed asynchronously. To review the findings monitor the
+        /// jobs within the trigger.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<HybridInspectResponse> HybridInspectJobTriggerAsync(
+            HybridInspectJobTriggerRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a trigger. The inspection
+        /// will be processed asynchronously. To review the findings monitor the
+        /// jobs within the trigger.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<HybridInspectResponse> HybridInspectJobTriggerAsync(
+            HybridInspectJobTriggerRequest request,
+            st::CancellationToken cancellationToken) => HybridInspectJobTriggerAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a trigger. The inspection
+        /// will be processed asynchronously. To review the findings monitor the
+        /// jobs within the trigger.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual HybridInspectResponse HybridInspectJobTrigger(
+            HybridInspectJobTriggerRequest request,
             gaxgrpc::CallSettings callSettings = null)
         {
             throw new sys::NotImplementedException();
@@ -3065,9 +3362,12 @@ namespace Google.Cloud.Dlp.V2
         private readonly gaxgrpc::ApiCall<GetDlpJobRequest, DlpJob> _callGetDlpJob;
         private readonly gaxgrpc::ApiCall<DeleteDlpJobRequest, pbwkt::Empty> _callDeleteDlpJob;
         private readonly gaxgrpc::ApiCall<CancelDlpJobRequest, pbwkt::Empty> _callCancelDlpJob;
+        private readonly gaxgrpc::ApiCall<FinishDlpJobRequest, pbwkt::Empty> _callFinishDlpJob;
+        private readonly gaxgrpc::ApiCall<HybridInspectDlpJobRequest, HybridInspectResponse> _callHybridInspectDlpJob;
         private readonly gaxgrpc::ApiCall<ListJobTriggersRequest, ListJobTriggersResponse> _callListJobTriggers;
         private readonly gaxgrpc::ApiCall<GetJobTriggerRequest, JobTrigger> _callGetJobTrigger;
         private readonly gaxgrpc::ApiCall<DeleteJobTriggerRequest, pbwkt::Empty> _callDeleteJobTrigger;
+        private readonly gaxgrpc::ApiCall<HybridInspectJobTriggerRequest, HybridInspectResponse> _callHybridInspectJobTrigger;
         private readonly gaxgrpc::ApiCall<UpdateJobTriggerRequest, JobTrigger> _callUpdateJobTrigger;
         private readonly gaxgrpc::ApiCall<CreateJobTriggerRequest, JobTrigger> _callCreateJobTrigger;
         private readonly gaxgrpc::ApiCall<CreateStoredInfoTypeRequest, StoredInfoType> _callCreateStoredInfoType;
@@ -3146,6 +3446,12 @@ namespace Google.Cloud.Dlp.V2
             _callCancelDlpJob = clientHelper.BuildApiCall<CancelDlpJobRequest, pbwkt::Empty>(
                 GrpcClient.CancelDlpJobAsync, GrpcClient.CancelDlpJob, effectiveSettings.CancelDlpJobSettings)
                 .WithGoogleRequestParam("name", request => request.Name);
+            _callFinishDlpJob = clientHelper.BuildApiCall<FinishDlpJobRequest, pbwkt::Empty>(
+                GrpcClient.FinishDlpJobAsync, GrpcClient.FinishDlpJob, effectiveSettings.FinishDlpJobSettings)
+                .WithGoogleRequestParam("name", request => request.Name);
+            _callHybridInspectDlpJob = clientHelper.BuildApiCall<HybridInspectDlpJobRequest, HybridInspectResponse>(
+                GrpcClient.HybridInspectDlpJobAsync, GrpcClient.HybridInspectDlpJob, effectiveSettings.HybridInspectDlpJobSettings)
+                .WithGoogleRequestParam("name", request => request.Name);
             _callListJobTriggers = clientHelper.BuildApiCall<ListJobTriggersRequest, ListJobTriggersResponse>(
                 GrpcClient.ListJobTriggersAsync, GrpcClient.ListJobTriggers, effectiveSettings.ListJobTriggersSettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
@@ -3154,6 +3460,9 @@ namespace Google.Cloud.Dlp.V2
                 .WithGoogleRequestParam("name", request => request.Name);
             _callDeleteJobTrigger = clientHelper.BuildApiCall<DeleteJobTriggerRequest, pbwkt::Empty>(
                 GrpcClient.DeleteJobTriggerAsync, GrpcClient.DeleteJobTrigger, effectiveSettings.DeleteJobTriggerSettings)
+                .WithGoogleRequestParam("name", request => request.Name);
+            _callHybridInspectJobTrigger = clientHelper.BuildApiCall<HybridInspectJobTriggerRequest, HybridInspectResponse>(
+                GrpcClient.HybridInspectJobTriggerAsync, GrpcClient.HybridInspectJobTrigger, effectiveSettings.HybridInspectJobTriggerSettings)
                 .WithGoogleRequestParam("name", request => request.Name);
             _callUpdateJobTrigger = clientHelper.BuildApiCall<UpdateJobTriggerRequest, JobTrigger>(
                 GrpcClient.UpdateJobTriggerAsync, GrpcClient.UpdateJobTrigger, effectiveSettings.UpdateJobTriggerSettings)
@@ -3216,12 +3525,18 @@ namespace Google.Cloud.Dlp.V2
             Modify_DeleteDlpJobApiCall(ref _callDeleteDlpJob);
             Modify_ApiCall(ref _callCancelDlpJob);
             Modify_CancelDlpJobApiCall(ref _callCancelDlpJob);
+            Modify_ApiCall(ref _callFinishDlpJob);
+            Modify_FinishDlpJobApiCall(ref _callFinishDlpJob);
+            Modify_ApiCall(ref _callHybridInspectDlpJob);
+            Modify_HybridInspectDlpJobApiCall(ref _callHybridInspectDlpJob);
             Modify_ApiCall(ref _callListJobTriggers);
             Modify_ListJobTriggersApiCall(ref _callListJobTriggers);
             Modify_ApiCall(ref _callGetJobTrigger);
             Modify_GetJobTriggerApiCall(ref _callGetJobTrigger);
             Modify_ApiCall(ref _callDeleteJobTrigger);
             Modify_DeleteJobTriggerApiCall(ref _callDeleteJobTrigger);
+            Modify_ApiCall(ref _callHybridInspectJobTrigger);
+            Modify_HybridInspectJobTriggerApiCall(ref _callHybridInspectJobTrigger);
             Modify_ApiCall(ref _callUpdateJobTrigger);
             Modify_UpdateJobTriggerApiCall(ref _callUpdateJobTrigger);
             Modify_ApiCall(ref _callCreateJobTrigger);
@@ -3269,9 +3584,12 @@ namespace Google.Cloud.Dlp.V2
         partial void Modify_GetDlpJobApiCall(ref gaxgrpc::ApiCall<GetDlpJobRequest, DlpJob> call);
         partial void Modify_DeleteDlpJobApiCall(ref gaxgrpc::ApiCall<DeleteDlpJobRequest, pbwkt::Empty> call);
         partial void Modify_CancelDlpJobApiCall(ref gaxgrpc::ApiCall<CancelDlpJobRequest, pbwkt::Empty> call);
+        partial void Modify_FinishDlpJobApiCall(ref gaxgrpc::ApiCall<FinishDlpJobRequest, pbwkt::Empty> call);
+        partial void Modify_HybridInspectDlpJobApiCall(ref gaxgrpc::ApiCall<HybridInspectDlpJobRequest, HybridInspectResponse> call);
         partial void Modify_ListJobTriggersApiCall(ref gaxgrpc::ApiCall<ListJobTriggersRequest, ListJobTriggersResponse> call);
         partial void Modify_GetJobTriggerApiCall(ref gaxgrpc::ApiCall<GetJobTriggerRequest, JobTrigger> call);
         partial void Modify_DeleteJobTriggerApiCall(ref gaxgrpc::ApiCall<DeleteJobTriggerRequest, pbwkt::Empty> call);
+        partial void Modify_HybridInspectJobTriggerApiCall(ref gaxgrpc::ApiCall<HybridInspectJobTriggerRequest, HybridInspectResponse> call);
         partial void Modify_UpdateJobTriggerApiCall(ref gaxgrpc::ApiCall<UpdateJobTriggerRequest, JobTrigger> call);
         partial void Modify_CreateJobTriggerApiCall(ref gaxgrpc::ApiCall<CreateJobTriggerRequest, JobTrigger> call);
         partial void Modify_CreateStoredInfoTypeApiCall(ref gaxgrpc::ApiCall<CreateStoredInfoTypeRequest, StoredInfoType> call);
@@ -3309,9 +3627,12 @@ namespace Google.Cloud.Dlp.V2
         partial void Modify_GetDlpJobRequest(ref GetDlpJobRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_DeleteDlpJobRequest(ref DeleteDlpJobRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_CancelDlpJobRequest(ref CancelDlpJobRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_FinishDlpJobRequest(ref FinishDlpJobRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_HybridInspectDlpJobRequest(ref HybridInspectDlpJobRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListJobTriggersRequest(ref ListJobTriggersRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_GetJobTriggerRequest(ref GetJobTriggerRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_DeleteJobTriggerRequest(ref DeleteJobTriggerRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_HybridInspectJobTriggerRequest(ref HybridInspectJobTriggerRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_UpdateJobTriggerRequest(ref UpdateJobTriggerRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_CreateJobTriggerRequest(ref CreateJobTriggerRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_CreateStoredInfoTypeRequest(ref CreateStoredInfoTypeRequest request, ref gaxgrpc::CallSettings settings);
@@ -4233,6 +4554,101 @@ namespace Google.Cloud.Dlp.V2
         }
 
         /// <summary>
+        /// Finish a running hybrid DlpJob. Triggers the finalization steps and running
+        /// of any enabled actions that have not yet run.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public override stt::Task FinishDlpJobAsync(
+            FinishDlpJobRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_FinishDlpJobRequest(ref request, ref callSettings);
+            return _callFinishDlpJob.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Finish a running hybrid DlpJob. Triggers the finalization steps and running
+        /// of any enabled actions that have not yet run.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public override void FinishDlpJob(
+            FinishDlpJobRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_FinishDlpJobRequest(ref request, ref callSettings);
+            _callFinishDlpJob.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a job.
+        /// To review the findings inspect the job. Inspection will occur
+        /// asynchronously.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public override stt::Task<HybridInspectResponse> HybridInspectDlpJobAsync(
+            HybridInspectDlpJobRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_HybridInspectDlpJobRequest(ref request, ref callSettings);
+            return _callHybridInspectDlpJob.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a job.
+        /// To review the findings inspect the job. Inspection will occur
+        /// asynchronously.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public override HybridInspectResponse HybridInspectDlpJob(
+            HybridInspectDlpJobRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_HybridInspectDlpJobRequest(ref request, ref callSettings);
+            return _callHybridInspectDlpJob.Sync(request, callSettings);
+        }
+
+        /// <summary>
         /// Lists job triggers.
         /// See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
         /// </summary>
@@ -4353,6 +4769,56 @@ namespace Google.Cloud.Dlp.V2
         {
             Modify_DeleteJobTriggerRequest(ref request, ref callSettings);
             _callDeleteJobTrigger.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a trigger. The inspection
+        /// will be processed asynchronously. To review the findings monitor the
+        /// jobs within the trigger.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public override stt::Task<HybridInspectResponse> HybridInspectJobTriggerAsync(
+            HybridInspectJobTriggerRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_HybridInspectJobTriggerRequest(ref request, ref callSettings);
+            return _callHybridInspectJobTrigger.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Inspect hybrid content and store findings to a trigger. The inspection
+        /// will be processed asynchronously. To review the findings monitor the
+        /// jobs within the trigger.
+        /// Early access feature is in a pre-release state and might change or have
+        /// limited support. For more information, see
+        /// https://cloud.google.com/products#product-launch-stages.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public override HybridInspectResponse HybridInspectJobTrigger(
+            HybridInspectJobTriggerRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_HybridInspectJobTriggerRequest(ref request, ref callSettings);
+            return _callHybridInspectJobTrigger.Sync(request, callSettings);
         }
 
         /// <summary>

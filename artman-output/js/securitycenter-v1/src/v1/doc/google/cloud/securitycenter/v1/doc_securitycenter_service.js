@@ -28,8 +28,8 @@
  *   greater than 0 characters in length.
  *
  * @property {Object} finding
- *   Required. The Finding being created. The name and security_marks will be ignored as
- *   they are both output only fields on this resource.
+ *   Required. The Finding being created. The name and security_marks will be
+ *   ignored as they are both output only fields on this resource.
  *
  *   This object should have the same structure as [Finding]{@link google.cloud.securitycenter.v1.Finding}
  *
@@ -42,6 +42,34 @@ const CreateFindingRequest = {
 };
 
 /**
+ * Request message for creating a notification config.
+ *
+ * @property {string} parent
+ *   Required. Resource name of the new notification config's parent. Its format
+ *   is "organizations/[organization_id]".
+ *
+ * @property {string} configId
+ *   Required.
+ *   Unique identifier provided by the client within the parent scope.
+ *   It must be between 1 and 128 characters, and contains alphanumeric
+ *   characters, underscores or hyphens only.
+ *
+ * @property {Object} notificationConfig
+ *   Required. The notification config being created. The name and the service
+ *   account will be ignored as they are both output only fields on this
+ *   resource.
+ *
+ *   This object should have the same structure as [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}
+ *
+ * @typedef CreateNotificationConfigRequest
+ * @memberof google.cloud.securitycenter.v1
+ * @see [google.cloud.securitycenter.v1.CreateNotificationConfigRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/cloud/securitycenter/v1/securitycenter_service.proto}
+ */
+const CreateNotificationConfigRequest = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
  * Request message for creating a source.
  *
  * @property {string} parent
@@ -49,8 +77,8 @@ const CreateFindingRequest = {
  *   "organizations/[organization_id]".
  *
  * @property {Object} source
- *   Required. The Source being created, only the display_name and description will be
- *   used. All other fields will be ignored.
+ *   Required. The Source being created, only the display_name and description
+ *   will be used. All other fields will be ignored.
  *
  *   This object should have the same structure as [Source]{@link google.cloud.securitycenter.v1.Source}
  *
@@ -63,11 +91,41 @@ const CreateSourceRequest = {
 };
 
 /**
+ * Request message for deleting a notification config.
+ *
+ * @property {string} name
+ *   Required. Name of the notification config to delete. Its format is
+ *   "organizations/[organization_id]/notificationConfigs/[config_id]".
+ *
+ * @typedef DeleteNotificationConfigRequest
+ * @memberof google.cloud.securitycenter.v1
+ * @see [google.cloud.securitycenter.v1.DeleteNotificationConfigRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/cloud/securitycenter/v1/securitycenter_service.proto}
+ */
+const DeleteNotificationConfigRequest = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * Request message for getting a notification config.
+ *
+ * @property {string} name
+ *   Required. Name of the notification config to get. Its format is
+ *   "organizations/[organization_id]/notificationConfigs/[config_id]".
+ *
+ * @typedef GetNotificationConfigRequest
+ * @memberof google.cloud.securitycenter.v1
+ * @see [google.cloud.securitycenter.v1.GetNotificationConfigRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/cloud/securitycenter/v1/securitycenter_service.proto}
+ */
+const GetNotificationConfigRequest = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
  * Request message for getting organization settings.
  *
  * @property {string} name
- *   Required. Name of the organization to get organization settings for. Its format is
- *   "organizations/[organization_id]/organizationSettings".
+ *   Required. Name of the organization to get organization settings for. Its
+ *   format is "organizations/[organization_id]/organizationSettings".
  *
  * @typedef GetOrganizationSettingsRequest
  * @memberof google.cloud.securitycenter.v1
@@ -158,9 +216,9 @@ const GetSourceRequest = {
  *   For example, `resource_properties.size = 100` is a valid filter string.
  *
  * @property {string} groupBy
- *   Required. Expression that defines what assets fields to use for grouping. The string
- *   value should follow SQL syntax: comma separated list of fields. For
- *   example:
+ *   Required. Expression that defines what assets fields to use for grouping.
+ *   The string value should follow SQL syntax: comma separated list of fields.
+ *   For example:
  *   "security_center_properties.resource_project,security_center_properties.project".
  *
  *   The following fields are supported when compare_duration is not set:
@@ -318,9 +376,9 @@ const GroupAssetsResponse = {
  *   For example, `source_properties.size = 100` is a valid filter string.
  *
  * @property {string} groupBy
- *   Required. Expression that defines what assets fields to use for grouping (including
- *   `state_change`). The string value should follow SQL syntax: comma separated
- *   list of fields. For example: "parent,resource_name".
+ *   Required. Expression that defines what assets fields to use for grouping
+ *   (including `state_change`). The string value should follow SQL syntax:
+ *   comma separated list of fields. For example: "parent,resource_name".
  *
  *   The following fields are supported:
  *
@@ -355,12 +413,18 @@ const GroupAssetsResponse = {
  *
  *   Possible "state_change" values when compare_duration is specified:
  *
- *   * "CHANGED":   indicates that the finding was present at the start of
- *                    compare_duration, but changed its state at read_time.
- *   * "UNCHANGED": indicates that the finding was present at the start of
- *                    compare_duration and did not change state at read_time.
- *   * "ADDED":     indicates that the finding was not present at the start
- *                    of compare_duration, but was present at read_time.
+ *   * "CHANGED":   indicates that the finding was present and matched the given
+ *                    filter at the start of compare_duration, but changed its
+ *                    state at read_time.
+ *   * "UNCHANGED": indicates that the finding was present and matched the given
+ *                    filter at the start of compare_duration and did not change
+ *                    state at read_time.
+ *   * "ADDED":     indicates that the finding did not match the given filter or
+ *                    was not present at the start of compare_duration, but was
+ *                    present at read_time.
+ *   * "REMOVED":   indicates that the finding was present and matched the
+ *                    filter at the start of compare_duration, but did not match
+ *                    the filter at read_time.
  *
  *   If compare_duration is not specified, then the only possible state_change
  *   is "UNUSED",  which will be the state_change set for all findings present
@@ -436,11 +500,55 @@ const GroupResult = {
 };
 
 /**
+ * Request message for listing notification configs.
+ *
+ * @property {string} parent
+ *   Required. Name of the organization to list notification configs.
+ *   Its format is "organizations/[organization_id]".
+ *
+ * @property {string} pageToken
+ *   The value returned by the last `ListNotificationConfigsResponse`; indicates
+ *   that this is a continuation of a prior `ListNotificationConfigs` call, and
+ *   that the system should return the next page of data.
+ *
+ * @property {number} pageSize
+ *   The maximum number of results to return in a single response. Default is
+ *   10, minimum is 1, maximum is 1000.
+ *
+ * @typedef ListNotificationConfigsRequest
+ * @memberof google.cloud.securitycenter.v1
+ * @see [google.cloud.securitycenter.v1.ListNotificationConfigsRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/cloud/securitycenter/v1/securitycenter_service.proto}
+ */
+const ListNotificationConfigsRequest = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * Response message for listing notification configs.
+ *
+ * @property {Object[]} notificationConfigs
+ *   Notification configs belonging to the requested parent.
+ *
+ *   This object should have the same structure as [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}
+ *
+ * @property {string} nextPageToken
+ *   Token to retrieve the next page of results, or empty if there are no more
+ *   results.
+ *
+ * @typedef ListNotificationConfigsResponse
+ * @memberof google.cloud.securitycenter.v1
+ * @see [google.cloud.securitycenter.v1.ListNotificationConfigsResponse definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/cloud/securitycenter/v1/securitycenter_service.proto}
+ */
+const ListNotificationConfigsResponse = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
  * Request message for listing sources.
  *
  * @property {string} parent
- *   Required. Resource name of the parent of sources to list. Its format should be
- *   "organizations/[organization_id]".
+ *   Required. Resource name of the parent of sources to list. Its format should
+ *   be "organizations/[organization_id]".
  *
  * @property {string} pageToken
  *   The value returned by the last `ListSourcesResponse`; indicates
@@ -604,9 +712,8 @@ const ListSourcesResponse = {
  *   This object should have the same structure as [Duration]{@link google.protobuf.Duration}
  *
  * @property {Object} fieldMask
- *   Optional. A field mask to specify the ListAssetsResult fields to be listed in the
- *   response.
- *   An empty field mask will list all fields.
+ *   Optional. A field mask to specify the ListAssetsResult fields to be listed
+ *   in the response. An empty field mask will list all fields.
  *
  *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
  *
@@ -807,12 +914,18 @@ const ListAssetsResponse = {
  *
  *   Possible "state_change" values when compare_duration is specified:
  *
- *   * "CHANGED":   indicates that the finding was present at the start of
- *                    compare_duration, but changed its state at read_time.
- *   * "UNCHANGED": indicates that the finding was present at the start of
- *                    compare_duration and did not change state at read_time.
- *   * "ADDED":     indicates that the finding was not present at the start
- *                    of compare_duration, but was present at read_time.
+ *   * "CHANGED":   indicates that the finding was present and matched the given
+ *                    filter at the start of compare_duration, but changed its
+ *                    state at read_time.
+ *   * "UNCHANGED": indicates that the finding was present and matched the given
+ *                    filter at the start of compare_duration and did not change
+ *                    state at read_time.
+ *   * "ADDED":     indicates that the finding did not match the given filter or
+ *                    was not present at the start of compare_duration, but was
+ *                    present at read_time.
+ *   * "REMOVED":   indicates that the finding was present and matched the
+ *                    filter at the start of compare_duration, but did not match
+ *                    the filter at read_time.
  *
  *   If compare_duration is not specified, then the only possible state_change
  *   is "UNUSED", which will be the state_change set for all findings present at
@@ -821,8 +934,8 @@ const ListAssetsResponse = {
  *   This object should have the same structure as [Duration]{@link google.protobuf.Duration}
  *
  * @property {Object} fieldMask
- *   Optional. A field mask to specify the Finding fields to be listed in the response.
- *   An empty field mask will list all fields.
+ *   Optional. A field mask to specify the Finding fields to be listed in the
+ *   response. An empty field mask will list all fields.
  *
  *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
  *
@@ -1000,8 +1113,8 @@ const SetFindingStateRequest = {
  * Request message for running asset discovery for an organization.
  *
  * @property {string} parent
- *   Required. Name of the organization to run asset discovery for. Its format is
- *   "organizations/[organization_id]".
+ *   Required. Name of the organization to run asset discovery for. Its format
+ *   is "organizations/[organization_id]".
  *
  * @typedef RunAssetDiscoveryRequest
  * @memberof google.cloud.securitycenter.v1
@@ -1015,8 +1128,8 @@ const RunAssetDiscoveryRequest = {
  * Request message for updating or creating a finding.
  *
  * @property {Object} finding
- *   Required. The finding resource to update or create if it does not already exist.
- *   parent, security_marks, and update_time will be ignored.
+ *   Required. The finding resource to update or create if it does not already
+ *   exist. parent, security_marks, and update_time will be ignored.
  *
  *   In the case of creation, the finding id portion of the name must be
  *   alphanumeric and less than or equal to 32 characters and greater than 0
@@ -1040,6 +1153,29 @@ const RunAssetDiscoveryRequest = {
  * @see [google.cloud.securitycenter.v1.UpdateFindingRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/cloud/securitycenter/v1/securitycenter_service.proto}
  */
 const UpdateFindingRequest = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * Request message for updating a notification config.
+ *
+ * @property {Object} notificationConfig
+ *   Required. The notification config to update.
+ *
+ *   This object should have the same structure as [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}
+ *
+ * @property {Object} updateMask
+ *   The FieldMask to use when updating the notification config.
+ *
+ *   If empty all mutable fields will be updated.
+ *
+ *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
+ *
+ * @typedef UpdateNotificationConfigRequest
+ * @memberof google.cloud.securitycenter.v1
+ * @see [google.cloud.securitycenter.v1.UpdateNotificationConfigRequest definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/cloud/securitycenter/v1/securitycenter_service.proto}
+ */
+const UpdateNotificationConfigRequest = {
   // This is for documentation. Actual contents will be loaded by gRPC.
 };
 

@@ -37,7 +37,7 @@ public interface JobReferenceOrBuilder extends
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The jobId.
    */
   java.lang.String getJobId();
@@ -49,7 +49,7 @@ public interface JobReferenceOrBuilder extends
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
-   * <code>string job_id = 2;</code>
+   * <code>string job_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for jobId.
    */
   com.google.protobuf.ByteString

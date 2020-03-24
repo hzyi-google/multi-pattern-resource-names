@@ -13,7 +13,7 @@ public interface LogEntrySourceLocationOrBuilder extends
    * might be a simple name or a fully-qualified name.
    * </pre>
    *
-   * <code>string file = 1;</code>
+   * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The file.
    */
   java.lang.String getFile();
@@ -23,7 +23,7 @@ public interface LogEntrySourceLocationOrBuilder extends
    * might be a simple name or a fully-qualified name.
    * </pre>
    *
-   * <code>string file = 1;</code>
+   * <code>string file = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for file.
    */
   com.google.protobuf.ByteString
@@ -35,7 +35,7 @@ public interface LogEntrySourceLocationOrBuilder extends
    * available.
    * </pre>
    *
-   * <code>int64 line = 2;</code>
+   * <code>int64 line = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The line.
    */
   long getLine();
@@ -50,7 +50,7 @@ public interface LogEntrySourceLocationOrBuilder extends
    * (Python).
    * </pre>
    *
-   * <code>string function = 3;</code>
+   * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The function.
    */
   java.lang.String getFunction();
@@ -64,7 +64,7 @@ public interface LogEntrySourceLocationOrBuilder extends
    * (Python).
    * </pre>
    *
-   * <code>string function = 3;</code>
+   * <code>string function = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for function.
    */
   com.google.protobuf.ByteString

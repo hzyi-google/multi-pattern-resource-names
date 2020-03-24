@@ -378,8 +378,8 @@ class PublisherClient {
    *
    *   This object should have the same structure as [Topic]{@link google.pubsub.v1.Topic}
    * @param {Object} request.updateMask
-   *   Required. Indicates which fields in the provided topic to update. Must be specified
-   *   and non-empty. Note that if `update_mask` contains
+   *   Required. Indicates which fields in the provided topic to update. Must be
+   *   specified and non-empty. Note that if `update_mask` contains
    *   "message_storage_policy" then the new value will be determined based on the
    *   policy configured at the project or organization level. The
    *   `message_storage_policy` must not be set in the `topic` provided above.
@@ -962,10 +962,10 @@ class PublisherClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.topicPath('[PROJECT]', '[TOPIC]');
+   * const resource = '';
    * const policy = {};
    * const request = {
-   *   resource: formattedResource,
+   *   resource: resource,
    *   policy: policy,
    * };
    * client.setIamPolicy(request)
@@ -1027,8 +1027,8 @@ class PublisherClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.topicPath('[PROJECT]', '[TOPIC]');
-   * client.getIamPolicy({resource: formattedResource})
+   * const resource = '';
+   * client.getIamPolicy({resource: resource})
    *   .then(responses => {
    *     const response = responses[0];
    *     // doThingsWith(response)
@@ -1092,10 +1092,10 @@ class PublisherClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.topicPath('[PROJECT]', '[TOPIC]');
+   * const resource = '';
    * const permissions = [];
    * const request = {
-   *   resource: formattedResource,
+   *   resource: resource,
    *   permissions: permissions,
    * };
    * client.testIamPermissions(request)
@@ -1141,6 +1141,7 @@ class PublisherClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified topic resource name string.
    *
    * @param {String} project
@@ -1168,6 +1169,7 @@ class PublisherClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the topicName from a topic resource.
    *
    * @param {String} topicName
@@ -1181,6 +1183,7 @@ class PublisherClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the topicName from a topic resource.
    *
    * @param {String} topicName

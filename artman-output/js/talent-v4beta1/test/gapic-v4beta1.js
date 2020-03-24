@@ -23,366 +23,6 @@ const FAKE_STATUS_CODE = 1;
 const error = new Error();
 error.code = FAKE_STATUS_CODE;
 
-describe('ApplicationServiceClient', () => {
-  it('has servicePath', () => {
-    const servicePath = talentModule.v4beta1.ApplicationServiceClient.servicePath;
-    assert(servicePath);
-  });
-
-  it('has apiEndpoint', () => {
-    const apiEndpoint = talentModule.v4beta1.ApplicationServiceClient.apiEndpoint;
-    assert(apiEndpoint);
-  });
-
-  it('has port', () => {
-    const port = talentModule.v4beta1.ApplicationServiceClient.port;
-    assert(port);
-    assert(typeof port === 'number');
-  });
-
-  it('should create a client with no options', () => {
-    const client = new talentModule.v4beta1.ApplicationServiceClient();
-    assert(client);
-  });
-
-  it('should create a client with gRPC fallback', () => {
-    const client = new talentModule.v4beta1.ApplicationServiceClient({fallback: true});
-    assert(client);
-  });
-
-  describe('createApplication', () => {
-    it('invokes createApplication without error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
-      const application = {};
-      const request = {
-        parent: formattedParent,
-        application: application,
-      };
-
-      // Mock response
-      const name = 'name3373707';
-      const externalId = 'externalId-1153075697';
-      const profile = 'profile-309425751';
-      const job = 'job105405';
-      const company = 'company950484093';
-      const outcomeNotes = 'outcomeNotes-355961964';
-      const jobTitleSnippet = 'jobTitleSnippet-1100512972';
-      const expectedResponse = {
-        name: name,
-        externalId: externalId,
-        profile: profile,
-        job: job,
-        company: company,
-        outcomeNotes: outcomeNotes,
-        jobTitleSnippet: jobTitleSnippet,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createApplication = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.createApplication(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes createApplication with error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
-      const application = {};
-      const request = {
-        parent: formattedParent,
-        application: application,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createApplication = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.createApplication(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('getApplication', () => {
-    it('invokes getApplication without error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock response
-      const name2 = 'name2-1052831874';
-      const externalId = 'externalId-1153075697';
-      const profile = 'profile-309425751';
-      const job = 'job105405';
-      const company = 'company950484093';
-      const outcomeNotes = 'outcomeNotes-355961964';
-      const jobTitleSnippet = 'jobTitleSnippet-1100512972';
-      const expectedResponse = {
-        name: name2,
-        externalId: externalId,
-        profile: profile,
-        job: job,
-        company: company,
-        outcomeNotes: outcomeNotes,
-        jobTitleSnippet: jobTitleSnippet,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.getApplication = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.getApplication(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes getApplication with error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.getApplication = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.getApplication(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('updateApplication', () => {
-    it('invokes updateApplication without error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const application = {};
-      const request = {
-        application: application,
-      };
-
-      // Mock response
-      const name = 'name3373707';
-      const externalId = 'externalId-1153075697';
-      const profile = 'profile-309425751';
-      const job = 'job105405';
-      const company = 'company950484093';
-      const outcomeNotes = 'outcomeNotes-355961964';
-      const jobTitleSnippet = 'jobTitleSnippet-1100512972';
-      const expectedResponse = {
-        name: name,
-        externalId: externalId,
-        profile: profile,
-        job: job,
-        company: company,
-        outcomeNotes: outcomeNotes,
-        jobTitleSnippet: jobTitleSnippet,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.updateApplication = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.updateApplication(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes updateApplication with error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const application = {};
-      const request = {
-        application: application,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.updateApplication = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.updateApplication(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('deleteApplication', () => {
-    it('invokes deleteApplication without error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteApplication = mockSimpleGrpcMethod(request);
-
-      client.deleteApplication(request, err => {
-        assert.ifError(err);
-        done();
-      });
-    });
-
-    it('invokes deleteApplication with error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteApplication = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.deleteApplication(request, err => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        done();
-      });
-    });
-  });
-
-  describe('listApplications', () => {
-    it('invokes listApplications without error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
-      const request = {
-        parent: formattedParent,
-      };
-
-      // Mock response
-      const nextPageToken = '';
-      const applicationsElement = {};
-      const applications = [applicationsElement];
-      const expectedResponse = {
-        nextPageToken: nextPageToken,
-        applications: applications,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.listApplications = (actualRequest, options, callback) => {
-        assert.deepStrictEqual(actualRequest, request);
-        callback(null, expectedResponse.applications);
-      };
-
-      client.listApplications(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse.applications);
-        done();
-      });
-    });
-
-    it('invokes listApplications with error', done => {
-      const client = new talentModule.v4beta1.ApplicationServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
-      const request = {
-        parent: formattedParent,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.listApplications = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.listApplications(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-});
 describe('CompanyServiceClient', () => {
   it('has servicePath', () => {
     const servicePath = talentModule.v4beta1.CompanyServiceClient.servicePath;
@@ -410,6 +50,55 @@ describe('CompanyServiceClient', () => {
     assert(client);
   });
 
+  describe('deleteCompany', () => {
+    it('invokes deleteCompany without error', done => {
+      const client = new talentModule.v4beta1.CompanyServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.companyWithoutTenantPath('[PROJECT]', '[COMPANY]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteCompany = mockSimpleGrpcMethod(request);
+
+      client.deleteCompany(request, err => {
+        assert.ifError(err);
+        done();
+      });
+    });
+
+    it('invokes deleteCompany with error', done => {
+      const client = new talentModule.v4beta1.CompanyServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.companyWithoutTenantPath('[PROJECT]', '[COMPANY]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteCompany = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.deleteCompany(request, err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+  });
+
   describe('createCompany', () => {
     it('invokes createCompany without error', done => {
       const client = new talentModule.v4beta1.CompanyServiceClient({
@@ -418,7 +107,7 @@ describe('CompanyServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const company = {};
       const request = {
         parent: formattedParent,
@@ -469,7 +158,7 @@ describe('CompanyServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const company = {};
       const request = {
         parent: formattedParent,
@@ -500,7 +189,7 @@ describe('CompanyServiceClient', () => {
       });
 
       // Mock request
-      const formattedName = client.companyPath('[PROJECT]', '[TENANT]', '[COMPANY]');
+      const formattedName = client.companyWithoutTenantPath('[PROJECT]', '[COMPANY]');
       const request = {
         name: formattedName,
       };
@@ -549,7 +238,7 @@ describe('CompanyServiceClient', () => {
       });
 
       // Mock request
-      const formattedName = client.companyPath('[PROJECT]', '[TENANT]', '[COMPANY]');
+      const formattedName = client.companyWithoutTenantPath('[PROJECT]', '[COMPANY]');
       const request = {
         name: formattedName,
       };
@@ -648,55 +337,6 @@ describe('CompanyServiceClient', () => {
     });
   });
 
-  describe('deleteCompany', () => {
-    it('invokes deleteCompany without error', done => {
-      const client = new talentModule.v4beta1.CompanyServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.companyPath('[PROJECT]', '[TENANT]', '[COMPANY]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteCompany = mockSimpleGrpcMethod(request);
-
-      client.deleteCompany(request, err => {
-        assert.ifError(err);
-        done();
-      });
-    });
-
-    it('invokes deleteCompany with error', done => {
-      const client = new talentModule.v4beta1.CompanyServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.companyPath('[PROJECT]', '[TENANT]', '[COMPANY]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteCompany = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.deleteCompany(request, err => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        done();
-      });
-    });
-  });
-
   describe('listCompanies', () => {
     it('invokes listCompanies without error', done => {
       const client = new talentModule.v4beta1.CompanyServiceClient({
@@ -705,7 +345,7 @@ describe('CompanyServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const request = {
         parent: formattedParent,
       };
@@ -739,7 +379,7 @@ describe('CompanyServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const request = {
         parent: formattedParent,
       };
@@ -752,195 +392,6 @@ describe('CompanyServiceClient', () => {
       );
 
       client.listCompanies(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-});
-describe('CompletionClient', () => {
-  it('has servicePath', () => {
-    const servicePath = talentModule.v4beta1.CompletionClient.servicePath;
-    assert(servicePath);
-  });
-
-  it('has apiEndpoint', () => {
-    const apiEndpoint = talentModule.v4beta1.CompletionClient.apiEndpoint;
-    assert(apiEndpoint);
-  });
-
-  it('has port', () => {
-    const port = talentModule.v4beta1.CompletionClient.port;
-    assert(port);
-    assert(typeof port === 'number');
-  });
-
-  it('should create a client with no options', () => {
-    const client = new talentModule.v4beta1.CompletionClient();
-    assert(client);
-  });
-
-  it('should create a client with gRPC fallback', () => {
-    const client = new talentModule.v4beta1.CompletionClient({fallback: true});
-    assert(client);
-  });
-
-  describe('completeQuery', () => {
-    it('invokes completeQuery without error', done => {
-      const client = new talentModule.v4beta1.CompletionClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const query = 'query107944136';
-      const pageSize = 883849137;
-      const request = {
-        parent: formattedParent,
-        query: query,
-        pageSize: pageSize,
-      };
-
-      // Mock response
-      const expectedResponse = {};
-
-      // Mock Grpc layer
-      client._innerApiCalls.completeQuery = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.completeQuery(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes completeQuery with error', done => {
-      const client = new talentModule.v4beta1.CompletionClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const query = 'query107944136';
-      const pageSize = 883849137;
-      const request = {
-        parent: formattedParent,
-        query: query,
-        pageSize: pageSize,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.completeQuery = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.completeQuery(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-});
-describe('EventServiceClient', () => {
-  it('has servicePath', () => {
-    const servicePath = talentModule.v4beta1.EventServiceClient.servicePath;
-    assert(servicePath);
-  });
-
-  it('has apiEndpoint', () => {
-    const apiEndpoint = talentModule.v4beta1.EventServiceClient.apiEndpoint;
-    assert(apiEndpoint);
-  });
-
-  it('has port', () => {
-    const port = talentModule.v4beta1.EventServiceClient.port;
-    assert(port);
-    assert(typeof port === 'number');
-  });
-
-  it('should create a client with no options', () => {
-    const client = new talentModule.v4beta1.EventServiceClient();
-    assert(client);
-  });
-
-  it('should create a client with gRPC fallback', () => {
-    const client = new talentModule.v4beta1.EventServiceClient({fallback: true});
-    assert(client);
-  });
-
-  describe('createClientEvent', () => {
-    it('invokes createClientEvent without error', done => {
-      const client = new talentModule.v4beta1.EventServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const clientEvent = {};
-      const request = {
-        parent: formattedParent,
-        clientEvent: clientEvent,
-      };
-
-      // Mock response
-      const requestId = 'requestId37109963';
-      const eventId = 'eventId278118624';
-      const eventNotes = 'eventNotes445073628';
-      const expectedResponse = {
-        requestId: requestId,
-        eventId: eventId,
-        eventNotes: eventNotes,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createClientEvent = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.createClientEvent(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes createClientEvent with error', done => {
-      const client = new talentModule.v4beta1.EventServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const clientEvent = {};
-      const request = {
-        parent: formattedParent,
-        clientEvent: clientEvent,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createClientEvent = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.createClientEvent(request, (err, response) => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');
@@ -977,6 +428,55 @@ describe('JobServiceClient', () => {
     assert(client);
   });
 
+  describe('deleteJob', () => {
+    it('invokes deleteJob without error', done => {
+      const client = new talentModule.v4beta1.JobServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const name = 'name3373707';
+      const request = {
+        name: name,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteJob = mockSimpleGrpcMethod(request);
+
+      client.deleteJob(request, err => {
+        assert.ifError(err);
+        done();
+      });
+    });
+
+    it('invokes deleteJob with error', done => {
+      const client = new talentModule.v4beta1.JobServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const name = 'name3373707';
+      const request = {
+        name: name,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteJob = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.deleteJob(request, err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+  });
+
   describe('createJob', () => {
     it('invokes createJob without error', done => {
       const client = new talentModule.v4beta1.JobServiceClient({
@@ -985,7 +485,7 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const job = {};
       const request = {
         parent: formattedParent,
@@ -1040,7 +540,7 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const job = {};
       const request = {
         parent: formattedParent,
@@ -1063,6 +563,77 @@ describe('JobServiceClient', () => {
     });
   });
 
+  describe('batchCreateJobs', function() {
+    it('invokes batchCreateJobs without error', done => {
+      const client = new talentModule.v4beta1.JobServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.projectPath('[PROJECT]');
+      const jobs = [];
+      const request = {
+        parent: formattedParent,
+        jobs: jobs,
+      };
+
+      // Mock response
+      const expectedResponse = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.batchCreateJobs = mockLongRunningGrpcMethod(request, expectedResponse);
+
+      client.batchCreateJobs(request).then(responses => {
+        const operation = responses[0];
+        return operation.promise();
+      }).then(responses => {
+        assert.deepStrictEqual(responses[0], expectedResponse);
+        done();
+      }).catch(err => {
+        done(err);
+      });
+    });
+
+    it('invokes batchCreateJobs with error', done => {
+      const client = new talentModule.v4beta1.JobServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.projectPath('[PROJECT]');
+      const jobs = [];
+      const request = {
+        parent: formattedParent,
+        jobs: jobs,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.batchCreateJobs = mockLongRunningGrpcMethod(request, null, error);
+
+      client.batchCreateJobs(request).then(responses => {
+        const operation = responses[0];
+        return operation.promise();
+      }).then(() => {
+        assert.fail();
+      }).catch(err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+
+    it('has longrunning decoder functions', () => {
+      const client = new talentModule.v4beta1.JobServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      assert(client._descriptors.longrunning.batchCreateJobs.responseDecoder instanceof Function);
+      assert(client._descriptors.longrunning.batchCreateJobs.metadataDecoder instanceof Function);
+    });
+  });
+
   describe('getJob', () => {
     it('invokes getJob without error', done => {
       const client = new talentModule.v4beta1.JobServiceClient({
@@ -1071,9 +642,9 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedName = client.jobPath('[PROJECT]', '[TENANT]', '[JOBS]');
+      const name = 'name3373707';
       const request = {
-        name: formattedName,
+        name: name,
       };
 
       // Mock response
@@ -1124,9 +695,9 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedName = client.jobPath('[PROJECT]', '[TENANT]', '[JOBS]');
+      const name = 'name3373707';
       const request = {
-        name: formattedName,
+        name: name,
       };
 
       // Mock Grpc layer
@@ -1227,48 +798,123 @@ describe('JobServiceClient', () => {
     });
   });
 
-  describe('deleteJob', () => {
-    it('invokes deleteJob without error', done => {
+  describe('batchUpdateJobs', function() {
+    it('invokes batchUpdateJobs without error', done => {
       const client = new talentModule.v4beta1.JobServiceClient({
         credentials: {client_email: 'bogus', private_key: 'bogus'},
         projectId: 'bogus',
       });
 
       // Mock request
-      const formattedName = client.jobPath('[PROJECT]', '[TENANT]', '[JOBS]');
+      const formattedParent = client.projectPath('[PROJECT]');
+      const jobs = [];
       const request = {
-        name: formattedName,
+        parent: formattedParent,
+        jobs: jobs,
+      };
+
+      // Mock response
+      const expectedResponse = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.batchUpdateJobs = mockLongRunningGrpcMethod(request, expectedResponse);
+
+      client.batchUpdateJobs(request).then(responses => {
+        const operation = responses[0];
+        return operation.promise();
+      }).then(responses => {
+        assert.deepStrictEqual(responses[0], expectedResponse);
+        done();
+      }).catch(err => {
+        done(err);
+      });
+    });
+
+    it('invokes batchUpdateJobs with error', done => {
+      const client = new talentModule.v4beta1.JobServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.projectPath('[PROJECT]');
+      const jobs = [];
+      const request = {
+        parent: formattedParent,
+        jobs: jobs,
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.deleteJob = mockSimpleGrpcMethod(request);
+      client._innerApiCalls.batchUpdateJobs = mockLongRunningGrpcMethod(request, null, error);
 
-      client.deleteJob(request, err => {
+      client.batchUpdateJobs(request).then(responses => {
+        const operation = responses[0];
+        return operation.promise();
+      }).then(() => {
+        assert.fail();
+      }).catch(err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+
+    it('has longrunning decoder functions', () => {
+      const client = new talentModule.v4beta1.JobServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+      assert(client._descriptors.longrunning.batchUpdateJobs.responseDecoder instanceof Function);
+      assert(client._descriptors.longrunning.batchUpdateJobs.metadataDecoder instanceof Function);
+    });
+  });
+
+  describe('batchDeleteJobs', () => {
+    it('invokes batchDeleteJobs without error', done => {
+      const client = new talentModule.v4beta1.JobServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.projectPath('[PROJECT]');
+      const filter = 'filter-1274492040';
+      const request = {
+        parent: formattedParent,
+        filter: filter,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.batchDeleteJobs = mockSimpleGrpcMethod(request);
+
+      client.batchDeleteJobs(request, err => {
         assert.ifError(err);
         done();
       });
     });
 
-    it('invokes deleteJob with error', done => {
+    it('invokes batchDeleteJobs with error', done => {
       const client = new talentModule.v4beta1.JobServiceClient({
         credentials: {client_email: 'bogus', private_key: 'bogus'},
         projectId: 'bogus',
       });
 
       // Mock request
-      const formattedName = client.jobPath('[PROJECT]', '[TENANT]', '[JOBS]');
+      const formattedParent = client.projectPath('[PROJECT]');
+      const filter = 'filter-1274492040';
       const request = {
-        name: formattedName,
+        parent: formattedParent,
+        filter: filter,
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.deleteJob = mockSimpleGrpcMethod(
+      client._innerApiCalls.batchDeleteJobs = mockSimpleGrpcMethod(
         request,
         null,
         error
       );
 
-      client.deleteJob(request, err => {
+      client.batchDeleteJobs(request, err => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         done();
@@ -1284,7 +930,7 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const filter = 'filter-1274492040';
       const request = {
         parent: formattedParent,
@@ -1320,7 +966,7 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const filter = 'filter-1274492040';
       const request = {
         parent: formattedParent,
@@ -1343,59 +989,6 @@ describe('JobServiceClient', () => {
     });
   });
 
-  describe('batchDeleteJobs', () => {
-    it('invokes batchDeleteJobs without error', done => {
-      const client = new talentModule.v4beta1.JobServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const filter = 'filter-1274492040';
-      const request = {
-        parent: formattedParent,
-        filter: filter,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.batchDeleteJobs = mockSimpleGrpcMethod(request);
-
-      client.batchDeleteJobs(request, err => {
-        assert.ifError(err);
-        done();
-      });
-    });
-
-    it('invokes batchDeleteJobs with error', done => {
-      const client = new talentModule.v4beta1.JobServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const filter = 'filter-1274492040';
-      const request = {
-        parent: formattedParent,
-        filter: filter,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.batchDeleteJobs = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.batchDeleteJobs(request, err => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        done();
-      });
-    });
-  });
-
   describe('searchJobs', () => {
     it('invokes searchJobs without error', done => {
       const client = new talentModule.v4beta1.JobServiceClient({
@@ -1404,7 +997,7 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const requestMetadata = {};
       const request = {
         parent: formattedParent,
@@ -1446,7 +1039,7 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const requestMetadata = {};
       const request = {
         parent: formattedParent,
@@ -1477,7 +1070,7 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const requestMetadata = {};
       const request = {
         parent: formattedParent,
@@ -1519,7 +1112,7 @@ describe('JobServiceClient', () => {
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const formattedParent = client.projectPath('[PROJECT]');
       const requestMetadata = {};
       const request = {
         parent: formattedParent,
@@ -1539,148 +1132,6 @@ describe('JobServiceClient', () => {
         assert(typeof response === 'undefined');
         done();
       });
-    });
-  });
-
-  describe('batchCreateJobs', function() {
-    it('invokes batchCreateJobs without error', done => {
-      const client = new talentModule.v4beta1.JobServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const jobs = [];
-      const request = {
-        parent: formattedParent,
-        jobs: jobs,
-      };
-
-      // Mock response
-      const expectedResponse = {};
-
-      // Mock Grpc layer
-      client._innerApiCalls.batchCreateJobs = mockLongRunningGrpcMethod(request, expectedResponse);
-
-      client.batchCreateJobs(request).then(responses => {
-        const operation = responses[0];
-        return operation.promise();
-      }).then(responses => {
-        assert.deepStrictEqual(responses[0], expectedResponse);
-        done();
-      }).catch(err => {
-        done(err);
-      });
-    });
-
-    it('invokes batchCreateJobs with error', done => {
-      const client = new talentModule.v4beta1.JobServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const jobs = [];
-      const request = {
-        parent: formattedParent,
-        jobs: jobs,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.batchCreateJobs = mockLongRunningGrpcMethod(request, null, error);
-
-      client.batchCreateJobs(request).then(responses => {
-        const operation = responses[0];
-        return operation.promise();
-      }).then(() => {
-        assert.fail();
-      }).catch(err => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        done();
-      });
-    });
-
-    it('has longrunning decoder functions', () => {
-      const client = new talentModule.v4beta1.JobServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      assert(client._descriptors.longrunning.batchCreateJobs.responseDecoder instanceof Function);
-      assert(client._descriptors.longrunning.batchCreateJobs.metadataDecoder instanceof Function);
-    });
-  });
-
-  describe('batchUpdateJobs', function() {
-    it('invokes batchUpdateJobs without error', done => {
-      const client = new talentModule.v4beta1.JobServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const jobs = [];
-      const request = {
-        parent: formattedParent,
-        jobs: jobs,
-      };
-
-      // Mock response
-      const expectedResponse = {};
-
-      // Mock Grpc layer
-      client._innerApiCalls.batchUpdateJobs = mockLongRunningGrpcMethod(request, expectedResponse);
-
-      client.batchUpdateJobs(request).then(responses => {
-        const operation = responses[0];
-        return operation.promise();
-      }).then(responses => {
-        assert.deepStrictEqual(responses[0], expectedResponse);
-        done();
-      }).catch(err => {
-        done(err);
-      });
-    });
-
-    it('invokes batchUpdateJobs with error', done => {
-      const client = new talentModule.v4beta1.JobServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const jobs = [];
-      const request = {
-        parent: formattedParent,
-        jobs: jobs,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.batchUpdateJobs = mockLongRunningGrpcMethod(request, null, error);
-
-      client.batchUpdateJobs(request).then(responses => {
-        const operation = responses[0];
-        return operation.promise();
-      }).then(() => {
-        assert.fail();
-      }).catch(err => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        done();
-      });
-    });
-
-    it('has longrunning decoder functions', () => {
-      const client = new talentModule.v4beta1.JobServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-      assert(client._descriptors.longrunning.batchUpdateJobs.responseDecoder instanceof Function);
-      assert(client._descriptors.longrunning.batchUpdateJobs.metadataDecoder instanceof Function);
     });
   });
 
@@ -1710,6 +1161,126 @@ describe('ProfileServiceClient', () => {
   it('should create a client with gRPC fallback', () => {
     const client = new talentModule.v4beta1.ProfileServiceClient({fallback: true});
     assert(client);
+  });
+
+  describe('deleteProfile', () => {
+    it('invokes deleteProfile without error', done => {
+      const client = new talentModule.v4beta1.ProfileServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteProfile = mockSimpleGrpcMethod(request);
+
+      client.deleteProfile(request, err => {
+        assert.ifError(err);
+        done();
+      });
+    });
+
+    it('invokes deleteProfile with error', done => {
+      const client = new talentModule.v4beta1.ProfileServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteProfile = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.deleteProfile(request, err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+  });
+
+  describe('searchProfiles', () => {
+    it('invokes searchProfiles without error', done => {
+      const client = new talentModule.v4beta1.ProfileServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const requestMetadata = {};
+      const request = {
+        parent: formattedParent,
+        requestMetadata: requestMetadata,
+      };
+
+      // Mock response
+      const estimatedTotalSize = 1882144769;
+      const nextPageToken = '';
+      const resultSetId = 'resultSetId-770306950';
+      const summarizedProfilesElement = {};
+      const summarizedProfiles = [summarizedProfilesElement];
+      const expectedResponse = {
+        estimatedTotalSize: estimatedTotalSize,
+        nextPageToken: nextPageToken,
+        resultSetId: resultSetId,
+        summarizedProfiles: summarizedProfiles,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.searchProfiles = (actualRequest, options, callback) => {
+        assert.deepStrictEqual(actualRequest, request);
+        callback(null, expectedResponse.summarizedProfiles);
+      };
+
+      client.searchProfiles(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse.summarizedProfiles);
+        done();
+      });
+    });
+
+    it('invokes searchProfiles with error', done => {
+      const client = new talentModule.v4beta1.ProfileServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+      const requestMetadata = {};
+      const request = {
+        parent: formattedParent,
+        requestMetadata: requestMetadata,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.searchProfiles = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.searchProfiles(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
   });
 
   describe('listProfiles', () => {
@@ -1995,48 +1566,172 @@ describe('ProfileServiceClient', () => {
     });
   });
 
-  describe('deleteProfile', () => {
-    it('invokes deleteProfile without error', done => {
-      const client = new talentModule.v4beta1.ProfileServiceClient({
+});
+describe('EventServiceClient', () => {
+  it('has servicePath', () => {
+    const servicePath = talentModule.v4beta1.EventServiceClient.servicePath;
+    assert(servicePath);
+  });
+
+  it('has apiEndpoint', () => {
+    const apiEndpoint = talentModule.v4beta1.EventServiceClient.apiEndpoint;
+    assert(apiEndpoint);
+  });
+
+  it('has port', () => {
+    const port = talentModule.v4beta1.EventServiceClient.port;
+    assert(port);
+    assert(typeof port === 'number');
+  });
+
+  it('should create a client with no options', () => {
+    const client = new talentModule.v4beta1.EventServiceClient();
+    assert(client);
+  });
+
+  it('should create a client with gRPC fallback', () => {
+    const client = new talentModule.v4beta1.EventServiceClient({fallback: true});
+    assert(client);
+  });
+
+  describe('createClientEvent', () => {
+    it('invokes createClientEvent without error', done => {
+      const client = new talentModule.v4beta1.EventServiceClient({
         credentials: {client_email: 'bogus', private_key: 'bogus'},
         projectId: 'bogus',
       });
 
       // Mock request
-      const formattedName = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
+      const formattedParent = client.projectPath('[PROJECT]');
+      const clientEvent = {};
       const request = {
-        name: formattedName,
+        parent: formattedParent,
+        clientEvent: clientEvent,
+      };
+
+      // Mock response
+      const requestId = 'requestId37109963';
+      const eventId = 'eventId278118624';
+      const eventNotes = 'eventNotes445073628';
+      const expectedResponse = {
+        requestId: requestId,
+        eventId: eventId,
+        eventNotes: eventNotes,
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.deleteProfile = mockSimpleGrpcMethod(request);
+      client._innerApiCalls.createClientEvent = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
 
-      client.deleteProfile(request, err => {
+      client.createClientEvent(request, (err, response) => {
         assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
         done();
       });
     });
 
-    it('invokes deleteProfile with error', done => {
-      const client = new talentModule.v4beta1.ProfileServiceClient({
+    it('invokes createClientEvent with error', done => {
+      const client = new talentModule.v4beta1.EventServiceClient({
         credentials: {client_email: 'bogus', private_key: 'bogus'},
         projectId: 'bogus',
       });
 
       // Mock request
-      const formattedName = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
+      const formattedParent = client.projectPath('[PROJECT]');
+      const clientEvent = {};
       const request = {
-        name: formattedName,
+        parent: formattedParent,
+        clientEvent: clientEvent,
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.deleteProfile = mockSimpleGrpcMethod(
+      client._innerApiCalls.createClientEvent = mockSimpleGrpcMethod(
         request,
         null,
         error
       );
 
-      client.deleteProfile(request, err => {
+      client.createClientEvent(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+});
+describe('ApplicationServiceClient', () => {
+  it('has servicePath', () => {
+    const servicePath = talentModule.v4beta1.ApplicationServiceClient.servicePath;
+    assert(servicePath);
+  });
+
+  it('has apiEndpoint', () => {
+    const apiEndpoint = talentModule.v4beta1.ApplicationServiceClient.apiEndpoint;
+    assert(apiEndpoint);
+  });
+
+  it('has port', () => {
+    const port = talentModule.v4beta1.ApplicationServiceClient.port;
+    assert(port);
+    assert(typeof port === 'number');
+  });
+
+  it('should create a client with no options', () => {
+    const client = new talentModule.v4beta1.ApplicationServiceClient();
+    assert(client);
+  });
+
+  it('should create a client with gRPC fallback', () => {
+    const client = new talentModule.v4beta1.ApplicationServiceClient({fallback: true});
+    assert(client);
+  });
+
+  describe('deleteApplication', () => {
+    it('invokes deleteApplication without error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteApplication = mockSimpleGrpcMethod(request);
+
+      client.deleteApplication(request, err => {
+        assert.ifError(err);
+        done();
+      });
+    });
+
+    it('invokes deleteApplication with error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteApplication = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.deleteApplication(request, err => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         done();
@@ -2044,69 +1739,374 @@ describe('ProfileServiceClient', () => {
     });
   });
 
-  describe('searchProfiles', () => {
-    it('invokes searchProfiles without error', done => {
-      const client = new talentModule.v4beta1.ProfileServiceClient({
+  describe('createApplication', () => {
+    it('invokes createApplication without error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
         credentials: {client_email: 'bogus', private_key: 'bogus'},
         projectId: 'bogus',
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const requestMetadata = {};
+      const formattedParent = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
+      const application = {};
       const request = {
         parent: formattedParent,
-        requestMetadata: requestMetadata,
+        application: application,
       };
 
       // Mock response
-      const estimatedTotalSize = 1882144769;
-      const nextPageToken = '';
-      const resultSetId = 'resultSetId-770306950';
-      const summarizedProfilesElement = {};
-      const summarizedProfiles = [summarizedProfilesElement];
+      const name = 'name3373707';
+      const externalId = 'externalId-1153075697';
+      const profile = 'profile-309425751';
+      const job = 'job105405';
+      const company = 'company950484093';
+      const outcomeNotes = 'outcomeNotes-355961964';
+      const jobTitleSnippet = 'jobTitleSnippet-1100512972';
       const expectedResponse = {
-        estimatedTotalSize: estimatedTotalSize,
-        nextPageToken: nextPageToken,
-        resultSetId: resultSetId,
-        summarizedProfiles: summarizedProfiles,
+        name: name,
+        externalId: externalId,
+        profile: profile,
+        job: job,
+        company: company,
+        outcomeNotes: outcomeNotes,
+        jobTitleSnippet: jobTitleSnippet,
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.searchProfiles = (actualRequest, options, callback) => {
-        assert.deepStrictEqual(actualRequest, request);
-        callback(null, expectedResponse.summarizedProfiles);
-      };
+      client._innerApiCalls.createApplication = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
 
-      client.searchProfiles(request, (err, response) => {
+      client.createApplication(request, (err, response) => {
         assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse.summarizedProfiles);
+        assert.deepStrictEqual(response, expectedResponse);
         done();
       });
     });
 
-    it('invokes searchProfiles with error', done => {
-      const client = new talentModule.v4beta1.ProfileServiceClient({
+    it('invokes createApplication with error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
         credentials: {client_email: 'bogus', private_key: 'bogus'},
         projectId: 'bogus',
       });
 
       // Mock request
-      const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
-      const requestMetadata = {};
+      const formattedParent = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
+      const application = {};
       const request = {
         parent: formattedParent,
-        requestMetadata: requestMetadata,
+        application: application,
       };
 
       // Mock Grpc layer
-      client._innerApiCalls.searchProfiles = mockSimpleGrpcMethod(
+      client._innerApiCalls.createApplication = mockSimpleGrpcMethod(
         request,
         null,
         error
       );
 
-      client.searchProfiles(request, (err, response) => {
+      client.createApplication(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('getApplication', () => {
+    it('invokes getApplication without error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock response
+      const name2 = 'name2-1052831874';
+      const externalId = 'externalId-1153075697';
+      const profile = 'profile-309425751';
+      const job = 'job105405';
+      const company = 'company950484093';
+      const outcomeNotes = 'outcomeNotes-355961964';
+      const jobTitleSnippet = 'jobTitleSnippet-1100512972';
+      const expectedResponse = {
+        name: name2,
+        externalId: externalId,
+        profile: profile,
+        job: job,
+        company: company,
+        outcomeNotes: outcomeNotes,
+        jobTitleSnippet: jobTitleSnippet,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getApplication = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.getApplication(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes getApplication with error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getApplication = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.getApplication(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('updateApplication', () => {
+    it('invokes updateApplication without error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const application = {};
+      const request = {
+        application: application,
+      };
+
+      // Mock response
+      const name = 'name3373707';
+      const externalId = 'externalId-1153075697';
+      const profile = 'profile-309425751';
+      const job = 'job105405';
+      const company = 'company950484093';
+      const outcomeNotes = 'outcomeNotes-355961964';
+      const jobTitleSnippet = 'jobTitleSnippet-1100512972';
+      const expectedResponse = {
+        name: name,
+        externalId: externalId,
+        profile: profile,
+        job: job,
+        company: company,
+        outcomeNotes: outcomeNotes,
+        jobTitleSnippet: jobTitleSnippet,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.updateApplication = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.updateApplication(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes updateApplication with error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const application = {};
+      const request = {
+        application: application,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.updateApplication = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.updateApplication(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('listApplications', () => {
+    it('invokes listApplications without error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
+      const request = {
+        parent: formattedParent,
+      };
+
+      // Mock response
+      const nextPageToken = '';
+      const applicationsElement = {};
+      const applications = [applicationsElement];
+      const expectedResponse = {
+        nextPageToken: nextPageToken,
+        applications: applications,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.listApplications = (actualRequest, options, callback) => {
+        assert.deepStrictEqual(actualRequest, request);
+        callback(null, expectedResponse.applications);
+      };
+
+      client.listApplications(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse.applications);
+        done();
+      });
+    });
+
+    it('invokes listApplications with error', done => {
+      const client = new talentModule.v4beta1.ApplicationServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.profilePath('[PROJECT]', '[TENANT]', '[PROFILE]');
+      const request = {
+        parent: formattedParent,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.listApplications = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.listApplications(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+});
+describe('CompletionClient', () => {
+  it('has servicePath', () => {
+    const servicePath = talentModule.v4beta1.CompletionClient.servicePath;
+    assert(servicePath);
+  });
+
+  it('has apiEndpoint', () => {
+    const apiEndpoint = talentModule.v4beta1.CompletionClient.apiEndpoint;
+    assert(apiEndpoint);
+  });
+
+  it('has port', () => {
+    const port = talentModule.v4beta1.CompletionClient.port;
+    assert(port);
+    assert(typeof port === 'number');
+  });
+
+  it('should create a client with no options', () => {
+    const client = new talentModule.v4beta1.CompletionClient();
+    assert(client);
+  });
+
+  it('should create a client with gRPC fallback', () => {
+    const client = new talentModule.v4beta1.CompletionClient({fallback: true});
+    assert(client);
+  });
+
+  describe('completeQuery', () => {
+    it('invokes completeQuery without error', done => {
+      const client = new talentModule.v4beta1.CompletionClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.projectPath('[PROJECT]');
+      const query = 'query107944136';
+      const pageSize = 883849137;
+      const request = {
+        parent: formattedParent,
+        query: query,
+        pageSize: pageSize,
+      };
+
+      // Mock response
+      const expectedResponse = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.completeQuery = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.completeQuery(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes completeQuery with error', done => {
+      const client = new talentModule.v4beta1.CompletionClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.projectPath('[PROJECT]');
+      const query = 'query107944136';
+      const pageSize = 883849137;
+      const request = {
+        parent: formattedParent,
+        query: query,
+        pageSize: pageSize,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.completeQuery = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.completeQuery(request, (err, response) => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');
@@ -2141,6 +2141,55 @@ describe('TenantServiceClient', () => {
   it('should create a client with gRPC fallback', () => {
     const client = new talentModule.v4beta1.TenantServiceClient({fallback: true});
     assert(client);
+  });
+
+  describe('deleteTenant', () => {
+    it('invokes deleteTenant without error', done => {
+      const client = new talentModule.v4beta1.TenantServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.tenantPath('[PROJECT]', '[TENANT]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteTenant = mockSimpleGrpcMethod(request);
+
+      client.deleteTenant(request, err => {
+        assert.ifError(err);
+        done();
+      });
+    });
+
+    it('invokes deleteTenant with error', done => {
+      const client = new talentModule.v4beta1.TenantServiceClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.tenantPath('[PROJECT]', '[TENANT]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteTenant = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.deleteTenant(request, err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
   });
 
   describe('createTenant', () => {
@@ -2328,55 +2377,6 @@ describe('TenantServiceClient', () => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('deleteTenant', () => {
-    it('invokes deleteTenant without error', done => {
-      const client = new talentModule.v4beta1.TenantServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.tenantPath('[PROJECT]', '[TENANT]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteTenant = mockSimpleGrpcMethod(request);
-
-      client.deleteTenant(request, err => {
-        assert.ifError(err);
-        done();
-      });
-    });
-
-    it('invokes deleteTenant with error', done => {
-      const client = new talentModule.v4beta1.TenantServiceClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.tenantPath('[PROJECT]', '[TENANT]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.deleteTenant = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.deleteTenant(request, err => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
         done();
       });
     });

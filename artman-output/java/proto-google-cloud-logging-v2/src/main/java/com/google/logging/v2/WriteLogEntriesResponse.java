@@ -6,7 +6,6 @@ package com.google.logging.v2;
 /**
  * <pre>
  * Result returned from WriteLogEntries.
- * empty
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.WriteLogEntriesResponse}
@@ -232,7 +231,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Result returned from WriteLogEntries.
-   * empty
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.WriteLogEntriesResponse}

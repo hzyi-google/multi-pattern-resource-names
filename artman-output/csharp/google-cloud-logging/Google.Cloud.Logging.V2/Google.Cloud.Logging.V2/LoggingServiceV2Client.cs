@@ -50,8 +50,8 @@ namespace Google.Cloud.Logging.V2
         private LoggingServiceV2Settings(LoggingServiceV2Settings existing) : base(existing)
         {
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
-            DeleteLogSettings = existing.DeleteLogSettings;
             WriteLogEntriesSettings = existing.WriteLogEntriesSettings;
+            DeleteLogSettings = existing.DeleteLogSettings;
             ListLogEntriesSettings = existing.ListLogEntriesSettings;
             ListMonitoredResourceDescriptorsSettings = existing.ListMonitoredResourceDescriptorsSettings;
             ListLogsSettings = existing.ListLogsSettings;
@@ -68,12 +68,11 @@ namespace Google.Cloud.Logging.V2
         /// The eligible RPC <see cref="grpccore::StatusCode"/>s for retry for "Idempotent" RPC methods are:
         /// <list type="bullet">
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// </remarks>
         public static sys::Predicate<grpccore::RpcException> IdempotentRetryFilter { get; } =
-            gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Internal, grpccore::StatusCode.Unavailable);
+            gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.DeadlineExceeded, grpccore::StatusCode.Unavailable);
 
         /// <summary>
         /// The filter specifying which RPC <see cref="grpccore::StatusCode"/>s are eligible for retry
@@ -126,44 +125,33 @@ namespace Google.Cloud.Logging.V2
         );
 
         /// <summary>
-        /// "List" retry backoff for <see cref="LoggingServiceV2Client"/> RPC methods.
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>LoggingServiceV2Client.WriteLogEntries</c> and <c>LoggingServiceV2Client.WriteLogEntriesAsync</c>.
         /// </summary>
-        /// <returns>
-        /// The "List" retry backoff for <see cref="LoggingServiceV2Client"/> RPC methods.
-        /// </returns>
         /// <remarks>
-        /// The "List" retry backoff for <see cref="LoggingServiceV2Client"/> RPC methods is defined as:
+        /// The default <c>LoggingServiceV2Client.WriteLogEntries</c> and
+        /// <c>LoggingServiceV2Client.WriteLogEntriesAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
         /// <list type="bullet">
-        /// <item><description>Initial delay: 100 milliseconds</description></item>
-        /// <item><description>Maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Delay multiplier: 1.3</description></item>
-        /// </list>
-        /// </remarks>
-        public static gaxgrpc::BackoffSettings GetListRetryBackoff() => new gaxgrpc::BackoffSettings(
-            delay: sys::TimeSpan.FromMilliseconds(100),
-            maxDelay: sys::TimeSpan.FromMilliseconds(60000),
-            delayMultiplier: 1.3
-        );
-
-        /// <summary>
-        /// "List" timeout backoff for <see cref="LoggingServiceV2Client"/> RPC methods.
-        /// </summary>
-        /// <returns>
-        /// The "List" timeout backoff for <see cref="LoggingServiceV2Client"/> RPC methods.
-        /// </returns>
-        /// <remarks>
-        /// The "List" timeout backoff for <see cref="LoggingServiceV2Client"/> RPC methods is defined as:
-        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
         /// <item><description>Initial timeout: 20000 milliseconds</description></item>
         /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Maximum timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
         /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description>No status codes</description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
-        public static gaxgrpc::BackoffSettings GetListTimeoutBackoff() => new gaxgrpc::BackoffSettings(
-            delay: sys::TimeSpan.FromMilliseconds(20000),
-            maxDelay: sys::TimeSpan.FromMilliseconds(20000),
-            delayMultiplier: 1.0
-        );
+        public gaxgrpc::CallSettings WriteLogEntriesSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: NonIdempotentRetryFilter
+            )));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -182,9 +170,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -193,38 +179,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
-            )));
-
-        /// <summary>
-        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
-        /// <c>LoggingServiceV2Client.WriteLogEntries</c> and <c>LoggingServiceV2Client.WriteLogEntriesAsync</c>.
-        /// </summary>
-        /// <remarks>
-        /// The default <c>LoggingServiceV2Client.WriteLogEntries</c> and
-        /// <c>LoggingServiceV2Client.WriteLogEntriesAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
-        /// <list type="bullet">
-        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
-        /// <item><description>Retry delay multiplier: 1.3</description></item>
-        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
-        /// </list>
-        /// Retry will be attempted on the following response status codes:
-        /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
-        /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
-        /// </remarks>
-        public gaxgrpc::CallSettings WriteLogEntriesSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
-            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
-                retryBackoff: GetDefaultRetryBackoff(),
-                timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -244,9 +199,7 @@ namespace Google.Cloud.Logging.V2
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// <item><description>No status codes</description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
@@ -255,7 +208,7 @@ namespace Google.Cloud.Logging.V2
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
+                retryFilter: NonIdempotentRetryFilter
             )));
 
         /// <summary>
@@ -276,7 +229,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -307,7 +259,6 @@ namespace Google.Cloud.Logging.V2
         /// Retry will be attempted on the following response status codes:
         /// <list>
         /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Internal"/></description></item>
         /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
         /// </list>
         /// Default RPC expiration is 600000 milliseconds.
@@ -528,6 +479,614 @@ namespace Google.Cloud.Logging.V2
         }
 
         /// <summary>
+        /// Writes log entries to Logging. This API method is the
+        /// only way to send log entries to Logging. This method
+        /// is used, directly or indirectly, by the Logging agent
+        /// (fluentd) and all logging libraries configured to use Logging.
+        /// A single request may contain log entries for a maximum of 1000
+        /// different resources (projects, organizations, billing accounts or
+        /// folders)
+        /// </summary>
+        /// <param name="logName">
+        /// Optional. A default log resource name that is assigned to all log entries
+        /// in `entries` that do not specify a value for `log_name`:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example:
+        ///
+        ///     "projects/my-project-id/logs/syslog"
+        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+        ///
+        /// The permission `logging.logEntries.create` is needed on each project,
+        /// organization, billing account, or folder that is receiving new log
+        /// entries, whether the resource is specified in `logName` or in an
+        /// individual log entry.
+        /// </param>
+        /// <param name="resource">
+        /// Optional. A default monitored resource object that is assigned to all log
+        /// entries in `entries` that do not specify a value for `resource`. Example:
+        ///
+        ///     { "type": "gce_instance",
+        ///       "labels": {
+        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+        ///
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="labels">
+        /// Optional. Default labels that are added to the `labels` field of all log
+        /// entries in `entries`. If a log entry already has a label with the same key
+        /// as a label in this parameter, then the log entry's label is not changed.
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="entries">
+        /// Required. The log entries to send to Logging. The order of log
+        /// entries in this list does not matter. Values supplied in this method's
+        /// `log_name`, `resource`, and `labels` fields are copied into those log
+        /// entries in this list that do not include values for their corresponding
+        /// fields. For more information, see the
+        /// [LogEntry][google.logging.v2.LogEntry] type.
+        ///
+        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
+        /// this method supplies the current time or a unique identifier, respectively.
+        /// The supplied values are chosen so that, among the log entries that did not
+        /// supply their own values, the entries earlier in the list will sort before
+        /// the entries later in the list. See the `entries.list` method.
+        ///
+        /// Log entries with timestamps that are more than the
+        /// [logs retention period](/logging/quota-policy) in the past or more than
+        /// 24 hours in the future will not be available when calling `entries.list`.
+        /// However, those log entries can still be
+        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+        ///
+        /// To improve throughput and to avoid exceeding the
+        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
+        /// you should try to include several log entries in this list,
+        /// rather than calling this method for each individual log entry.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
+            LogNameOneof logName,
+            ga::MonitoredResource resource,
+            scg::IDictionary<string, string> labels,
+            scg::IEnumerable<LogEntry> entries,
+            gaxgrpc::CallSettings callSettings = null) => WriteLogEntriesAsync(
+                new WriteLogEntriesRequest
+                {
+                    LogNameAsLogNameOneof = logName, // Optional
+                    Resource = resource, // Optional
+                    Labels = { labels ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
+                    Entries = { gax::GaxPreconditions.CheckNotNull(entries, nameof(entries)) },
+                },
+                callSettings);
+
+        /// <summary>
+        /// Writes log entries to Logging. This API method is the
+        /// only way to send log entries to Logging. This method
+        /// is used, directly or indirectly, by the Logging agent
+        /// (fluentd) and all logging libraries configured to use Logging.
+        /// A single request may contain log entries for a maximum of 1000
+        /// different resources (projects, organizations, billing accounts or
+        /// folders)
+        /// </summary>
+        /// <param name="logName">
+        /// Optional. A default log resource name that is assigned to all log entries
+        /// in `entries` that do not specify a value for `log_name`:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example:
+        ///
+        ///     "projects/my-project-id/logs/syslog"
+        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+        ///
+        /// The permission `logging.logEntries.create` is needed on each project,
+        /// organization, billing account, or folder that is receiving new log
+        /// entries, whether the resource is specified in `logName` or in an
+        /// individual log entry.
+        /// </param>
+        /// <param name="resource">
+        /// Optional. A default monitored resource object that is assigned to all log
+        /// entries in `entries` that do not specify a value for `resource`. Example:
+        ///
+        ///     { "type": "gce_instance",
+        ///       "labels": {
+        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+        ///
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="labels">
+        /// Optional. Default labels that are added to the `labels` field of all log
+        /// entries in `entries`. If a log entry already has a label with the same key
+        /// as a label in this parameter, then the log entry's label is not changed.
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="entries">
+        /// Required. The log entries to send to Logging. The order of log
+        /// entries in this list does not matter. Values supplied in this method's
+        /// `log_name`, `resource`, and `labels` fields are copied into those log
+        /// entries in this list that do not include values for their corresponding
+        /// fields. For more information, see the
+        /// [LogEntry][google.logging.v2.LogEntry] type.
+        ///
+        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
+        /// this method supplies the current time or a unique identifier, respectively.
+        /// The supplied values are chosen so that, among the log entries that did not
+        /// supply their own values, the entries earlier in the list will sort before
+        /// the entries later in the list. See the `entries.list` method.
+        ///
+        /// Log entries with timestamps that are more than the
+        /// [logs retention period](/logging/quota-policy) in the past or more than
+        /// 24 hours in the future will not be available when calling `entries.list`.
+        /// However, those log entries can still be
+        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+        ///
+        /// To improve throughput and to avoid exceeding the
+        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
+        /// you should try to include several log entries in this list,
+        /// rather than calling this method for each individual log entry.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
+            LogNameOneof logName,
+            ga::MonitoredResource resource,
+            scg::IDictionary<string, string> labels,
+            scg::IEnumerable<LogEntry> entries,
+            st::CancellationToken cancellationToken) => WriteLogEntriesAsync(
+                logName,
+                resource,
+                labels,
+                entries,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Writes log entries to Logging. This API method is the
+        /// only way to send log entries to Logging. This method
+        /// is used, directly or indirectly, by the Logging agent
+        /// (fluentd) and all logging libraries configured to use Logging.
+        /// A single request may contain log entries for a maximum of 1000
+        /// different resources (projects, organizations, billing accounts or
+        /// folders)
+        /// </summary>
+        /// <param name="logName">
+        /// Optional. A default log resource name that is assigned to all log entries
+        /// in `entries` that do not specify a value for `log_name`:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example:
+        ///
+        ///     "projects/my-project-id/logs/syslog"
+        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+        ///
+        /// The permission `logging.logEntries.create` is needed on each project,
+        /// organization, billing account, or folder that is receiving new log
+        /// entries, whether the resource is specified in `logName` or in an
+        /// individual log entry.
+        /// </param>
+        /// <param name="resource">
+        /// Optional. A default monitored resource object that is assigned to all log
+        /// entries in `entries` that do not specify a value for `resource`. Example:
+        ///
+        ///     { "type": "gce_instance",
+        ///       "labels": {
+        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+        ///
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="labels">
+        /// Optional. Default labels that are added to the `labels` field of all log
+        /// entries in `entries`. If a log entry already has a label with the same key
+        /// as a label in this parameter, then the log entry's label is not changed.
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="entries">
+        /// Required. The log entries to send to Logging. The order of log
+        /// entries in this list does not matter. Values supplied in this method's
+        /// `log_name`, `resource`, and `labels` fields are copied into those log
+        /// entries in this list that do not include values for their corresponding
+        /// fields. For more information, see the
+        /// [LogEntry][google.logging.v2.LogEntry] type.
+        ///
+        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
+        /// this method supplies the current time or a unique identifier, respectively.
+        /// The supplied values are chosen so that, among the log entries that did not
+        /// supply their own values, the entries earlier in the list will sort before
+        /// the entries later in the list. See the `entries.list` method.
+        ///
+        /// Log entries with timestamps that are more than the
+        /// [logs retention period](/logging/quota-policy) in the past or more than
+        /// 24 hours in the future will not be available when calling `entries.list`.
+        /// However, those log entries can still be
+        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+        ///
+        /// To improve throughput and to avoid exceeding the
+        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
+        /// you should try to include several log entries in this list,
+        /// rather than calling this method for each individual log entry.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual WriteLogEntriesResponse WriteLogEntries(
+            LogNameOneof logName,
+            ga::MonitoredResource resource,
+            scg::IDictionary<string, string> labels,
+            scg::IEnumerable<LogEntry> entries,
+            gaxgrpc::CallSettings callSettings = null) => WriteLogEntries(
+                new WriteLogEntriesRequest
+                {
+                    LogNameAsLogNameOneof = logName, // Optional
+                    Resource = resource, // Optional
+                    Labels = { labels ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
+                    Entries = { gax::GaxPreconditions.CheckNotNull(entries, nameof(entries)) },
+                },
+                callSettings);
+
+        /// <summary>
+        /// Writes log entries to Logging. This API method is the
+        /// only way to send log entries to Logging. This method
+        /// is used, directly or indirectly, by the Logging agent
+        /// (fluentd) and all logging libraries configured to use Logging.
+        /// A single request may contain log entries for a maximum of 1000
+        /// different resources (projects, organizations, billing accounts or
+        /// folders)
+        /// </summary>
+        /// <param name="logName">
+        /// Optional. A default log resource name that is assigned to all log entries
+        /// in `entries` that do not specify a value for `log_name`:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example:
+        ///
+        ///     "projects/my-project-id/logs/syslog"
+        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+        ///
+        /// The permission `logging.logEntries.create` is needed on each project,
+        /// organization, billing account, or folder that is receiving new log
+        /// entries, whether the resource is specified in `logName` or in an
+        /// individual log entry.
+        /// </param>
+        /// <param name="resource">
+        /// Optional. A default monitored resource object that is assigned to all log
+        /// entries in `entries` that do not specify a value for `resource`. Example:
+        ///
+        ///     { "type": "gce_instance",
+        ///       "labels": {
+        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+        ///
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="labels">
+        /// Optional. Default labels that are added to the `labels` field of all log
+        /// entries in `entries`. If a log entry already has a label with the same key
+        /// as a label in this parameter, then the log entry's label is not changed.
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="entries">
+        /// Required. The log entries to send to Logging. The order of log
+        /// entries in this list does not matter. Values supplied in this method's
+        /// `log_name`, `resource`, and `labels` fields are copied into those log
+        /// entries in this list that do not include values for their corresponding
+        /// fields. For more information, see the
+        /// [LogEntry][google.logging.v2.LogEntry] type.
+        ///
+        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
+        /// this method supplies the current time or a unique identifier, respectively.
+        /// The supplied values are chosen so that, among the log entries that did not
+        /// supply their own values, the entries earlier in the list will sort before
+        /// the entries later in the list. See the `entries.list` method.
+        ///
+        /// Log entries with timestamps that are more than the
+        /// [logs retention period](/logging/quota-policy) in the past or more than
+        /// 24 hours in the future will not be available when calling `entries.list`.
+        /// However, those log entries can still be
+        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+        ///
+        /// To improve throughput and to avoid exceeding the
+        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
+        /// you should try to include several log entries in this list,
+        /// rather than calling this method for each individual log entry.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
+            string logName,
+            ga::MonitoredResource resource,
+            scg::IDictionary<string, string> labels,
+            scg::IEnumerable<LogEntry> entries,
+            gaxgrpc::CallSettings callSettings = null) => WriteLogEntriesAsync(
+                new WriteLogEntriesRequest
+                {
+                    LogName = logName ?? "", // Optional
+                    Resource = resource, // Optional
+                    Labels = { labels ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
+                    Entries = { gax::GaxPreconditions.CheckNotNull(entries, nameof(entries)) },
+                },
+                callSettings);
+
+        /// <summary>
+        /// Writes log entries to Logging. This API method is the
+        /// only way to send log entries to Logging. This method
+        /// is used, directly or indirectly, by the Logging agent
+        /// (fluentd) and all logging libraries configured to use Logging.
+        /// A single request may contain log entries for a maximum of 1000
+        /// different resources (projects, organizations, billing accounts or
+        /// folders)
+        /// </summary>
+        /// <param name="logName">
+        /// Optional. A default log resource name that is assigned to all log entries
+        /// in `entries` that do not specify a value for `log_name`:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example:
+        ///
+        ///     "projects/my-project-id/logs/syslog"
+        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+        ///
+        /// The permission `logging.logEntries.create` is needed on each project,
+        /// organization, billing account, or folder that is receiving new log
+        /// entries, whether the resource is specified in `logName` or in an
+        /// individual log entry.
+        /// </param>
+        /// <param name="resource">
+        /// Optional. A default monitored resource object that is assigned to all log
+        /// entries in `entries` that do not specify a value for `resource`. Example:
+        ///
+        ///     { "type": "gce_instance",
+        ///       "labels": {
+        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+        ///
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="labels">
+        /// Optional. Default labels that are added to the `labels` field of all log
+        /// entries in `entries`. If a log entry already has a label with the same key
+        /// as a label in this parameter, then the log entry's label is not changed.
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="entries">
+        /// Required. The log entries to send to Logging. The order of log
+        /// entries in this list does not matter. Values supplied in this method's
+        /// `log_name`, `resource`, and `labels` fields are copied into those log
+        /// entries in this list that do not include values for their corresponding
+        /// fields. For more information, see the
+        /// [LogEntry][google.logging.v2.LogEntry] type.
+        ///
+        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
+        /// this method supplies the current time or a unique identifier, respectively.
+        /// The supplied values are chosen so that, among the log entries that did not
+        /// supply their own values, the entries earlier in the list will sort before
+        /// the entries later in the list. See the `entries.list` method.
+        ///
+        /// Log entries with timestamps that are more than the
+        /// [logs retention period](/logging/quota-policy) in the past or more than
+        /// 24 hours in the future will not be available when calling `entries.list`.
+        /// However, those log entries can still be
+        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+        ///
+        /// To improve throughput and to avoid exceeding the
+        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
+        /// you should try to include several log entries in this list,
+        /// rather than calling this method for each individual log entry.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
+            string logName,
+            ga::MonitoredResource resource,
+            scg::IDictionary<string, string> labels,
+            scg::IEnumerable<LogEntry> entries,
+            st::CancellationToken cancellationToken) => WriteLogEntriesAsync(
+                logName,
+                resource,
+                labels,
+                entries,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Writes log entries to Logging. This API method is the
+        /// only way to send log entries to Logging. This method
+        /// is used, directly or indirectly, by the Logging agent
+        /// (fluentd) and all logging libraries configured to use Logging.
+        /// A single request may contain log entries for a maximum of 1000
+        /// different resources (projects, organizations, billing accounts or
+        /// folders)
+        /// </summary>
+        /// <param name="logName">
+        /// Optional. A default log resource name that is assigned to all log entries
+        /// in `entries` that do not specify a value for `log_name`:
+        ///
+        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
+        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
+        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
+        ///
+        /// `[LOG_ID]` must be URL-encoded. For example:
+        ///
+        ///     "projects/my-project-id/logs/syslog"
+        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+        ///
+        /// The permission `logging.logEntries.create` is needed on each project,
+        /// organization, billing account, or folder that is receiving new log
+        /// entries, whether the resource is specified in `logName` or in an
+        /// individual log entry.
+        /// </param>
+        /// <param name="resource">
+        /// Optional. A default monitored resource object that is assigned to all log
+        /// entries in `entries` that do not specify a value for `resource`. Example:
+        ///
+        ///     { "type": "gce_instance",
+        ///       "labels": {
+        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+        ///
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="labels">
+        /// Optional. Default labels that are added to the `labels` field of all log
+        /// entries in `entries`. If a log entry already has a label with the same key
+        /// as a label in this parameter, then the log entry's label is not changed.
+        /// See [LogEntry][google.logging.v2.LogEntry].
+        /// </param>
+        /// <param name="entries">
+        /// Required. The log entries to send to Logging. The order of log
+        /// entries in this list does not matter. Values supplied in this method's
+        /// `log_name`, `resource`, and `labels` fields are copied into those log
+        /// entries in this list that do not include values for their corresponding
+        /// fields. For more information, see the
+        /// [LogEntry][google.logging.v2.LogEntry] type.
+        ///
+        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
+        /// this method supplies the current time or a unique identifier, respectively.
+        /// The supplied values are chosen so that, among the log entries that did not
+        /// supply their own values, the entries earlier in the list will sort before
+        /// the entries later in the list. See the `entries.list` method.
+        ///
+        /// Log entries with timestamps that are more than the
+        /// [logs retention period](/logging/quota-policy) in the past or more than
+        /// 24 hours in the future will not be available when calling `entries.list`.
+        /// However, those log entries can still be
+        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
+        ///
+        /// To improve throughput and to avoid exceeding the
+        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
+        /// you should try to include several log entries in this list,
+        /// rather than calling this method for each individual log entry.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual WriteLogEntriesResponse WriteLogEntries(
+            string logName,
+            ga::MonitoredResource resource,
+            scg::IDictionary<string, string> labels,
+            scg::IEnumerable<LogEntry> entries,
+            gaxgrpc::CallSettings callSettings = null) => WriteLogEntries(
+                new WriteLogEntriesRequest
+                {
+                    LogName = logName ?? "", // Optional
+                    Resource = resource, // Optional
+                    Labels = { labels ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
+                    Entries = { gax::GaxPreconditions.CheckNotNull(entries, nameof(entries)) },
+                },
+                callSettings);
+
+        /// <summary>
+        /// Writes log entries to Logging. This API method is the
+        /// only way to send log entries to Logging. This method
+        /// is used, directly or indirectly, by the Logging agent
+        /// (fluentd) and all logging libraries configured to use Logging.
+        /// A single request may contain log entries for a maximum of 1000
+        /// different resources (projects, organizations, billing accounts or
+        /// folders)
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
+            WriteLogEntriesRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Writes log entries to Logging. This API method is the
+        /// only way to send log entries to Logging. This method
+        /// is used, directly or indirectly, by the Logging agent
+        /// (fluentd) and all logging libraries configured to use Logging.
+        /// A single request may contain log entries for a maximum of 1000
+        /// different resources (projects, organizations, billing accounts or
+        /// folders)
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
+            WriteLogEntriesRequest request,
+            st::CancellationToken cancellationToken) => WriteLogEntriesAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Writes log entries to Logging. This API method is the
+        /// only way to send log entries to Logging. This method
+        /// is used, directly or indirectly, by the Logging agent
+        /// (fluentd) and all logging libraries configured to use Logging.
+        /// A single request may contain log entries for a maximum of 1000
+        /// different resources (projects, organizations, billing accounts or
+        /// folders)
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual WriteLogEntriesResponse WriteLogEntries(
+            WriteLogEntriesRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
         /// Deletes all the log entries in a log. The log reappears if it receives new
         /// entries. Log entries written shortly before the delete operation might not
         /// be deleted. Entries received after the delete operation with a timestamp
@@ -782,614 +1341,6 @@ namespace Google.Cloud.Logging.V2
         /// </param>
         public virtual void DeleteLog(
             DeleteLogRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
-        /// Writes log entries to Logging. This API method is the
-        /// only way to send log entries to Logging. This method
-        /// is used, directly or indirectly, by the Logging agent
-        /// (fluentd) and all logging libraries configured to use Logging.
-        /// A single request may contain log entries for a maximum of 1000
-        /// different resources (projects, organizations, billing accounts or
-        /// folders)
-        /// </summary>
-        /// <param name="logName">
-        /// Optional. A default log resource name that is assigned to all log entries
-        /// in `entries` that do not specify a value for `log_name`:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example:
-        ///
-        ///     "projects/my-project-id/logs/syslog"
-        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-        ///
-        /// The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-        /// project, organization, billing account, or folder that is receiving
-        /// new log entries, whether the resource is specified in
-        /// &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
-        /// </param>
-        /// <param name="resource">
-        /// Optional. A default monitored resource object that is assigned to all log
-        /// entries in `entries` that do not specify a value for `resource`. Example:
-        ///
-        ///     { "type": "gce_instance",
-        ///       "labels": {
-        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
-        ///
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="labels">
-        /// Optional. Default labels that are added to the `labels` field of all log
-        /// entries in `entries`. If a log entry already has a label with the same key
-        /// as a label in this parameter, then the log entry's label is not changed.
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="entries">
-        /// Required. The log entries to send to Logging. The order of log
-        /// entries in this list does not matter. Values supplied in this method's
-        /// `log_name`, `resource`, and `labels` fields are copied into those log
-        /// entries in this list that do not include values for their corresponding
-        /// fields. For more information, see the
-        /// [LogEntry][google.logging.v2.LogEntry] type.
-        ///
-        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
-        /// this method supplies the current time or a unique identifier, respectively.
-        /// The supplied values are chosen so that, among the log entries that did not
-        /// supply their own values, the entries earlier in the list will sort before
-        /// the entries later in the list. See the `entries.list` method.
-        ///
-        /// Log entries with timestamps that are more than the
-        /// [logs retention period](/logging/quota-policy) in the past or more than
-        /// 24 hours in the future will not be available when calling `entries.list`.
-        /// However, those log entries can still be
-        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
-        ///
-        /// To improve throughput and to avoid exceeding the
-        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
-        /// you should try to include several log entries in this list,
-        /// rather than calling this method for each individual log entry.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
-            LogNameOneof logName,
-            ga::MonitoredResource resource,
-            scg::IDictionary<string, string> labels,
-            scg::IEnumerable<LogEntry> entries,
-            gaxgrpc::CallSettings callSettings = null) => WriteLogEntriesAsync(
-                new WriteLogEntriesRequest
-                {
-                    LogNameAsLogNameOneof = logName, // Optional
-                    Resource = resource, // Optional
-                    Labels = { labels ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
-                    Entries = { gax::GaxPreconditions.CheckNotNull(entries, nameof(entries)) },
-                },
-                callSettings);
-
-        /// <summary>
-        /// Writes log entries to Logging. This API method is the
-        /// only way to send log entries to Logging. This method
-        /// is used, directly or indirectly, by the Logging agent
-        /// (fluentd) and all logging libraries configured to use Logging.
-        /// A single request may contain log entries for a maximum of 1000
-        /// different resources (projects, organizations, billing accounts or
-        /// folders)
-        /// </summary>
-        /// <param name="logName">
-        /// Optional. A default log resource name that is assigned to all log entries
-        /// in `entries` that do not specify a value for `log_name`:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example:
-        ///
-        ///     "projects/my-project-id/logs/syslog"
-        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-        ///
-        /// The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-        /// project, organization, billing account, or folder that is receiving
-        /// new log entries, whether the resource is specified in
-        /// &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
-        /// </param>
-        /// <param name="resource">
-        /// Optional. A default monitored resource object that is assigned to all log
-        /// entries in `entries` that do not specify a value for `resource`. Example:
-        ///
-        ///     { "type": "gce_instance",
-        ///       "labels": {
-        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
-        ///
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="labels">
-        /// Optional. Default labels that are added to the `labels` field of all log
-        /// entries in `entries`. If a log entry already has a label with the same key
-        /// as a label in this parameter, then the log entry's label is not changed.
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="entries">
-        /// Required. The log entries to send to Logging. The order of log
-        /// entries in this list does not matter. Values supplied in this method's
-        /// `log_name`, `resource`, and `labels` fields are copied into those log
-        /// entries in this list that do not include values for their corresponding
-        /// fields. For more information, see the
-        /// [LogEntry][google.logging.v2.LogEntry] type.
-        ///
-        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
-        /// this method supplies the current time or a unique identifier, respectively.
-        /// The supplied values are chosen so that, among the log entries that did not
-        /// supply their own values, the entries earlier in the list will sort before
-        /// the entries later in the list. See the `entries.list` method.
-        ///
-        /// Log entries with timestamps that are more than the
-        /// [logs retention period](/logging/quota-policy) in the past or more than
-        /// 24 hours in the future will not be available when calling `entries.list`.
-        /// However, those log entries can still be
-        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
-        ///
-        /// To improve throughput and to avoid exceeding the
-        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
-        /// you should try to include several log entries in this list,
-        /// rather than calling this method for each individual log entry.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
-            LogNameOneof logName,
-            ga::MonitoredResource resource,
-            scg::IDictionary<string, string> labels,
-            scg::IEnumerable<LogEntry> entries,
-            st::CancellationToken cancellationToken) => WriteLogEntriesAsync(
-                logName,
-                resource,
-                labels,
-                entries,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Writes log entries to Logging. This API method is the
-        /// only way to send log entries to Logging. This method
-        /// is used, directly or indirectly, by the Logging agent
-        /// (fluentd) and all logging libraries configured to use Logging.
-        /// A single request may contain log entries for a maximum of 1000
-        /// different resources (projects, organizations, billing accounts or
-        /// folders)
-        /// </summary>
-        /// <param name="logName">
-        /// Optional. A default log resource name that is assigned to all log entries
-        /// in `entries` that do not specify a value for `log_name`:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example:
-        ///
-        ///     "projects/my-project-id/logs/syslog"
-        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-        ///
-        /// The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-        /// project, organization, billing account, or folder that is receiving
-        /// new log entries, whether the resource is specified in
-        /// &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
-        /// </param>
-        /// <param name="resource">
-        /// Optional. A default monitored resource object that is assigned to all log
-        /// entries in `entries` that do not specify a value for `resource`. Example:
-        ///
-        ///     { "type": "gce_instance",
-        ///       "labels": {
-        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
-        ///
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="labels">
-        /// Optional. Default labels that are added to the `labels` field of all log
-        /// entries in `entries`. If a log entry already has a label with the same key
-        /// as a label in this parameter, then the log entry's label is not changed.
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="entries">
-        /// Required. The log entries to send to Logging. The order of log
-        /// entries in this list does not matter. Values supplied in this method's
-        /// `log_name`, `resource`, and `labels` fields are copied into those log
-        /// entries in this list that do not include values for their corresponding
-        /// fields. For more information, see the
-        /// [LogEntry][google.logging.v2.LogEntry] type.
-        ///
-        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
-        /// this method supplies the current time or a unique identifier, respectively.
-        /// The supplied values are chosen so that, among the log entries that did not
-        /// supply their own values, the entries earlier in the list will sort before
-        /// the entries later in the list. See the `entries.list` method.
-        ///
-        /// Log entries with timestamps that are more than the
-        /// [logs retention period](/logging/quota-policy) in the past or more than
-        /// 24 hours in the future will not be available when calling `entries.list`.
-        /// However, those log entries can still be
-        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
-        ///
-        /// To improve throughput and to avoid exceeding the
-        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
-        /// you should try to include several log entries in this list,
-        /// rather than calling this method for each individual log entry.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual WriteLogEntriesResponse WriteLogEntries(
-            LogNameOneof logName,
-            ga::MonitoredResource resource,
-            scg::IDictionary<string, string> labels,
-            scg::IEnumerable<LogEntry> entries,
-            gaxgrpc::CallSettings callSettings = null) => WriteLogEntries(
-                new WriteLogEntriesRequest
-                {
-                    LogNameAsLogNameOneof = logName, // Optional
-                    Resource = resource, // Optional
-                    Labels = { labels ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
-                    Entries = { gax::GaxPreconditions.CheckNotNull(entries, nameof(entries)) },
-                },
-                callSettings);
-
-        /// <summary>
-        /// Writes log entries to Logging. This API method is the
-        /// only way to send log entries to Logging. This method
-        /// is used, directly or indirectly, by the Logging agent
-        /// (fluentd) and all logging libraries configured to use Logging.
-        /// A single request may contain log entries for a maximum of 1000
-        /// different resources (projects, organizations, billing accounts or
-        /// folders)
-        /// </summary>
-        /// <param name="logName">
-        /// Optional. A default log resource name that is assigned to all log entries
-        /// in `entries` that do not specify a value for `log_name`:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example:
-        ///
-        ///     "projects/my-project-id/logs/syslog"
-        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-        ///
-        /// The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-        /// project, organization, billing account, or folder that is receiving
-        /// new log entries, whether the resource is specified in
-        /// &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
-        /// </param>
-        /// <param name="resource">
-        /// Optional. A default monitored resource object that is assigned to all log
-        /// entries in `entries` that do not specify a value for `resource`. Example:
-        ///
-        ///     { "type": "gce_instance",
-        ///       "labels": {
-        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
-        ///
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="labels">
-        /// Optional. Default labels that are added to the `labels` field of all log
-        /// entries in `entries`. If a log entry already has a label with the same key
-        /// as a label in this parameter, then the log entry's label is not changed.
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="entries">
-        /// Required. The log entries to send to Logging. The order of log
-        /// entries in this list does not matter. Values supplied in this method's
-        /// `log_name`, `resource`, and `labels` fields are copied into those log
-        /// entries in this list that do not include values for their corresponding
-        /// fields. For more information, see the
-        /// [LogEntry][google.logging.v2.LogEntry] type.
-        ///
-        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
-        /// this method supplies the current time or a unique identifier, respectively.
-        /// The supplied values are chosen so that, among the log entries that did not
-        /// supply their own values, the entries earlier in the list will sort before
-        /// the entries later in the list. See the `entries.list` method.
-        ///
-        /// Log entries with timestamps that are more than the
-        /// [logs retention period](/logging/quota-policy) in the past or more than
-        /// 24 hours in the future will not be available when calling `entries.list`.
-        /// However, those log entries can still be
-        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
-        ///
-        /// To improve throughput and to avoid exceeding the
-        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
-        /// you should try to include several log entries in this list,
-        /// rather than calling this method for each individual log entry.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
-            string logName,
-            ga::MonitoredResource resource,
-            scg::IDictionary<string, string> labels,
-            scg::IEnumerable<LogEntry> entries,
-            gaxgrpc::CallSettings callSettings = null) => WriteLogEntriesAsync(
-                new WriteLogEntriesRequest
-                {
-                    LogName = logName ?? "", // Optional
-                    Resource = resource, // Optional
-                    Labels = { labels ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
-                    Entries = { gax::GaxPreconditions.CheckNotNull(entries, nameof(entries)) },
-                },
-                callSettings);
-
-        /// <summary>
-        /// Writes log entries to Logging. This API method is the
-        /// only way to send log entries to Logging. This method
-        /// is used, directly or indirectly, by the Logging agent
-        /// (fluentd) and all logging libraries configured to use Logging.
-        /// A single request may contain log entries for a maximum of 1000
-        /// different resources (projects, organizations, billing accounts or
-        /// folders)
-        /// </summary>
-        /// <param name="logName">
-        /// Optional. A default log resource name that is assigned to all log entries
-        /// in `entries` that do not specify a value for `log_name`:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example:
-        ///
-        ///     "projects/my-project-id/logs/syslog"
-        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-        ///
-        /// The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-        /// project, organization, billing account, or folder that is receiving
-        /// new log entries, whether the resource is specified in
-        /// &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
-        /// </param>
-        /// <param name="resource">
-        /// Optional. A default monitored resource object that is assigned to all log
-        /// entries in `entries` that do not specify a value for `resource`. Example:
-        ///
-        ///     { "type": "gce_instance",
-        ///       "labels": {
-        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
-        ///
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="labels">
-        /// Optional. Default labels that are added to the `labels` field of all log
-        /// entries in `entries`. If a log entry already has a label with the same key
-        /// as a label in this parameter, then the log entry's label is not changed.
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="entries">
-        /// Required. The log entries to send to Logging. The order of log
-        /// entries in this list does not matter. Values supplied in this method's
-        /// `log_name`, `resource`, and `labels` fields are copied into those log
-        /// entries in this list that do not include values for their corresponding
-        /// fields. For more information, see the
-        /// [LogEntry][google.logging.v2.LogEntry] type.
-        ///
-        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
-        /// this method supplies the current time or a unique identifier, respectively.
-        /// The supplied values are chosen so that, among the log entries that did not
-        /// supply their own values, the entries earlier in the list will sort before
-        /// the entries later in the list. See the `entries.list` method.
-        ///
-        /// Log entries with timestamps that are more than the
-        /// [logs retention period](/logging/quota-policy) in the past or more than
-        /// 24 hours in the future will not be available when calling `entries.list`.
-        /// However, those log entries can still be
-        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
-        ///
-        /// To improve throughput and to avoid exceeding the
-        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
-        /// you should try to include several log entries in this list,
-        /// rather than calling this method for each individual log entry.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
-            string logName,
-            ga::MonitoredResource resource,
-            scg::IDictionary<string, string> labels,
-            scg::IEnumerable<LogEntry> entries,
-            st::CancellationToken cancellationToken) => WriteLogEntriesAsync(
-                logName,
-                resource,
-                labels,
-                entries,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Writes log entries to Logging. This API method is the
-        /// only way to send log entries to Logging. This method
-        /// is used, directly or indirectly, by the Logging agent
-        /// (fluentd) and all logging libraries configured to use Logging.
-        /// A single request may contain log entries for a maximum of 1000
-        /// different resources (projects, organizations, billing accounts or
-        /// folders)
-        /// </summary>
-        /// <param name="logName">
-        /// Optional. A default log resource name that is assigned to all log entries
-        /// in `entries` that do not specify a value for `log_name`:
-        ///
-        ///     "projects/[PROJECT_ID]/logs/[LOG_ID]"
-        ///     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
-        ///     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
-        ///     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-        ///
-        /// `[LOG_ID]` must be URL-encoded. For example:
-        ///
-        ///     "projects/my-project-id/logs/syslog"
-        ///     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
-        ///
-        /// The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
-        /// project, organization, billing account, or folder that is receiving
-        /// new log entries, whether the resource is specified in
-        /// &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
-        /// </param>
-        /// <param name="resource">
-        /// Optional. A default monitored resource object that is assigned to all log
-        /// entries in `entries` that do not specify a value for `resource`. Example:
-        ///
-        ///     { "type": "gce_instance",
-        ///       "labels": {
-        ///         "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
-        ///
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="labels">
-        /// Optional. Default labels that are added to the `labels` field of all log
-        /// entries in `entries`. If a log entry already has a label with the same key
-        /// as a label in this parameter, then the log entry's label is not changed.
-        /// See [LogEntry][google.logging.v2.LogEntry].
-        /// </param>
-        /// <param name="entries">
-        /// Required. The log entries to send to Logging. The order of log
-        /// entries in this list does not matter. Values supplied in this method's
-        /// `log_name`, `resource`, and `labels` fields are copied into those log
-        /// entries in this list that do not include values for their corresponding
-        /// fields. For more information, see the
-        /// [LogEntry][google.logging.v2.LogEntry] type.
-        ///
-        /// If the `timestamp` or `insert_id` fields are missing in log entries, then
-        /// this method supplies the current time or a unique identifier, respectively.
-        /// The supplied values are chosen so that, among the log entries that did not
-        /// supply their own values, the entries earlier in the list will sort before
-        /// the entries later in the list. See the `entries.list` method.
-        ///
-        /// Log entries with timestamps that are more than the
-        /// [logs retention period](/logging/quota-policy) in the past or more than
-        /// 24 hours in the future will not be available when calling `entries.list`.
-        /// However, those log entries can still be
-        /// [exported with LogSinks](/logging/docs/api/tasks/exporting-logs).
-        ///
-        /// To improve throughput and to avoid exceeding the
-        /// [quota limit](/logging/quota-policy) for calls to `entries.write`,
-        /// you should try to include several log entries in this list,
-        /// rather than calling this method for each individual log entry.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual WriteLogEntriesResponse WriteLogEntries(
-            string logName,
-            ga::MonitoredResource resource,
-            scg::IDictionary<string, string> labels,
-            scg::IEnumerable<LogEntry> entries,
-            gaxgrpc::CallSettings callSettings = null) => WriteLogEntries(
-                new WriteLogEntriesRequest
-                {
-                    LogName = logName ?? "", // Optional
-                    Resource = resource, // Optional
-                    Labels = { labels ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
-                    Entries = { gax::GaxPreconditions.CheckNotNull(entries, nameof(entries)) },
-                },
-                callSettings);
-
-        /// <summary>
-        /// Writes log entries to Logging. This API method is the
-        /// only way to send log entries to Logging. This method
-        /// is used, directly or indirectly, by the Logging agent
-        /// (fluentd) and all logging libraries configured to use Logging.
-        /// A single request may contain log entries for a maximum of 1000
-        /// different resources (projects, organizations, billing accounts or
-        /// folders)
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
-            WriteLogEntriesRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
-        /// Writes log entries to Logging. This API method is the
-        /// only way to send log entries to Logging. This method
-        /// is used, directly or indirectly, by the Logging agent
-        /// (fluentd) and all logging libraries configured to use Logging.
-        /// A single request may contain log entries for a maximum of 1000
-        /// different resources (projects, organizations, billing accounts or
-        /// folders)
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<WriteLogEntriesResponse> WriteLogEntriesAsync(
-            WriteLogEntriesRequest request,
-            st::CancellationToken cancellationToken) => WriteLogEntriesAsync(
-                request,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Writes log entries to Logging. This API method is the
-        /// only way to send log entries to Logging. This method
-        /// is used, directly or indirectly, by the Logging agent
-        /// (fluentd) and all logging libraries configured to use Logging.
-        /// A single request may contain log entries for a maximum of 1000
-        /// different resources (projects, organizations, billing accounts or
-        /// folders)
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual WriteLogEntriesResponse WriteLogEntries(
-            WriteLogEntriesRequest request,
             gaxgrpc::CallSettings callSettings = null)
         {
             throw new sys::NotImplementedException();
@@ -1444,7 +1395,7 @@ namespace Google.Cloud.Logging.V2
         /// A pageable asynchronous sequence of <see cref="LogEntry"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntriesAsync(
-            scg::IEnumerable<ParentNameOneof> resourceNames,
+            scg::IEnumerable<ProjectName> resourceNames,
             string filter,
             string orderBy,
             string pageToken = null,
@@ -1452,7 +1403,7 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogEntriesAsync(
                 new ListLogEntriesRequest
                 {
-                    ResourceNamesAsParentNameOneofs = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    ResourceNamesAsProjectNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
                     Filter = filter ?? "", // Optional
                     OrderBy = orderBy ?? "", // Optional
                     PageToken = pageToken ?? "",
@@ -1509,7 +1460,7 @@ namespace Google.Cloud.Logging.V2
         /// A pageable sequence of <see cref="LogEntry"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntries(
-            scg::IEnumerable<ParentNameOneof> resourceNames,
+            scg::IEnumerable<ProjectName> resourceNames,
             string filter,
             string orderBy,
             string pageToken = null,
@@ -1517,7 +1468,397 @@ namespace Google.Cloud.Logging.V2
             gaxgrpc::CallSettings callSettings = null) => ListLogEntries(
                 new ListLogEntriesRequest
                 {
-                    ResourceNamesAsParentNameOneofs = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    ResourceNamesAsProjectNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntriesAsync(
+            scg::IEnumerable<OrganizationName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntriesAsync(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsOrganizationNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntries(
+            scg::IEnumerable<OrganizationName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntries(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsOrganizationNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntriesAsync(
+            scg::IEnumerable<FolderName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntriesAsync(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsFolderNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntries(
+            scg::IEnumerable<FolderName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntries(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsFolderNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntriesAsync(
+            scg::IEnumerable<BillingAccountName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntriesAsync(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsBillingAccountNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
+                    Filter = filter ?? "", // Optional
+                    OrderBy = orderBy ?? "", // Optional
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists log entries.  Use this method to retrieve log entries that originated
+        /// from a project/folder/organization/billing account.  For ways to export log
+        /// entries, see [Exporting Logs](/logging/docs/export).
+        /// </summary>
+        /// <param name="resourceNames">
+        /// Required. Names of one or more parent resources from which to
+        /// retrieve log entries:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        ///
+        ///
+        /// Projects listed in the `project_ids` field are added to this list.
+        /// </param>
+        /// <param name="filter">
+        /// Optional. A filter that chooses which log entries to return.  See [Advanced
+        /// Logs Queries](/logging/docs/view/advanced-queries).  Only log entries that
+        /// match the filter are returned.  An empty filter matches all log entries in
+        /// the resources listed in `resource_names`. Referencing a parent resource
+        /// that is not listed in `resource_names` will cause the filter to return no
+        /// results.
+        /// The maximum length of the filter is 20000 characters.
+        /// </param>
+        /// <param name="orderBy">
+        /// Optional. How the results should be sorted.  Presently, the only permitted
+        /// values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
+        /// option returns entries in order of increasing values of
+        /// `LogEntry.timestamp` (oldest first), and the second option returns entries
+        /// in order of decreasing timestamps (newest first).  Entries with equal
+        /// timestamps are returned in order of their `insert_id` values.
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="LogEntry"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogEntriesResponse, LogEntry> ListLogEntries(
+            scg::IEnumerable<BillingAccountName> resourceNames,
+            string filter,
+            string orderBy,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogEntries(
+                new ListLogEntriesRequest
+                {
+                    ResourceNamesAsBillingAccountNames = { gax::GaxPreconditions.CheckNotNull(resourceNames, nameof(resourceNames)) },
                     Filter = filter ?? "", // Optional
                     OrderBy = orderBy ?? "", // Optional
                     PageToken = pageToken ?? "",
@@ -1762,13 +2103,13 @@ namespace Google.Cloud.Logging.V2
         /// A pageable asynchronous sequence of <see cref="string"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListLogsResponse, string> ListLogsAsync(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
                 new ListLogsRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -1801,13 +2142,247 @@ namespace Google.Cloud.Logging.V2
         /// A pageable sequence of <see cref="string"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListLogsResponse, string> ListLogs(
-            ParentNameOneof parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListLogs(
                 new ListLogsRequest
                 {
-                    ParentAsParentNameOneof = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    ParentAsProjectName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogsResponse, string> ListLogsAsync(
+            OrganizationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
+                new ListLogsRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogsResponse, string> ListLogs(
+            OrganizationName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogs(
+                new ListLogsRequest
+                {
+                    ParentAsOrganizationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogsResponse, string> ListLogsAsync(
+            FolderName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
+                new ListLogsRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogsResponse, string> ListLogs(
+            FolderName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogs(
+                new ListLogsRequest
+                {
+                    ParentAsFolderName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<ListLogsResponse, string> ListLogsAsync(
+            BillingAccountName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogsAsync(
+                new ListLogsRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                    PageToken = pageToken ?? "",
+                    PageSize = pageSize ?? 0,
+                },
+                callSettings);
+
+        /// <summary>
+        /// Lists the logs in projects, organizations, folders, or billing accounts.
+        /// Only logs that have entries are listed.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name that owns the logs:
+        ///
+        ///     "projects/[PROJECT_ID]"
+        ///     "organizations/[ORGANIZATION_ID]"
+        ///     "billingAccounts/[BILLING_ACCOUNT_ID]"
+        ///     "folders/[FOLDER_ID]"
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request.
+        /// A value of <c>null</c> or an empty string retrieves the first page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller.
+        /// A value of <c>null</c> or 0 uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="string"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<ListLogsResponse, string> ListLogs(
+            BillingAccountName parent,
+            string pageToken = null,
+            int? pageSize = null,
+            gaxgrpc::CallSettings callSettings = null) => ListLogs(
+                new ListLogsRequest
+                {
+                    ParentAsBillingAccountName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
                     PageToken = pageToken ?? "",
                     PageSize = pageSize ?? 0,
                 },
@@ -1938,8 +2513,8 @@ namespace Google.Cloud.Logging.V2
     /// </summary>
     public sealed partial class LoggingServiceV2ClientImpl : LoggingServiceV2Client
     {
-        private readonly gaxgrpc::ApiCall<DeleteLogRequest, pbwkt::Empty> _callDeleteLog;
         private readonly gaxgrpc::ApiCall<WriteLogEntriesRequest, WriteLogEntriesResponse> _callWriteLogEntries;
+        private readonly gaxgrpc::ApiCall<DeleteLogRequest, pbwkt::Empty> _callDeleteLog;
         private readonly gaxgrpc::ApiCall<ListLogEntriesRequest, ListLogEntriesResponse> _callListLogEntries;
         private readonly gaxgrpc::ApiCall<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse> _callListMonitoredResourceDescriptors;
         private readonly gaxgrpc::ApiCall<ListLogsRequest, ListLogsResponse> _callListLogs;
@@ -1954,11 +2529,11 @@ namespace Google.Cloud.Logging.V2
             GrpcClient = grpcClient;
             LoggingServiceV2Settings effectiveSettings = settings ?? LoggingServiceV2Settings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
+            _callWriteLogEntries = clientHelper.BuildApiCall<WriteLogEntriesRequest, WriteLogEntriesResponse>(
+                GrpcClient.WriteLogEntriesAsync, GrpcClient.WriteLogEntries, effectiveSettings.WriteLogEntriesSettings);
             _callDeleteLog = clientHelper.BuildApiCall<DeleteLogRequest, pbwkt::Empty>(
                 GrpcClient.DeleteLogAsync, GrpcClient.DeleteLog, effectiveSettings.DeleteLogSettings)
                 .WithGoogleRequestParam("log_name", request => request.LogName);
-            _callWriteLogEntries = clientHelper.BuildApiCall<WriteLogEntriesRequest, WriteLogEntriesResponse>(
-                GrpcClient.WriteLogEntriesAsync, GrpcClient.WriteLogEntries, effectiveSettings.WriteLogEntriesSettings);
             _callListLogEntries = clientHelper.BuildApiCall<ListLogEntriesRequest, ListLogEntriesResponse>(
                 GrpcClient.ListLogEntriesAsync, GrpcClient.ListLogEntries, effectiveSettings.ListLogEntriesSettings);
             _callListMonitoredResourceDescriptors = clientHelper.BuildApiCall<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>(
@@ -1966,10 +2541,10 @@ namespace Google.Cloud.Logging.V2
             _callListLogs = clientHelper.BuildApiCall<ListLogsRequest, ListLogsResponse>(
                 GrpcClient.ListLogsAsync, GrpcClient.ListLogs, effectiveSettings.ListLogsSettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
-            Modify_ApiCall(ref _callDeleteLog);
-            Modify_DeleteLogApiCall(ref _callDeleteLog);
             Modify_ApiCall(ref _callWriteLogEntries);
             Modify_WriteLogEntriesApiCall(ref _callWriteLogEntries);
+            Modify_ApiCall(ref _callDeleteLog);
+            Modify_DeleteLogApiCall(ref _callDeleteLog);
             Modify_ApiCall(ref _callListLogEntries);
             Modify_ListLogEntriesApiCall(ref _callListLogEntries);
             Modify_ApiCall(ref _callListMonitoredResourceDescriptors);
@@ -1989,8 +2564,8 @@ namespace Google.Cloud.Logging.V2
 
         // Partial methods called for each ApiCall on construction.
         // Allows per-RPC-method modification of the underlying ApiCall object.
-        partial void Modify_DeleteLogApiCall(ref gaxgrpc::ApiCall<DeleteLogRequest, pbwkt::Empty> call);
         partial void Modify_WriteLogEntriesApiCall(ref gaxgrpc::ApiCall<WriteLogEntriesRequest, WriteLogEntriesResponse> call);
+        partial void Modify_DeleteLogApiCall(ref gaxgrpc::ApiCall<DeleteLogRequest, pbwkt::Empty> call);
         partial void Modify_ListLogEntriesApiCall(ref gaxgrpc::ApiCall<ListLogEntriesRequest, ListLogEntriesResponse> call);
         partial void Modify_ListMonitoredResourceDescriptorsApiCall(ref gaxgrpc::ApiCall<ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse> call);
         partial void Modify_ListLogsApiCall(ref gaxgrpc::ApiCall<ListLogsRequest, ListLogsResponse> call);
@@ -2004,54 +2579,11 @@ namespace Google.Cloud.Logging.V2
         // Partial methods called on each request.
         // Allows per-RPC-call modification to the request and CallSettings objects,
         // before the underlying RPC is performed.
-        partial void Modify_DeleteLogRequest(ref DeleteLogRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_WriteLogEntriesRequest(ref WriteLogEntriesRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_DeleteLogRequest(ref DeleteLogRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListLogEntriesRequest(ref ListLogEntriesRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListMonitoredResourceDescriptorsRequest(ref ListMonitoredResourceDescriptorsRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListLogsRequest(ref ListLogsRequest request, ref gaxgrpc::CallSettings settings);
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public override stt::Task DeleteLogAsync(
-            DeleteLogRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteLogRequest(ref request, ref callSettings);
-            return _callDeleteLog.Async(request, callSettings);
-        }
-
-        /// <summary>
-        /// Deletes all the log entries in a log. The log reappears if it receives new
-        /// entries. Log entries written shortly before the delete operation might not
-        /// be deleted. Entries received after the delete operation with a timestamp
-        /// before the operation will be deleted.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public override void DeleteLog(
-            DeleteLogRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteLogRequest(ref request, ref callSettings);
-            _callDeleteLog.Sync(request, callSettings);
-        }
 
         /// <summary>
         /// Writes log entries to Logging. This API method is the
@@ -2103,6 +2635,49 @@ namespace Google.Cloud.Logging.V2
         {
             Modify_WriteLogEntriesRequest(ref request, ref callSettings);
             return _callWriteLogEntries.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public override stt::Task DeleteLogAsync(
+            DeleteLogRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteLogRequest(ref request, ref callSettings);
+            return _callDeleteLog.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Deletes all the log entries in a log. The log reappears if it receives new
+        /// entries. Log entries written shortly before the delete operation might not
+        /// be deleted. Entries received after the delete operation with a timestamp
+        /// before the operation will be deleted.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public override void DeleteLog(
+            DeleteLogRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteLogRequest(ref request, ref callSettings);
+            _callDeleteLog.Sync(request, callSettings);
         }
 
         /// <summary>

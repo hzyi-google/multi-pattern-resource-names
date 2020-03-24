@@ -9,8 +9,8 @@ public interface UpdateInspectTemplateRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of organization and inspectTemplate to be updated, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of organization and inspectTemplate to be updated,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *
@@ -20,8 +20,8 @@ public interface UpdateInspectTemplateRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. Resource name of organization and inspectTemplate to be updated, for
-   * example `organizations/433245324/inspectTemplates/432452342` or
+   * Required. Resource name of organization and inspectTemplate to be updated,
+   * for example `organizations/433245324/inspectTemplates/432452342` or
    * projects/project-id/inspectTemplates/432452342.
    * </pre>
    *

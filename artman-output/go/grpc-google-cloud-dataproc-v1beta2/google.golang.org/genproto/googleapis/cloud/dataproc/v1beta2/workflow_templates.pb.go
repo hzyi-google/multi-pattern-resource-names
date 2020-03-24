@@ -109,7 +109,7 @@ func (WorkflowNode_NodeState) EnumDescriptor() ([]byte, []int) {
 	return fileDescriptor_49d658bedf9bdbee, []int{12, 0}
 }
 
-// A Cloud Dataproc workflow template resource.
+// A Dataproc workflow template resource.
 type WorkflowTemplate struct {
 	// Required. The template id.
 	//
@@ -964,7 +964,7 @@ func (m *ValueValidation) GetValues() []string {
 	return nil
 }
 
-// A Cloud Dataproc workflow template resource.
+// A Dataproc workflow template resource.
 type WorkflowMetadata struct {
 	// Output only. The resource name of the workflow template as described
 	// in https://cloud.google.com/apis/design/resource_names.
@@ -2035,9 +2035,9 @@ type WorkflowTemplateServiceClient interface {
 	// clusters to be deleted.
 	//
 	// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+	// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
 	// Also see [Using
-	// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+	// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
 	//
 	// On successful completion,
 	// [Operation.response][google.longrunning.Operation.response] will be
@@ -2060,9 +2060,9 @@ type WorkflowTemplateServiceClient interface {
 	// clusters to be deleted.
 	//
 	// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+	// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
 	// Also see [Using
-	// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+	// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
 	//
 	// On successful completion,
 	// [Operation.response][google.longrunning.Operation.response] will be
@@ -2170,9 +2170,9 @@ type WorkflowTemplateServiceServer interface {
 	// clusters to be deleted.
 	//
 	// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+	// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
 	// Also see [Using
-	// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+	// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
 	//
 	// On successful completion,
 	// [Operation.response][google.longrunning.Operation.response] will be
@@ -2195,9 +2195,9 @@ type WorkflowTemplateServiceServer interface {
 	// clusters to be deleted.
 	//
 	// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+	// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
 	// Also see [Using
-	// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+	// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
 	//
 	// On successful completion,
 	// [Operation.response][google.longrunning.Operation.response] will be

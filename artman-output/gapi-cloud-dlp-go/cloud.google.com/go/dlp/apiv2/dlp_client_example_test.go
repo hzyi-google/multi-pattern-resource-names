@@ -404,6 +404,40 @@ func ExampleClient_CancelDlpJob() {
 	}
 }
 
+func ExampleClient_FinishDlpJob() {
+	ctx := context.Background()
+	c, err := dlp.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &dlppb.FinishDlpJobRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.FinishDlpJob(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
+func ExampleClient_HybridInspectDlpJob() {
+	ctx := context.Background()
+	c, err := dlp.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &dlppb.HybridInspectDlpJobRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.HybridInspectDlpJob(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleClient_ListJobTriggers() {
 	ctx := context.Background()
 	c, err := dlp.NewClient(ctx)
@@ -460,6 +494,24 @@ func ExampleClient_DeleteJobTrigger() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+}
+
+func ExampleClient_HybridInspectJobTrigger() {
+	ctx := context.Background()
+	c, err := dlp.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &dlppb.HybridInspectJobTriggerRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.HybridInspectJobTrigger(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
 }
 
 func ExampleClient_UpdateJobTrigger() {

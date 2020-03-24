@@ -13,7 +13,7 @@ public interface LogEntryOperationOrBuilder extends
    * identifier are assumed to be part of the same operation.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The id.
    */
   java.lang.String getId();
@@ -23,7 +23,7 @@ public interface LogEntryOperationOrBuilder extends
    * identifier are assumed to be part of the same operation.
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
@@ -36,7 +36,7 @@ public interface LogEntryOperationOrBuilder extends
    * `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
    * </pre>
    *
-   * <code>string producer = 2;</code>
+   * <code>string producer = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The producer.
    */
   java.lang.String getProducer();
@@ -47,7 +47,7 @@ public interface LogEntryOperationOrBuilder extends
    * `"MyDivision.MyBigCompany.com"`, `"github.com/MyProject/MyApplication"`.
    * </pre>
    *
-   * <code>string producer = 2;</code>
+   * <code>string producer = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for producer.
    */
   com.google.protobuf.ByteString
@@ -58,7 +58,7 @@ public interface LogEntryOperationOrBuilder extends
    * Optional. Set this to True if this is the first log entry in the operation.
    * </pre>
    *
-   * <code>bool first = 3;</code>
+   * <code>bool first = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The first.
    */
   boolean getFirst();
@@ -68,7 +68,7 @@ public interface LogEntryOperationOrBuilder extends
    * Optional. Set this to True if this is the last log entry in the operation.
    * </pre>
    *
-   * <code>bool last = 4;</code>
+   * <code>bool last = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The last.
    */
   boolean getLast();

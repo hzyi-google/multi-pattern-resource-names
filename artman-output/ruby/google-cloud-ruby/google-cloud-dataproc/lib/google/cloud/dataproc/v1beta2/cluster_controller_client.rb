@@ -153,6 +153,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "cluster_controller_client_config.json"
@@ -227,7 +230,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the cluster
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param cluster [Google::Cloud::Dataproc::V1beta2::Cluster | Hash]
           #   Required. The cluster to create.
           #   A hash of the same form as `Google::Cloud::Dataproc::V1beta2::Cluster`
@@ -322,7 +325,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project the
           #   cluster belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param cluster_name [String]
           #   Required. The cluster name.
           # @param cluster [Google::Cloud::Dataproc::V1beta2::Cluster | Hash]
@@ -398,7 +401,8 @@ module Google
           #   interrupting jobs in progress. Timeout specifies how long to wait for jobs
           #   in progress to finish before forcefully removing nodes (and potentially
           #   interrupting jobs). Default timeout is 0 (for forceful decommission), and
-          #   the maximum allowed timeout is 1 day.
+          #   the maximum allowed timeout is 1 day (see JSON representation of
+          #   [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
           #
           #   Only supported on Dataproc image versions 1.2 and higher.
           #   A hash of the same form as `Google::Protobuf::Duration`
@@ -505,7 +509,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the cluster
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param cluster_name [String]
           #   Required. The cluster name.
           # @param cluster_uuid [String]
@@ -601,7 +605,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the cluster
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param cluster_name [String]
           #   Required. The cluster name.
           # @param options [Google::Gax::CallOptions]
@@ -648,7 +652,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the cluster
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param filter [String]
           #   Optional.  A filter constraining the clusters to list. Filters are
           #   case-sensitive and have the following syntax:
@@ -734,13 +738,13 @@ module Google
           # After the operation completes,
           # {Google::Longrunning::Operation#response Operation#response}
           # contains
-          # [Empty](https://cloud.google.comgoogle.protobuf.Empty).
+          # {Google::Protobuf::Empty Empty}.
           #
           # @param project_id [String]
           #   Required. The ID of the Google Cloud Platform project that the cluster
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param cluster_name [String]
           #   Required. The cluster name.
           # @param options [Google::Gax::CallOptions]

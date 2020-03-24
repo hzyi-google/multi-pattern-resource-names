@@ -16,7 +16,7 @@ public interface ListLogsRequestOrBuilder extends
    *     "folders/[FOLDER_ID]"
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   java.lang.String getParent();
@@ -29,7 +29,7 @@ public interface ListLogsRequestOrBuilder extends
    *     "folders/[FOLDER_ID]"
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
@@ -42,7 +42,7 @@ public interface ListLogsRequestOrBuilder extends
    * response indicates that more results might be available.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   int getPageSize();
@@ -55,7 +55,7 @@ public interface ListLogsRequestOrBuilder extends
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
@@ -67,7 +67,7 @@ public interface ListLogsRequestOrBuilder extends
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString

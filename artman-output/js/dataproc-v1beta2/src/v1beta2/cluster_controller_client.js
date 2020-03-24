@@ -296,7 +296,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {Object} request.cluster
    *   Required. The cluster to create.
    *
@@ -429,7 +429,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project the
    *   cluster belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} request.clusterName
    *   Required. The cluster name.
    * @param {Object} request.cluster
@@ -505,7 +505,8 @@ class ClusterControllerClient {
    *   interrupting jobs in progress. Timeout specifies how long to wait for jobs
    *   in progress to finish before forcefully removing nodes (and potentially
    *   interrupting jobs). Default timeout is 0 (for forceful decommission), and
-   *   the maximum allowed timeout is 1 day.
+   *   the maximum allowed timeout is 1 day (see JSON representation of
+   *   [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    *
    *   Only supported on Dataproc image versions 1.2 and higher.
    *
@@ -650,7 +651,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} request.clusterName
    *   Required. The cluster name.
    * @param {string} [request.clusterUuid]
@@ -782,7 +783,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} request.clusterName
    *   Required. The cluster name.
    * @param {Object} [options]
@@ -841,7 +842,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} [request.filter]
    *   Optional.  A filter constraining the clusters to list. Filters are
    *   case-sensitive and have the following syntax:
@@ -979,7 +980,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} [request.filter]
    *   Optional.  A filter constraining the clusters to list. Filters are
    *   case-sensitive and have the following syntax:
@@ -1050,7 +1051,7 @@ class ClusterControllerClient {
    * After the operation completes,
    * Operation.response
    * contains
-   * [Empty](https://cloud.google.comgoogle.protobuf.Empty).
+   * Empty.
    *
    * @param {Object} request
    *   The request object that will be sent.
@@ -1058,7 +1059,7 @@ class ClusterControllerClient {
    *   Required. The ID of the Google Cloud Platform project that the cluster
    *   belongs to.
    * @param {string} request.region
-   *   Required. The Cloud Dataproc region in which to handle the request.
+   *   Required. The Dataproc region in which to handle the request.
    * @param {string} request.clusterName
    *   Required. The cluster name.
    * @param {Object} [options]

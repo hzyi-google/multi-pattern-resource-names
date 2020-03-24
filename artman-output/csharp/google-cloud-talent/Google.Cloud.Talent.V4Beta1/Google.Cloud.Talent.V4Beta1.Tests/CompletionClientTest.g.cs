@@ -39,7 +39,7 @@ namespace Google.Cloud.Talent.V4Beta1.Tests
             Mock<Completion.CompletionClient> mockGrpcClient = new Mock<Completion.CompletionClient>(MockBehavior.Strict);
             CompleteQueryRequest request = new CompleteQueryRequest
             {
-                ParentAsTenantOrProjectNameOneof = TenantOrProjectNameOneof.From(new TenantName("[PROJECT]", "[TENANT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Query = "query107944136",
                 PageSize = 883849137,
             };
@@ -58,7 +58,7 @@ namespace Google.Cloud.Talent.V4Beta1.Tests
             Mock<Completion.CompletionClient> mockGrpcClient = new Mock<Completion.CompletionClient>(MockBehavior.Strict);
             CompleteQueryRequest request = new CompleteQueryRequest
             {
-                ParentAsTenantOrProjectNameOneof = TenantOrProjectNameOneof.From(new TenantName("[PROJECT]", "[TENANT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 Query = "query107944136",
                 PageSize = 883849137,
             };

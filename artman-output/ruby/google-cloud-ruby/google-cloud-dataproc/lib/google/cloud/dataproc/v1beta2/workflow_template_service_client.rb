@@ -34,7 +34,7 @@ module Google
     module Dataproc
       module V1beta2
         # The API interface for managing Workflow Templates in the
-        # Cloud Dataproc API.
+        # Dataproc API.
         #
         # @!attribute [r] workflow_template_service_stub
         #   @return [Google::Cloud::Dataproc::V1beta2::WorkflowTemplateService::Stub]
@@ -189,6 +189,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "workflow_template_service_client_config.json"
@@ -393,7 +396,7 @@ module Google
           # The {Google::Longrunning::Operation#metadata Operation#metadata} will be
           # [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
           # Also see [Using
-          # WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+          # WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
           #
           # On successful completion,
           # {Google::Longrunning::Operation#response Operation#response} will be
@@ -515,7 +518,7 @@ module Google
           # The {Google::Longrunning::Operation#metadata Operation#metadata} will be
           # [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
           # Also see [Using
-          # WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+          # WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
           #
           # On successful completion,
           # {Google::Longrunning::Operation#response Operation#response} will be

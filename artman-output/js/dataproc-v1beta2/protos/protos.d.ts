@@ -4194,257 +4194,6 @@ export namespace google {
                     }
                 }
 
-                /** Properties of a ClusterOperationStatus. */
-                interface IClusterOperationStatus {
-
-                    /** ClusterOperationStatus state */
-                    state?: (google.cloud.dataproc.v1beta2.ClusterOperationStatus.State|keyof typeof google.cloud.dataproc.v1beta2.ClusterOperationStatus.State|null);
-
-                    /** ClusterOperationStatus innerState */
-                    innerState?: (string|null);
-
-                    /** ClusterOperationStatus details */
-                    details?: (string|null);
-
-                    /** ClusterOperationStatus stateStartTime */
-                    stateStartTime?: (google.protobuf.ITimestamp|null);
-                }
-
-                /** Represents a ClusterOperationStatus. */
-                class ClusterOperationStatus implements IClusterOperationStatus {
-
-                    /**
-                     * Constructs a new ClusterOperationStatus.
-                     * @param [properties] Properties to set
-                     */
-                    constructor(properties?: google.cloud.dataproc.v1beta2.IClusterOperationStatus);
-
-                    /** ClusterOperationStatus state. */
-                    public state: (google.cloud.dataproc.v1beta2.ClusterOperationStatus.State|keyof typeof google.cloud.dataproc.v1beta2.ClusterOperationStatus.State);
-
-                    /** ClusterOperationStatus innerState. */
-                    public innerState: string;
-
-                    /** ClusterOperationStatus details. */
-                    public details: string;
-
-                    /** ClusterOperationStatus stateStartTime. */
-                    public stateStartTime?: (google.protobuf.ITimestamp|null);
-
-                    /**
-                     * Creates a new ClusterOperationStatus instance using the specified properties.
-                     * @param [properties] Properties to set
-                     * @returns ClusterOperationStatus instance
-                     */
-                    public static create(properties?: google.cloud.dataproc.v1beta2.IClusterOperationStatus): google.cloud.dataproc.v1beta2.ClusterOperationStatus;
-
-                    /**
-                     * Encodes the specified ClusterOperationStatus message. Does not implicitly {@link google.cloud.dataproc.v1beta2.ClusterOperationStatus.verify|verify} messages.
-                     * @param message ClusterOperationStatus message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encode(message: google.cloud.dataproc.v1beta2.IClusterOperationStatus, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Encodes the specified ClusterOperationStatus message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1beta2.ClusterOperationStatus.verify|verify} messages.
-                     * @param message ClusterOperationStatus message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encodeDelimited(message: google.cloud.dataproc.v1beta2.IClusterOperationStatus, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Decodes a ClusterOperationStatus message from the specified reader or buffer.
-                     * @param reader Reader or buffer to decode from
-                     * @param [length] Message length if known beforehand
-                     * @returns ClusterOperationStatus
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1beta2.ClusterOperationStatus;
-
-                    /**
-                     * Decodes a ClusterOperationStatus message from the specified reader or buffer, length delimited.
-                     * @param reader Reader or buffer to decode from
-                     * @returns ClusterOperationStatus
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1beta2.ClusterOperationStatus;
-
-                    /**
-                     * Verifies a ClusterOperationStatus message.
-                     * @param message Plain object to verify
-                     * @returns `null` if valid, otherwise the reason why it is not
-                     */
-                    public static verify(message: { [k: string]: any }): (string|null);
-
-                    /**
-                     * Creates a ClusterOperationStatus message from a plain object. Also converts values to their respective internal types.
-                     * @param object Plain object
-                     * @returns ClusterOperationStatus
-                     */
-                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1beta2.ClusterOperationStatus;
-
-                    /**
-                     * Creates a plain object from a ClusterOperationStatus message. Also converts values to other types if specified.
-                     * @param message ClusterOperationStatus
-                     * @param [options] Conversion options
-                     * @returns Plain object
-                     */
-                    public static toObject(message: google.cloud.dataproc.v1beta2.ClusterOperationStatus, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                    /**
-                     * Converts this ClusterOperationStatus to JSON.
-                     * @returns JSON object
-                     */
-                    public toJSON(): { [k: string]: any };
-                }
-
-                namespace ClusterOperationStatus {
-
-                    /** State enum. */
-                    enum State {
-                        UNKNOWN = 0,
-                        PENDING = 1,
-                        RUNNING = 2,
-                        DONE = 3
-                    }
-                }
-
-                /** Properties of a ClusterOperationMetadata. */
-                interface IClusterOperationMetadata {
-
-                    /** ClusterOperationMetadata clusterName */
-                    clusterName?: (string|null);
-
-                    /** ClusterOperationMetadata clusterUuid */
-                    clusterUuid?: (string|null);
-
-                    /** ClusterOperationMetadata status */
-                    status?: (google.cloud.dataproc.v1beta2.IClusterOperationStatus|null);
-
-                    /** ClusterOperationMetadata statusHistory */
-                    statusHistory?: (google.cloud.dataproc.v1beta2.IClusterOperationStatus[]|null);
-
-                    /** ClusterOperationMetadata operationType */
-                    operationType?: (string|null);
-
-                    /** ClusterOperationMetadata description */
-                    description?: (string|null);
-
-                    /** ClusterOperationMetadata labels */
-                    labels?: ({ [k: string]: string }|null);
-
-                    /** ClusterOperationMetadata warnings */
-                    warnings?: (string[]|null);
-                }
-
-                /** Represents a ClusterOperationMetadata. */
-                class ClusterOperationMetadata implements IClusterOperationMetadata {
-
-                    /**
-                     * Constructs a new ClusterOperationMetadata.
-                     * @param [properties] Properties to set
-                     */
-                    constructor(properties?: google.cloud.dataproc.v1beta2.IClusterOperationMetadata);
-
-                    /** ClusterOperationMetadata clusterName. */
-                    public clusterName: string;
-
-                    /** ClusterOperationMetadata clusterUuid. */
-                    public clusterUuid: string;
-
-                    /** ClusterOperationMetadata status. */
-                    public status?: (google.cloud.dataproc.v1beta2.IClusterOperationStatus|null);
-
-                    /** ClusterOperationMetadata statusHistory. */
-                    public statusHistory: google.cloud.dataproc.v1beta2.IClusterOperationStatus[];
-
-                    /** ClusterOperationMetadata operationType. */
-                    public operationType: string;
-
-                    /** ClusterOperationMetadata description. */
-                    public description: string;
-
-                    /** ClusterOperationMetadata labels. */
-                    public labels: { [k: string]: string };
-
-                    /** ClusterOperationMetadata warnings. */
-                    public warnings: string[];
-
-                    /**
-                     * Creates a new ClusterOperationMetadata instance using the specified properties.
-                     * @param [properties] Properties to set
-                     * @returns ClusterOperationMetadata instance
-                     */
-                    public static create(properties?: google.cloud.dataproc.v1beta2.IClusterOperationMetadata): google.cloud.dataproc.v1beta2.ClusterOperationMetadata;
-
-                    /**
-                     * Encodes the specified ClusterOperationMetadata message. Does not implicitly {@link google.cloud.dataproc.v1beta2.ClusterOperationMetadata.verify|verify} messages.
-                     * @param message ClusterOperationMetadata message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encode(message: google.cloud.dataproc.v1beta2.IClusterOperationMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Encodes the specified ClusterOperationMetadata message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1beta2.ClusterOperationMetadata.verify|verify} messages.
-                     * @param message ClusterOperationMetadata message or plain object to encode
-                     * @param [writer] Writer to encode to
-                     * @returns Writer
-                     */
-                    public static encodeDelimited(message: google.cloud.dataproc.v1beta2.IClusterOperationMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-                    /**
-                     * Decodes a ClusterOperationMetadata message from the specified reader or buffer.
-                     * @param reader Reader or buffer to decode from
-                     * @param [length] Message length if known beforehand
-                     * @returns ClusterOperationMetadata
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.cloud.dataproc.v1beta2.ClusterOperationMetadata;
-
-                    /**
-                     * Decodes a ClusterOperationMetadata message from the specified reader or buffer, length delimited.
-                     * @param reader Reader or buffer to decode from
-                     * @returns ClusterOperationMetadata
-                     * @throws {Error} If the payload is not a reader or valid buffer
-                     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                     */
-                    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.cloud.dataproc.v1beta2.ClusterOperationMetadata;
-
-                    /**
-                     * Verifies a ClusterOperationMetadata message.
-                     * @param message Plain object to verify
-                     * @returns `null` if valid, otherwise the reason why it is not
-                     */
-                    public static verify(message: { [k: string]: any }): (string|null);
-
-                    /**
-                     * Creates a ClusterOperationMetadata message from a plain object. Also converts values to their respective internal types.
-                     * @param object Plain object
-                     * @returns ClusterOperationMetadata
-                     */
-                    public static fromObject(object: { [k: string]: any }): google.cloud.dataproc.v1beta2.ClusterOperationMetadata;
-
-                    /**
-                     * Creates a plain object from a ClusterOperationMetadata message. Also converts values to other types if specified.
-                     * @param message ClusterOperationMetadata
-                     * @param [options] Conversion options
-                     * @returns Plain object
-                     */
-                    public static toObject(message: google.cloud.dataproc.v1beta2.ClusterOperationMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-                    /**
-                     * Converts this ClusterOperationMetadata to JSON.
-                     * @returns JSON object
-                     */
-                    public toJSON(): { [k: string]: any };
-                }
-
                 /** Component enum. */
                 enum Component {
                     COMPONENT_UNSPECIFIED = 0,
@@ -13501,102 +13250,6 @@ export namespace google {
             public toJSON(): { [k: string]: any };
         }
 
-        /** Properties of a Timestamp. */
-        interface ITimestamp {
-
-            /** Timestamp seconds */
-            seconds?: (number|Long|string|null);
-
-            /** Timestamp nanos */
-            nanos?: (number|null);
-        }
-
-        /** Represents a Timestamp. */
-        class Timestamp implements ITimestamp {
-
-            /**
-             * Constructs a new Timestamp.
-             * @param [properties] Properties to set
-             */
-            constructor(properties?: google.protobuf.ITimestamp);
-
-            /** Timestamp seconds. */
-            public seconds: (number|Long|string);
-
-            /** Timestamp nanos. */
-            public nanos: number;
-
-            /**
-             * Creates a new Timestamp instance using the specified properties.
-             * @param [properties] Properties to set
-             * @returns Timestamp instance
-             */
-            public static create(properties?: google.protobuf.ITimestamp): google.protobuf.Timestamp;
-
-            /**
-             * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
-             * @param message Timestamp message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encode(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
-             * @param message Timestamp message or plain object to encode
-             * @param [writer] Writer to encode to
-             * @returns Writer
-             */
-            public static encodeDelimited(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
-
-            /**
-             * Decodes a Timestamp message from the specified reader or buffer.
-             * @param reader Reader or buffer to decode from
-             * @param [length] Message length if known beforehand
-             * @returns Timestamp
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Timestamp;
-
-            /**
-             * Decodes a Timestamp message from the specified reader or buffer, length delimited.
-             * @param reader Reader or buffer to decode from
-             * @returns Timestamp
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.Timestamp;
-
-            /**
-             * Verifies a Timestamp message.
-             * @param message Plain object to verify
-             * @returns `null` if valid, otherwise the reason why it is not
-             */
-            public static verify(message: { [k: string]: any }): (string|null);
-
-            /**
-             * Creates a Timestamp message from a plain object. Also converts values to their respective internal types.
-             * @param object Plain object
-             * @returns Timestamp
-             */
-            public static fromObject(object: { [k: string]: any }): google.protobuf.Timestamp;
-
-            /**
-             * Creates a plain object from a Timestamp message. Also converts values to other types if specified.
-             * @param message Timestamp
-             * @param [options] Conversion options
-             * @returns Plain object
-             */
-            public static toObject(message: google.protobuf.Timestamp, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-            /**
-             * Converts this Timestamp to JSON.
-             * @returns JSON object
-             */
-            public toJSON(): { [k: string]: any };
-        }
-
         /** Properties of an Any. */
         interface IAny {
 
@@ -13778,6 +13431,102 @@ export namespace google {
 
             /**
              * Converts this FieldMask to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a Timestamp. */
+        interface ITimestamp {
+
+            /** Timestamp seconds */
+            seconds?: (number|Long|string|null);
+
+            /** Timestamp nanos */
+            nanos?: (number|null);
+        }
+
+        /** Represents a Timestamp. */
+        class Timestamp implements ITimestamp {
+
+            /**
+             * Constructs a new Timestamp.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.protobuf.ITimestamp);
+
+            /** Timestamp seconds. */
+            public seconds: (number|Long|string);
+
+            /** Timestamp nanos. */
+            public nanos: number;
+
+            /**
+             * Creates a new Timestamp instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Timestamp instance
+             */
+            public static create(properties?: google.protobuf.ITimestamp): google.protobuf.Timestamp;
+
+            /**
+             * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+             * @param message Timestamp message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+             * @param message Timestamp message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Timestamp message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Timestamp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Timestamp;
+
+            /**
+             * Decodes a Timestamp message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Timestamp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.Timestamp;
+
+            /**
+             * Verifies a Timestamp message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Timestamp message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Timestamp
+             */
+            public static fromObject(object: { [k: string]: any }): google.protobuf.Timestamp;
+
+            /**
+             * Creates a plain object from a Timestamp message. Also converts values to other types if specified.
+             * @param message Timestamp
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: google.protobuf.Timestamp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Timestamp to JSON.
              * @returns JSON object
              */
             public toJSON(): { [k: string]: any };

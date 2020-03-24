@@ -56,9 +56,12 @@ type CallOptions struct {
 	GetDlpJob                []gax.CallOption
 	DeleteDlpJob             []gax.CallOption
 	CancelDlpJob             []gax.CallOption
+	FinishDlpJob             []gax.CallOption
+	HybridInspectDlpJob      []gax.CallOption
 	ListJobTriggers          []gax.CallOption
 	GetJobTrigger            []gax.CallOption
 	DeleteJobTrigger         []gax.CallOption
+	HybridInspectJobTrigger  []gax.CallOption
 	UpdateJobTrigger         []gax.CallOption
 	CreateJobTrigger         []gax.CallOption
 	CreateStoredInfoType     []gax.CallOption
@@ -113,9 +116,12 @@ func defaultCallOptions() *CallOptions {
 		GetDlpJob:                retry[[2]string{"default", "idempotent"}],
 		DeleteDlpJob:             retry[[2]string{"default", "idempotent"}],
 		CancelDlpJob:             retry[[2]string{"default", "non_idempotent"}],
+		FinishDlpJob:             retry[[2]string{"default", "non_idempotent"}],
+		HybridInspectDlpJob:      retry[[2]string{"default", "non_idempotent"}],
 		ListJobTriggers:          retry[[2]string{"default", "idempotent"}],
 		GetJobTrigger:            retry[[2]string{"default", "idempotent"}],
 		DeleteJobTrigger:         retry[[2]string{"default", "idempotent"}],
+		HybridInspectJobTrigger:  retry[[2]string{"default", "non_idempotent"}],
 		UpdateJobTrigger:         retry[[2]string{"default", "non_idempotent"}],
 		CreateJobTrigger:         retry[[2]string{"default", "non_idempotent"}],
 		CreateStoredInfoType:     retry[[2]string{"default", "non_idempotent"}],
@@ -641,6 +647,45 @@ func (c *Client) CancelDlpJob(ctx context.Context, req *dlppb.CancelDlpJobReques
 	return err
 }
 
+// FinishDlpJob finish a running hybrid DlpJob. Triggers the finalization steps and running
+// of any enabled actions that have not yet run.
+// Early access feature is in a pre-release state and might change or have
+// limited support. For more information, see
+// https://cloud.google.com/products#product-launch-stages.
+func (c *Client) FinishDlpJob(ctx context.Context, req *dlppb.FinishDlpJobRequest, opts ...gax.CallOption) error {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.FinishDlpJob[0:len(c.CallOptions.FinishDlpJob):len(c.CallOptions.FinishDlpJob)], opts...)
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		_, err = c.client.FinishDlpJob(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	return err
+}
+
+// HybridInspectDlpJob inspect hybrid content and store findings to a job.
+// To review the findings inspect the job. Inspection will occur
+// asynchronously.
+// Early access feature is in a pre-release state and might change or have
+// limited support. For more information, see
+// https://cloud.google.com/products#product-launch-stages.
+func (c *Client) HybridInspectDlpJob(ctx context.Context, req *dlppb.HybridInspectDlpJobRequest, opts ...gax.CallOption) (*dlppb.HybridInspectResponse, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.HybridInspectDlpJob[0:len(c.CallOptions.HybridInspectDlpJob):len(c.CallOptions.HybridInspectDlpJob)], opts...)
+	var resp *dlppb.HybridInspectResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.HybridInspectDlpJob(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
 // ListJobTriggers lists job triggers.
 // See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
 func (c *Client) ListJobTriggers(ctx context.Context, req *dlppb.ListJobTriggersRequest, opts ...gax.CallOption) *JobTriggerIterator {
@@ -711,6 +756,28 @@ func (c *Client) DeleteJobTrigger(ctx context.Context, req *dlppb.DeleteJobTrigg
 		return err
 	}, opts...)
 	return err
+}
+
+// HybridInspectJobTrigger inspect hybrid content and store findings to a trigger. The inspection
+// will be processed asynchronously. To review the findings monitor the
+// jobs within the trigger.
+// Early access feature is in a pre-release state and might change or have
+// limited support. For more information, see
+// https://cloud.google.com/products#product-launch-stages.
+func (c *Client) HybridInspectJobTrigger(ctx context.Context, req *dlppb.HybridInspectJobTriggerRequest, opts ...gax.CallOption) (*dlppb.HybridInspectResponse, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append(c.CallOptions.HybridInspectJobTrigger[0:len(c.CallOptions.HybridInspectJobTrigger):len(c.CallOptions.HybridInspectJobTrigger)], opts...)
+	var resp *dlppb.HybridInspectResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.HybridInspectJobTrigger(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
 }
 
 // UpdateJobTrigger updates a job trigger.

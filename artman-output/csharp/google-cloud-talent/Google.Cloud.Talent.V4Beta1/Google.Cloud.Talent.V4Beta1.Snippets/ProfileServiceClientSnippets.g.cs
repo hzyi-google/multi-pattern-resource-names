@@ -33,6 +33,162 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
     /// <summary>Generated snippets</summary>
     public class GeneratedProfileServiceClientSnippets
     {
+        /// <summary>Snippet for DeleteProfileAsync</summary>
+        public async Task DeleteProfileAsync()
+        {
+            // Snippet: DeleteProfileAsync(ProfileName,CallSettings)
+            // Additional: DeleteProfileAsync(ProfileName,CancellationToken)
+            // Create client
+            ProfileServiceClient profileServiceClient = await ProfileServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            ProfileName name = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]");
+            // Make the request
+            await profileServiceClient.DeleteProfileAsync(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteProfile</summary>
+        public void DeleteProfile()
+        {
+            // Snippet: DeleteProfile(ProfileName,CallSettings)
+            // Create client
+            ProfileServiceClient profileServiceClient = ProfileServiceClient.Create();
+            // Initialize request argument(s)
+            ProfileName name = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]");
+            // Make the request
+            profileServiceClient.DeleteProfile(name);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteProfileAsync</summary>
+        public async Task DeleteProfileAsync_RequestObject()
+        {
+            // Snippet: DeleteProfileAsync(DeleteProfileRequest,CallSettings)
+            // Additional: DeleteProfileAsync(DeleteProfileRequest,CancellationToken)
+            // Create client
+            ProfileServiceClient profileServiceClient = await ProfileServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            DeleteProfileRequest request = new DeleteProfileRequest
+            {
+                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
+            };
+            // Make the request
+            await profileServiceClient.DeleteProfileAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for DeleteProfile</summary>
+        public void DeleteProfile_RequestObject()
+        {
+            // Snippet: DeleteProfile(DeleteProfileRequest,CallSettings)
+            // Create client
+            ProfileServiceClient profileServiceClient = ProfileServiceClient.Create();
+            // Initialize request argument(s)
+            DeleteProfileRequest request = new DeleteProfileRequest
+            {
+                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
+            };
+            // Make the request
+            profileServiceClient.DeleteProfile(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for SearchProfilesAsync</summary>
+        public async Task SearchProfilesAsync_RequestObject()
+        {
+            // Snippet: SearchProfilesAsync(SearchProfilesRequest,CallSettings)
+            // Create client
+            ProfileServiceClient profileServiceClient = await ProfileServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            SearchProfilesRequest request = new SearchProfilesRequest
+            {
+                ParentAsTenantName = new TenantName("[PROJECT]", "[TENANT]"),
+                RequestMetadata = new RequestMetadata(),
+            };
+            // Make the request
+            PagedAsyncEnumerable<SearchProfilesResponse, SummarizedProfile> response =
+                profileServiceClient.SearchProfilesAsync(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            await response.ForEachAsync((SummarizedProfile item) =>
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            });
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            await response.AsRawResponses().ForEachAsync((SearchProfilesResponse page) =>
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (SummarizedProfile item in page)
+                {
+                    Console.WriteLine(item);
+                }
+            });
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<SummarizedProfile> singlePage = await response.ReadPageAsync(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (SummarizedProfile item in singlePage)
+            {
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
+        /// <summary>Snippet for SearchProfiles</summary>
+        public void SearchProfiles_RequestObject()
+        {
+            // Snippet: SearchProfiles(SearchProfilesRequest,CallSettings)
+            // Create client
+            ProfileServiceClient profileServiceClient = ProfileServiceClient.Create();
+            // Initialize request argument(s)
+            SearchProfilesRequest request = new SearchProfilesRequest
+            {
+                ParentAsTenantName = new TenantName("[PROJECT]", "[TENANT]"),
+                RequestMetadata = new RequestMetadata(),
+            };
+            // Make the request
+            PagedEnumerable<SearchProfilesResponse, SummarizedProfile> response =
+                profileServiceClient.SearchProfiles(request);
+
+            // Iterate over all response items, lazily performing RPCs as required
+            foreach (SummarizedProfile item in response)
+            {
+                // Do something with each item
+                Console.WriteLine(item);
+            }
+
+            // Or iterate over pages (of server-defined size), performing one RPC per page
+            foreach (SearchProfilesResponse page in response.AsRawResponses())
+            {
+                // Do something with each page of items
+                Console.WriteLine("A page of results:");
+                foreach (SummarizedProfile item in page)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+
+            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
+            int pageSize = 10;
+            Page<SummarizedProfile> singlePage = response.ReadPage(pageSize);
+            // Do something with the page of items
+            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
+            foreach (SummarizedProfile item in singlePage)
+            {
+                Console.WriteLine(item);
+            }
+            // Store the pageToken, for when the next page is required.
+            string nextPageToken = singlePage.NextPageToken;
+            // End snippet
+        }
+
         /// <summary>Snippet for ListProfilesAsync</summary>
         public async Task ListProfilesAsync()
         {
@@ -396,162 +552,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             };
             // Make the request
             Profile response = profileServiceClient.UpdateProfile(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteProfileAsync</summary>
-        public async Task DeleteProfileAsync()
-        {
-            // Snippet: DeleteProfileAsync(ProfileName,CallSettings)
-            // Additional: DeleteProfileAsync(ProfileName,CancellationToken)
-            // Create client
-            ProfileServiceClient profileServiceClient = await ProfileServiceClient.CreateAsync();
-            // Initialize request argument(s)
-            ProfileName name = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]");
-            // Make the request
-            await profileServiceClient.DeleteProfileAsync(name);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteProfile</summary>
-        public void DeleteProfile()
-        {
-            // Snippet: DeleteProfile(ProfileName,CallSettings)
-            // Create client
-            ProfileServiceClient profileServiceClient = ProfileServiceClient.Create();
-            // Initialize request argument(s)
-            ProfileName name = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]");
-            // Make the request
-            profileServiceClient.DeleteProfile(name);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteProfileAsync</summary>
-        public async Task DeleteProfileAsync_RequestObject()
-        {
-            // Snippet: DeleteProfileAsync(DeleteProfileRequest,CallSettings)
-            // Additional: DeleteProfileAsync(DeleteProfileRequest,CancellationToken)
-            // Create client
-            ProfileServiceClient profileServiceClient = await ProfileServiceClient.CreateAsync();
-            // Initialize request argument(s)
-            DeleteProfileRequest request = new DeleteProfileRequest
-            {
-                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
-            };
-            // Make the request
-            await profileServiceClient.DeleteProfileAsync(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for DeleteProfile</summary>
-        public void DeleteProfile_RequestObject()
-        {
-            // Snippet: DeleteProfile(DeleteProfileRequest,CallSettings)
-            // Create client
-            ProfileServiceClient profileServiceClient = ProfileServiceClient.Create();
-            // Initialize request argument(s)
-            DeleteProfileRequest request = new DeleteProfileRequest
-            {
-                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
-            };
-            // Make the request
-            profileServiceClient.DeleteProfile(request);
-            // End snippet
-        }
-
-        /// <summary>Snippet for SearchProfilesAsync</summary>
-        public async Task SearchProfilesAsync_RequestObject()
-        {
-            // Snippet: SearchProfilesAsync(SearchProfilesRequest,CallSettings)
-            // Create client
-            ProfileServiceClient profileServiceClient = await ProfileServiceClient.CreateAsync();
-            // Initialize request argument(s)
-            SearchProfilesRequest request = new SearchProfilesRequest
-            {
-                ParentAsTenantName = new TenantName("[PROJECT]", "[TENANT]"),
-                RequestMetadata = new RequestMetadata(),
-            };
-            // Make the request
-            PagedAsyncEnumerable<SearchProfilesResponse, SummarizedProfile> response =
-                profileServiceClient.SearchProfilesAsync(request);
-
-            // Iterate over all response items, lazily performing RPCs as required
-            await response.ForEachAsync((SummarizedProfile item) =>
-            {
-                // Do something with each item
-                Console.WriteLine(item);
-            });
-
-            // Or iterate over pages (of server-defined size), performing one RPC per page
-            await response.AsRawResponses().ForEachAsync((SearchProfilesResponse page) =>
-            {
-                // Do something with each page of items
-                Console.WriteLine("A page of results:");
-                foreach (SummarizedProfile item in page)
-                {
-                    Console.WriteLine(item);
-                }
-            });
-
-            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
-            int pageSize = 10;
-            Page<SummarizedProfile> singlePage = await response.ReadPageAsync(pageSize);
-            // Do something with the page of items
-            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
-            foreach (SummarizedProfile item in singlePage)
-            {
-                Console.WriteLine(item);
-            }
-            // Store the pageToken, for when the next page is required.
-            string nextPageToken = singlePage.NextPageToken;
-            // End snippet
-        }
-
-        /// <summary>Snippet for SearchProfiles</summary>
-        public void SearchProfiles_RequestObject()
-        {
-            // Snippet: SearchProfiles(SearchProfilesRequest,CallSettings)
-            // Create client
-            ProfileServiceClient profileServiceClient = ProfileServiceClient.Create();
-            // Initialize request argument(s)
-            SearchProfilesRequest request = new SearchProfilesRequest
-            {
-                ParentAsTenantName = new TenantName("[PROJECT]", "[TENANT]"),
-                RequestMetadata = new RequestMetadata(),
-            };
-            // Make the request
-            PagedEnumerable<SearchProfilesResponse, SummarizedProfile> response =
-                profileServiceClient.SearchProfiles(request);
-
-            // Iterate over all response items, lazily performing RPCs as required
-            foreach (SummarizedProfile item in response)
-            {
-                // Do something with each item
-                Console.WriteLine(item);
-            }
-
-            // Or iterate over pages (of server-defined size), performing one RPC per page
-            foreach (SearchProfilesResponse page in response.AsRawResponses())
-            {
-                // Do something with each page of items
-                Console.WriteLine("A page of results:");
-                foreach (SummarizedProfile item in page)
-                {
-                    Console.WriteLine(item);
-                }
-            }
-
-            // Or retrieve a single page of known size (unless it's the final page), performing as many RPCs as required
-            int pageSize = 10;
-            Page<SummarizedProfile> singlePage = response.ReadPage(pageSize);
-            // Do something with the page of items
-            Console.WriteLine($"A page of {pageSize} results (unless it's the final page):");
-            foreach (SummarizedProfile item in singlePage)
-            {
-                Console.WriteLine(item);
-            }
-            // Store the pageToken, for when the next page is required.
-            string nextPageToken = singlePage.NextPageToken;
             // End snippet
         }
 

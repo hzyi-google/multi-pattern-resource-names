@@ -343,7 +343,7 @@ private static final long serialVersionUID = 0L;
    * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   public java.lang.String getName() {
@@ -373,7 +373,7 @@ private static final long serialVersionUID = 0L;
    * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   public com.google.protobuf.ByteString
@@ -398,7 +398,7 @@ private static final long serialVersionUID = 0L;
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The description.
    */
   public java.lang.String getDescription() {
@@ -419,7 +419,7 @@ private static final long serialVersionUID = 0L;
    * The maximum length of the description is 8000 characters.
    * </pre>
    *
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for description.
    */
   public com.google.protobuf.ByteString
@@ -440,14 +440,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object filter_;
   /**
    * <pre>
-   * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
-   * which is used to match log entries.
+   * Required. An [advanced logs filter](/logging/docs/view/advanced_filters) which is
+   * used to match log entries.
    * Example:
    *     "resource.type=gae_app AND severity&gt;=ERROR"
    * The maximum length of the filter is 20000 characters.
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The filter.
    */
   public java.lang.String getFilter() {
@@ -464,14 +464,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
-   * which is used to match log entries.
+   * Required. An [advanced logs filter](/logging/docs/view/advanced_filters) which is
+   * used to match log entries.
    * Example:
    *     "resource.type=gae_app AND severity&gt;=ERROR"
    * The maximum length of the filter is 20000 characters.
    * </pre>
    *
-   * <code>string filter = 3;</code>
+   * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for filter.
    */
   public com.google.protobuf.ByteString
@@ -511,7 +511,7 @@ private static final long serialVersionUID = 0L;
    * their description.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the metricDescriptor field is set.
    */
   public boolean hasMetricDescriptor() {
@@ -538,7 +538,7 @@ private static final long serialVersionUID = 0L;
    * their description.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The metricDescriptor.
    */
   public com.google.api.MetricDescriptor getMetricDescriptor() {
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
    * their description.
    * </pre>
    *
-   * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+   * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.api.MetricDescriptorOrBuilder getMetricDescriptorOrBuilder() {
     return getMetricDescriptor();
@@ -594,7 +594,7 @@ private static final long serialVersionUID = 0L;
    * Example: `REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(&#92;d+).*")`
    * </pre>
    *
-   * <code>string value_extractor = 6;</code>
+   * <code>string value_extractor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The valueExtractor.
    */
   public java.lang.String getValueExtractor() {
@@ -630,7 +630,7 @@ private static final long serialVersionUID = 0L;
    * Example: `REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(&#92;d+).*")`
    * </pre>
    *
-   * <code>string value_extractor = 6;</code>
+   * <code>string value_extractor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for valueExtractor.
    */
   public com.google.protobuf.ByteString
@@ -689,7 +689,7 @@ private static final long serialVersionUID = 0L;
    * number of active time series that are allowed in a project.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+   * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public boolean containsLabelExtractors(
@@ -720,7 +720,7 @@ private static final long serialVersionUID = 0L;
    * number of active time series that are allowed in a project.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+   * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.util.Map<java.lang.String, java.lang.String> getLabelExtractorsMap() {
@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
    * number of active time series that are allowed in a project.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+   * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getLabelExtractorsOrDefault(
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
    * number of active time series that are allowed in a project.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+   * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getLabelExtractorsOrThrow(
@@ -792,7 +792,7 @@ private static final long serialVersionUID = 0L;
    * used to create a histogram of the extracted values.
    * </pre>
    *
-   * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the bucketOptions field is set.
    */
   public boolean hasBucketOptions() {
@@ -805,7 +805,7 @@ private static final long serialVersionUID = 0L;
    * used to create a histogram of the extracted values.
    * </pre>
    *
-   * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bucketOptions.
    */
   public com.google.api.Distribution.BucketOptions getBucketOptions() {
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
    * used to create a histogram of the extracted values.
    * </pre>
    *
-   * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+   * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.api.Distribution.BucketOptionsOrBuilder getBucketOptionsOrBuilder() {
     return getBucketOptions();
@@ -832,7 +832,7 @@ private static final long serialVersionUID = 0L;
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   public boolean hasCreateTime() {
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   public com.google.protobuf.Timestamp getCreateTime() {
@@ -856,7 +856,7 @@ private static final long serialVersionUID = 0L;
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 9;</code>
+   * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
@@ -870,7 +870,7 @@ private static final long serialVersionUID = 0L;
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the updateTime field is set.
    */
   public boolean hasUpdateTime() {
@@ -882,7 +882,7 @@ private static final long serialVersionUID = 0L;
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The updateTime.
    */
   public com.google.protobuf.Timestamp getUpdateTime() {
@@ -894,7 +894,7 @@ private static final long serialVersionUID = 0L;
    * This field may not be present for older metrics.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 10;</code>
+   * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
@@ -1494,7 +1494,7 @@ private static final long serialVersionUID = 0L;
      * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1524,7 +1524,7 @@ private static final long serialVersionUID = 0L;
      * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1555,7 +1555,7 @@ private static final long serialVersionUID = 0L;
      * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1584,7 +1584,7 @@ private static final long serialVersionUID = 0L;
      * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1608,7 +1608,7 @@ private static final long serialVersionUID = 0L;
      * URL-encoded. Example: `"projects/my-project/metrics/nginx%2Frequests"`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1631,7 +1631,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -1652,7 +1652,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -1674,7 +1674,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -1694,7 +1694,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -1709,7 +1709,7 @@ private static final long serialVersionUID = 0L;
      * The maximum length of the description is 8000 characters.
      * </pre>
      *
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
@@ -1728,14 +1728,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object filter_ = "";
     /**
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
-     * which is used to match log entries.
+     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters) which is
+     * used to match log entries.
      * Example:
      *     "resource.type=gae_app AND severity&gt;=ERROR"
      * The maximum length of the filter is 20000 characters.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The filter.
      */
     public java.lang.String getFilter() {
@@ -1752,14 +1752,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
-     * which is used to match log entries.
+     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters) which is
+     * used to match log entries.
      * Example:
      *     "resource.type=gae_app AND severity&gt;=ERROR"
      * The maximum length of the filter is 20000 characters.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for filter.
      */
     public com.google.protobuf.ByteString
@@ -1777,14 +1777,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
-     * which is used to match log entries.
+     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters) which is
+     * used to match log entries.
      * Example:
      *     "resource.type=gae_app AND severity&gt;=ERROR"
      * The maximum length of the filter is 20000 characters.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The filter to set.
      * @return This builder for chaining.
      */
@@ -1800,14 +1800,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
-     * which is used to match log entries.
+     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters) which is
+     * used to match log entries.
      * Example:
      *     "resource.type=gae_app AND severity&gt;=ERROR"
      * The maximum length of the filter is 20000 characters.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
@@ -1818,14 +1818,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
-     * which is used to match log entries.
+     * Required. An [advanced logs filter](/logging/docs/view/advanced_filters) which is
+     * used to match log entries.
      * Example:
      *     "resource.type=gae_app AND severity&gt;=ERROR"
      * The maximum length of the filter is 20000 characters.
      * </pre>
      *
-     * <code>string filter = 3;</code>
+     * <code>string filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
      */
@@ -1865,7 +1865,7 @@ private static final long serialVersionUID = 0L;
      * their description.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the metricDescriptor field is set.
      */
     public boolean hasMetricDescriptor() {
@@ -1892,7 +1892,7 @@ private static final long serialVersionUID = 0L;
      * their description.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The metricDescriptor.
      */
     public com.google.api.MetricDescriptor getMetricDescriptor() {
@@ -1923,7 +1923,7 @@ private static final long serialVersionUID = 0L;
      * their description.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMetricDescriptor(com.google.api.MetricDescriptor value) {
       if (metricDescriptorBuilder_ == null) {
@@ -1959,7 +1959,7 @@ private static final long serialVersionUID = 0L;
      * their description.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setMetricDescriptor(
         com.google.api.MetricDescriptor.Builder builderForValue) {
@@ -1993,7 +1993,7 @@ private static final long serialVersionUID = 0L;
      * their description.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeMetricDescriptor(com.google.api.MetricDescriptor value) {
       if (metricDescriptorBuilder_ == null) {
@@ -2031,7 +2031,7 @@ private static final long serialVersionUID = 0L;
      * their description.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearMetricDescriptor() {
       if (metricDescriptorBuilder_ == null) {
@@ -2065,7 +2065,7 @@ private static final long serialVersionUID = 0L;
      * their description.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.api.MetricDescriptor.Builder getMetricDescriptorBuilder() {
       
@@ -2093,7 +2093,7 @@ private static final long serialVersionUID = 0L;
      * their description.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.api.MetricDescriptorOrBuilder getMetricDescriptorOrBuilder() {
       if (metricDescriptorBuilder_ != null) {
@@ -2124,7 +2124,7 @@ private static final long serialVersionUID = 0L;
      * their description.
      * </pre>
      *
-     * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
+     * <code>.google.api.MetricDescriptor metric_descriptor = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.MetricDescriptor, com.google.api.MetricDescriptor.Builder, com.google.api.MetricDescriptorOrBuilder> 
@@ -2162,7 +2162,7 @@ private static final long serialVersionUID = 0L;
      * Example: `REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(&#92;d+).*")`
      * </pre>
      *
-     * <code>string value_extractor = 6;</code>
+     * <code>string value_extractor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The valueExtractor.
      */
     public java.lang.String getValueExtractor() {
@@ -2198,7 +2198,7 @@ private static final long serialVersionUID = 0L;
      * Example: `REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(&#92;d+).*")`
      * </pre>
      *
-     * <code>string value_extractor = 6;</code>
+     * <code>string value_extractor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for valueExtractor.
      */
     public com.google.protobuf.ByteString
@@ -2235,7 +2235,7 @@ private static final long serialVersionUID = 0L;
      * Example: `REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(&#92;d+).*")`
      * </pre>
      *
-     * <code>string value_extractor = 6;</code>
+     * <code>string value_extractor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The valueExtractor to set.
      * @return This builder for chaining.
      */
@@ -2270,7 +2270,7 @@ private static final long serialVersionUID = 0L;
      * Example: `REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(&#92;d+).*")`
      * </pre>
      *
-     * <code>string value_extractor = 6;</code>
+     * <code>string value_extractor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearValueExtractor() {
@@ -2300,7 +2300,7 @@ private static final long serialVersionUID = 0L;
      * Example: `REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(&#92;d+).*")`
      * </pre>
      *
-     * <code>string value_extractor = 6;</code>
+     * <code>string value_extractor = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for valueExtractor to set.
      * @return This builder for chaining.
      */
@@ -2358,7 +2358,7 @@ private static final long serialVersionUID = 0L;
      * number of active time series that are allowed in a project.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+     * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public boolean containsLabelExtractors(
@@ -2389,7 +2389,7 @@ private static final long serialVersionUID = 0L;
      * number of active time series that are allowed in a project.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+     * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getLabelExtractorsMap() {
@@ -2411,7 +2411,7 @@ private static final long serialVersionUID = 0L;
      * number of active time series that are allowed in a project.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+     * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getLabelExtractorsOrDefault(
@@ -2438,7 +2438,7 @@ private static final long serialVersionUID = 0L;
      * number of active time series that are allowed in a project.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+     * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getLabelExtractorsOrThrow(
@@ -2473,7 +2473,7 @@ private static final long serialVersionUID = 0L;
      * number of active time series that are allowed in a project.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+     * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder removeLabelExtractors(
@@ -2507,7 +2507,7 @@ private static final long serialVersionUID = 0L;
      * number of active time series that are allowed in a project.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+     * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabelExtractors(
         java.lang.String key,
@@ -2534,7 +2534,7 @@ private static final long serialVersionUID = 0L;
      * number of active time series that are allowed in a project.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; label_extractors = 7;</code>
+     * <code>map&lt;string, string&gt; label_extractors = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder putAllLabelExtractors(
@@ -2554,7 +2554,7 @@ private static final long serialVersionUID = 0L;
      * used to create a histogram of the extracted values.
      * </pre>
      *
-     * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the bucketOptions field is set.
      */
     public boolean hasBucketOptions() {
@@ -2567,7 +2567,7 @@ private static final long serialVersionUID = 0L;
      * used to create a histogram of the extracted values.
      * </pre>
      *
-     * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bucketOptions.
      */
     public com.google.api.Distribution.BucketOptions getBucketOptions() {
@@ -2584,7 +2584,7 @@ private static final long serialVersionUID = 0L;
      * used to create a histogram of the extracted values.
      * </pre>
      *
-     * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBucketOptions(com.google.api.Distribution.BucketOptions value) {
       if (bucketOptionsBuilder_ == null) {
@@ -2606,7 +2606,7 @@ private static final long serialVersionUID = 0L;
      * used to create a histogram of the extracted values.
      * </pre>
      *
-     * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setBucketOptions(
         com.google.api.Distribution.BucketOptions.Builder builderForValue) {
@@ -2626,7 +2626,7 @@ private static final long serialVersionUID = 0L;
      * used to create a histogram of the extracted values.
      * </pre>
      *
-     * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeBucketOptions(com.google.api.Distribution.BucketOptions value) {
       if (bucketOptionsBuilder_ == null) {
@@ -2650,7 +2650,7 @@ private static final long serialVersionUID = 0L;
      * used to create a histogram of the extracted values.
      * </pre>
      *
-     * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearBucketOptions() {
       if (bucketOptionsBuilder_ == null) {
@@ -2670,7 +2670,7 @@ private static final long serialVersionUID = 0L;
      * used to create a histogram of the extracted values.
      * </pre>
      *
-     * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.api.Distribution.BucketOptions.Builder getBucketOptionsBuilder() {
       
@@ -2684,7 +2684,7 @@ private static final long serialVersionUID = 0L;
      * used to create a histogram of the extracted values.
      * </pre>
      *
-     * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.api.Distribution.BucketOptionsOrBuilder getBucketOptionsOrBuilder() {
       if (bucketOptionsBuilder_ != null) {
@@ -2701,7 +2701,7 @@ private static final long serialVersionUID = 0L;
      * used to create a histogram of the extracted values.
      * </pre>
      *
-     * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
+     * <code>.google.api.Distribution.BucketOptions bucket_options = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.api.Distribution.BucketOptions, com.google.api.Distribution.BucketOptions.Builder, com.google.api.Distribution.BucketOptionsOrBuilder> 
@@ -2726,7 +2726,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
@@ -2738,7 +2738,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
@@ -2754,7 +2754,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2775,7 +2775,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2794,7 +2794,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2817,7 +2817,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2836,7 +2836,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       
@@ -2849,7 +2849,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2865,7 +2865,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 9;</code>
+     * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2890,7 +2890,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
@@ -2902,7 +2902,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
@@ -2918,7 +2918,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2939,7 +2939,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2958,7 +2958,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2981,7 +2981,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -3000,7 +3000,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       
@@ -3013,7 +3013,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -3029,7 +3029,7 @@ private static final long serialVersionUID = 0L;
      * This field may not be present for older metrics.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 10;</code>
+     * <code>.google.protobuf.Timestamp update_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 

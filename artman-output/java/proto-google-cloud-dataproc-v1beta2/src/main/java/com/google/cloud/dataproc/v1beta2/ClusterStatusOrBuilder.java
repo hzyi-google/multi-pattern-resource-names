@@ -48,7 +48,8 @@ public interface ClusterStatusOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Time when this state was entered.
+   * Output only. Time when this state was entered (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -57,7 +58,8 @@ public interface ClusterStatusOrBuilder extends
   boolean hasStateStartTime();
   /**
    * <pre>
-   * Output only. Time when this state was entered.
+   * Output only. Time when this state was entered (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -66,7 +68,8 @@ public interface ClusterStatusOrBuilder extends
   com.google.protobuf.Timestamp getStateStartTime();
   /**
    * <pre>
-   * Output only. Time when this state was entered.
+   * Output only. Time when this state was entered (see JSON representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

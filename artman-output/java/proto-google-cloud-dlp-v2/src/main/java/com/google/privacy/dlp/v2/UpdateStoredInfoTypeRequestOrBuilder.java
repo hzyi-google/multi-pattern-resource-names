@@ -9,8 +9,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of organization and storedInfoType to be updated, for
-   * example `organizations/433245324/storedInfoTypes/432452342` or
+   * Required. Resource name of organization and storedInfoType to be updated,
+   * for example `organizations/433245324/storedInfoTypes/432452342` or
    * projects/project-id/storedInfoTypes/432452342.
    * </pre>
    *
@@ -20,8 +20,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. Resource name of organization and storedInfoType to be updated, for
-   * example `organizations/433245324/storedInfoTypes/432452342` or
+   * Required. Resource name of organization and storedInfoType to be updated,
+   * for example `organizations/433245324/storedInfoTypes/432452342` or
    * projects/project-id/storedInfoTypes/432452342.
    * </pre>
    *

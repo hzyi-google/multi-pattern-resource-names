@@ -225,7 +225,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
   }
   #region Messages
   /// <summary>
-  /// A Cloud Dataproc workflow template resource.
+  /// A Dataproc workflow template resource.
   /// </summary>
   public sealed partial class WorkflowTemplate : pb::IMessage<WorkflowTemplate> {
     private static readonly pb::MessageParser<WorkflowTemplate> _parser = new pb::MessageParser<WorkflowTemplate>(() => new WorkflowTemplate());
@@ -1314,9 +1314,6 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "hadoop_job" field.</summary>
     public const int HadoopJobFieldNumber = 2;
-    /// <summary>
-    /// Job is a Hadoop job.
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Dataproc.V1Beta2.HadoopJob HadoopJob {
       get { return jobTypeCase_ == JobTypeOneofCase.HadoopJob ? (global::Google.Cloud.Dataproc.V1Beta2.HadoopJob) jobType_ : null; }
@@ -1328,9 +1325,6 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "spark_job" field.</summary>
     public const int SparkJobFieldNumber = 3;
-    /// <summary>
-    /// Job is a Spark job.
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Dataproc.V1Beta2.SparkJob SparkJob {
       get { return jobTypeCase_ == JobTypeOneofCase.SparkJob ? (global::Google.Cloud.Dataproc.V1Beta2.SparkJob) jobType_ : null; }
@@ -1342,9 +1336,6 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "pyspark_job" field.</summary>
     public const int PysparkJobFieldNumber = 4;
-    /// <summary>
-    /// Job is a Pyspark job.
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Dataproc.V1Beta2.PySparkJob PysparkJob {
       get { return jobTypeCase_ == JobTypeOneofCase.PysparkJob ? (global::Google.Cloud.Dataproc.V1Beta2.PySparkJob) jobType_ : null; }
@@ -1356,9 +1347,6 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "hive_job" field.</summary>
     public const int HiveJobFieldNumber = 5;
-    /// <summary>
-    /// Job is a Hive job.
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Dataproc.V1Beta2.HiveJob HiveJob {
       get { return jobTypeCase_ == JobTypeOneofCase.HiveJob ? (global::Google.Cloud.Dataproc.V1Beta2.HiveJob) jobType_ : null; }
@@ -1370,9 +1358,6 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "pig_job" field.</summary>
     public const int PigJobFieldNumber = 6;
-    /// <summary>
-    /// Job is a Pig job.
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Dataproc.V1Beta2.PigJob PigJob {
       get { return jobTypeCase_ == JobTypeOneofCase.PigJob ? (global::Google.Cloud.Dataproc.V1Beta2.PigJob) jobType_ : null; }
@@ -1384,9 +1369,6 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
 
     /// <summary>Field number for the "spark_sql_job" field.</summary>
     public const int SparkSqlJobFieldNumber = 7;
-    /// <summary>
-    /// Job is a SparkSql job.
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Dataproc.V1Beta2.SparkSqlJob SparkSqlJob {
       get { return jobTypeCase_ == JobTypeOneofCase.SparkSqlJob ? (global::Google.Cloud.Dataproc.V1Beta2.SparkSqlJob) jobType_ : null; }
@@ -2496,7 +2478,7 @@ namespace Google.Cloud.Dataproc.V1Beta2 {
   }
 
   /// <summary>
-  /// A Cloud Dataproc workflow template resource.
+  /// A Dataproc workflow template resource.
   /// </summary>
   public sealed partial class WorkflowMetadata : pb::IMessage<WorkflowMetadata> {
     private static readonly pb::MessageParser<WorkflowMetadata> _parser = new pb::MessageParser<WorkflowMetadata>(() => new WorkflowMetadata());

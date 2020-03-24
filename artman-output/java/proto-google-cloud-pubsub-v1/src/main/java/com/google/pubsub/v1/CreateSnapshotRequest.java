@@ -128,10 +128,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. User-provided name for this snapshot. If the name is not provided in the
-   * request, the server will assign a random name for this snapshot on the same
-   * project as the subscription. Note that for REST API requests, you must
-   * specify a name.  See the &lt;a
+   * Required. User-provided name for this snapshot. If the name is not provided
+   * in the request, the server will assign a random name for this snapshot on
+   * the same project as the subscription. Note that for REST API requests, you
+   * must specify a name.  See the &lt;a
    * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
    * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
@@ -153,10 +153,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. User-provided name for this snapshot. If the name is not provided in the
-   * request, the server will assign a random name for this snapshot on the same
-   * project as the subscription. Note that for REST API requests, you must
-   * specify a name.  See the &lt;a
+   * Required. User-provided name for this snapshot. If the name is not provided
+   * in the request, the server will assign a random name for this snapshot on
+   * the same project as the subscription. Note that for REST API requests, you
+   * must specify a name.  See the &lt;a
    * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
    * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
@@ -711,10 +711,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. User-provided name for this snapshot. If the name is not provided in the
-     * request, the server will assign a random name for this snapshot on the same
-     * project as the subscription. Note that for REST API requests, you must
-     * specify a name.  See the &lt;a
+     * Required. User-provided name for this snapshot. If the name is not provided
+     * in the request, the server will assign a random name for this snapshot on
+     * the same project as the subscription. Note that for REST API requests, you
+     * must specify a name.  See the &lt;a
      * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
      * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
@@ -736,10 +736,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. User-provided name for this snapshot. If the name is not provided in the
-     * request, the server will assign a random name for this snapshot on the same
-     * project as the subscription. Note that for REST API requests, you must
-     * specify a name.  See the &lt;a
+     * Required. User-provided name for this snapshot. If the name is not provided
+     * in the request, the server will assign a random name for this snapshot on
+     * the same project as the subscription. Note that for REST API requests, you
+     * must specify a name.  See the &lt;a
      * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
      * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
@@ -762,10 +762,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. User-provided name for this snapshot. If the name is not provided in the
-     * request, the server will assign a random name for this snapshot on the same
-     * project as the subscription. Note that for REST API requests, you must
-     * specify a name.  See the &lt;a
+     * Required. User-provided name for this snapshot. If the name is not provided
+     * in the request, the server will assign a random name for this snapshot on
+     * the same project as the subscription. Note that for REST API requests, you
+     * must specify a name.  See the &lt;a
      * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
      * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
@@ -786,10 +786,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. User-provided name for this snapshot. If the name is not provided in the
-     * request, the server will assign a random name for this snapshot on the same
-     * project as the subscription. Note that for REST API requests, you must
-     * specify a name.  See the &lt;a
+     * Required. User-provided name for this snapshot. If the name is not provided
+     * in the request, the server will assign a random name for this snapshot on
+     * the same project as the subscription. Note that for REST API requests, you
+     * must specify a name.  See the &lt;a
      * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
      * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
@@ -805,10 +805,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. User-provided name for this snapshot. If the name is not provided in the
-     * request, the server will assign a random name for this snapshot on the same
-     * project as the subscription. Note that for REST API requests, you must
-     * specify a name.  See the &lt;a
+     * Required. User-provided name for this snapshot. If the name is not provided
+     * in the request, the server will assign a random name for this snapshot on
+     * the same project as the subscription. Note that for REST API requests, you
+     * must specify a name.  See the &lt;a
      * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
      * name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
      * </pre>

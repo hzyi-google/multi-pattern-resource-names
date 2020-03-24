@@ -338,10 +338,6 @@ private static final long serialVersionUID = 0L;
 
   public static final int HADOOP_JOB_FIELD_NUMBER = 2;
   /**
-   * <pre>
-   * Job is a Hadoop job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
    * @return Whether the hadoopJob field is set.
    */
@@ -349,10 +345,6 @@ private static final long serialVersionUID = 0L;
     return jobTypeCase_ == 2;
   }
   /**
-   * <pre>
-   * Job is a Hadoop job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
    * @return The hadoopJob.
    */
@@ -363,10 +355,6 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dataproc.v1beta2.HadoopJob.getDefaultInstance();
   }
   /**
-   * <pre>
-   * Job is a Hadoop job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
    */
   public com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder getHadoopJobOrBuilder() {
@@ -378,10 +366,6 @@ private static final long serialVersionUID = 0L;
 
   public static final int SPARK_JOB_FIELD_NUMBER = 3;
   /**
-   * <pre>
-   * Job is a Spark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
    * @return Whether the sparkJob field is set.
    */
@@ -389,10 +373,6 @@ private static final long serialVersionUID = 0L;
     return jobTypeCase_ == 3;
   }
   /**
-   * <pre>
-   * Job is a Spark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
    * @return The sparkJob.
    */
@@ -403,10 +383,6 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dataproc.v1beta2.SparkJob.getDefaultInstance();
   }
   /**
-   * <pre>
-   * Job is a Spark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
    */
   public com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder getSparkJobOrBuilder() {
@@ -418,10 +394,6 @@ private static final long serialVersionUID = 0L;
 
   public static final int PYSPARK_JOB_FIELD_NUMBER = 4;
   /**
-   * <pre>
-   * Job is a Pyspark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
    * @return Whether the pysparkJob field is set.
    */
@@ -429,10 +401,6 @@ private static final long serialVersionUID = 0L;
     return jobTypeCase_ == 4;
   }
   /**
-   * <pre>
-   * Job is a Pyspark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
    * @return The pysparkJob.
    */
@@ -443,10 +411,6 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dataproc.v1beta2.PySparkJob.getDefaultInstance();
   }
   /**
-   * <pre>
-   * Job is a Pyspark job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
    */
   public com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder getPysparkJobOrBuilder() {
@@ -458,10 +422,6 @@ private static final long serialVersionUID = 0L;
 
   public static final int HIVE_JOB_FIELD_NUMBER = 5;
   /**
-   * <pre>
-   * Job is a Hive job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
    * @return Whether the hiveJob field is set.
    */
@@ -469,10 +429,6 @@ private static final long serialVersionUID = 0L;
     return jobTypeCase_ == 5;
   }
   /**
-   * <pre>
-   * Job is a Hive job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
    * @return The hiveJob.
    */
@@ -483,10 +439,6 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance();
   }
   /**
-   * <pre>
-   * Job is a Hive job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
    */
   public com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder getHiveJobOrBuilder() {
@@ -498,10 +450,6 @@ private static final long serialVersionUID = 0L;
 
   public static final int PIG_JOB_FIELD_NUMBER = 6;
   /**
-   * <pre>
-   * Job is a Pig job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
    * @return Whether the pigJob field is set.
    */
@@ -509,10 +457,6 @@ private static final long serialVersionUID = 0L;
     return jobTypeCase_ == 6;
   }
   /**
-   * <pre>
-   * Job is a Pig job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
    * @return The pigJob.
    */
@@ -523,10 +467,6 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance();
   }
   /**
-   * <pre>
-   * Job is a Pig job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
    */
   public com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder() {
@@ -538,10 +478,6 @@ private static final long serialVersionUID = 0L;
 
   public static final int SPARK_SQL_JOB_FIELD_NUMBER = 7;
   /**
-   * <pre>
-   * Job is a SparkSql job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
    * @return Whether the sparkSqlJob field is set.
    */
@@ -549,10 +485,6 @@ private static final long serialVersionUID = 0L;
     return jobTypeCase_ == 7;
   }
   /**
-   * <pre>
-   * Job is a SparkSql job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
    * @return The sparkSqlJob.
    */
@@ -563,10 +495,6 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance();
   }
   /**
-   * <pre>
-   * Job is a SparkSql job.
-   * </pre>
-   *
    * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
    */
   public com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder() {
@@ -1530,10 +1458,6 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dataproc.v1beta2.HadoopJob, com.google.cloud.dataproc.v1beta2.HadoopJob.Builder, com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder> hadoopJobBuilder_;
     /**
-     * <pre>
-     * Job is a Hadoop job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
      * @return Whether the hadoopJob field is set.
      */
@@ -1541,10 +1465,6 @@ private static final long serialVersionUID = 0L;
       return jobTypeCase_ == 2;
     }
     /**
-     * <pre>
-     * Job is a Hadoop job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
      * @return The hadoopJob.
      */
@@ -1562,10 +1482,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Hadoop job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
      */
     public Builder setHadoopJob(com.google.cloud.dataproc.v1beta2.HadoopJob value) {
@@ -1582,10 +1498,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Hadoop job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
      */
     public Builder setHadoopJob(
@@ -1600,10 +1512,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Hadoop job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
      */
     public Builder mergeHadoopJob(com.google.cloud.dataproc.v1beta2.HadoopJob value) {
@@ -1626,10 +1534,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Hadoop job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
      */
     public Builder clearHadoopJob() {
@@ -1649,20 +1553,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Hadoop job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
      */
     public com.google.cloud.dataproc.v1beta2.HadoopJob.Builder getHadoopJobBuilder() {
       return getHadoopJobFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * Job is a Hadoop job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
      */
     public com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder getHadoopJobOrBuilder() {
@@ -1676,10 +1572,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Hadoop job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1704,10 +1596,6 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dataproc.v1beta2.SparkJob, com.google.cloud.dataproc.v1beta2.SparkJob.Builder, com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder> sparkJobBuilder_;
     /**
-     * <pre>
-     * Job is a Spark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
      * @return Whether the sparkJob field is set.
      */
@@ -1715,10 +1603,6 @@ private static final long serialVersionUID = 0L;
       return jobTypeCase_ == 3;
     }
     /**
-     * <pre>
-     * Job is a Spark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
      * @return The sparkJob.
      */
@@ -1736,10 +1620,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Spark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
      */
     public Builder setSparkJob(com.google.cloud.dataproc.v1beta2.SparkJob value) {
@@ -1756,10 +1636,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Spark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
      */
     public Builder setSparkJob(
@@ -1774,10 +1650,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Spark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
      */
     public Builder mergeSparkJob(com.google.cloud.dataproc.v1beta2.SparkJob value) {
@@ -1800,10 +1672,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Spark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
      */
     public Builder clearSparkJob() {
@@ -1823,20 +1691,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Spark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
      */
     public com.google.cloud.dataproc.v1beta2.SparkJob.Builder getSparkJobBuilder() {
       return getSparkJobFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * Job is a Spark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
      */
     public com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder getSparkJobOrBuilder() {
@@ -1850,10 +1710,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Spark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1878,10 +1734,6 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dataproc.v1beta2.PySparkJob, com.google.cloud.dataproc.v1beta2.PySparkJob.Builder, com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder> pysparkJobBuilder_;
     /**
-     * <pre>
-     * Job is a Pyspark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
      * @return Whether the pysparkJob field is set.
      */
@@ -1889,10 +1741,6 @@ private static final long serialVersionUID = 0L;
       return jobTypeCase_ == 4;
     }
     /**
-     * <pre>
-     * Job is a Pyspark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
      * @return The pysparkJob.
      */
@@ -1910,10 +1758,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Pyspark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
      */
     public Builder setPysparkJob(com.google.cloud.dataproc.v1beta2.PySparkJob value) {
@@ -1930,10 +1774,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Pyspark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
      */
     public Builder setPysparkJob(
@@ -1948,10 +1788,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Pyspark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
      */
     public Builder mergePysparkJob(com.google.cloud.dataproc.v1beta2.PySparkJob value) {
@@ -1974,10 +1810,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Pyspark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
      */
     public Builder clearPysparkJob() {
@@ -1997,20 +1829,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Pyspark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
      */
     public com.google.cloud.dataproc.v1beta2.PySparkJob.Builder getPysparkJobBuilder() {
       return getPysparkJobFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * Job is a Pyspark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
      */
     public com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder getPysparkJobOrBuilder() {
@@ -2024,10 +1848,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Pyspark job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2052,10 +1872,6 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dataproc.v1beta2.HiveJob, com.google.cloud.dataproc.v1beta2.HiveJob.Builder, com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder> hiveJobBuilder_;
     /**
-     * <pre>
-     * Job is a Hive job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
      * @return Whether the hiveJob field is set.
      */
@@ -2063,10 +1879,6 @@ private static final long serialVersionUID = 0L;
       return jobTypeCase_ == 5;
     }
     /**
-     * <pre>
-     * Job is a Hive job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
      * @return The hiveJob.
      */
@@ -2084,10 +1896,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Hive job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
      */
     public Builder setHiveJob(com.google.cloud.dataproc.v1beta2.HiveJob value) {
@@ -2104,10 +1912,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Hive job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
      */
     public Builder setHiveJob(
@@ -2122,10 +1926,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Hive job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
      */
     public Builder mergeHiveJob(com.google.cloud.dataproc.v1beta2.HiveJob value) {
@@ -2148,10 +1948,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Hive job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
      */
     public Builder clearHiveJob() {
@@ -2171,20 +1967,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Hive job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
      */
     public com.google.cloud.dataproc.v1beta2.HiveJob.Builder getHiveJobBuilder() {
       return getHiveJobFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * Job is a Hive job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
      */
     public com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder getHiveJobOrBuilder() {
@@ -2198,10 +1986,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Hive job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2226,10 +2010,6 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dataproc.v1beta2.PigJob, com.google.cloud.dataproc.v1beta2.PigJob.Builder, com.google.cloud.dataproc.v1beta2.PigJobOrBuilder> pigJobBuilder_;
     /**
-     * <pre>
-     * Job is a Pig job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
      * @return Whether the pigJob field is set.
      */
@@ -2237,10 +2017,6 @@ private static final long serialVersionUID = 0L;
       return jobTypeCase_ == 6;
     }
     /**
-     * <pre>
-     * Job is a Pig job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
      * @return The pigJob.
      */
@@ -2258,10 +2034,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Pig job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
      */
     public Builder setPigJob(com.google.cloud.dataproc.v1beta2.PigJob value) {
@@ -2278,10 +2050,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Pig job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
      */
     public Builder setPigJob(
@@ -2296,10 +2064,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Pig job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
      */
     public Builder mergePigJob(com.google.cloud.dataproc.v1beta2.PigJob value) {
@@ -2322,10 +2086,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Pig job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
      */
     public Builder clearPigJob() {
@@ -2345,20 +2105,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a Pig job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
      */
     public com.google.cloud.dataproc.v1beta2.PigJob.Builder getPigJobBuilder() {
       return getPigJobFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * Job is a Pig job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
      */
     public com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder() {
@@ -2372,10 +2124,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a Pig job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2400,10 +2148,6 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dataproc.v1beta2.SparkSqlJob, com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder, com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder> sparkSqlJobBuilder_;
     /**
-     * <pre>
-     * Job is a SparkSql job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
      * @return Whether the sparkSqlJob field is set.
      */
@@ -2411,10 +2155,6 @@ private static final long serialVersionUID = 0L;
       return jobTypeCase_ == 7;
     }
     /**
-     * <pre>
-     * Job is a SparkSql job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
      * @return The sparkSqlJob.
      */
@@ -2432,10 +2172,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a SparkSql job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
      */
     public Builder setSparkSqlJob(com.google.cloud.dataproc.v1beta2.SparkSqlJob value) {
@@ -2452,10 +2188,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a SparkSql job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
      */
     public Builder setSparkSqlJob(
@@ -2470,10 +2202,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a SparkSql job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
      */
     public Builder mergeSparkSqlJob(com.google.cloud.dataproc.v1beta2.SparkSqlJob value) {
@@ -2496,10 +2224,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a SparkSql job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
      */
     public Builder clearSparkSqlJob() {
@@ -2519,20 +2243,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <pre>
-     * Job is a SparkSql job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
      */
     public com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder getSparkSqlJobBuilder() {
       return getSparkSqlJobFieldBuilder().getBuilder();
     }
     /**
-     * <pre>
-     * Job is a SparkSql job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
      */
     public com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder() {
@@ -2546,10 +2262,6 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <pre>
-     * Job is a SparkSql job.
-     * </pre>
-     *
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

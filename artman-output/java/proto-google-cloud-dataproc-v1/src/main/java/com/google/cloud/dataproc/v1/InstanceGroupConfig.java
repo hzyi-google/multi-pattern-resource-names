@@ -5,7 +5,7 @@ package com.google.cloud.dataproc.v1;
 
 /**
  * <pre>
- * Optional. The config settings for Compute Engine resources in
+ * The config settings for Compute Engine resources in
  * an instance group, such as a master or worker group.
  * </pre>
  *
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The config settings for Compute Engine resources in
+   * The config settings for Compute Engine resources in
    * an instance group, such as a master or worker group.
    * </pre>
    *

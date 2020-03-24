@@ -16,7 +16,6 @@
 
 using gax = Google.Api.Gax;
 using gaxgrpc = Google.Api.Gax.Grpc;
-using gaxres = Google.Api.Gax.ResourceNames;
 using iam = Google.Cloud.Iam.V1;
 using pb = Google.Protobuf;
 using pbwkt = Google.Protobuf.WellKnownTypes;
@@ -189,15 +188,15 @@ namespace Google.Cloud.PubSub.V1
         /// <remarks>
         /// The "Messaging" timeout backoff for <see cref="SubscriberServiceApiClient"/> RPC methods is defined as:
         /// <list type="bullet">
-        /// <item><description>Initial timeout: 5000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.3</description></item>
-        /// <item><description>Maximum timeout: 600000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 25000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Maximum timeout: 25000 milliseconds</description></item>
         /// </list>
         /// </remarks>
         public static gaxgrpc::BackoffSettings GetMessagingTimeoutBackoff() => new gaxgrpc::BackoffSettings(
-            delay: sys::TimeSpan.FromMilliseconds(5000),
-            maxDelay: sys::TimeSpan.FromMilliseconds(600000),
-            delayMultiplier: 1.3
+            delay: sys::TimeSpan.FromMilliseconds(25000),
+            maxDelay: sys::TimeSpan.FromMilliseconds(25000),
+            delayMultiplier: 1.0
         );
 
         /// <summary>
@@ -431,9 +430,9 @@ namespace Google.Cloud.PubSub.V1
         /// <item><description>Initial retry delay: 100 milliseconds</description></item>
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Initial timeout: 5000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.3</description></item>
-        /// <item><description>Timeout maximum delay: 600000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 25000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 25000 milliseconds</description></item>
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
@@ -460,9 +459,9 @@ namespace Google.Cloud.PubSub.V1
         /// <item><description>Initial retry delay: 100 milliseconds</description></item>
         /// <item><description>Retry delay multiplier: 1.3</description></item>
         /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Initial timeout: 5000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.3</description></item>
-        /// <item><description>Timeout maximum delay: 600000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 25000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 25000 milliseconds</description></item>
         /// </list>
         /// Retry will be attempted on the following response status codes:
         /// <list>
@@ -991,10 +990,9 @@ namespace Google.Cloud.PubSub.V1
         /// in length, and it must not start with `"goog"`.
         /// </param>
         /// <param name="topic">
-        /// Required. The name of the topic from which this subscription is receiving messages.
-        /// Format is `projects/{project}/topics/{topic}`.
-        /// The value of this field will be `_deleted-topic_` if the topic has been
-        /// deleted.
+        /// Required. The name of the topic from which this subscription is receiving
+        /// messages. Format is `projects/{project}/topics/{topic}`. The value of this
+        /// field will be `_deleted-topic_` if the topic has been deleted.
         /// </param>
         /// <param name="pushConfig">
         /// If push delivery is used with this subscription, this field is
@@ -1031,14 +1029,14 @@ namespace Google.Cloud.PubSub.V1
         /// </returns>
         public virtual stt::Task<Subscription> CreateSubscriptionAsync(
             SubscriptionName name,
-            TopicName topic,
+            TopicNameOneof topic,
             PushConfig pushConfig,
             int? ackDeadlineSeconds,
             gaxgrpc::CallSettings callSettings = null) => CreateSubscriptionAsync(
                 new Subscription
                 {
                     SubscriptionName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                    TopicAsTopicNameOneof = TopicNameOneof.From(gax::GaxPreconditions.CheckNotNull(topic, nameof(topic))),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                     PushConfig = pushConfig, // Optional
                     AckDeadlineSeconds = ackDeadlineSeconds ?? 0, // Optional
                 },
@@ -1068,10 +1066,9 @@ namespace Google.Cloud.PubSub.V1
         /// in length, and it must not start with `"goog"`.
         /// </param>
         /// <param name="topic">
-        /// Required. The name of the topic from which this subscription is receiving messages.
-        /// Format is `projects/{project}/topics/{topic}`.
-        /// The value of this field will be `_deleted-topic_` if the topic has been
-        /// deleted.
+        /// Required. The name of the topic from which this subscription is receiving
+        /// messages. Format is `projects/{project}/topics/{topic}`. The value of this
+        /// field will be `_deleted-topic_` if the topic has been deleted.
         /// </param>
         /// <param name="pushConfig">
         /// If push delivery is used with this subscription, this field is
@@ -1108,7 +1105,7 @@ namespace Google.Cloud.PubSub.V1
         /// </returns>
         public virtual stt::Task<Subscription> CreateSubscriptionAsync(
             SubscriptionName name,
-            TopicName topic,
+            TopicNameOneof topic,
             PushConfig pushConfig,
             int? ackDeadlineSeconds,
             st::CancellationToken cancellationToken) => CreateSubscriptionAsync(
@@ -1142,10 +1139,9 @@ namespace Google.Cloud.PubSub.V1
         /// in length, and it must not start with `"goog"`.
         /// </param>
         /// <param name="topic">
-        /// Required. The name of the topic from which this subscription is receiving messages.
-        /// Format is `projects/{project}/topics/{topic}`.
-        /// The value of this field will be `_deleted-topic_` if the topic has been
-        /// deleted.
+        /// Required. The name of the topic from which this subscription is receiving
+        /// messages. Format is `projects/{project}/topics/{topic}`. The value of this
+        /// field will be `_deleted-topic_` if the topic has been deleted.
         /// </param>
         /// <param name="pushConfig">
         /// If push delivery is used with this subscription, this field is
@@ -1182,14 +1178,14 @@ namespace Google.Cloud.PubSub.V1
         /// </returns>
         public virtual Subscription CreateSubscription(
             SubscriptionName name,
-            TopicName topic,
+            TopicNameOneof topic,
             PushConfig pushConfig,
             int? ackDeadlineSeconds,
             gaxgrpc::CallSettings callSettings = null) => CreateSubscription(
                 new Subscription
                 {
                     SubscriptionName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                    TopicAsTopicNameOneof = TopicNameOneof.From(gax::GaxPreconditions.CheckNotNull(topic, nameof(topic))),
+                    TopicAsTopicNameOneof = gax::GaxPreconditions.CheckNotNull(topic, nameof(topic)),
                     PushConfig = pushConfig, // Optional
                     AckDeadlineSeconds = ackDeadlineSeconds ?? 0, // Optional
                 },
@@ -1219,10 +1215,9 @@ namespace Google.Cloud.PubSub.V1
         /// in length, and it must not start with `"goog"`.
         /// </param>
         /// <param name="topic">
-        /// Required. The name of the topic from which this subscription is receiving messages.
-        /// Format is `projects/{project}/topics/{topic}`.
-        /// The value of this field will be `_deleted-topic_` if the topic has been
-        /// deleted.
+        /// Required. The name of the topic from which this subscription is receiving
+        /// messages. Format is `projects/{project}/topics/{topic}`. The value of this
+        /// field will be `_deleted-topic_` if the topic has been deleted.
         /// </param>
         /// <param name="pushConfig">
         /// If push delivery is used with this subscription, this field is
@@ -1296,10 +1291,9 @@ namespace Google.Cloud.PubSub.V1
         /// in length, and it must not start with `"goog"`.
         /// </param>
         /// <param name="topic">
-        /// Required. The name of the topic from which this subscription is receiving messages.
-        /// Format is `projects/{project}/topics/{topic}`.
-        /// The value of this field will be `_deleted-topic_` if the topic has been
-        /// deleted.
+        /// Required. The name of the topic from which this subscription is receiving
+        /// messages. Format is `projects/{project}/topics/{topic}`. The value of this
+        /// field will be `_deleted-topic_` if the topic has been deleted.
         /// </param>
         /// <param name="pushConfig">
         /// If push delivery is used with this subscription, this field is
@@ -1370,10 +1364,9 @@ namespace Google.Cloud.PubSub.V1
         /// in length, and it must not start with `"goog"`.
         /// </param>
         /// <param name="topic">
-        /// Required. The name of the topic from which this subscription is receiving messages.
-        /// Format is `projects/{project}/topics/{topic}`.
-        /// The value of this field will be `_deleted-topic_` if the topic has been
-        /// deleted.
+        /// Required. The name of the topic from which this subscription is receiving
+        /// messages. Format is `projects/{project}/topics/{topic}`. The value of this
+        /// field will be `_deleted-topic_` if the topic has been deleted.
         /// </param>
         /// <param name="pushConfig">
         /// If push delivery is used with this subscription, this field is
@@ -1778,7 +1771,7 @@ namespace Google.Cloud.PubSub.V1
         /// A pageable asynchronous sequence of <see cref="Subscription"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListSubscriptionsResponse, Subscription> ListSubscriptionsAsync(
-            gaxres::ProjectName project,
+            ProjectName project,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListSubscriptionsAsync(
@@ -1812,7 +1805,7 @@ namespace Google.Cloud.PubSub.V1
         /// A pageable sequence of <see cref="Subscription"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListSubscriptionsResponse, Subscription> ListSubscriptions(
-            gaxres::ProjectName project,
+            ProjectName project,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListSubscriptions(
@@ -2154,10 +2147,10 @@ namespace Google.Cloud.PubSub.V1
         /// Required. List of acknowledgment IDs.
         /// </param>
         /// <param name="ackDeadlineSeconds">
-        /// Required. The new ack deadline with respect to the time this request was sent to
-        /// the Pub/Sub system. For example, if the value is 10, the new
-        /// ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
-        /// was made. Specifying zero might immediately make the message available for
+        /// Required. The new ack deadline with respect to the time this request was
+        /// sent to the Pub/Sub system. For example, if the value is 10, the new ack
+        /// deadline will expire 10 seconds after the `ModifyAckDeadline` call was
+        /// made. Specifying zero might immediately make the message available for
         /// delivery to another subscriber client. This typically results in an
         /// increase in the rate of message redeliveries (that is, duplicates).
         /// The minimum deadline you can specify is 0 seconds.
@@ -2197,10 +2190,10 @@ namespace Google.Cloud.PubSub.V1
         /// Required. List of acknowledgment IDs.
         /// </param>
         /// <param name="ackDeadlineSeconds">
-        /// Required. The new ack deadline with respect to the time this request was sent to
-        /// the Pub/Sub system. For example, if the value is 10, the new
-        /// ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
-        /// was made. Specifying zero might immediately make the message available for
+        /// Required. The new ack deadline with respect to the time this request was
+        /// sent to the Pub/Sub system. For example, if the value is 10, the new ack
+        /// deadline will expire 10 seconds after the `ModifyAckDeadline` call was
+        /// made. Specifying zero might immediately make the message available for
         /// delivery to another subscriber client. This typically results in an
         /// increase in the rate of message redeliveries (that is, duplicates).
         /// The minimum deadline you can specify is 0 seconds.
@@ -2237,10 +2230,10 @@ namespace Google.Cloud.PubSub.V1
         /// Required. List of acknowledgment IDs.
         /// </param>
         /// <param name="ackDeadlineSeconds">
-        /// Required. The new ack deadline with respect to the time this request was sent to
-        /// the Pub/Sub system. For example, if the value is 10, the new
-        /// ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
-        /// was made. Specifying zero might immediately make the message available for
+        /// Required. The new ack deadline with respect to the time this request was
+        /// sent to the Pub/Sub system. For example, if the value is 10, the new ack
+        /// deadline will expire 10 seconds after the `ModifyAckDeadline` call was
+        /// made. Specifying zero might immediately make the message available for
         /// delivery to another subscriber client. This typically results in an
         /// increase in the rate of message redeliveries (that is, duplicates).
         /// The minimum deadline you can specify is 0 seconds.
@@ -2277,10 +2270,10 @@ namespace Google.Cloud.PubSub.V1
         /// Required. List of acknowledgment IDs.
         /// </param>
         /// <param name="ackDeadlineSeconds">
-        /// Required. The new ack deadline with respect to the time this request was sent to
-        /// the Pub/Sub system. For example, if the value is 10, the new
-        /// ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
-        /// was made. Specifying zero might immediately make the message available for
+        /// Required. The new ack deadline with respect to the time this request was
+        /// sent to the Pub/Sub system. For example, if the value is 10, the new ack
+        /// deadline will expire 10 seconds after the `ModifyAckDeadline` call was
+        /// made. Specifying zero might immediately make the message available for
         /// delivery to another subscriber client. This typically results in an
         /// increase in the rate of message redeliveries (that is, duplicates).
         /// The minimum deadline you can specify is 0 seconds.
@@ -2320,10 +2313,10 @@ namespace Google.Cloud.PubSub.V1
         /// Required. List of acknowledgment IDs.
         /// </param>
         /// <param name="ackDeadlineSeconds">
-        /// Required. The new ack deadline with respect to the time this request was sent to
-        /// the Pub/Sub system. For example, if the value is 10, the new
-        /// ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
-        /// was made. Specifying zero might immediately make the message available for
+        /// Required. The new ack deadline with respect to the time this request was
+        /// sent to the Pub/Sub system. For example, if the value is 10, the new ack
+        /// deadline will expire 10 seconds after the `ModifyAckDeadline` call was
+        /// made. Specifying zero might immediately make the message available for
         /// delivery to another subscriber client. This typically results in an
         /// increase in the rate of message redeliveries (that is, duplicates).
         /// The minimum deadline you can specify is 0 seconds.
@@ -2360,10 +2353,10 @@ namespace Google.Cloud.PubSub.V1
         /// Required. List of acknowledgment IDs.
         /// </param>
         /// <param name="ackDeadlineSeconds">
-        /// Required. The new ack deadline with respect to the time this request was sent to
-        /// the Pub/Sub system. For example, if the value is 10, the new
-        /// ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
-        /// was made. Specifying zero might immediately make the message available for
+        /// Required. The new ack deadline with respect to the time this request was
+        /// sent to the Pub/Sub system. For example, if the value is 10, the new ack
+        /// deadline will expire 10 seconds after the `ModifyAckDeadline` call was
+        /// made. Specifying zero might immediately make the message available for
         /// delivery to another subscriber client. This typically results in an
         /// increase in the rate of message redeliveries (that is, duplicates).
         /// The minimum deadline you can specify is 0 seconds.
@@ -2464,8 +2457,9 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="ackIds">
-        /// Required. The acknowledgment ID for the messages being acknowledged that was returned
-        /// by the Pub/Sub system in the `Pull` response. Must not be empty.
+        /// Required. The acknowledgment ID for the messages being acknowledged that
+        /// was returned by the Pub/Sub system in the `Pull` response. Must not be
+        /// empty.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2498,8 +2492,9 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="ackIds">
-        /// Required. The acknowledgment ID for the messages being acknowledged that was returned
-        /// by the Pub/Sub system in the `Pull` response. Must not be empty.
+        /// Required. The acknowledgment ID for the messages being acknowledged that
+        /// was returned by the Pub/Sub system in the `Pull` response. Must not be
+        /// empty.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2529,8 +2524,9 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="ackIds">
-        /// Required. The acknowledgment ID for the messages being acknowledged that was returned
-        /// by the Pub/Sub system in the `Pull` response. Must not be empty.
+        /// Required. The acknowledgment ID for the messages being acknowledged that
+        /// was returned by the Pub/Sub system in the `Pull` response. Must not be
+        /// empty.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2560,8 +2556,9 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="ackIds">
-        /// Required. The acknowledgment ID for the messages being acknowledged that was returned
-        /// by the Pub/Sub system in the `Pull` response. Must not be empty.
+        /// Required. The acknowledgment ID for the messages being acknowledged that
+        /// was returned by the Pub/Sub system in the `Pull` response. Must not be
+        /// empty.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2594,8 +2591,9 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="ackIds">
-        /// Required. The acknowledgment ID for the messages being acknowledged that was returned
-        /// by the Pub/Sub system in the `Pull` response. Must not be empty.
+        /// Required. The acknowledgment ID for the messages being acknowledged that
+        /// was returned by the Pub/Sub system in the `Pull` response. Must not be
+        /// empty.
         /// </param>
         /// <param name="cancellationToken">
         /// A <see cref="st::CancellationToken"/> to use for this RPC.
@@ -2625,8 +2623,9 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="ackIds">
-        /// Required. The acknowledgment ID for the messages being acknowledged that was returned
-        /// by the Pub/Sub system in the `Pull` response. Must not be empty.
+        /// Required. The acknowledgment ID for the messages being acknowledged that
+        /// was returned by the Pub/Sub system in the `Pull` response. Must not be
+        /// empty.
         /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
@@ -2723,14 +2722,17 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="returnImmediately">
-        /// If this field set to true, the system will respond immediately even if
-        /// it there are no messages available to return in the `Pull` response.
-        /// Otherwise, the system may wait (for a bounded amount of time) until at
-        /// least one message is available, rather than returning no messages.
+        /// Optional. If this field set to true, the system will respond immediately
+        /// even if it there are no messages available to return in the `Pull`
+        /// response. Otherwise, the system may wait (for a bounded amount of time)
+        /// until at least one message is available, rather than returning no messages.
+        /// Warning: setting this field to `true` is discouraged because it adversely
+        /// impacts the performance of `Pull` operations. We recommend that users do
+        /// not set this field.
         /// </param>
         /// <param name="maxMessages">
-        /// Required. The maximum number of messages to return for this request. Must be a
-        /// positive integer. The Pub/Sub system may return fewer than the number
+        /// Required. The maximum number of messages to return for this request. Must
+        /// be a positive integer. The Pub/Sub system may return fewer than the number
         /// specified.
         /// </param>
         /// <param name="callSettings">
@@ -2762,14 +2764,17 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="returnImmediately">
-        /// If this field set to true, the system will respond immediately even if
-        /// it there are no messages available to return in the `Pull` response.
-        /// Otherwise, the system may wait (for a bounded amount of time) until at
-        /// least one message is available, rather than returning no messages.
+        /// Optional. If this field set to true, the system will respond immediately
+        /// even if it there are no messages available to return in the `Pull`
+        /// response. Otherwise, the system may wait (for a bounded amount of time)
+        /// until at least one message is available, rather than returning no messages.
+        /// Warning: setting this field to `true` is discouraged because it adversely
+        /// impacts the performance of `Pull` operations. We recommend that users do
+        /// not set this field.
         /// </param>
         /// <param name="maxMessages">
-        /// Required. The maximum number of messages to return for this request. Must be a
-        /// positive integer. The Pub/Sub system may return fewer than the number
+        /// Required. The maximum number of messages to return for this request. Must
+        /// be a positive integer. The Pub/Sub system may return fewer than the number
         /// specified.
         /// </param>
         /// <param name="cancellationToken">
@@ -2798,14 +2803,17 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="returnImmediately">
-        /// If this field set to true, the system will respond immediately even if
-        /// it there are no messages available to return in the `Pull` response.
-        /// Otherwise, the system may wait (for a bounded amount of time) until at
-        /// least one message is available, rather than returning no messages.
+        /// Optional. If this field set to true, the system will respond immediately
+        /// even if it there are no messages available to return in the `Pull`
+        /// response. Otherwise, the system may wait (for a bounded amount of time)
+        /// until at least one message is available, rather than returning no messages.
+        /// Warning: setting this field to `true` is discouraged because it adversely
+        /// impacts the performance of `Pull` operations. We recommend that users do
+        /// not set this field.
         /// </param>
         /// <param name="maxMessages">
-        /// Required. The maximum number of messages to return for this request. Must be a
-        /// positive integer. The Pub/Sub system may return fewer than the number
+        /// Required. The maximum number of messages to return for this request. Must
+        /// be a positive integer. The Pub/Sub system may return fewer than the number
         /// specified.
         /// </param>
         /// <param name="callSettings">
@@ -2837,14 +2845,17 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="returnImmediately">
-        /// If this field set to true, the system will respond immediately even if
-        /// it there are no messages available to return in the `Pull` response.
-        /// Otherwise, the system may wait (for a bounded amount of time) until at
-        /// least one message is available, rather than returning no messages.
+        /// Optional. If this field set to true, the system will respond immediately
+        /// even if it there are no messages available to return in the `Pull`
+        /// response. Otherwise, the system may wait (for a bounded amount of time)
+        /// until at least one message is available, rather than returning no messages.
+        /// Warning: setting this field to `true` is discouraged because it adversely
+        /// impacts the performance of `Pull` operations. We recommend that users do
+        /// not set this field.
         /// </param>
         /// <param name="maxMessages">
-        /// Required. The maximum number of messages to return for this request. Must be a
-        /// positive integer. The Pub/Sub system may return fewer than the number
+        /// Required. The maximum number of messages to return for this request. Must
+        /// be a positive integer. The Pub/Sub system may return fewer than the number
         /// specified.
         /// </param>
         /// <param name="callSettings">
@@ -2876,14 +2887,17 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="returnImmediately">
-        /// If this field set to true, the system will respond immediately even if
-        /// it there are no messages available to return in the `Pull` response.
-        /// Otherwise, the system may wait (for a bounded amount of time) until at
-        /// least one message is available, rather than returning no messages.
+        /// Optional. If this field set to true, the system will respond immediately
+        /// even if it there are no messages available to return in the `Pull`
+        /// response. Otherwise, the system may wait (for a bounded amount of time)
+        /// until at least one message is available, rather than returning no messages.
+        /// Warning: setting this field to `true` is discouraged because it adversely
+        /// impacts the performance of `Pull` operations. We recommend that users do
+        /// not set this field.
         /// </param>
         /// <param name="maxMessages">
-        /// Required. The maximum number of messages to return for this request. Must be a
-        /// positive integer. The Pub/Sub system may return fewer than the number
+        /// Required. The maximum number of messages to return for this request. Must
+        /// be a positive integer. The Pub/Sub system may return fewer than the number
         /// specified.
         /// </param>
         /// <param name="cancellationToken">
@@ -2912,14 +2926,17 @@ namespace Google.Cloud.PubSub.V1
         /// Format is `projects/{project}/subscriptions/{sub}`.
         /// </param>
         /// <param name="returnImmediately">
-        /// If this field set to true, the system will respond immediately even if
-        /// it there are no messages available to return in the `Pull` response.
-        /// Otherwise, the system may wait (for a bounded amount of time) until at
-        /// least one message is available, rather than returning no messages.
+        /// Optional. If this field set to true, the system will respond immediately
+        /// even if it there are no messages available to return in the `Pull`
+        /// response. Otherwise, the system may wait (for a bounded amount of time)
+        /// until at least one message is available, rather than returning no messages.
+        /// Warning: setting this field to `true` is discouraged because it adversely
+        /// impacts the performance of `Pull` operations. We recommend that users do
+        /// not set this field.
         /// </param>
         /// <param name="maxMessages">
-        /// Required. The maximum number of messages to return for this request. Must be a
-        /// positive integer. The Pub/Sub system may return fewer than the number
+        /// Required. The maximum number of messages to return for this request. Must
+        /// be a positive integer. The Pub/Sub system may return fewer than the number
         /// specified.
         /// </param>
         /// <param name="callSettings">
@@ -3340,7 +3357,7 @@ namespace Google.Cloud.PubSub.V1
         /// A pageable asynchronous sequence of <see cref="Snapshot"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListSnapshotsResponse, Snapshot> ListSnapshotsAsync(
-            gaxres::ProjectName project,
+            ProjectName project,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListSnapshotsAsync(
@@ -3379,7 +3396,7 @@ namespace Google.Cloud.PubSub.V1
         /// A pageable sequence of <see cref="Snapshot"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListSnapshotsResponse, Snapshot> ListSnapshots(
-            gaxres::ProjectName project,
+            ProjectName project,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListSnapshots(
@@ -3538,10 +3555,10 @@ namespace Google.Cloud.PubSub.V1
         /// REST API requests, you must specify a name in the request.
         /// </summary>
         /// <param name="name">
-        /// Required. User-provided name for this snapshot. If the name is not provided in the
-        /// request, the server will assign a random name for this snapshot on the same
-        /// project as the subscription. Note that for REST API requests, you must
-        /// specify a name.  See the &lt;a
+        /// Required. User-provided name for this snapshot. If the name is not provided
+        /// in the request, the server will assign a random name for this snapshot on
+        /// the same project as the subscription. Note that for REST API requests, you
+        /// must specify a name.  See the &lt;a
         /// href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
         /// name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
         /// </param>
@@ -3594,10 +3611,10 @@ namespace Google.Cloud.PubSub.V1
         /// REST API requests, you must specify a name in the request.
         /// </summary>
         /// <param name="name">
-        /// Required. User-provided name for this snapshot. If the name is not provided in the
-        /// request, the server will assign a random name for this snapshot on the same
-        /// project as the subscription. Note that for REST API requests, you must
-        /// specify a name.  See the &lt;a
+        /// Required. User-provided name for this snapshot. If the name is not provided
+        /// in the request, the server will assign a random name for this snapshot on
+        /// the same project as the subscription. Note that for REST API requests, you
+        /// must specify a name.  See the &lt;a
         /// href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
         /// name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
         /// </param>
@@ -3647,10 +3664,10 @@ namespace Google.Cloud.PubSub.V1
         /// REST API requests, you must specify a name in the request.
         /// </summary>
         /// <param name="name">
-        /// Required. User-provided name for this snapshot. If the name is not provided in the
-        /// request, the server will assign a random name for this snapshot on the same
-        /// project as the subscription. Note that for REST API requests, you must
-        /// specify a name.  See the &lt;a
+        /// Required. User-provided name for this snapshot. If the name is not provided
+        /// in the request, the server will assign a random name for this snapshot on
+        /// the same project as the subscription. Note that for REST API requests, you
+        /// must specify a name.  See the &lt;a
         /// href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
         /// name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
         /// </param>
@@ -3703,10 +3720,10 @@ namespace Google.Cloud.PubSub.V1
         /// REST API requests, you must specify a name in the request.
         /// </summary>
         /// <param name="name">
-        /// Required. User-provided name for this snapshot. If the name is not provided in the
-        /// request, the server will assign a random name for this snapshot on the same
-        /// project as the subscription. Note that for REST API requests, you must
-        /// specify a name.  See the &lt;a
+        /// Required. User-provided name for this snapshot. If the name is not provided
+        /// in the request, the server will assign a random name for this snapshot on
+        /// the same project as the subscription. Note that for REST API requests, you
+        /// must specify a name.  See the &lt;a
         /// href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
         /// name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
         /// </param>
@@ -3759,10 +3776,10 @@ namespace Google.Cloud.PubSub.V1
         /// REST API requests, you must specify a name in the request.
         /// </summary>
         /// <param name="name">
-        /// Required. User-provided name for this snapshot. If the name is not provided in the
-        /// request, the server will assign a random name for this snapshot on the same
-        /// project as the subscription. Note that for REST API requests, you must
-        /// specify a name.  See the &lt;a
+        /// Required. User-provided name for this snapshot. If the name is not provided
+        /// in the request, the server will assign a random name for this snapshot on
+        /// the same project as the subscription. Note that for REST API requests, you
+        /// must specify a name.  See the &lt;a
         /// href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
         /// name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
         /// </param>
@@ -3812,10 +3829,10 @@ namespace Google.Cloud.PubSub.V1
         /// REST API requests, you must specify a name in the request.
         /// </summary>
         /// <param name="name">
-        /// Required. User-provided name for this snapshot. If the name is not provided in the
-        /// request, the server will assign a random name for this snapshot on the same
-        /// project as the subscription. Note that for REST API requests, you must
-        /// specify a name.  See the &lt;a
+        /// Required. User-provided name for this snapshot. If the name is not provided
+        /// in the request, the server will assign a random name for this snapshot on
+        /// the same project as the subscription. Note that for REST API requests, you
+        /// must specify a name.  See the &lt;a
         /// href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource
         /// name rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
         /// </param>
@@ -4363,105 +4380,6 @@ namespace Google.Cloud.PubSub.V1
         /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
         /// PERMISSION_DENIED
         /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being specified.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="policy">
-        /// REQUIRED: The complete policy to be applied to the `resource`. The size of
-        /// the policy is limited to a few 10s of KB. An empty policy is a
-        /// valid policy but certain Cloud Platform services (such as Projects)
-        /// might reject them.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::Policy> SetIamPolicyAsync(
-            string resource,
-            iam::Policy policy,
-            gaxgrpc::CallSettings callSettings = null) => SetIamPolicyAsync(
-                new iam::SetIamPolicyRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                    Policy = gax::GaxPreconditions.CheckNotNull(policy, nameof(policy)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Sets the access control policy on the specified resource. Replaces
-        /// any existing policy.
-        ///
-        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
-        /// PERMISSION_DENIED
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being specified.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="policy">
-        /// REQUIRED: The complete policy to be applied to the `resource`. The size of
-        /// the policy is limited to a few 10s of KB. An empty policy is a
-        /// valid policy but certain Cloud Platform services (such as Projects)
-        /// might reject them.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::Policy> SetIamPolicyAsync(
-            string resource,
-            iam::Policy policy,
-            st::CancellationToken cancellationToken) => SetIamPolicyAsync(
-                resource,
-                policy,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Sets the access control policy on the specified resource. Replaces
-        /// any existing policy.
-        ///
-        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
-        /// PERMISSION_DENIED
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being specified.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="policy">
-        /// REQUIRED: The complete policy to be applied to the `resource`. The size of
-        /// the policy is limited to a few 10s of KB. An empty policy is a
-        /// valid policy but certain Cloud Platform services (such as Projects)
-        /// might reject them.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual iam::Policy SetIamPolicy(
-            string resource,
-            iam::Policy policy,
-            gaxgrpc::CallSettings callSettings = null) => SetIamPolicy(
-                new iam::SetIamPolicyRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                    Policy = gax::GaxPreconditions.CheckNotNull(policy, nameof(policy)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Sets the access control policy on the specified resource. Replaces
-        /// any existing policy.
-        ///
-        /// Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and
-        /// PERMISSION_DENIED
-        /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
         /// </param>
@@ -4527,72 +4445,6 @@ namespace Google.Cloud.PubSub.V1
         /// Gets the access control policy for a resource. Returns an empty policy
         /// if the resource exists and does not have a policy set.
         /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::Policy> GetIamPolicyAsync(
-            string resource,
-            gaxgrpc::CallSettings callSettings = null) => GetIamPolicyAsync(
-                new iam::GetIamPolicyRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Gets the access control policy for a resource. Returns an empty policy
-        /// if the resource exists and does not have a policy set.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::Policy> GetIamPolicyAsync(
-            string resource,
-            st::CancellationToken cancellationToken) => GetIamPolicyAsync(
-                resource,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Gets the access control policy for a resource. Returns an empty policy
-        /// if the resource exists and does not have a policy set.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual iam::Policy GetIamPolicy(
-            string resource,
-            gaxgrpc::CallSettings callSettings = null) => GetIamPolicy(
-                new iam::GetIamPolicyRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Gets the access control policy for a resource. Returns an empty policy
-        /// if the resource exists and does not have a policy set.
-        /// </summary>
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
         /// </param>
@@ -4647,111 +4499,6 @@ namespace Google.Cloud.PubSub.V1
         {
             throw new sys::NotImplementedException();
         }
-
-        /// <summary>
-        /// Returns permissions that a caller has on the specified resource. If the
-        /// resource does not exist, this will return an empty set of
-        /// permissions, not a NOT_FOUND error.
-        ///
-        /// Note: This operation is designed to be used for building
-        /// permission-aware UIs and command-line tools, not for authorization
-        /// checking. This operation may "fail open" without warning.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy detail is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="permissions">
-        /// The set of permissions to check for the `resource`. Permissions with
-        /// wildcards (such as '*' or 'storage.*') are not allowed. For more
-        /// information see
-        /// [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::TestIamPermissionsResponse> TestIamPermissionsAsync(
-            string resource,
-            scg::IEnumerable<string> permissions,
-            gaxgrpc::CallSettings callSettings = null) => TestIamPermissionsAsync(
-                new iam::TestIamPermissionsRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                    Permissions = { gax::GaxPreconditions.CheckNotNull(permissions, nameof(permissions)) },
-                },
-                callSettings);
-
-        /// <summary>
-        /// Returns permissions that a caller has on the specified resource. If the
-        /// resource does not exist, this will return an empty set of
-        /// permissions, not a NOT_FOUND error.
-        ///
-        /// Note: This operation is designed to be used for building
-        /// permission-aware UIs and command-line tools, not for authorization
-        /// checking. This operation may "fail open" without warning.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy detail is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="permissions">
-        /// The set of permissions to check for the `resource`. Permissions with
-        /// wildcards (such as '*' or 'storage.*') are not allowed. For more
-        /// information see
-        /// [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<iam::TestIamPermissionsResponse> TestIamPermissionsAsync(
-            string resource,
-            scg::IEnumerable<string> permissions,
-            st::CancellationToken cancellationToken) => TestIamPermissionsAsync(
-                resource,
-                permissions,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Returns permissions that a caller has on the specified resource. If the
-        /// resource does not exist, this will return an empty set of
-        /// permissions, not a NOT_FOUND error.
-        ///
-        /// Note: This operation is designed to be used for building
-        /// permission-aware UIs and command-line tools, not for authorization
-        /// checking. This operation may "fail open" without warning.
-        /// </summary>
-        /// <param name="resource">
-        /// REQUIRED: The resource for which the policy detail is being requested.
-        /// See the operation documentation for the appropriate value for this field.
-        /// </param>
-        /// <param name="permissions">
-        /// The set of permissions to check for the `resource`. Permissions with
-        /// wildcards (such as '*' or 'storage.*') are not allowed. For more
-        /// information see
-        /// [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual iam::TestIamPermissionsResponse TestIamPermissions(
-            string resource,
-            scg::IEnumerable<string> permissions,
-            gaxgrpc::CallSettings callSettings = null) => TestIamPermissions(
-                new iam::TestIamPermissionsRequest
-                {
-                    Resource = gax::GaxPreconditions.CheckNotNullOrEmpty(resource, nameof(resource)),
-                    Permissions = { gax::GaxPreconditions.CheckNotNull(permissions, nameof(permissions)) },
-                },
-                callSettings);
 
         /// <summary>
         /// Returns permissions that a caller has on the specified resource. If the

@@ -82,6 +82,34 @@ private static final long serialVersionUID = 0L;
             typeCase_ = 3;
             break;
           }
+          case 34: {
+            com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder subBuilder = null;
+            if (typeCase_ == 4) {
+              subBuilder = ((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_).toBuilder();
+            }
+            type_ =
+                input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.Dictionary.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_);
+              type_ = subBuilder.buildPartial();
+            }
+            typeCase_ = 4;
+            break;
+          }
+          case 42: {
+            com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder subBuilder = null;
+            if (typeCase_ == 5) {
+              subBuilder = ((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_).toBuilder();
+            }
+            type_ =
+                input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.Regex.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
+              type_ = subBuilder.buildPartial();
+            }
+            typeCase_ = 5;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -120,6 +148,8 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     LARGE_CUSTOM_DICTIONARY(3),
+    DICTIONARY(4),
+    REGEX(5),
     TYPE_NOT_SET(0);
     private final int value;
     private TypeCase(int value) {
@@ -138,6 +168,8 @@ private static final long serialVersionUID = 0L;
     public static TypeCase forNumber(int value) {
       switch (value) {
         case 3: return LARGE_CUSTOM_DICTIONARY;
+        case 4: return DICTIONARY;
+        case 5: return REGEX;
         case 0: return TYPE_NOT_SET;
         default: return null;
       }
@@ -281,6 +313,86 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.LargeCustomDictionaryConfig.getDefaultInstance();
   }
 
+  public static final int DICTIONARY_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Store dictionary-based CustomInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+   * @return Whether the dictionary field is set.
+   */
+  public boolean hasDictionary() {
+    return typeCase_ == 4;
+  }
+  /**
+   * <pre>
+   * Store dictionary-based CustomInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+   * @return The dictionary.
+   */
+  public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
+    if (typeCase_ == 4) {
+       return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
+    }
+    return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Store dictionary-based CustomInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+   */
+  public com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder getDictionaryOrBuilder() {
+    if (typeCase_ == 4) {
+       return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
+    }
+    return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
+  }
+
+  public static final int REGEX_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Store regular expression-based StoredInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+   * @return Whether the regex field is set.
+   */
+  public boolean hasRegex() {
+    return typeCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Store regular expression-based StoredInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+   * @return The regex.
+   */
+  public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
+    if (typeCase_ == 5) {
+       return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
+    }
+    return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Store regular expression-based StoredInfoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+   */
+  public com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder() {
+    if (typeCase_ == 5) {
+       return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
+    }
+    return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -304,6 +416,12 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 3) {
       output.writeMessage(3, (com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) type_);
     }
+    if (typeCase_ == 4) {
+      output.writeMessage(4, (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_);
+    }
+    if (typeCase_ == 5) {
+      output.writeMessage(5, (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -322,6 +440,14 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, (com.google.privacy.dlp.v2.LargeCustomDictionaryConfig) type_);
+    }
+    if (typeCase_ == 4) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_);
+    }
+    if (typeCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -348,6 +474,14 @@ private static final long serialVersionUID = 0L;
         if (!getLargeCustomDictionary()
             .equals(other.getLargeCustomDictionary())) return false;
         break;
+      case 4:
+        if (!getDictionary()
+            .equals(other.getDictionary())) return false;
+        break;
+      case 5:
+        if (!getRegex()
+            .equals(other.getRegex())) return false;
+        break;
       case 0:
       default:
     }
@@ -370,6 +504,14 @@ private static final long serialVersionUID = 0L;
       case 3:
         hash = (37 * hash) + LARGE_CUSTOM_DICTIONARY_FIELD_NUMBER;
         hash = (53 * hash) + getLargeCustomDictionary().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + DICTIONARY_FIELD_NUMBER;
+        hash = (53 * hash) + getDictionary().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + REGEX_FIELD_NUMBER;
+        hash = (53 * hash) + getRegex().hashCode();
         break;
       case 0:
       default:
@@ -554,6 +696,20 @@ private static final long serialVersionUID = 0L;
           result.type_ = largeCustomDictionaryBuilder_.build();
         }
       }
+      if (typeCase_ == 4) {
+        if (dictionaryBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = dictionaryBuilder_.build();
+        }
+      }
+      if (typeCase_ == 5) {
+        if (regexBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = regexBuilder_.build();
+        }
+      }
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -614,6 +770,14 @@ private static final long serialVersionUID = 0L;
       switch (other.getTypeCase()) {
         case LARGE_CUSTOM_DICTIONARY: {
           mergeLargeCustomDictionary(other.getLargeCustomDictionary());
+          break;
+        }
+        case DICTIONARY: {
+          mergeDictionary(other.getDictionary());
+          break;
+        }
+        case REGEX: {
+          mergeRegex(other.getRegex());
           break;
         }
         case TYPE_NOT_SET: {
@@ -1028,6 +1192,354 @@ private static final long serialVersionUID = 0L;
       typeCase_ = 3;
       onChanged();;
       return largeCustomDictionaryBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.CustomInfoType.Dictionary, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder, com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder> dictionaryBuilder_;
+    /**
+     * <pre>
+     * Store dictionary-based CustomInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+     * @return Whether the dictionary field is set.
+     */
+    public boolean hasDictionary() {
+      return typeCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Store dictionary-based CustomInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+     * @return The dictionary.
+     */
+    public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
+      if (dictionaryBuilder_ == null) {
+        if (typeCase_ == 4) {
+          return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
+      } else {
+        if (typeCase_ == 4) {
+          return dictionaryBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Store dictionary-based CustomInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+     */
+    public Builder setDictionary(com.google.privacy.dlp.v2.CustomInfoType.Dictionary value) {
+      if (dictionaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        dictionaryBuilder_.setMessage(value);
+      }
+      typeCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Store dictionary-based CustomInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+     */
+    public Builder setDictionary(
+        com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder builderForValue) {
+      if (dictionaryBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        dictionaryBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Store dictionary-based CustomInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+     */
+    public Builder mergeDictionary(com.google.privacy.dlp.v2.CustomInfoType.Dictionary value) {
+      if (dictionaryBuilder_ == null) {
+        if (typeCase_ == 4 &&
+            type_ != com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance()) {
+          type_ = com.google.privacy.dlp.v2.CustomInfoType.Dictionary.newBuilder((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 4) {
+          dictionaryBuilder_.mergeFrom(value);
+        }
+        dictionaryBuilder_.setMessage(value);
+      }
+      typeCase_ = 4;
+      return this;
+    }
+    /**
+     * <pre>
+     * Store dictionary-based CustomInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+     */
+    public Builder clearDictionary() {
+      if (dictionaryBuilder_ == null) {
+        if (typeCase_ == 4) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 4) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        dictionaryBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Store dictionary-based CustomInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+     */
+    public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder getDictionaryBuilder() {
+      return getDictionaryFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Store dictionary-based CustomInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+     */
+    public com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder getDictionaryOrBuilder() {
+      if ((typeCase_ == 4) && (dictionaryBuilder_ != null)) {
+        return dictionaryBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 4) {
+          return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Store dictionary-based CustomInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.CustomInfoType.Dictionary, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder, com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder> 
+        getDictionaryFieldBuilder() {
+      if (dictionaryBuilder_ == null) {
+        if (!(typeCase_ == 4)) {
+          type_ = com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
+        }
+        dictionaryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CustomInfoType.Dictionary, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder, com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder>(
+                (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 4;
+      onChanged();;
+      return dictionaryBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder> regexBuilder_;
+    /**
+     * <pre>
+     * Store regular expression-based StoredInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+     * @return Whether the regex field is set.
+     */
+    public boolean hasRegex() {
+      return typeCase_ == 5;
+    }
+    /**
+     * <pre>
+     * Store regular expression-based StoredInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+     * @return The regex.
+     */
+    public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
+      if (regexBuilder_ == null) {
+        if (typeCase_ == 5) {
+          return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
+      } else {
+        if (typeCase_ == 5) {
+          return regexBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Store regular expression-based StoredInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+     */
+    public Builder setRegex(com.google.privacy.dlp.v2.CustomInfoType.Regex value) {
+      if (regexBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        regexBuilder_.setMessage(value);
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Store regular expression-based StoredInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+     */
+    public Builder setRegex(
+        com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder builderForValue) {
+      if (regexBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        regexBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Store regular expression-based StoredInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+     */
+    public Builder mergeRegex(com.google.privacy.dlp.v2.CustomInfoType.Regex value) {
+      if (regexBuilder_ == null) {
+        if (typeCase_ == 5 &&
+            type_ != com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()) {
+          type_ = com.google.privacy.dlp.v2.CustomInfoType.Regex.newBuilder((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 5) {
+          regexBuilder_.mergeFrom(value);
+        }
+        regexBuilder_.setMessage(value);
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Store regular expression-based StoredInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+     */
+    public Builder clearRegex() {
+      if (regexBuilder_ == null) {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        regexBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Store regular expression-based StoredInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder getRegexBuilder() {
+      return getRegexFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Store regular expression-based StoredInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder() {
+      if ((typeCase_ == 5) && (regexBuilder_ != null)) {
+        return regexBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 5) {
+          return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Store regular expression-based StoredInfoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder> 
+        getRegexFieldBuilder() {
+      if (regexBuilder_ == null) {
+        if (!(typeCase_ == 5)) {
+          type_ = com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
+        }
+        regexBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>(
+                (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 5;
+      onChanged();;
+      return regexBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

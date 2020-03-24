@@ -9,9 +9,9 @@ public interface GetDeidentifyTemplateRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of the organization and deidentify template to be read, for
-   * example `organizations/433245324/deidentifyTemplates/432452342` or
-   * projects/project-id/deidentifyTemplates/432452342.
+   * Required. Resource name of the organization and deidentify template to be
+   * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+   * or projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,9 +20,9 @@ public interface GetDeidentifyTemplateRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. Resource name of the organization and deidentify template to be read, for
-   * example `organizations/433245324/deidentifyTemplates/432452342` or
-   * projects/project-id/deidentifyTemplates/432452342.
+   * Required. Resource name of the organization and deidentify template to be
+   * read, for example `organizations/433245324/deidentifyTemplates/432452342`
+   * or projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

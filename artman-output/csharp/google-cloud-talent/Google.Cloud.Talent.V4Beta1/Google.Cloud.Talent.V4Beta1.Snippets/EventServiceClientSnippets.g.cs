@@ -36,12 +36,12 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
         /// <summary>Snippet for CreateClientEventAsync</summary>
         public async Task CreateClientEventAsync()
         {
-            // Snippet: CreateClientEventAsync(TenantOrProjectNameOneof,ClientEvent,CallSettings)
-            // Additional: CreateClientEventAsync(TenantOrProjectNameOneof,ClientEvent,CancellationToken)
+            // Snippet: CreateClientEventAsync(ProjectName,ClientEvent,CallSettings)
+            // Additional: CreateClientEventAsync(ProjectName,ClientEvent,CancellationToken)
             // Create client
             EventServiceClient eventServiceClient = await EventServiceClient.CreateAsync();
             // Initialize request argument(s)
-            TenantOrProjectNameOneof parent = TenantOrProjectNameOneof.From(new TenantName("[PROJECT]", "[TENANT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             ClientEvent clientEvent = new ClientEvent();
             // Make the request
             ClientEvent response = await eventServiceClient.CreateClientEventAsync(parent, clientEvent);
@@ -51,11 +51,11 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
         /// <summary>Snippet for CreateClientEvent</summary>
         public void CreateClientEvent()
         {
-            // Snippet: CreateClientEvent(TenantOrProjectNameOneof,ClientEvent,CallSettings)
+            // Snippet: CreateClientEvent(ProjectName,ClientEvent,CallSettings)
             // Create client
             EventServiceClient eventServiceClient = EventServiceClient.Create();
             // Initialize request argument(s)
-            TenantOrProjectNameOneof parent = TenantOrProjectNameOneof.From(new TenantName("[PROJECT]", "[TENANT]"));
+            ProjectName parent = new ProjectName("[PROJECT]");
             ClientEvent clientEvent = new ClientEvent();
             // Make the request
             ClientEvent response = eventServiceClient.CreateClientEvent(parent, clientEvent);
@@ -72,7 +72,7 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             // Initialize request argument(s)
             CreateClientEventRequest request = new CreateClientEventRequest
             {
-                ParentAsTenantOrProjectNameOneof = TenantOrProjectNameOneof.From(new TenantName("[PROJECT]", "[TENANT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 ClientEvent = new ClientEvent(),
             };
             // Make the request
@@ -89,7 +89,7 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             // Initialize request argument(s)
             CreateClientEventRequest request = new CreateClientEventRequest
             {
-                ParentAsTenantOrProjectNameOneof = TenantOrProjectNameOneof.From(new TenantName("[PROJECT]", "[TENANT]")),
+                ParentAsProjectName = new ProjectName("[PROJECT]"),
                 ClientEvent = new ClientEvent(),
             };
             // Make the request

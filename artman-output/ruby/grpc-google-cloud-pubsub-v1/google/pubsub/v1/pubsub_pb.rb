@@ -3,6 +3,7 @@
 
 require 'google/protobuf'
 
+require 'google/api/annotations_pb'
 require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
@@ -10,7 +11,6 @@ require 'google/protobuf/duration_pb'
 require 'google/protobuf/empty_pb'
 require 'google/protobuf/field_mask_pb'
 require 'google/protobuf/timestamp_pb'
-require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "google.pubsub.v1.MessageStoragePolicy" do
     repeated :allowed_persistence_regions, :string, 1
@@ -82,7 +82,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     map :labels, :string, :string, 9
     optional :enable_message_ordering, :bool, 10
     optional :expiration_policy, :message, 11, "google.pubsub.v1.ExpirationPolicy"
+    optional :filter, :string, 12
     optional :dead_letter_policy, :message, 13, "google.pubsub.v1.DeadLetterPolicy"
+    optional :retry_policy, :message, 14, "google.pubsub.v1.RetryPolicy"
+  end
+  add_message "google.pubsub.v1.RetryPolicy" do
+    optional :minimum_backoff, :message, 1, "google.protobuf.Duration"
+    optional :maximum_backoff, :message, 2, "google.protobuf.Duration"
   end
   add_message "google.pubsub.v1.DeadLetterPolicy" do
     optional :dead_letter_topic, :string, 1
@@ -215,6 +221,7 @@ module Google::Cloud::PubSub::V1
   ListTopicSnapshotsResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.pubsub.v1.ListTopicSnapshotsResponse").msgclass
   DeleteTopicRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.pubsub.v1.DeleteTopicRequest").msgclass
   Subscription = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.pubsub.v1.Subscription").msgclass
+  RetryPolicy = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.pubsub.v1.RetryPolicy").msgclass
   DeadLetterPolicy = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.pubsub.v1.DeadLetterPolicy").msgclass
   ExpirationPolicy = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.pubsub.v1.ExpirationPolicy").msgclass
   PushConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("google.pubsub.v1.PushConfig").msgclass

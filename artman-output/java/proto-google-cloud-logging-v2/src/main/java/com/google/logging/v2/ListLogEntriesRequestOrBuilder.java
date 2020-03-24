@@ -9,55 +9,6 @@ public interface ListLogEntriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Deprecated. Use `resource_names` instead.  One or more project identifiers
-   * or project numbers from which to retrieve log entries.  Example:
-   * `"my-project-1A"`.
-   * </pre>
-   *
-   * <code>repeated string project_ids = 1 [deprecated = true];</code>
-   * @return A list containing the projectIds.
-   */
-  @java.lang.Deprecated java.util.List<java.lang.String>
-      getProjectIdsList();
-  /**
-   * <pre>
-   * Deprecated. Use `resource_names` instead.  One or more project identifiers
-   * or project numbers from which to retrieve log entries.  Example:
-   * `"my-project-1A"`.
-   * </pre>
-   *
-   * <code>repeated string project_ids = 1 [deprecated = true];</code>
-   * @return The count of projectIds.
-   */
-  @java.lang.Deprecated int getProjectIdsCount();
-  /**
-   * <pre>
-   * Deprecated. Use `resource_names` instead.  One or more project identifiers
-   * or project numbers from which to retrieve log entries.  Example:
-   * `"my-project-1A"`.
-   * </pre>
-   *
-   * <code>repeated string project_ids = 1 [deprecated = true];</code>
-   * @param index The index of the element to return.
-   * @return The projectIds at the given index.
-   */
-  @java.lang.Deprecated java.lang.String getProjectIds(int index);
-  /**
-   * <pre>
-   * Deprecated. Use `resource_names` instead.  One or more project identifiers
-   * or project numbers from which to retrieve log entries.  Example:
-   * `"my-project-1A"`.
-   * </pre>
-   *
-   * <code>repeated string project_ids = 1 [deprecated = true];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the projectIds at the given index.
-   */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getProjectIdsBytes(int index);
-
-  /**
-   * <pre>
    * Required. Names of one or more parent resources from which to
    * retrieve log entries:
    *     "projects/[PROJECT_ID]"
@@ -132,7 +83,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * The maximum length of the filter is 20000 characters.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The filter.
    */
   java.lang.String getFilter();
@@ -147,7 +98,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * The maximum length of the filter is 20000 characters.
    * </pre>
    *
-   * <code>string filter = 2;</code>
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString
@@ -163,7 +114,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * timestamps are returned in order of their `insert_id` values.
    * </pre>
    *
-   * <code>string order_by = 3;</code>
+   * <code>string order_by = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
@@ -177,7 +128,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * timestamps are returned in order of their `insert_id` values.
    * </pre>
    *
-   * <code>string order_by = 3;</code>
+   * <code>string order_by = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString
@@ -190,7 +141,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * response indicates that more results might be available.
    * </pre>
    *
-   * <code>int32 page_size = 4;</code>
+   * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageSize.
    */
   int getPageSize();
@@ -203,7 +154,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 5;</code>
+   * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
@@ -215,7 +166,7 @@ public interface ListLogEntriesRequestOrBuilder extends
    * parameters should be identical to those in the previous call.
    * </pre>
    *
-   * <code>string page_token = 5;</code>
+   * <code>string page_token = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString

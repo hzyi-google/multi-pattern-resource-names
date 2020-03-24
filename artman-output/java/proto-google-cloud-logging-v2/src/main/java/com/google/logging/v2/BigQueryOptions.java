@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
    * In both cases, tables are sharded based on UTC timezone.
    * </pre>
    *
-   * <code>bool use_partitioned_tables = 1;</code>
+   * <code>bool use_partitioned_tables = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The usePartitionedTables.
    */
   public boolean getUsePartitionedTables() {
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
      * In both cases, tables are sharded based on UTC timezone.
      * </pre>
      *
-     * <code>bool use_partitioned_tables = 1;</code>
+     * <code>bool use_partitioned_tables = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The usePartitionedTables.
      */
     public boolean getUsePartitionedTables() {
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
      * In both cases, tables are sharded based on UTC timezone.
      * </pre>
      *
-     * <code>bool use_partitioned_tables = 1;</code>
+     * <code>bool use_partitioned_tables = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The usePartitionedTables to set.
      * @return This builder for chaining.
      */
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
      * In both cases, tables are sharded based on UTC timezone.
      * </pre>
      *
-     * <code>bool use_partitioned_tables = 1;</code>
+     * <code>bool use_partitioned_tables = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearUsePartitionedTables() {

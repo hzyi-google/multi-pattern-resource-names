@@ -175,8 +175,8 @@ private static final long serialVersionUID = 0L;
   private com.google.logging.v2.LogExclusion exclusion_;
   /**
    * <pre>
-   * Required. New values for the existing exclusion. Only the fields specified
-   * in `update_mask` are relevant.
+   * Required. New values for the existing exclusion. Only the fields specified in
+   * `update_mask` are relevant.
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -187,8 +187,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. New values for the existing exclusion. Only the fields specified
-   * in `update_mask` are relevant.
+   * Required. New values for the existing exclusion. Only the fields specified in
+   * `update_mask` are relevant.
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -199,8 +199,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. New values for the existing exclusion. Only the fields specified
-   * in `update_mask` are relevant.
+   * Required. New values for the existing exclusion. Only the fields specified in
+   * `update_mask` are relevant.
    * </pre>
    *
    * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -213,8 +213,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Required. A non-empty list of fields to change in the existing exclusion.
-   * New values for the fields are taken from the corresponding fields in the
+   * Required. A non-empty list of fields to change in the existing exclusion. New values
+   * for the fields are taken from the corresponding fields in the
    * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
    * `update_mask` are not changed and are ignored in the request.
    * For example, to change the filter and description of an exclusion,
@@ -229,8 +229,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. A non-empty list of fields to change in the existing exclusion.
-   * New values for the fields are taken from the corresponding fields in the
+   * Required. A non-empty list of fields to change in the existing exclusion. New values
+   * for the fields are taken from the corresponding fields in the
    * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
    * `update_mask` are not changed and are ignored in the request.
    * For example, to change the filter and description of an exclusion,
@@ -245,8 +245,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. A non-empty list of fields to change in the existing exclusion.
-   * New values for the fields are taken from the corresponding fields in the
+   * Required. A non-empty list of fields to change in the existing exclusion. New values
+   * for the fields are taken from the corresponding fields in the
    * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
    * `update_mask` are not changed and are ignored in the request.
    * For example, to change the filter and description of an exclusion,
@@ -751,8 +751,8 @@ private static final long serialVersionUID = 0L;
         com.google.logging.v2.LogExclusion, com.google.logging.v2.LogExclusion.Builder, com.google.logging.v2.LogExclusionOrBuilder> exclusionBuilder_;
     /**
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -763,8 +763,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -779,8 +779,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -800,8 +800,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -819,8 +819,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -842,8 +842,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -861,8 +861,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -874,8 +874,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -890,8 +890,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. New values for the existing exclusion. Only the fields specified
-     * in `update_mask` are relevant.
+     * Required. New values for the existing exclusion. Only the fields specified in
+     * `update_mask` are relevant.
      * </pre>
      *
      * <code>.google.logging.v2.LogExclusion exclusion = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -915,8 +915,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -931,8 +931,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -951,8 +951,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -976,8 +976,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -999,8 +999,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1026,8 +1026,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1049,8 +1049,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1066,8 +1066,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,
@@ -1086,8 +1086,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. A non-empty list of fields to change in the existing exclusion.
-     * New values for the fields are taken from the corresponding fields in the
+     * Required. A non-empty list of fields to change in the existing exclusion. New values
+     * for the fields are taken from the corresponding fields in the
      * [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
      * `update_mask` are not changed and are ignored in the request.
      * For example, to change the filter and description of an exclusion,

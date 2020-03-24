@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object region_;
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object region_ = "";
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -874,7 +874,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -895,7 +895,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -914,7 +914,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -928,7 +928,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Cloud Dataproc region in which to handle the request.
+     * Required. The Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 2 [(.google.api.field_behavior) = REQUIRED];</code>

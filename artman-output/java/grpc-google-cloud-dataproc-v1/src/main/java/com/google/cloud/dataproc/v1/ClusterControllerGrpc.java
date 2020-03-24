@@ -289,7 +289,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public void createCluster(com.google.cloud.dataproc.v1.CreateClusterRequest request,
@@ -301,7 +301,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public void updateCluster(com.google.cloud.dataproc.v1.UpdateClusterRequest request,
@@ -313,7 +313,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public void deleteCluster(com.google.cloud.dataproc.v1.DeleteClusterRequest request,
@@ -345,11 +345,11 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
-     * [DiagnoseClusterResults](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+     * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
      * </pre>
      */
     public void diagnoseCluster(com.google.cloud.dataproc.v1.DiagnoseClusterRequest request,
@@ -431,7 +431,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public void createCluster(com.google.cloud.dataproc.v1.CreateClusterRequest request,
@@ -444,7 +444,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public void updateCluster(com.google.cloud.dataproc.v1.UpdateClusterRequest request,
@@ -457,7 +457,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public void deleteCluster(com.google.cloud.dataproc.v1.DeleteClusterRequest request,
@@ -492,11 +492,11 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
-     * [DiagnoseClusterResults](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+     * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
      * </pre>
      */
     public void diagnoseCluster(com.google.cloud.dataproc.v1.DiagnoseClusterRequest request,
@@ -532,7 +532,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(com.google.cloud.dataproc.v1.CreateClusterRequest request) {
@@ -544,7 +544,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(com.google.cloud.dataproc.v1.UpdateClusterRequest request) {
@@ -556,7 +556,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(com.google.cloud.dataproc.v1.DeleteClusterRequest request) {
@@ -588,11 +588,11 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
-     * [DiagnoseClusterResults](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+     * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
      * </pre>
      */
     public com.google.longrunning.Operation diagnoseCluster(com.google.cloud.dataproc.v1.DiagnoseClusterRequest request) {
@@ -627,7 +627,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createCluster(
@@ -640,7 +640,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateCluster(
@@ -653,7 +653,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteCluster(
@@ -688,11 +688,11 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
-     * [DiagnoseClusterResults](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+     * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> diagnoseCluster(

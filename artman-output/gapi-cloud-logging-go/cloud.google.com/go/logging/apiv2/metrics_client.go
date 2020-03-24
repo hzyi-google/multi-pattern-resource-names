@@ -58,7 +58,6 @@ func defaultMetricsCallOptions() *MetricsCallOptions {
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.DeadlineExceeded,
-					codes.Internal,
 					codes.Unavailable,
 				}, gax.Backoff{
 					Initial:    100 * time.Millisecond,
@@ -72,8 +71,8 @@ func defaultMetricsCallOptions() *MetricsCallOptions {
 		ListLogMetrics:  retry[[2]string{"default", "idempotent"}],
 		GetLogMetric:    retry[[2]string{"default", "idempotent"}],
 		CreateLogMetric: retry[[2]string{"default", "non_idempotent"}],
-		UpdateLogMetric: retry[[2]string{"default", "idempotent"}],
-		DeleteLogMetric: retry[[2]string{"default", "idempotent"}],
+		UpdateLogMetric: retry[[2]string{"default", "non_idempotent"}],
+		DeleteLogMetric: retry[[2]string{"default", "non_idempotent"}],
 	}
 }
 

@@ -1111,9 +1111,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1160,9 +1160,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1206,9 +1206,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1255,9 +1255,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1304,9 +1304,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1350,9 +1350,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1399,9 +1399,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1454,9 +1454,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1486,168 +1486,6 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// </returns>
         public virtual stt::Task<lro::Operation<pbwkt::Empty, WorkflowMetadata>> InstantiateWorkflowTemplateAsync(
             WorkflowTemplateName name,
-            scg::IDictionary<string, string> parameters,
-            st::CancellationToken cancellationToken) => InstantiateWorkflowTemplateAsync(
-                name,
-                parameters,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Instantiates a template and begins execution.
-        ///
-        /// The returned Operation can be used to track execution of
-        /// workflow by polling
-        /// [operations.get][google.longrunning.Operations.GetOperation].
-        /// The Operation will complete when entire workflow is finished.
-        ///
-        /// The running workflow can be aborted via
-        /// [operations.cancel][google.longrunning.Operations.CancelOperation].
-        /// This will cause any inflight jobs to be cancelled and workflow-owned
-        /// clusters to be deleted.
-        ///
-        /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-        /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-        ///
-        /// On successful completion,
-        /// [Operation.response][google.longrunning.Operation.response] will be
-        /// [Empty][google.protobuf.Empty].
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the workflow template, as described
-        /// in https://cloud.google.com/apis/design/resource_names.
-        ///
-        /// * For `projects.regions.workflowTemplates.instantiate`, the resource name
-        /// of the template has the following format:
-        ///   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-        ///
-        /// * For `projects.locations.workflowTemplates.instantiate`, the resource name
-        ///   of the template has the following format:
-        ///   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
-        /// </param>
-        /// <param name="parameters">
-        /// Optional. Map from parameter names to values that should be used for those
-        /// parameters. Values may not exceed 100 characters.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// The RPC response.
-        /// </returns>
-        public virtual lro::Operation<pbwkt::Empty, WorkflowMetadata> InstantiateWorkflowTemplate(
-            WorkflowTemplateName name,
-            scg::IDictionary<string, string> parameters,
-            gaxgrpc::CallSettings callSettings = null) => InstantiateWorkflowTemplate(
-                new InstantiateWorkflowTemplateRequest
-                {
-                    WorkflowTemplateName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                    Parameters = { parameters ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
-                },
-                callSettings);
-
-        /// <summary>
-        /// Instantiates a template and begins execution.
-        ///
-        /// The returned Operation can be used to track execution of
-        /// workflow by polling
-        /// [operations.get][google.longrunning.Operations.GetOperation].
-        /// The Operation will complete when entire workflow is finished.
-        ///
-        /// The running workflow can be aborted via
-        /// [operations.cancel][google.longrunning.Operations.CancelOperation].
-        /// This will cause any inflight jobs to be cancelled and workflow-owned
-        /// clusters to be deleted.
-        ///
-        /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-        /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-        ///
-        /// On successful completion,
-        /// [Operation.response][google.longrunning.Operation.response] will be
-        /// [Empty][google.protobuf.Empty].
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the workflow template, as described
-        /// in https://cloud.google.com/apis/design/resource_names.
-        ///
-        /// * For `projects.regions.workflowTemplates.instantiate`, the resource name
-        /// of the template has the following format:
-        ///   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-        ///
-        /// * For `projects.locations.workflowTemplates.instantiate`, the resource name
-        ///   of the template has the following format:
-        ///   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
-        /// </param>
-        /// <param name="parameters">
-        /// Optional. Map from parameter names to values that should be used for those
-        /// parameters. Values may not exceed 100 characters.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<lro::Operation<pbwkt::Empty, WorkflowMetadata>> InstantiateWorkflowTemplateAsync(
-            string name,
-            scg::IDictionary<string, string> parameters,
-            gaxgrpc::CallSettings callSettings = null) => InstantiateWorkflowTemplateAsync(
-                new InstantiateWorkflowTemplateRequest
-                {
-                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
-                    Parameters = { parameters ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
-                },
-                callSettings);
-
-        /// <summary>
-        /// Instantiates a template and begins execution.
-        ///
-        /// The returned Operation can be used to track execution of
-        /// workflow by polling
-        /// [operations.get][google.longrunning.Operations.GetOperation].
-        /// The Operation will complete when entire workflow is finished.
-        ///
-        /// The running workflow can be aborted via
-        /// [operations.cancel][google.longrunning.Operations.CancelOperation].
-        /// This will cause any inflight jobs to be cancelled and workflow-owned
-        /// clusters to be deleted.
-        ///
-        /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
-        /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
-        ///
-        /// On successful completion,
-        /// [Operation.response][google.longrunning.Operation.response] will be
-        /// [Empty][google.protobuf.Empty].
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the workflow template, as described
-        /// in https://cloud.google.com/apis/design/resource_names.
-        ///
-        /// * For `projects.regions.workflowTemplates.instantiate`, the resource name
-        /// of the template has the following format:
-        ///   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
-        ///
-        /// * For `projects.locations.workflowTemplates.instantiate`, the resource name
-        ///   of the template has the following format:
-        ///   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
-        /// </param>
-        /// <param name="parameters">
-        /// Optional. Map from parameter names to values that should be used for those
-        /// parameters. Values may not exceed 100 characters.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task containing the RPC response.
-        /// </returns>
-        public virtual stt::Task<lro::Operation<pbwkt::Empty, WorkflowMetadata>> InstantiateWorkflowTemplateAsync(
-            string name,
             scg::IDictionary<string, string> parameters,
             st::CancellationToken cancellationToken) => InstantiateWorkflowTemplateAsync(
                 name,
@@ -1668,9 +1506,171 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        ///
+        /// On successful completion,
+        /// [Operation.response][google.longrunning.Operation.response] will be
+        /// [Empty][google.protobuf.Empty].
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the workflow template, as described
+        /// in https://cloud.google.com/apis/design/resource_names.
+        ///
+        /// * For `projects.regions.workflowTemplates.instantiate`, the resource name
+        /// of the template has the following format:
+        ///   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+        ///
+        /// * For `projects.locations.workflowTemplates.instantiate`, the resource name
+        ///   of the template has the following format:
+        ///   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+        /// </param>
+        /// <param name="parameters">
+        /// Optional. Map from parameter names to values that should be used for those
+        /// parameters. Values may not exceed 100 characters.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// The RPC response.
+        /// </returns>
+        public virtual lro::Operation<pbwkt::Empty, WorkflowMetadata> InstantiateWorkflowTemplate(
+            WorkflowTemplateName name,
+            scg::IDictionary<string, string> parameters,
+            gaxgrpc::CallSettings callSettings = null) => InstantiateWorkflowTemplate(
+                new InstantiateWorkflowTemplateRequest
+                {
+                    WorkflowTemplateName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                    Parameters = { parameters ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
+                },
+                callSettings);
+
+        /// <summary>
+        /// Instantiates a template and begins execution.
+        ///
+        /// The returned Operation can be used to track execution of
+        /// workflow by polling
+        /// [operations.get][google.longrunning.Operations.GetOperation].
+        /// The Operation will complete when entire workflow is finished.
+        ///
+        /// The running workflow can be aborted via
+        /// [operations.cancel][google.longrunning.Operations.CancelOperation].
+        /// This will cause any inflight jobs to be cancelled and workflow-owned
+        /// clusters to be deleted.
+        ///
+        /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// Also see [Using
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        ///
+        /// On successful completion,
+        /// [Operation.response][google.longrunning.Operation.response] will be
+        /// [Empty][google.protobuf.Empty].
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the workflow template, as described
+        /// in https://cloud.google.com/apis/design/resource_names.
+        ///
+        /// * For `projects.regions.workflowTemplates.instantiate`, the resource name
+        /// of the template has the following format:
+        ///   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+        ///
+        /// * For `projects.locations.workflowTemplates.instantiate`, the resource name
+        ///   of the template has the following format:
+        ///   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+        /// </param>
+        /// <param name="parameters">
+        /// Optional. Map from parameter names to values that should be used for those
+        /// parameters. Values may not exceed 100 characters.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<lro::Operation<pbwkt::Empty, WorkflowMetadata>> InstantiateWorkflowTemplateAsync(
+            string name,
+            scg::IDictionary<string, string> parameters,
+            gaxgrpc::CallSettings callSettings = null) => InstantiateWorkflowTemplateAsync(
+                new InstantiateWorkflowTemplateRequest
+                {
+                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                    Parameters = { parameters ?? gax::EmptyDictionary<string, string>.Instance }, // Optional
+                },
+                callSettings);
+
+        /// <summary>
+        /// Instantiates a template and begins execution.
+        ///
+        /// The returned Operation can be used to track execution of
+        /// workflow by polling
+        /// [operations.get][google.longrunning.Operations.GetOperation].
+        /// The Operation will complete when entire workflow is finished.
+        ///
+        /// The running workflow can be aborted via
+        /// [operations.cancel][google.longrunning.Operations.CancelOperation].
+        /// This will cause any inflight jobs to be cancelled and workflow-owned
+        /// clusters to be deleted.
+        ///
+        /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// Also see [Using
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        ///
+        /// On successful completion,
+        /// [Operation.response][google.longrunning.Operation.response] will be
+        /// [Empty][google.protobuf.Empty].
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the workflow template, as described
+        /// in https://cloud.google.com/apis/design/resource_names.
+        ///
+        /// * For `projects.regions.workflowTemplates.instantiate`, the resource name
+        /// of the template has the following format:
+        ///   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+        ///
+        /// * For `projects.locations.workflowTemplates.instantiate`, the resource name
+        ///   of the template has the following format:
+        ///   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
+        /// </param>
+        /// <param name="parameters">
+        /// Optional. Map from parameter names to values that should be used for those
+        /// parameters. Values may not exceed 100 characters.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task containing the RPC response.
+        /// </returns>
+        public virtual stt::Task<lro::Operation<pbwkt::Empty, WorkflowMetadata>> InstantiateWorkflowTemplateAsync(
+            string name,
+            scg::IDictionary<string, string> parameters,
+            st::CancellationToken cancellationToken) => InstantiateWorkflowTemplateAsync(
+                name,
+                parameters,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Instantiates a template and begins execution.
+        ///
+        /// The returned Operation can be used to track execution of
+        /// workflow by polling
+        /// [operations.get][google.longrunning.Operations.GetOperation].
+        /// The Operation will complete when entire workflow is finished.
+        ///
+        /// The running workflow can be aborted via
+        /// [operations.cancel][google.longrunning.Operations.CancelOperation].
+        /// This will cause any inflight jobs to be cancelled and workflow-owned
+        /// clusters to be deleted.
+        ///
+        /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// Also see [Using
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1723,9 +1723,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1774,9 +1774,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1837,9 +1837,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1895,9 +1895,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -1950,9 +1950,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -2008,9 +2008,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -2066,9 +2066,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -2121,9 +2121,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -2179,9 +2179,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -2234,9 +2234,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -3036,9 +3036,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -3076,9 +3076,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -3125,9 +3125,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be
@@ -3169,9 +3169,9 @@ namespace Google.Cloud.Dataproc.V1Beta2
         /// clusters to be deleted.
         ///
         /// The [Operation.metadata][google.longrunning.Operation.metadata] will be
-        /// [WorkflowMetadata](/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+        /// [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
         /// Also see [Using
-        /// WorkflowMetadata](/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+        /// WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
         ///
         /// On successful completion,
         /// [Operation.response][google.longrunning.Operation.response] will be

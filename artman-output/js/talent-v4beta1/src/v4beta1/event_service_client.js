@@ -262,7 +262,7 @@ class EventServiceClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedParent = client.tenantPath('[PROJECT]', '[TENANT]');
+   * const formattedParent = client.projectPath('[PROJECT]');
    * const clientEvent = {};
    * const request = {
    *   parent: formattedParent,

@@ -31,7 +31,7 @@ public interface SubmitJobRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,7 +40,7 @@ public interface SubmitJobRequestOrBuilder extends
   java.lang.String getRegion();
   /**
    * <pre>
-   * Required. The Cloud Dataproc region in which to handle the request.
+   * Required. The Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -89,7 +89,7 @@ public interface SubmitJobRequestOrBuilder extends
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 4;</code>
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The requestId.
    */
   java.lang.String getRequestId();
@@ -106,7 +106,7 @@ public interface SubmitJobRequestOrBuilder extends
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 4;</code>
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString

@@ -82,10 +82,12 @@ public class SecurityMarksName implements ResourceName {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationAssetBuilder() {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationSourceFindingBuilder newOrganizationSourceFindingBuilder() {
     return new OrganizationSourceFindingBuilder();
   }
@@ -101,6 +103,7 @@ public class SecurityMarksName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityMarksName ofOrganizationAssetName(String organization, String asset) {
     return newOrganizationAssetBuilder()
         .setOrganization(organization)
@@ -108,6 +111,7 @@ public class SecurityMarksName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityMarksName ofOrganizationSourceFindingName(String organization, String source, String finding) {
     return newOrganizationSourceFindingBuilder()
         .setOrganization(organization)
@@ -124,6 +128,7 @@ public class SecurityMarksName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationAssetName(String organization, String asset) {
     return newBuilder()
         .setOrganization(organization)
@@ -132,6 +137,7 @@ public class SecurityMarksName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationSourceFindingName(String organization, String source, String finding) {
     return newOrganizationSourceFindingBuilder()
         .setOrganization(organization)
@@ -262,6 +268,7 @@ public class SecurityMarksName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/sources/{source}/findings/{finding}/securityMarks. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationSourceFindingBuilder {
 
     private String organization;
@@ -307,7 +314,7 @@ public class SecurityMarksName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (o != null || getClass() == o.getClass()) {
       SecurityMarksName that = (SecurityMarksName) o;
       return (Objects.equals(this.organization, that.organization))
           && (Objects.equals(this.asset, that.asset))

@@ -34,6 +34,72 @@ namespace Google.Cloud.Talent.V4Beta1.Tests
     public class GeneratedProfileServiceClientTest
     {
         [Fact]
+        public void DeleteProfile()
+        {
+            Mock<ProfileService.ProfileServiceClient> mockGrpcClient = new Mock<ProfileService.ProfileServiceClient>(MockBehavior.Strict);
+            DeleteProfileRequest expectedRequest = new DeleteProfileRequest
+            {
+                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteProfile(expectedRequest, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            ProfileServiceClient client = new ProfileServiceClientImpl(mockGrpcClient.Object, null);
+            ProfileName name = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]");
+            client.DeleteProfile(name);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task DeleteProfileAsync()
+        {
+            Mock<ProfileService.ProfileServiceClient> mockGrpcClient = new Mock<ProfileService.ProfileServiceClient>(MockBehavior.Strict);
+            DeleteProfileRequest expectedRequest = new DeleteProfileRequest
+            {
+                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteProfileAsync(expectedRequest, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
+            ProfileServiceClient client = new ProfileServiceClientImpl(mockGrpcClient.Object, null);
+            ProfileName name = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]");
+            await client.DeleteProfileAsync(name);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public void DeleteProfile2()
+        {
+            Mock<ProfileService.ProfileServiceClient> mockGrpcClient = new Mock<ProfileService.ProfileServiceClient>(MockBehavior.Strict);
+            DeleteProfileRequest request = new DeleteProfileRequest
+            {
+                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteProfile(request, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            ProfileServiceClient client = new ProfileServiceClientImpl(mockGrpcClient.Object, null);
+            client.DeleteProfile(request);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task DeleteProfileAsync2()
+        {
+            Mock<ProfileService.ProfileServiceClient> mockGrpcClient = new Mock<ProfileService.ProfileServiceClient>(MockBehavior.Strict);
+            DeleteProfileRequest request = new DeleteProfileRequest
+            {
+                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteProfileAsync(request, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
+            ProfileServiceClient client = new ProfileServiceClientImpl(mockGrpcClient.Object, null);
+            await client.DeleteProfileAsync(request);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
         public void CreateProfile()
         {
             Mock<ProfileService.ProfileServiceClient> mockGrpcClient = new Mock<ProfileService.ProfileServiceClient>(MockBehavior.Strict);
@@ -354,72 +420,6 @@ namespace Google.Cloud.Talent.V4Beta1.Tests
             ProfileServiceClient client = new ProfileServiceClientImpl(mockGrpcClient.Object, null);
             Profile response = await client.UpdateProfileAsync(request);
             Assert.Same(expectedResponse, response);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public void DeleteProfile()
-        {
-            Mock<ProfileService.ProfileServiceClient> mockGrpcClient = new Mock<ProfileService.ProfileServiceClient>(MockBehavior.Strict);
-            DeleteProfileRequest expectedRequest = new DeleteProfileRequest
-            {
-                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteProfile(expectedRequest, It.IsAny<CallOptions>()))
-                .Returns(expectedResponse);
-            ProfileServiceClient client = new ProfileServiceClientImpl(mockGrpcClient.Object, null);
-            ProfileName name = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]");
-            client.DeleteProfile(name);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public async Task DeleteProfileAsync()
-        {
-            Mock<ProfileService.ProfileServiceClient> mockGrpcClient = new Mock<ProfileService.ProfileServiceClient>(MockBehavior.Strict);
-            DeleteProfileRequest expectedRequest = new DeleteProfileRequest
-            {
-                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteProfileAsync(expectedRequest, It.IsAny<CallOptions>()))
-                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
-            ProfileServiceClient client = new ProfileServiceClientImpl(mockGrpcClient.Object, null);
-            ProfileName name = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]");
-            await client.DeleteProfileAsync(name);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public void DeleteProfile2()
-        {
-            Mock<ProfileService.ProfileServiceClient> mockGrpcClient = new Mock<ProfileService.ProfileServiceClient>(MockBehavior.Strict);
-            DeleteProfileRequest request = new DeleteProfileRequest
-            {
-                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteProfile(request, It.IsAny<CallOptions>()))
-                .Returns(expectedResponse);
-            ProfileServiceClient client = new ProfileServiceClientImpl(mockGrpcClient.Object, null);
-            client.DeleteProfile(request);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public async Task DeleteProfileAsync2()
-        {
-            Mock<ProfileService.ProfileServiceClient> mockGrpcClient = new Mock<ProfileService.ProfileServiceClient>(MockBehavior.Strict);
-            DeleteProfileRequest request = new DeleteProfileRequest
-            {
-                ProfileName = new ProfileName("[PROJECT]", "[TENANT]", "[PROFILE]"),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteProfileAsync(request, It.IsAny<CallOptions>()))
-                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
-            ProfileServiceClient client = new ProfileServiceClientImpl(mockGrpcClient.Object, null);
-            await client.DeleteProfileAsync(request);
             mockGrpcClient.VerifyAll();
         }
 

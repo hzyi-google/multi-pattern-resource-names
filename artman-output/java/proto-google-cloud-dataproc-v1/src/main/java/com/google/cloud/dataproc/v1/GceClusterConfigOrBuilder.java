@@ -351,4 +351,31 @@ public interface GceClusterConfigOrBuilder extends
 
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * Optional. Reservation Affinity for consuming Zonal reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.ReservationAffinity reservation_affinity = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the reservationAffinity field is set.
+   */
+  boolean hasReservationAffinity();
+  /**
+   * <pre>
+   * Optional. Reservation Affinity for consuming Zonal reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.ReservationAffinity reservation_affinity = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The reservationAffinity.
+   */
+  com.google.cloud.dataproc.v1.ReservationAffinity getReservationAffinity();
+  /**
+   * <pre>
+   * Optional. Reservation Affinity for consuming Zonal reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.ReservationAffinity reservation_affinity = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.cloud.dataproc.v1.ReservationAffinityOrBuilder getReservationAffinityOrBuilder();
 }

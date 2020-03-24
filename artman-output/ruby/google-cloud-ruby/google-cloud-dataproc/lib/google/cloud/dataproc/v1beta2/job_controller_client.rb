@@ -136,6 +136,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "job_controller_client_config.json"
@@ -208,7 +211,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the job
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param job [Google::Cloud::Dataproc::V1beta2::Job | Hash]
           #   Required. The job resource.
           #   A hash of the same form as `Google::Cloud::Dataproc::V1beta2::Job`
@@ -271,7 +274,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the job
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param job_id [String]
           #   Required. The job ID.
           # @param options [Google::Gax::CallOptions]
@@ -318,7 +321,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the job
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param page_size [Integer]
           #   The maximum number of resources contained in the underlying API
           #   response. If page streaming is performed per-resource, this
@@ -411,7 +414,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the job
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param job_id [String]
           #   Required. The job ID.
           # @param job [Google::Cloud::Dataproc::V1beta2::Job | Hash]
@@ -485,7 +488,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the job
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param job_id [String]
           #   Required. The job ID.
           # @param options [Google::Gax::CallOptions]
@@ -533,7 +536,7 @@ module Google
           #   Required. The ID of the Google Cloud Platform project that the job
           #   belongs to.
           # @param region [String]
-          #   Required. The Cloud Dataproc region in which to handle the request.
+          #   Required. The Dataproc region in which to handle the request.
           # @param job_id [String]
           #   Required. The job ID.
           # @param options [Google::Gax::CallOptions]

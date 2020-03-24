@@ -265,6 +265,18 @@ func (s *mockDlpServer) UpdateJobTrigger(ctx context.Context, req *dlppb.UpdateJ
 	return s.resps[0].(*dlppb.JobTrigger), nil
 }
 
+func (s *mockDlpServer) HybridInspectJobTrigger(ctx context.Context, req *dlppb.HybridInspectJobTriggerRequest) (*dlppb.HybridInspectResponse, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*dlppb.HybridInspectResponse), nil
+}
+
 func (s *mockDlpServer) GetJobTrigger(ctx context.Context, req *dlppb.GetJobTriggerRequest) (*dlppb.JobTrigger, error) {
 	md, _ := metadata.FromIncomingContext(ctx)
 	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
@@ -410,6 +422,30 @@ func (s *mockDlpServer) ListStoredInfoTypes(ctx context.Context, req *dlppb.List
 }
 
 func (s *mockDlpServer) DeleteStoredInfoType(ctx context.Context, req *dlppb.DeleteStoredInfoTypeRequest) (*emptypb.Empty, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*emptypb.Empty), nil
+}
+
+func (s *mockDlpServer) HybridInspectDlpJob(ctx context.Context, req *dlppb.HybridInspectDlpJobRequest) (*dlppb.HybridInspectResponse, error) {
+	md, _ := metadata.FromIncomingContext(ctx)
+	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
+		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
+	}
+	s.reqs = append(s.reqs, req)
+	if s.err != nil {
+		return nil, s.err
+	}
+	return s.resps[0].(*dlppb.HybridInspectResponse), nil
+}
+
+func (s *mockDlpServer) FinishDlpJob(ctx context.Context, req *dlppb.FinishDlpJobRequest) (*emptypb.Empty, error) {
 	md, _ := metadata.FromIncomingContext(ctx)
 	if xg := md["x-goog-api-client"]; len(xg) == 0 || !strings.Contains(xg[0], "gl-go/") {
 		return nil, fmt.Errorf("x-goog-api-client = %v, expected gl-go key", xg)
@@ -1647,6 +1683,114 @@ func TestDlpServiceCancelDlpJobError(t *testing.T) {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
 }
+func TestDlpServiceFinishDlpJob(t *testing.T) {
+	var expectedResponse *emptypb.Empty = &emptypb.Empty{}
+
+	mockDlp.err = nil
+	mockDlp.reqs = nil
+
+	mockDlp.resps = append(mockDlp.resps[:0], expectedResponse)
+
+	var formattedName string = fmt.Sprintf("projects/%s/dlpJobs/%s", "[PROJECT]", "[DLP_JOB]")
+	var request = &dlppb.FinishDlpJobRequest{
+		Name: formattedName,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.FinishDlpJob(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockDlp.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+}
+
+func TestDlpServiceFinishDlpJobError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockDlp.err = gstatus.Error(errCode, "test error")
+
+	var formattedName string = fmt.Sprintf("projects/%s/dlpJobs/%s", "[PROJECT]", "[DLP_JOB]")
+	var request = &dlppb.FinishDlpJobRequest{
+		Name: formattedName,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	err = c.FinishDlpJob(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+}
+func TestDlpServiceHybridInspectDlpJob(t *testing.T) {
+	var expectedResponse *dlppb.HybridInspectResponse = &dlppb.HybridInspectResponse{}
+
+	mockDlp.err = nil
+	mockDlp.reqs = nil
+
+	mockDlp.resps = append(mockDlp.resps[:0], expectedResponse)
+
+	var name string = "name3373707"
+	var request = &dlppb.HybridInspectDlpJobRequest{
+		Name: name,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.HybridInspectDlpJob(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockDlp.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestDlpServiceHybridInspectDlpJobError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockDlp.err = gstatus.Error(errCode, "test error")
+
+	var name string = "name3373707"
+	var request = &dlppb.HybridInspectDlpJobRequest{
+		Name: name,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.HybridInspectDlpJob(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
+}
 func TestDlpServiceListJobTriggers(t *testing.T) {
 	var nextPageToken string = ""
 	var jobTriggersElement *dlppb.JobTrigger = &dlppb.JobTrigger{}
@@ -1833,6 +1977,62 @@ func TestDlpServiceDeleteJobTriggerError(t *testing.T) {
 	} else if c := st.Code(); c != errCode {
 		t.Errorf("got error code %q, want %q", c, errCode)
 	}
+}
+func TestDlpServiceHybridInspectJobTrigger(t *testing.T) {
+	var expectedResponse *dlppb.HybridInspectResponse = &dlppb.HybridInspectResponse{}
+
+	mockDlp.err = nil
+	mockDlp.reqs = nil
+
+	mockDlp.resps = append(mockDlp.resps[:0], expectedResponse)
+
+	var name string = "name3373707"
+	var request = &dlppb.HybridInspectJobTriggerRequest{
+		Name: name,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.HybridInspectJobTrigger(context.Background(), request)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if want, got := request, mockDlp.reqs[0]; !proto.Equal(want, got) {
+		t.Errorf("wrong request %q, want %q", got, want)
+	}
+
+	if want, got := expectedResponse, resp; !proto.Equal(want, got) {
+		t.Errorf("wrong response %q, want %q)", got, want)
+	}
+}
+
+func TestDlpServiceHybridInspectJobTriggerError(t *testing.T) {
+	errCode := codes.PermissionDenied
+	mockDlp.err = gstatus.Error(errCode, "test error")
+
+	var name string = "name3373707"
+	var request = &dlppb.HybridInspectJobTriggerRequest{
+		Name: name,
+	}
+
+	c, err := NewClient(context.Background(), clientOpt)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	resp, err := c.HybridInspectJobTrigger(context.Background(), request)
+
+	if st, ok := gstatus.FromError(err); !ok {
+		t.Errorf("got error %v, expected grpc error", err)
+	} else if c := st.Code(); c != errCode {
+		t.Errorf("got error code %q, want %q", c, errCode)
+	}
+	_ = resp
 }
 func TestDlpServiceUpdateJobTrigger(t *testing.T) {
 	var name2 string = "name2-1052831874"

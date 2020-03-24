@@ -49,12 +49,12 @@ namespace Google.Cloud.Talent.V4Beta1
         private ProfileServiceSettings(ProfileServiceSettings existing) : base(existing)
         {
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
+            DeleteProfileSettings = existing.DeleteProfileSettings;
+            SearchProfilesSettings = existing.SearchProfilesSettings;
             ListProfilesSettings = existing.ListProfilesSettings;
             CreateProfileSettings = existing.CreateProfileSettings;
             GetProfileSettings = existing.GetProfileSettings;
             UpdateProfileSettings = existing.UpdateProfileSettings;
-            DeleteProfileSettings = existing.DeleteProfileSettings;
-            SearchProfilesSettings = existing.SearchProfilesSettings;
             OnCopy(existing);
         }
 
@@ -123,6 +123,65 @@ namespace Google.Cloud.Talent.V4Beta1
             maxDelay: sys::TimeSpan.FromMilliseconds(20000),
             delayMultiplier: 1.0
         );
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>ProfileServiceClient.DeleteProfile</c> and <c>ProfileServiceClient.DeleteProfileAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>ProfileServiceClient.DeleteProfile</c> and
+        /// <c>ProfileServiceClient.DeleteProfileAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
+        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings DeleteProfileSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: IdempotentRetryFilter
+            )));
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>ProfileServiceClient.SearchProfiles</c> and <c>ProfileServiceClient.SearchProfilesAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>ProfileServiceClient.SearchProfiles</c> and
+        /// <c>ProfileServiceClient.SearchProfilesAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description>No status codes</description></item>
+        /// </list>
+        /// Default RPC expiration is 600000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings SearchProfilesSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
+                retryFilter: NonIdempotentRetryFilter
+            )));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -235,65 +294,6 @@ namespace Google.Cloud.Talent.V4Beta1
         /// Default RPC expiration is 600000 milliseconds.
         /// </remarks>
         public gaxgrpc::CallSettings UpdateProfileSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
-            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
-                retryBackoff: GetDefaultRetryBackoff(),
-                timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: NonIdempotentRetryFilter
-            )));
-
-        /// <summary>
-        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
-        /// <c>ProfileServiceClient.DeleteProfile</c> and <c>ProfileServiceClient.DeleteProfileAsync</c>.
-        /// </summary>
-        /// <remarks>
-        /// The default <c>ProfileServiceClient.DeleteProfile</c> and
-        /// <c>ProfileServiceClient.DeleteProfileAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
-        /// <list type="bullet">
-        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
-        /// <item><description>Retry delay multiplier: 1.3</description></item>
-        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
-        /// </list>
-        /// Retry will be attempted on the following response status codes:
-        /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
-        /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
-        /// </remarks>
-        public gaxgrpc::CallSettings DeleteProfileSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
-            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
-                retryBackoff: GetDefaultRetryBackoff(),
-                timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(600000)),
-                retryFilter: IdempotentRetryFilter
-            )));
-
-        /// <summary>
-        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
-        /// <c>ProfileServiceClient.SearchProfiles</c> and <c>ProfileServiceClient.SearchProfilesAsync</c>.
-        /// </summary>
-        /// <remarks>
-        /// The default <c>ProfileServiceClient.SearchProfiles</c> and
-        /// <c>ProfileServiceClient.SearchProfilesAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
-        /// <list type="bullet">
-        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
-        /// <item><description>Retry delay multiplier: 1.3</description></item>
-        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
-        /// </list>
-        /// Retry will be attempted on the following response status codes:
-        /// <list>
-        /// <item><description>No status codes</description></item>
-        /// </list>
-        /// Default RPC expiration is 600000 milliseconds.
-        /// </remarks>
-        public gaxgrpc::CallSettings SearchProfilesSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
             gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
                 retryBackoff: GetDefaultRetryBackoff(),
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
@@ -500,6 +500,263 @@ namespace Google.Cloud.Talent.V4Beta1
         public virtual ProfileService.ProfileServiceClient GrpcClient
         {
             get { throw new sys::NotImplementedException(); }
+        }
+
+        /// <summary>
+        /// Deletes the specified profile.
+        /// Prerequisite: The profile has no associated applications or assignments
+        /// associated.
+        /// </summary>
+        /// <param name="name">
+        /// Required. Resource name of the profile to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+        /// example, "projects/foo/tenants/bar/profiles/baz".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteProfileAsync(
+            ProfileName name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteProfileAsync(
+                new DeleteProfileRequest
+                {
+                    ProfileName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes the specified profile.
+        /// Prerequisite: The profile has no associated applications or assignments
+        /// associated.
+        /// </summary>
+        /// <param name="name">
+        /// Required. Resource name of the profile to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+        /// example, "projects/foo/tenants/bar/profiles/baz".
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteProfileAsync(
+            ProfileName name,
+            st::CancellationToken cancellationToken) => DeleteProfileAsync(
+                name,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes the specified profile.
+        /// Prerequisite: The profile has no associated applications or assignments
+        /// associated.
+        /// </summary>
+        /// <param name="name">
+        /// Required. Resource name of the profile to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+        /// example, "projects/foo/tenants/bar/profiles/baz".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteProfile(
+            ProfileName name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteProfile(
+                new DeleteProfileRequest
+                {
+                    ProfileName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes the specified profile.
+        /// Prerequisite: The profile has no associated applications or assignments
+        /// associated.
+        /// </summary>
+        /// <param name="name">
+        /// Required. Resource name of the profile to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+        /// example, "projects/foo/tenants/bar/profiles/baz".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteProfileAsync(
+            string name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteProfileAsync(
+                new DeleteProfileRequest
+                {
+                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes the specified profile.
+        /// Prerequisite: The profile has no associated applications or assignments
+        /// associated.
+        /// </summary>
+        /// <param name="name">
+        /// Required. Resource name of the profile to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+        /// example, "projects/foo/tenants/bar/profiles/baz".
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteProfileAsync(
+            string name,
+            st::CancellationToken cancellationToken) => DeleteProfileAsync(
+                name,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes the specified profile.
+        /// Prerequisite: The profile has no associated applications or assignments
+        /// associated.
+        /// </summary>
+        /// <param name="name">
+        /// Required. Resource name of the profile to be deleted.
+        ///
+        /// The format is
+        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
+        /// example, "projects/foo/tenants/bar/profiles/baz".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteProfile(
+            string name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteProfile(
+                new DeleteProfileRequest
+                {
+                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes the specified profile.
+        /// Prerequisite: The profile has no associated applications or assignments
+        /// associated.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteProfileAsync(
+            DeleteProfileRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Deletes the specified profile.
+        /// Prerequisite: The profile has no associated applications or assignments
+        /// associated.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteProfileAsync(
+            DeleteProfileRequest request,
+            st::CancellationToken cancellationToken) => DeleteProfileAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes the specified profile.
+        /// Prerequisite: The profile has no associated applications or assignments
+        /// associated.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteProfile(
+            DeleteProfileRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Searches for profiles within a tenant.
+        ///
+        /// For example, search by raw queries "software engineer in Mountain View" or
+        /// search by structured filters (location filter, education filter, etc.).
+        ///
+        /// See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable asynchronous sequence of <see cref="SummarizedProfile"/> resources.
+        /// </returns>
+        public virtual gax::PagedAsyncEnumerable<SearchProfilesResponse, SummarizedProfile> SearchProfilesAsync(
+            SearchProfilesRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Searches for profiles within a tenant.
+        ///
+        /// For example, search by raw queries "software engineer in Mountain View" or
+        /// search by structured filters (location filter, education filter, etc.).
+        ///
+        /// See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A pageable sequence of <see cref="SummarizedProfile"/> resources.
+        /// </returns>
+        public virtual gax::PagedEnumerable<SearchProfilesResponse, SummarizedProfile> SearchProfiles(
+            SearchProfilesRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
         }
 
         /// <summary>
@@ -1224,155 +1481,95 @@ namespace Google.Cloud.Talent.V4Beta1
             throw new sys::NotImplementedException();
         }
 
-        /// <summary>
-        /// Deletes the specified profile.
-        /// Prerequisite: The profile has no associated applications or assignments
-        /// associated.
-        /// </summary>
-        /// <param name="name">
-        /// Required. Resource name of the profile to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-        /// example, "projects/foo/tenants/bar/profiles/baz".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteProfileAsync(
-            ProfileName name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteProfileAsync(
-                new DeleteProfileRequest
-                {
-                    ProfileName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                },
-                callSettings);
+    }
+
+    /// <summary>
+    /// ProfileService client wrapper implementation, for convenient use.
+    /// </summary>
+    public sealed partial class ProfileServiceClientImpl : ProfileServiceClient
+    {
+        private readonly gaxgrpc::ApiCall<DeleteProfileRequest, pbwkt::Empty> _callDeleteProfile;
+        private readonly gaxgrpc::ApiCall<SearchProfilesRequest, SearchProfilesResponse> _callSearchProfiles;
+        private readonly gaxgrpc::ApiCall<ListProfilesRequest, ListProfilesResponse> _callListProfiles;
+        private readonly gaxgrpc::ApiCall<CreateProfileRequest, Profile> _callCreateProfile;
+        private readonly gaxgrpc::ApiCall<GetProfileRequest, Profile> _callGetProfile;
+        private readonly gaxgrpc::ApiCall<UpdateProfileRequest, Profile> _callUpdateProfile;
 
         /// <summary>
-        /// Deletes the specified profile.
-        /// Prerequisite: The profile has no associated applications or assignments
-        /// associated.
+        /// Constructs a client wrapper for the ProfileService service, with the specified gRPC client and settings.
         /// </summary>
-        /// <param name="name">
-        /// Required. Resource name of the profile to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-        /// example, "projects/foo/tenants/bar/profiles/baz".
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteProfileAsync(
-            ProfileName name,
-            st::CancellationToken cancellationToken) => DeleteProfileAsync(
-                name,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+        /// <param name="grpcClient">The underlying gRPC client.</param>
+        /// <param name="settings">The base <see cref="ProfileServiceSettings"/> used within this client </param>
+        public ProfileServiceClientImpl(ProfileService.ProfileServiceClient grpcClient, ProfileServiceSettings settings)
+        {
+            GrpcClient = grpcClient;
+            ProfileServiceSettings effectiveSettings = settings ?? ProfileServiceSettings.GetDefault();
+            gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
+            _callDeleteProfile = clientHelper.BuildApiCall<DeleteProfileRequest, pbwkt::Empty>(
+                GrpcClient.DeleteProfileAsync, GrpcClient.DeleteProfile, effectiveSettings.DeleteProfileSettings)
+                .WithGoogleRequestParam("name", request => request.Name);
+            _callSearchProfiles = clientHelper.BuildApiCall<SearchProfilesRequest, SearchProfilesResponse>(
+                GrpcClient.SearchProfilesAsync, GrpcClient.SearchProfiles, effectiveSettings.SearchProfilesSettings)
+                .WithGoogleRequestParam("parent", request => request.Parent);
+            _callListProfiles = clientHelper.BuildApiCall<ListProfilesRequest, ListProfilesResponse>(
+                GrpcClient.ListProfilesAsync, GrpcClient.ListProfiles, effectiveSettings.ListProfilesSettings)
+                .WithGoogleRequestParam("parent", request => request.Parent);
+            _callCreateProfile = clientHelper.BuildApiCall<CreateProfileRequest, Profile>(
+                GrpcClient.CreateProfileAsync, GrpcClient.CreateProfile, effectiveSettings.CreateProfileSettings)
+                .WithGoogleRequestParam("parent", request => request.Parent);
+            _callGetProfile = clientHelper.BuildApiCall<GetProfileRequest, Profile>(
+                GrpcClient.GetProfileAsync, GrpcClient.GetProfile, effectiveSettings.GetProfileSettings)
+                .WithGoogleRequestParam("name", request => request.Name);
+            _callUpdateProfile = clientHelper.BuildApiCall<UpdateProfileRequest, Profile>(
+                GrpcClient.UpdateProfileAsync, GrpcClient.UpdateProfile, effectiveSettings.UpdateProfileSettings)
+                .WithGoogleRequestParam("profile.name", request => request.Profile?.Name);
+            Modify_ApiCall(ref _callDeleteProfile);
+            Modify_DeleteProfileApiCall(ref _callDeleteProfile);
+            Modify_ApiCall(ref _callSearchProfiles);
+            Modify_SearchProfilesApiCall(ref _callSearchProfiles);
+            Modify_ApiCall(ref _callListProfiles);
+            Modify_ListProfilesApiCall(ref _callListProfiles);
+            Modify_ApiCall(ref _callCreateProfile);
+            Modify_CreateProfileApiCall(ref _callCreateProfile);
+            Modify_ApiCall(ref _callGetProfile);
+            Modify_GetProfileApiCall(ref _callGetProfile);
+            Modify_ApiCall(ref _callUpdateProfile);
+            Modify_UpdateProfileApiCall(ref _callUpdateProfile);
+            OnConstruction(grpcClient, effectiveSettings, clientHelper);
+        }
+
+        // Partial methods are named to (mostly) ensure there cannot be conflicts with RPC method names.
+
+        // Partial methods called for every ApiCall on construction.
+        // Allows modification of all the underlying ApiCall objects.
+        partial void Modify_ApiCall<TRequest, TResponse>(ref gaxgrpc::ApiCall<TRequest, TResponse> call)
+            where TRequest : class, pb::IMessage<TRequest>
+            where TResponse : class, pb::IMessage<TResponse>;
+
+        // Partial methods called for each ApiCall on construction.
+        // Allows per-RPC-method modification of the underlying ApiCall object.
+        partial void Modify_DeleteProfileApiCall(ref gaxgrpc::ApiCall<DeleteProfileRequest, pbwkt::Empty> call);
+        partial void Modify_SearchProfilesApiCall(ref gaxgrpc::ApiCall<SearchProfilesRequest, SearchProfilesResponse> call);
+        partial void Modify_ListProfilesApiCall(ref gaxgrpc::ApiCall<ListProfilesRequest, ListProfilesResponse> call);
+        partial void Modify_CreateProfileApiCall(ref gaxgrpc::ApiCall<CreateProfileRequest, Profile> call);
+        partial void Modify_GetProfileApiCall(ref gaxgrpc::ApiCall<GetProfileRequest, Profile> call);
+        partial void Modify_UpdateProfileApiCall(ref gaxgrpc::ApiCall<UpdateProfileRequest, Profile> call);
+        partial void OnConstruction(ProfileService.ProfileServiceClient grpcClient, ProfileServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
         /// <summary>
-        /// Deletes the specified profile.
-        /// Prerequisite: The profile has no associated applications or assignments
-        /// associated.
+        /// The underlying gRPC ProfileService client.
         /// </summary>
-        /// <param name="name">
-        /// Required. Resource name of the profile to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-        /// example, "projects/foo/tenants/bar/profiles/baz".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteProfile(
-            ProfileName name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteProfile(
-                new DeleteProfileRequest
-                {
-                    ProfileName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                },
-                callSettings);
+        public override ProfileService.ProfileServiceClient GrpcClient { get; }
 
-        /// <summary>
-        /// Deletes the specified profile.
-        /// Prerequisite: The profile has no associated applications or assignments
-        /// associated.
-        /// </summary>
-        /// <param name="name">
-        /// Required. Resource name of the profile to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-        /// example, "projects/foo/tenants/bar/profiles/baz".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteProfileAsync(
-            string name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteProfileAsync(
-                new DeleteProfileRequest
-                {
-                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes the specified profile.
-        /// Prerequisite: The profile has no associated applications or assignments
-        /// associated.
-        /// </summary>
-        /// <param name="name">
-        /// Required. Resource name of the profile to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-        /// example, "projects/foo/tenants/bar/profiles/baz".
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteProfileAsync(
-            string name,
-            st::CancellationToken cancellationToken) => DeleteProfileAsync(
-                name,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes the specified profile.
-        /// Prerequisite: The profile has no associated applications or assignments
-        /// associated.
-        /// </summary>
-        /// <param name="name">
-        /// Required. Resource name of the profile to be deleted.
-        ///
-        /// The format is
-        /// "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}". For
-        /// example, "projects/foo/tenants/bar/profiles/baz".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteProfile(
-            string name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteProfile(
-                new DeleteProfileRequest
-                {
-                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
-                },
-                callSettings);
+        // Partial methods called on each request.
+        // Allows per-RPC-call modification to the request and CallSettings objects,
+        // before the underlying RPC is performed.
+        partial void Modify_DeleteProfileRequest(ref DeleteProfileRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_SearchProfilesRequest(ref SearchProfilesRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_ListProfilesRequest(ref ListProfilesRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_CreateProfileRequest(ref CreateProfileRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_GetProfileRequest(ref GetProfileRequest request, ref gaxgrpc::CallSettings settings);
+        partial void Modify_UpdateProfileRequest(ref UpdateProfileRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
         /// Deletes the specified profile.
@@ -1388,11 +1585,12 @@ namespace Google.Cloud.Talent.V4Beta1
         /// <returns>
         /// A Task that completes when the RPC has completed.
         /// </returns>
-        public virtual stt::Task DeleteProfileAsync(
+        public override stt::Task DeleteProfileAsync(
             DeleteProfileRequest request,
             gaxgrpc::CallSettings callSettings = null)
         {
-            throw new sys::NotImplementedException();
+            Modify_DeleteProfileRequest(ref request, ref callSettings);
+            return _callDeleteProfile.Async(request, callSettings);
         }
 
         /// <summary>
@@ -1403,34 +1601,15 @@ namespace Google.Cloud.Talent.V4Beta1
         /// <param name="request">
         /// The request object containing all of the parameters for the API call.
         /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteProfileAsync(
-            DeleteProfileRequest request,
-            st::CancellationToken cancellationToken) => DeleteProfileAsync(
-                request,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes the specified profile.
-        /// Prerequisite: The profile has no associated applications or assignments
-        /// associated.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
         /// <param name="callSettings">
         /// If not null, applies overrides to this RPC call.
         /// </param>
-        public virtual void DeleteProfile(
+        public override void DeleteProfile(
             DeleteProfileRequest request,
             gaxgrpc::CallSettings callSettings = null)
         {
-            throw new sys::NotImplementedException();
+            Modify_DeleteProfileRequest(ref request, ref callSettings);
+            _callDeleteProfile.Sync(request, callSettings);
         }
 
         /// <summary>
@@ -1450,11 +1629,12 @@ namespace Google.Cloud.Talent.V4Beta1
         /// <returns>
         /// A pageable asynchronous sequence of <see cref="SummarizedProfile"/> resources.
         /// </returns>
-        public virtual gax::PagedAsyncEnumerable<SearchProfilesResponse, SummarizedProfile> SearchProfilesAsync(
+        public override gax::PagedAsyncEnumerable<SearchProfilesResponse, SummarizedProfile> SearchProfilesAsync(
             SearchProfilesRequest request,
             gaxgrpc::CallSettings callSettings = null)
         {
-            throw new sys::NotImplementedException();
+            Modify_SearchProfilesRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedAsyncEnumerable<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile>(_callSearchProfiles, request, callSettings);
         }
 
         /// <summary>
@@ -1474,102 +1654,13 @@ namespace Google.Cloud.Talent.V4Beta1
         /// <returns>
         /// A pageable sequence of <see cref="SummarizedProfile"/> resources.
         /// </returns>
-        public virtual gax::PagedEnumerable<SearchProfilesResponse, SummarizedProfile> SearchProfiles(
+        public override gax::PagedEnumerable<SearchProfilesResponse, SummarizedProfile> SearchProfiles(
             SearchProfilesRequest request,
             gaxgrpc::CallSettings callSettings = null)
         {
-            throw new sys::NotImplementedException();
+            Modify_SearchProfilesRequest(ref request, ref callSettings);
+            return new gaxgrpc::GrpcPagedEnumerable<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile>(_callSearchProfiles, request, callSettings);
         }
-
-    }
-
-    /// <summary>
-    /// ProfileService client wrapper implementation, for convenient use.
-    /// </summary>
-    public sealed partial class ProfileServiceClientImpl : ProfileServiceClient
-    {
-        private readonly gaxgrpc::ApiCall<ListProfilesRequest, ListProfilesResponse> _callListProfiles;
-        private readonly gaxgrpc::ApiCall<CreateProfileRequest, Profile> _callCreateProfile;
-        private readonly gaxgrpc::ApiCall<GetProfileRequest, Profile> _callGetProfile;
-        private readonly gaxgrpc::ApiCall<UpdateProfileRequest, Profile> _callUpdateProfile;
-        private readonly gaxgrpc::ApiCall<DeleteProfileRequest, pbwkt::Empty> _callDeleteProfile;
-        private readonly gaxgrpc::ApiCall<SearchProfilesRequest, SearchProfilesResponse> _callSearchProfiles;
-
-        /// <summary>
-        /// Constructs a client wrapper for the ProfileService service, with the specified gRPC client and settings.
-        /// </summary>
-        /// <param name="grpcClient">The underlying gRPC client.</param>
-        /// <param name="settings">The base <see cref="ProfileServiceSettings"/> used within this client </param>
-        public ProfileServiceClientImpl(ProfileService.ProfileServiceClient grpcClient, ProfileServiceSettings settings)
-        {
-            GrpcClient = grpcClient;
-            ProfileServiceSettings effectiveSettings = settings ?? ProfileServiceSettings.GetDefault();
-            gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
-            _callListProfiles = clientHelper.BuildApiCall<ListProfilesRequest, ListProfilesResponse>(
-                GrpcClient.ListProfilesAsync, GrpcClient.ListProfiles, effectiveSettings.ListProfilesSettings)
-                .WithGoogleRequestParam("parent", request => request.Parent);
-            _callCreateProfile = clientHelper.BuildApiCall<CreateProfileRequest, Profile>(
-                GrpcClient.CreateProfileAsync, GrpcClient.CreateProfile, effectiveSettings.CreateProfileSettings)
-                .WithGoogleRequestParam("parent", request => request.Parent);
-            _callGetProfile = clientHelper.BuildApiCall<GetProfileRequest, Profile>(
-                GrpcClient.GetProfileAsync, GrpcClient.GetProfile, effectiveSettings.GetProfileSettings)
-                .WithGoogleRequestParam("name", request => request.Name);
-            _callUpdateProfile = clientHelper.BuildApiCall<UpdateProfileRequest, Profile>(
-                GrpcClient.UpdateProfileAsync, GrpcClient.UpdateProfile, effectiveSettings.UpdateProfileSettings)
-                .WithGoogleRequestParam("profile.name", request => request.Profile?.Name);
-            _callDeleteProfile = clientHelper.BuildApiCall<DeleteProfileRequest, pbwkt::Empty>(
-                GrpcClient.DeleteProfileAsync, GrpcClient.DeleteProfile, effectiveSettings.DeleteProfileSettings)
-                .WithGoogleRequestParam("name", request => request.Name);
-            _callSearchProfiles = clientHelper.BuildApiCall<SearchProfilesRequest, SearchProfilesResponse>(
-                GrpcClient.SearchProfilesAsync, GrpcClient.SearchProfiles, effectiveSettings.SearchProfilesSettings)
-                .WithGoogleRequestParam("parent", request => request.Parent);
-            Modify_ApiCall(ref _callListProfiles);
-            Modify_ListProfilesApiCall(ref _callListProfiles);
-            Modify_ApiCall(ref _callCreateProfile);
-            Modify_CreateProfileApiCall(ref _callCreateProfile);
-            Modify_ApiCall(ref _callGetProfile);
-            Modify_GetProfileApiCall(ref _callGetProfile);
-            Modify_ApiCall(ref _callUpdateProfile);
-            Modify_UpdateProfileApiCall(ref _callUpdateProfile);
-            Modify_ApiCall(ref _callDeleteProfile);
-            Modify_DeleteProfileApiCall(ref _callDeleteProfile);
-            Modify_ApiCall(ref _callSearchProfiles);
-            Modify_SearchProfilesApiCall(ref _callSearchProfiles);
-            OnConstruction(grpcClient, effectiveSettings, clientHelper);
-        }
-
-        // Partial methods are named to (mostly) ensure there cannot be conflicts with RPC method names.
-
-        // Partial methods called for every ApiCall on construction.
-        // Allows modification of all the underlying ApiCall objects.
-        partial void Modify_ApiCall<TRequest, TResponse>(ref gaxgrpc::ApiCall<TRequest, TResponse> call)
-            where TRequest : class, pb::IMessage<TRequest>
-            where TResponse : class, pb::IMessage<TResponse>;
-
-        // Partial methods called for each ApiCall on construction.
-        // Allows per-RPC-method modification of the underlying ApiCall object.
-        partial void Modify_ListProfilesApiCall(ref gaxgrpc::ApiCall<ListProfilesRequest, ListProfilesResponse> call);
-        partial void Modify_CreateProfileApiCall(ref gaxgrpc::ApiCall<CreateProfileRequest, Profile> call);
-        partial void Modify_GetProfileApiCall(ref gaxgrpc::ApiCall<GetProfileRequest, Profile> call);
-        partial void Modify_UpdateProfileApiCall(ref gaxgrpc::ApiCall<UpdateProfileRequest, Profile> call);
-        partial void Modify_DeleteProfileApiCall(ref gaxgrpc::ApiCall<DeleteProfileRequest, pbwkt::Empty> call);
-        partial void Modify_SearchProfilesApiCall(ref gaxgrpc::ApiCall<SearchProfilesRequest, SearchProfilesResponse> call);
-        partial void OnConstruction(ProfileService.ProfileServiceClient grpcClient, ProfileServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
-
-        /// <summary>
-        /// The underlying gRPC ProfileService client.
-        /// </summary>
-        public override ProfileService.ProfileServiceClient GrpcClient { get; }
-
-        // Partial methods called on each request.
-        // Allows per-RPC-call modification to the request and CallSettings objects,
-        // before the underlying RPC is performed.
-        partial void Modify_ListProfilesRequest(ref ListProfilesRequest request, ref gaxgrpc::CallSettings settings);
-        partial void Modify_CreateProfileRequest(ref CreateProfileRequest request, ref gaxgrpc::CallSettings settings);
-        partial void Modify_GetProfileRequest(ref GetProfileRequest request, ref gaxgrpc::CallSettings settings);
-        partial void Modify_UpdateProfileRequest(ref UpdateProfileRequest request, ref gaxgrpc::CallSettings settings);
-        partial void Modify_DeleteProfileRequest(ref DeleteProfileRequest request, ref gaxgrpc::CallSettings settings);
-        partial void Modify_SearchProfilesRequest(ref SearchProfilesRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
         /// Lists profiles by filter. The order is unspecified.
@@ -1731,112 +1822,9 @@ namespace Google.Cloud.Talent.V4Beta1
             return _callUpdateProfile.Sync(request, callSettings);
         }
 
-        /// <summary>
-        /// Deletes the specified profile.
-        /// Prerequisite: The profile has no associated applications or assignments
-        /// associated.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public override stt::Task DeleteProfileAsync(
-            DeleteProfileRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteProfileRequest(ref request, ref callSettings);
-            return _callDeleteProfile.Async(request, callSettings);
-        }
-
-        /// <summary>
-        /// Deletes the specified profile.
-        /// Prerequisite: The profile has no associated applications or assignments
-        /// associated.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public override void DeleteProfile(
-            DeleteProfileRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteProfileRequest(ref request, ref callSettings);
-            _callDeleteProfile.Sync(request, callSettings);
-        }
-
-        /// <summary>
-        /// Searches for profiles within a tenant.
-        ///
-        /// For example, search by raw queries "software engineer in Mountain View" or
-        /// search by structured filters (location filter, education filter, etc.).
-        ///
-        /// See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A pageable asynchronous sequence of <see cref="SummarizedProfile"/> resources.
-        /// </returns>
-        public override gax::PagedAsyncEnumerable<SearchProfilesResponse, SummarizedProfile> SearchProfilesAsync(
-            SearchProfilesRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_SearchProfilesRequest(ref request, ref callSettings);
-            return new gaxgrpc::GrpcPagedAsyncEnumerable<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile>(_callSearchProfiles, request, callSettings);
-        }
-
-        /// <summary>
-        /// Searches for profiles within a tenant.
-        ///
-        /// For example, search by raw queries "software engineer in Mountain View" or
-        /// search by structured filters (location filter, education filter, etc.).
-        ///
-        /// See [SearchProfilesRequest][google.cloud.talent.v4beta1.SearchProfilesRequest] for more information.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A pageable sequence of <see cref="SummarizedProfile"/> resources.
-        /// </returns>
-        public override gax::PagedEnumerable<SearchProfilesResponse, SummarizedProfile> SearchProfiles(
-            SearchProfilesRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_SearchProfilesRequest(ref request, ref callSettings);
-            return new gaxgrpc::GrpcPagedEnumerable<SearchProfilesRequest, SearchProfilesResponse, SummarizedProfile>(_callSearchProfiles, request, callSettings);
-        }
-
     }
 
     // Partial classes to enable page-streaming
-
-    public partial class ListProfilesRequest : gaxgrpc::IPageRequest { }
-    public partial class ListProfilesResponse : gaxgrpc::IPageResponse<Profile>
-    {
-        /// <summary>
-        /// Returns an enumerator that iterates through the resources in this response.
-        /// </summary>
-        public scg::IEnumerator<Profile> GetEnumerator() => Profiles.GetEnumerator();
-
-        /// <inheritdoc/>
-        sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
-    }
 
     public partial class SearchProfilesRequest : gaxgrpc::IPageRequest { }
     public partial class SearchProfilesResponse : gaxgrpc::IPageResponse<SummarizedProfile>
@@ -1845,6 +1833,18 @@ namespace Google.Cloud.Talent.V4Beta1
         /// Returns an enumerator that iterates through the resources in this response.
         /// </summary>
         public scg::IEnumerator<SummarizedProfile> GetEnumerator() => SummarizedProfiles.GetEnumerator();
+
+        /// <inheritdoc/>
+        sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+
+    public partial class ListProfilesRequest : gaxgrpc::IPageRequest { }
+    public partial class ListProfilesResponse : gaxgrpc::IPageResponse<Profile>
+    {
+        /// <summary>
+        /// Returns an enumerator that iterates through the resources in this response.
+        /// </summary>
+        public scg::IEnumerator<Profile> GetEnumerator() => Profiles.GetEnumerator();
 
         /// <inheritdoc/>
         sc::IEnumerator sc::IEnumerable.GetEnumerator() => GetEnumerator();

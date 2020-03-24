@@ -5,7 +5,7 @@ package com.google.cloud.dataproc.v1beta2;
 
 /**
  * <pre>
- * A Cloud Dataproc job for running
+ * A Dataproc job for running
  * [Apache
  * PySpark](https://spark.apache.org/docs/0.9.0/python-programming-guide.html)
  * applications on YARN.
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
    * occur that causes an incorrect job submission.
    * </pre>
    *
-   * <code>repeated string args = 2;</code>
+   * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the args.
    */
   public com.google.protobuf.ProtocolStringList
@@ -267,7 +267,7 @@ private static final long serialVersionUID = 0L;
    * occur that causes an incorrect job submission.
    * </pre>
    *
-   * <code>repeated string args = 2;</code>
+   * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of args.
    */
   public int getArgsCount() {
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
    * occur that causes an incorrect job submission.
    * </pre>
    *
-   * <code>repeated string args = 2;</code>
+   * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The args at the given index.
    */
@@ -294,7 +294,7 @@ private static final long serialVersionUID = 0L;
    * occur that causes an incorrect job submission.
    * </pre>
    *
-   * <code>repeated string args = 2;</code>
+   * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the args at the given index.
    */
@@ -311,7 +311,7 @@ private static final long serialVersionUID = 0L;
    * framework. Supported file types: .py, .egg, and .zip.
    * </pre>
    *
-   * <code>repeated string python_file_uris = 3;</code>
+   * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the pythonFileUris.
    */
   public com.google.protobuf.ProtocolStringList
@@ -324,7 +324,7 @@ private static final long serialVersionUID = 0L;
    * framework. Supported file types: .py, .egg, and .zip.
    * </pre>
    *
-   * <code>repeated string python_file_uris = 3;</code>
+   * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of pythonFileUris.
    */
   public int getPythonFileUrisCount() {
@@ -336,7 +336,7 @@ private static final long serialVersionUID = 0L;
    * framework. Supported file types: .py, .egg, and .zip.
    * </pre>
    *
-   * <code>repeated string python_file_uris = 3;</code>
+   * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The pythonFileUris at the given index.
    */
@@ -349,7 +349,7 @@ private static final long serialVersionUID = 0L;
    * framework. Supported file types: .py, .egg, and .zip.
    * </pre>
    *
-   * <code>repeated string python_file_uris = 3;</code>
+   * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the pythonFileUris at the given index.
    */
@@ -366,7 +366,7 @@ private static final long serialVersionUID = 0L;
    * Python driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the jarFileUris.
    */
   public com.google.protobuf.ProtocolStringList
@@ -379,7 +379,7 @@ private static final long serialVersionUID = 0L;
    * Python driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of jarFileUris.
    */
   public int getJarFileUrisCount() {
@@ -391,7 +391,7 @@ private static final long serialVersionUID = 0L;
    * Python driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The jarFileUris at the given index.
    */
@@ -404,7 +404,7 @@ private static final long serialVersionUID = 0L;
    * Python driver and tasks.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 4;</code>
+   * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the jarFileUris at the given index.
    */
@@ -421,7 +421,7 @@ private static final long serialVersionUID = 0L;
    * Python drivers and distributed tasks. Useful for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the fileUris.
    */
   public com.google.protobuf.ProtocolStringList
@@ -434,7 +434,7 @@ private static final long serialVersionUID = 0L;
    * Python drivers and distributed tasks. Useful for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of fileUris.
    */
   public int getFileUrisCount() {
@@ -446,7 +446,7 @@ private static final long serialVersionUID = 0L;
    * Python drivers and distributed tasks. Useful for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The fileUris at the given index.
    */
@@ -459,7 +459,7 @@ private static final long serialVersionUID = 0L;
    * Python drivers and distributed tasks. Useful for naively parallel tasks.
    * </pre>
    *
-   * <code>repeated string file_uris = 5;</code>
+   * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the fileUris at the given index.
    */
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
    * .jar, .tar, .tar.gz, .tgz, and .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the archiveUris.
    */
   public com.google.protobuf.ProtocolStringList
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
    * .jar, .tar, .tar.gz, .tgz, and .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of archiveUris.
    */
   public int getArchiveUrisCount() {
@@ -501,7 +501,7 @@ private static final long serialVersionUID = 0L;
    * .jar, .tar, .tar.gz, .tgz, and .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The archiveUris at the given index.
    */
@@ -514,7 +514,7 @@ private static final long serialVersionUID = 0L;
    * .jar, .tar, .tar.gz, .tgz, and .zip.
    * </pre>
    *
-   * <code>repeated string archive_uris = 6;</code>
+   * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the archiveUris at the given index.
    */
@@ -552,12 +552,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public boolean containsProperties(
@@ -575,12 +575,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
@@ -589,12 +589,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getPropertiesOrDefault(
@@ -608,12 +608,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in
    * /etc/spark/conf/spark-defaults.conf and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 7;</code>
+   * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getPropertiesOrThrow(
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the loggingConfig field is set.
    */
   public boolean hasLoggingConfig() {
@@ -645,7 +645,7 @@ private static final long serialVersionUID = 0L;
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The loggingConfig.
    */
   public com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig() {
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.cloud.dataproc.v1beta2.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
     return getLoggingConfig();
@@ -941,7 +941,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A Cloud Dataproc job for running
+   * A Dataproc job for running
    * [Apache
    * PySpark](https://spark.apache.org/docs/0.9.0/python-programming-guide.html)
    * applications on YARN.
@@ -1337,7 +1337,7 @@ private static final long serialVersionUID = 0L;
      * occur that causes an incorrect job submission.
      * </pre>
      *
-     * <code>repeated string args = 2;</code>
+     * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1351,7 +1351,7 @@ private static final long serialVersionUID = 0L;
      * occur that causes an incorrect job submission.
      * </pre>
      *
-     * <code>repeated string args = 2;</code>
+     * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The count of args.
      */
     public int getArgsCount() {
@@ -1364,7 +1364,7 @@ private static final long serialVersionUID = 0L;
      * occur that causes an incorrect job submission.
      * </pre>
      *
-     * <code>repeated string args = 2;</code>
+     * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the element to return.
      * @return The args at the given index.
      */
@@ -1378,7 +1378,7 @@ private static final long serialVersionUID = 0L;
      * occur that causes an incorrect job submission.
      * </pre>
      *
-     * <code>repeated string args = 2;</code>
+     * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the value to return.
      * @return The bytes of the args at the given index.
      */
@@ -1393,7 +1393,7 @@ private static final long serialVersionUID = 0L;
      * occur that causes an incorrect job submission.
      * </pre>
      *
-     * <code>repeated string args = 2;</code>
+     * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index to set the value at.
      * @param value The args to set.
      * @return This builder for chaining.
@@ -1415,7 +1415,7 @@ private static final long serialVersionUID = 0L;
      * occur that causes an incorrect job submission.
      * </pre>
      *
-     * <code>repeated string args = 2;</code>
+     * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The args to add.
      * @return This builder for chaining.
      */
@@ -1436,7 +1436,7 @@ private static final long serialVersionUID = 0L;
      * occur that causes an incorrect job submission.
      * </pre>
      *
-     * <code>repeated string args = 2;</code>
+     * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param values The args to add.
      * @return This builder for chaining.
      */
@@ -1455,7 +1455,7 @@ private static final long serialVersionUID = 0L;
      * occur that causes an incorrect job submission.
      * </pre>
      *
-     * <code>repeated string args = 2;</code>
+     * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearArgs() {
@@ -1471,7 +1471,7 @@ private static final long serialVersionUID = 0L;
      * occur that causes an incorrect job submission.
      * </pre>
      *
-     * <code>repeated string args = 2;</code>
+     * <code>repeated string args = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes of the args to add.
      * @return This builder for chaining.
      */
@@ -1500,7 +1500,7 @@ private static final long serialVersionUID = 0L;
      * framework. Supported file types: .py, .egg, and .zip.
      * </pre>
      *
-     * <code>repeated string python_file_uris = 3;</code>
+     * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return A list containing the pythonFileUris.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1513,7 +1513,7 @@ private static final long serialVersionUID = 0L;
      * framework. Supported file types: .py, .egg, and .zip.
      * </pre>
      *
-     * <code>repeated string python_file_uris = 3;</code>
+     * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The count of pythonFileUris.
      */
     public int getPythonFileUrisCount() {
@@ -1525,7 +1525,7 @@ private static final long serialVersionUID = 0L;
      * framework. Supported file types: .py, .egg, and .zip.
      * </pre>
      *
-     * <code>repeated string python_file_uris = 3;</code>
+     * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the element to return.
      * @return The pythonFileUris at the given index.
      */
@@ -1538,7 +1538,7 @@ private static final long serialVersionUID = 0L;
      * framework. Supported file types: .py, .egg, and .zip.
      * </pre>
      *
-     * <code>repeated string python_file_uris = 3;</code>
+     * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the value to return.
      * @return The bytes of the pythonFileUris at the given index.
      */
@@ -1552,7 +1552,7 @@ private static final long serialVersionUID = 0L;
      * framework. Supported file types: .py, .egg, and .zip.
      * </pre>
      *
-     * <code>repeated string python_file_uris = 3;</code>
+     * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index to set the value at.
      * @param value The pythonFileUris to set.
      * @return This builder for chaining.
@@ -1573,7 +1573,7 @@ private static final long serialVersionUID = 0L;
      * framework. Supported file types: .py, .egg, and .zip.
      * </pre>
      *
-     * <code>repeated string python_file_uris = 3;</code>
+     * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The pythonFileUris to add.
      * @return This builder for chaining.
      */
@@ -1593,7 +1593,7 @@ private static final long serialVersionUID = 0L;
      * framework. Supported file types: .py, .egg, and .zip.
      * </pre>
      *
-     * <code>repeated string python_file_uris = 3;</code>
+     * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param values The pythonFileUris to add.
      * @return This builder for chaining.
      */
@@ -1611,7 +1611,7 @@ private static final long serialVersionUID = 0L;
      * framework. Supported file types: .py, .egg, and .zip.
      * </pre>
      *
-     * <code>repeated string python_file_uris = 3;</code>
+     * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearPythonFileUris() {
@@ -1626,7 +1626,7 @@ private static final long serialVersionUID = 0L;
      * framework. Supported file types: .py, .egg, and .zip.
      * </pre>
      *
-     * <code>repeated string python_file_uris = 3;</code>
+     * <code>repeated string python_file_uris = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes of the pythonFileUris to add.
      * @return This builder for chaining.
      */
@@ -1655,7 +1655,7 @@ private static final long serialVersionUID = 0L;
      * Python driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return A list containing the jarFileUris.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1668,7 +1668,7 @@ private static final long serialVersionUID = 0L;
      * Python driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The count of jarFileUris.
      */
     public int getJarFileUrisCount() {
@@ -1680,7 +1680,7 @@ private static final long serialVersionUID = 0L;
      * Python driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the element to return.
      * @return The jarFileUris at the given index.
      */
@@ -1693,7 +1693,7 @@ private static final long serialVersionUID = 0L;
      * Python driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the value to return.
      * @return The bytes of the jarFileUris at the given index.
      */
@@ -1707,7 +1707,7 @@ private static final long serialVersionUID = 0L;
      * Python driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index to set the value at.
      * @param value The jarFileUris to set.
      * @return This builder for chaining.
@@ -1728,7 +1728,7 @@ private static final long serialVersionUID = 0L;
      * Python driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The jarFileUris to add.
      * @return This builder for chaining.
      */
@@ -1748,7 +1748,7 @@ private static final long serialVersionUID = 0L;
      * Python driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param values The jarFileUris to add.
      * @return This builder for chaining.
      */
@@ -1766,7 +1766,7 @@ private static final long serialVersionUID = 0L;
      * Python driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearJarFileUris() {
@@ -1781,7 +1781,7 @@ private static final long serialVersionUID = 0L;
      * Python driver and tasks.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 4;</code>
+     * <code>repeated string jar_file_uris = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes of the jarFileUris to add.
      * @return This builder for chaining.
      */
@@ -1810,7 +1810,7 @@ private static final long serialVersionUID = 0L;
      * Python drivers and distributed tasks. Useful for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return A list containing the fileUris.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1823,7 +1823,7 @@ private static final long serialVersionUID = 0L;
      * Python drivers and distributed tasks. Useful for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The count of fileUris.
      */
     public int getFileUrisCount() {
@@ -1835,7 +1835,7 @@ private static final long serialVersionUID = 0L;
      * Python drivers and distributed tasks. Useful for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the element to return.
      * @return The fileUris at the given index.
      */
@@ -1848,7 +1848,7 @@ private static final long serialVersionUID = 0L;
      * Python drivers and distributed tasks. Useful for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the value to return.
      * @return The bytes of the fileUris at the given index.
      */
@@ -1862,7 +1862,7 @@ private static final long serialVersionUID = 0L;
      * Python drivers and distributed tasks. Useful for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index to set the value at.
      * @param value The fileUris to set.
      * @return This builder for chaining.
@@ -1883,7 +1883,7 @@ private static final long serialVersionUID = 0L;
      * Python drivers and distributed tasks. Useful for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The fileUris to add.
      * @return This builder for chaining.
      */
@@ -1903,7 +1903,7 @@ private static final long serialVersionUID = 0L;
      * Python drivers and distributed tasks. Useful for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param values The fileUris to add.
      * @return This builder for chaining.
      */
@@ -1921,7 +1921,7 @@ private static final long serialVersionUID = 0L;
      * Python drivers and distributed tasks. Useful for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearFileUris() {
@@ -1936,7 +1936,7 @@ private static final long serialVersionUID = 0L;
      * Python drivers and distributed tasks. Useful for naively parallel tasks.
      * </pre>
      *
-     * <code>repeated string file_uris = 5;</code>
+     * <code>repeated string file_uris = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes of the fileUris to add.
      * @return This builder for chaining.
      */
@@ -1965,7 +1965,7 @@ private static final long serialVersionUID = 0L;
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return A list containing the archiveUris.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1978,7 +1978,7 @@ private static final long serialVersionUID = 0L;
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The count of archiveUris.
      */
     public int getArchiveUrisCount() {
@@ -1990,7 +1990,7 @@ private static final long serialVersionUID = 0L;
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the element to return.
      * @return The archiveUris at the given index.
      */
@@ -2003,7 +2003,7 @@ private static final long serialVersionUID = 0L;
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the value to return.
      * @return The bytes of the archiveUris at the given index.
      */
@@ -2017,7 +2017,7 @@ private static final long serialVersionUID = 0L;
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index to set the value at.
      * @param value The archiveUris to set.
      * @return This builder for chaining.
@@ -2038,7 +2038,7 @@ private static final long serialVersionUID = 0L;
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The archiveUris to add.
      * @return This builder for chaining.
      */
@@ -2058,7 +2058,7 @@ private static final long serialVersionUID = 0L;
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param values The archiveUris to add.
      * @return This builder for chaining.
      */
@@ -2076,7 +2076,7 @@ private static final long serialVersionUID = 0L;
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearArchiveUris() {
@@ -2091,7 +2091,7 @@ private static final long serialVersionUID = 0L;
      * .jar, .tar, .tar.gz, .tgz, and .zip.
      * </pre>
      *
-     * <code>repeated string archive_uris = 6;</code>
+     * <code>repeated string archive_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes of the archiveUris to add.
      * @return This builder for chaining.
      */
@@ -2136,12 +2136,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public boolean containsProperties(
@@ -2159,12 +2159,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
@@ -2173,12 +2173,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getPropertiesOrDefault(
@@ -2192,12 +2192,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getPropertiesOrThrow(
@@ -2219,12 +2219,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder removeProperties(
@@ -2245,12 +2245,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putProperties(
         java.lang.String key,
@@ -2264,12 +2264,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names to values, used to configure PySpark.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in
      * /etc/spark/conf/spark-defaults.conf and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 7;</code>
+     * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder putAllProperties(
@@ -2287,7 +2287,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
@@ -2298,7 +2298,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The loggingConfig.
      */
     public com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig() {
@@ -2313,7 +2313,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLoggingConfig(com.google.cloud.dataproc.v1beta2.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
@@ -2333,7 +2333,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setLoggingConfig(
         com.google.cloud.dataproc.v1beta2.LoggingConfig.Builder builderForValue) {
@@ -2351,7 +2351,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeLoggingConfig(com.google.cloud.dataproc.v1beta2.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
@@ -2373,7 +2373,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearLoggingConfig() {
       if (loggingConfigBuilder_ == null) {
@@ -2391,7 +2391,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.dataproc.v1beta2.LoggingConfig.Builder getLoggingConfigBuilder() {
       
@@ -2403,7 +2403,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.cloud.dataproc.v1beta2.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
       if (loggingConfigBuilder_ != null) {
@@ -2418,7 +2418,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The runtime log config for job execution.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8;</code>
+     * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dataproc.v1beta2.LoggingConfig, com.google.cloud.dataproc.v1beta2.LoggingConfig.Builder, com.google.cloud.dataproc.v1beta2.LoggingConfigOrBuilder> 

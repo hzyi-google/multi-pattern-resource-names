@@ -16,7 +16,6 @@
 
 using gax = Google.Api.Gax;
 using gaxgrpc = Google.Api.Gax.Grpc;
-using gaxres = Google.Api.Gax.ResourceNames;
 using pb = Google.Protobuf;
 using pbwkt = Google.Protobuf.WellKnownTypes;
 using grpccore = Grpc.Core;
@@ -50,10 +49,10 @@ namespace Google.Cloud.Talent.V4Beta1
         private TenantServiceSettings(TenantServiceSettings existing) : base(existing)
         {
             gax::GaxPreconditions.CheckNotNull(existing, nameof(existing));
+            DeleteTenantSettings = existing.DeleteTenantSettings;
             CreateTenantSettings = existing.CreateTenantSettings;
             GetTenantSettings = existing.GetTenantSettings;
             UpdateTenantSettings = existing.UpdateTenantSettings;
-            DeleteTenantSettings = existing.DeleteTenantSettings;
             ListTenantsSettings = existing.ListTenantsSettings;
             OnCopy(existing);
         }
@@ -123,6 +122,36 @@ namespace Google.Cloud.Talent.V4Beta1
             maxDelay: sys::TimeSpan.FromMilliseconds(20000),
             delayMultiplier: 1.0
         );
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>TenantServiceClient.DeleteTenant</c> and <c>TenantServiceClient.DeleteTenantAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// The default <c>TenantServiceClient.DeleteTenant</c> and
+        /// <c>TenantServiceClient.DeleteTenantAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
+        /// <list type="bullet">
+        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
+        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
+        /// <item><description>Timeout multiplier: 1.0</description></item>
+        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
+        /// </list>
+        /// Retry will be attempted on the following response status codes:
+        /// <list>
+        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
+        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
+        /// </list>
+        /// Default RPC expiration is 300000 milliseconds.
+        /// </remarks>
+        public gaxgrpc::CallSettings DeleteTenantSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
+            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
+                retryBackoff: GetDefaultRetryBackoff(),
+                timeoutBackoff: GetDefaultTimeoutBackoff(),
+                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(300000)),
+                retryFilter: IdempotentRetryFilter
+            )));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -210,36 +239,6 @@ namespace Google.Cloud.Talent.V4Beta1
                 timeoutBackoff: GetDefaultTimeoutBackoff(),
                 totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(300000)),
                 retryFilter: NonIdempotentRetryFilter
-            )));
-
-        /// <summary>
-        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
-        /// <c>TenantServiceClient.DeleteTenant</c> and <c>TenantServiceClient.DeleteTenantAsync</c>.
-        /// </summary>
-        /// <remarks>
-        /// The default <c>TenantServiceClient.DeleteTenant</c> and
-        /// <c>TenantServiceClient.DeleteTenantAsync</c> <see cref="gaxgrpc::RetrySettings"/> are:
-        /// <list type="bullet">
-        /// <item><description>Initial retry delay: 100 milliseconds</description></item>
-        /// <item><description>Retry delay multiplier: 1.3</description></item>
-        /// <item><description>Retry maximum delay: 60000 milliseconds</description></item>
-        /// <item><description>Initial timeout: 20000 milliseconds</description></item>
-        /// <item><description>Timeout multiplier: 1.0</description></item>
-        /// <item><description>Timeout maximum delay: 20000 milliseconds</description></item>
-        /// </list>
-        /// Retry will be attempted on the following response status codes:
-        /// <list>
-        /// <item><description><see cref="grpccore::StatusCode.DeadlineExceeded"/></description></item>
-        /// <item><description><see cref="grpccore::StatusCode.Unavailable"/></description></item>
-        /// </list>
-        /// Default RPC expiration is 300000 milliseconds.
-        /// </remarks>
-        public gaxgrpc::CallSettings DeleteTenantSettings { get; set; } = gaxgrpc::CallSettings.FromCallTiming(
-            gaxgrpc::CallTiming.FromRetry(new gaxgrpc::RetrySettings(
-                retryBackoff: GetDefaultRetryBackoff(),
-                timeoutBackoff: GetDefaultTimeoutBackoff(),
-                totalExpiration: gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(300000)),
-                retryFilter: IdempotentRetryFilter
             )));
 
         /// <summary>
@@ -474,6 +473,191 @@ namespace Google.Cloud.Talent.V4Beta1
         }
 
         /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the tenant to be deleted.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenants/bar".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteTenantAsync(
+            TenantName name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteTenantAsync(
+                new DeleteTenantRequest
+                {
+                    TenantName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the tenant to be deleted.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenants/bar".
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteTenantAsync(
+            TenantName name,
+            st::CancellationToken cancellationToken) => DeleteTenantAsync(
+                name,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the tenant to be deleted.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenants/bar".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteTenant(
+            TenantName name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteTenant(
+                new DeleteTenantRequest
+                {
+                    TenantName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the tenant to be deleted.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenants/bar".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteTenantAsync(
+            string name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteTenantAsync(
+                new DeleteTenantRequest
+                {
+                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the tenant to be deleted.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenants/bar".
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteTenantAsync(
+            string name,
+            st::CancellationToken cancellationToken) => DeleteTenantAsync(
+                name,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource name of the tenant to be deleted.
+        ///
+        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+        /// "projects/foo/tenants/bar".
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteTenant(
+            string name,
+            gaxgrpc::CallSettings callSettings = null) => DeleteTenant(
+                new DeleteTenantRequest
+                {
+                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                },
+                callSettings);
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteTenantAsync(
+            DeleteTenantRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="cancellationToken">
+        /// A <see cref="st::CancellationToken"/> to use for this RPC.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public virtual stt::Task DeleteTenantAsync(
+            DeleteTenantRequest request,
+            st::CancellationToken cancellationToken) => DeleteTenantAsync(
+                request,
+                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public virtual void DeleteTenant(
+            DeleteTenantRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            throw new sys::NotImplementedException();
+        }
+
+        /// <summary>
         /// Creates a new tenant entity.
         /// </summary>
         /// <param name="parent">
@@ -492,7 +676,7 @@ namespace Google.Cloud.Talent.V4Beta1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<Tenant> CreateTenantAsync(
-            gaxres::ProjectName parent,
+            ProjectName parent,
             Tenant tenant,
             gaxgrpc::CallSettings callSettings = null) => CreateTenantAsync(
                 new CreateTenantRequest
@@ -521,7 +705,7 @@ namespace Google.Cloud.Talent.V4Beta1
         /// A Task containing the RPC response.
         /// </returns>
         public virtual stt::Task<Tenant> CreateTenantAsync(
-            gaxres::ProjectName parent,
+            ProjectName parent,
             Tenant tenant,
             st::CancellationToken cancellationToken) => CreateTenantAsync(
                 parent,
@@ -547,7 +731,7 @@ namespace Google.Cloud.Talent.V4Beta1
         /// The RPC response.
         /// </returns>
         public virtual Tenant CreateTenant(
-            gaxres::ProjectName parent,
+            ProjectName parent,
             Tenant tenant,
             gaxgrpc::CallSettings callSettings = null) => CreateTenant(
                 new CreateTenantRequest
@@ -1008,191 +1192,6 @@ namespace Google.Cloud.Talent.V4Beta1
         }
 
         /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the tenant to be deleted.
-        ///
-        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-        /// "projects/foo/tenants/bar".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteTenantAsync(
-            TenantName name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteTenantAsync(
-                new DeleteTenantRequest
-                {
-                    TenantName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the tenant to be deleted.
-        ///
-        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-        /// "projects/foo/tenants/bar".
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteTenantAsync(
-            TenantName name,
-            st::CancellationToken cancellationToken) => DeleteTenantAsync(
-                name,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the tenant to be deleted.
-        ///
-        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-        /// "projects/foo/tenants/bar".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteTenant(
-            TenantName name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteTenant(
-                new DeleteTenantRequest
-                {
-                    TenantName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the tenant to be deleted.
-        ///
-        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-        /// "projects/foo/tenants/bar".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteTenantAsync(
-            string name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteTenantAsync(
-                new DeleteTenantRequest
-                {
-                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the tenant to be deleted.
-        ///
-        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-        /// "projects/foo/tenants/bar".
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteTenantAsync(
-            string name,
-            st::CancellationToken cancellationToken) => DeleteTenantAsync(
-                name,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="name">
-        /// Required. The resource name of the tenant to be deleted.
-        ///
-        /// The format is "projects/{project_id}/tenants/{tenant_id}", for example,
-        /// "projects/foo/tenants/bar".
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteTenant(
-            string name,
-            gaxgrpc::CallSettings callSettings = null) => DeleteTenant(
-                new DeleteTenantRequest
-                {
-                    Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
-                },
-                callSettings);
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteTenantAsync(
-            DeleteTenantRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="cancellationToken">
-        /// A <see cref="st::CancellationToken"/> to use for this RPC.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public virtual stt::Task DeleteTenantAsync(
-            DeleteTenantRequest request,
-            st::CancellationToken cancellationToken) => DeleteTenantAsync(
-                request,
-                gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public virtual void DeleteTenant(
-            DeleteTenantRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            throw new sys::NotImplementedException();
-        }
-
-        /// <summary>
         /// Lists all tenants associated with the project.
         /// </summary>
         /// <param name="parent">
@@ -1216,7 +1215,7 @@ namespace Google.Cloud.Talent.V4Beta1
         /// A pageable asynchronous sequence of <see cref="Tenant"/> resources.
         /// </returns>
         public virtual gax::PagedAsyncEnumerable<ListTenantsResponse, Tenant> ListTenantsAsync(
-            gaxres::ProjectName parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListTenantsAsync(
@@ -1252,7 +1251,7 @@ namespace Google.Cloud.Talent.V4Beta1
         /// A pageable sequence of <see cref="Tenant"/> resources.
         /// </returns>
         public virtual gax::PagedEnumerable<ListTenantsResponse, Tenant> ListTenants(
-            gaxres::ProjectName parent,
+            ProjectName parent,
             string pageToken = null,
             int? pageSize = null,
             gaxgrpc::CallSettings callSettings = null) => ListTenants(
@@ -1381,10 +1380,10 @@ namespace Google.Cloud.Talent.V4Beta1
     /// </summary>
     public sealed partial class TenantServiceClientImpl : TenantServiceClient
     {
+        private readonly gaxgrpc::ApiCall<DeleteTenantRequest, pbwkt::Empty> _callDeleteTenant;
         private readonly gaxgrpc::ApiCall<CreateTenantRequest, Tenant> _callCreateTenant;
         private readonly gaxgrpc::ApiCall<GetTenantRequest, Tenant> _callGetTenant;
         private readonly gaxgrpc::ApiCall<UpdateTenantRequest, Tenant> _callUpdateTenant;
-        private readonly gaxgrpc::ApiCall<DeleteTenantRequest, pbwkt::Empty> _callDeleteTenant;
         private readonly gaxgrpc::ApiCall<ListTenantsRequest, ListTenantsResponse> _callListTenants;
 
         /// <summary>
@@ -1397,6 +1396,9 @@ namespace Google.Cloud.Talent.V4Beta1
             GrpcClient = grpcClient;
             TenantServiceSettings effectiveSettings = settings ?? TenantServiceSettings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
+            _callDeleteTenant = clientHelper.BuildApiCall<DeleteTenantRequest, pbwkt::Empty>(
+                GrpcClient.DeleteTenantAsync, GrpcClient.DeleteTenant, effectiveSettings.DeleteTenantSettings)
+                .WithGoogleRequestParam("name", request => request.Name);
             _callCreateTenant = clientHelper.BuildApiCall<CreateTenantRequest, Tenant>(
                 GrpcClient.CreateTenantAsync, GrpcClient.CreateTenant, effectiveSettings.CreateTenantSettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
@@ -1406,20 +1408,17 @@ namespace Google.Cloud.Talent.V4Beta1
             _callUpdateTenant = clientHelper.BuildApiCall<UpdateTenantRequest, Tenant>(
                 GrpcClient.UpdateTenantAsync, GrpcClient.UpdateTenant, effectiveSettings.UpdateTenantSettings)
                 .WithGoogleRequestParam("tenant.name", request => request.Tenant?.Name);
-            _callDeleteTenant = clientHelper.BuildApiCall<DeleteTenantRequest, pbwkt::Empty>(
-                GrpcClient.DeleteTenantAsync, GrpcClient.DeleteTenant, effectiveSettings.DeleteTenantSettings)
-                .WithGoogleRequestParam("name", request => request.Name);
             _callListTenants = clientHelper.BuildApiCall<ListTenantsRequest, ListTenantsResponse>(
                 GrpcClient.ListTenantsAsync, GrpcClient.ListTenants, effectiveSettings.ListTenantsSettings)
                 .WithGoogleRequestParam("parent", request => request.Parent);
+            Modify_ApiCall(ref _callDeleteTenant);
+            Modify_DeleteTenantApiCall(ref _callDeleteTenant);
             Modify_ApiCall(ref _callCreateTenant);
             Modify_CreateTenantApiCall(ref _callCreateTenant);
             Modify_ApiCall(ref _callGetTenant);
             Modify_GetTenantApiCall(ref _callGetTenant);
             Modify_ApiCall(ref _callUpdateTenant);
             Modify_UpdateTenantApiCall(ref _callUpdateTenant);
-            Modify_ApiCall(ref _callDeleteTenant);
-            Modify_DeleteTenantApiCall(ref _callDeleteTenant);
             Modify_ApiCall(ref _callListTenants);
             Modify_ListTenantsApiCall(ref _callListTenants);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
@@ -1435,10 +1434,10 @@ namespace Google.Cloud.Talent.V4Beta1
 
         // Partial methods called for each ApiCall on construction.
         // Allows per-RPC-method modification of the underlying ApiCall object.
+        partial void Modify_DeleteTenantApiCall(ref gaxgrpc::ApiCall<DeleteTenantRequest, pbwkt::Empty> call);
         partial void Modify_CreateTenantApiCall(ref gaxgrpc::ApiCall<CreateTenantRequest, Tenant> call);
         partial void Modify_GetTenantApiCall(ref gaxgrpc::ApiCall<GetTenantRequest, Tenant> call);
         partial void Modify_UpdateTenantApiCall(ref gaxgrpc::ApiCall<UpdateTenantRequest, Tenant> call);
-        partial void Modify_DeleteTenantApiCall(ref gaxgrpc::ApiCall<DeleteTenantRequest, pbwkt::Empty> call);
         partial void Modify_ListTenantsApiCall(ref gaxgrpc::ApiCall<ListTenantsRequest, ListTenantsResponse> call);
         partial void OnConstruction(TenantService.TenantServiceClient grpcClient, TenantServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
@@ -1450,11 +1449,48 @@ namespace Google.Cloud.Talent.V4Beta1
         // Partial methods called on each request.
         // Allows per-RPC-call modification to the request and CallSettings objects,
         // before the underlying RPC is performed.
+        partial void Modify_DeleteTenantRequest(ref DeleteTenantRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_CreateTenantRequest(ref CreateTenantRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_GetTenantRequest(ref GetTenantRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_UpdateTenantRequest(ref UpdateTenantRequest request, ref gaxgrpc::CallSettings settings);
-        partial void Modify_DeleteTenantRequest(ref DeleteTenantRequest request, ref gaxgrpc::CallSettings settings);
         partial void Modify_ListTenantsRequest(ref ListTenantsRequest request, ref gaxgrpc::CallSettings settings);
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        /// <returns>
+        /// A Task that completes when the RPC has completed.
+        /// </returns>
+        public override stt::Task DeleteTenantAsync(
+            DeleteTenantRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteTenantRequest(ref request, ref callSettings);
+            return _callDeleteTenant.Async(request, callSettings);
+        }
+
+        /// <summary>
+        /// Deletes specified tenant.
+        /// </summary>
+        /// <param name="request">
+        /// The request object containing all of the parameters for the API call.
+        /// </param>
+        /// <param name="callSettings">
+        /// If not null, applies overrides to this RPC call.
+        /// </param>
+        public override void DeleteTenant(
+            DeleteTenantRequest request,
+            gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_DeleteTenantRequest(ref request, ref callSettings);
+            _callDeleteTenant.Sync(request, callSettings);
+        }
 
         /// <summary>
         /// Creates a new tenant entity.
@@ -1574,43 +1610,6 @@ namespace Google.Cloud.Talent.V4Beta1
         {
             Modify_UpdateTenantRequest(ref request, ref callSettings);
             return _callUpdateTenant.Sync(request, callSettings);
-        }
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        /// <returns>
-        /// A Task that completes when the RPC has completed.
-        /// </returns>
-        public override stt::Task DeleteTenantAsync(
-            DeleteTenantRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteTenantRequest(ref request, ref callSettings);
-            return _callDeleteTenant.Async(request, callSettings);
-        }
-
-        /// <summary>
-        /// Deletes specified tenant.
-        /// </summary>
-        /// <param name="request">
-        /// The request object containing all of the parameters for the API call.
-        /// </param>
-        /// <param name="callSettings">
-        /// If not null, applies overrides to this RPC call.
-        /// </param>
-        public override void DeleteTenant(
-            DeleteTenantRequest request,
-            gaxgrpc::CallSettings callSettings = null)
-        {
-            Modify_DeleteTenantRequest(ref request, ref callSettings);
-            _callDeleteTenant.Sync(request, callSettings);
         }
 
         /// <summary>

@@ -35,34 +35,34 @@ const gapic = Object.freeze({
 /**
  * The `@google-cloud/talent` package has the following named exports:
  *
- * - `ApplicationServiceClient` - Reference to
- *   {@link v4beta1.ApplicationServiceClient}
  * - `CompanyServiceClient` - Reference to
  *   {@link v4beta1.CompanyServiceClient}
- * - `CompletionClient` - Reference to
- *   {@link v4beta1.CompletionClient}
- * - `EventServiceClient` - Reference to
- *   {@link v4beta1.EventServiceClient}
  * - `JobServiceClient` - Reference to
  *   {@link v4beta1.JobServiceClient}
  * - `ProfileServiceClient` - Reference to
  *   {@link v4beta1.ProfileServiceClient}
+ * - `EventServiceClient` - Reference to
+ *   {@link v4beta1.EventServiceClient}
+ * - `ApplicationServiceClient` - Reference to
+ *   {@link v4beta1.ApplicationServiceClient}
+ * - `CompletionClient` - Reference to
+ *   {@link v4beta1.CompletionClient}
  * - `TenantServiceClient` - Reference to
  *   {@link v4beta1.TenantServiceClient}
  * - `v4beta1` - This is used for selecting or pinning a
  *   particular backend service version. It exports:
- *     - `ApplicationServiceClient` - Reference to
- *       {@link v4beta1.ApplicationServiceClient}
  *     - `CompanyServiceClient` - Reference to
  *       {@link v4beta1.CompanyServiceClient}
- *     - `CompletionClient` - Reference to
- *       {@link v4beta1.CompletionClient}
- *     - `EventServiceClient` - Reference to
- *       {@link v4beta1.EventServiceClient}
  *     - `JobServiceClient` - Reference to
  *       {@link v4beta1.JobServiceClient}
  *     - `ProfileServiceClient` - Reference to
  *       {@link v4beta1.ProfileServiceClient}
+ *     - `EventServiceClient` - Reference to
+ *       {@link v4beta1.EventServiceClient}
+ *     - `ApplicationServiceClient` - Reference to
+ *       {@link v4beta1.ApplicationServiceClient}
+ *     - `CompletionClient` - Reference to
+ *       {@link v4beta1.CompletionClient}
  *     - `TenantServiceClient` - Reference to
  *       {@link v4beta1.TenantServiceClient}
  *
@@ -76,10 +76,10 @@ const gapic = Object.freeze({
  * const talent = require('@google-cloud/talent');
  *
  * @example <caption>Create a client that uses <a href="https://goo.gl/64dyYX">Application Default Credentials (ADC)</a>:</caption>
- * const client = new talent.ApplicationServiceClient();
+ * const client = new talent.CompanyServiceClient();
  *
  * @example <caption>Create a client with <a href="https://goo.gl/RXp6VL">explicit credentials</a>:</caption>
- * const client = new talent.ApplicationServiceClient({
+ * const client = new talent.CompanyServiceClient({
  *   projectId: 'your-project-id',
  *   keyFilename: '/path/to/keyfile.json',
  * });
@@ -87,18 +87,18 @@ const gapic = Object.freeze({
 
 /**
  * @type {object}
- * @property {constructor} ApplicationServiceClient
- *   Reference to {@link v4beta1.ApplicationServiceClient}
  * @property {constructor} CompanyServiceClient
  *   Reference to {@link v4beta1.CompanyServiceClient}
- * @property {constructor} CompletionClient
- *   Reference to {@link v4beta1.CompletionClient}
- * @property {constructor} EventServiceClient
- *   Reference to {@link v4beta1.EventServiceClient}
  * @property {constructor} JobServiceClient
  *   Reference to {@link v4beta1.JobServiceClient}
  * @property {constructor} ProfileServiceClient
  *   Reference to {@link v4beta1.ProfileServiceClient}
+ * @property {constructor} EventServiceClient
+ *   Reference to {@link v4beta1.EventServiceClient}
+ * @property {constructor} ApplicationServiceClient
+ *   Reference to {@link v4beta1.ApplicationServiceClient}
+ * @property {constructor} CompletionClient
+ *   Reference to {@link v4beta1.CompletionClient}
  * @property {constructor} TenantServiceClient
  *   Reference to {@link v4beta1.TenantServiceClient}
  */
@@ -106,18 +106,18 @@ module.exports = gapic.v4beta1;
 
 /**
  * @type {object}
- * @property {constructor} ApplicationServiceClient
- *   Reference to {@link v4beta1.ApplicationServiceClient}
  * @property {constructor} CompanyServiceClient
  *   Reference to {@link v4beta1.CompanyServiceClient}
- * @property {constructor} CompletionClient
- *   Reference to {@link v4beta1.CompletionClient}
- * @property {constructor} EventServiceClient
- *   Reference to {@link v4beta1.EventServiceClient}
  * @property {constructor} JobServiceClient
  *   Reference to {@link v4beta1.JobServiceClient}
  * @property {constructor} ProfileServiceClient
  *   Reference to {@link v4beta1.ProfileServiceClient}
+ * @property {constructor} EventServiceClient
+ *   Reference to {@link v4beta1.EventServiceClient}
+ * @property {constructor} ApplicationServiceClient
+ *   Reference to {@link v4beta1.ApplicationServiceClient}
+ * @property {constructor} CompletionClient
+ *   Reference to {@link v4beta1.CompletionClient}
  * @property {constructor} TenantServiceClient
  *   Reference to {@link v4beta1.TenantServiceClient}
  */

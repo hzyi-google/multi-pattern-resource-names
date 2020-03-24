@@ -107,8 +107,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should be
-   * "organizations/[organization_id]".
+   * Required. Resource name of the parent of sources to list. Its format should
+   * be "organizations/[organization_id]".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -128,8 +128,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should be
-   * "organizations/[organization_id]".
+   * Required. Resource name of the parent of sources to list. Its format should
+   * be "organizations/[organization_id]".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -555,8 +555,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id]".
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -576,8 +576,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id]".
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -598,8 +598,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id]".
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -618,8 +618,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id]".
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -633,8 +633,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should be
-     * "organizations/[organization_id]".
+     * Required. Resource name of the parent of sources to list. Its format should
+     * be "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

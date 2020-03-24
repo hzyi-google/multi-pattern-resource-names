@@ -5,7 +5,7 @@ package com.google.cloud.dataproc.v1beta2;
 
 /**
  * <pre>
- * A Cloud Dataproc job for running [Apache Hive](https://hive.apache.org/)
+ * A Dataproc job for running [Apache Hive](https://hive.apache.org/)
  * queries on YARN.
  * </pre>
  *
@@ -307,7 +307,7 @@ private static final long serialVersionUID = 0L;
    * executing independent parallel queries.
    * </pre>
    *
-   * <code>bool continue_on_failure = 3;</code>
+   * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The continueOnFailure.
    */
   public boolean getContinueOnFailure() {
@@ -346,7 +346,7 @@ private static final long serialVersionUID = 0L;
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public boolean containsScriptVariables(
@@ -367,7 +367,7 @@ private static final long serialVersionUID = 0L;
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
@@ -379,7 +379,7 @@ private static final long serialVersionUID = 0L;
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getScriptVariablesOrDefault(
@@ -396,7 +396,7 @@ private static final long serialVersionUID = 0L;
    * Hive command: `SET name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 4;</code>
+   * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getScriptVariablesOrThrow(
@@ -439,12 +439,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public boolean containsProperties(
@@ -462,12 +462,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
@@ -476,12 +476,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getPropertiesOrDefault(
@@ -495,12 +495,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
-   * Properties that conflict with values set by the Cloud Dataproc API may be
+   * Properties that conflict with values set by the Dataproc API may be
    * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
    * /etc/hive/conf/hive-site.xml, and classes in user code.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 5;</code>
+   * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   public java.lang.String getPropertiesOrThrow(
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the jarFileUris.
    */
   public com.google.protobuf.ProtocolStringList
@@ -537,7 +537,7 @@ private static final long serialVersionUID = 0L;
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of jarFileUris.
    */
   public int getJarFileUrisCount() {
@@ -550,7 +550,7 @@ private static final long serialVersionUID = 0L;
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The jarFileUris at the given index.
    */
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
    * and UDFs.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 6;</code>
+   * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the jarFileUris at the given index.
    */
@@ -830,7 +830,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A Cloud Dataproc job for running [Apache Hive](https://hive.apache.org/)
+   * A Dataproc job for running [Apache Hive](https://hive.apache.org/)
    * queries on YARN.
    * </pre>
    *
@@ -1367,7 +1367,7 @@ private static final long serialVersionUID = 0L;
      * executing independent parallel queries.
      * </pre>
      *
-     * <code>bool continue_on_failure = 3;</code>
+     * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The continueOnFailure.
      */
     public boolean getContinueOnFailure() {
@@ -1380,7 +1380,7 @@ private static final long serialVersionUID = 0L;
      * executing independent parallel queries.
      * </pre>
      *
-     * <code>bool continue_on_failure = 3;</code>
+     * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The continueOnFailure to set.
      * @return This builder for chaining.
      */
@@ -1397,7 +1397,7 @@ private static final long serialVersionUID = 0L;
      * executing independent parallel queries.
      * </pre>
      *
-     * <code>bool continue_on_failure = 3;</code>
+     * <code>bool continue_on_failure = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearContinueOnFailure() {
@@ -1439,7 +1439,7 @@ private static final long serialVersionUID = 0L;
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public boolean containsScriptVariables(
@@ -1460,7 +1460,7 @@ private static final long serialVersionUID = 0L;
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
@@ -1472,7 +1472,7 @@ private static final long serialVersionUID = 0L;
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getScriptVariablesOrDefault(
@@ -1489,7 +1489,7 @@ private static final long serialVersionUID = 0L;
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getScriptVariablesOrThrow(
@@ -1514,7 +1514,7 @@ private static final long serialVersionUID = 0L;
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder removeScriptVariables(
@@ -1538,7 +1538,7 @@ private static final long serialVersionUID = 0L;
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putScriptVariables(
         java.lang.String key,
@@ -1555,7 +1555,7 @@ private static final long serialVersionUID = 0L;
      * Hive command: `SET name="value";`).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; script_variables = 4;</code>
+     * <code>map&lt;string, string&gt; script_variables = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder putAllScriptVariables(
@@ -1594,12 +1594,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public boolean containsProperties(
@@ -1617,12 +1617,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
@@ -1631,12 +1631,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getPropertiesOrDefault(
@@ -1650,12 +1650,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public java.lang.String getPropertiesOrThrow(
@@ -1677,12 +1677,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder removeProperties(
@@ -1703,12 +1703,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putProperties(
         java.lang.String key,
@@ -1722,12 +1722,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
-     * Properties that conflict with values set by the Cloud Dataproc API may be
+     * Properties that conflict with values set by the Dataproc API may be
      * overwritten. Can include properties set in /etc/hadoop/conf/&#42;-site.xml,
      * /etc/hive/conf/hive-site.xml, and classes in user code.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; properties = 5;</code>
+     * <code>map&lt;string, string&gt; properties = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder putAllProperties(
@@ -1751,7 +1751,7 @@ private static final long serialVersionUID = 0L;
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return A list containing the jarFileUris.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1765,7 +1765,7 @@ private static final long serialVersionUID = 0L;
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The count of jarFileUris.
      */
     public int getJarFileUrisCount() {
@@ -1778,7 +1778,7 @@ private static final long serialVersionUID = 0L;
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the element to return.
      * @return The jarFileUris at the given index.
      */
@@ -1792,7 +1792,7 @@ private static final long serialVersionUID = 0L;
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the value to return.
      * @return The bytes of the jarFileUris at the given index.
      */
@@ -1807,7 +1807,7 @@ private static final long serialVersionUID = 0L;
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index to set the value at.
      * @param value The jarFileUris to set.
      * @return This builder for chaining.
@@ -1829,7 +1829,7 @@ private static final long serialVersionUID = 0L;
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The jarFileUris to add.
      * @return This builder for chaining.
      */
@@ -1850,7 +1850,7 @@ private static final long serialVersionUID = 0L;
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param values The jarFileUris to add.
      * @return This builder for chaining.
      */
@@ -1869,7 +1869,7 @@ private static final long serialVersionUID = 0L;
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearJarFileUris() {
@@ -1885,7 +1885,7 @@ private static final long serialVersionUID = 0L;
      * and UDFs.
      * </pre>
      *
-     * <code>repeated string jar_file_uris = 6;</code>
+     * <code>repeated string jar_file_uris = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes of the jarFileUris to add.
      * @return This builder for chaining.
      */

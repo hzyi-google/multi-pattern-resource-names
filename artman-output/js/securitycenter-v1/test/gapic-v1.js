@@ -50,150 +50,6 @@ describe('SecurityCenterClient', () => {
     assert(client);
   });
 
-  describe('createSource', () => {
-    it('invokes createSource without error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.organizationPath('[ORGANIZATION]');
-      const source = {};
-      const request = {
-        parent: formattedParent,
-        source: source,
-      };
-
-      // Mock response
-      const name = 'name3373707';
-      const displayName = 'displayName1615086568';
-      const description = 'description-1724546052';
-      const expectedResponse = {
-        name: name,
-        displayName: displayName,
-        description: description,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createSource = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.createSource(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes createSource with error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.organizationPath('[ORGANIZATION]');
-      const source = {};
-      const request = {
-        parent: formattedParent,
-        source: source,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createSource = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.createSource(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('createFinding', () => {
-    it('invokes createFinding without error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-      const findingId = 'findingId728776081';
-      const finding = {};
-      const request = {
-        parent: formattedParent,
-        findingId: findingId,
-        finding: finding,
-      };
-
-      // Mock response
-      const name = 'name3373707';
-      const parent2 = 'parent21175163357';
-      const resourceName = 'resourceName979421212';
-      const category = 'category50511102';
-      const externalUri = 'externalUri-1385596168';
-      const expectedResponse = {
-        name: name,
-        parent: parent2,
-        resourceName: resourceName,
-        category: category,
-        externalUri: externalUri,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createFinding = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.createFinding(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes createFinding with error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedParent = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-      const findingId = 'findingId728776081';
-      const finding = {};
-      const request = {
-        parent: formattedParent,
-        findingId: findingId,
-        finding: finding,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.createFinding = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.createFinding(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
   describe('getIamPolicy', () => {
     it('invokes getIamPolicy without error', done => {
       const client = new securityCenterModule.v1.SecurityCenterClient({
@@ -202,9 +58,9 @@ describe('SecurityCenterClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+      const resource = 'resource-341064690';
       const request = {
-        resource: formattedResource,
+        resource: resource,
       };
 
       // Mock response
@@ -235,9 +91,9 @@ describe('SecurityCenterClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+      const resource = 'resource-341064690';
       const request = {
-        resource: formattedResource,
+        resource: resource,
       };
 
       // Mock Grpc layer
@@ -248,132 +104,6 @@ describe('SecurityCenterClient', () => {
       );
 
       client.getIamPolicy(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('getOrganizationSettings', () => {
-    it('invokes getOrganizationSettings without error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.organizationSettingsPath('[ORGANIZATION]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock response
-      const name2 = 'name2-1052831874';
-      const enableAssetDiscovery = false;
-      const expectedResponse = {
-        name: name2,
-        enableAssetDiscovery: enableAssetDiscovery,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.getOrganizationSettings = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.getOrganizationSettings(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes getOrganizationSettings with error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.organizationSettingsPath('[ORGANIZATION]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.getOrganizationSettings = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.getOrganizationSettings(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('getSource', () => {
-    it('invokes getSource without error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock response
-      const name2 = 'name2-1052831874';
-      const displayName = 'displayName1615086568';
-      const description = 'description-1724546052';
-      const expectedResponse = {
-        name: name2,
-        displayName: displayName,
-        description: description,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.getSource = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.getSource(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes getSource with error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedName = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-      const request = {
-        name: formattedName,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.getSource = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.getSource(request, (err, response) => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');
@@ -520,6 +250,526 @@ describe('SecurityCenterClient', () => {
     });
   });
 
+  describe('testIamPermissions', () => {
+    it('invokes testIamPermissions without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const resource = 'resource-341064690';
+      const permissions = [];
+      const request = {
+        resource: resource,
+        permissions: permissions,
+      };
+
+      // Mock response
+      const expectedResponse = {};
+
+      // Mock Grpc layer
+      client._innerApiCalls.testIamPermissions = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.testIamPermissions(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes testIamPermissions with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const resource = 'resource-341064690';
+      const permissions = [];
+      const request = {
+        resource: resource,
+        permissions: permissions,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.testIamPermissions = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.testIamPermissions(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('createSource', () => {
+    it('invokes createSource without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.organizationPath('[ORGANIZATION]');
+      const source = {};
+      const request = {
+        parent: formattedParent,
+        source: source,
+      };
+
+      // Mock response
+      const name = 'name3373707';
+      const displayName = 'displayName1615086568';
+      const description = 'description-1724546052';
+      const expectedResponse = {
+        name: name,
+        displayName: displayName,
+        description: description,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.createSource = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.createSource(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes createSource with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.organizationPath('[ORGANIZATION]');
+      const source = {};
+      const request = {
+        parent: formattedParent,
+        source: source,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.createSource = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.createSource(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('createFinding', () => {
+    it('invokes createFinding without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+      const findingId = 'findingId728776081';
+      const finding = {};
+      const request = {
+        parent: formattedParent,
+        findingId: findingId,
+        finding: finding,
+      };
+
+      // Mock response
+      const name = 'name3373707';
+      const parent2 = 'parent21175163357';
+      const resourceName = 'resourceName979421212';
+      const category = 'category50511102';
+      const externalUri = 'externalUri-1385596168';
+      const expectedResponse = {
+        name: name,
+        parent: parent2,
+        resourceName: resourceName,
+        category: category,
+        externalUri: externalUri,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.createFinding = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.createFinding(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes createFinding with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+      const findingId = 'findingId728776081';
+      const finding = {};
+      const request = {
+        parent: formattedParent,
+        findingId: findingId,
+        finding: finding,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.createFinding = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.createFinding(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('createNotificationConfig', () => {
+    it('invokes createNotificationConfig without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.organizationPath('[ORGANIZATION]');
+      const configId = 'configId-804450504';
+      const notificationConfig = {};
+      const request = {
+        parent: formattedParent,
+        configId: configId,
+        notificationConfig: notificationConfig,
+      };
+
+      // Mock response
+      const name = 'name3373707';
+      const description = 'description-1724546052';
+      const pubsubTopic = 'pubsubTopic-338126829';
+      const serviceAccount = 'serviceAccount-1948028253';
+      const expectedResponse = {
+        name: name,
+        description: description,
+        pubsubTopic: pubsubTopic,
+        serviceAccount: serviceAccount,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.createNotificationConfig = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.createNotificationConfig(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes createNotificationConfig with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.organizationPath('[ORGANIZATION]');
+      const configId = 'configId-804450504';
+      const notificationConfig = {};
+      const request = {
+        parent: formattedParent,
+        configId: configId,
+        notificationConfig: notificationConfig,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.createNotificationConfig = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.createNotificationConfig(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('deleteNotificationConfig', () => {
+    it('invokes deleteNotificationConfig without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.notificationConfigPath('[ORGANIZATION]', '[NOTIFICATION_CONFIG]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteNotificationConfig = mockSimpleGrpcMethod(request);
+
+      client.deleteNotificationConfig(request, err => {
+        assert.ifError(err);
+        done();
+      });
+    });
+
+    it('invokes deleteNotificationConfig with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.notificationConfigPath('[ORGANIZATION]', '[NOTIFICATION_CONFIG]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.deleteNotificationConfig = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.deleteNotificationConfig(request, err => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        done();
+      });
+    });
+  });
+
+  describe('getNotificationConfig', () => {
+    it('invokes getNotificationConfig without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.notificationConfigPath('[ORGANIZATION]', '[NOTIFICATION_CONFIG]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock response
+      const name2 = 'name2-1052831874';
+      const description = 'description-1724546052';
+      const pubsubTopic = 'pubsubTopic-338126829';
+      const serviceAccount = 'serviceAccount-1948028253';
+      const expectedResponse = {
+        name: name2,
+        description: description,
+        pubsubTopic: pubsubTopic,
+        serviceAccount: serviceAccount,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getNotificationConfig = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.getNotificationConfig(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes getNotificationConfig with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.notificationConfigPath('[ORGANIZATION]', '[NOTIFICATION_CONFIG]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getNotificationConfig = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.getNotificationConfig(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('getOrganizationSettings', () => {
+    it('invokes getOrganizationSettings without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.organizationSettingsPath('[ORGANIZATION]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock response
+      const name2 = 'name2-1052831874';
+      const enableAssetDiscovery = false;
+      const expectedResponse = {
+        name: name2,
+        enableAssetDiscovery: enableAssetDiscovery,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getOrganizationSettings = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.getOrganizationSettings(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes getOrganizationSettings with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.organizationSettingsPath('[ORGANIZATION]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getOrganizationSettings = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.getOrganizationSettings(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('getSource', () => {
+    it('invokes getSource without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock response
+      const name2 = 'name2-1052831874';
+      const displayName = 'displayName1615086568';
+      const description = 'description-1724546052';
+      const expectedResponse = {
+        name: name2,
+        displayName: displayName,
+        description: description,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getSource = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.getSource(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes getSource with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedName = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+      const request = {
+        name: formattedName,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.getSource = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.getSource(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
   describe('listAssets', () => {
     it('invokes listAssets without error', done => {
       const client = new securityCenterModule.v1.SecurityCenterClient({
@@ -642,6 +892,69 @@ describe('SecurityCenterClient', () => {
       );
 
       client.listFindings(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('listNotificationConfigs', () => {
+    it('invokes listNotificationConfigs without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.organizationPath('[ORGANIZATION]');
+      const request = {
+        parent: formattedParent,
+      };
+
+      // Mock response
+      const nextPageToken = '';
+      const notificationConfigsElement = {};
+      const notificationConfigs = [notificationConfigsElement];
+      const expectedResponse = {
+        nextPageToken: nextPageToken,
+        notificationConfigs: notificationConfigs,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.listNotificationConfigs = (actualRequest, options, callback) => {
+        assert.deepStrictEqual(actualRequest, request);
+        callback(null, expectedResponse.notificationConfigs);
+      };
+
+      client.listNotificationConfigs(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse.notificationConfigs);
+        done();
+      });
+    });
+
+    it('invokes listNotificationConfigs with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const formattedParent = client.organizationPath('[ORGANIZATION]');
+      const request = {
+        parent: formattedParent,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.listNotificationConfigs = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.listNotificationConfigs(request, (err, response) => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');
@@ -864,10 +1177,10 @@ describe('SecurityCenterClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+      const resource = 'resource-341064690';
       const policy = {};
       const request = {
-        resource: formattedResource,
+        resource: resource,
         policy: policy,
       };
 
@@ -899,10 +1212,10 @@ describe('SecurityCenterClient', () => {
       });
 
       // Mock request
-      const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+      const resource = 'resource-341064690';
       const policy = {};
       const request = {
-        resource: formattedResource,
+        resource: resource,
         policy: policy,
       };
 
@@ -914,67 +1227,6 @@ describe('SecurityCenterClient', () => {
       );
 
       client.setIamPolicy(request, (err, response) => {
-        assert(err instanceof Error);
-        assert.strictEqual(err.code, FAKE_STATUS_CODE);
-        assert(typeof response === 'undefined');
-        done();
-      });
-    });
-  });
-
-  describe('testIamPermissions', () => {
-    it('invokes testIamPermissions without error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-      const permissions = [];
-      const request = {
-        resource: formattedResource,
-        permissions: permissions,
-      };
-
-      // Mock response
-      const expectedResponse = {};
-
-      // Mock Grpc layer
-      client._innerApiCalls.testIamPermissions = mockSimpleGrpcMethod(
-        request,
-        expectedResponse
-      );
-
-      client.testIamPermissions(request, (err, response) => {
-        assert.ifError(err);
-        assert.deepStrictEqual(response, expectedResponse);
-        done();
-      });
-    });
-
-    it('invokes testIamPermissions with error', done => {
-      const client = new securityCenterModule.v1.SecurityCenterClient({
-        credentials: {client_email: 'bogus', private_key: 'bogus'},
-        projectId: 'bogus',
-      });
-
-      // Mock request
-      const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-      const permissions = [];
-      const request = {
-        resource: formattedResource,
-        permissions: permissions,
-      };
-
-      // Mock Grpc layer
-      client._innerApiCalls.testIamPermissions = mockSimpleGrpcMethod(
-        request,
-        null,
-        error
-      );
-
-      client.testIamPermissions(request, (err, response) => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');
@@ -1043,6 +1295,72 @@ describe('SecurityCenterClient', () => {
       );
 
       client.updateFinding(request, (err, response) => {
+        assert(err instanceof Error);
+        assert.strictEqual(err.code, FAKE_STATUS_CODE);
+        assert(typeof response === 'undefined');
+        done();
+      });
+    });
+  });
+
+  describe('updateNotificationConfig', () => {
+    it('invokes updateNotificationConfig without error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const notificationConfig = {};
+      const request = {
+        notificationConfig: notificationConfig,
+      };
+
+      // Mock response
+      const name = 'name3373707';
+      const description = 'description-1724546052';
+      const pubsubTopic = 'pubsubTopic-338126829';
+      const serviceAccount = 'serviceAccount-1948028253';
+      const expectedResponse = {
+        name: name,
+        description: description,
+        pubsubTopic: pubsubTopic,
+        serviceAccount: serviceAccount,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.updateNotificationConfig = mockSimpleGrpcMethod(
+        request,
+        expectedResponse
+      );
+
+      client.updateNotificationConfig(request, (err, response) => {
+        assert.ifError(err);
+        assert.deepStrictEqual(response, expectedResponse);
+        done();
+      });
+    });
+
+    it('invokes updateNotificationConfig with error', done => {
+      const client = new securityCenterModule.v1.SecurityCenterClient({
+        credentials: {client_email: 'bogus', private_key: 'bogus'},
+        projectId: 'bogus',
+      });
+
+      // Mock request
+      const notificationConfig = {};
+      const request = {
+        notificationConfig: notificationConfig,
+      };
+
+      // Mock Grpc layer
+      client._innerApiCalls.updateNotificationConfig = mockSimpleGrpcMethod(
+        request,
+        null,
+        error
+      );
+
+      client.updateNotificationConfig(request, (err, response) => {
         assert(err instanceof Error);
         assert.strictEqual(err.code, FAKE_STATUS_CODE);
         assert(typeof response === 'undefined');

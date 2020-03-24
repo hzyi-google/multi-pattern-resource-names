@@ -154,8 +154,8 @@ public interface JobTriggerOrBuilder extends
 
   /**
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -166,8 +166,8 @@ public interface JobTriggerOrBuilder extends
       getErrorsList();
   /**
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -177,8 +177,8 @@ public interface JobTriggerOrBuilder extends
   com.google.privacy.dlp.v2.Error getErrors(int index);
   /**
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -188,8 +188,8 @@ public interface JobTriggerOrBuilder extends
   int getErrorsCount();
   /**
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>
@@ -200,8 +200,8 @@ public interface JobTriggerOrBuilder extends
       getErrorsOrBuilderList();
   /**
    * <pre>
-   * Output only. A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automatically being paused.
+   * Output only. A stream of errors encountered when the trigger was activated.
+   * Repeated errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared.
    * </pre>

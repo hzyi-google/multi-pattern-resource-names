@@ -160,6 +160,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "event_service_client_config.json"
@@ -234,7 +237,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   event_client = Google::Cloud::Talent::Event.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::EventServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::EventServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `client_event`:
           #   client_event = {}

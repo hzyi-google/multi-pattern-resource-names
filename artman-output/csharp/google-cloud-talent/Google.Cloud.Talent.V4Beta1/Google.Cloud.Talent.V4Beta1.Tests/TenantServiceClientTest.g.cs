@@ -18,7 +18,6 @@ namespace Google.Cloud.Talent.V4Beta1.Tests
 {
     using Google.Api.Gax;
     using Google.Api.Gax.Grpc;
-    using Google.Api.Gax.ResourceNames;
     using apis = Google.Cloud.Talent.V4Beta1;
     using Google.Protobuf.WellKnownTypes;
     using Grpc.Core;
@@ -34,6 +33,72 @@ namespace Google.Cloud.Talent.V4Beta1.Tests
     /// <summary>Generated unit tests</summary>
     public class GeneratedTenantServiceClientTest
     {
+        [Fact]
+        public void DeleteTenant()
+        {
+            Mock<TenantService.TenantServiceClient> mockGrpcClient = new Mock<TenantService.TenantServiceClient>(MockBehavior.Strict);
+            DeleteTenantRequest expectedRequest = new DeleteTenantRequest
+            {
+                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteTenant(expectedRequest, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            TenantServiceClient client = new TenantServiceClientImpl(mockGrpcClient.Object, null);
+            TenantName name = new TenantName("[PROJECT]", "[TENANT]");
+            client.DeleteTenant(name);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task DeleteTenantAsync()
+        {
+            Mock<TenantService.TenantServiceClient> mockGrpcClient = new Mock<TenantService.TenantServiceClient>(MockBehavior.Strict);
+            DeleteTenantRequest expectedRequest = new DeleteTenantRequest
+            {
+                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteTenantAsync(expectedRequest, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
+            TenantServiceClient client = new TenantServiceClientImpl(mockGrpcClient.Object, null);
+            TenantName name = new TenantName("[PROJECT]", "[TENANT]");
+            await client.DeleteTenantAsync(name);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public void DeleteTenant2()
+        {
+            Mock<TenantService.TenantServiceClient> mockGrpcClient = new Mock<TenantService.TenantServiceClient>(MockBehavior.Strict);
+            DeleteTenantRequest request = new DeleteTenantRequest
+            {
+                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteTenant(request, It.IsAny<CallOptions>()))
+                .Returns(expectedResponse);
+            TenantServiceClient client = new TenantServiceClientImpl(mockGrpcClient.Object, null);
+            client.DeleteTenant(request);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [Fact]
+        public async Task DeleteTenantAsync2()
+        {
+            Mock<TenantService.TenantServiceClient> mockGrpcClient = new Mock<TenantService.TenantServiceClient>(MockBehavior.Strict);
+            DeleteTenantRequest request = new DeleteTenantRequest
+            {
+                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
+            };
+            Empty expectedResponse = new Empty();
+            mockGrpcClient.Setup(x => x.DeleteTenantAsync(request, It.IsAny<CallOptions>()))
+                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
+            TenantServiceClient client = new TenantServiceClientImpl(mockGrpcClient.Object, null);
+            await client.DeleteTenantAsync(request);
+            mockGrpcClient.VerifyAll();
+        }
+
         [Fact]
         public void CreateTenant()
         {
@@ -295,72 +360,6 @@ namespace Google.Cloud.Talent.V4Beta1.Tests
             TenantServiceClient client = new TenantServiceClientImpl(mockGrpcClient.Object, null);
             Tenant response = await client.UpdateTenantAsync(request);
             Assert.Same(expectedResponse, response);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public void DeleteTenant()
-        {
-            Mock<TenantService.TenantServiceClient> mockGrpcClient = new Mock<TenantService.TenantServiceClient>(MockBehavior.Strict);
-            DeleteTenantRequest expectedRequest = new DeleteTenantRequest
-            {
-                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteTenant(expectedRequest, It.IsAny<CallOptions>()))
-                .Returns(expectedResponse);
-            TenantServiceClient client = new TenantServiceClientImpl(mockGrpcClient.Object, null);
-            TenantName name = new TenantName("[PROJECT]", "[TENANT]");
-            client.DeleteTenant(name);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public async Task DeleteTenantAsync()
-        {
-            Mock<TenantService.TenantServiceClient> mockGrpcClient = new Mock<TenantService.TenantServiceClient>(MockBehavior.Strict);
-            DeleteTenantRequest expectedRequest = new DeleteTenantRequest
-            {
-                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteTenantAsync(expectedRequest, It.IsAny<CallOptions>()))
-                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
-            TenantServiceClient client = new TenantServiceClientImpl(mockGrpcClient.Object, null);
-            TenantName name = new TenantName("[PROJECT]", "[TENANT]");
-            await client.DeleteTenantAsync(name);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public void DeleteTenant2()
-        {
-            Mock<TenantService.TenantServiceClient> mockGrpcClient = new Mock<TenantService.TenantServiceClient>(MockBehavior.Strict);
-            DeleteTenantRequest request = new DeleteTenantRequest
-            {
-                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteTenant(request, It.IsAny<CallOptions>()))
-                .Returns(expectedResponse);
-            TenantServiceClient client = new TenantServiceClientImpl(mockGrpcClient.Object, null);
-            client.DeleteTenant(request);
-            mockGrpcClient.VerifyAll();
-        }
-
-        [Fact]
-        public async Task DeleteTenantAsync2()
-        {
-            Mock<TenantService.TenantServiceClient> mockGrpcClient = new Mock<TenantService.TenantServiceClient>(MockBehavior.Strict);
-            DeleteTenantRequest request = new DeleteTenantRequest
-            {
-                TenantName = new TenantName("[PROJECT]", "[TENANT]"),
-            };
-            Empty expectedResponse = new Empty();
-            mockGrpcClient.Setup(x => x.DeleteTenantAsync(request, It.IsAny<CallOptions>()))
-                .Returns(new Grpc.Core.AsyncUnaryCall<Empty>(Task.FromResult(expectedResponse), null, null, null, null));
-            TenantServiceClient client = new TenantServiceClientImpl(mockGrpcClient.Object, null);
-            await client.DeleteTenantAsync(request);
             mockGrpcClient.VerifyAll();
         }
 

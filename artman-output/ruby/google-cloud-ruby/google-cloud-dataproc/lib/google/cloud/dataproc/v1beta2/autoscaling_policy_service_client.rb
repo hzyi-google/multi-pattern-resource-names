@@ -32,7 +32,7 @@ module Google
     module Dataproc
       module V1beta2
         # The API interface for managing autoscaling policies in the
-        # Google Cloud Dataproc API.
+        # Cloud Dataproc API.
         #
         # @!attribute [r] autoscaling_policy_service_stub
         #   @return [Google::Cloud::Dataproc::V1beta2::AutoscalingPolicyService::Stub]
@@ -173,6 +173,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "autoscaling_policy_service_client_config.json"

@@ -127,6 +127,12 @@ class ApplicationServiceClient {
       applicationPathTemplate: new gaxModule.PathTemplate(
         'projects/{project}/tenants/{tenant}/profiles/{profile}/applications/{application}'
       ),
+      companyPathTemplate: new gaxModule.PathTemplate(
+        'projects/{project}/tenants/{tenant}/companies/{company}'
+      ),
+      companyWithoutTenantPathTemplate: new gaxModule.PathTemplate(
+        'projects/{project}/companies/{company}'
+      ),
       profilePathTemplate: new gaxModule.PathTemplate(
         'projects/{project}/tenants/{tenant}/profiles/{profile}'
       ),
@@ -168,10 +174,10 @@ class ApplicationServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const applicationServiceStubMethods = [
+      'deleteApplication',
       'createApplication',
       'getApplication',
       'updateApplication',
-      'deleteApplication',
       'listApplications',
     ];
     for (const methodName of applicationServiceStubMethods) {
@@ -236,6 +242,55 @@ class ApplicationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+
+  /**
+   * Deletes specified application.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. The resource name of the application to be deleted.
+   *
+   *   The format is
+   *   "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+   *   For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error)} [callback]
+   *   The function which will be called with the result of the API call.
+   * @returns {Promise} - The promise which resolves when API call finishes.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const talent = require('@google-cloud/talent');
+   *
+   * const client = new talent.v4beta1.ApplicationServiceClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
+   * client.deleteApplication({name: formattedName}).catch(err => {
+   *   console.error(err);
+   * });
+   */
+  deleteApplication(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.deleteApplication(request, options, callback);
+  }
 
   /**
    * Creates a new application entity.
@@ -426,55 +481,6 @@ class ApplicationServiceClient {
   }
 
   /**
-   * Deletes specified application.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.name
-   *   Required. The resource name of the application to be deleted.
-   *
-   *   The format is
-   *   "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
-   *   For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error)} [callback]
-   *   The function which will be called with the result of the API call.
-   * @returns {Promise} - The promise which resolves when API call finishes.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const talent = require('@google-cloud/talent');
-   *
-   * const client = new talent.v4beta1.ApplicationServiceClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedName = client.applicationPath('[PROJECT]', '[TENANT]', '[PROFILE]', '[APPLICATION]');
-   * client.deleteApplication({name: formattedName}).catch(err => {
-   *   console.error(err);
-   * });
-   */
-  deleteApplication(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'name': request.name
-      });
-
-    return this._innerApiCalls.deleteApplication(request, options, callback);
-  }
-
-  /**
    * Lists all applications associated with the profile.
    *
    * @param {Object} request
@@ -661,6 +667,38 @@ class ApplicationServiceClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
+   * Return a fully-qualified company resource name string.
+   *
+   * @param {String} project
+   * @param {String} tenant
+   * @param {String} company
+   * @returns {String}
+   */
+  companyPath(project, tenant, company) {
+    return this._pathTemplates.companyPathTemplate.render({
+      project: project,
+      tenant: tenant,
+      company: company,
+    });
+  }
+
+  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
+   * Return a fully-qualified company_without_tenant resource name string.
+   *
+   * @param {String} project
+   * @param {String} company
+   * @returns {String}
+   */
+  companyWithoutTenantPath(project, company) {
+    return this._pathTemplates.companyWithoutTenantPathTemplate.render({
+      project: project,
+      company: company,
+    });
+  }
+
+  /**
    * Return a fully-qualified profile resource name string.
    *
    * @param {String} project
@@ -726,6 +764,76 @@ class ApplicationServiceClient {
     return this._pathTemplates.applicationPathTemplate
       .match(applicationName)
       .application;
+  }
+
+  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
+   * Parse the companyName from a company resource.
+   *
+   * @param {String} companyName
+   *   A fully-qualified path representing a company resources.
+   * @returns {String} - A string representing the project.
+   */
+  matchProjectFromCompanyName(companyName) {
+    return this._pathTemplates.companyPathTemplate
+      .match(companyName)
+      .project;
+  }
+
+  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
+   * Parse the companyName from a company resource.
+   *
+   * @param {String} companyName
+   *   A fully-qualified path representing a company resources.
+   * @returns {String} - A string representing the tenant.
+   */
+  matchTenantFromCompanyName(companyName) {
+    return this._pathTemplates.companyPathTemplate
+      .match(companyName)
+      .tenant;
+  }
+
+  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
+   * Parse the companyName from a company resource.
+   *
+   * @param {String} companyName
+   *   A fully-qualified path representing a company resources.
+   * @returns {String} - A string representing the company.
+   */
+  matchCompanyFromCompanyName(companyName) {
+    return this._pathTemplates.companyPathTemplate
+      .match(companyName)
+      .company;
+  }
+
+  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
+   * Parse the companyWithoutTenantName from a company_without_tenant resource.
+   *
+   * @param {String} companyWithoutTenantName
+   *   A fully-qualified path representing a company_without_tenant resources.
+   * @returns {String} - A string representing the project.
+   */
+  matchProjectFromCompanyWithoutTenantName(companyWithoutTenantName) {
+    return this._pathTemplates.companyWithoutTenantPathTemplate
+      .match(companyWithoutTenantName)
+      .project;
+  }
+
+  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
+   * Parse the companyWithoutTenantName from a company_without_tenant resource.
+   *
+   * @param {String} companyWithoutTenantName
+   *   A fully-qualified path representing a company_without_tenant resources.
+   * @returns {String} - A string representing the company.
+   */
+  matchCompanyFromCompanyWithoutTenantName(companyWithoutTenantName) {
+    return this._pathTemplates.companyWithoutTenantPathTemplate
+      .match(companyWithoutTenantName)
+      .company;
   }
 
   /**

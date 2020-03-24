@@ -109,7 +109,7 @@ module Google
         module AutoscalingPolicy
           ##
           # The API interface for managing autoscaling policies in the
-          # Google Cloud Dataproc API.
+          # Cloud Dataproc API.
           #
           # @param credentials [Google::Auth::Credentials, String, Hash, GRPC::Core::Channel, GRPC::Core::ChannelCredentials, Proc]
           #   Provides the means for authenticating requests made by the client. This parameter can
@@ -279,7 +279,7 @@ module Google
         module WorkflowTemplate
           ##
           # The API interface for managing Workflow Templates in the
-          # Cloud Dataproc API.
+          # Dataproc API.
           #
           # @param credentials [Google::Auth::Credentials, String, Hash, GRPC::Core::Channel, GRPC::Core::ChannelCredentials, Proc]
           #   Provides the means for authenticating requests made by the client. This parameter can

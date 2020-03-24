@@ -604,8 +604,11 @@ const CloudStoragePath = {
  *   This object should have the same structure as [BigQueryTable]{@link google.privacy.dlp.v2.BigQueryTable}
  *
  * @property {Object[]} identifyingFields
- *   References to fields uniquely identifying rows within the table.
- *   Nested fields in the format, like `person.birthdate.year`, are allowed.
+ *   Table fields that may uniquely identify a row within the table. When
+ *   `actions.saveFindings.outputConfig.table` is specified, the values of
+ *   columns specified here are available in the output table under
+ *   `location.content_locations.record_location.record_key.id_values`. Nested
+ *   fields such as `person.birthdate.year` are allowed.
  *
  *   This object should have the same structure as [FieldId]{@link google.privacy.dlp.v2.FieldId}
  *
@@ -665,19 +668,27 @@ const BigQueryOptions = {
  * Shared message indicating Cloud storage type.
  *
  * @property {Object} datastoreOptions
- *   Google Cloud Datastore options specification.
+ *   Google Cloud Datastore options.
  *
  *   This object should have the same structure as [DatastoreOptions]{@link google.privacy.dlp.v2.DatastoreOptions}
  *
  * @property {Object} cloudStorageOptions
- *   Google Cloud Storage options specification.
+ *   Google Cloud Storage options.
  *
  *   This object should have the same structure as [CloudStorageOptions]{@link google.privacy.dlp.v2.CloudStorageOptions}
  *
  * @property {Object} bigQueryOptions
- *   BigQuery options specification.
+ *   BigQuery options.
  *
  *   This object should have the same structure as [BigQueryOptions]{@link google.privacy.dlp.v2.BigQueryOptions}
+ *
+ * @property {Object} hybridOptions
+ *   Hybrid inspection options.
+ *   Early access feature is in a pre-release state and might change or have
+ *   limited support. For more information, see
+ *   https://cloud.google.com/products#product-launch-stages.
+ *
+ *   This object should have the same structure as [HybridOptions]{@link google.privacy.dlp.v2.HybridOptions}
  *
  * @property {Object} timespanConfig
  *   This object should have the same structure as [TimespanConfig]{@link google.privacy.dlp.v2.TimespanConfig}
@@ -738,6 +749,52 @@ const StorageConfig = {
 };
 
 /**
+ * Configuration to control jobs where the content being inspected is outside
+ * of Google Cloud Platform.
+ *
+ * @property {string} description
+ *   A short description of where the data is coming from. Will be stored once
+ *   in the job. 256 max length.
+ *
+ * @property {string[]} requiredFindingLabelKeys
+ *   These are labels that each inspection request must include within their
+ *   'finding_labels' map. Request may contain others, but any missing one of
+ *   these will be rejected.
+ *
+ *   Label keys must be between 1 and 63 characters long and must conform
+ *   to the following regular expression: \[a-z\](https://cloud.google.com\[-a-z0-9\]*\[a-z0-9\])?.
+ *
+ *   No more than 10 keys can be required.
+ *
+ * @property {Object.<string, string>} labels
+ *   To organize findings, these labels will be added to each finding.
+ *
+ *   Label keys must be between 1 and 63 characters long and must conform
+ *   to the following regular expression: \[a-z\](https://cloud.google.com\[-a-z0-9\]*\[a-z0-9\])?.
+ *
+ *   Label values must be between 0 and 63 characters long and must conform
+ *   to the regular expression (\[a-z\](https://cloud.google.com\[-a-z0-9\]*\[a-z0-9\])?)?.
+ *
+ *   No more than 10 labels can be associated with a given finding.
+ *
+ *   Example: <code>"environment" : "production"</code>
+ *   Example: <code>"pipeline" : "etl"</code>
+ *
+ * @property {Object} tableOptions
+ *   If the container is a table, additional information to make findings
+ *   meaningful such as the columns that are primary keys.
+ *
+ *   This object should have the same structure as [TableOptions]{@link google.privacy.dlp.v2.TableOptions}
+ *
+ * @typedef HybridOptions
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.HybridOptions definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/storage.proto}
+ */
+const HybridOptions = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
  * Row key for identifying a record in BigQuery table.
  *
  * @property {Object} tableReference
@@ -746,8 +803,11 @@ const StorageConfig = {
  *   This object should have the same structure as [BigQueryTable]{@link google.privacy.dlp.v2.BigQueryTable}
  *
  * @property {number} rowNumber
- *   Absolute number of the row from the beginning of the table at the time
- *   of scanning.
+ *   Row number inferred at the time the table was scanned. This value is
+ *   nondeterministic, cannot be queried, and may be null for inspection
+ *   jobs. To locate findings within a table, specify
+ *   `inspect_job.storage_config.big_query_options.identifying_fields` in
+ *   `CreateDlpJobRequest`.
  *
  * @typedef BigQueryKey
  * @memberof google.privacy.dlp.v2
@@ -849,7 +909,7 @@ const Key = {
  *
  * @property {string[]} idValues
  *   Values of identifying columns in the given row. Order of values matches
- *   the order of field identifiers specified in the scanning request.
+ *   the order of `identifying_fields` specified in the scanning request.
  *
  * @typedef RecordKey
  * @memberof google.privacy.dlp.v2
@@ -922,6 +982,25 @@ const BigQueryField = {
  * @see [google.privacy.dlp.v2.EntityId definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/storage.proto}
  */
 const EntityId = {
+  // This is for documentation. Actual contents will be loaded by gRPC.
+};
+
+/**
+ * Instructions regarding the table content being inspected.
+ *
+ * @property {Object[]} identifyingFields
+ *   The columns that are the primary keys for table objects included in
+ *   ContentItem. A copy of this cell's value will stored alongside alongside
+ *   each finding so that the finding can be traced to the specific row it came
+ *   from. No more than 3 may be provided.
+ *
+ *   This object should have the same structure as [FieldId]{@link google.privacy.dlp.v2.FieldId}
+ *
+ * @typedef TableOptions
+ * @memberof google.privacy.dlp.v2
+ * @see [google.privacy.dlp.v2.TableOptions definition in proto format]{@link https://github.com/googleapis/googleapis/blob/master/google/privacy/dlp/v2/storage.proto}
+ */
+const TableOptions = {
   // This is for documentation. Actual contents will be loaded by gRPC.
 };
 

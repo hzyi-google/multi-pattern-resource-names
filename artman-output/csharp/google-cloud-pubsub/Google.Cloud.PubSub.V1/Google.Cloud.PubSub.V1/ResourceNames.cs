@@ -15,7 +15,6 @@
 // Generated code. DO NOT EDIT!
 
 using gax = Google.Api.Gax;
-using gaxres = Google.Api.Gax.ResourceNames;
 using sys = System;
 using scg = System.Collections.Generic;
 using linq = System.Linq;
@@ -23,44 +22,44 @@ using linq = System.Linq;
 namespace Google.Cloud.PubSub.V1
 {
     /// <summary>
-    /// Resource name to represent the fixed string "_deleted-topic_".
+    /// Resource name for the 'project' resource.
     /// </summary>
-    public sealed partial class DeletedTopicNameFixed : gax::IResourceName, sys::IEquatable<DeletedTopicNameFixed>
+    public sealed partial class ProjectName : gax::IResourceName, sys::IEquatable<ProjectName>
     {
-        /// <summary>
-        /// The fixed string value: "_deleted-topic_".
-        /// </summary>
-        public const string FixedValue = "_deleted-topic_";
+        private static readonly gax::PathTemplate s_template = new gax::PathTemplate("projects/{project}");
 
         /// <summary>
-        /// An instance of <see cref="DeletedTopicNameFixed"/>.
+        /// Parses the given project resource name in string form into a new
+        /// <see cref="ProjectName"/> instance.
         /// </summary>
-        public static DeletedTopicNameFixed Instance => new DeletedTopicNameFixed();
-
-        /// <summary>
-        /// Parses the given string into a new <see cref="DeletedTopicNameFixed"/> instance.
-        /// Only succeeds if the string is equal to "_deleted-topic_".
-        /// </summary>
-        public static DeletedTopicNameFixed Parse(string deletedTopicNameFixed)
+        /// <param name="projectName">The project resource name in string form. Must not be <c>null</c>.</param>
+        /// <returns>The parsed <see cref="ProjectName"/> if successful.</returns>
+        public static ProjectName Parse(string projectName)
         {
-            DeletedTopicNameFixed result;
-            if (!TryParse(deletedTopicNameFixed, out result))
-            {
-                throw new sys::ArgumentException($"Invalid resource name, must be \"{FixedValue}\"", nameof(deletedTopicNameFixed));
-            }
-            return result;
+            gax::GaxPreconditions.CheckNotNull(projectName, nameof(projectName));
+            gax::TemplatedResourceName resourceName = s_template.ParseName(projectName);
+            return new ProjectName(resourceName[0]);
         }
 
         /// <summary>
-        /// Tries to parse the given string into a new <see cref="DeletedTopicNameFixed"/> instance.
-        /// Only succeeds if the string is equal to "_deleted-topic_".
+        /// Tries to parse the given project resource name in string form into a new
+        /// <see cref="ProjectName"/> instance.
         /// </summary>
-        public static bool TryParse(string deletedTopicNameFixed, out DeletedTopicNameFixed result)
+        /// <remarks>
+        /// This method still throws <see cref="sys::ArgumentNullException"/> if <paramref name="projectName"/> is null,
+        /// as this would usually indicate a programming error rather than a data error.
+        /// </remarks>
+        /// <param name="projectName">The project resource name in string form. Must not be <c>null</c>.</param>
+        /// <param name="result">When this method returns, the parsed <see cref="ProjectName"/>,
+        /// or <c>null</c> if parsing fails.</param>
+        /// <returns><c>true</c> if the name was parsed successfully; <c>false</c> otherwise.</returns>
+        public static bool TryParse(string projectName, out ProjectName result)
         {
-            gax::GaxPreconditions.CheckNotNull(deletedTopicNameFixed, nameof(deletedTopicNameFixed));
-            if (deletedTopicNameFixed == FixedValue)
+            gax::GaxPreconditions.CheckNotNull(projectName, nameof(projectName));
+            gax::TemplatedResourceName resourceName;
+            if (s_template.TryParseName(projectName, out resourceName))
             {
-                result = Instance;
+                result = new ProjectName(resourceName[0]);
                 return true;
             }
             else
@@ -70,28 +69,47 @@ namespace Google.Cloud.PubSub.V1
             }
         }
 
-        private DeletedTopicNameFixed() { }
+        /// <summary>Formats the IDs into the string representation of the <see cref="ProjectName"/>.</summary>
+        /// <param name="projectId">The <c>project</c> ID. Must not be <c>null</c>.</param>
+        /// <returns>The string representation of the <see cref="ProjectName"/>.</returns>
+        public static string Format(string projectId) =>
+            s_template.Expand(gax::GaxPreconditions.CheckNotNull(projectId, nameof(projectId)));
+
+        /// <summary>
+        /// Constructs a new instance of the <see cref="ProjectName"/> resource name class
+        /// from its component parts.
+        /// </summary>
+        /// <param name="projectId">The project ID. Must not be <c>null</c>.</param>
+        public ProjectName(string projectId)
+        {
+            ProjectId = gax::GaxPreconditions.CheckNotNull(projectId, nameof(projectId));
+        }
+
+        /// <summary>
+        /// The project ID. Never <c>null</c>.
+        /// </summary>
+        public string ProjectId { get; }
 
         /// <inheritdoc />
-        public gax::ResourceNameKind Kind => gax::ResourceNameKind.Fixed;
+        public gax::ResourceNameKind Kind => gax::ResourceNameKind.Simple;
 
         /// <inheritdoc />
-        public override string ToString() => FixedValue;
+        public override string ToString() => s_template.Expand(ProjectId);
 
         /// <inheritdoc />
         public override int GetHashCode() => ToString().GetHashCode();
 
         /// <inheritdoc />
-        public override bool Equals(object obj) => Equals(obj as DeletedTopicNameFixed);
+        public override bool Equals(object obj) => Equals(obj as ProjectName);
 
         /// <inheritdoc />
-        public bool Equals(DeletedTopicNameFixed other) => other != null;
+        public bool Equals(ProjectName other) => ToString() == other?.ToString();
 
         /// <inheritdoc />
-        public static bool operator ==(DeletedTopicNameFixed a, DeletedTopicNameFixed b) => ReferenceEquals(a, b) || (a?.Equals(b) ?? false);
+        public static bool operator ==(ProjectName a, ProjectName b) => ReferenceEquals(a, b) || (a?.Equals(b) ?? false);
 
         /// <inheritdoc />
-        public static bool operator !=(DeletedTopicNameFixed a, DeletedTopicNameFixed b) => !(a == b);
+        public static bool operator !=(ProjectName a, ProjectName b) => !(a == b);
     }
 
     /// <summary>
@@ -398,7 +416,6 @@ namespace Google.Cloud.PubSub.V1
     /// This resource name will contain one of the following:
     /// <list type="bullet">
     /// <item><description>TopicName: A resource of type 'topic'.</description></item>
-    /// <item><description>DeletedTopicNameFixed: A resource of type 'deleted_topic'.</description></item>
     /// </list>
     /// </remarks>
     public sealed partial class TopicNameOneof : gax::IResourceName, sys::IEquatable<TopicNameOneof>
@@ -417,11 +434,6 @@ namespace Google.Cloud.PubSub.V1
             /// A resource of type 'topic'.
             /// </summary>
             TopicName = 1,
-
-            /// <summary>
-            /// A resource of type 'deleted_topic'.
-            /// </summary>
-            DeletedTopicNameFixed = 2,
         }
 
         /// <summary>
@@ -431,7 +443,6 @@ namespace Google.Cloud.PubSub.V1
         /// To parse successfully the resource name must be one of the following:
         /// <list type="bullet">
         /// <item><description>TopicName: A resource of type 'topic'.</description></item>
-        /// <item><description>DeletedTopicNameFixed: A resource of type 'deleted_topic'.</description></item>
         /// </list>
         /// Or an <see cref="gax::UnknownResourceName"/> if <paramref name="allowUnknown"/> is <c>true</c>.
         /// </remarks>
@@ -457,7 +468,6 @@ namespace Google.Cloud.PubSub.V1
         /// To parse successfully the resource name must be one of the following:
         /// <list type="bullet">
         /// <item><description>TopicName: A resource of type 'topic'.</description></item>
-        /// <item><description>DeletedTopicNameFixed: A resource of type 'deleted_topic'.</description></item>
         /// </list>
         /// Or an <see cref="gax::UnknownResourceName"/> if <paramref name="allowUnknown"/> is <c>true</c>.
         /// </remarks>
@@ -474,12 +484,6 @@ namespace Google.Cloud.PubSub.V1
             if (TopicName.TryParse(name, out topicName))
             {
                 result = new TopicNameOneof(OneofType.TopicName, topicName);
-                return true;
-            }
-            DeletedTopicNameFixed deletedTopicNameFixed;
-            if (DeletedTopicNameFixed.TryParse(name, out deletedTopicNameFixed))
-            {
-                result = new TopicNameOneof(OneofType.DeletedTopicNameFixed, deletedTopicNameFixed);
                 return true;
             }
             if (allowUnknown)
@@ -503,21 +507,12 @@ namespace Google.Cloud.PubSub.V1
         /// <returns>A new <see cref="TopicNameOneof"/>, containing <paramref name="topicName"/>.</returns>
         public static TopicNameOneof From(TopicName topicName) => new TopicNameOneof(OneofType.TopicName, topicName);
 
-        /// <summary>
-        /// Construct a new instance of <see cref="TopicNameOneof"/> from the provided <see cref="DeletedTopicNameFixed"/>
-        /// </summary>
-        /// <param name="deletedTopicNameFixed">The <see cref="DeletedTopicNameFixed"/> to be contained within
-        /// the returned <see cref="TopicNameOneof"/>. Must not be <c>null</c>.</param>
-        /// <returns>A new <see cref="TopicNameOneof"/>, containing <paramref name="deletedTopicNameFixed"/>.</returns>
-        public static TopicNameOneof From(DeletedTopicNameFixed deletedTopicNameFixed) => new TopicNameOneof(OneofType.DeletedTopicNameFixed, deletedTopicNameFixed);
-
         private static bool IsValid(OneofType type, gax::IResourceName name)
         {
             switch (type)
             {
                 case OneofType.Unknown: return true; // Anything goes with Unknown.
                 case OneofType.TopicName: return name is TopicName;
-                case OneofType.DeletedTopicNameFixed: return name is DeletedTopicNameFixed;
                 default: return false;
             }
         }
@@ -563,15 +558,6 @@ namespace Google.Cloud.PubSub.V1
         /// contain an instance of <see cref="TopicName"/>.
         /// </remarks>
         public TopicName TopicName => CheckAndReturn<TopicName>(OneofType.TopicName);
-
-        /// <summary>
-        /// Get the contained <see cref="gax::IResourceName"/> as <see cref="DeletedTopicNameFixed"/>.
-        /// </summary>
-        /// <remarks>
-        /// An <see cref="sys::InvalidOperationException"/> will be thrown if this does not
-        /// contain an instance of <see cref="DeletedTopicNameFixed"/>.
-        /// </remarks>
-        public DeletedTopicNameFixed DeletedTopicNameFixed => CheckAndReturn<DeletedTopicNameFixed>(OneofType.DeletedTopicNameFixed);
 
         /// <inheritdoc />
         public gax::ResourceNameKind Kind => gax::ResourceNameKind.Oneof;
@@ -660,12 +646,25 @@ namespace Google.Cloud.PubSub.V1
     public partial class DeleteTopicRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.PubSub.V1.TopicName"/>-typed view over the <see cref="Topic"/> resource name property.
+        /// <see cref="Google.Cloud.PubSub.V1.TopicNameOneof"/>-typed view over the <see cref="Topic"/> resource name property.
         /// </summary>
-        public Google.Cloud.PubSub.V1.TopicName TopicAsTopicName
+        public Google.Cloud.PubSub.V1.TopicNameOneof TopicAsTopicNameOneof
         {
-            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicName.Parse(Topic); }
+            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicNameOneof.Parse(Topic, true); }
             set { Topic = value != null ? value.ToString() : ""; }
+        }
+
+    }
+
+    public partial class GetSnapshotRequest
+    {
+        /// <summary>
+        /// <see cref="Google.Cloud.PubSub.V1.SnapshotName"/>-typed view over the <see cref="Snapshot"/> resource name property.
+        /// </summary>
+        public Google.Cloud.PubSub.V1.SnapshotName SnapshotAsSnapshotName
+        {
+            get { return string.IsNullOrEmpty(Snapshot) ? null : Google.Cloud.PubSub.V1.SnapshotName.Parse(Snapshot); }
+            set { Snapshot = value != null ? value.ToString() : ""; }
         }
 
     }
@@ -686,11 +685,11 @@ namespace Google.Cloud.PubSub.V1
     public partial class GetTopicRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.PubSub.V1.TopicName"/>-typed view over the <see cref="Topic"/> resource name property.
+        /// <see cref="Google.Cloud.PubSub.V1.TopicNameOneof"/>-typed view over the <see cref="Topic"/> resource name property.
         /// </summary>
-        public Google.Cloud.PubSub.V1.TopicName TopicAsTopicName
+        public Google.Cloud.PubSub.V1.TopicNameOneof TopicAsTopicNameOneof
         {
-            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicName.Parse(Topic); }
+            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicNameOneof.Parse(Topic, true); }
             set { Topic = value != null ? value.ToString() : ""; }
         }
 
@@ -699,11 +698,11 @@ namespace Google.Cloud.PubSub.V1
     public partial class ListSnapshotsRequest
     {
         /// <summary>
-        /// <see cref="gaxres::ProjectName"/>-typed view over the <see cref="Project"/> resource name property.
+        /// <see cref="Google.Cloud.PubSub.V1.ProjectName"/>-typed view over the <see cref="Project"/> resource name property.
         /// </summary>
-        public gaxres::ProjectName ProjectAsProjectName
+        public Google.Cloud.PubSub.V1.ProjectName ProjectAsProjectName
         {
-            get { return string.IsNullOrEmpty(Project) ? null : gaxres::ProjectName.Parse(Project); }
+            get { return string.IsNullOrEmpty(Project) ? null : Google.Cloud.PubSub.V1.ProjectName.Parse(Project); }
             set { Project = value != null ? value.ToString() : ""; }
         }
 
@@ -712,12 +711,25 @@ namespace Google.Cloud.PubSub.V1
     public partial class ListSubscriptionsRequest
     {
         /// <summary>
-        /// <see cref="gaxres::ProjectName"/>-typed view over the <see cref="Project"/> resource name property.
+        /// <see cref="Google.Cloud.PubSub.V1.ProjectName"/>-typed view over the <see cref="Project"/> resource name property.
         /// </summary>
-        public gaxres::ProjectName ProjectAsProjectName
+        public Google.Cloud.PubSub.V1.ProjectName ProjectAsProjectName
         {
-            get { return string.IsNullOrEmpty(Project) ? null : gaxres::ProjectName.Parse(Project); }
+            get { return string.IsNullOrEmpty(Project) ? null : Google.Cloud.PubSub.V1.ProjectName.Parse(Project); }
             set { Project = value != null ? value.ToString() : ""; }
+        }
+
+    }
+
+    public partial class ListTopicSnapshotsRequest
+    {
+        /// <summary>
+        /// <see cref="Google.Cloud.PubSub.V1.TopicNameOneof"/>-typed view over the <see cref="Topic"/> resource name property.
+        /// </summary>
+        public Google.Cloud.PubSub.V1.TopicNameOneof TopicAsTopicNameOneof
+        {
+            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicNameOneof.Parse(Topic, true); }
+            set { Topic = value != null ? value.ToString() : ""; }
         }
 
     }
@@ -725,11 +737,11 @@ namespace Google.Cloud.PubSub.V1
     public partial class ListTopicSubscriptionsRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.PubSub.V1.TopicName"/>-typed view over the <see cref="Topic"/> resource name property.
+        /// <see cref="Google.Cloud.PubSub.V1.TopicNameOneof"/>-typed view over the <see cref="Topic"/> resource name property.
         /// </summary>
-        public Google.Cloud.PubSub.V1.TopicName TopicAsTopicName
+        public Google.Cloud.PubSub.V1.TopicNameOneof TopicAsTopicNameOneof
         {
-            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicName.Parse(Topic); }
+            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicNameOneof.Parse(Topic, true); }
             set { Topic = value != null ? value.ToString() : ""; }
         }
 
@@ -749,11 +761,11 @@ namespace Google.Cloud.PubSub.V1
     public partial class ListTopicsRequest
     {
         /// <summary>
-        /// <see cref="gaxres::ProjectName"/>-typed view over the <see cref="Project"/> resource name property.
+        /// <see cref="Google.Cloud.PubSub.V1.ProjectName"/>-typed view over the <see cref="Project"/> resource name property.
         /// </summary>
-        public gaxres::ProjectName ProjectAsProjectName
+        public Google.Cloud.PubSub.V1.ProjectName ProjectAsProjectName
         {
-            get { return string.IsNullOrEmpty(Project) ? null : gaxres::ProjectName.Parse(Project); }
+            get { return string.IsNullOrEmpty(Project) ? null : Google.Cloud.PubSub.V1.ProjectName.Parse(Project); }
             set { Project = value != null ? value.ToString() : ""; }
         }
 
@@ -788,11 +800,11 @@ namespace Google.Cloud.PubSub.V1
     public partial class PublishRequest
     {
         /// <summary>
-        /// <see cref="Google.Cloud.PubSub.V1.TopicName"/>-typed view over the <see cref="Topic"/> resource name property.
+        /// <see cref="Google.Cloud.PubSub.V1.TopicNameOneof"/>-typed view over the <see cref="Topic"/> resource name property.
         /// </summary>
-        public Google.Cloud.PubSub.V1.TopicName TopicAsTopicName
+        public Google.Cloud.PubSub.V1.TopicNameOneof TopicAsTopicNameOneof
         {
-            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicName.Parse(Topic); }
+            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicNameOneof.Parse(Topic, true); }
             set { Topic = value != null ? value.ToString() : ""; }
         }
 
@@ -845,11 +857,11 @@ namespace Google.Cloud.PubSub.V1
         }
 
         /// <summary>
-        /// <see cref="Google.Cloud.PubSub.V1.TopicName"/>-typed view over the <see cref="Topic"/> resource name property.
+        /// <see cref="Google.Cloud.PubSub.V1.TopicNameOneof"/>-typed view over the <see cref="Topic"/> resource name property.
         /// </summary>
-        public Google.Cloud.PubSub.V1.TopicName TopicAsTopicName
+        public Google.Cloud.PubSub.V1.TopicNameOneof TopicAsTopicNameOneof
         {
-            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicName.Parse(Topic); }
+            get { return string.IsNullOrEmpty(Topic) ? null : Google.Cloud.PubSub.V1.TopicNameOneof.Parse(Topic, true); }
             set { Topic = value != null ? value.ToString() : ""; }
         }
 
@@ -893,11 +905,11 @@ namespace Google.Cloud.PubSub.V1
     public partial class Topic
     {
         /// <summary>
-        /// <see cref="Google.Cloud.PubSub.V1.TopicName"/>-typed view over the <see cref="Name"/> resource name property.
+        /// <see cref="Google.Cloud.PubSub.V1.TopicNameOneof"/>-typed view over the <see cref="Name"/> resource name property.
         /// </summary>
-        public Google.Cloud.PubSub.V1.TopicName TopicName
+        public Google.Cloud.PubSub.V1.TopicNameOneof TopicNameOneof
         {
-            get { return string.IsNullOrEmpty(Name) ? null : Google.Cloud.PubSub.V1.TopicName.Parse(Name); }
+            get { return string.IsNullOrEmpty(Name) ? null : Google.Cloud.PubSub.V1.TopicNameOneof.Parse(Name, true); }
             set { Name = value != null ? value.ToString() : ""; }
         }
 

@@ -60,7 +60,7 @@ public interface SparkSqlJobOrBuilder extends
    * Spark SQL command: SET `name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 3;</code>
+   * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getScriptVariablesCount();
   /**
@@ -69,7 +69,7 @@ public interface SparkSqlJobOrBuilder extends
    * Spark SQL command: SET `name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 3;</code>
+   * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsScriptVariables(
       java.lang.String key);
@@ -85,7 +85,7 @@ public interface SparkSqlJobOrBuilder extends
    * Spark SQL command: SET `name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 3;</code>
+   * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getScriptVariablesMap();
@@ -95,7 +95,7 @@ public interface SparkSqlJobOrBuilder extends
    * Spark SQL command: SET `name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 3;</code>
+   * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getScriptVariablesOrDefault(
@@ -107,7 +107,7 @@ public interface SparkSqlJobOrBuilder extends
    * Spark SQL command: SET `name="value";`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; script_variables = 3;</code>
+   * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getScriptVariablesOrThrow(
@@ -117,20 +117,20 @@ public interface SparkSqlJobOrBuilder extends
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 4;</code>
+   * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getPropertiesCount();
   /**
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 4;</code>
+   * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsProperties(
       java.lang.String key);
@@ -144,10 +144,10 @@ public interface SparkSqlJobOrBuilder extends
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 4;</code>
+   * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getPropertiesMap();
@@ -155,10 +155,10 @@ public interface SparkSqlJobOrBuilder extends
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 4;</code>
+   * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getPropertiesOrDefault(
@@ -168,10 +168,10 @@ public interface SparkSqlJobOrBuilder extends
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
-   * Cloud Dataproc API may be overwritten.
+   * Dataproc API may be overwritten.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; properties = 4;</code>
+   * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getPropertiesOrThrow(
@@ -182,7 +182,7 @@ public interface SparkSqlJobOrBuilder extends
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 56;</code>
+   * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String>
@@ -192,7 +192,7 @@ public interface SparkSqlJobOrBuilder extends
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 56;</code>
+   * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
@@ -201,7 +201,7 @@ public interface SparkSqlJobOrBuilder extends
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 56;</code>
+   * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The jarFileUris at the given index.
    */
@@ -211,7 +211,7 @@ public interface SparkSqlJobOrBuilder extends
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
-   * <code>repeated string jar_file_uris = 56;</code>
+   * <code>repeated string jar_file_uris = 56 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the jarFileUris at the given index.
    */
@@ -223,7 +223,7 @@ public interface SparkSqlJobOrBuilder extends
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
@@ -232,7 +232,7 @@ public interface SparkSqlJobOrBuilder extends
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig();
@@ -241,7 +241,7 @@ public interface SparkSqlJobOrBuilder extends
    * Optional. The runtime log config for job execution.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6;</code>
+   * <code>.google.cloud.dataproc.v1beta2.LoggingConfig logging_config = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.cloud.dataproc.v1beta2.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
 

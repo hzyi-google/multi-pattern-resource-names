@@ -114,8 +114,8 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.securitycenter.v1.Finding finding_;
   /**
    * <pre>
-   * Required. The finding resource to update or create if it does not already exist.
-   * parent, security_marks, and update_time will be ignored.
+   * Required. The finding resource to update or create if it does not already
+   * exist. parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The finding resource to update or create if it does not already exist.
-   * parent, security_marks, and update_time will be ignored.
+   * Required. The finding resource to update or create if it does not already
+   * exist. parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -144,8 +144,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The finding resource to update or create if it does not already exist.
-   * parent, security_marks, and update_time will be ignored.
+   * Required. The finding resource to update or create if it does not already
+   * exist. parent, security_marks, and update_time will be ignored.
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -561,8 +561,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.securitycenter.v1.Finding, com.google.cloud.securitycenter.v1.Finding.Builder, com.google.cloud.securitycenter.v1.FindingOrBuilder> findingBuilder_;
     /**
      * <pre>
-     * Required. The finding resource to update or create if it does not already exist.
-     * parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already
+     * exist. parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -576,8 +576,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The finding resource to update or create if it does not already exist.
-     * parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already
+     * exist. parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -595,8 +595,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The finding resource to update or create if it does not already exist.
-     * parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already
+     * exist. parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -619,8 +619,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The finding resource to update or create if it does not already exist.
-     * parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already
+     * exist. parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -641,8 +641,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The finding resource to update or create if it does not already exist.
-     * parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already
+     * exist. parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -667,8 +667,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The finding resource to update or create if it does not already exist.
-     * parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already
+     * exist. parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -689,8 +689,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The finding resource to update or create if it does not already exist.
-     * parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already
+     * exist. parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -705,8 +705,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The finding resource to update or create if it does not already exist.
-     * parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already
+     * exist. parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.
@@ -724,8 +724,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The finding resource to update or create if it does not already exist.
-     * parent, security_marks, and update_time will be ignored.
+     * Required. The finding resource to update or create if it does not already
+     * exist. parent, security_marks, and update_time will be ignored.
      * In the case of creation, the finding id portion of the name must be
      * alphanumeric and less than or equal to 32 characters and greater than 0
      * characters in length.

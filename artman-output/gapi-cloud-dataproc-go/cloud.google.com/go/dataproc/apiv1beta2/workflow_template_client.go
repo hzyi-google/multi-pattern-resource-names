@@ -120,7 +120,7 @@ type WorkflowTemplateClient struct {
 // NewWorkflowTemplateClient creates a new workflow template service client.
 //
 // The API interface for managing Workflow Templates in the
-// Cloud Dataproc API.
+// Dataproc API.
 func NewWorkflowTemplateClient(ctx context.Context, opts ...option.ClientOption) (*WorkflowTemplateClient, error) {
 	conn, err := transport.DialGRPC(ctx, append(defaultWorkflowTemplateClientOptions(), opts...)...)
 	if err != nil {
@@ -217,9 +217,9 @@ func (c *WorkflowTemplateClient) GetWorkflowTemplate(ctx context.Context, req *d
 // clusters to be deleted.
 //
 // The [Operation.metadata][google.longrunning.Operation.metadata] will be
-// WorkflowMetadata (at /dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+// WorkflowMetadata (at https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
 // Also see Using
-// WorkflowMetadata (at /dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+// WorkflowMetadata (at https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
 //
 // On successful completion,
 // [Operation.response][google.longrunning.Operation.response] will be
@@ -259,9 +259,9 @@ func (c *WorkflowTemplateClient) InstantiateWorkflowTemplate(ctx context.Context
 // clusters to be deleted.
 //
 // The [Operation.metadata][google.longrunning.Operation.metadata] will be
-// WorkflowMetadata (at /dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
+// WorkflowMetadata (at https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#workflowmetadata).
 // Also see Using
-// WorkflowMetadata (at /dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
+// WorkflowMetadata (at https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
 //
 // On successful completion,
 // [Operation.response][google.longrunning.Operation.response] will be

@@ -847,12 +847,14 @@ func TestSubscriberCreateSubscription(t *testing.T) {
 	var ackDeadlineSeconds int32 = 2135351438
 	var retainAckedMessages bool = false
 	var enableMessageOrdering bool = true
+	var filter string = "filter-1274492040"
 	var expectedResponse = &pubsubpb.Subscription{
 		Name:                  name2,
 		Topic:                 topic2,
 		AckDeadlineSeconds:    ackDeadlineSeconds,
 		RetainAckedMessages:   retainAckedMessages,
 		EnableMessageOrdering: enableMessageOrdering,
+		Filter:                filter,
 	}
 
 	mockSubscriber.err = nil
@@ -918,12 +920,14 @@ func TestSubscriberGetSubscription(t *testing.T) {
 	var ackDeadlineSeconds int32 = 2135351438
 	var retainAckedMessages bool = false
 	var enableMessageOrdering bool = true
+	var filter string = "filter-1274492040"
 	var expectedResponse = &pubsubpb.Subscription{
 		Name:                  name,
 		Topic:                 topic,
 		AckDeadlineSeconds:    ackDeadlineSeconds,
 		RetainAckedMessages:   retainAckedMessages,
 		EnableMessageOrdering: enableMessageOrdering,
+		Filter:                filter,
 	}
 
 	mockSubscriber.err = nil
@@ -985,12 +989,14 @@ func TestSubscriberUpdateSubscription(t *testing.T) {
 	var ackDeadlineSeconds2 int32 = 921632575
 	var retainAckedMessages bool = false
 	var enableMessageOrdering bool = true
+	var filter string = "filter-1274492040"
 	var expectedResponse = &pubsubpb.Subscription{
 		Name:                  name,
 		Topic:                 topic,
 		AckDeadlineSeconds:    ackDeadlineSeconds2,
 		RetainAckedMessages:   retainAckedMessages,
 		EnableMessageOrdering: enableMessageOrdering,
+		Filter:                filter,
 	}
 
 	mockSubscriber.err = nil
@@ -1365,11 +1371,7 @@ func TestSubscriberPullError(t *testing.T) {
 	_ = resp
 }
 func TestSubscriberStreamingPull(t *testing.T) {
-	var receivedMessagesElement *pubsubpb.ReceivedMessage = &pubsubpb.ReceivedMessage{}
-	var receivedMessages = []*pubsubpb.ReceivedMessage{receivedMessagesElement}
-	var expectedResponse = &pubsubpb.StreamingPullResponse{
-		ReceivedMessages: receivedMessages,
-	}
+	var expectedResponse *pubsubpb.StreamingPullResponse = &pubsubpb.StreamingPullResponse{}
 
 	mockSubscriber.err = nil
 	mockSubscriber.reqs = nil

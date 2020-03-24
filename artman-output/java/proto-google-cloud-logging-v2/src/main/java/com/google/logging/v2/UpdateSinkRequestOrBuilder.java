@@ -9,8 +9,8 @@ public interface UpdateSinkRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The full resource name of the sink to update, including the
-   * parent resource and the sink identifier:
+   * Required. The full resource name of the sink to update, including the parent
+   * resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -24,8 +24,8 @@ public interface UpdateSinkRequestOrBuilder extends
   java.lang.String getSinkName();
   /**
    * <pre>
-   * Required. The full resource name of the sink to update, including the
-   * parent resource and the sink identifier:
+   * Required. The full resource name of the sink to update, including the parent
+   * resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -41,8 +41,8 @@ public interface UpdateSinkRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The updated sink, whose name is the same identifier that appears
-   * as part of `sink_name`.
+   * Required. The updated sink, whose name is the same identifier that appears as part
+   * of `sink_name`.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -51,8 +51,8 @@ public interface UpdateSinkRequestOrBuilder extends
   boolean hasSink();
   /**
    * <pre>
-   * Required. The updated sink, whose name is the same identifier that appears
-   * as part of `sink_name`.
+   * Required. The updated sink, whose name is the same identifier that appears as part
+   * of `sink_name`.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -61,8 +61,8 @@ public interface UpdateSinkRequestOrBuilder extends
   com.google.logging.v2.LogSink getSink();
   /**
    * <pre>
-   * Required. The updated sink, whose name is the same identifier that appears
-   * as part of `sink_name`.
+   * Required. The updated sink, whose name is the same identifier that appears as part
+   * of `sink_name`.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -83,7 +83,7 @@ public interface UpdateSinkRequestOrBuilder extends
    *     set to false or defaulted to false.
    * </pre>
    *
-   * <code>bool unique_writer_identity = 3;</code>
+   * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uniqueWriterIdentity.
    */
   boolean getUniqueWriterIdentity();
@@ -103,7 +103,7 @@ public interface UpdateSinkRequestOrBuilder extends
    * Example: `updateMask=filter`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
@@ -122,7 +122,7 @@ public interface UpdateSinkRequestOrBuilder extends
    * Example: `updateMask=filter`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
@@ -141,7 +141,7 @@ public interface UpdateSinkRequestOrBuilder extends
    * Example: `updateMask=filter`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

@@ -34,6 +34,66 @@ func ExampleNewConfigClient() {
 	_ = c
 }
 
+func ExampleConfigClient_ListBuckets() {
+	ctx := context.Background()
+	c, err := logging.NewConfigClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &loggingpb.ListBucketsRequest{
+		// TODO: Fill request struct fields.
+	}
+	it := c.ListBuckets(ctx, req)
+	for {
+		resp, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		// TODO: Use resp.
+		_ = resp
+	}
+}
+
+func ExampleConfigClient_GetBucket() {
+	ctx := context.Background()
+	c, err := logging.NewConfigClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &loggingpb.GetBucketRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.GetBucket(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleConfigClient_UpdateBucket() {
+	ctx := context.Background()
+	c, err := logging.NewConfigClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &loggingpb.UpdateBucketRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.UpdateBucket(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleConfigClient_ListSinks() {
 	ctx := context.Background()
 	c, err := logging.NewConfigClient(ctx)

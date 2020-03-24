@@ -10254,714 +10254,6 @@
                         return ReservationAffinity;
                     })();
     
-                    v1beta2.ClusterOperationStatus = (function() {
-    
-                        /**
-                         * Properties of a ClusterOperationStatus.
-                         * @memberof google.cloud.dataproc.v1beta2
-                         * @interface IClusterOperationStatus
-                         * @property {google.cloud.dataproc.v1beta2.ClusterOperationStatus.State|null} [state] ClusterOperationStatus state
-                         * @property {string|null} [innerState] ClusterOperationStatus innerState
-                         * @property {string|null} [details] ClusterOperationStatus details
-                         * @property {google.protobuf.ITimestamp|null} [stateStartTime] ClusterOperationStatus stateStartTime
-                         */
-    
-                        /**
-                         * Constructs a new ClusterOperationStatus.
-                         * @memberof google.cloud.dataproc.v1beta2
-                         * @classdesc Represents a ClusterOperationStatus.
-                         * @implements IClusterOperationStatus
-                         * @constructor
-                         * @param {google.cloud.dataproc.v1beta2.IClusterOperationStatus=} [properties] Properties to set
-                         */
-                        function ClusterOperationStatus(properties) {
-                            if (properties)
-                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                                    if (properties[keys[i]] != null)
-                                        this[keys[i]] = properties[keys[i]];
-                        }
-    
-                        /**
-                         * ClusterOperationStatus state.
-                         * @member {google.cloud.dataproc.v1beta2.ClusterOperationStatus.State} state
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @instance
-                         */
-                        ClusterOperationStatus.prototype.state = 0;
-    
-                        /**
-                         * ClusterOperationStatus innerState.
-                         * @member {string} innerState
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @instance
-                         */
-                        ClusterOperationStatus.prototype.innerState = "";
-    
-                        /**
-                         * ClusterOperationStatus details.
-                         * @member {string} details
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @instance
-                         */
-                        ClusterOperationStatus.prototype.details = "";
-    
-                        /**
-                         * ClusterOperationStatus stateStartTime.
-                         * @member {google.protobuf.ITimestamp|null|undefined} stateStartTime
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @instance
-                         */
-                        ClusterOperationStatus.prototype.stateStartTime = null;
-    
-                        /**
-                         * Creates a new ClusterOperationStatus instance using the specified properties.
-                         * @function create
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @static
-                         * @param {google.cloud.dataproc.v1beta2.IClusterOperationStatus=} [properties] Properties to set
-                         * @returns {google.cloud.dataproc.v1beta2.ClusterOperationStatus} ClusterOperationStatus instance
-                         */
-                        ClusterOperationStatus.create = function create(properties) {
-                            return new ClusterOperationStatus(properties);
-                        };
-    
-                        /**
-                         * Encodes the specified ClusterOperationStatus message. Does not implicitly {@link google.cloud.dataproc.v1beta2.ClusterOperationStatus.verify|verify} messages.
-                         * @function encode
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @static
-                         * @param {google.cloud.dataproc.v1beta2.IClusterOperationStatus} message ClusterOperationStatus message or plain object to encode
-                         * @param {$protobuf.Writer} [writer] Writer to encode to
-                         * @returns {$protobuf.Writer} Writer
-                         */
-                        ClusterOperationStatus.encode = function encode(message, writer) {
-                            if (!writer)
-                                writer = $Writer.create();
-                            if (message.state != null && message.hasOwnProperty("state"))
-                                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
-                            if (message.innerState != null && message.hasOwnProperty("innerState"))
-                                writer.uint32(/* id 2, wireType 2 =*/18).string(message.innerState);
-                            if (message.details != null && message.hasOwnProperty("details"))
-                                writer.uint32(/* id 3, wireType 2 =*/26).string(message.details);
-                            if (message.stateStartTime != null && message.hasOwnProperty("stateStartTime"))
-                                $root.google.protobuf.Timestamp.encode(message.stateStartTime, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                            return writer;
-                        };
-    
-                        /**
-                         * Encodes the specified ClusterOperationStatus message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1beta2.ClusterOperationStatus.verify|verify} messages.
-                         * @function encodeDelimited
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @static
-                         * @param {google.cloud.dataproc.v1beta2.IClusterOperationStatus} message ClusterOperationStatus message or plain object to encode
-                         * @param {$protobuf.Writer} [writer] Writer to encode to
-                         * @returns {$protobuf.Writer} Writer
-                         */
-                        ClusterOperationStatus.encodeDelimited = function encodeDelimited(message, writer) {
-                            return this.encode(message, writer).ldelim();
-                        };
-    
-                        /**
-                         * Decodes a ClusterOperationStatus message from the specified reader or buffer.
-                         * @function decode
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @static
-                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                         * @param {number} [length] Message length if known beforehand
-                         * @returns {google.cloud.dataproc.v1beta2.ClusterOperationStatus} ClusterOperationStatus
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        ClusterOperationStatus.decode = function decode(reader, length) {
-                            if (!(reader instanceof $Reader))
-                                reader = $Reader.create(reader);
-                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus();
-                            while (reader.pos < end) {
-                                var tag = reader.uint32();
-                                switch (tag >>> 3) {
-                                case 1:
-                                    message.state = reader.int32();
-                                    break;
-                                case 2:
-                                    message.innerState = reader.string();
-                                    break;
-                                case 3:
-                                    message.details = reader.string();
-                                    break;
-                                case 4:
-                                    message.stateStartTime = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
-                                    break;
-                                default:
-                                    reader.skipType(tag & 7);
-                                    break;
-                                }
-                            }
-                            return message;
-                        };
-    
-                        /**
-                         * Decodes a ClusterOperationStatus message from the specified reader or buffer, length delimited.
-                         * @function decodeDelimited
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @static
-                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                         * @returns {google.cloud.dataproc.v1beta2.ClusterOperationStatus} ClusterOperationStatus
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        ClusterOperationStatus.decodeDelimited = function decodeDelimited(reader) {
-                            if (!(reader instanceof $Reader))
-                                reader = new $Reader(reader);
-                            return this.decode(reader, reader.uint32());
-                        };
-    
-                        /**
-                         * Verifies a ClusterOperationStatus message.
-                         * @function verify
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @static
-                         * @param {Object.<string,*>} message Plain object to verify
-                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                         */
-                        ClusterOperationStatus.verify = function verify(message) {
-                            if (typeof message !== "object" || message === null)
-                                return "object expected";
-                            if (message.state != null && message.hasOwnProperty("state"))
-                                switch (message.state) {
-                                default:
-                                    return "state: enum value expected";
-                                case 0:
-                                case 1:
-                                case 2:
-                                case 3:
-                                    break;
-                                }
-                            if (message.innerState != null && message.hasOwnProperty("innerState"))
-                                if (!$util.isString(message.innerState))
-                                    return "innerState: string expected";
-                            if (message.details != null && message.hasOwnProperty("details"))
-                                if (!$util.isString(message.details))
-                                    return "details: string expected";
-                            if (message.stateStartTime != null && message.hasOwnProperty("stateStartTime")) {
-                                var error = $root.google.protobuf.Timestamp.verify(message.stateStartTime);
-                                if (error)
-                                    return "stateStartTime." + error;
-                            }
-                            return null;
-                        };
-    
-                        /**
-                         * Creates a ClusterOperationStatus message from a plain object. Also converts values to their respective internal types.
-                         * @function fromObject
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @static
-                         * @param {Object.<string,*>} object Plain object
-                         * @returns {google.cloud.dataproc.v1beta2.ClusterOperationStatus} ClusterOperationStatus
-                         */
-                        ClusterOperationStatus.fromObject = function fromObject(object) {
-                            if (object instanceof $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus)
-                                return object;
-                            var message = new $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus();
-                            switch (object.state) {
-                            case "UNKNOWN":
-                            case 0:
-                                message.state = 0;
-                                break;
-                            case "PENDING":
-                            case 1:
-                                message.state = 1;
-                                break;
-                            case "RUNNING":
-                            case 2:
-                                message.state = 2;
-                                break;
-                            case "DONE":
-                            case 3:
-                                message.state = 3;
-                                break;
-                            }
-                            if (object.innerState != null)
-                                message.innerState = String(object.innerState);
-                            if (object.details != null)
-                                message.details = String(object.details);
-                            if (object.stateStartTime != null) {
-                                if (typeof object.stateStartTime !== "object")
-                                    throw TypeError(".google.cloud.dataproc.v1beta2.ClusterOperationStatus.stateStartTime: object expected");
-                                message.stateStartTime = $root.google.protobuf.Timestamp.fromObject(object.stateStartTime);
-                            }
-                            return message;
-                        };
-    
-                        /**
-                         * Creates a plain object from a ClusterOperationStatus message. Also converts values to other types if specified.
-                         * @function toObject
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @static
-                         * @param {google.cloud.dataproc.v1beta2.ClusterOperationStatus} message ClusterOperationStatus
-                         * @param {$protobuf.IConversionOptions} [options] Conversion options
-                         * @returns {Object.<string,*>} Plain object
-                         */
-                        ClusterOperationStatus.toObject = function toObject(message, options) {
-                            if (!options)
-                                options = {};
-                            var object = {};
-                            if (options.defaults) {
-                                object.state = options.enums === String ? "UNKNOWN" : 0;
-                                object.innerState = "";
-                                object.details = "";
-                                object.stateStartTime = null;
-                            }
-                            if (message.state != null && message.hasOwnProperty("state"))
-                                object.state = options.enums === String ? $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.State[message.state] : message.state;
-                            if (message.innerState != null && message.hasOwnProperty("innerState"))
-                                object.innerState = message.innerState;
-                            if (message.details != null && message.hasOwnProperty("details"))
-                                object.details = message.details;
-                            if (message.stateStartTime != null && message.hasOwnProperty("stateStartTime"))
-                                object.stateStartTime = $root.google.protobuf.Timestamp.toObject(message.stateStartTime, options);
-                            return object;
-                        };
-    
-                        /**
-                         * Converts this ClusterOperationStatus to JSON.
-                         * @function toJSON
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationStatus
-                         * @instance
-                         * @returns {Object.<string,*>} JSON object
-                         */
-                        ClusterOperationStatus.prototype.toJSON = function toJSON() {
-                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                        };
-    
-                        /**
-                         * State enum.
-                         * @name google.cloud.dataproc.v1beta2.ClusterOperationStatus.State
-                         * @enum {string}
-                         * @property {number} UNKNOWN=0 UNKNOWN value
-                         * @property {number} PENDING=1 PENDING value
-                         * @property {number} RUNNING=2 RUNNING value
-                         * @property {number} DONE=3 DONE value
-                         */
-                        ClusterOperationStatus.State = (function() {
-                            var valuesById = {}, values = Object.create(valuesById);
-                            values[valuesById[0] = "UNKNOWN"] = 0;
-                            values[valuesById[1] = "PENDING"] = 1;
-                            values[valuesById[2] = "RUNNING"] = 2;
-                            values[valuesById[3] = "DONE"] = 3;
-                            return values;
-                        })();
-    
-                        return ClusterOperationStatus;
-                    })();
-    
-                    v1beta2.ClusterOperationMetadata = (function() {
-    
-                        /**
-                         * Properties of a ClusterOperationMetadata.
-                         * @memberof google.cloud.dataproc.v1beta2
-                         * @interface IClusterOperationMetadata
-                         * @property {string|null} [clusterName] ClusterOperationMetadata clusterName
-                         * @property {string|null} [clusterUuid] ClusterOperationMetadata clusterUuid
-                         * @property {google.cloud.dataproc.v1beta2.IClusterOperationStatus|null} [status] ClusterOperationMetadata status
-                         * @property {Array.<google.cloud.dataproc.v1beta2.IClusterOperationStatus>|null} [statusHistory] ClusterOperationMetadata statusHistory
-                         * @property {string|null} [operationType] ClusterOperationMetadata operationType
-                         * @property {string|null} [description] ClusterOperationMetadata description
-                         * @property {Object.<string,string>|null} [labels] ClusterOperationMetadata labels
-                         * @property {Array.<string>|null} [warnings] ClusterOperationMetadata warnings
-                         */
-    
-                        /**
-                         * Constructs a new ClusterOperationMetadata.
-                         * @memberof google.cloud.dataproc.v1beta2
-                         * @classdesc Represents a ClusterOperationMetadata.
-                         * @implements IClusterOperationMetadata
-                         * @constructor
-                         * @param {google.cloud.dataproc.v1beta2.IClusterOperationMetadata=} [properties] Properties to set
-                         */
-                        function ClusterOperationMetadata(properties) {
-                            this.statusHistory = [];
-                            this.labels = {};
-                            this.warnings = [];
-                            if (properties)
-                                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                                    if (properties[keys[i]] != null)
-                                        this[keys[i]] = properties[keys[i]];
-                        }
-    
-                        /**
-                         * ClusterOperationMetadata clusterName.
-                         * @member {string} clusterName
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @instance
-                         */
-                        ClusterOperationMetadata.prototype.clusterName = "";
-    
-                        /**
-                         * ClusterOperationMetadata clusterUuid.
-                         * @member {string} clusterUuid
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @instance
-                         */
-                        ClusterOperationMetadata.prototype.clusterUuid = "";
-    
-                        /**
-                         * ClusterOperationMetadata status.
-                         * @member {google.cloud.dataproc.v1beta2.IClusterOperationStatus|null|undefined} status
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @instance
-                         */
-                        ClusterOperationMetadata.prototype.status = null;
-    
-                        /**
-                         * ClusterOperationMetadata statusHistory.
-                         * @member {Array.<google.cloud.dataproc.v1beta2.IClusterOperationStatus>} statusHistory
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @instance
-                         */
-                        ClusterOperationMetadata.prototype.statusHistory = $util.emptyArray;
-    
-                        /**
-                         * ClusterOperationMetadata operationType.
-                         * @member {string} operationType
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @instance
-                         */
-                        ClusterOperationMetadata.prototype.operationType = "";
-    
-                        /**
-                         * ClusterOperationMetadata description.
-                         * @member {string} description
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @instance
-                         */
-                        ClusterOperationMetadata.prototype.description = "";
-    
-                        /**
-                         * ClusterOperationMetadata labels.
-                         * @member {Object.<string,string>} labels
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @instance
-                         */
-                        ClusterOperationMetadata.prototype.labels = $util.emptyObject;
-    
-                        /**
-                         * ClusterOperationMetadata warnings.
-                         * @member {Array.<string>} warnings
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @instance
-                         */
-                        ClusterOperationMetadata.prototype.warnings = $util.emptyArray;
-    
-                        /**
-                         * Creates a new ClusterOperationMetadata instance using the specified properties.
-                         * @function create
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @static
-                         * @param {google.cloud.dataproc.v1beta2.IClusterOperationMetadata=} [properties] Properties to set
-                         * @returns {google.cloud.dataproc.v1beta2.ClusterOperationMetadata} ClusterOperationMetadata instance
-                         */
-                        ClusterOperationMetadata.create = function create(properties) {
-                            return new ClusterOperationMetadata(properties);
-                        };
-    
-                        /**
-                         * Encodes the specified ClusterOperationMetadata message. Does not implicitly {@link google.cloud.dataproc.v1beta2.ClusterOperationMetadata.verify|verify} messages.
-                         * @function encode
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @static
-                         * @param {google.cloud.dataproc.v1beta2.IClusterOperationMetadata} message ClusterOperationMetadata message or plain object to encode
-                         * @param {$protobuf.Writer} [writer] Writer to encode to
-                         * @returns {$protobuf.Writer} Writer
-                         */
-                        ClusterOperationMetadata.encode = function encode(message, writer) {
-                            if (!writer)
-                                writer = $Writer.create();
-                            if (message.clusterName != null && message.hasOwnProperty("clusterName"))
-                                writer.uint32(/* id 7, wireType 2 =*/58).string(message.clusterName);
-                            if (message.clusterUuid != null && message.hasOwnProperty("clusterUuid"))
-                                writer.uint32(/* id 8, wireType 2 =*/66).string(message.clusterUuid);
-                            if (message.status != null && message.hasOwnProperty("status"))
-                                $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.encode(message.status, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                            if (message.statusHistory != null && message.statusHistory.length)
-                                for (var i = 0; i < message.statusHistory.length; ++i)
-                                    $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.encode(message.statusHistory[i], writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                            if (message.operationType != null && message.hasOwnProperty("operationType"))
-                                writer.uint32(/* id 11, wireType 2 =*/90).string(message.operationType);
-                            if (message.description != null && message.hasOwnProperty("description"))
-                                writer.uint32(/* id 12, wireType 2 =*/98).string(message.description);
-                            if (message.labels != null && message.hasOwnProperty("labels"))
-                                for (var keys = Object.keys(message.labels), i = 0; i < keys.length; ++i)
-                                    writer.uint32(/* id 13, wireType 2 =*/106).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.labels[keys[i]]).ldelim();
-                            if (message.warnings != null && message.warnings.length)
-                                for (var i = 0; i < message.warnings.length; ++i)
-                                    writer.uint32(/* id 14, wireType 2 =*/114).string(message.warnings[i]);
-                            return writer;
-                        };
-    
-                        /**
-                         * Encodes the specified ClusterOperationMetadata message, length delimited. Does not implicitly {@link google.cloud.dataproc.v1beta2.ClusterOperationMetadata.verify|verify} messages.
-                         * @function encodeDelimited
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @static
-                         * @param {google.cloud.dataproc.v1beta2.IClusterOperationMetadata} message ClusterOperationMetadata message or plain object to encode
-                         * @param {$protobuf.Writer} [writer] Writer to encode to
-                         * @returns {$protobuf.Writer} Writer
-                         */
-                        ClusterOperationMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-                            return this.encode(message, writer).ldelim();
-                        };
-    
-                        /**
-                         * Decodes a ClusterOperationMetadata message from the specified reader or buffer.
-                         * @function decode
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @static
-                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                         * @param {number} [length] Message length if known beforehand
-                         * @returns {google.cloud.dataproc.v1beta2.ClusterOperationMetadata} ClusterOperationMetadata
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        ClusterOperationMetadata.decode = function decode(reader, length) {
-                            if (!(reader instanceof $Reader))
-                                reader = $Reader.create(reader);
-                            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.cloud.dataproc.v1beta2.ClusterOperationMetadata(), key;
-                            while (reader.pos < end) {
-                                var tag = reader.uint32();
-                                switch (tag >>> 3) {
-                                case 7:
-                                    message.clusterName = reader.string();
-                                    break;
-                                case 8:
-                                    message.clusterUuid = reader.string();
-                                    break;
-                                case 9:
-                                    message.status = $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.decode(reader, reader.uint32());
-                                    break;
-                                case 10:
-                                    if (!(message.statusHistory && message.statusHistory.length))
-                                        message.statusHistory = [];
-                                    message.statusHistory.push($root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.decode(reader, reader.uint32()));
-                                    break;
-                                case 11:
-                                    message.operationType = reader.string();
-                                    break;
-                                case 12:
-                                    message.description = reader.string();
-                                    break;
-                                case 13:
-                                    reader.skip().pos++;
-                                    if (message.labels === $util.emptyObject)
-                                        message.labels = {};
-                                    key = reader.string();
-                                    reader.pos++;
-                                    message.labels[key] = reader.string();
-                                    break;
-                                case 14:
-                                    if (!(message.warnings && message.warnings.length))
-                                        message.warnings = [];
-                                    message.warnings.push(reader.string());
-                                    break;
-                                default:
-                                    reader.skipType(tag & 7);
-                                    break;
-                                }
-                            }
-                            return message;
-                        };
-    
-                        /**
-                         * Decodes a ClusterOperationMetadata message from the specified reader or buffer, length delimited.
-                         * @function decodeDelimited
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @static
-                         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                         * @returns {google.cloud.dataproc.v1beta2.ClusterOperationMetadata} ClusterOperationMetadata
-                         * @throws {Error} If the payload is not a reader or valid buffer
-                         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                         */
-                        ClusterOperationMetadata.decodeDelimited = function decodeDelimited(reader) {
-                            if (!(reader instanceof $Reader))
-                                reader = new $Reader(reader);
-                            return this.decode(reader, reader.uint32());
-                        };
-    
-                        /**
-                         * Verifies a ClusterOperationMetadata message.
-                         * @function verify
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @static
-                         * @param {Object.<string,*>} message Plain object to verify
-                         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                         */
-                        ClusterOperationMetadata.verify = function verify(message) {
-                            if (typeof message !== "object" || message === null)
-                                return "object expected";
-                            if (message.clusterName != null && message.hasOwnProperty("clusterName"))
-                                if (!$util.isString(message.clusterName))
-                                    return "clusterName: string expected";
-                            if (message.clusterUuid != null && message.hasOwnProperty("clusterUuid"))
-                                if (!$util.isString(message.clusterUuid))
-                                    return "clusterUuid: string expected";
-                            if (message.status != null && message.hasOwnProperty("status")) {
-                                var error = $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.verify(message.status);
-                                if (error)
-                                    return "status." + error;
-                            }
-                            if (message.statusHistory != null && message.hasOwnProperty("statusHistory")) {
-                                if (!Array.isArray(message.statusHistory))
-                                    return "statusHistory: array expected";
-                                for (var i = 0; i < message.statusHistory.length; ++i) {
-                                    var error = $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.verify(message.statusHistory[i]);
-                                    if (error)
-                                        return "statusHistory." + error;
-                                }
-                            }
-                            if (message.operationType != null && message.hasOwnProperty("operationType"))
-                                if (!$util.isString(message.operationType))
-                                    return "operationType: string expected";
-                            if (message.description != null && message.hasOwnProperty("description"))
-                                if (!$util.isString(message.description))
-                                    return "description: string expected";
-                            if (message.labels != null && message.hasOwnProperty("labels")) {
-                                if (!$util.isObject(message.labels))
-                                    return "labels: object expected";
-                                var key = Object.keys(message.labels);
-                                for (var i = 0; i < key.length; ++i)
-                                    if (!$util.isString(message.labels[key[i]]))
-                                        return "labels: string{k:string} expected";
-                            }
-                            if (message.warnings != null && message.hasOwnProperty("warnings")) {
-                                if (!Array.isArray(message.warnings))
-                                    return "warnings: array expected";
-                                for (var i = 0; i < message.warnings.length; ++i)
-                                    if (!$util.isString(message.warnings[i]))
-                                        return "warnings: string[] expected";
-                            }
-                            return null;
-                        };
-    
-                        /**
-                         * Creates a ClusterOperationMetadata message from a plain object. Also converts values to their respective internal types.
-                         * @function fromObject
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @static
-                         * @param {Object.<string,*>} object Plain object
-                         * @returns {google.cloud.dataproc.v1beta2.ClusterOperationMetadata} ClusterOperationMetadata
-                         */
-                        ClusterOperationMetadata.fromObject = function fromObject(object) {
-                            if (object instanceof $root.google.cloud.dataproc.v1beta2.ClusterOperationMetadata)
-                                return object;
-                            var message = new $root.google.cloud.dataproc.v1beta2.ClusterOperationMetadata();
-                            if (object.clusterName != null)
-                                message.clusterName = String(object.clusterName);
-                            if (object.clusterUuid != null)
-                                message.clusterUuid = String(object.clusterUuid);
-                            if (object.status != null) {
-                                if (typeof object.status !== "object")
-                                    throw TypeError(".google.cloud.dataproc.v1beta2.ClusterOperationMetadata.status: object expected");
-                                message.status = $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.fromObject(object.status);
-                            }
-                            if (object.statusHistory) {
-                                if (!Array.isArray(object.statusHistory))
-                                    throw TypeError(".google.cloud.dataproc.v1beta2.ClusterOperationMetadata.statusHistory: array expected");
-                                message.statusHistory = [];
-                                for (var i = 0; i < object.statusHistory.length; ++i) {
-                                    if (typeof object.statusHistory[i] !== "object")
-                                        throw TypeError(".google.cloud.dataproc.v1beta2.ClusterOperationMetadata.statusHistory: object expected");
-                                    message.statusHistory[i] = $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.fromObject(object.statusHistory[i]);
-                                }
-                            }
-                            if (object.operationType != null)
-                                message.operationType = String(object.operationType);
-                            if (object.description != null)
-                                message.description = String(object.description);
-                            if (object.labels) {
-                                if (typeof object.labels !== "object")
-                                    throw TypeError(".google.cloud.dataproc.v1beta2.ClusterOperationMetadata.labels: object expected");
-                                message.labels = {};
-                                for (var keys = Object.keys(object.labels), i = 0; i < keys.length; ++i)
-                                    message.labels[keys[i]] = String(object.labels[keys[i]]);
-                            }
-                            if (object.warnings) {
-                                if (!Array.isArray(object.warnings))
-                                    throw TypeError(".google.cloud.dataproc.v1beta2.ClusterOperationMetadata.warnings: array expected");
-                                message.warnings = [];
-                                for (var i = 0; i < object.warnings.length; ++i)
-                                    message.warnings[i] = String(object.warnings[i]);
-                            }
-                            return message;
-                        };
-    
-                        /**
-                         * Creates a plain object from a ClusterOperationMetadata message. Also converts values to other types if specified.
-                         * @function toObject
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @static
-                         * @param {google.cloud.dataproc.v1beta2.ClusterOperationMetadata} message ClusterOperationMetadata
-                         * @param {$protobuf.IConversionOptions} [options] Conversion options
-                         * @returns {Object.<string,*>} Plain object
-                         */
-                        ClusterOperationMetadata.toObject = function toObject(message, options) {
-                            if (!options)
-                                options = {};
-                            var object = {};
-                            if (options.arrays || options.defaults) {
-                                object.statusHistory = [];
-                                object.warnings = [];
-                            }
-                            if (options.objects || options.defaults)
-                                object.labels = {};
-                            if (options.defaults) {
-                                object.clusterName = "";
-                                object.clusterUuid = "";
-                                object.status = null;
-                                object.operationType = "";
-                                object.description = "";
-                            }
-                            if (message.clusterName != null && message.hasOwnProperty("clusterName"))
-                                object.clusterName = message.clusterName;
-                            if (message.clusterUuid != null && message.hasOwnProperty("clusterUuid"))
-                                object.clusterUuid = message.clusterUuid;
-                            if (message.status != null && message.hasOwnProperty("status"))
-                                object.status = $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.toObject(message.status, options);
-                            if (message.statusHistory && message.statusHistory.length) {
-                                object.statusHistory = [];
-                                for (var j = 0; j < message.statusHistory.length; ++j)
-                                    object.statusHistory[j] = $root.google.cloud.dataproc.v1beta2.ClusterOperationStatus.toObject(message.statusHistory[j], options);
-                            }
-                            if (message.operationType != null && message.hasOwnProperty("operationType"))
-                                object.operationType = message.operationType;
-                            if (message.description != null && message.hasOwnProperty("description"))
-                                object.description = message.description;
-                            var keys2;
-                            if (message.labels && (keys2 = Object.keys(message.labels)).length) {
-                                object.labels = {};
-                                for (var j = 0; j < keys2.length; ++j)
-                                    object.labels[keys2[j]] = message.labels[keys2[j]];
-                            }
-                            if (message.warnings && message.warnings.length) {
-                                object.warnings = [];
-                                for (var j = 0; j < message.warnings.length; ++j)
-                                    object.warnings[j] = message.warnings[j];
-                            }
-                            return object;
-                        };
-    
-                        /**
-                         * Converts this ClusterOperationMetadata to JSON.
-                         * @function toJSON
-                         * @memberof google.cloud.dataproc.v1beta2.ClusterOperationMetadata
-                         * @instance
-                         * @returns {Object.<string,*>} JSON object
-                         */
-                        ClusterOperationMetadata.prototype.toJSON = function toJSON() {
-                            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                        };
-    
-                        return ClusterOperationMetadata;
-                    })();
-    
                     /**
                      * Component enum.
                      * @name google.cloud.dataproc.v1beta2.Component
@@ -35141,230 +34433,6 @@
                 return Empty;
             })();
     
-            protobuf.Timestamp = (function() {
-    
-                /**
-                 * Properties of a Timestamp.
-                 * @memberof google.protobuf
-                 * @interface ITimestamp
-                 * @property {number|Long|null} [seconds] Timestamp seconds
-                 * @property {number|null} [nanos] Timestamp nanos
-                 */
-    
-                /**
-                 * Constructs a new Timestamp.
-                 * @memberof google.protobuf
-                 * @classdesc Represents a Timestamp.
-                 * @implements ITimestamp
-                 * @constructor
-                 * @param {google.protobuf.ITimestamp=} [properties] Properties to set
-                 */
-                function Timestamp(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-    
-                /**
-                 * Timestamp seconds.
-                 * @member {number|Long} seconds
-                 * @memberof google.protobuf.Timestamp
-                 * @instance
-                 */
-                Timestamp.prototype.seconds = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
-    
-                /**
-                 * Timestamp nanos.
-                 * @member {number} nanos
-                 * @memberof google.protobuf.Timestamp
-                 * @instance
-                 */
-                Timestamp.prototype.nanos = 0;
-    
-                /**
-                 * Creates a new Timestamp instance using the specified properties.
-                 * @function create
-                 * @memberof google.protobuf.Timestamp
-                 * @static
-                 * @param {google.protobuf.ITimestamp=} [properties] Properties to set
-                 * @returns {google.protobuf.Timestamp} Timestamp instance
-                 */
-                Timestamp.create = function create(properties) {
-                    return new Timestamp(properties);
-                };
-    
-                /**
-                 * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
-                 * @function encode
-                 * @memberof google.protobuf.Timestamp
-                 * @static
-                 * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Timestamp.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.seconds != null && message.hasOwnProperty("seconds"))
-                        writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
-                    if (message.nanos != null && message.hasOwnProperty("nanos"))
-                        writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
-                    return writer;
-                };
-    
-                /**
-                 * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
-                 * @function encodeDelimited
-                 * @memberof google.protobuf.Timestamp
-                 * @static
-                 * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Timestamp.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
-                };
-    
-                /**
-                 * Decodes a Timestamp message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof google.protobuf.Timestamp
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {google.protobuf.Timestamp} Timestamp
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Timestamp.decode = function decode(reader, length) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Timestamp();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        switch (tag >>> 3) {
-                        case 1:
-                            message.seconds = reader.int64();
-                            break;
-                        case 2:
-                            message.nanos = reader.int32();
-                            break;
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-    
-                /**
-                 * Decodes a Timestamp message from the specified reader or buffer, length delimited.
-                 * @function decodeDelimited
-                 * @memberof google.protobuf.Timestamp
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {google.protobuf.Timestamp} Timestamp
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Timestamp.decodeDelimited = function decodeDelimited(reader) {
-                    if (!(reader instanceof $Reader))
-                        reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
-                };
-    
-                /**
-                 * Verifies a Timestamp message.
-                 * @function verify
-                 * @memberof google.protobuf.Timestamp
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                Timestamp.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    if (message.seconds != null && message.hasOwnProperty("seconds"))
-                        if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
-                            return "seconds: integer|Long expected";
-                    if (message.nanos != null && message.hasOwnProperty("nanos"))
-                        if (!$util.isInteger(message.nanos))
-                            return "nanos: integer expected";
-                    return null;
-                };
-    
-                /**
-                 * Creates a Timestamp message from a plain object. Also converts values to their respective internal types.
-                 * @function fromObject
-                 * @memberof google.protobuf.Timestamp
-                 * @static
-                 * @param {Object.<string,*>} object Plain object
-                 * @returns {google.protobuf.Timestamp} Timestamp
-                 */
-                Timestamp.fromObject = function fromObject(object) {
-                    if (object instanceof $root.google.protobuf.Timestamp)
-                        return object;
-                    var message = new $root.google.protobuf.Timestamp();
-                    if (object.seconds != null)
-                        if ($util.Long)
-                            (message.seconds = $util.Long.fromValue(object.seconds)).unsigned = false;
-                        else if (typeof object.seconds === "string")
-                            message.seconds = parseInt(object.seconds, 10);
-                        else if (typeof object.seconds === "number")
-                            message.seconds = object.seconds;
-                        else if (typeof object.seconds === "object")
-                            message.seconds = new $util.LongBits(object.seconds.low >>> 0, object.seconds.high >>> 0).toNumber();
-                    if (object.nanos != null)
-                        message.nanos = object.nanos | 0;
-                    return message;
-                };
-    
-                /**
-                 * Creates a plain object from a Timestamp message. Also converts values to other types if specified.
-                 * @function toObject
-                 * @memberof google.protobuf.Timestamp
-                 * @static
-                 * @param {google.protobuf.Timestamp} message Timestamp
-                 * @param {$protobuf.IConversionOptions} [options] Conversion options
-                 * @returns {Object.<string,*>} Plain object
-                 */
-                Timestamp.toObject = function toObject(message, options) {
-                    if (!options)
-                        options = {};
-                    var object = {};
-                    if (options.defaults) {
-                        if ($util.Long) {
-                            var long = new $util.Long(0, 0, false);
-                            object.seconds = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
-                        } else
-                            object.seconds = options.longs === String ? "0" : 0;
-                        object.nanos = 0;
-                    }
-                    if (message.seconds != null && message.hasOwnProperty("seconds"))
-                        if (typeof message.seconds === "number")
-                            object.seconds = options.longs === String ? String(message.seconds) : message.seconds;
-                        else
-                            object.seconds = options.longs === String ? $util.Long.prototype.toString.call(message.seconds) : options.longs === Number ? new $util.LongBits(message.seconds.low >>> 0, message.seconds.high >>> 0).toNumber() : message.seconds;
-                    if (message.nanos != null && message.hasOwnProperty("nanos"))
-                        object.nanos = message.nanos;
-                    return object;
-                };
-    
-                /**
-                 * Converts this Timestamp to JSON.
-                 * @function toJSON
-                 * @memberof google.protobuf.Timestamp
-                 * @instance
-                 * @returns {Object.<string,*>} JSON object
-                 */
-                Timestamp.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-    
-                return Timestamp;
-            })();
-    
             protobuf.Any = (function() {
     
                 /**
@@ -35785,6 +34853,230 @@
                 };
     
                 return FieldMask;
+            })();
+    
+            protobuf.Timestamp = (function() {
+    
+                /**
+                 * Properties of a Timestamp.
+                 * @memberof google.protobuf
+                 * @interface ITimestamp
+                 * @property {number|Long|null} [seconds] Timestamp seconds
+                 * @property {number|null} [nanos] Timestamp nanos
+                 */
+    
+                /**
+                 * Constructs a new Timestamp.
+                 * @memberof google.protobuf
+                 * @classdesc Represents a Timestamp.
+                 * @implements ITimestamp
+                 * @constructor
+                 * @param {google.protobuf.ITimestamp=} [properties] Properties to set
+                 */
+                function Timestamp(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Timestamp seconds.
+                 * @member {number|Long} seconds
+                 * @memberof google.protobuf.Timestamp
+                 * @instance
+                 */
+                Timestamp.prototype.seconds = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                /**
+                 * Timestamp nanos.
+                 * @member {number} nanos
+                 * @memberof google.protobuf.Timestamp
+                 * @instance
+                 */
+                Timestamp.prototype.nanos = 0;
+    
+                /**
+                 * Creates a new Timestamp instance using the specified properties.
+                 * @function create
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {google.protobuf.ITimestamp=} [properties] Properties to set
+                 * @returns {google.protobuf.Timestamp} Timestamp instance
+                 */
+                Timestamp.create = function create(properties) {
+                    return new Timestamp(properties);
+                };
+    
+                /**
+                 * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+                 * @function encode
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Timestamp.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.seconds != null && message.hasOwnProperty("seconds"))
+                        writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
+                    if (message.nanos != null && message.hasOwnProperty("nanos"))
+                        writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
+                    return writer;
+                };
+    
+                /**
+                 * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Timestamp.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+    
+                /**
+                 * Decodes a Timestamp message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {google.protobuf.Timestamp} Timestamp
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Timestamp.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Timestamp();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.seconds = reader.int64();
+                            break;
+                        case 2:
+                            message.nanos = reader.int32();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Decodes a Timestamp message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {google.protobuf.Timestamp} Timestamp
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Timestamp.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+    
+                /**
+                 * Verifies a Timestamp message.
+                 * @function verify
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Timestamp.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.seconds != null && message.hasOwnProperty("seconds"))
+                        if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
+                            return "seconds: integer|Long expected";
+                    if (message.nanos != null && message.hasOwnProperty("nanos"))
+                        if (!$util.isInteger(message.nanos))
+                            return "nanos: integer expected";
+                    return null;
+                };
+    
+                /**
+                 * Creates a Timestamp message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {google.protobuf.Timestamp} Timestamp
+                 */
+                Timestamp.fromObject = function fromObject(object) {
+                    if (object instanceof $root.google.protobuf.Timestamp)
+                        return object;
+                    var message = new $root.google.protobuf.Timestamp();
+                    if (object.seconds != null)
+                        if ($util.Long)
+                            (message.seconds = $util.Long.fromValue(object.seconds)).unsigned = false;
+                        else if (typeof object.seconds === "string")
+                            message.seconds = parseInt(object.seconds, 10);
+                        else if (typeof object.seconds === "number")
+                            message.seconds = object.seconds;
+                        else if (typeof object.seconds === "object")
+                            message.seconds = new $util.LongBits(object.seconds.low >>> 0, object.seconds.high >>> 0).toNumber();
+                    if (object.nanos != null)
+                        message.nanos = object.nanos | 0;
+                    return message;
+                };
+    
+                /**
+                 * Creates a plain object from a Timestamp message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {google.protobuf.Timestamp} message Timestamp
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Timestamp.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        if ($util.Long) {
+                            var long = new $util.Long(0, 0, false);
+                            object.seconds = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                        } else
+                            object.seconds = options.longs === String ? "0" : 0;
+                        object.nanos = 0;
+                    }
+                    if (message.seconds != null && message.hasOwnProperty("seconds"))
+                        if (typeof message.seconds === "number")
+                            object.seconds = options.longs === String ? String(message.seconds) : message.seconds;
+                        else
+                            object.seconds = options.longs === String ? $util.Long.prototype.toString.call(message.seconds) : options.longs === Number ? new $util.LongBits(message.seconds.low >>> 0, message.seconds.high >>> 0).toNumber() : message.seconds;
+                    if (message.nanos != null && message.hasOwnProperty("nanos"))
+                        object.nanos = message.nanos;
+                    return object;
+                };
+    
+                /**
+                 * Converts this Timestamp to JSON.
+                 * @function toJSON
+                 * @memberof google.protobuf.Timestamp
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Timestamp.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+    
+                return Timestamp;
             })();
     
             return protobuf;

@@ -34,6 +34,22 @@ func ExampleNewCompanyClient() {
 	_ = c
 }
 
+func ExampleCompanyClient_DeleteCompany() {
+	ctx := context.Background()
+	c, err := talent.NewCompanyClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &talentpb.DeleteCompanyRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.DeleteCompany(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
 func ExampleCompanyClient_CreateCompany() {
 	ctx := context.Background()
 	c, err := talent.NewCompanyClient(ctx)
@@ -86,22 +102,6 @@ func ExampleCompanyClient_UpdateCompany() {
 	}
 	// TODO: Use resp.
 	_ = resp
-}
-
-func ExampleCompanyClient_DeleteCompany() {
-	ctx := context.Background()
-	c, err := talent.NewCompanyClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &talentpb.DeleteCompanyRequest{
-		// TODO: Fill request struct fields.
-	}
-	err = c.DeleteCompany(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
 }
 
 func ExampleCompanyClient_ListCompanies() {

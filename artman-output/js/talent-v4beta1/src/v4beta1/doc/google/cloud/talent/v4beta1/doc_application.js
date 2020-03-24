@@ -41,17 +41,13 @@
  *   For example, "projects/foo/tenants/bar/profiles/baz".
  *
  * @property {string} job
- *   One of either a job or a company is required.
- *
- *   Resource name of the job which the candidate applied for.
+ *   Required. Resource name of the job which the candidate applied for.
  *
  *   The format is
  *   "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
  *   "projects/foo/tenants/bar/jobs/baz".
  *
  * @property {string} company
- *   One of either a job or a company is required.
- *
  *   Resource name of the company which the candidate applied for.
  *
  *   The format is
@@ -64,8 +60,8 @@
  *   This object should have the same structure as [Date]{@link google.type.Date}
  *
  * @property {number} stage
- *   Required. What is the most recent stage of the application (that is, new, screen,
- *   send cv, hired, finished work)?  This field is intentionally not
+ *   Required. What is the most recent stage of the application (that is, new,
+ *   screen, send cv, hired, finished work)?  This field is intentionally not
  *   comprehensive of every possible status, but instead, represents statuses
  *   that would be used to indicate to the ML models good / bad matches.
  *

@@ -123,9 +123,6 @@ class SecurityCenterClient {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this._pathTemplates = {
-      assetPathTemplate: new gaxModule.PathTemplate(
-        'organizations/{organization}/assets/{asset}'
-      ),
       assetSecurityMarksPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/assets/{asset}/securityMarks'
       ),
@@ -135,17 +132,20 @@ class SecurityCenterClient {
       findingSecurityMarksPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/sources/{source}/findings/{finding}/securityMarks'
       ),
+      notificationConfigPathTemplate: new gaxModule.PathTemplate(
+        'organizations/{organization}/notificationConfigs/{notification_config}'
+      ),
       organizationPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}'
       ),
       organizationSettingsPathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/organizationSettings'
       ),
-      organizationSourcesPathTemplate: new gaxModule.PathTemplate(
-        'organizations/{organization}/sources/-'
-      ),
       sourcePathTemplate: new gaxModule.PathTemplate(
         'organizations/{organization}/sources/{source}'
+      ),
+      topicPathTemplate: new gaxModule.PathTemplate(
+        'projects/{project}/topics/{topic}'
       ),
     };
 
@@ -172,6 +172,11 @@ class SecurityCenterClient {
         'pageToken',
         'nextPageToken',
         'listFindingsResults'
+      ),
+      listNotificationConfigs: new gaxModule.PageDescriptor(
+        'pageToken',
+        'nextPageToken',
+        'notificationConfigs'
       ),
       listSources: new gaxModule.PageDescriptor(
         'pageToken',
@@ -232,21 +237,26 @@ class SecurityCenterClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const securityCenterStubMethods = [
-      'createSource',
-      'createFinding',
       'getIamPolicy',
-      'getOrganizationSettings',
-      'getSource',
       'groupAssets',
       'groupFindings',
+      'testIamPermissions',
+      'createSource',
+      'createFinding',
+      'createNotificationConfig',
+      'deleteNotificationConfig',
+      'getNotificationConfig',
+      'getOrganizationSettings',
+      'getSource',
       'listAssets',
       'listFindings',
+      'listNotificationConfigs',
       'listSources',
       'runAssetDiscovery',
       'setFindingState',
       'setIamPolicy',
-      'testIamPermissions',
       'updateFinding',
+      'updateNotificationConfig',
       'updateOrganizationSettings',
       'updateSource',
       'updateSecurityMarks',
@@ -314,141 +324,6 @@ class SecurityCenterClient {
   // -------------------
 
   /**
-   * Creates a source.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   Required. Resource name of the new source's parent. Its format should be
-   *   "organizations/[organization_id]".
-   * @param {Object} request.source
-   *   Required. The Source being created, only the display_name and description will be
-   *   used. All other fields will be ignored.
-   *
-   *   This object should have the same structure as [Source]{@link google.cloud.securitycenter.v1.Source}
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const securityCenter = require('@google-cloud/security-center');
-   *
-   * const client = new securityCenter.v1.SecurityCenterClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedParent = client.organizationPath('[ORGANIZATION]');
-   * const source = {};
-   * const request = {
-   *   parent: formattedParent,
-   *   source: source,
-   * };
-   * client.createSource(request)
-   *   .then(responses => {
-   *     const response = responses[0];
-   *     // doThingsWith(response)
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  createSource(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'parent': request.parent
-      });
-
-    return this._innerApiCalls.createSource(request, options, callback);
-  }
-
-  /**
-   * Creates a finding. The corresponding source must exist for finding creation
-   * to succeed.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.parent
-   *   Required. Resource name of the new finding's parent. Its format should be
-   *   "organizations/[organization_id]/sources/[source_id]".
-   * @param {string} request.findingId
-   *   Required. Unique identifier provided by the client within the parent scope.
-   *   It must be alphanumeric and less than or equal to 32 characters and
-   *   greater than 0 characters in length.
-   * @param {Object} request.finding
-   *   Required. The Finding being created. The name and security_marks will be ignored as
-   *   they are both output only fields on this resource.
-   *
-   *   This object should have the same structure as [Finding]{@link google.cloud.securitycenter.v1.Finding}
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is an object representing [Finding]{@link google.cloud.securitycenter.v1.Finding}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [Finding]{@link google.cloud.securitycenter.v1.Finding}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const securityCenter = require('@google-cloud/security-center');
-   *
-   * const client = new securityCenter.v1.SecurityCenterClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedParent = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-   * const findingId = '';
-   * const finding = {};
-   * const request = {
-   *   parent: formattedParent,
-   *   findingId: findingId,
-   *   finding: finding,
-   * };
-   * client.createFinding(request)
-   *   .then(responses => {
-   *     const response = responses[0];
-   *     // doThingsWith(response)
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  createFinding(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'parent': request.parent
-      });
-
-    return this._innerApiCalls.createFinding(request, options, callback);
-  }
-
-  /**
    * Gets the access control policy on the specified Source.
    *
    * @param {Object} request
@@ -480,8 +355,8 @@ class SecurityCenterClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-   * client.getIamPolicy({resource: formattedResource})
+   * const resource = '';
+   * client.getIamPolicy({resource: resource})
    *   .then(responses => {
    *     const response = responses[0];
    *     // doThingsWith(response)
@@ -508,114 +383,6 @@ class SecurityCenterClient {
   }
 
   /**
-   * Gets the settings for an organization.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.name
-   *   Required. Name of the organization to get organization settings for. Its format is
-   *   "organizations/[organization_id]/organizationSettings".
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is an object representing [OrganizationSettings]{@link google.cloud.securitycenter.v1.OrganizationSettings}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [OrganizationSettings]{@link google.cloud.securitycenter.v1.OrganizationSettings}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const securityCenter = require('@google-cloud/security-center');
-   *
-   * const client = new securityCenter.v1.SecurityCenterClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedName = client.organizationSettingsPath('[ORGANIZATION]');
-   * client.getOrganizationSettings({name: formattedName})
-   *   .then(responses => {
-   *     const response = responses[0];
-   *     // doThingsWith(response)
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  getOrganizationSettings(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'name': request.name
-      });
-
-    return this._innerApiCalls.getOrganizationSettings(request, options, callback);
-  }
-
-  /**
-   * Gets a source.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.name
-   *   Required. Relative resource name of the source. Its format is
-   *   "organizations/[organization_id]/source/[source_id]".
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const securityCenter = require('@google-cloud/security-center');
-   *
-   * const client = new securityCenter.v1.SecurityCenterClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedName = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-   * client.getSource({name: formattedName})
-   *   .then(responses => {
-   *     const response = responses[0];
-   *     // doThingsWith(response)
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  getSource(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'name': request.name
-      });
-
-    return this._innerApiCalls.getSource(request, options, callback);
-  }
-
-  /**
    * Filters an organization's assets and  groups them by their specified
    * properties.
    *
@@ -625,9 +392,9 @@ class SecurityCenterClient {
    *   Required. Name of the organization to groupBy. Its format is
    *   "organizations/[organization_id]".
    * @param {string} request.groupBy
-   *   Required. Expression that defines what assets fields to use for grouping. The string
-   *   value should follow SQL syntax: comma separated list of fields. For
-   *   example:
+   *   Required. Expression that defines what assets fields to use for grouping.
+   *   The string value should follow SQL syntax: comma separated list of fields.
+   *   For example:
    *   "security_center_properties.resource_project,security_center_properties.project".
    *
    *   The following fields are supported when compare_duration is not set:
@@ -860,9 +627,9 @@ class SecurityCenterClient {
    *   Required. Name of the organization to groupBy. Its format is
    *   "organizations/[organization_id]".
    * @param {string} request.groupBy
-   *   Required. Expression that defines what assets fields to use for grouping. The string
-   *   value should follow SQL syntax: comma separated list of fields. For
-   *   example:
+   *   Required. Expression that defines what assets fields to use for grouping.
+   *   The string value should follow SQL syntax: comma separated list of fields.
+   *   For example:
    *   "security_center_properties.resource_project,security_center_properties.project".
    *
    *   The following fields are supported when compare_duration is not set:
@@ -1030,9 +797,9 @@ class SecurityCenterClient {
    *   all sources provide a source_id of `-`. For example:
    *   organizations/{organization_id}/sources/-
    * @param {string} request.groupBy
-   *   Required. Expression that defines what assets fields to use for grouping (including
-   *   `state_change`). The string value should follow SQL syntax: comma separated
-   *   list of fields. For example: "parent,resource_name".
+   *   Required. Expression that defines what assets fields to use for grouping
+   *   (including `state_change`). The string value should follow SQL syntax:
+   *   comma separated list of fields. For example: "parent,resource_name".
    *
    *   The following fields are supported:
    *
@@ -1109,12 +876,18 @@ class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED",  which will be the state_change set for all findings present
@@ -1249,9 +1022,9 @@ class SecurityCenterClient {
    *   all sources provide a source_id of `-`. For example:
    *   organizations/{organization_id}/sources/-
    * @param {string} request.groupBy
-   *   Required. Expression that defines what assets fields to use for grouping (including
-   *   `state_change`). The string value should follow SQL syntax: comma separated
-   *   list of fields. For example: "parent,resource_name".
+   *   Required. Expression that defines what assets fields to use for grouping
+   *   (including `state_change`). The string value should follow SQL syntax:
+   *   comma separated list of fields. For example: "parent,resource_name".
    *
    *   The following fields are supported:
    *
@@ -1328,12 +1101,18 @@ class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED",  which will be the state_change set for all findings present
@@ -1385,6 +1164,485 @@ class SecurityCenterClient {
       options
     );
   };
+
+  /**
+   * Returns the permissions that a caller has on the specified source.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.resource
+   *   REQUIRED: The resource for which the policy detail is being requested.
+   *   See the operation documentation for the appropriate value for this field.
+   * @param {string[]} request.permissions
+   *   The set of permissions to check for the `resource`. Permissions with
+   *   wildcards (such as '*' or 'storage.*') are not allowed. For more
+   *   information see
+   *   [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const resource = '';
+   * const permissions = [];
+   * const request = {
+   *   resource: resource,
+   *   permissions: permissions,
+   * };
+   * client.testIamPermissions(request)
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  testIamPermissions(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'resource': request.resource
+      });
+
+    return this._innerApiCalls.testIamPermissions(request, options, callback);
+  }
+
+  /**
+   * Creates a source.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. Resource name of the new source's parent. Its format should be
+   *   "organizations/[organization_id]".
+   * @param {Object} request.source
+   *   Required. The Source being created, only the display_name and description
+   *   will be used. All other fields will be ignored.
+   *
+   *   This object should have the same structure as [Source]{@link google.cloud.securitycenter.v1.Source}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedParent = client.organizationPath('[ORGANIZATION]');
+   * const source = {};
+   * const request = {
+   *   parent: formattedParent,
+   *   source: source,
+   * };
+   * client.createSource(request)
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  createSource(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
+
+    return this._innerApiCalls.createSource(request, options, callback);
+  }
+
+  /**
+   * Creates a finding. The corresponding source must exist for finding creation
+   * to succeed.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. Resource name of the new finding's parent. Its format should be
+   *   "organizations/[organization_id]/sources/[source_id]".
+   * @param {string} request.findingId
+   *   Required. Unique identifier provided by the client within the parent scope.
+   *   It must be alphanumeric and less than or equal to 32 characters and
+   *   greater than 0 characters in length.
+   * @param {Object} request.finding
+   *   Required. The Finding being created. The name and security_marks will be
+   *   ignored as they are both output only fields on this resource.
+   *
+   *   This object should have the same structure as [Finding]{@link google.cloud.securitycenter.v1.Finding}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [Finding]{@link google.cloud.securitycenter.v1.Finding}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [Finding]{@link google.cloud.securitycenter.v1.Finding}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedParent = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+   * const findingId = '';
+   * const finding = {};
+   * const request = {
+   *   parent: formattedParent,
+   *   findingId: findingId,
+   *   finding: finding,
+   * };
+   * client.createFinding(request)
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  createFinding(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
+
+    return this._innerApiCalls.createFinding(request, options, callback);
+  }
+
+  /**
+   * Creates a notification config.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. Resource name of the new notification config's parent. Its format
+   *   is "organizations/[organization_id]".
+   * @param {string} request.configId
+   *   Required.
+   *   Unique identifier provided by the client within the parent scope.
+   *   It must be between 1 and 128 characters, and contains alphanumeric
+   *   characters, underscores or hyphens only.
+   * @param {Object} request.notificationConfig
+   *   Required. The notification config being created. The name and the service
+   *   account will be ignored as they are both output only fields on this
+   *   resource.
+   *
+   *   This object should have the same structure as [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedParent = client.organizationPath('[ORGANIZATION]');
+   * const configId = '';
+   * const notificationConfig = {};
+   * const request = {
+   *   parent: formattedParent,
+   *   configId: configId,
+   *   notificationConfig: notificationConfig,
+   * };
+   * client.createNotificationConfig(request)
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  createNotificationConfig(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
+
+    return this._innerApiCalls.createNotificationConfig(request, options, callback);
+  }
+
+  /**
+   * Deletes a notification config.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. Name of the notification config to delete. Its format is
+   *   "organizations/[organization_id]/notificationConfigs/[config_id]".
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error)} [callback]
+   *   The function which will be called with the result of the API call.
+   * @returns {Promise} - The promise which resolves when API call finishes.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedName = client.notificationConfigPath('[ORGANIZATION]', '[NOTIFICATION_CONFIG]');
+   * client.deleteNotificationConfig({name: formattedName}).catch(err => {
+   *   console.error(err);
+   * });
+   */
+  deleteNotificationConfig(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.deleteNotificationConfig(request, options, callback);
+  }
+
+  /**
+   * Gets a notification config.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. Name of the notification config to get. Its format is
+   *   "organizations/[organization_id]/notificationConfigs/[config_id]".
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedName = client.notificationConfigPath('[ORGANIZATION]', '[NOTIFICATION_CONFIG]');
+   * client.getNotificationConfig({name: formattedName})
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  getNotificationConfig(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.getNotificationConfig(request, options, callback);
+  }
+
+  /**
+   * Gets the settings for an organization.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. Name of the organization to get organization settings for. Its
+   *   format is "organizations/[organization_id]/organizationSettings".
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [OrganizationSettings]{@link google.cloud.securitycenter.v1.OrganizationSettings}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [OrganizationSettings]{@link google.cloud.securitycenter.v1.OrganizationSettings}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedName = client.organizationSettingsPath('[ORGANIZATION]');
+   * client.getOrganizationSettings({name: formattedName})
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  getOrganizationSettings(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.getOrganizationSettings(request, options, callback);
+  }
+
+  /**
+   * Gets a source.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.name
+   *   Required. Relative resource name of the source. Its format is
+   *   "organizations/[organization_id]/source/[source_id]".
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedName = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+   * client.getSource({name: formattedName})
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  getSource(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
+
+    return this._innerApiCalls.getSource(request, options, callback);
+  }
 
   /**
    * Lists an organization's assets.
@@ -1508,9 +1766,8 @@ class SecurityCenterClient {
    *
    *   This object should have the same structure as [Duration]{@link google.protobuf.Duration}
    * @param {Object} [request.fieldMask]
-   *   Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-   *   response.
-   *   An empty field mask will list all fields.
+   *   Optional. A field mask to specify the ListAssetsResult fields to be listed
+   *   in the response. An empty field mask will list all fields.
    *
    *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
    * @param {number} [request.pageSize]
@@ -1739,9 +1996,8 @@ class SecurityCenterClient {
    *
    *   This object should have the same structure as [Duration]{@link google.protobuf.Duration}
    * @param {Object} [request.fieldMask]
-   *   Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-   *   response.
-   *   An empty field mask will list all fields.
+   *   Optional. A field mask to specify the ListAssetsResult fields to be listed
+   *   in the response. An empty field mask will list all fields.
    *
    *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
    * @param {number} [request.pageSize]
@@ -1880,12 +2136,18 @@ class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED", which will be the state_change set for all findings present at
@@ -1893,8 +2155,8 @@ class SecurityCenterClient {
    *
    *   This object should have the same structure as [Duration]{@link google.protobuf.Duration}
    * @param {Object} [request.fieldMask]
-   *   Optional. A field mask to specify the Finding fields to be listed in the response.
-   *   An empty field mask will list all fields.
+   *   Optional. A field mask to specify the Finding fields to be listed in the
+   *   response. An empty field mask will list all fields.
    *
    *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
    * @param {number} [request.pageSize]
@@ -2096,12 +2358,18 @@ class SecurityCenterClient {
    *
    *   Possible "state_change" values when compare_duration is specified:
    *
-   *   * "CHANGED":   indicates that the finding was present at the start of
-   *                    compare_duration, but changed its state at read_time.
-   *   * "UNCHANGED": indicates that the finding was present at the start of
-   *                    compare_duration and did not change state at read_time.
-   *   * "ADDED":     indicates that the finding was not present at the start
-   *                    of compare_duration, but was present at read_time.
+   *   * "CHANGED":   indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration, but changed its
+   *                    state at read_time.
+   *   * "UNCHANGED": indicates that the finding was present and matched the given
+   *                    filter at the start of compare_duration and did not change
+   *                    state at read_time.
+   *   * "ADDED":     indicates that the finding did not match the given filter or
+   *                    was not present at the start of compare_duration, but was
+   *                    present at read_time.
+   *   * "REMOVED":   indicates that the finding was present and matched the
+   *                    filter at the start of compare_duration, but did not match
+   *                    the filter at read_time.
    *
    *   If compare_duration is not specified, then the only possible state_change
    *   is "UNUSED", which will be the state_change set for all findings present at
@@ -2109,8 +2377,8 @@ class SecurityCenterClient {
    *
    *   This object should have the same structure as [Duration]{@link google.protobuf.Duration}
    * @param {Object} [request.fieldMask]
-   *   Optional. A field mask to specify the Finding fields to be listed in the response.
-   *   An empty field mask will list all fields.
+   *   Optional. A field mask to specify the Finding fields to be listed in the
+   *   response. An empty field mask will list all fields.
    *
    *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
    * @param {number} [request.pageSize]
@@ -2152,13 +2420,171 @@ class SecurityCenterClient {
   };
 
   /**
+   * Lists notification configs.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. Name of the organization to list notification configs.
+   *   Its format is "organizations/[organization_id]".
+   * @param {number} [request.pageSize]
+   *   The maximum number of resources contained in the underlying API
+   *   response. If page streaming is performed per-resource, this
+   *   parameter does not affect the return value. If page streaming is
+   *   performed per-page, this determines the maximum number of
+   *   resources in a page.
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Array, ?Object, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is Array of [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
+   *
+   *   When autoPaginate: false is specified through options, it contains the result
+   *   in a single response. If the response indicates the next page exists, the third
+   *   parameter is set to be used for the next request object. The fourth parameter keeps
+   *   the raw response object of an object representing [ListNotificationConfigsResponse]{@link google.cloud.securitycenter.v1.ListNotificationConfigsResponse}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is Array of [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
+   *
+   *   When autoPaginate: false is specified through options, the array has three elements.
+   *   The first element is Array of [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig} in a single response.
+   *   The second element is the next request object if the response
+   *   indicates the next page exists, or null. The third element is
+   *   an object representing [ListNotificationConfigsResponse]{@link google.cloud.securitycenter.v1.ListNotificationConfigsResponse}.
+   *
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * // Iterate over all elements.
+   * const formattedParent = client.organizationPath('[ORGANIZATION]');
+   *
+   * client.listNotificationConfigs({parent: formattedParent})
+   *   .then(responses => {
+   *     const resources = responses[0];
+   *     for (const resource of resources) {
+   *       // doThingsWith(resource)
+   *     }
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   *
+   * // Or obtain the paged response.
+   * const formattedParent = client.organizationPath('[ORGANIZATION]');
+   *
+   *
+   * const options = {autoPaginate: false};
+   * const callback = responses => {
+   *   // The actual resources in a response.
+   *   const resources = responses[0];
+   *   // The next request if the response shows that there are more responses.
+   *   const nextRequest = responses[1];
+   *   // The actual response object, if necessary.
+   *   // const rawResponse = responses[2];
+   *   for (const resource of resources) {
+   *     // doThingsWith(resource);
+   *   }
+   *   if (nextRequest) {
+   *     // Fetch the next page.
+   *     return client.listNotificationConfigs(nextRequest, options).then(callback);
+   *   }
+   * }
+   * client.listNotificationConfigs({parent: formattedParent}, options)
+   *   .then(callback)
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  listNotificationConfigs(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
+
+    return this._innerApiCalls.listNotificationConfigs(request, options, callback);
+  }
+
+  /**
+   * Equivalent to {@link listNotificationConfigs}, but returns a NodeJS Stream object.
+   *
+   * This fetches the paged responses for {@link listNotificationConfigs} continuously
+   * and invokes the callback registered for 'data' event for each element in the
+   * responses.
+   *
+   * The returned object has 'end' method when no more elements are required.
+   *
+   * autoPaginate option will be ignored.
+   *
+   * @see {@link https://nodejs.org/api/stream.html}
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {string} request.parent
+   *   Required. Name of the organization to list notification configs.
+   *   Its format is "organizations/[organization_id]".
+   * @param {number} [request.pageSize]
+   *   The maximum number of resources contained in the underlying API
+   *   response. If page streaming is performed per-resource, this
+   *   parameter does not affect the return value. If page streaming is
+   *   performed per-page, this determines the maximum number of
+   *   resources in a page.
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @returns {Stream}
+   *   An object stream which emits an object representing [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig} on 'data' event.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const formattedParent = client.organizationPath('[ORGANIZATION]');
+   * client.listNotificationConfigsStream({parent: formattedParent})
+   *   .on('data', element => {
+   *     // doThingsWith(element)
+   *   }).on('error', err => {
+   *     console.log(err);
+   *   });
+   */
+  listNotificationConfigsStream(request, options) {
+    options = options || {};
+
+    return this._descriptors.page.listNotificationConfigs.createStream(
+      this._innerApiCalls.listNotificationConfigs,
+      request,
+      options
+    );
+  };
+
+  /**
    * Lists all sources belonging to an organization.
    *
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.parent
-   *   Required. Resource name of the parent of sources to list. Its format should be
-   *   "organizations/[organization_id]".
+   *   Required. Resource name of the parent of sources to list. Its format should
+   *   be "organizations/[organization_id]".
    * @param {number} [request.pageSize]
    *   The maximum number of resources contained in the underlying API
    *   response. If page streaming is performed per-resource, this
@@ -2269,8 +2695,8 @@ class SecurityCenterClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.parent
-   *   Required. Resource name of the parent of sources to list. Its format should be
-   *   "organizations/[organization_id]".
+   *   Required. Resource name of the parent of sources to list. Its format should
+   *   be "organizations/[organization_id]".
    * @param {number} [request.pageSize]
    *   The maximum number of resources contained in the underlying API
    *   response. If page streaming is performed per-resource, this
@@ -2320,8 +2746,8 @@ class SecurityCenterClient {
    * @param {Object} request
    *   The request object that will be sent.
    * @param {string} request.parent
-   *   Required. Name of the organization to run asset discovery for. Its format is
-   *   "organizations/[organization_id]".
+   *   Required. Name of the organization to run asset discovery for. Its format
+   *   is "organizations/[organization_id]".
    * @param {Object} [options]
    *   Optional parameters. You can override the default settings for this call, e.g, timeout,
    *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
@@ -2517,10 +2943,10 @@ class SecurityCenterClient {
    *   // optional auth parameters.
    * });
    *
-   * const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
+   * const resource = '';
    * const policy = {};
    * const request = {
-   *   resource: formattedResource,
+   *   resource: resource,
    *   policy: policy,
    * };
    * client.setIamPolicy(request)
@@ -2550,78 +2976,14 @@ class SecurityCenterClient {
   }
 
   /**
-   * Returns the permissions that a caller has on the specified source.
-   *
-   * @param {Object} request
-   *   The request object that will be sent.
-   * @param {string} request.resource
-   *   REQUIRED: The resource for which the policy detail is being requested.
-   *   See the operation documentation for the appropriate value for this field.
-   * @param {string[]} request.permissions
-   *   The set of permissions to check for the `resource`. Permissions with
-   *   wildcards (such as '*' or 'storage.*') are not allowed. For more
-   *   information see
-   *   [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
-   * @param {Object} [options]
-   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
-   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
-   * @param {function(?Error, ?Object)} [callback]
-   *   The function which will be called with the result of the API call.
-   *
-   *   The second parameter to the callback is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
-   * @returns {Promise} - The promise which resolves to an array.
-   *   The first element of the array is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
-   *   The promise has a method named "cancel" which cancels the ongoing API call.
-   *
-   * @example
-   *
-   * const securityCenter = require('@google-cloud/security-center');
-   *
-   * const client = new securityCenter.v1.SecurityCenterClient({
-   *   // optional auth parameters.
-   * });
-   *
-   * const formattedResource = client.sourcePath('[ORGANIZATION]', '[SOURCE]');
-   * const permissions = [];
-   * const request = {
-   *   resource: formattedResource,
-   *   permissions: permissions,
-   * };
-   * client.testIamPermissions(request)
-   *   .then(responses => {
-   *     const response = responses[0];
-   *     // doThingsWith(response)
-   *   })
-   *   .catch(err => {
-   *     console.error(err);
-   *   });
-   */
-  testIamPermissions(request, options, callback) {
-    if (options instanceof Function && callback === undefined) {
-      callback = options;
-      options = {};
-    }
-    request = request || {};
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers['x-goog-request-params'] =
-      gax.routingHeader.fromParams({
-        'resource': request.resource
-      });
-
-    return this._innerApiCalls.testIamPermissions(request, options, callback);
-  }
-
-  /**
    * Creates or updates a finding. The corresponding source must exist for a
    * finding creation to succeed.
    *
    * @param {Object} request
    *   The request object that will be sent.
    * @param {Object} request.finding
-   *   Required. The finding resource to update or create if it does not already exist.
-   *   parent, security_marks, and update_time will be ignored.
+   *   Required. The finding resource to update or create if it does not already
+   *   exist. parent, security_marks, and update_time will be ignored.
    *
    *   In the case of creation, the finding id portion of the name must be
    *   alphanumeric and less than or equal to 32 characters and greater than 0
@@ -2682,6 +3044,67 @@ class SecurityCenterClient {
       });
 
     return this._innerApiCalls.updateFinding(request, options, callback);
+  }
+
+  /**
+   * Updates a notification config.
+   *
+   * @param {Object} request
+   *   The request object that will be sent.
+   * @param {Object} request.notificationConfig
+   *   Required. The notification config to update.
+   *
+   *   This object should have the same structure as [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}
+   * @param {Object} [request.updateMask]
+   *   The FieldMask to use when updating the notification config.
+   *
+   *   If empty all mutable fields will be updated.
+   *
+   *   This object should have the same structure as [FieldMask]{@link google.protobuf.FieldMask}
+   * @param {Object} [options]
+   *   Optional parameters. You can override the default settings for this call, e.g, timeout,
+   *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
+   * @param {function(?Error, ?Object)} [callback]
+   *   The function which will be called with the result of the API call.
+   *
+   *   The second parameter to the callback is an object representing [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
+   * @returns {Promise} - The promise which resolves to an array.
+   *   The first element of the array is an object representing [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
+   *   The promise has a method named "cancel" which cancels the ongoing API call.
+   *
+   * @example
+   *
+   * const securityCenter = require('@google-cloud/security-center');
+   *
+   * const client = new securityCenter.v1.SecurityCenterClient({
+   *   // optional auth parameters.
+   * });
+   *
+   * const notificationConfig = {};
+   * client.updateNotificationConfig({notificationConfig: notificationConfig})
+   *   .then(responses => {
+   *     const response = responses[0];
+   *     // doThingsWith(response)
+   *   })
+   *   .catch(err => {
+   *     console.error(err);
+   *   });
+   */
+  updateNotificationConfig(request, options, callback) {
+    if (options instanceof Function && callback === undefined) {
+      callback = options;
+      options = {};
+    }
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'notification_config.name': request.notificationConfig.name
+      });
+
+    return this._innerApiCalls.updateNotificationConfig(request, options, callback);
   }
 
   /**
@@ -2880,20 +3303,7 @@ class SecurityCenterClient {
   // --------------------
 
   /**
-   * Return a fully-qualified asset resource name string.
-   *
-   * @param {String} organization
-   * @param {String} asset
-   * @returns {String}
-   */
-  assetPath(organization, asset) {
-    return this._pathTemplates.assetPathTemplate.render({
-      organization: organization,
-      asset: asset,
-    });
-  }
-
-  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified asset_security_marks resource name string.
    *
    * @param {String} organization
@@ -2924,6 +3334,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Return a fully-qualified finding_security_marks resource name string.
    *
    * @param {String} organization
@@ -2936,6 +3347,20 @@ class SecurityCenterClient {
       organization: organization,
       source: source,
       finding: finding,
+    });
+  }
+
+  /**
+   * Return a fully-qualified notification_config resource name string.
+   *
+   * @param {String} organization
+   * @param {String} notificationConfig
+   * @returns {String}
+   */
+  notificationConfigPath(organization, notificationConfig) {
+    return this._pathTemplates.notificationConfigPathTemplate.render({
+      organization: organization,
+      notification_config: notificationConfig,
     });
   }
 
@@ -2964,18 +3389,6 @@ class SecurityCenterClient {
   }
 
   /**
-   * Return a fully-qualified organization_sources resource name string.
-   *
-   * @param {String} organization
-   * @returns {String}
-   */
-  organizationSourcesPath(organization) {
-    return this._pathTemplates.organizationSourcesPathTemplate.render({
-      organization: organization,
-    });
-  }
-
-  /**
    * Return a fully-qualified source resource name string.
    *
    * @param {String} organization
@@ -2990,32 +3403,21 @@ class SecurityCenterClient {
   }
 
   /**
-   * Parse the assetName from a asset resource.
+   * Return a fully-qualified topic resource name string.
    *
-   * @param {String} assetName
-   *   A fully-qualified path representing a asset resources.
-   * @returns {String} - A string representing the organization.
+   * @param {String} project
+   * @param {String} topic
+   * @returns {String}
    */
-  matchOrganizationFromAssetName(assetName) {
-    return this._pathTemplates.assetPathTemplate
-      .match(assetName)
-      .organization;
+  topicPath(project, topic) {
+    return this._pathTemplates.topicPathTemplate.render({
+      project: project,
+      topic: topic,
+    });
   }
 
   /**
-   * Parse the assetName from a asset resource.
-   *
-   * @param {String} assetName
-   *   A fully-qualified path representing a asset resources.
-   * @returns {String} - A string representing the asset.
-   */
-  matchAssetFromAssetName(assetName) {
-    return this._pathTemplates.assetPathTemplate
-      .match(assetName)
-      .asset;
-  }
-
-  /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the assetSecurityMarksName from a asset_security_marks resource.
    *
    * @param {String} assetSecurityMarksName
@@ -3029,6 +3431,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the assetSecurityMarksName from a asset_security_marks resource.
    *
    * @param {String} assetSecurityMarksName
@@ -3081,6 +3484,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the findingSecurityMarksName from a finding_security_marks resource.
    *
    * @param {String} findingSecurityMarksName
@@ -3094,6 +3498,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the findingSecurityMarksName from a finding_security_marks resource.
    *
    * @param {String} findingSecurityMarksName
@@ -3107,6 +3512,7 @@ class SecurityCenterClient {
   }
 
   /**
+   * @deprecated Multi-pattern resource names will have unified formatting and parsing helper functions. This helper function will be deleted in the next major version.
    * Parse the findingSecurityMarksName from a finding_security_marks resource.
    *
    * @param {String} findingSecurityMarksName
@@ -3117,6 +3523,32 @@ class SecurityCenterClient {
     return this._pathTemplates.findingSecurityMarksPathTemplate
       .match(findingSecurityMarksName)
       .finding;
+  }
+
+  /**
+   * Parse the notificationConfigName from a notification_config resource.
+   *
+   * @param {String} notificationConfigName
+   *   A fully-qualified path representing a notification_config resources.
+   * @returns {String} - A string representing the organization.
+   */
+  matchOrganizationFromNotificationConfigName(notificationConfigName) {
+    return this._pathTemplates.notificationConfigPathTemplate
+      .match(notificationConfigName)
+      .organization;
+  }
+
+  /**
+   * Parse the notificationConfigName from a notification_config resource.
+   *
+   * @param {String} notificationConfigName
+   *   A fully-qualified path representing a notification_config resources.
+   * @returns {String} - A string representing the notification_config.
+   */
+  matchNotificationConfigFromNotificationConfigName(notificationConfigName) {
+    return this._pathTemplates.notificationConfigPathTemplate
+      .match(notificationConfigName)
+      .notification_config;
   }
 
   /**
@@ -3146,19 +3578,6 @@ class SecurityCenterClient {
   }
 
   /**
-   * Parse the organizationSourcesName from a organization_sources resource.
-   *
-   * @param {String} organizationSourcesName
-   *   A fully-qualified path representing a organization_sources resources.
-   * @returns {String} - A string representing the organization.
-   */
-  matchOrganizationFromOrganizationSourcesName(organizationSourcesName) {
-    return this._pathTemplates.organizationSourcesPathTemplate
-      .match(organizationSourcesName)
-      .organization;
-  }
-
-  /**
    * Parse the sourceName from a source resource.
    *
    * @param {String} sourceName
@@ -3182,6 +3601,32 @@ class SecurityCenterClient {
     return this._pathTemplates.sourcePathTemplate
       .match(sourceName)
       .source;
+  }
+
+  /**
+   * Parse the topicName from a topic resource.
+   *
+   * @param {String} topicName
+   *   A fully-qualified path representing a topic resources.
+   * @returns {String} - A string representing the project.
+   */
+  matchProjectFromTopicName(topicName) {
+    return this._pathTemplates.topicPathTemplate
+      .match(topicName)
+      .project;
+  }
+
+  /**
+   * Parse the topicName from a topic resource.
+   *
+   * @param {String} topicName
+   *   A fully-qualified path representing a topic resources.
+   * @returns {String} - A string representing the topic.
+   */
+  matchTopicFromTopicName(topicName) {
+    return this._pathTemplates.topicPathTemplate
+      .match(topicName)
+      .topic;
   }
 }
 

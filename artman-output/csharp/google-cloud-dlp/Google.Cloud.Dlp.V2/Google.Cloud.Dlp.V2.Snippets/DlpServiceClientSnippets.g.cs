@@ -864,6 +864,72 @@ namespace Google.Cloud.Dlp.V2.Snippets
             // End snippet
         }
 
+        /// <summary>Snippet for FinishDlpJobAsync</summary>
+        public async Task FinishDlpJobAsync_RequestObject()
+        {
+            // Snippet: FinishDlpJobAsync(FinishDlpJobRequest,CallSettings)
+            // Additional: FinishDlpJobAsync(FinishDlpJobRequest,CancellationToken)
+            // Create client
+            DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            FinishDlpJobRequest request = new FinishDlpJobRequest
+            {
+                DlpJobName = new DlpJobName("[PROJECT]", "[DLP_JOB]"),
+            };
+            // Make the request
+            await dlpServiceClient.FinishDlpJobAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for FinishDlpJob</summary>
+        public void FinishDlpJob_RequestObject()
+        {
+            // Snippet: FinishDlpJob(FinishDlpJobRequest,CallSettings)
+            // Create client
+            DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
+            // Initialize request argument(s)
+            FinishDlpJobRequest request = new FinishDlpJobRequest
+            {
+                DlpJobName = new DlpJobName("[PROJECT]", "[DLP_JOB]"),
+            };
+            // Make the request
+            dlpServiceClient.FinishDlpJob(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for HybridInspectDlpJobAsync</summary>
+        public async Task HybridInspectDlpJobAsync_RequestObject()
+        {
+            // Snippet: HybridInspectDlpJobAsync(HybridInspectDlpJobRequest,CallSettings)
+            // Additional: HybridInspectDlpJobAsync(HybridInspectDlpJobRequest,CancellationToken)
+            // Create client
+            DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            HybridInspectDlpJobRequest request = new HybridInspectDlpJobRequest
+            {
+                Name = "",
+            };
+            // Make the request
+            HybridInspectResponse response = await dlpServiceClient.HybridInspectDlpJobAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for HybridInspectDlpJob</summary>
+        public void HybridInspectDlpJob_RequestObject()
+        {
+            // Snippet: HybridInspectDlpJob(HybridInspectDlpJobRequest,CallSettings)
+            // Create client
+            DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
+            // Initialize request argument(s)
+            HybridInspectDlpJobRequest request = new HybridInspectDlpJobRequest
+            {
+                Name = "",
+            };
+            // Make the request
+            HybridInspectResponse response = dlpServiceClient.HybridInspectDlpJob(request);
+            // End snippet
+        }
+
         /// <summary>Snippet for ListJobTriggersAsync</summary>
         public async Task ListJobTriggersAsync_RequestObject()
         {
@@ -1021,6 +1087,39 @@ namespace Google.Cloud.Dlp.V2.Snippets
             };
             // Make the request
             dlpServiceClient.DeleteJobTrigger(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for HybridInspectJobTriggerAsync</summary>
+        public async Task HybridInspectJobTriggerAsync_RequestObject()
+        {
+            // Snippet: HybridInspectJobTriggerAsync(HybridInspectJobTriggerRequest,CallSettings)
+            // Additional: HybridInspectJobTriggerAsync(HybridInspectJobTriggerRequest,CancellationToken)
+            // Create client
+            DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            HybridInspectJobTriggerRequest request = new HybridInspectJobTriggerRequest
+            {
+                Name = "",
+            };
+            // Make the request
+            HybridInspectResponse response = await dlpServiceClient.HybridInspectJobTriggerAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for HybridInspectJobTrigger</summary>
+        public void HybridInspectJobTrigger_RequestObject()
+        {
+            // Snippet: HybridInspectJobTrigger(HybridInspectJobTriggerRequest,CallSettings)
+            // Create client
+            DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
+            // Initialize request argument(s)
+            HybridInspectJobTriggerRequest request = new HybridInspectJobTriggerRequest
+            {
+                Name = "",
+            };
+            // Make the request
+            HybridInspectResponse response = dlpServiceClient.HybridInspectJobTrigger(request);
             // End snippet
         }
 

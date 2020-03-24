@@ -126,8 +126,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object sinkName_;
   /**
    * <pre>
-   * Required. The full resource name of the sink to update, including the
-   * parent resource and the sink identifier:
+   * Required. The full resource name of the sink to update, including the parent
+   * resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -152,8 +152,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The full resource name of the sink to update, including the
-   * parent resource and the sink identifier:
+   * Required. The full resource name of the sink to update, including the parent
+   * resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -182,8 +182,8 @@ private static final long serialVersionUID = 0L;
   private com.google.logging.v2.LogSink sink_;
   /**
    * <pre>
-   * Required. The updated sink, whose name is the same identifier that appears
-   * as part of `sink_name`.
+   * Required. The updated sink, whose name is the same identifier that appears as part
+   * of `sink_name`.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -194,8 +194,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The updated sink, whose name is the same identifier that appears
-   * as part of `sink_name`.
+   * Required. The updated sink, whose name is the same identifier that appears as part
+   * of `sink_name`.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -206,8 +206,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The updated sink, whose name is the same identifier that appears
-   * as part of `sink_name`.
+   * Required. The updated sink, whose name is the same identifier that appears as part
+   * of `sink_name`.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
    *     set to false or defaulted to false.
    * </pre>
    *
-   * <code>bool unique_writer_identity = 3;</code>
+   * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uniqueWriterIdentity.
    */
   public boolean getUniqueWriterIdentity() {
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
    * Example: `updateMask=filter`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return Whether the updateMask field is set.
    */
   public boolean hasUpdateMask() {
@@ -277,7 +277,7 @@ private static final long serialVersionUID = 0L;
    * Example: `updateMask=filter`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The updateMask.
    */
   public com.google.protobuf.FieldMask getUpdateMask() {
@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
    * Example: `updateMask=filter`.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
     return getUpdateMask();
@@ -691,8 +691,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object sinkName_ = "";
     /**
      * <pre>
-     * Required. The full resource name of the sink to update, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to update, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -717,8 +717,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full resource name of the sink to update, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to update, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -744,8 +744,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full resource name of the sink to update, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to update, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -769,8 +769,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full resource name of the sink to update, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to update, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -789,8 +789,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full resource name of the sink to update, including the
-     * parent resource and the sink identifier:
+     * Required. The full resource name of the sink to update, including the parent
+     * resource and the sink identifier:
      *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
      *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
      *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -819,8 +819,8 @@ private static final long serialVersionUID = 0L;
         com.google.logging.v2.LogSink, com.google.logging.v2.LogSink.Builder, com.google.logging.v2.LogSinkOrBuilder> sinkBuilder_;
     /**
      * <pre>
-     * Required. The updated sink, whose name is the same identifier that appears
-     * as part of `sink_name`.
+     * Required. The updated sink, whose name is the same identifier that appears as part
+     * of `sink_name`.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -831,8 +831,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated sink, whose name is the same identifier that appears
-     * as part of `sink_name`.
+     * Required. The updated sink, whose name is the same identifier that appears as part
+     * of `sink_name`.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -847,8 +847,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated sink, whose name is the same identifier that appears
-     * as part of `sink_name`.
+     * Required. The updated sink, whose name is the same identifier that appears as part
+     * of `sink_name`.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -868,8 +868,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated sink, whose name is the same identifier that appears
-     * as part of `sink_name`.
+     * Required. The updated sink, whose name is the same identifier that appears as part
+     * of `sink_name`.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -887,8 +887,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated sink, whose name is the same identifier that appears
-     * as part of `sink_name`.
+     * Required. The updated sink, whose name is the same identifier that appears as part
+     * of `sink_name`.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -910,8 +910,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated sink, whose name is the same identifier that appears
-     * as part of `sink_name`.
+     * Required. The updated sink, whose name is the same identifier that appears as part
+     * of `sink_name`.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -929,8 +929,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated sink, whose name is the same identifier that appears
-     * as part of `sink_name`.
+     * Required. The updated sink, whose name is the same identifier that appears as part
+     * of `sink_name`.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -942,8 +942,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated sink, whose name is the same identifier that appears
-     * as part of `sink_name`.
+     * Required. The updated sink, whose name is the same identifier that appears as part
+     * of `sink_name`.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -958,8 +958,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated sink, whose name is the same identifier that appears
-     * as part of `sink_name`.
+     * Required. The updated sink, whose name is the same identifier that appears as part
+     * of `sink_name`.
      * </pre>
      *
      * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -993,7 +993,7 @@ private static final long serialVersionUID = 0L;
      *     set to false or defaulted to false.
      * </pre>
      *
-     * <code>bool unique_writer_identity = 3;</code>
+     * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The uniqueWriterIdentity.
      */
     public boolean getUniqueWriterIdentity() {
@@ -1013,7 +1013,7 @@ private static final long serialVersionUID = 0L;
      *     set to false or defaulted to false.
      * </pre>
      *
-     * <code>bool unique_writer_identity = 3;</code>
+     * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The uniqueWriterIdentity to set.
      * @return This builder for chaining.
      */
@@ -1037,7 +1037,7 @@ private static final long serialVersionUID = 0L;
      *     set to false or defaulted to false.
      * </pre>
      *
-     * <code>bool unique_writer_identity = 3;</code>
+     * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearUniqueWriterIdentity() {
@@ -1065,7 +1065,7 @@ private static final long serialVersionUID = 0L;
      * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
@@ -1086,7 +1086,7 @@ private static final long serialVersionUID = 0L;
      * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
@@ -1111,7 +1111,7 @@ private static final long serialVersionUID = 0L;
      * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1141,7 +1141,7 @@ private static final long serialVersionUID = 0L;
      * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setUpdateMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -1169,7 +1169,7 @@ private static final long serialVersionUID = 0L;
      * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -1201,7 +1201,7 @@ private static final long serialVersionUID = 0L;
      * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -1229,7 +1229,7 @@ private static final long serialVersionUID = 0L;
      * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       
@@ -1251,7 +1251,7 @@ private static final long serialVersionUID = 0L;
      * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1276,7 +1276,7 @@ private static final long serialVersionUID = 0L;
      * Example: `updateMask=filter`.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 4;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 

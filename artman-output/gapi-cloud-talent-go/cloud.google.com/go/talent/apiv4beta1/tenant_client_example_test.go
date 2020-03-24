@@ -34,6 +34,22 @@ func ExampleNewTenantClient() {
 	_ = c
 }
 
+func ExampleTenantClient_DeleteTenant() {
+	ctx := context.Background()
+	c, err := talent.NewTenantClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &talentpb.DeleteTenantRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.DeleteTenant(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
 func ExampleTenantClient_CreateTenant() {
 	ctx := context.Background()
 	c, err := talent.NewTenantClient(ctx)
@@ -86,22 +102,6 @@ func ExampleTenantClient_UpdateTenant() {
 	}
 	// TODO: Use resp.
 	_ = resp
-}
-
-func ExampleTenantClient_DeleteTenant() {
-	ctx := context.Background()
-	c, err := talent.NewTenantClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &talentpb.DeleteTenantRequest{
-		// TODO: Fill request struct fields.
-	}
-	err = c.DeleteTenant(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
 }
 
 func ExampleTenantClient_ListTenants() {

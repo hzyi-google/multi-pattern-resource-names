@@ -239,14 +239,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object configBucket_;
   /**
    * <pre>
-   * Optional. A Google Cloud Storage bucket used to stage job
+   * Optional. A Cloud Storage bucket used to stage job
    * dependencies, config files, and job driver console output.
    * If you do not specify a staging bucket, Cloud
    * Dataproc will determine a Cloud Storage location (US,
-   * ASIA, or EU) for your cluster's staging bucket according to the Google
+   * ASIA, or EU) for your cluster's staging bucket according to the
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
-   * [Cloud Dataproc staging
+   * [Dataproc staging
    * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
@@ -267,14 +267,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A Google Cloud Storage bucket used to stage job
+   * Optional. A Cloud Storage bucket used to stage job
    * dependencies, config files, and job driver console output.
    * If you do not specify a staging bucket, Cloud
    * Dataproc will determine a Cloud Storage location (US,
-   * ASIA, or EU) for your cluster's staging bucket according to the Google
+   * ASIA, or EU) for your cluster's staging bucket according to the
    * Compute Engine zone where your cluster is deployed, and then create
    * and manage this project-level, per-location bucket (see
-   * [Cloud Dataproc staging
+   * [Dataproc staging
    * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * </pre>
    *
@@ -1436,14 +1436,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object configBucket_ = "";
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
@@ -1464,14 +1464,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
@@ -1493,14 +1493,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
@@ -1520,14 +1520,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *
@@ -1542,14 +1542,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's staging bucket according to the Google
+     * ASIA, or EU) for your cluster's staging bucket according to the
      * Compute Engine zone where your cluster is deployed, and then create
      * and manage this project-level, per-location bucket (see
-     * [Cloud Dataproc staging
+     * [Dataproc staging
      * bucket](/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * </pre>
      *

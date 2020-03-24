@@ -36,8 +36,11 @@ public interface BigQueryOptionsOrBuilder extends
 
   /**
    * <pre>
-   * References to fields uniquely identifying rows within the table.
-   * Nested fields in the format, like `person.birthdate.year`, are allowed.
+   * Table fields that may uniquely identify a row within the table. When
+   * `actions.saveFindings.outputConfig.table` is specified, the values of
+   * columns specified here are available in the output table under
+   * `location.content_locations.record_location.record_key.id_values`. Nested
+   * fields such as `person.birthdate.year` are allowed.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
@@ -46,8 +49,11 @@ public interface BigQueryOptionsOrBuilder extends
       getIdentifyingFieldsList();
   /**
    * <pre>
-   * References to fields uniquely identifying rows within the table.
-   * Nested fields in the format, like `person.birthdate.year`, are allowed.
+   * Table fields that may uniquely identify a row within the table. When
+   * `actions.saveFindings.outputConfig.table` is specified, the values of
+   * columns specified here are available in the output table under
+   * `location.content_locations.record_location.record_key.id_values`. Nested
+   * fields such as `person.birthdate.year` are allowed.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
@@ -55,8 +61,11 @@ public interface BigQueryOptionsOrBuilder extends
   com.google.privacy.dlp.v2.FieldId getIdentifyingFields(int index);
   /**
    * <pre>
-   * References to fields uniquely identifying rows within the table.
-   * Nested fields in the format, like `person.birthdate.year`, are allowed.
+   * Table fields that may uniquely identify a row within the table. When
+   * `actions.saveFindings.outputConfig.table` is specified, the values of
+   * columns specified here are available in the output table under
+   * `location.content_locations.record_location.record_key.id_values`. Nested
+   * fields such as `person.birthdate.year` are allowed.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
@@ -64,8 +73,11 @@ public interface BigQueryOptionsOrBuilder extends
   int getIdentifyingFieldsCount();
   /**
    * <pre>
-   * References to fields uniquely identifying rows within the table.
-   * Nested fields in the format, like `person.birthdate.year`, are allowed.
+   * Table fields that may uniquely identify a row within the table. When
+   * `actions.saveFindings.outputConfig.table` is specified, the values of
+   * columns specified here are available in the output table under
+   * `location.content_locations.record_location.record_key.id_values`. Nested
+   * fields such as `person.birthdate.year` are allowed.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>
@@ -74,8 +86,11 @@ public interface BigQueryOptionsOrBuilder extends
       getIdentifyingFieldsOrBuilderList();
   /**
    * <pre>
-   * References to fields uniquely identifying rows within the table.
-   * Nested fields in the format, like `person.birthdate.year`, are allowed.
+   * Table fields that may uniquely identify a row within the table. When
+   * `actions.saveFindings.outputConfig.table` is specified, the values of
+   * columns specified here are available in the output table under
+   * `location.content_locations.record_location.record_key.id_values`. Nested
+   * fields such as `person.birthdate.year` are allowed.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId identifying_fields = 2;</code>

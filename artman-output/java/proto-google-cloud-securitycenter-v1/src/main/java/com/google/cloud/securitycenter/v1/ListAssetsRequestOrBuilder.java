@@ -313,9 +313,8 @@ public interface ListAssetsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-   * response.
-   * An empty field mask will list all fields.
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed
+   * in the response. An empty field mask will list all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -324,9 +323,8 @@ public interface ListAssetsRequestOrBuilder extends
   boolean hasFieldMask();
   /**
    * <pre>
-   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-   * response.
-   * An empty field mask will list all fields.
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed
+   * in the response. An empty field mask will list all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -335,9 +333,8 @@ public interface ListAssetsRequestOrBuilder extends
   com.google.protobuf.FieldMask getFieldMask();
   /**
    * <pre>
-   * Optional. A field mask to specify the ListAssetsResult fields to be listed in the
-   * response.
-   * An empty field mask will list all fields.
+   * Optional. A field mask to specify the ListAssetsResult fields to be listed
+   * in the response. An empty field mask will list all fields.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

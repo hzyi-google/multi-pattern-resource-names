@@ -19,6 +19,7 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -61,16 +62,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createSource to 30 seconds:
+ * <p>For example, to set the total timeout of getIamPolicy to 30 seconds:
  *
  * <pre>
  * <code>
  * SecurityCenterSettings.Builder securityCenterSettingsBuilder =
  *     SecurityCenterSettings.newBuilder();
  * securityCenterSettingsBuilder
- *     .createSourceSettings()
+ *     .getIamPolicySettings()
  *     .setRetrySettings(
- *         securityCenterSettingsBuilder.createSourceSettings().getRetrySettings().toBuilder()
+ *         securityCenterSettingsBuilder.getIamPolicySettings().getRetrySettings().toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SecurityCenterSettings securityCenterSettings = securityCenterSettingsBuilder.build();
@@ -80,30 +81,9 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class SecurityCenterSettings extends ClientSettings<SecurityCenterSettings> {
-  /** Returns the object with the settings used for calls to createSource. */
-  public UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings() {
-    return ((SecurityCenterStubSettings) getStubSettings()).createSourceSettings();
-  }
-
-  /** Returns the object with the settings used for calls to createFinding. */
-  public UnaryCallSettings<CreateFindingRequest, Finding> createFindingSettings() {
-    return ((SecurityCenterStubSettings) getStubSettings()).createFindingSettings();
-  }
-
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).getIamPolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to getOrganizationSettings. */
-  public UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
-      getOrganizationSettingsSettings() {
-    return ((SecurityCenterStubSettings) getStubSettings()).getOrganizationSettingsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getSource. */
-  public UnaryCallSettings<GetSourceRequest, Source> getSourceSettings() {
-    return ((SecurityCenterStubSettings) getStubSettings()).getSourceSettings();
   }
 
   /** Returns the object with the settings used for calls to groupAssets. */
@@ -118,6 +98,51 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).groupFindingsSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSource. */
+  public UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).createSourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createFinding. */
+  public UnaryCallSettings<CreateFindingRequest, Finding> createFindingSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).createFindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createNotificationConfig. */
+  public UnaryCallSettings<CreateNotificationConfigRequest, NotificationConfig>
+      createNotificationConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).createNotificationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNotificationConfig. */
+  public UnaryCallSettings<DeleteNotificationConfigRequest, Empty>
+      deleteNotificationConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).deleteNotificationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNotificationConfig. */
+  public UnaryCallSettings<GetNotificationConfigRequest, NotificationConfig>
+      getNotificationConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).getNotificationConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getOrganizationSettings. */
+  public UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
+      getOrganizationSettingsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).getOrganizationSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSource. */
+  public UnaryCallSettings<GetSourceRequest, Source> getSourceSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).getSourceSettings();
+  }
+
   /** Returns the object with the settings used for calls to listAssets. */
   public PagedCallSettings<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
       listAssetsSettings() {
@@ -128,6 +153,14 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   public PagedCallSettings<ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       listFindingsSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).listFindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNotificationConfigs. */
+  public PagedCallSettings<
+          ListNotificationConfigsRequest, ListNotificationConfigsResponse,
+          ListNotificationConfigsPagedResponse>
+      listNotificationConfigsSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).listNotificationConfigsSettings();
   }
 
   /** Returns the object with the settings used for calls to listSources. */
@@ -159,15 +192,15 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).setIamPolicySettings();
   }
 
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return ((SecurityCenterStubSettings) getStubSettings()).testIamPermissionsSettings();
-  }
-
   /** Returns the object with the settings used for calls to updateFinding. */
   public UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings() {
     return ((SecurityCenterStubSettings) getStubSettings()).updateFindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNotificationConfig. */
+  public UnaryCallSettings<UpdateNotificationConfigRequest, NotificationConfig>
+      updateNotificationConfigSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings()).updateNotificationConfigSettings();
   }
 
   /** Returns the object with the settings used for calls to updateOrganizationSettings. */
@@ -284,30 +317,9 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to createSource. */
-    public UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings() {
-      return getStubSettingsBuilder().createSourceSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createFinding. */
-    public UnaryCallSettings.Builder<CreateFindingRequest, Finding> createFindingSettings() {
-      return getStubSettingsBuilder().createFindingSettings();
-    }
-
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getStubSettingsBuilder().getIamPolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getOrganizationSettings. */
-    public UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
-        getOrganizationSettingsSettings() {
-      return getStubSettingsBuilder().getOrganizationSettingsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getSource. */
-    public UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings() {
-      return getStubSettingsBuilder().getSourceSettings();
     }
 
     /** Returns the builder for the settings used for calls to groupAssets. */
@@ -324,6 +336,51 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().groupFindingsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSource. */
+    public UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings() {
+      return getStubSettingsBuilder().createSourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createFinding. */
+    public UnaryCallSettings.Builder<CreateFindingRequest, Finding> createFindingSettings() {
+      return getStubSettingsBuilder().createFindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createNotificationConfig. */
+    public UnaryCallSettings.Builder<CreateNotificationConfigRequest, NotificationConfig>
+        createNotificationConfigSettings() {
+      return getStubSettingsBuilder().createNotificationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNotificationConfig. */
+    public UnaryCallSettings.Builder<DeleteNotificationConfigRequest, Empty>
+        deleteNotificationConfigSettings() {
+      return getStubSettingsBuilder().deleteNotificationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNotificationConfig. */
+    public UnaryCallSettings.Builder<GetNotificationConfigRequest, NotificationConfig>
+        getNotificationConfigSettings() {
+      return getStubSettingsBuilder().getNotificationConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getOrganizationSettings. */
+    public UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
+        getOrganizationSettingsSettings() {
+      return getStubSettingsBuilder().getOrganizationSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSource. */
+    public UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings() {
+      return getStubSettingsBuilder().getSourceSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listAssets. */
     public PagedCallSettings.Builder<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
         listAssetsSettings() {
@@ -335,6 +392,14 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
             ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
         listFindingsSettings() {
       return getStubSettingsBuilder().listFindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNotificationConfigs. */
+    public PagedCallSettings.Builder<
+            ListNotificationConfigsRequest, ListNotificationConfigsResponse,
+            ListNotificationConfigsPagedResponse>
+        listNotificationConfigsSettings() {
+      return getStubSettingsBuilder().listNotificationConfigsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listSources. */
@@ -368,15 +433,15 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return getStubSettingsBuilder().setIamPolicySettings();
     }
 
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return getStubSettingsBuilder().testIamPermissionsSettings();
-    }
-
     /** Returns the builder for the settings used for calls to updateFinding. */
     public UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings() {
       return getStubSettingsBuilder().updateFindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNotificationConfig. */
+    public UnaryCallSettings.Builder<UpdateNotificationConfigRequest, NotificationConfig>
+        updateNotificationConfigSettings() {
+      return getStubSettingsBuilder().updateNotificationConfigSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateOrganizationSettings. */

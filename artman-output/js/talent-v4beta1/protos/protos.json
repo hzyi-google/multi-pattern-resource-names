@@ -12,9 +12,7 @@
                     "java_multiple_files": true,
                     "java_outer_classname": "TenantResourceProto",
                     "java_package": "com.google.cloud.talent.v4beta1",
-                    "objc_class_prefix": "CTS",
-                    "(google.api.resource_definition).type": "jobs.googleapis.com/TenantOrProject",
-                    "(google.api.resource_definition).pattern": "projects/{project}"
+                    "objc_class_prefix": "CTS"
                   },
                   "nested": {
                     "ApplicationService": {
@@ -190,7 +188,8 @@
                           "type": "string",
                           "id": 4,
                           "options": {
-                            "(google.api.resource_reference).type": "jobs.googleapis.com/Job"
+                            "(google.api.resource_reference).type": "jobs.googleapis.com/Job",
+                            "(google.api.field_behavior)": "REQUIRED"
                           }
                         },
                         "company": {
@@ -951,7 +950,7 @@
                           "id": 1,
                           "options": {
                             "(google.api.field_behavior)": "REQUIRED",
-                            "(google.api.resource_reference).type": "jobs.googleapis.com/TenantOrProject"
+                            "(google.api.resource_reference).child_type": "jobs.googleapis.com/Company"
                           }
                         },
                         "pageToken": {
@@ -1091,7 +1090,7 @@
                           "id": 1,
                           "options": {
                             "(google.api.field_behavior)": "REQUIRED",
-                            "(google.api.resource_reference).type": "jobs.googleapis.com/TenantOrProject"
+                            "(google.api.resource_reference).child_type": "jobs.googleapis.com/Company"
                           }
                         },
                         "query": {
@@ -1204,7 +1203,7 @@
                           "id": 1,
                           "options": {
                             "(google.api.field_behavior)": "REQUIRED",
-                            "(google.api.resource_reference).type": "jobs.googleapis.com/TenantOrProject"
+                            "(google.api.resource_reference).child_type": "jobs.googleapis.com/Company"
                           }
                         },
                         "clientEvent": {
@@ -2625,7 +2624,8 @@
                           "type": "string",
                           "id": 1,
                           "options": {
-                            "(google.api.field_behavior)": "REQUIRED"
+                            "(google.api.field_behavior)": "REQUIRED",
+                            "(google.api.resource_reference).child_type": "jobs.googleapis.com/Profile"
                           }
                         },
                         "filter": {

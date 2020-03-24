@@ -34,6 +34,22 @@ func ExampleNewJobClient() {
 	_ = c
 }
 
+func ExampleJobClient_DeleteJob() {
+	ctx := context.Background()
+	c, err := talent.NewJobClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &talentpb.DeleteJobRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.DeleteJob(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
 func ExampleJobClient_CreateJob() {
 	ctx := context.Background()
 	c, err := talent.NewJobClient(ctx)
@@ -45,6 +61,29 @@ func ExampleJobClient_CreateJob() {
 		// TODO: Fill request struct fields.
 	}
 	resp, err := c.CreateJob(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleJobClient_BatchCreateJobs() {
+	ctx := context.Background()
+	c, err := talent.NewJobClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &talentpb.BatchCreateJobsRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.BatchCreateJobs(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	resp, err := op.Wait(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
@@ -88,17 +127,40 @@ func ExampleJobClient_UpdateJob() {
 	_ = resp
 }
 
-func ExampleJobClient_DeleteJob() {
+func ExampleJobClient_BatchUpdateJobs() {
 	ctx := context.Background()
 	c, err := talent.NewJobClient(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}
 
-	req := &talentpb.DeleteJobRequest{
+	req := &talentpb.BatchUpdateJobsRequest{
 		// TODO: Fill request struct fields.
 	}
-	err = c.DeleteJob(ctx, req)
+	op, err := c.BatchUpdateJobs(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	resp, err := op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleJobClient_BatchDeleteJobs() {
+	ctx := context.Background()
+	c, err := talent.NewJobClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &talentpb.BatchDeleteJobsRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.BatchDeleteJobs(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}
@@ -125,22 +187,6 @@ func ExampleJobClient_ListJobs() {
 		}
 		// TODO: Use resp.
 		_ = resp
-	}
-}
-
-func ExampleJobClient_BatchDeleteJobs() {
-	ctx := context.Background()
-	c, err := talent.NewJobClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &talentpb.BatchDeleteJobsRequest{
-		// TODO: Fill request struct fields.
-	}
-	err = c.BatchDeleteJobs(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
 	}
 }
 
@@ -190,50 +236,4 @@ func ExampleJobClient_SearchJobsForAlert() {
 		// TODO: Use resp.
 		_ = resp
 	}
-}
-
-func ExampleJobClient_BatchCreateJobs() {
-	ctx := context.Background()
-	c, err := talent.NewJobClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &talentpb.BatchCreateJobsRequest{
-		// TODO: Fill request struct fields.
-	}
-	op, err := c.BatchCreateJobs(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	resp, err := op.Wait(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-	// TODO: Use resp.
-	_ = resp
-}
-
-func ExampleJobClient_BatchUpdateJobs() {
-	ctx := context.Background()
-	c, err := talent.NewJobClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &talentpb.BatchUpdateJobsRequest{
-		// TODO: Fill request struct fields.
-	}
-	op, err := c.BatchUpdateJobs(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	resp, err := op.Wait(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-	// TODO: Use resp.
-	_ = resp
 }

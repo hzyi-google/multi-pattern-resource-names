@@ -81,7 +81,7 @@ public interface CreateSinkRequestOrBuilder extends
    * more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
    * </pre>
    *
-   * <code>bool unique_writer_identity = 3;</code>
+   * <code>bool unique_writer_identity = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The uniqueWriterIdentity.
    */
   boolean getUniqueWriterIdentity();

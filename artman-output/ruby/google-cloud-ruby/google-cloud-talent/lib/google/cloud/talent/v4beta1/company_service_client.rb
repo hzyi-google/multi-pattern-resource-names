@@ -91,6 +91,8 @@ module Google
           private_constant :TENANT_PATH_TEMPLATE
 
           # Returns a fully-qualified company resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param tenant [String]
           # @param company [String]
@@ -104,6 +106,8 @@ module Google
           end
 
           # Returns a fully-qualified company_without_tenant resource name string.
+          # @deprecated Multi-pattern resource names will have unified creation and parsing helper functions.
+          # This helper function will be deleted in the next major version.
           # @param project [String]
           # @param company [String]
           # @return [String]
@@ -205,6 +209,9 @@ module Google
             google_api_client.freeze
 
             headers = { :"x-goog-api-client" => google_api_client }
+            if credentials.respond_to?(:quota_project_id) && credentials.quota_project_id
+              headers[:"x-goog-user-project"] = credentials.quota_project_id
+            end
             headers.merge!(metadata) unless metadata.nil?
             client_config_file = Pathname.new(__dir__).join(
               "company_service_client_config.json"
@@ -237,6 +244,14 @@ module Google
               &Google::Cloud::Talent::V4beta1::CompanyService::Stub.method(:new)
             )
 
+            @delete_company = Google::Gax.create_api_call(
+              @company_service_stub.method(:delete_company),
+              defaults["delete_company"],
+              exception_transformer: exception_transformer,
+              params_extractor: proc do |request|
+                {'name' => request.name}
+              end
+            )
             @create_company = Google::Gax.create_api_call(
               @company_service_stub.method(:create_company),
               defaults["create_company"],
@@ -261,14 +276,6 @@ module Google
                 {'company.name' => request.company.name}
               end
             )
-            @delete_company = Google::Gax.create_api_call(
-              @company_service_stub.method(:delete_company),
-              defaults["delete_company"],
-              exception_transformer: exception_transformer,
-              params_extractor: proc do |request|
-                {'name' => request.name}
-              end
-            )
             @list_companies = Google::Gax.create_api_call(
               @company_service_stub.method(:list_companies),
               defaults["list_companies"],
@@ -280,6 +287,44 @@ module Google
           end
 
           # Service calls
+
+          # Deletes specified company.
+          # Prerequisite: The company has no jobs associated with it.
+          #
+          # @param name [String]
+          #   Required. The resource name of the company to be deleted.
+          #
+          #   The format is
+          #   "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
+          #   example, "projects/foo/tenants/bar/companies/baz".
+          #
+          #   If tenant id is unspecified, the default tenant is used, for
+          #   example, "projects/foo/companies/bar".
+          # @param options [Google::Gax::CallOptions]
+          #   Overrides the default settings for this call, e.g, timeout,
+          #   retries, etc.
+          # @yield [result, operation] Access the result along with the RPC operation
+          # @yieldparam result []
+          # @yieldparam operation [GRPC::ActiveCall::Operation]
+          # @raise [Google::Gax::GaxError] if the RPC is aborted.
+          # @example
+          #   require "google/cloud/talent"
+          #
+          #   company_client = Google::Cloud::Talent::Company.new(version: :v4beta1)
+          #   formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_without_tenant_path("[PROJECT]", "[COMPANY]")
+          #   company_client.delete_company(formatted_name)
+
+          def delete_company \
+              name,
+              options: nil,
+              &block
+            req = {
+              name: name
+            }.delete_if { |_, v| v.nil? }
+            req = Google::Gax::to_proto(req, Google::Cloud::Talent::V4beta1::DeleteCompanyRequest)
+            @delete_company.call(req, options, &block)
+            nil
+          end
 
           # Creates a new company entity.
           #
@@ -305,7 +350,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   company_client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::CompanyServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::CompanyServiceClient.project_path("[PROJECT]")
           #
           #   # TODO: Initialize `company`:
           #   company = {}
@@ -347,7 +392,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   company_client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-          #   formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_path("[PROJECT]", "[TENANT]", "[COMPANY]")
+          #   formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_without_tenant_path("[PROJECT]", "[COMPANY]")
           #   response = company_client.get_company(formatted_name)
 
           def get_company \
@@ -407,44 +452,6 @@ module Google
             @update_company.call(req, options, &block)
           end
 
-          # Deletes specified company.
-          # Prerequisite: The company has no jobs associated with it.
-          #
-          # @param name [String]
-          #   Required. The resource name of the company to be deleted.
-          #
-          #   The format is
-          #   "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
-          #   example, "projects/foo/tenants/bar/companies/baz".
-          #
-          #   If tenant id is unspecified, the default tenant is used, for
-          #   example, "projects/foo/companies/bar".
-          # @param options [Google::Gax::CallOptions]
-          #   Overrides the default settings for this call, e.g, timeout,
-          #   retries, etc.
-          # @yield [result, operation] Access the result along with the RPC operation
-          # @yieldparam result []
-          # @yieldparam operation [GRPC::ActiveCall::Operation]
-          # @raise [Google::Gax::GaxError] if the RPC is aborted.
-          # @example
-          #   require "google/cloud/talent"
-          #
-          #   company_client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-          #   formatted_name = Google::Cloud::Talent::V4beta1::CompanyServiceClient.company_path("[PROJECT]", "[TENANT]", "[COMPANY]")
-          #   company_client.delete_company(formatted_name)
-
-          def delete_company \
-              name,
-              options: nil,
-              &block
-            req = {
-              name: name
-            }.delete_if { |_, v| v.nil? }
-            req = Google::Gax::to_proto(req, Google::Cloud::Talent::V4beta1::DeleteCompanyRequest)
-            @delete_company.call(req, options, &block)
-            nil
-          end
-
           # Lists all companies associated with the project.
           #
           # @param parent [String]
@@ -484,7 +491,7 @@ module Google
           #   require "google/cloud/talent"
           #
           #   company_client = Google::Cloud::Talent::Company.new(version: :v4beta1)
-          #   formatted_parent = Google::Cloud::Talent::V4beta1::CompanyServiceClient.tenant_path("[PROJECT]", "[TENANT]")
+          #   formatted_parent = Google::Cloud::Talent::V4beta1::CompanyServiceClient.project_path("[PROJECT]")
           #
           #   # Iterate over all results.
           #   company_client.list_companies(formatted_parent).each do |element|

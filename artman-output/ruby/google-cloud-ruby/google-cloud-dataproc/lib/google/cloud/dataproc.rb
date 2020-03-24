@@ -111,7 +111,7 @@ module Google
       module AutoscalingPolicy
         ##
         # The API interface for managing autoscaling policies in the
-        # Google Cloud Dataproc API.
+        # Cloud Dataproc API.
         #
         # @param version [Symbol, String]
         #   The major version of the service to be used. By default :v1beta2
@@ -269,7 +269,7 @@ module Google
       module WorkflowTemplate
         ##
         # The API interface for managing Workflow Templates in the
-        # Cloud Dataproc API.
+        # Dataproc API.
         #
         # @param version [Symbol, String]
         #   The major version of the service to be used. By default :v1beta2

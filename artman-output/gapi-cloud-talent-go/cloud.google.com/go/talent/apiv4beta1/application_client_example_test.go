@@ -34,6 +34,22 @@ func ExampleNewApplicationClient() {
 	_ = c
 }
 
+func ExampleApplicationClient_DeleteApplication() {
+	ctx := context.Background()
+	c, err := talent.NewApplicationClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	req := &talentpb.DeleteApplicationRequest{
+		// TODO: Fill request struct fields.
+	}
+	err = c.DeleteApplication(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
 func ExampleApplicationClient_CreateApplication() {
 	ctx := context.Background()
 	c, err := talent.NewApplicationClient(ctx)
@@ -86,22 +102,6 @@ func ExampleApplicationClient_UpdateApplication() {
 	}
 	// TODO: Use resp.
 	_ = resp
-}
-
-func ExampleApplicationClient_DeleteApplication() {
-	ctx := context.Background()
-	c, err := talent.NewApplicationClient(ctx)
-	if err != nil {
-		// TODO: Handle error.
-	}
-
-	req := &talentpb.DeleteApplicationRequest{
-		// TODO: Fill request struct fields.
-	}
-	err = c.DeleteApplication(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
-	}
 }
 
 func ExampleApplicationClient_ListApplications() {
